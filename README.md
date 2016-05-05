@@ -1,9 +1,13 @@
 # Cohesion funds datasets
 
-This is a file of all EU member states and the datasets that we have found so far for the period 2007-2013 and 2014-2020.
+This is a collecting the datasets for the EU Structural and Cohesion funds from all the different national and regional portals. The goal is to get an overview of all these datasets (not just the portals) in one place, clean the data, and map them in one format ( fdp from os-packager). 
 
-So far only national data portals.
 
 [List of Cohesion Fund datasets in google doc][gdoc]
 
 [gdoc]: https://docs.google.com/spreadsheets/d/1RkC_YuWWlhGxyDRc-bpD_zaWAXK78GpPr8nfPesQfSY/edit?pref=2&pli=1#gid=0
+
+So far it is a simple google sheet with 8 columns: country name, type of portal, region name, landing page, page where we found the data and data for 2007-2013 (direct links to csv) and 2014-2020 (direct link to most up to date csv). 
+
+It is still very much in progress, we have the datasets from 10 national portals that put them in machine readable format online. Now we are working on collecting them for the countries that have regional data portals and the next step would be to request the datasets in machine readable format from those portals where they do not have the csv files to download online. 
+
