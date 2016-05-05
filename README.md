@@ -3,7 +3,7 @@
 This is a collecting the datasets for the EU Structural and Cohesion funds from all the different national and regional portals. The goal is to get an overview of all these datasets (not just the portals) in one place, clean the data, and map them in one format ( fdp from os-packager). 
 
 
-[List of Cohesion Fund datasets in google doc][gdoc]
+[List of Cohesion and Structural Funds datasets in google doc][gdoc]
 
 [gdoc]: https://docs.google.com/spreadsheets/d/1RkC_YuWWlhGxyDRc-bpD_zaWAXK78GpPr8nfPesQfSY/edit?pref=2&pli=1#gid=0
 
