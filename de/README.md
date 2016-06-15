@@ -33,3 +33,5 @@ Data Type ESF 07-13: PDF
 Notes: Structure Funds are collected per region: http://ec.europa.eu/regional_policy/en/atlas/germany
 
 Partnership Agreements:
+
+Needs scraping: yes
