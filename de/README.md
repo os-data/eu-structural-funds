@@ -1,8 +1,8 @@
 Data for Germany
 =========================
-Landing page: http://www.bmwi.de/DE/Themen/Europa/strukturfonds.html
+*Landing page:* http://www.bmwi.de/DE/Themen/Europa/strukturfonds.html
 
-Landing Page 2: 
+*Landing Page 2:* 
 
 Projects Page: 
 
