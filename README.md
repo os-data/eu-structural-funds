@@ -10,5 +10,3 @@ This is a collecting the datasets for the EU Structural and Cohesion funds from 
 So far it is a simple google sheet with 8 columns: country name, type of portal, region name, landing page, page where we found the data and data for 2007-2013 (direct links to csv) and 2014-2020 (direct link to most up to date csv). 
 
 It is still very much in progress, we have the datasets from 10 national portals that put them in machine readable format online. Now we are working on collecting them for the countries that have regional data portals. The next step would be to request the datasets in machine readable format from those managing authorities/portal owners that do not present the data in csv format (or scrape of course).  
-
-TEST
