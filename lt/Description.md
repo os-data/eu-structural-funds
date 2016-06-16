@@ -18,9 +18,7 @@ Name: Paraiškų informacija_20160616.xls
 
 Sort File: XLS
 
-Columns: Projektas	Kodas	Pareiškėjas/ Vykdytojas	Paraiškos būsena	Projekto vertė paraiškoje	Prašomas finansavimas	Projekto išlaidų suma	
-
-Finansavimas	Išmokėta finansavimo suma	Sutarties pasirašymo data
+Columns: Projektas Kodas, Pareiškėjas/ Vykdytojas, Paraiškos būsena, Projekto vertė paraiškoje, Prašomas finansavima, Projekto išlaidų suma, Finansavimas, Išmokėta finansavimo suma, Sutarties pasirašymo data
 
 Columns (translated): Project Code Applicant / Artist application status value of the project application sought funding for the project expenditure 
 
