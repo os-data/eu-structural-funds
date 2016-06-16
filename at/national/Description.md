@@ -1,4 +1,4 @@
-The landing page for the Austrian dataset from 2007-2013 is on the website [Europa om de Hoek](http://www.oerok.gv.at/eu-regionalpolitik/eu-strukturfonds-in-oesterreich-2007-2013.html). Further information can be found [here](https://www.bka.gv.at/site/6093/default.aspx).
+The landing page for the Austrian dataset from 2007-2013 is [here](http://www.oerok.gv.at/eu-regionalpolitik/eu-strukturfonds-in-oesterreich-2007-2013.html). Further information can be found [here](https://www.bka.gv.at/site/6093/default.aspx).
 
 An overview of the ESIF programs and associated amounts can be found [here](http://www.oerok.gv.at/fileadmin/Bilder/3.Reiter-Regionalpolitik/1._EU-Koehaesionspolitik/Tabelle_Strukturfondsmittel_2007-2013.pdf). For the ESF, the data from 2007-2013 is featured in the following datasets:
 
