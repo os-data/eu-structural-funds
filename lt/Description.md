@@ -7,6 +7,8 @@ http://www.esinvesticijos.lt/lt/val_regionu_proj_aprasai?page=1
 The 2007-2013 projects can be viewed via: 
 http://www.esparama.lt/igyvendinami-projektai
 
+---
+
 There is one dataset containing all Lithuanian EU Subsidies from 2014-present in one XLS file that can be retrieved via: http://www.esinvesticijos.lt/lt/paraiskos_ir_projektai/xlsexport
 
 Funds: UNCLEAR
@@ -25,6 +27,7 @@ Funding disbursed funding amount of the contract signing date
 
 Time: 2014-Current
 
+---
 
 There is one dataset containing all Lithuanian EU Subsidies from 2007-2013 in one XLS file that can be retrieved via: http://www.esparama.lt/igyvendinami-projektai
 
