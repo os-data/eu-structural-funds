@@ -9,13 +9,16 @@ http://www.esparama.lt/igyvendinami-projektai
 
 There is one dataset containing all Lithuanian EU Subsidies from 2014-present in one XLS file that can be retrieved via: http://www.esinvesticijos.lt/lt/paraiskos_ir_projektai/xlsexport
 
-Funds: ESF, ERDF, Fisheries Funds, and Interregional Funds
+Funds: UNCLEAR
+Name: Paraiškų informacija_20160616.xls
 Sort File: XLS
 Columns: Projektas	Kodas	Pareiškėjas/ Vykdytojas	Paraiškos būsena	Projekto vertė paraiškoje	Prašomas finansavimas	Projekto išlaidų suma	Finansavimas	Išmokėta finansavimo suma	Sutarties pasirašymo data
 Columns (translated): Project Code Applicant / Artist application status value of the project application sought funding for the project expenditure Funding disbursed funding amount of the contract signing date
 Time: 2014-Current
 
 There is one dataset containing all Lithuanian EU Subsidies from 2007-2013 in one XLS file that can be retrieved via: http://www.esparama.lt/igyvendinami-projektai
+
+Funds: UNCLEAR
 Name: contracts.xls
 Sort File: XLS
 Columns: Paraiškos kodas	Pareiškėjas	Projekto pavadinimas	Bendra projekto vertė, Eur	Projektui skirtas finansavimas, Eur	Projektui skirto finansavimo ES dalis, Eur	Projektui išmokėta lėšų, Eur	Projektui išmokėta lėšų ES dalis, Eur	Projekto būsena
