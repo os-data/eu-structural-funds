@@ -1,6 +1,4 @@
-The landing page for the Netherlands dataset is on the website[Europa om de Hoek][gdoc]
-
-[gdoc]: https://www.europaomdehoek.nl/
+The landing page for the Netherlands dataset is on the website [Europa om de Hoek](https://www.europaomdehoek.nl/)
 
 Here we found one dataset containing all Dutch EU Subsidies in one CSV file:
 
