@@ -10,7 +10,7 @@ An overview of the ESIF programs and associated amounts can be found [here](http
 * http://www.esf.at/esf/wp-content/uploads/2011/02/List-of-Beneficiaries_2009.pdf
 * http://www.esf.at/esf/wp-content/uploads/ESF-List-of-Beneficiaries-Austria-2007-2008.pdf
 
-ERDF data for 2007-2013 could not be found. 
+ERDF data for 2007-2013 could not be found on the national level, but is available on the regional level (see regional folders).
 
 The partnership agreement can be found [here](http://www.oerok.gv.at/fileadmin/Bilder/3.Reiter-Regionalpolitik/2.EU-Kohaesionspolitik_2014_/Nationale_Strategie_STRAT.AT2020/STRAT_AT_2020_genehmigte_Version_2_der_PV_vom_16._Oktober_2015.pdf).
 
