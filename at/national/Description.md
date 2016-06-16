@@ -2,8 +2,8 @@ The landing page for the Austrian dataset from 2007-2013 is [here](http://www.oe
 
 An overview of the ESIF programs and associated amounts can be found [here](http://www.oerok.gv.at/fileadmin/Bilder/3.Reiter-Regionalpolitik/1._EU-Koehaesionspolitik/Tabelle_Strukturfondsmittel_2007-2013.pdf). For the ESF, the data from 2007-2013 is featured in the following datasets:
 
-http://www.esf.at/esf/wp-content/uploads/Verzeichnis-der-Beg%C3%BCnstigten-2014.pdf
-http://www.esf.at/esf/wp-content/uploads/Liste-der-ESF-Beguenstigten-2013.pdf
+* http://www.esf.at/esf/wp-content/uploads/Verzeichnis-der-Beg%C3%BCnstigten-2014.pdf
+* http://www.esf.at/esf/wp-content/uploads/Liste-der-ESF-Beguenstigten-2013.pdf
 http://www.esf.at/esf/wp-content/uploads/Liste-der-ESF-Beg%C3%BCnstigten-2012.pdf
 http://www.esf.at/esf/wp-content/uploads/20120827_Liste-der-ESF-Beg%C3%BCnstigten-20111.pdf
 http://www.esf.at/esf/wp-content/uploads/2010-ESF_Verzeichnis_Beg%C3%BCnstigte_%C3%96sterreich.pdf
