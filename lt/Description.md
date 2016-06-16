@@ -38,7 +38,7 @@ Name: contracts.xls
 
 Sort File: XLS
 
-Columns: Paraiškos kodas	Pareiškėjas	Projekto pavadinimas	Bendra projekto vertė, Eur	Projektui skirtas finansavimas, Eur	Projektui skirto finansavimo ES dalis, Eur	Projektui išmokėta lėšų, Eur	Projektui išmokėta lėšų ES dalis, Eur	Projekto būsena
+Columns: Paraiškos kodas, Pareiškėjas	Projekto pavadinimas, Bendra projekto vertė, Eur	Projektui skirtas finansavimas, Eur	Projektui skirto finansavimo ES dalis, Eur Projektui išmokėta lėšų, Eur	Projektui išmokėta lėšų ES dalis, Eur	Projekto būsena
 
 Columns (translated): Application code Applicant Project Title Total cost of the project, for project funding, for the projects for EU funding for part of the euro project disbursed funds for project funds disbursed part of the EU, EUR Project Status
 
