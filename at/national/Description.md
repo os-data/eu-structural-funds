@@ -10,7 +10,7 @@ http://www.esf.at/esf/wp-content/uploads/2010-ESF_Verzeichnis_Beg%C3%BCnstigte_%
 http://www.esf.at/esf/wp-content/uploads/2011/02/List-of-Beneficiaries_2009.pdf
 http://www.esf.at/esf/wp-content/uploads/ESF-List-of-Beneficiaries-Austria-2007-2008.pdf
 
-The partnership agreements can be found [here](http://ec.europa.eu/contracts_grants/agreements/index_en.htm)
+The partnership agreements can be found [here](http://ec.europa.eu/contracts_grants/agreements/index_en.htm).
 
 Here we found one dataset containing all Dutch EU Subsidies in one CSV file:
 
@@ -19,6 +19,9 @@ Data Set All Funds:
 e.g. PDF file needs to b scraped --> create issue, 
 
 Funds: ESF, ERDF, Fisheries Funds, and Interregional Funds
+
 Sort File: CSV
+
 Columns: Beneficiary, Title Project, English Title, Fund, Summary,EU Subsidies, Additional Subsidy Public, Additional Subsidy Private, Total, Co-finance rate, and Last Update, Start Data, End Date.
+
 Time: 2007-Current
