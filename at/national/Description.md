@@ -14,16 +14,4 @@ ERDF data for 2007-2013 could not be found on the national level, but is availab
 
 The partnership agreement can be found [here](http://www.oerok.gv.at/fileadmin/Bilder/3.Reiter-Regionalpolitik/2.EU-Kohaesionspolitik_2014_/Nationale_Strategie_STRAT.AT2020/STRAT_AT_2020_genehmigte_Version_2_der_PV_vom_16._Oktober_2015.pdf).
 
-Here we found one dataset containing all Dutch EU Subsidies in one CSV file:
-
-Data Set All Funds:
-
-e.g. PDF file needs to b scraped --> create issue, 
-
-Funds: ESF, ERDF, Fisheries Funds, and Interregional Funds
-
-Sort File: CSV
-
-Columns: Beneficiary, Title Project, English Title, Fund, Summary,EU Subsidies, Additional Subsidy Public, Additional Subsidy Private, Total, Co-finance rate, and Last Update, Start Data, End Date.
-
-Time: 2007-Current
+The ERDF dataset for 2007-2013 is spread across several PDFs with slightly different formatting and needs to be scraped. 
