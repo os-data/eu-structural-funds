@@ -10,6 +10,8 @@ An overview of the ESIF programs and associated amounts can be found [here](http
 * http://www.esf.at/esf/wp-content/uploads/2011/02/List-of-Beneficiaries_2009.pdf
 * http://www.esf.at/esf/wp-content/uploads/ESF-List-of-Beneficiaries-Austria-2007-2008.pdf
 
+ERDF data for 2007-2013 could not be found. 
+
 The partnership agreements can be found [here](http://ec.europa.eu/contracts_grants/agreements/index_en.htm).
 
 Here we found one dataset containing all Dutch EU Subsidies in one CSV file:
