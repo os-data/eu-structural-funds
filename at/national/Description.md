@@ -12,7 +12,7 @@ An overview of the ESIF programs and associated amounts can be found [here](http
 
 ERDF data for 2007-2013 could not be found. 
 
-The partnership agreements can be found [here](http://ec.europa.eu/contracts_grants/agreements/index_en.htm).
+The partnership agreement can be found [here](http://www.oerok.gv.at/fileadmin/Bilder/3.Reiter-Regionalpolitik/2.EU-Kohaesionspolitik_2014_/Nationale_Strategie_STRAT.AT2020/STRAT_AT_2020_genehmigte_Version_2_der_PV_vom_16._Oktober_2015.pdf).
 
 Here we found one dataset containing all Dutch EU Subsidies in one CSV file:
 
