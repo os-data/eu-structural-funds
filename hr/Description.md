@@ -1,8 +1,6 @@
-The landing page for the Croatia dataset is 
+The landing page for the Croatia dataset is http://www.strukturnifondovi.hr/projekti.
 
-Here we found one dataset containing all Dutch EU Subsidies in one CSV file:
-
-Data Set All Funds:
+Here we found one dataset containing all Croatian EU Subsidies in one CSV file:
 http://www.strukturnifondovi.hr/UserDocsImages/Documents/KartaProjekataZaWeb%201.4.2016.xls
 
 Funds: ESF, ERDF, Fisheries Funds, and Interregional Funds
