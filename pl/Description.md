@@ -1,4 +1,6 @@
-The landing page for the Poland dataset is http://www.funduszeeuropejskie.gov.pl/. The projects can be found via this portal: http://www.mapadotacji.gov.pl/projekty. 
+The landing page for the Poland dataset is http://www.funduszeeuropejskie.gov.pl/. 
+
+The projects can be found via this portal: http://www.mapadotacji.gov.pl/projekty. 
 
 ---
 
