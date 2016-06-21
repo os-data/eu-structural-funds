@@ -4,6 +4,8 @@ https://regionalt.erhvervsstyrelsen.dk/ (2014-2020 portal with section on 2007-2
 
 http://eustrukturfonde.dk/ (map view / browse by year for 2007-today)
 
+---
+
 The following datasets are available:
 
 https://regionalt.erhvervsstyrelsen.dk/eu-projekt-eksport.csv 
@@ -30,3 +32,11 @@ Language: Danish
 Columns: Project, Start date, Description
 
 Further columns after click: Date, Budget, Subsidies European Regional Development Fund, Beneficiary, partners	
+
+
+---
+
+Comments: 
+
+- 2007-2013 needs to be scraped from WEB
+- 2014-2020 is good 
