@@ -1,10 +1,16 @@
-The landing page for the Netherlands dataset is on the website [Europa om de Hoek](https://www.europaomdehoek.nl/)
+The landing page for the Croatia dataset is http://www.strukturnifondovi.hr/projekti.
 
-Here we found one dataset containing all Dutch EU Subsidies in one CSV file:
-
-Data Set All Funds:
+Here we found one dataset containing all Croatian EU Subsidies in one CSV file:
+http://www.strukturnifondovi.hr/UserDocsImages/Documents/KartaProjekataZaWeb%201.4.2016.xls
 
 Funds: ESF, ERDF, Fisheries Funds, and Interregional Funds
-Sort File: CSV
-Columns: Beneficiary, Title Project, English Title, Fund, Summary,EU Subsidies, Additional Subsidy Public, Additional Subsidy Private, Total, Co-finance rate, and Last Update, Start Data, End Date.
+
+Name: KartaProjekataZaWeb 1.4.2016.xls
+
+Sort File: XLS
+
+Columns: Naziv projekta	Fond, Šifra operativnog programa, Operativni program, NUTSII, Županija, Korisnik, Opis projekta, Datum ugovaranja, Zaključni datum provedbe aktivnosti, Bespovratna sredstva, Ukupno prihvatljivi troškovi
+
+Columns (translated): Project Name, Fund Code OP The NUTSII District, User, Project description, Date of contract, closing date, implementation of activities, Grants, total eligible costs
+
 Time: 2007-Current
