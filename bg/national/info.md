@@ -3,7 +3,7 @@ The data is available via a separate portal: http://umispublic.government.bg/prP
 
 On the portal, all projects (2007-today) can be downloaded in one xls file (36.2MB). This file does, however, not feature several important columns such as date, fund, etc. In the online view, each listed project contains a link that leads to a separate page with detailed contract information (Identification, Description, Partners, Indicators, Summary). The links may not be visible in the downloaded XLS file!
 
-![Test](/bg/funds-data/bg-portal.png "Test")
+![Test](/bg/data/bg-portal.png "Test")
 
 
 Columns: ~ Бенефициент	Седалище	Място на изпълнение	Наименование на договора	Обща стойност	БФП	Финанс. от бенефициент	Реално изплатени суми	Продълж.(месеци)	Статус	Изпълнители
