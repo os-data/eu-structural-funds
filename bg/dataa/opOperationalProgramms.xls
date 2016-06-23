@@ -1,0 +1,539 @@
+<meta http-equiv=Content-Type content="text/html; charset=utf-8"><style>.text {mso-number-format:\@; } .numstyle {mso-number-format:\#\,\#\#0\.00;} .InfoTableProposal{top:0px;right:0px;width:100%;border: 1px solid #000080;color: #003399;}.InfoHeaderProposal{border: 1px solid #000080;background-color: #0075C4;font-size: 7,3pt;color:#FFFFFF;font-weight: bold;vertical-align: middle;text-align: left;}.InfoHeaderProposal td{border: 1px solid #000080;border-color: #0075C4;background-color: #0075C4;font-size: 7,3pt;color: #FFFFFF;font-weight: bold;vertical-align: middle;text-align: left;} </style><form method="post" action="opOperationalProgramms.aspx" id="ctl03">
+<div class="aspNetHidden">
+<input type="hidden" name="ContentPlaceHolder1_ScriptManager1_HiddenField" id="ContentPlaceHolder1_ScriptManager1_HiddenField" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+</div>
+Information System for Management and Monitoring of EU Structural Instruments in Bulgaria - public module<br />Information is updated on: 15.06.2016
+ All values are in levs(BGN).<br/><br /><font Color='#246E99' Font-Size='Small' style='font-style:italic; font-weight: bold; font-size: 12pt;'>Implementation of operational programs</font><br /><br />
+                <table cellspacing="0" cellpadding="0" style="border-collapse: collapse; font-size: 10px;">
+                    <tr>
+                        <td align="center" rowspan="2" style="height: 50px; border-bottom: 1px solid teal;
+                            border-top: 1px solid teal; border-right: 1px solid teal; border-left: 1px solid teal;
+                            background-color: #99CCFF; font-weight: bold; color: #333399;">
+                            Operational Programme
+                        </td>
+                        <td align="center" colspan="3" style="height: 25px; border-bottom: 1px solid teal;
+                            border-top: 1px solid teal; border-right: 1px solid teal; background-color: #99CCFF;
+                            font-weight: bold; color: #333399;">
+                            Programme budget
+                        </td>
+                        <td align="center" colspan="2" style="height: 25px; border-bottom: 1px solid teal;
+                            border-top: 1px solid teal; border-right: 1px solid teal; background-color: #99CCFF;
+                            font-weight: bold; color: green;">
+                            Projects
+                        </td>
+                        <td align="center" colspan="4" style="height: 25px; border-bottom: 1px solid teal;
+                            border-top: 1px solid teal; border-right: 1px solid teal; background-color: #99CCFF;
+                            font-weight: bold; color: #993300;">
+                            Contracted Amount
+                        </td>
+                        <td align="center" colspan="3" style="height: 25px; border-bottom: 1px solid teal;
+                            border-top: 1px solid teal; border-right: 1px solid teal; background-color: #99CCFF;
+                            font-weight: bold; color: Teal;">
+                            Actually paid
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="height: 25px; width: 170px; border-bottom: 1px solid teal;
+                            border-right: 1px solid teal; background-color: #99CCFF; font-weight: bold; color: #333399;">
+                            Total
+                        </td>
+                        <td align="center" style="height: 25px; width: 130px; border-bottom: 1px solid teal;
+                            border-right: 1px solid teal; background-color: #99CCFF; font-weight: bold; color: #333399;">
+                            Funding from the EU
+                        </td>
+                        <td align="center" style="height: 25px; width: 110px; border-bottom: 1px solid teal;
+                            border-right: 1px solid teal; background-color: #99CCFF; font-weight: bold; color: #333399;">
+                            National funding
+                        </td>
+                        <td align="center" style="height: 25px; width: 20px; border-bottom: 1px solid teal;
+                            border-right: 1px solid teal; background-color: #99CCFF; font-weight: bold; color: green;">
+                            Number of projects submitted
+                        </td>
+                        <td align="center" style="height: 25px; width: 20px; border-bottom: 1px solid teal;
+                            border-right: 1px solid teal; background-color: #99CCFF; font-weight: bold; color: green;">
+                            Number of contracts
+                        </td>
+                        <td align="center" style="height: 25px; width: 150px; border-bottom: 1px solid teal;
+                            border-right: 1px solid teal; background-color: #99CCFF; font-weight: bold; color: #993300;">
+                            Total
+                        </td>
+                        <td align="center" style="height: 25px; width: 150px; border-bottom: 1px solid teal;
+                            border-right: 1px solid teal; background-color: #99CCFF; font-weight: bold; color: #993300;">
+                            Grants
+                        </td>
+                        <td align="center" style="height: 25px; width: 15px; border-bottom: 1px solid teal;
+                            border-right: 1px solid teal; background-color: #99CCFF; font-weight: bold; color: #993300;">
+                            %&nbsp;*
+                        </td>
+                        <td align="center" style="height: 25px; width: 110px; border-bottom: 1px solid teal;
+                            border-right: 1px solid teal; background-color: #99CCFF; font-weight: bold; color: #993300;">
+                            Funding from the EU
+                        </td>
+                        <td align="center" style="height: 25px; width: 110px; border-bottom: 1px solid teal;
+                            border-right: 1px solid teal; background-color: #99CCFF; font-weight: bold; color: Teal;">
+                            Total
+                        </td>
+                        <td align="center" style="height: 25px; width: 15px; border-bottom: 1px solid teal;
+                            border-right: 1px solid teal; background-color: #99CCFF; font-weight: bold; color: Teal;">
+                            %&nbsp;*
+                        </td>
+                        <td align="center" style="height: 25px; width: 110px; border-bottom: 1px solid teal;
+                            border-right: 1px solid teal; background-color: #99CCFF; font-weight: bold; color: Teal;">
+                            Funding from the EU
+                        </td>
+                    </tr>
+            
+                <tr>
+                    <td style='width: 20px; height: 25px; color: #333399; text-align: left; font-size: 7pt;
+                        font-weight: bold; border-left: 1px solid teal; border-bottom: 1px solid teal;'>
+                        <a href="opOPProfileFinExec.aspx?op=6">OPT</a>
+                    </td>
+                    <td style='width: 170px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 737 889 390.16
+                    </td>
+                    <td style='width: 130px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 177 205 981.05
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          560 683 409.11
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        153
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        120
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         5 706 137 946.91
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 963 723 544.55
+                    </td>
+                    <td style='width: 15px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        106.04
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 212 750 543.79
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 414 313 350.01
+                    </td>
+                    <td style='width: 15px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        91.34
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-right: 1px solid teal; border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 794 684 369.33
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td style='width: 20px; height: 25px; color: #333399; text-align: left; font-size: 7pt;
+                        font-weight: bold; border-left: 1px solid teal; border-bottom: 1px solid teal;'>
+                        <a href="opOPProfileFinExec.aspx?op=7">OPE</a>
+                    </td>
+                    <td style='width: 170px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 521 957 127.09
+                    </td>
+                    <td style='width: 130px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 993 663 559.49
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          528 293 567.60
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        993
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        528
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         4 350 349 993.32
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 808 030 249.11
+                    </td>
+                    <td style='width: 15px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        108.12
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 145 567 756.63
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 382 160 530.74
+                    </td>
+                    <td style='width: 15px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        96.03
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-right: 1px solid teal; border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 898 649 982.60
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td style='width: 20px; height: 25px; color: #333399; text-align: left; font-size: 7pt;
+                        font-weight: bold; border-left: 1px solid teal; border-bottom: 1px solid teal;'>
+                        <a href="opOPProfileFinExec.aspx?op=3">OPRD</a>
+                    </td>
+                    <td style='width: 170px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 131 821 211.89
+                    </td>
+                    <td style='width: 130px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 662 048 029.82
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          469 773 182.08
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        2038
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        1199
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 294 371 802.73
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 222 077 250.90
+                    </td>
+                    <td style='width: 15px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        102.88
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 738 882 866.14
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 161 057 682.21
+                    </td>
+                    <td style='width: 15px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        100.93
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-right: 1px solid teal; border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 758 099 869.96
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td style='width: 20px; height: 25px; color: #333399; text-align: left; font-size: 7pt;
+                        font-weight: bold; border-left: 1px solid teal; border-bottom: 1px solid teal;'>
+                        <a href="opOPProfileFinExec.aspx?op=5">OPC</a>
+                    </td>
+                    <td style='width: 170px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 273 096 041.11
+                    </td>
+                    <td style='width: 130px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         1 932 131 634.26
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          340 964 406.85
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        9492
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        3154
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         3 242 531 252.36
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 228 113 278.17
+                    </td>
+                    <td style='width: 15px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        98.02
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         1 893 896 284.98
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 199 471 537.33
+                    </td>
+                    <td style='width: 15px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        96.76
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-right: 1px solid teal; border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         1 885 062 688.74
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td style='width: 20px; height: 25px; color: #333399; text-align: left; font-size: 7pt;
+                        font-weight: bold; border-left: 1px solid teal; border-bottom: 1px solid teal;'>
+                        <a href="opOPProfileFinExec.aspx?op=4">OPTA</a>
+                    </td>
+                    <td style='width: 170px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          111 129 139.91
+                    </td>
+                    <td style='width: 130px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          94 459 769.02
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          16 669 370.89
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        134
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        123
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          110 106 980.96
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          110 106 980.96
+                    </td>
+                    <td style='width: 15px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        99.08
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          93 590 933.75
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          103 586 604.20
+                    </td>
+                    <td style='width: 15px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        93.21
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-right: 1px solid teal; border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          96 927 385.08
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td style='width: 20px; height: 25px; color: #333399; text-align: left; font-size: 7pt;
+                        font-weight: bold; border-left: 1px solid teal; border-bottom: 1px solid teal;'>
+                        <a href="opOPProfileFinExec.aspx?op=1">OPHR</a>
+                    </td>
+                    <td style='width: 170px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 374 122 530.87
+                    </td>
+                    <td style='width: 130px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 018 004 151.73
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          356 118 379.14
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        12460
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        5224
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 437 270 156.22
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 425 633 764.68
+                    </td>
+                    <td style='width: 15px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        102.17
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 062 573 437.55
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 356 640 881.53
+                    </td>
+                    <td style='width: 15px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        99.26
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-right: 1px solid teal; border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 030 468 304.11
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td style='width: 20px; height: 25px; color: #333399; text-align: left; font-size: 7pt;
+                        font-weight: bold; border-left: 1px solid teal; border-bottom: 1px solid teal;'>
+                        <a href="opOPProfileFinExec.aspx?op=2">OPAC</a>
+                    </td>
+                    <td style='width: 170px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          353 592 720.03
+                    </td>
+                    <td style='width: 130px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          300 553 812.12
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          53 038 907.91
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        2947
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        1450
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          345 084 791.07
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          345 030 924.65
+                    </td>
+                    <td style='width: 15px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        97.58
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          293 276 285.55
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          344 704 730.02
+                    </td>
+                    <td style='width: 15px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        97.49
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-right: 1px solid teal; border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                          312 134 247.66
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td style='width: 20px; height: 25px; color: #333399; text-align: left; font-size: 7pt;
+                        font-weight: bold; border-left: 1px solid teal; border-bottom: 1px solid teal;'>
+                        TOTAL
+                    </td>
+                    <td style='width: 170px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         15 503 608 161.06
+                    </td>
+                    <td style='width: 130px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         13 178 066 937.49
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #333399; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         2 325 541 223.58
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        28217
+                    </td>
+                    <td style='width: 50px; height: 25px; color: green; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal;'>
+                        11798
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         19 485 852 923.57
+                    </td>
+                    <td style='width: 150px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         16 102 715 993.02
+                    </td>
+                    <td style='width: 15px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        103.86
+                    </td>
+                    <td style='width: 110px; height: 25px; color: #993300; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         13 440 538 108.39
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         14 961 935 316.04
+                    </td>
+                    <td style='width: 15px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                        96.51
+                    </td>
+                    <td style='width: 110px; height: 25px; color: Teal; text-align: right; border-left: 1px solid teal;
+                        border-right: 1px solid teal; border-bottom: 1px solid teal; mso-number-format: \#\,\#\#0\.00;'>
+                         12 776 026 847.48
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td colspan="13">
+                        &nbsp;
+                    </td>
+                </tr>
+                </table>
+            
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("ContentPlaceHolder1_ScriptManager1_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();//]]>
+</script>
+</form>
