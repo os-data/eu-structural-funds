@@ -4,6 +4,8 @@ ESF files to download for 2007-2013: http://www.esf-bw.de/esf/fileadmin/user_upl
 
 EFRE file to download for 2007-2013: http://www.rwb-efre.baden-wuerttemberg.de/doks/Verzeichnis%20der%20Beg%C3%BCnstigten%2031%2012%202014_V2.pdf
 
+To Do: Scrape + upload datafiles
+-------
 Funds: ESF
 
 Name: VERZEICHNIS DER BEGÜNSTIGTEN FÜR BADEN-WÜRTTEMBERG, FÖRDERPERIODE 2007 - 2013, STAND 30.04.2014
@@ -36,5 +38,3 @@ Columns: Begünstigte; Name des Begünstigten, Bezeichnung des Vorhabens, Jahr d
 Columns (translated): Name of the beneficiary , name of the operation , the year of endorsement / year of final payment , Amount granted , Disbursed amount in project completion
 
 Time: 2007-2013
-
-To Do: Scrape + upload datafiles
