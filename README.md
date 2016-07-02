@@ -10,7 +10,7 @@ We have previously collect them [here][gdoc]
 
 ## How to contribute?
 
-Per country or region, add the data files in the raw folder (in the country or region directories) and provide a description in a 'yaml directory'. You can copy this yaml example file and just fill it in and save it in the right directory: [README.yaml](http://https://github.com/os-data/eu-structural-funds/blob/master/example.yaml)
+Per country or region, add the data files in the raw folder (in the country or region directories) and provide a description in a 'yaml directory'. You can copy this yaml example file and just fill it in and save it in the right directory: [README.yaml](https://github.com/os-data/eu-structural-funds/blob/master/example.yaml)
 
 ## Technical philosophy
 
