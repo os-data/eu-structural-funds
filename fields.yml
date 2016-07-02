@@ -1,97 +1,110 @@
-# The list fields that we expect from publicly released data
-# for 
+# The list fields that we expect from publicly released data.
+# See Official Journal of the European Union L371/60 Annex III (27/12/2006)
 
 operational_program_code:
   - label: Operational program CCI code 
   - explanation: 
-  - optional: False
+  - required: true
   - codelist: true
 
 priority_number:
   - label: Number of priority
   - explanation: 
-  - optional: False
-  - codelist: true
+  - required: 
+  - codelist: 
 
 fund_name:
   - label: Name of the fund 
   - explanation: 
-  - optional: False
+  - required: true
   - codelist: true
 
 geographid_id:
   - label: Code of the region or area where the operation is located or carried out 
-  - explanation: NU
-  - optional: False
+  - explanation: The NUTS code if possible or another appropriate geographical code
+  - required: true
   - codelist: true
 
 certifying_authority:
-  - label: Operational program CCI code 
+  - label: Certifying Authority
   - explanation: 
-  - optional: False
+  - required: 
   - codelist: 
 
 managing_authority:
-  - label: Operational program CCI code 
+  - label: Managing Authority
   - explanation: 
-  - optional: False
+  - required: 
+  - codelist:
 
 intermediate_authority:
-  - label: Operational program CCI code 
-  - explanation: 
-  - optional: False
+  - label: Intermediate Authority 
+  - explanation: The body that declares expenditure to the certifying authority, if applicable
+  - required: false
+  - codelist: false
 
 operation_id:
-  - label: Operational program CCI code 
+  - label: Unique code number of the operation
   - explanation: 
-  - optional: False
+  - required: true
+  - codelist: false
 
 operation_description:
-  - label: Operational program CCI code 
+  - label: Short description of the operation 
   - explanation: 
-  - optional: False
+  - required: 
+  - codelist: false
 
 starting_date:
-  - label: Operational program CCI code 
+  - label: Sarting date of operation
   - explanation: 
-  - optional: False
+  - required: true
+  - codelist: false
 
 completion_date:
-  - label: Operational program CCI code 
+  - label: Completion date of operation 
   - explanation: 
-  - optional: False
+  - required: true
+  - codelist: false
 
 approval_body:
-  - label: Operational program CCI code 
+  - label: Body issuing the approval decision 
   - explanation: 
-  - optional: False
+  - required: 
+  - codelist:
 
 approval_date:
-  - label: Operational program CCI code 
+  - label: Approvale date of operation 
   - explanation: 
-  - optional: False
+  - required: 
+  - codelist: false
 
 beneficiary_id:
-  - label: Operational program CCI code 
+  - label: Reference of the beneficiary 
   - explanation: 
-  - optional: False
+  - required: true
+  - codelist: false
 
-currency:
-  - label: Operational program CCI code 
-  - explanation: 
-  - optional: False
+currency_code:
+  - label: Currency 
+  - explanation: Currency ISO code
+  - required: true
+  - codelist: false
 
 total_cost:
-  - label: Operational program CCI code 
+  - label: Total cost of operation 
   - explanation: 
-  - optional: False
+  - required: true
+  - codelist: false
 
 total_eligible_expenditure:
-  - label: Operational program CCI code 
+  - label: Total eligible expenditure 
   - explanation: 
-  - optional: False
+  - required: 
+  - codelist: false
 
 eib_financing:
-  - label: Operational program CCI code 
+  - label: EIB financing 
   - explanation: 
-  - optional: False
+  - required: true
+  - codelist: 
