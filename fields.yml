@@ -1,0 +1,97 @@
+# The list fields that we expect from publicly released data
+# for 
+
+operational_program_code:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+  - codelist: true
+
+priority_number:
+  - label: Number of priority
+  - explanation: 
+  - optional: False
+  - codelist: true
+
+fund_name:
+  - label: Name of the fund 
+  - explanation: 
+  - optional: False
+  - codelist: true
+
+geographid_id:
+  - label: Code of the region or area where the operation is located or carried out 
+  - explanation: NU
+  - optional: False
+  - codelist: true
+
+certifying_authority:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+  - codelist: 
+
+managing_authority:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+
+intermediate_authority:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+
+operation_id:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+
+operation_description:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+
+starting_date:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+
+completion_date:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+
+approval_body:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+
+approval_date:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+
+beneficiary_id:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+
+currency:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+
+total_cost:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+
+total_eligible_expenditure:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False
+
+eib_financing:
+  - label: Operational program CCI code 
+  - explanation: 
+  - optional: False

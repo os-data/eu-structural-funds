@@ -6,7 +6,7 @@ Structural and Cohesion Funds are financial tools set up to implement the region
 
 This repository is a data pipeline. It collects information about the beneficiaries of EU Cohesion and Structural Funds and loads  [Open-Spending](http:next.openspending.org) datastore.The goal of the project find out  all benis to get an overview of all these datasets (not just the portals) in one place, clean the data, and map them in one format. 
 
-This project is a collaborative effort between [Open-Knowledge-Germany](https://www.okfn.de/en/), [Open-Knowledge International](http://okfn.org/) and a number of journalists and developers. This repository builds on previous research and collection work that was organised inside a [google spreadsheet](https://docs.google.com/spreadsheets/d/1RkC_YuWWlhGxyDRc-bpD_zaWAXK78GpPr8nfPesQfSY/edit?pref=2&pli=1#gid=0). 
+This project is a collaborative effort between [Open-Knowledge-Germany](https://www.okfn.de/en/), [Open-Knowledge International](http://okfn.org/) and a number of journalists and developers. This repository builds on research and collection work that was previously organised inside a [google spreadsheet](https://docs.google.com/spreadsheets/d/1RkC_YuWWlhGxyDRc-bpD_zaWAXK78GpPr8nfPesQfSY/edit?pref=2&pli=1#gid=0). 
 
 ## Pipeline architeture
 
@@ -14,9 +14,9 @@ This project is a collaborative effort between [Open-Knowledge-Germany](https://
 
 The data pipeline is a fine blend of manual and automated processing. We try to adhere to the following principles:
 
-- Good communication between 
+- Good communication between journalis
 - Automize the pipeline as much as possible but avoid over-engineering automation 
-- Use [Frictionless-Data](http://www.frictionlessdata.io/) standards wherever possible
+- Use [Frictionless-Data](http://www.frictionlessdata.io/) ]s wherever possible
 
 ### What humans do
 
