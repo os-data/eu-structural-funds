@@ -8,8 +8,8 @@ Project page:
 2do:
 
 ========
-Country:
-Region: (if applicable, otherwise  leave empty)
+Country: NUTS 0
+Region: (if applicable, otherwise  leave empty)NUTS 2
 Funds: (which funds are in the file)
   - for example Cohesion
   - ERDF 
