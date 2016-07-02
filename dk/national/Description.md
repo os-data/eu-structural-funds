@@ -38,5 +38,5 @@ Further columns after click: Date, Budget, Subsidies European Regional Developme
 
 Comments: 
 
-- 2007-2013 needs to be scraped from WEB
+- 2007-2013 needs to be scraped from WEB - delivered i an csv-file June 2016
 - 2014-2020 is good 
