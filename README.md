@@ -2,14 +2,36 @@
 
 ## Intro
 
-This is a collecting the datasets for the EU Structural and Cohesion funds from all the different national and regional portals. The goal is to get an overview of all these datasets (not just the portals) in one place, clean the data, and map them in one format ( fdp from os-packager). 
+This is a collecting the datasets for the EU Structural and Cohesion funds from all the different national and regional portals. The goal is to get an overview of all these datasets (not just the portals) in one place, clean the data, and map them in one format. 
 
-
-[List of Cohesion and Structural Funds datasets in google doc][gdoc]
+We have previously collect them [here][gdoc]
 
 [gdoc]: https://docs.google.com/spreadsheets/d/1RkC_YuWWlhGxyDRc-bpD_zaWAXK78GpPr8nfPesQfSY/edit?pref=2&pli=1#gid=0
 
-We started with a simple google sheet (see the spreadsheet here above). But as our search got more extensive, we have now moved to github. Every country has a file which contains a readme, describing the data, and the data files itself.
+## How to contribute?
+
+Per country or region, add the data files in the raw folder (in the country or region directories) and provide a description in a directory.
+
+### Structure of README files:
+* Landing Page
+* Project page
+* Additional Comments:
+* 2do
+
+========
+Country
+Region: (if applicable, otherwise  leave empty
+Funds: 
+  - (which funds are in the file)
+  - 
+Name: the title
+Filename: how is the file called
+Sort file: csv, pdf, web, xls, xml etc.
+Columns: all column names
+Columns Translated:
+Language:
+Time-span:
+
 
 ## Technical philosophy
 
