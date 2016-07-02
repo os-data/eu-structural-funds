@@ -12,26 +12,7 @@ We have previously collect them [here][gdoc]
 
 Per country or region, add the data files in the raw folder (in the country or region directories) and provide a description in a directory.
 
-### Structure of README files:
-* Landing Page
-* Project page
-* Additional Comments:
-* 2do
-
-========
-Country
-Region: (if applicable, otherwise  leave empty
-Funds: 
-  - (which funds are in the file)
-  - 
-Name: the title
-Filename: how is the file called
-Sort file: csv, pdf, web, xls, xml etc.
-Columns: all column names
-Columns Translated:
-Language:
-Time-span:
-
+### Structure of README files: [README.md](http://)
 
 ## Technical philosophy
 
