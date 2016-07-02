@@ -1,5 +1,5 @@
 # The list fields that we expect from publicly released data.
-# See Official Journal of the European Union L371/60 Annex III (27/12/2006)
+# Source: Official Journal of the European Union L371/60 Annex III (27/12/2006)
 
 operational_program_code:
   - label: Operational program CCI code 
