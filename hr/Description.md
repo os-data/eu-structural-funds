@@ -7,7 +7,7 @@ Funds: ESF, ERDF, Fisheries Funds, and Interregional Funds
 
 Name: KartaProjekataZaWeb 1.4.2016.xls
 
-Sort File: XLS testtesttest
+Sort File: XLS
 
 Columns: Naziv projekta,	Fond, Šifra operativnog programa, Operativni program, NUTSII, Županija, Korisnik, Opis projekta, Datum ugovaranja, Zaključni datum provedbe aktivnosti, Bespovratna sredstva, Ukupno prihvatljivi troškovi
 
