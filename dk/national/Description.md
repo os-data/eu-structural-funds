@@ -14,7 +14,8 @@ The following datasets are available:
 
 TO DO:
 Fill in funds 2007-2013,
-fill in translated columns for 2007-2017, clean data
+fill in translated columns for 2007-2017, 
+clean data
 
 ===
 
