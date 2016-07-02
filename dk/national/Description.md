@@ -32,7 +32,7 @@ Language: Danish
 
 Columns: "Projektitel / Operation name";"Startdato / Operation start date";"Slutdato / Operation end date";"Prioritetsakse / Priority axis";"Budget / Budget";"EU-medfinansiering / Union co-financing";"EU-medfinansieringssats / Union co-financing rate";"Projektbeskrivelse";"Fond / Fund";"Region / Region";"Land / Country";"Kontraktansvarlig partner / Beneficiary name";"Vejnavn / Street name";"Postnr / Operation postcode";"Bynavn / City name";"Koordinat east / Coordinates east";"Koordinat north / Coordinates north";"Kontaktperson / Contacts";"Partere / Project partners"
 
-Columns Translated:
+Columns Translated: test test
 
 ---
 
@@ -62,4 +62,4 @@ Columns Translated:
 Comments:
 
 - 2007-2013 is good
-- 2014-2020 is good 
+- 2014-2020 is good
