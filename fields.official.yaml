@@ -1,0 +1,110 @@
+# The list fields that we expect from publicly released data.
+# Source: Official Journal of the European Union L371/60 Annex III (27/12/2006)
+
+operational_program_code:
+  - label: Operational program CCI code 
+  - explanation: 
+  - required: true
+  - codelist: true
+
+priority_number:
+  - label: Number of priority
+  - explanation: 
+  - required: 
+  - codelist: 
+
+fund_name:
+  - label: Name of the fund 
+  - explanation: 
+  - required: true
+  - codelist: true
+
+geographid_id:
+  - label: Code of the region or area where the operation is located or carried out 
+  - explanation: The NUTS code if possible or another appropriate geographical code
+  - required: true
+  - codelist: true
+
+certifying_authority:
+  - label: Certifying Authority
+  - explanation: 
+  - required: 
+  - codelist: 
+
+managing_authority:
+  - label: Managing Authority
+  - explanation: 
+  - required: 
+  - codelist:
+
+intermediate_authority:
+  - label: Intermediate Authority 
+  - explanation: The body that declares expenditure to the certifying authority, if applicable
+  - required: false
+  - codelist: false
+
+operation_id:
+  - label: Unique code number of the operation
+  - explanation: 
+  - required: true
+  - codelist: false
+
+operation_description:
+  - label: Short description of the operation 
+  - explanation: 
+  - required: 
+  - codelist: false
+
+starting_date:
+  - label: Sarting date of operation
+  - explanation: 
+  - required: true
+  - codelist: false
+
+completion_date:
+  - label: Completion date of operation 
+  - explanation: 
+  - required: true
+  - codelist: false
+
+approval_body:
+  - label: Body issuing the approval decision 
+  - explanation: 
+  - required: 
+  - codelist:
+
+approval_date:
+  - label: Approvale date of operation 
+  - explanation: 
+  - required: 
+  - codelist: false
+
+beneficiary_id:
+  - label: Reference of the beneficiary 
+  - explanation: 
+  - required: true
+  - codelist: false
+
+currency_code:
+  - label: Currency 
+  - explanation: Currency ISO code
+  - required: true
+  - codelist: false
+
+total_cost:
+  - label: Total cost of operation 
+  - explanation: 
+  - required: true
+  - codelist: false
+
+total_eligible_expenditure:
+  - label: Total eligible expenditure 
+  - explanation: 
+  - required: 
+  - codelist: false
+
+eib_financing:
+  - label: EIB financing 
+  - explanation: 
+  - required: true
+  - codelist: 
