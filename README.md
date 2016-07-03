@@ -10,15 +10,15 @@ This project is a collaborative effort between [Open-Knowledge Germany](https://
 
 ##  What's in here?
 
-The repository contains the following files and folders:
+The repository contains the following:
 
-- `data/`: all the raw data goes in there (see the guidelines).
-- `ressources/`: project documentation and ancillary data
-- `fields.yaml`: the list of fields we expect in the raw data
+- `data/`: all the data goes in here (see the [guidelines](guidelines.md)).
+- `resources/`: project documentation and ancillary data
+- `fields.official.yaml`: the list of fields we expect in the raw data
 - `geocodes.nuts.yaml`: the nomenclature for naming countries and regions
 - `datapackage.template.raw.json`: the template for raw datasets
 - `datapackage.template.fiscal.json`: the template for fiscal datasets
-- `codelist.meta.yaml`: describes *category* fields (where the choice is limited)
+- `codelist.yaml`: describes *category* fields (where the choice is limited)
 
 ## The pipeline
 
