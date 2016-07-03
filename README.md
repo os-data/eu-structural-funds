@@ -25,7 +25,7 @@ The repository contains the following:
 
 We believe that data pipelining is a fine blend of manual and automated processing. We believe in the almighty power of [Frictionless-Data](http://www.frictionlessdata.io/) to glue the two together. We believe over-engineering is a sin, albeit a really enjoyable one (*note to self*).  
 
-## Overview
+## Pipeline
 
 ![Pipeline](resources/images/pipeline_v2.png "Overview of the pipeline")
 
