@@ -21,13 +21,11 @@ The repository contains the following:
 - `datapackage.template.fiscal.json`: the template for fiscal datasets
 - `codelist.yaml`: describes *category* fields common to all datasets
 
-## Pipeline
-
-### Philosophy
+## Philosophy
 
 We believe that data pipelining is a fine blend of manual and automated processing. We believe in the almighty power of [Frictionless-Data](http://www.frictionlessdata.io/) to glue the two together. We believe over-engineering is a sin, albeit a really enjoyable one (*note to self*).  
 
-### Overview
+## Overview
 
 ![Pipeline](resources/images/pipeline_v2.png "Overview of the pipeline")
 
