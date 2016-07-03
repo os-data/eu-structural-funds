@@ -21,9 +21,13 @@ The repository contains the following:
 - `datapackage.template.fiscal.json`: the template for fiscal datasets
 - `codelist.yaml`: describes *category* fields common to all datasets
 
-## Overview of the pipeline
+## Pipeline
+
+### Philosophy
 
 We believe that data pipelining is a fine blend of manual and automated processing. We believe in the almighty power of [Frictionless-Data](http://www.frictionlessdata.io/) to glue the two together. We believe over-engineering is a sin, albeit a really enjoyable one (*note to self*).  
+
+### Overview
 
 ![Pipeline](resources/images/pipeline_v2.png "Overview of the pipeline")
 
@@ -43,7 +47,7 @@ There are many ways to contribute, depending on your skills. You can:
 - Describe, translate and clean-up datasets
 - Write python spiders to scrape datasets
 - Write python ETL scripts to automize processes
-- Find bugs in the scripts or the data and raise [issues](https://github.com/os-data/eu-structural-funds/issues)
+- Raise [issues](https://github.com/os-data/eu-structural-funds/issues) about bugs in the code or the data
 
 Please adhere to the following workflow (*note to self*):
 
