@@ -1,42 +1,52 @@
 # EU Cohesion and Structural Funds 
 
-## Overview
+## Introduction
 
-Structural and Cohesion Funds are financial tools set up to implement the regional policy of the European Union. They aim to reduce regional disparities in income, wealth and opportunities. The overal budget for the 2007-2013 period was €347 billion [wikipedia](https://en.wikipedia.org/wiki/Structural_Funds_and_Cohesion_Fund).
+Structural and Cohesion Funds are financial tools set up to implement the regional policy of the European Union. They aim to reduce regional disparities in income, wealth and opportunities. The overal budget for the 2007-2013 period was __€347 billion__ [according to wikipedia](https://en.wikipedia.org/wiki/Structural_Funds_and_Cohesion_Fund).
 
-This repository is a data pipeline. It collects information about the beneficiaries of EU Cohesion and Structural Funds and loads  [Open-Spending](http:next.openspending.org) datastore.The goal of the project find out  all benis to get an overview of all these datasets (not just the portals) in one place, clean the data, and map them in one format. 
+This repository is a __data pipeline__. It channels information about the beneficiaries of the funds into the [Open-Spending](http:next.openspending.org) datastore. The goal is to provide a __unified dataset that is easy to visualize and query__, so that citizens and journalists can follow the money on a local and global scale. 
 
-This project is a collaborative effort between [Open-Knowledge-Germany](https://www.okfn.de/en/), [Open-Knowledge International](http://okfn.org/) and a number of journalists and developers. This repository builds on research and collection work that was previously organised inside a [google spreadsheet](https://docs.google.com/spreadsheets/d/1RkC_YuWWlhGxyDRc-bpD_zaWAXK78GpPr8nfPesQfSY/edit?pref=2&pli=1#gid=0). 
+This project is a collaborative effort between [Open-Knowledge Germany](https://www.okfn.de/en/), [Open-Knowledge International](http://okfn.org/) and a number of journalists and developers. This repository builds on research and sourcing work that was previously organised inside a [google spreadsheet](https://docs.google.com/spreadsheets/d/1RkC_YuWWlhGxyDRc-bpD_zaWAXK78GpPr8nfPesQfSY/edit?pref=2&pli=1#gid=0). 
 
-## Pipeline architeture
+##  What's in here?
 
-### Philosophy
+The repository contains the following:
 
-The data pipeline is a fine blend of manual and automated processing. We try to adhere to the following principles:
+- `data/`: all the data goes in here
+- `resources/`: project documentation and ancillary data
+- `fields.official.yaml`: the list of fields we expect in the raw data
+- `geocodes.nuts.yaml`: the nomenclature for naming countries and regions
+- `datapackage.template.raw.json`: the template for raw datasets
+- `datapackage.template.fiscal.json`: the template for fiscal datasets
+- `codelist.yaml`: describes *category* fields common to all datasets
 
-- Good communication between journalis
-- Automize the pipeline as much as possible but avoid over-engineering automation 
-- Use [Frictionless-Data](http://www.frictionlessdata.io/) ]s wherever possible
+## Philosophy
 
-### What humans do
+We believe that data pipelining is a fine blend of manual and automated processing. We believe in the almighty power of [Frictionless-Data](http://www.frictionlessdata.io/) to glue the two together. We believe over-engineering is a sin, albeit a really enjoyable one (*note to self*). 
 
-- Colect 
+## How do I contribute?
 
-### What the machines do
-__ETL__ means Extact-Tranform-Load:
+Before you decide what to do, please:
 
-- Extract is extracting raw data from the web. 
-- Transforming is cleaning and organising.
-- Load is uploading into openspending
+- Check out [data pipeline](https://github.com/os-data/eu-structural-funds/wiki)
+- Read the [ contribution guidelines](https://github.com/os-data/eu-structural-funds/wiki/Contribution-guidelines)
+- Register on [Slack](https://followthesubsidies.slack.com)
+- Check-out the list of [issues](https://github.com/os-data/eu-structural-funds/issues)
 
-The 
+There are many ways to contribute, depending on your skills. You can:
 
-## How to contribute?
+- Source, document and download datasets
+- Send FOAI requests for missing datasets
+- Describe, translate and clean-up datasets
+- Write python spiders to scrape datasets
+- Write python ETL scripts to automize processes
+- Raise [issues](https://github.com/os-data/eu-structural-funds/issues) about bugs in the code or the data
 
-There is still Per country or region, add the data files in the raw folder (in the country or region directories) and provide a description in a 'yaml directory'. You can copy this yaml example file and just fill it in and save it in the right directory: [README.yaml](https://github.com/os-data/eu-structural-funds/blob/master/example.yaml)
+Please adhere to the following workflow (*note to self*):
 
+- Fork the repository
+- Create a new branch
+- Make your contribution
+- Send a pull request. 
 
-
-
-
-
+Thanks!
