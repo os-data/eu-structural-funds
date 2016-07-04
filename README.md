@@ -14,7 +14,6 @@ The repository contains the following:
 
 - `data/`: all the data goes in here
 - `resources/`: project documentation and ancillary data
-- `code/`: all the code goes in here
 - `fields.official.yaml`: the list of fields we expect in the raw data
 - `geocodes.nuts.yaml`: the nomenclature for naming countries and regions
 - `datapackage.template.raw.json`: the template for raw datasets
@@ -23,19 +22,15 @@ The repository contains the following:
 
 ## Philosophy
 
-We believe that data pipelining is a fine blend of manual and automated processing. We believe in the almighty power of [Frictionless-Data](http://www.frictionlessdata.io/) to glue the two together. We believe over-engineering is a sin, albeit a really enjoyable one (*note to self*).  
-
-## Pipeline
-
-![Pipeline](resources/images/pipeline_v2.png "Overview of the pipeline")
+We believe that data pipelining is a fine blend of manual and automated processing. We believe in the almighty power of [Frictionless-Data](http://www.frictionlessdata.io/) to glue the two together. We believe over-engineering is a sin, albeit a really enjoyable one (*note to self*). 
 
 ## How do I contribute?
 
 Before you decide what to do, please:
 
-- Read the [guidelines](guidelines.md)
-- Catch up with the [wiki](https:github.com/os-data/eu-structural-funds.wiki)
-- Register on the [Slack channel](https://followthesubsidies.slack.com)
+- Check out [data pipeline](https://github.com/os-data/eu-structural-funds/wiki) for an overvew of the data pipeline
+- Read the [ contribution guidelines](https://github.com/os-data/eu-structural-funds/wiki/Contribution-guidelines)
+- Register on [Slack](https://followthesubsidies.slack.com)
 - Check-out the list of [issues](https://github.com/os-data/eu-structural-funds/issues)
 
 There are many ways to contribute, depending on your skills. You can:
