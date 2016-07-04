@@ -28,7 +28,7 @@ We believe that data pipelining is a fine blend of manual and automated processi
 
 Before you decide what to do, please:
 
-- Check out [data pipeline](https://github.com/os-data/eu-structural-funds/wiki) for an overvew of the data pipeline
+- Check out [data pipeline](https://github.com/os-data/eu-structural-funds/wiki)
 - Read the [ contribution guidelines](https://github.com/os-data/eu-structural-funds/wiki/Contribution-guidelines)
 - Register on [Slack](https://followthesubsidies.slack.com)
 - Check-out the list of [issues](https://github.com/os-data/eu-structural-funds/issues)
