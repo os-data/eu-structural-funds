@@ -1,0 +1,113 @@
+# The list fields (columns) that we upload to Open-Spending. All the source
+# data must end up in this format. Note that some fields are not required.
+# This list is adapted from the Official Journal of the European Union L371/60
+# Annex III (27/12/2006)
+
+fields:
+    - name: operational_program_code
+      title: Operational program CCI code
+      description:
+      required: true
+      codelist: true
+
+    - name: priority_number
+      title: Number of priority
+      description:
+      required:
+      codelist: true
+
+    - name: fund_name
+      title: Name of the fund
+      description:
+      required: true
+      codelist: true
+
+    - name: geographid_id:
+      title: Code of the region or area where the operation is carried out
+      description:
+      required: true
+      codelist: true
+
+    - name: certifying_authority
+      title: Certifying Authority
+      description:
+      required:
+      codelist:
+
+    - name: managing_authority
+      title: Managing Authority
+      description:
+      required:
+      codelist:
+
+    - name: intermediate_authority
+      title: Intermediate Authority
+      description: The body that declares expenditure to the certifying authority, if applicable
+      required: false
+      codelist: false
+
+    - name: operation_id
+      title: Unique code number of the operation
+      description:
+      required: true
+      codelist: false
+
+    - name: operation_description
+      title: Short description of the operation
+      description:
+      required:
+      codelist: false
+
+    - name: starting_date
+      title: Sarting date of operation
+      description:
+      required: true
+      codelist: false
+
+    - name: completion_date
+      title: Completion date of operation
+      description:
+      required: true
+      codelist: false
+
+    - name: approval_body
+      title: Body issuing the approval decision
+      description:
+      required:
+      codelist:
+
+    - name: approval_date
+      title: Approvale date of operation
+      description:
+      required:
+      codelist: false
+
+    - name: beneficiary_id
+      title: Reference of the beneficiary
+      description:
+      required: true
+      codelist: false
+
+    - name: currency_code
+      title: Currency
+      description: Currency ISO code
+      required: true
+      codelist: true
+
+    - name: total_cost
+      title: Total cost of operation
+      description:
+      required: true
+      codelist: false
+
+    - name: total_eligible_expenditure
+      title: Total eligible expenditure
+      description:
+      required:
+      codelist: false
+
+    - name: european_investment_financing
+      title: European Investment Bank financing
+      description:
+      required: true
+      codelist:
