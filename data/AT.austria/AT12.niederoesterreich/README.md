@@ -1,4 +1,4 @@
-The ERFRE Niederösterreich dataset from 2007-2013 is here:
+The ERDF Niederösterreich dataset from 2007-2013 is here:
 
 * http://www.raumordnung-noe.at/fileadmin/root_raumordnung/land/eu_regionalpolitik/RWB_Niederoesterreich.pdf
 
