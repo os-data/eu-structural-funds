@@ -1,0 +1,34 @@
+# Describe the source that you found.
+# -----------------------------------
+#
+# A data source can have one or more data-files. Please make sure that each
+# of these files has a corresponding "filename.source.schema.yaml" descriptor.
+#
+# The "description" property is the place to put your notes. Warnings, remarks
+# and limitations about the data are especially important to communicate.
+#
+# The property "sources" is meant as documention. Add as many as you want.
+# The image will be used to illustrate the data source on the website. Check
+# its license. Put yourself down as a contributor (email and website are not
+# obligatory). You can use a nickname.
+
+
+title: A human readable title for your source
+
+description: This can be a long paragraph but must be written on one line to respect the YAML format.
+
+sources:
+  - name: Goverment's open data portal name
+    web: http://data.country.gov/path/to/the/landing/page.html
+
+  - name: The name of an additional page providing background information
+    web: http://data.country.gov/path/to/another/important/page.html
+
+  - name: The link to a document explaining something relevant
+    web: http://data.country.gov/path/to/a/third/relevant/page.html
+
+image: http://country.website.gov/a/cool/illustration_for_the_website.png
+
+contributors:
+  - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
+  - Mickey Mouse <mickey.mouse@disney.com> (http://www.disney.com)

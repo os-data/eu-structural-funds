@@ -1,0 +1,39 @@
+EUR:
+    - country: Euro area
+    - name: euro
+
+GBP:
+    - country: United Kingdom
+    - name: pound sterling
+
+PLN:
+    - country: Poland
+    - name: zloty
+
+BGN:
+    - country: Bulgaria
+    - name: lev
+
+HRK:
+    - country: Croatia
+    - name: kuna
+
+RON: 
+    - country: Romania
+    - name: leu
+
+CZK:
+    - country: Czech Republic 
+    - name: koruna
+
+HUF:
+    - country: Hungary
+    - name: forint
+
+SEK:
+    - country: Sweden 
+    - name: krona
+
+DKK:
+    - country: Denmark 
+    - name: krone                     
