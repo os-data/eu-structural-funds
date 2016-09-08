@@ -1,13 +1,15 @@
 # Describe the source that you found.
 # -----------------------------------
 #
-# A data source can have one or more data-files. Please make sure that each
-# of these files has a corresponding "filename.source.schema.yaml" descriptor.
+# A data source can have one or more data-files, called "resources". Please
+# make sure that each of these reources files is described below in the
+# "resources section.
 #
 # The "description" property is the place to put your notes. Warnings, remarks
 # and limitations about the data are especially important to communicate.
 #
 # The property "sources" is meant as documention. Add as many as you want.
+#
 # The image will be used to illustrate the data source on the website. Check
 # its license. Put yourself down as a contributor (email and website are not
 # obligatory). You can use a nickname.
@@ -15,7 +17,7 @@
 
 title: A human readable title for your source
 
-description: This can be a long paragraph but must be written on one line to respect the YAML format.
+description: This can be a long paragraph but must be written on one line to respect the YAML format. Use soft wraps in your editor if needed.
 
 sources:
   - name: Goverment's open data portal name
