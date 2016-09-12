@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/os-data/eu-structural-funds.png?label=ready&title=Ready)](https://waffle.io/os-data/eu-structural-funds)
 # EU Cohesion and Structural Funds 
 
 ## Introduction
