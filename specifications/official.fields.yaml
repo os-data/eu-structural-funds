@@ -9,83 +9,160 @@ fields:
       description:
       required: true
       codelist: true
+#CCI codes are used at the level of EU to uniquely define prorgams, priorities, funds, and regions they are assigned to
+#not in description files
 
     - name: priority_number
       title: Number of priority
       description:
       required:
       codelist: true
-
+# priority number: priorities are defined in the partnership agreements
+#not in description files
     - name: fund_name
       title: Name of the fund
       description:
       required: true
       codelist: true
+# Name of the Fund/Programme
+#In description
 
     - name: geographid_id:
       title: Code of the region or area where the operation is carried out
       description:
       required: true
       codelist: true
+#NUTS
+#in metadata
 
     - name: certifying_authority
       title: Certifying Authority
       description:
-      required:
-      codelist:
+      required: #not for the first modelling, but for the second yes
+      codelist: true
+#certifying_authority are the bodies at regional/national level that certify the right implementation of the programs, list exist
+#not in description files, metadata, per region or national level
 
     - name: managing_authority
       title: Managing Authority
       description:
-      required:
-      codelist:
-
+      required: true
+      codelist: true
+#manages the funds on country/regional/local level, responsible for the overall execution per fund
+#not in description files, metadata, per region or national level
     - name: intermediate_authority
       title: Intermediate Authority
       description: The body that declares expenditure to the certifying authority, if applicable
       required: false
       codelist: false
-
-    - name: operation_id
-      title: Unique code number of the operation
-      description:
-      required: true
-      codelist: false
-
-    - name: operation_description
-      title: Short description of the operation
-      description:
-      required:
-      codelist: false
-
-    - name: starting_date
-      title: Sarting date of operation
-      description:
-      required: true
-      codelist: false
-
-    - name: completion_date
-      title: Completion date of operation
-      description:
-      required: true
-      codelist: false
+# look up?
+#not in description files, metadata, per region or national level
 
     - name: approval_body
       title: Body issuing the approval decision
       description:
       required:
       codelist:
+#is this the same as certifying authority?
+
+    - name: operation_id
+      title: Unique code number of the operation
+      description:
+      required: false
+      codelist: false
+#number of the project
+
+    - name: operation_name
+      title: Name of the operation
+      description:
+      required: true
+      codelist: false
+#name of the project
+#row names
+
+    - name: operation_description_short
+      title: Short description of the operation
+      description:
+      required: false
+      codelist: false
+#summary of project
+
+    - name: operation_description_long
+      title: Short description of the operation
+      description:
+      required:
+      codelist: false
+#summary of project long
+
+    - name: starting_date
+      title: Starting date of operation
+      description:
+      required: true
+      codelist: false
+#starting date of the project
+
+    - name: completion_date
+      title: Completion date of operation
+      description:
+      required: false
+      codelist: false
+#projects are not always yet complete
 
     - name: approval_date
       title: Approvale date of operation
       description:
-      required:
+      required: false
       codelist: false
+#not always available
 
     - name: beneficiary_id
-      title: Reference of the beneficiary
+      title: ID of the beneficiary
+      description:
+      required: false
+      codelist: false
+#number for recipient
+
+    - name: beneficiary_name
+      title: Name of the beneficiary
       description:
       required: true
+      codelist: false
+#Name of recipient and executer of the project(!)
+
+    - name: beneficiary_address_line_one
+      title: Address of the beneficiary
+      description:
+      required: false
+      codelist: false
+
+    - name: beneficiary_address_line_two
+      title: Address two of the beneficiary
+      description:
+      required: false
+      codelist: false
+
+    - name: beneficiary_website
+      title: Website of the beneficiary
+      description:
+      required: false
+      codelist: false
+
+    - name: subcontractor_one
+      title: subcontractor_one
+      description:
+      required: false
+      codelist: false
+
+    - name: subcontractor_two
+      title: subcontractor_two
+      description:
+      required: false
+      codelist: false
+
+    - name: subcontractor_thre
+      title: subcontractor_three
+      description:
+      required: false
       codelist: false
 
     - name: currency_code
