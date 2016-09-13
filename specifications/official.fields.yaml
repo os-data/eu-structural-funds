@@ -186,24 +186,6 @@ fields:
       codelist: false
 #name of co-recipient
 
-    - name: total_amount_requested
-      title: Amount Requested for the project
-      description: The total amount that is requested for the project
-      required: true
-      codelist: false
-
-    - name: total_amount_requested
-      title: Amount Requested for the project
-      description: The total amount that is requested for the action
-      required: true
-      codelist: false
-
-    - name: currency_code
-      title: Currency
-      description: Currency ISO code
-      required: true
-      codelist: true
-
     - name: total_cost
       title: Total cost of operation
       description:
@@ -216,8 +198,62 @@ fields:
       required: true
       codelist: false
 
+    - name: date_payment
+      title: Date Payment
+      description: date total payment was made
+      required: false
+      codelist: false
+
+    - name: date_first_payment
+      title: Date First Payment
+      description: date first payment was made (pre-financing)
+      required: false
+      codelist: false
+
+    - name: date_final_payment
+      title: Date Final Payment
+      description: date final payment was made
+      required: false
+      codelist: false
+
+    - name: amount_eu_funding_in_euro
+      title: Amount EU funding in Euro
+      description: Amount that is awarded from EU funds in Euro
+      required: false
+      codelist: false
+
+    - name: amount_nat_regio_funding_absolute
+      title: Amount National/Regional Funding in Euro
+      description: Amount that is awarded from national funds in Euro
+      required: false
+      codelist: false
+
+    - name: third_party_funding
+      title: Third Party Funding
+      description: The total amount that is additional to the action over third party funding
+      required: false
+      codelist: false
+
+    - name: co_finance_rate_eu
+      title: co-finance rate EU
+      description: The percentage of co-finance from the EU
+      required: false
+      codelist: false
+
+    - name: percentage_finance_ms
+      title: Percentage financed by the Member State
+      description: The percentage of the total amount that is financed by the regional/national level
+      required: false
+      codelist: false
+
+    - name: currency_code
+      title: Currency
+      description: Currency ISO code
+      required: true
+      codelist: true
+
     - name: european_investment_financing
       title: European Investment Bank financing
       description:
-      required: true
-      codelist:
+      required: false
+      codelist: false
