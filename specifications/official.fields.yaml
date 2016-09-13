@@ -7,62 +7,78 @@ fields:
     - name: operational_program_code
       title: Operational program CCI code
       description:
-      required: true
+      required: false
       codelist: true
 #CCI codes are used at the level of EU to uniquely define prorgams, priorities, funds, and regions they are assigned to
-#not in description files
 
     - name: priority_number
       title: Number of priority
       description:
-      required:
+      required: false
       codelist: true
 # priority number: priorities are defined in the partnership agreements
-#not in description files
+
     - name: fund_name
       title: Name of the fund
       description:
       required: true
       codelist: true
 # Name of the Fund/Programme
-#In description
 
-    - name: geographid_id:
+    - name: geographid_id
       title: Code of the region or area where the operation is carried out
+      description: NUTS code
+      required: true
+      codelist: true
+#NUTS, in metadata
+
+    - name: funding_period
+      title: Funding Period
       description:
       required: true
       codelist: true
-#NUTS
-#in metadata
+#Time the funding program is running
+
+    - name: file_period
+      title: Period the file is reporting on
+      description:
+      required: false
+      codelist: true
+#Period the file is reporting on, eg. only 2015 for a 2014-2020 file etc.
+
+    - name: publication_date_file
+      title: Publication Date of the dataset
+      description:
+      required: true
+      codelist: true
+#Time of publication of the projects file
 
     - name: certifying_authority
       title: Certifying Authority
       description:
-      required: #not for the first modelling, but for the second yes
+      required: false
       codelist: true
 #certifying_authority are the bodies at regional/national level that certify the right implementation of the programs, list exist
-#not in description files, metadata, per region or national level
 
     - name: managing_authority
       title: Managing Authority
       description:
-      required: true
+      required: false
       codelist: true
 #manages the funds on country/regional/local level, responsible for the overall execution per fund
-#not in description files, metadata, per region or national level
+
     - name: intermediate_authority
       title: Intermediate Authority
       description: The body that declares expenditure to the certifying authority, if applicable
       required: false
       codelist: false
-# look up?
-#not in description files, metadata, per region or national level
+# look up? not in description files, metadata, per region or national level
 
     - name: approval_body
       title: Body issuing the approval decision
       description:
-      required:
-      codelist:
+      required: false
+      codelist: true
 #is this the same as certifying authority?
 
     - name: operation_id
@@ -78,7 +94,6 @@ fields:
       required: true
       codelist: false
 #name of the project
-#row names
 
     - name: operation_description_short
       title: Short description of the operation
@@ -92,7 +107,7 @@ fields:
       description:
       required:
       codelist: false
-#summary of project long
+#description of project long
 
     - name: starting_date
       title: Starting date of operation
@@ -134,35 +149,53 @@ fields:
       description:
       required: false
       codelist: false
+#Address line of beneficiary, if available
 
     - name: beneficiary_address_line_two
       title: Address two of the beneficiary
       description:
       required: false
       codelist: false
+#Address line of beneficiary two, if available
 
     - name: beneficiary_website
       title: Website of the beneficiary
       description:
       required: false
       codelist: false
+#Url Website
 
     - name: subcontractor_one
       title: subcontractor_one
       description:
       required: false
       codelist: false
+#name of co-recipient
 
     - name: subcontractor_two
       title: subcontractor_two
       description:
       required: false
       codelist: false
+#name of co-recipient
 
-    - name: subcontractor_thre
+    - name: subcontractor_three
       title: subcontractor_three
       description:
       required: false
+      codelist: false
+#name of co-recipient
+
+    - name: total_amount_requested
+      title: Amount Requested for the project
+      description: The total amount that is requested for the project
+      required: true
+      codelist: false
+
+    - name: total_amount_requested
+      title: Amount Requested for the project
+      description: The total amount that is requested for the action
+      required: true
       codelist: false
 
     - name: currency_code
@@ -180,7 +213,7 @@ fields:
     - name: total_eligible_expenditure
       title: Total eligible expenditure
       description:
-      required:
+      required: true
       codelist: false
 
     - name: european_investment_financing
