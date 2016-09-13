@@ -91,7 +91,7 @@ resources:
     pdf_scraper: false
     web_scraper: false
 
-  comstants:
+  constants:
     currency: a 3-digit currency code, like EUR
     certifying_authority: the authority certifying authority
     # We need a complete list of possible constants here
