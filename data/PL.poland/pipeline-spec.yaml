@@ -1,0 +1,10 @@
+PL.poland:
+
+  schedule:
+    crontab: '0 * * * *'
+
+  pipeline:
+    - run: validate_tabular_remote_source
+    - run: dump
+      parameters:
+          out-file: extracted.data

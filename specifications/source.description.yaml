@@ -81,6 +81,9 @@ resources:
   publication_date: "yyyy-mm-dd"
   publication_version: a description of this file version
 
+  funds:
+  years:
+
   periods:
     2007-2013: true
     2014-2020: false
