@@ -1,7 +1,7 @@
 # Describe the source that you found:
 # ----------------------------------
 #
-# title: ESIF dataset for Croatia 2007-today
+# title: a short description of your data source.
 #
 # description: the place to put your notes, warnings, remarks and limitations
 #              about the data are especially important to communicate.
@@ -20,7 +20,7 @@
 #
 # Good luck!
 
-title: A human readable title for your source
+title: ESIF data Croatia 2007-today
 
 description: This can be a long paragraph but must be written on one line to respect the YAML format. Use soft wraps in your editor if needed.
 
@@ -93,7 +93,8 @@ resources:
 
   constants:
     currency: a 3-digit currency code, like EUR
-    certifying_authority: the authority certifying authority
+    certifying_authority: 
+    
     # We need a complete list of possible constants here
 
   schema:
