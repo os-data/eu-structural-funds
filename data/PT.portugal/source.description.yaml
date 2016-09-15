@@ -1,0 +1,105 @@
+# Describe the source that you found:
+# ----------------------------------
+#
+# title: a short description of your data source.
+#
+# description: the place to put your notes, warnings, remarks and limitations
+#              about the data are especially important to communicate.
+#
+# sources: only meant as *documention*. Add as many as you want. The urls to
+#          the actual data-files are in the "resources" section.
+#
+# image: used to illustrate the data source on the website. Check its license.
+#
+# contributors: Put yourself down(email and website are not obligatory).
+#               Follow the simple formatting convention.
+#
+# resources: a single source can have one or more data-files, called
+#            "resources". Why? Because there may be regular data updates or
+#            the data may be broken down by funds for example.
+#
+# Good luck!
+
+title: Portugal Funds
+
+description: All portuguese funds from 2013 until 31 July 2016
+
+sources:
+  - name: Portugal 2020
+    web:  https://www.portugal2020.pt/Portal2020/OperacoesAprovadas
+  - name: Compete - Programa Operacional Factores de Competitividade
+    web:  http://www.pofc.qren.pt/Projectos/Projectos-Aprovados-QREN?area=2&regiao=105&Search=y
+
+image: 
+
+contributors:
+  - Rui Barros <ruimgbarros@gmail.com> (http://ruimgbarros.com)
+
+resources:
+
+  # Describe each data-file:
+  # ------------------------
+  #
+  # title: a short description of the data file
+  #
+  # url: the link to the file if possible. If the data needs to be scraped,
+  #      leave this property blank and set the "extraction_mode" to
+  #      "web_scraper".
+  #
+  # path: leave blank if there's a url link to the data-file. If there's no
+  #       link to the file but you can download it by clicking through
+  #       a user-interface, then do so and then specify its path here.
+  #       The path is the *relative path* (starting from this file). So if you
+  #       put the data-file in the same folder, it's just the filename.
+  #
+  # publication_date: the date that the data was published
+  #
+  # publication_version: should clearly distinguish this data-file from others.
+  #
+  # periods: the "official" fiscal periods that the data-file covers.
+  #
+  # extraction_mode: set one of the options to "true" and the rest to "false"
+  #
+  # constants: Some of the fields we're trying to collect may be constant. Take
+  #            the currency for example: it may not be mentioned in the data
+  #            because it's common to all rows. Identify as many constants as
+  #            you can.
+  #
+  # fields: the columns in the data table. Describe them as best you can.
+  #
+  # Good luck!
+
+  title: Portugal 2020 - Approved Projects
+  url: https://www.portugal2020.pt/Portal2020/Media/Default/Docs/Operacoes%20Aprovadas/Lista%20Operacoes%2031.07.2016.xls
+  path: https://www.portugal2020.pt/Portal2020/OperacoesAprovadas
+
+  publication_date: "2016-31-07"
+  publication_version: all approved projects untill 2016-31-07
+
+  periods:
+    2007-2013: false
+    2014-2020: true
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+
+  constants:
+    currency: EUR
+
+  schema:
+    fields:
+      - name: Código da Operação | Operation Code
+        translation: Operation Code
+        type: "string"
+        missingValue:
+        description: 
+
+      - name: Programa Operacional | Operational Programme
+        translation: Operational Programme
+        type: "string"
+  #WORK IN PROGRESS
+        missingValue:
+        description: 
