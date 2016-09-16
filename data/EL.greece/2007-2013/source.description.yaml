@@ -95,8 +95,8 @@ resources:
 
   schema:
     fields:
-      - name: trexousaKatastash
-        translation: current status
+      - name: title
+        translation: Title
         type: "string"
         missingValue: ""
         description: current status of the project number-coded and stored as a string
