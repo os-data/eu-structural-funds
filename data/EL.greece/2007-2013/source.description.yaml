@@ -99,73 +99,69 @@ resources:
         translation: Title
         type: "string"
         missingValue: ""
-        description: current status of the project number-coded and stored as a string
-
-      - name: title
-        translation: title
-        type: "string"
-        missingValue: ""
-        description: title of the project
-        
+        description: Title of the project
+      
       - name: body
-        translation: body
+        translation: Body
         type: "string"
         missingValue: ""
-        description: agency that implements the project
+        description: Agency implementing the project
       
       - name: budget
-        translation: budget
+        translation: Budget
         type: "number"
         missingValue: ""
-        description: 
+        description:
         
-      - name: contracts
-        translation: contracts
-        type: "number"
-        missingValue: ""
-        description: 
-      
       - name: payments
-        translation: payments
+        translation: Payments
         type: "number"
         missingValue: ""
-        description: number stored as a string
+        description: Amount paid
         
-      - name: perifereia
-        translation: region
-        type: "string"
+      - name: completion
+        translation: Completion
+        type: "number"
         missingValue: ""
-        description: number stored as a string
+        description: % of completion of the project
         
       - name: startDate
-        translation: start date
-        type: "date"
+        translation: Start Date
+        type: "string"
         missingValue: ""
         description:
         
       - name: endDate
-        translation: end date
-        type: "date"
-        missingValue: ""
-        description:
-        
-      - name: countIpoergon
-        translation: subprojects number
+        translation: End Date
         type: "number"
         missingValue: ""
-        description:
+        description: 
         
-      - name: epKodikos
-        translation: operational programme code
+      - name: description
+        translation: Description
+        type: "string"
+        missingValue: ""
+        description: 
+        
+      - name: statusReportDate
+        translation: Status Report Date
         type: "string"
         missingValue: ""
         description:
         
-      - name: kodikos
-        translation: Monitoring Information System (MIS) code
-        type: "number"
+      - name: statusReport
+        translation: Status Report
+        type: "string"
         missingValue: ""
         description:
+        
+      - name: subprojects
+        translation: Subprojects
+        type: "string"
+        missingValue: ""
+        description:
+
+
         
   title: Searchable database 
   url: http://anaptyxi.gov.gr/Analytika2.aspx?mod=1&~
