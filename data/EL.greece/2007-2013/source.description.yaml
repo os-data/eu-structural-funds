@@ -157,8 +157,146 @@ resources:
         
       - name: subprojects
         translation: Subprojects
+        type: 
+        missingValue:
+        description:
+      
+      - name: index
+        translation: Index
+        type: "number"
+        missingValue: ""
+        description:
+        
+      - name: title
+        translation: Title
         type: "string"
         missingValue: ""
+        description:
+        
+      - name: implementors
+        translation: Implementors
+        type: "string"
+        missingValue: ""
+        description:
+      
+      - name: budget
+        translation: Budget
+        type: "number"
+        missingValue: ""
+        description:
+        
+      - name: startDate
+        translation: Start Date
+        type: "string"
+        missingValue: ""
+        description:
+      
+      - name: endDate
+        translation: End Date
+        type: "string"
+        missingValue: ""
+        description:
+        
+      - name: estimatedStatus
+        translation: Estimated Status
+        type: 
+        missingValue: 
+        description:
+        
+      - name: submissionDate
+        translation: Submission Date
+        type: "string"
+        missingValue: ""
+        description:
+      
+      - name: entranceDate
+        translation: Entrance Date
+        type: "string"
+        missingValue: ""
+        description:
+        
+      - name: auctionApproveDate
+        translation: Auction Approve Date
+        type: "string"
+        missingValue: ""
+        description:
+        
+      - name: auctionDate
+        translation: Auction Date
+        type: "string"
+        missingValue: ""
+        description:
+        
+      - name: contractApproveDate
+        translation: Contract Approve Date
+        type: "string"
+        missingValue: ""
+        description:
+        
+      - name: contractDate
+        translation: Contract Date
+        type: "string"
+        missingValue: ""
+        description:
+        
+      - name: completionDate
+        translation: Completion Date
+        type: "string"
+        missingValue: ""
+        description:
+        
+      - name: foreis
+        translation: Bodies
+        type: 
+        missingValue: ""
+        description: Agencies implementing the subprojects
+      
+      - name: bodyCategory
+        translation: Body Category
+        type: "string"
+        missingValue: ""
+        description:
+        
+      - name: name
+        translation: Name
+        type: "string"
+        missingValue: ""
+        description:
+      
+      - name: representative
+        translation: Representative
+        type: "string"
+        missingValue: ""
+        description:
+        
+      - name: address
+        translation: Address
+        type: "string"
+        missingValue: ""
+        description:
+        
+      - name: telephone
+        translation: Telephone
+        type: "string"
+        missingValue: ""
+        description:
+        
+      - name: email
+        translation: Email
+        type: "string"
+        missingValue: ""
+        description:
+        
+      - name: fax
+        translation: Fax
+        type: "string"
+        missingValue: ""
+        description:
+      
+      - name: files
+        translation: Files
+        type:
+        missingValue:
         description:
 
 
