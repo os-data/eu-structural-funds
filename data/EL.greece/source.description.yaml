@@ -20,21 +20,19 @@
 #
 # Good luck!
 
-title: A human readable title for your source
+title: European Regional Development Fund (ERDF), European Social Fund (ESF) and Cohesion Funds for Greece
 
-description: This can be a long paragraph but must be written on one line to respect the YAML format. Use soft wraps in your editor if needed.
+description: Information about the projects to which Greece has allocated the funds it has received from the EU during the period 2007-2013.
 
 sources:
-  - name: Goverment's open data portal name
-    web:  http://data.portal.gov/path/to/index.html
+  - name: Anaptyxi
+    web:  http://anaptyxi.gov.gr/Default.aspx?tabid=251&language=en-US
 
-  - name: The name of an additional page providing background information
-    web: http://data.portal.gov/path/to/another/important/page.html
+  - name: National Strategicg Reference Framework (NSFR 2007-2013)
+    web: https://2007-2013.espa.gr/en/Pages/Default.aspx
 
-  - name: The link to a document explaining something relevant
-    web: http://data.portal.gov/path/to/a/third/relevant/page.html
 
-image: http://data.portal.gov/a/cool/illustration_for_the_website.png
+image: 
 
 contributors:
   - Olaya Argueso <arguesoperezolaya@gmail.com>
@@ -73,12 +71,12 @@ resources:
   #
   # Good luck!
 
-  title: A human readable title for you data file
-  url: http://data.country.gov/path/to/data_file.xlsx
-  path: data_filename.ext
+  title: REST API 
+  url: http://anaptyxi.gov.gr/Default.aspx?tabid=251&language=en-US
+  path: 
 
-  publication_date: "yyyy-mm-dd"
-  publication_version: a description of this file version
+  publication_date: 
+  publication_version: full dataset
 
   periods:
     2007-2013: true
@@ -86,25 +84,139 @@ resources:
 
   extraction_mode:
     user_interface: false
-    download_link: true
+    download_link: false
     pdf_scraper: false
-    web_scraper: false
+    web_scraper: true
 
   constants:
-    currency: a 3-digit currency code, like EUR
-    certifying_authority: the authority certifying authority
+    currency:
+    certifying_authority:
     # We need a complete list of possible constants here
 
   schema:
     fields:
-      - name: copy/paste the original column name without changing it
-        translation: the english translation of the column name
-        type: can be "string", "number", "date", "period"
-        missingValue: how missing values are represented (e.g. "" or NaN)
-        description: anything important, for example how to  the field
+      - name: trexousaKatastash
+        translation: current status
+        type: "string"
+        missingValue: ""
+        description: current status of the project number-coded and stored as a string
 
-      - name: copy/paste the original column name without changing it
-        translation: the english translation of the column name
-        type: can be "string", "number", "date", "period"
-        missingValue: how missing values are represented (e.g. "" or NaN)
-        description: anything important, for example how to  the field
+      - name: title
+        translation: title
+        type: "string"
+        missingValue: ""
+        description: title of the project
+        
+      - name: body
+        translation: body
+        type: "string"
+        missingValue: ""
+        description: agency that implements the project
+      
+      - name: budget
+        translation: budget
+        type: "number"
+        missingValue: ""
+        description: 
+        
+      - name: contracts
+        translation: contracts
+        type: "number"
+        missingValue: ""
+        description: 
+      
+      - name: payments
+        translation: payments
+        type: "number"
+        missingValue: ""
+        description: number stored as a string
+        
+      - name: perifereia
+        translation: region
+        type: "string"
+        missingValue: ""
+        description: number stored as a string
+        
+      - name: startDate
+        translation: start date
+        type: "date"
+        missingValue: ""
+        description:
+        
+      - name: endDate
+        translation: end date
+        type: "date"
+        missingValue: ""
+        description:
+        
+      - name: countIpoergon
+        translation: subprojects number
+        type: "number"
+        missingValue: ""
+        description:
+        
+      - name: epKodikos
+        translation: operational programme code
+        type: "string"
+        missingValue: ""
+        description:
+        
+      - name: kodikos
+        translation: Monitoring Information System (MIS) code
+        type: "number"
+        missingValue: ""
+        description:
+        
+  title: Searchable database 
+  url: http://anaptyxi.gov.gr/Analytika2.aspx?mod=1&~
+  path: 
+
+  publication_date: 
+  publication_version: minimal dataset
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: true
+    download_link: false
+    pdf_scraper: false
+    web_scraper: false
+
+  constants:
+    currency: EUR
+    certifying_authority:
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Title
+        translation: title
+        type: "string"
+        missingValue: 
+        description: title of the project
+        
+      - name: Body
+        translation: body
+        type: "string"
+        missingValue: 
+        description: agency that implements the project
+      
+      - name: Budget
+        translation: budget
+        type: "number"
+        missingValue: 
+        description: 
+        
+      - name: Contracts
+        translation: contracts
+        type: "number"
+        missingValue: 
+        description: 
+        
+      - name: Payment
+        translation: payment
+        type: "number"
+        missingValue: 
+        description: 
