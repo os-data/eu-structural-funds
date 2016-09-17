@@ -155,151 +155,125 @@ resources:
         missingValue: ""
         description:
         
-      - name: subprojects
-        translation: Subprojects
-        type: "list"
-        missingValue:
-        description:
-      
       - name: index
         translation: Index
         type: "number"
         missingValue: ""
-        description:
+        description: Subprojects' index
         
       - name: title
         translation: Title
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' title
         
       - name: implementors
         translation: Implementors
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' implementors
       
       - name: budget
         translation: Budget
         type: "number"
         missingValue: ""
-        description:
+        description: Subprojects' budget
         
       - name: startDate
         translation: Start Date
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' start date
       
       - name: endDate
         translation: End Date
         type: "string"
         missingValue: ""
-        description:
-        
-      - name: estimatedStatus
-        translation: Estimated Status
-        type: "list"
-        missingValue: 
-        description:
+        description: Subprojects' end date
         
       - name: submissionDate
         translation: Submission Date
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' estimated status submission date
       
       - name: entranceDate
         translation: Entrance Date
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' estimated status entrance date
         
       - name: auctionApproveDate
         translation: Auction Approve Date
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' estimated status auction approve date
         
       - name: auctionDate
         translation: Auction Date
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' estimated status auction date
         
       - name: contractApproveDate
         translation: Contract Approve Date
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' estimated status contract approve date
         
       - name: contractDate
         translation: Contract Date
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' estimated status contract date
         
       - name: completionDate
         translation: Completion Date
         type: "string"
         missingValue: ""
-        description:
-        
-      - name: foreis
-        translation: Bodies
-        type: "list"
-        missingValue: 
-        description: Agencies implementing the subprojects
+        description: Subprojects' estimated status completion date
       
       - name: bodyCategory
         translation: Body Category
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' agencies body category
         
       - name: name
         translation: Name
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' agencies name
       
       - name: representative
         translation: Representative
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' agencies representative
         
       - name: address
         translation: Address
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' agencies address
         
       - name: telephone
         translation: Telephone
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' agencies telephone
         
       - name: email
         translation: Email
         type: "string"
         missingValue: ""
-        description:
+        description: Subprojects' agencies email
         
       - name: fax
         translation: Fax
         type: "string"
         missingValue: ""
         description:
-      
-      - name: files
-        translation: Files
-        type: "list"
-        missingValue:
-        description:
-
-
         
   title: Searchable database 
   url: http://anaptyxi.gov.gr/Analytika2.aspx?mod=1&~
