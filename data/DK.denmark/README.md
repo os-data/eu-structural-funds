@@ -9,7 +9,7 @@ http://eustrukturfonde.dk/ (map view / browse by year for 2007-today)
 
 The following datasets are available:
 
-2014-2020 https://regionalt.erhvervsstyrelsen.dk/eu-projekt-eksport.csv (updated continuisly - last retrieved june 2016)
+2014-2020 https://regionalt.erhvervsstyrelsen.dk/eu-projekt-eksport.csv (updated continuisly - last retrieved september 2016)
 2007-2013 http://eustrukturfonde.dk/forside/0/17/0/[l][l]alle[l]alle[l]alle[l]alle[l][l]
 
 TO DO:
