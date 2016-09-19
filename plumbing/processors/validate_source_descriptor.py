@@ -12,7 +12,7 @@ now = str(datetime.now())
 
 
 def validate_schema():
-    """Validate a data-package generated from a description file."""
+    """Validate a data-package schema generated from a description file."""
 
     params, _, _ = ingest()
 
