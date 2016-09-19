@@ -1,0 +1,4 @@
+DK.denmark:
+  pipeline:
+  - {run: validate_source_descriptor}
+  schedule: {cronjob: null}

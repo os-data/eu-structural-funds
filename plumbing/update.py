@@ -1,12 +1,14 @@
 """This module detects what has been sourced and bootstraps the pipeline."""
 
 from json import dumps, loads
-from logging import debug, info, basicConfig, INFO, DEBUG
-from os.path import join, split, isfile
-from datapackage.exceptions import ValidationError
+from logging import debug, basicConfig, DEBUG
 from os import walk
+from os.path import join, split, isfile
+
+from datapackage.exceptions import ValidationError
 from slugify import slugify
 from yaml import load, dump
+from yaml.parser import ParserError
 
 from plumbing.config import (
     PIPELINE_TEMPLATE,
@@ -15,7 +17,6 @@ from plumbing.config import (
     ROOT_DIR,
     GEOCODE_COLUMN)
 
-
 basicConfig(level=DEBUG, format='EU-Subsidies: %(message)s')
 
 
@@ -23,10 +24,14 @@ def create_datapackage(source_description_file):
     """Create a datapackage from the description.source.yaml file."""
 
     with open(source_description_file) as yaml:
-        package = load(yaml.read())
-
-    package['name'] = slugify(package['title'], separator='_')
-    package['extraction_processors'] = select_processors(package)
+        try:
+            package = load(yaml.read())
+            package['name'] = slugify(package['title'], separator='_')
+            package['extraction_processors'] = select_processors(package)
+        except ParserError as error:
+            message = str(error).replace('\n', ' ')
+            package = {'yaml_parser_error': message}
+            debug('Parser error in %s: %s', source_description_file, message)
 
     datapackage_file = source_description_file.replace('yaml', 'json')
     with open(datapackage_file, 'w+') as json:
@@ -40,19 +45,24 @@ def bootstrap_pipeline(source_folder):
     """Save a pipeline file in the source folder."""
 
     _, source_name = split(source_folder)
-    descriptor = load_source_datapackage()
+    descriptor = load_source_datapackage(source_folder)
 
     with open(PIPELINE_TEMPLATE) as yaml:
         pipeline_template = load(yaml.read())
 
     pipeline = {source_name: pipeline_template}
-    processors = select_processors(descriptor)
-    save_processor_placeholders(processors)
+    if 'yaml_parser_error' not in descriptor:
+        processors = select_processors(descriptor)
+        save_processor_placeholders(processors)
 
-    with open(PIPELINE_SPECS, 'w+') as yaml:
+    save_pipeline_specs(pipeline, source_folder)
+
+
+def save_pipeline_specs(pipeline, source_folder):
+    file = join(source_folder, PIPELINE_SPECS)
+    with open(file, 'w+') as yaml:
         yaml.write(dump(pipeline))
-
-    debug('Saved %s for %s', PIPELINE_SPECS, source_name)
+    debug('Created %s', file)
 
 
 def select_processors(package):
@@ -86,10 +96,11 @@ def save_processor_placeholders(processors):
                 script.write('\n# Help wanted!')
 
 
-def load_source_datapackage():
+def load_source_datapackage(source_folder):
     """Return the contents of the local datapackage file."""
 
-    with open(DATAPACKAGE_FILE) as json:
+    datapackage_file = join(source_folder, DATAPACKAGE_FILE)
+    with open(datapackage_file) as json:
         return loads(json.read())
 
 
@@ -134,13 +145,12 @@ def bootstrap_all_pipelines():
     """Create a pipeline wherever a description file is found."""
 
     for source_folder in collect_source_folders():
-        description_file = join(source_folder, 'description.source.yaml')
+        description_file = join(source_folder, 'source.description.yaml')
         if isfile(description_file):
             debug('Updating the %s pipeline', split(source_folder)[-1])
             package = create_datapackage(description_file)
             bootstrap_pipeline(source_folder)
             save_processor_placeholders(package)
-            info('Pipeline ')
 
 
 if __name__ == '__main__':
