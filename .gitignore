@@ -1,8 +1,6 @@
 logs/
 .idea/
 .ipynb_checkpoints/
-
 .DS_Store
-# ignore data-files
 source.data.*
-`
+.~lock.*
