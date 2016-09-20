@@ -9,16 +9,16 @@ Needs scraping.
 
 There also is this web-interface: http://www.phasing-out.at/de/geodatenbank
 
-Ziel/Bundesland - Programme	Strukturfondsmittel
-Finanzrahmen
-(in €)
+
+**Overview of the various programs / funding:** 
+
 Ziel Konvergenz (Phasing Out): 177.166.964 
 davon:	
 Burgenland EFRE	125.026.964
 Burgenland ESF	52.140.000
 
 
-Regionale Wettbewerbsfähigkeit und Beschäftigung:	1.027.311.617
+Regionale Wettbewerbsfähigkeit und Beschäftigung: 1.027.311.617
 davon: 
 ESF (nationales Programm): 472.272.560
 EFRE: 555.039.057
