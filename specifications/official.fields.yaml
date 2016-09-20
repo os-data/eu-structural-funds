@@ -144,19 +144,12 @@ fields:
       codelist: false
 #Name of recipient and executer of the project(!)
 
-    - name: beneficiary_address_line_one
+    - name: beneficiary_address
       title: Address of the beneficiary
       description:
       required: false
       codelist: false
 #Address line of beneficiary, if available
-
-    - name: beneficiary_address_line_two
-      title: Address two of the beneficiary
-      description:
-      required: false
-      codelist: false
-#Address line of beneficiary two, if available
 
     - name: beneficiary_website
       title: Website of the beneficiary
@@ -165,29 +158,22 @@ fields:
       codelist: false
 #Url Website
 
-    - name: subcontractor_one
+    - name: birthdays of the extended families of beneficiary
       title: subcontractor_one
       description:
       required: false
       codelist: false
-#name of co-recipient
+#names of subcontractors
 
-    - name: subcontractor_two
-      title: subcontractor_two
+    - name: list_of_subcontractor
+      title: subcontractor_one
       description:
       required: false
       codelist: false
-#name of co-recipient
+#names of subcontractors
 
-    - name: subcontractor_three
-      title: subcontractor_three
-      description:
-      required: false
-      codelist: false
-#name of co-recipient
-
-    - name: total_cost
-      title: Total cost of operation
+    - name: total_amount_applied_for
+      title: Total cost of operation applied for
       description:
       required: true
       codelist: false
