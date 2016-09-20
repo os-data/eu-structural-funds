@@ -9,8 +9,6 @@
 # sources: only meant as *documention*. Add as many as you want. The urls to
 #          the actual data-files are in the "resources" section.
 #
-# image: used to illustrate the data source on the website. Check its license.
-#
 # contributors: Put yourself down(email and website are not obligatory).
 #               Follow the simple formatting convention.
 #
@@ -34,8 +32,6 @@ sources:
   - name: The link to a document explaining something relevant
     web: http://data.portal.gov/path/to/a/third/relevant/page.html
 
-image: http://data.portal.gov/a/cool/illustration_for_the_website.png
-
 contributors:
   - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
   - Mickey Mouse <mickey.mouse@disney.com> (http://www.disney.com)
@@ -57,20 +53,18 @@ resources:
   #       The path is the *relative path* (starting from this file). So if you
   #       put the data-file in the same folder, it's just the filename.
   #
+  # start_date: the data starts on this date
+  # stop_date:  the data stops on this date
+  #
   # publication_date: the date that the data was published
+  # publication_version: if you have multiple files, use this field to
+  #                      distinguish them
   #
-  # publication_version: should clearly distinguish this data-file from others.
+  # extraction_mode: set one of the options to true and the rest to false
+  # scraper_mode: if a scraper is required, set one of the options to true
   #
-  # periods: the "official" fiscal periods that the data-file covers.
-  #
-  # extraction_mode: set one of the options to "true" and the rest to "false"
-  #
-  # constants: Some of the fields we're trying to collect may be constant. Take
-  #            the currency for example: it may not be mentioned in the data
-  #            because it's common to all rows. Identify as many constants as
-  #            you can.
-  #
-  # fields: the columns in the data table. Describe them as best you can.
+  # schema:
+  #   fields: the columns in the data table.
   #
   # Good luck!
 
@@ -79,12 +73,10 @@ resources:
   path: data_filename.ext
 
   publication_date: yyyy-mm-dd
-  expiry_date: yyyy-mm-dd
+  publication_version: if you have multiple files, use this field
 
-  update_interval: yearly
-
-  funds:
-  years:
+  start_data: yyyy-mm-dd
+  stop_date: yyyy-mm-dd
 
   periods:
     2007-2013: true
@@ -93,25 +85,11 @@ resources:
   extraction_mode:
     user_interface: false
     download_link: true
+
+  scraper_mode:
     pdf_scraper: false
     web_scraper: false
-    rest_api: false
-
-  constants:
-    currency: a 3-digit currency code, like EUR
-    certifying_authority: the authority certifying authority
-    # We need a complete list of possible constants here
+    api_scraper: false
 
   schema:
     fields:
-      - name: copy/paste the original column name without changing it
-        translation: the english translation of the column name
-        type: can be "string", "number", "date", "period"
-        missingValue: how missing values are represented (e.g. "" or NaN)
-        description: anything important, for example how to  the field
-
-      - name: copy/paste the original column name without changing it
-        translation: the english translation of the column name
-        type: can be "string", "number", "date", "period"
-        missingValue: how missing values are represented (e.g. "" or NaN)
-        description: anything important, for example how to  the field
