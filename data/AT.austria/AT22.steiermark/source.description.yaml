@@ -1,9 +1,9 @@
-title: ERDF data for Niederösterreich (AT) 2007-2013
+title: ERDF data for Steiermark (AT) 2007-2013
 
-description: Niederösterreich is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called "Stärkung der Regionalen Wettbewerbsfähigkeit und Beschäftigung Niederösterreich 2007-2013". The dataset at hand describes the funding distributed through said program.
+description: Steiermark is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called "Stärkung der Regionalen Wettbewerbsfähigkeit und Beschäftigung Steiermark 2007-2013". The dataset at hand describes the funding distributed through said program.
 
-sources: Amt der NÖ Landesregierung - Raumordnung und Regionalpolitik 
-    web:  http://www.raumordnung-noe.at/index.php?id=67
+sources: innovation-steiermark.at
+    web:  http://www.innovation-steiermark.at/de/projekte/verzeichnis/projektliste.php
 
   - name: Bundeskanzleramt Österreich
     web: https://www.bka.gv.at/site/6093/default.aspx
@@ -18,14 +18,15 @@ contributors:
 
 resources:
 
-  title: ERDF data Niederösterreich (AT) (2007-2013)
-  url: http://www.raumordnung-noe.at/fileadmin/root_raumordnung/land/eu_regionalpolitik/RWB_Niederoesterreich.pdf
+
+  title: ERDF data Steiermark (AT) (2007-2013)
+  url: http://www.innovation-steiermark.at/de/projekte/verzeichnis/Beguenstigte_25.08.15_R57.pdf
   path: 
 
-  publication_date: "2016-07-13"
+  publication_date: "2015-08-25"
   publication_version: 
   start_date: "2007-01-01"
-  end_date: "2016-07-10"
+  end_date: "2015-08-25"
 
   periods:
     2007-2013: true
@@ -39,7 +40,7 @@ resources:
 
   constants:
     currency: EUR
-    certifying_authority: Amt der NÖ Landesregierung - Raumordnung und Regionalpolitik 
+    certifying_authority: 
 
     # We need a complete list of possible constants here
 
