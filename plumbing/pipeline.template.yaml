@@ -1,5 +1,0 @@
-schedule:
-  cronjob:
-
-pipeline:
-  - run: validate_source_descriptor
