@@ -1,0 +1,102 @@
+# Describe the source that you found:
+# ----------------------------------
+#
+# title: a short description of your data source.
+#
+# description: the place to put your notes, warnings, remarks and limitations
+#              about the data are especially important to communicate.
+#
+# sources: only meant as *documention*. Add as many as you want. The urls to
+#          the actual data-files are in the "resources" section.
+#
+# image: used to illustrate the data source on the website. Check its license.
+#
+# contributors: Put yourself down(email and website are not obligatory).
+#               Follow the simple formatting convention.
+#
+# resources: a single source can have one or more data-files, called
+#            "resources". Why? Because there may be regular data updates or
+#            the data may be broken down by funds for example.
+#
+# Good luck!
+
+title: ERDF data for Kaernten (AT) 2007-2013
+
+description: Kaernten is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called "Stärkung der Regionalen Wettbewerbsfähigkeit und Beschäftigung Kaernten 2007-2013". The dataset at hand describes the funding distributed through said program.
+
+sources: Kärntner Wirtschaftsförderungs Fonds  
+    web:  http://kwf.at/?inhalt=Gefoerderte_Projekte_2007-2013&id=6-1-5-0
+
+  - name: Bundeskanzleramt Österreich
+    web: https://www.bka.gv.at/site/6093/default.aspx
+
+  - name: Österreichische Raumordnungskonferenz / Austrian Conference on Spatial Planning
+    web: http://www.oerok.gv.at/eu-regionalpolitik/eu-strukturfonds-in-oesterreich-2007-2013.html
+
+image: 
+
+contributors:
+  - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
+
+resources:
+
+  # Describe each data-file:
+  # ------------------------
+  #
+  # title: a short description of the data file
+  #
+  # url: the link to the file if possible. If the data needs to be scraped,
+  #      leave this property blank and set the "extraction_mode" to
+  #      "web_scraper".
+  #
+  # path: leave blank if there's a url link to the data-file. If there's no
+title: ERDF data Kaernten (AT) (2007-2013)
+  url: http://kwf.at/downloads/deutsch/EU/Publizitaet_Kaernten.pdf
+  path: 
+
+  publication_date: "2015-04-20"
+  publication_version: 
+  start_date: "2007-01-01"
+  end_date: "2015-04-20"
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+
+  constants:
+    currency: EUR
+    certifying_authority: 
+
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Begünstigte/r
+        translation: Beneficiary
+        type: string
+        missingValue: 
+        description: 
+
+     - name: Bezeichnung des Vorhabens
+        translation: name of the operation
+        type: string
+        missingValue: 
+        description: 
+
+      - name: öffentliche Beteiligung (EU+nationale Kofinanzierung)*
+        translation: allocated pulic funding (EU+national cofinancing)* (in Euro)
+        type: number
+        missingValue: 
+        description: 
+
+      - name: Status G = genehmigt, A = ausbezahlt
+        translation: G = commited, A = paid out
+        type: string
+        missingValue: 
+        description: 
