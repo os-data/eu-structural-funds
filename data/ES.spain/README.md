@@ -1,3 +1,7 @@
+
+Funds: ESF
+Time: 2007-2013
+
 The landing page for the ESF Spanish dataset is http://www.empleo.gob.es/uafse/es/beneficiarios/index.html.
 
 Here we found several dataset containing ESF data from 2007 until 2013 divided by regions.
@@ -80,16 +84,13 @@ Sort: PDF
 
 Name: Adaptabilidad y Empleo
 File: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES05UPO001_PO_FSE_ADAPTABILIDAD_EMPLEO.pdf
+Sort: PDF
 
+Name: Asistencia Técnica y Cooperación Transnacional e Interregional 
+File: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES05UPO003_PO_FSE_ASISTENCIA_TECNICA.pdf
+Sort: PDF
 
-Funds: ESF
+Columns: Beneficiario, Tipo de Operación, Gasto Público
 
-Name: 
+Columns (translated): Beneficiaries, Type of Operation, Public Spending
 
-Sort File: XLS
-
-Columns: Naziv projekta, Fond, Šifra operativnog programa, Operativni program, NUTSII, Županija, Korisnik, Opis projekta, Datum ugovaranja, Zaključni datum provedbe aktivnosti, Bespovratna sredstva, Ukupno prihvatljivi troškovi
-
-Columns (translated): Project Name, Fund, Code OP, The NUTSII, District, User, Project description, Date of contract, closing date, implementation of activities, Grants, total eligible costs
-
-Time: 2007-Current
