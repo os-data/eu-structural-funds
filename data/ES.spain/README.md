@@ -4,7 +4,7 @@ Time: 2007-2013
 
 The landing page for the ESF Spanish dataset is http://www.empleo.gob.es/uafse/es/beneficiarios/index.html.
 
-Here we found several dataset containing ESF data from 2007 until 2013 divided by regions.
+Here we found several dataset containing ESF data based on BENEFICIARIES, divided by regions.
 
 Name: Andalucía. 
 File: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES051PO005_PO_FSE_ANDALUCIA.pdf
