@@ -1,10 +1,16 @@
 """This script bootstraps the pipeline.
 
+    Context
+    -------
+
     Contributors describe the data sources by filling up a pseudo-datapackage
     file named source.description.yaml and dropping it into the national or
     regional source folder. This (simplified) YAML format is chosen over the
     JSON datapackage format because its syntax is easier for non-technical
     people.
+
+    Bootstrap process
+    -----------------
 
     The module recursively walks through the data directory and for each folder
     that matches a valid NUTS geocode:
@@ -14,8 +20,10 @@
         3) creates a pipeline file with the appropriate processors
         4) adds placeholder for the processors
 
-    Usage:
-        python3 bootstrap.py
+    Usage
+    -----
+
+    This script supports python3 only: python3 bootstrap.py
 
 """
 
