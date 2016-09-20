@@ -1,4 +1,3 @@
 DK.denmark:
-  pipeline:
-  - {run: validate_source_descriptor}
-  schedule: {cronjob: null}
+  pipeline: {params: datapackage.json, run: validate_datapackage}
+  schedule: {crontab: null}
