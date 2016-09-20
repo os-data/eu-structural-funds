@@ -1,43 +1,41 @@
-The landing page for the 2014-2020 Lithuania dataset is http://www.esinvesticijos.lt/en/. 
+The landing page is http://www.opencoesione.gov.it/. Cohesion data in Italy is collected and made available by the government project Open Coesione. 
 
-The landing page for the 2007-2013 Lithuania dataset is http://www.esparama.lt/titulinis
 
-The 2014-2020 projects can be viewed via:
-http://www.esinvesticijos.lt/lt/val_regionu_proj_aprasai?page=1
+All projects 2007-2013: http://www.opencoesione.gov.it/opendata/progetti_FS0713.zip	
+All payments 2007-2013: http://www.opencoesione.gov.it/opendata/pagamenti_FS0713.zip	
+Localizations: http://www.opencoesione.gov.it/opendata/localizzazioni_FS0713.zip	
+Subjects: http://www.opencoesione.gov.it/opendata/soggetti_FS0713.zip	
+Metadata: http://www.opencoesione.gov.it/opendata/Metadati_attuazione.xls
 
-The 2007-2013 projects can be viewed via: 
-http://www.esparama.lt/igyvendinami-projektai
+From the website: 
+'The data are published in the form in which they are transmitted by the Administrations that manage the funds, adding some variables (identified in the dataset with the oc_ code) that facilitate readability and consistency of information, including classification using 13 synthetic themes. Check the connection file (xls, 1.4 MB) with EU priorities and with the classification CUP.'
 
----
+This connection file is available here:
+http://opencoesione.gov.it/opendata/raccordo_temi_sintetici.xls
 
-There is one dataset containing all Lithuanian EU Subsidies from 2014-present in one XLS file that can be retrieved via: http://www.esinvesticijos.lt/lt/paraiskos_ir_projektai/xlsexport
+From the website: 
+'From 31 December 2014 some variables have changed name. Here the utility files (xls, 35.0 KB) for the connection between the old and the new names for each of the modified dataset (Projects, Animal and Locations).'
 
-Funds: UNCLEAR
+The utility files can be found here: 
+http://opencoesione.gov.it/opendata/Utility%20Metadati%20OC.xls
 
-Name: Paraiškų informacija_20160616.xls
+More information is also available here: 
+http://www.programmazioneeconomica.gov.it/2014/09/14/open-data/
 
-Sort File: XLS
 
-Columns: Projektas Kodas, Pareiškėjas/ Vykdytojas, Paraiškos būsena, Projekto vertė paraiškoje, Prašomas finansavima, Projekto išlaidų suma, Finansavimas, Išmokėta finansavimo suma, Sutarties pasirašymo data
+Data is made available in CSV (coma separated values) format. Some data may be compressed to make download easier. Setting for CSV data is: charter type Unicode (UTF-8), language “Italian” (Italy).
 
-Columns (translated): Project Code Applicant / Artist application status value of the project application sought funding for the project expenditure 
+ABOUT INFORMATION
+Projects (“Progetti”) – Projects in OpenCoesione refer to initiatives funded within cohesion policies and defined with a single act (e.g. a contract, a call etc.). Each project has been assigned an Unique Project ID code (i.e. Codice Unico di Progetto,CUP).
 
-Funding disbursed funding amount of the contract signing date
+Subjects (“Soggetti”) – It’s either a public or private subject (a public authority, a non-profit institution, an individual or an business) which has a role related to one or more projects. Roles managed are:
 
-Time: 2014-Current
+Programming Authority (Programmatore), the decision-maker(s) on the project financing. Usually it is a central or local government authority.
+Recipients (“Attuatore”), i.e. those who are in charge for the execute the project. For European structural funds these relate to the “beneficiary” according to Council Regulation (EC) No 1083/2006, who is also the recipient of the financial contribution. The recipient may cooperate with other subjects to execution of the project but in such case the monitoring system may not always track them.
+Time – Start and end dates, both planned and actual ones. Information about times may sometime not be available even if the project has been completed.
 
----
+Categories (“Temi sintetici”) – they are based on a grouping of the EU Priority themes (according to Council Regulation (EC) No 1083/2006): Research and Innovation, Competitiveness, Digital Agenda, Energy and energy efficiency, Environment and risk prevention, Occupation and workers mobility, Urban and Rural Regeneration, Natural, Cultural and Tourist Attraction, Transport and Infrastructure Networks, Child and Elderly People Care, Social inclusion, Education and Training, Public Administration Capacity Building.
 
-There is one dataset containing all Lithuanian EU Subsidies from 2007-2013 in one XLS file that can be retrieved via: http://www.esparama.lt/igyvendinami-projektai
+Maps – Each project is located at the national, regional, county, or municipality level. Regional maps show all the projects located either at a regional or lower level. County maps show all the projects located at a county or lower level. Projects located at a national level are not indicated on any map. Projects located in multiple places are shown in all the different levels where they are present. Maps also show the number of projects located at each level and the corresponding amount of resources established (total public sector funding and actual expenses).
 
-Funds: UNCLEAR
-
-Name: contracts.xls
-
-Sort File: XLS
-
-Columns: Paraiškos kodas, Pareiškėjas	Projekto pavadinimas, Bendra projekto vertė, Eur	Projektui skirtas finansavimas, Eur	Projektui skirto finansavimo ES dalis, Eur Projektui išmokėta lėšų, Eur	Projektui išmokėta lėšų ES dalis, Eur	Projekto būsena
-
-Columns (translated): Application code Applicant Project Title Total cost of the project, for project funding, for the projects for EU funding for part of the euro project disbursed funds for project funds disbursed part of the EU, EUR Project Status
-
-Time: 2007-2013
+For more information, go to the [FAQ](http://opencoesione.gov.it/faq/en/).
