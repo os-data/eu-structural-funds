@@ -1,6 +1,6 @@
 The landing page is http://www.opencoesione.gov.it/. Cohesion data in Italy is collected and made available by the government project Open Coesione. 
 
-
+**ATTENTION: data will exceed 1GB per file when unzipped!** 
 All projects 2007-2013: http://www.opencoesione.gov.it/opendata/progetti_FS0713.zip	
 All payments 2007-2013: http://www.opencoesione.gov.it/opendata/pagamenti_FS0713.zip	
 Localizations: http://www.opencoesione.gov.it/opendata/localizzazioni_FS0713.zip	
