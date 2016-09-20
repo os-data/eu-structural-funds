@@ -1,0 +1,416 @@
+# Describe the source that you found:
+# ----------------------------------
+#
+# title: a short description of your data source.
+#
+# description: the place to put your notes, warnings, remarks and limitations
+#              about the data are especially important to communicate.
+#
+# sources: only meant as *documention*. Add as many as you want. The urls to
+#          the actual data-files are in the "resources" section.
+#
+# image: used to illustrate the data source on the website. Check its license.
+#
+# contributors: Put yourself down(email and website are not obligatory).
+#               Follow the simple formatting convention.
+#
+# resources: a single source can have one or more data-files, called
+#            "resources". Why? Because there may be regular data updates or
+#            the data may be broken down by funds for example.
+#
+# Good luck!
+
+title: Austria's national ESF data 
+
+description: Austrian ESF data is published nationally and spread across several files. There are several operational programmes in Austria that are funded from different funds (partially ERDF / partially ESF for instance). 
+
+sources:
+  - name: Europäischer Sozialfonds in Österreich
+    web:  http://www.esf.at/esf/service/dokumente-2007-2013/
+
+  - name: Bundeskanzleramt Österreich
+    web: https://www.bka.gv.at/site/6093/default.aspx
+
+  - name: Österreichische Raumordnungskonferenz / Austrian Conference on Spatial Planning
+    web: http://www.oerok.gv.at/eu-regionalpolitik/eu-strukturfonds-in-oesterreich-2007-2013.html
+
+image: http://data.portal.gov/a/cool/illustration_for_the_website.png
+
+contributors:
+  - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
+
+resources:
+
+  # Describe each data-file:
+  # ------------------------
+  #
+  # title: a short description of the data file
+  #
+  # url: the link to the file if possible. If the data needs to be scraped,
+  #      leave this property blank and set the "extraction_mode" to
+  #      "web_scraper".
+  #
+  # path: leave blank if there's a url link to the data-file. If there's no
+  #       link to the file but you can download it by clicking through
+  #       a user-interface, then do so and then specify its path here.
+  #       The path is the *relative path* (starting from this file). So if you
+  #       put the data-file in the same folder, it's just the filename.
+  #
+  # publication_date: the date that the data was published
+  #
+  # publication_version: should clearly distinguish this data-file from others.
+  #
+  # periods: the "official" fiscal periods that the data-file covers.
+  #
+  # extraction_mode: set one of the options to "true" and the rest to "false"
+  #
+  # constants: Some of the fields we're trying to collect may be constant. Take
+  #            the currency for example: it may not be mentioned in the data
+  #            because it's common to all rows. Identify as many constants as
+  #            you can.
+  #
+  # fields: the columns in the data table. Describe them as best you can.
+  #
+  # Good luck!
+
+  title: ESF data Austria (2007-2013) Part 1 (published 2008)
+  url: http://www.esf.at/esf/wp-content/uploads/ESF-List-of-Beneficiaries-Austria-2007-2008.pdf
+  path: 
+
+  publication_date: "2008-12-31"
+  publication_version: part 1/7
+  start_date: "2007-01-01"
+  end_date: "2008-12-31"
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Bundesministerium für Arbeit, Soziales und Konsumentenschutz
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Begünstigte/r
+        translation: Beneficiary
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Bezeichnung des Vorhabens
+        translation: Name of the operation
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Öffentliche Beteiligung (EU- und nationale
+Finanzierung) (Bemessungsgrundlage für EU-Kofinanzierung)
+        translation: Allocated public funding (EU- and national cofinancing) (Basis for EU-co-financing)
+        type: number
+        missingValue: 
+        description: 
+
+
+------------------------------------------------------------------------
+
+
+  title: ESF data Austria (2007-2013) Part 2 (published 2009)
+  url: http://www.esf.at/esf/wp-content/uploads/2011/02/List-of-Beneficiaries_2009.pdf
+  path: 
+
+  publication_date: "2009-12-31"
+  publication_version: part 2/7
+  start_date: "2008-01-01"
+  end_date: "2008-12-31"
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Bundesministerium für Arbeit, Soziales und Konsumentenschutz
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Begünstigte/r
+        translation: Beneficiary
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Bezeichnung des Vorhabens
+        translation: Name of the operation
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Öffentliche Beteiligung (EU- und nationale
+Finanzierung) (Bemessungsgrundlage für EU-Kofinanzierung)
+        translation: Allocated public funding (EU- and national cofinancing) (Basis for EU-co-financing)
+        type: number
+        missingValue: 
+        description: 
+
+
+------------------------------------------------------------------------
+
+
+title: ESF data Austria (2007-2013) Part 3 (published 2010)
+  url: http://www.esf.at/esf/wp-content/uploads/2010-ESF_Verzeichnis_Beg%C3%BCnstigte_%C3%96sterreich.pdf
+  path: 
+
+  publication_date: "2009-12-31"
+  publication_version: part 3/7
+  start_date: "2010-01-01"
+  end_date: "2010-12-31"
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Bundesministerium für Arbeit, Soziales und Konsumentenschutz
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Begünstigte/r
+        translation: Beneficiary
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Bezeichnung des Vorhabens
+        translation: Name of the operation
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Öffentliche Beteiligung (EU- und nationale
+Finanzierung) (Bemessungsgrundlage für EU-Kofinanzierung)
+        translation: Allocated public funding (EU- and national cofinancing) (Basis for EU-co-financing)
+        type: number
+        missingValue: 
+        description: 
+
+
+------------------------------------------------------------------------
+
+
+  title: ESF data Austria (2007-2013) Part 4 (published 2011)
+  url: http://www.esf.at/esf/wp-content/uploads/20120827_Liste-der-ESF-Beg%C3%BCnstigten-20111.pdf
+  path: 
+
+  publication_date: "2011-12-31"
+  publication_version: part 4/7
+  start_date: "2011-01-01"
+  end_date: "2011-12-31"
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Bundesministerium für Arbeit, Soziales und Konsumentenschutz
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Begünstigte/r
+        translation: Beneficiary
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Bezeichnung des Vorhabens
+        translation: Name of the operation
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Öffentliche Beteiligung (EU- und nationale
+Finanzierung) (Bemessungsgrundlage für EU-Kofinanzierung)
+        translation: Allocated public funding (EU- and national cofinancing) (Basis for EU-co-financing)
+        type: number
+        missingValue: 
+        description: 
+
+
+------------------------------------------------------------------------
+
+
+  title: ESF data Austria (2007-2013) Part 5 (published 2012)
+  url: http://www.esf.at/esf/wp-content/uploads/Liste-der-ESF-Beg%C3%BCnstigten-2012.pdf
+  path: 
+
+  publication_date: "2012-12-31"
+  publication_version: part 5/7
+  start_date: "2012-01-01"
+  end_date: "2012-12-31"
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Bundesministerium für Arbeit, Soziales und Konsumentenschutz
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Begünstigte/r
+        translation: Beneficiary
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Bezeichnung des Vorhabens
+        translation: Name of the operation
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Öffentliche Beteiligung (EU- und nationale
+Finanzierung) (Bemessungsgrundlage für EU-Kofinanzierung)
+        translation: Allocated public funding (EU- and national cofinancing) (Basis for EU-co-financing)
+        type: number
+        missingValue: 
+        description: 
+
+
+------------------------------------------------------------------------
+
+
+  title: ESF data Austria (2007-2013) Part 6 (published 2013)
+  url: http://www.esf.at/esf/wp-content/uploads/Liste-der-ESF-Beg%C3%BCnstigten-2012.pdf
+  path: 
+
+  publication_date: "2012-12-31"
+  publication_version: part 6/7
+  start_date: "2012-01-01"
+  end_date: "2012-12-31"
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Bundesministerium für Arbeit, Soziales und Konsumentenschutz
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Begünstigte/r
+        translation: Beneficiary
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Bezeichnung des Vorhabens
+        translation: Name of the operation
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Öffentliche Beteiligung (EU- und nationale
+Finanzierung) (Bemessungsgrundlage für EU-Kofinanzierung)
+        translation: Allocated public funding (EU- and national cofinancing) (Basis for EU-co-financing)
+        type: number
+        missingValue: 
+        description:
+
+
+------------------------------------------------------------------------
+
+
+  title: ESF data Austria (2007-2013) Part 7 (published 2014)
+  url: http://www.esf.at/esf/wp-content/uploads/Liste-der-ESF-Beguenstigten-2013.pdf
+  path: 
+
+  publication_date: "2014-12-31"
+  publication_version: part 7/7
+  start_date: "2014-01-01"
+  end_date: "2014-12-31"
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Bundesministerium für Arbeit, Soziales und Konsumentenschutz
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Begünstigte/r
+        translation: Beneficiary
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Bezeichnung des Vorhabens
+        translation: Name of the operation
+        type: string
+        missingValue: 
+        description: 
+
+      - name: Öffentliche Beteiligung (EU- und nationale
+Finanzierung) (Bemessungsgrundlage für EU-Kofinanzierung)
+        translation: Allocated public funding (EU- and national cofinancing) (Basis for EU-co-financing)
+        type: number
+        missingValue: 
+        description:
+
+
+
