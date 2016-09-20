@@ -27,7 +27,6 @@ import logging
 import csv
 
 from slugify import slugify
-from datapackage.exceptions import ValidationError
 from yaml.parser import ParserError
 
 from plumbing.config import (
@@ -118,7 +117,7 @@ def select_processors(package):
 
     if sum(map(mode.values(), int)) > 1:
         message = '%s: extraction mode is ambiguous'
-        raise ValidationError(message % package['name'])
+        raise ValueError(message % package['name'])
 
     if mode['download_link']:
         return ['download_remote_sources']
