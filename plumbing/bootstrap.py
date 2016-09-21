@@ -79,9 +79,9 @@ def create_datapackage(description_file):
 
     datapackage_file = description_file.replace('yaml', 'json')
 
-    with open(description_file) as file:
+    with open(description_file) as stream:
         try:
-            package = yaml.load(file.read())
+            package = yaml.load(stream.read())
             package['name'] = slugify(package['title'], separator='_')
             package['extraction_processors'] = select_processors(package)
         except ParserError as error:
@@ -89,8 +89,8 @@ def create_datapackage(description_file):
             package = {'yaml_error': message}
             logging.debug('Parser error in %s: %s', description_file, message)
 
-    with open(datapackage_file, 'w+') as file:
-        file.write(json.dumps(package, indent=4))
+    with open(datapackage_file, 'w+') as stream:
+        stream.write(json.dumps(package, indent=4))
 
     logging.debug('Created %s', datapackage_file)
 
@@ -107,15 +107,14 @@ def bootstrap_pipeline(source_folder):
     if 'yaml_error' not in package:
         processors = select_processors(package)
         save_processor_placeholders(processors)
-
-    save_pipeline(pipeline, source_folder)
+        save_pipeline(pipeline, source_folder)
 
 
 def save_pipeline(pipeline, source_folder):
-    file = os.path.join(source_folder, PIPELINE_SPECS)
-    with open(file, 'w+') as file:
-        file.write(yaml.dump(pipeline))
-    logging.debug('Created %s', file)
+    filepath = os.path.join(source_folder, PIPELINE_SPECS)
+    with open(filepath, 'w+') as stream:
+        stream.write(yaml.dump(pipeline))
+    logging.debug('Created %s', filepath)
 
 
 def select_processors(package):
@@ -124,8 +123,8 @@ def select_processors(package):
     mode = package['extraction_mode']
 
     if sum(map(mode.values(), int)) > 1:
-        message = '%s: extraction mode is ambiguous'
-        raise ValueError(message % package['name'])
+        message = '{}: extraction mode is ambiguous'
+        raise ValueError(message.format(package['name']))
 
     if mode['download_link']:
         return ['download_remote_sources']
@@ -145,9 +144,9 @@ def save_processor_placeholders(processors):
     for processor in processors:
         if processor in ('scrape_remote_sources', 'scrape_pdf_sources'):
             with open(processor + '.py') as script:
-                docstring = "A processor to %s"
+                docstring = "A processor to {}"
                 name = processor.replace('_', ' ')
-                script.write(docstring % name)
+                script.write(docstring.format(name))
                 script.write('\n# Help wanted!')
 
 
@@ -155,8 +154,8 @@ def load_source_datapackage(source_folder):
     """Return the contents of the local datapackage file."""
 
     datapackage_file = os.path.join(source_folder, DATAPACKAGE_FILE)
-    with open(datapackage_file) as file:
-        return json.loads(file.read())
+    with open(datapackage_file) as stream:
+        return json.loads(stream.read())
 
 
 def collect_source_folders():
@@ -171,10 +170,9 @@ def collect_source_folders():
         for folder in folders:
             _, name = os.path.split(folder)
             geocode = name.split('.')[0]
-            if geocode:
-                if geocode in valid_geocodes:
-                    logging.debug('Collected %s', folder)
-                    yield os.path.join(root, folder)
+            if geocode in valid_geocodes:
+                logging.debug('Collected %s', folder)
+                yield os.path.join(root, folder)
 
 
 def load_geocodes():
@@ -182,8 +180,8 @@ def load_geocodes():
 
     geocodes = []
 
-    with open(GEOCODES_FILE) as file:
-        lines = csv.DictReader(file)
+    with open(GEOCODES_FILE) as stream:
+        lines = csv.DictReader(stream)
         for i, line in enumerate(lines):
             # The first line has an empty NUTS-code
             if i > 0:
