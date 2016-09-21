@@ -1,0 +1,3 @@
+NL.the-netherlands:
+  pipeline: {params: datapackage.json, run: validate_datapackage}
+  schedule: {crontab: null}

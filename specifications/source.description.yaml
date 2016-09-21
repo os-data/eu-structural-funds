@@ -78,8 +78,13 @@ resources:
   url: http://data.country.gov/path/to/data_file.xlsx
   path: data_filename.ext
 
-  publication_date: "yyyy-mm-dd"
-  publication_version: a description of this file version
+  publication_date: yyyy-mm-dd
+  expiry_date: yyyy-mm-dd
+
+  update_interval: yearly
+
+  funds:
+  years:
 
   periods:
     2007-2013: true
@@ -90,6 +95,7 @@ resources:
     download_link: true
     pdf_scraper: false
     web_scraper: false
+    rest_api: false
 
   constants:
     currency: a 3-digit currency code, like EUR
