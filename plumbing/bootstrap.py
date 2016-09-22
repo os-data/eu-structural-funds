@@ -36,28 +36,21 @@ import csv
 
 from slugify import slugify
 from yaml.parser import ParserError
+from yaml.scanner import ScannerError
 
 from plumbing.config import (
     DATAPACKAGE_FILE,
-    PIPELINE_SPECS,
+    PIPELINE_FILE,
     ROOT_DIR,
     DESCRIPTION_FILE,
-    GEOCODES_FILE
+    GEOCODES_FILE,
+    DEFAULT_PIPELINE,
 )
 
 
-logging.basicConfig(level=logging.DEBUG, format='Bootstrap: %(message)s')
-
-
-DEFAULT_PIPELINE = {
-    'schedule': {
-        'crontab': None,
-    },
-    'pipeline': {
-        'run': 'validate_datapackage',
-        'params': 'datapackage.json'
-    }
-}
+logging.basicConfig(level=logging.DEBUG, format=('[%(levelname)s] '
+                                                 '[%(funcName)s] '
+                                                 '%(message)s'))
 
 
 def clean_error_message(message):
@@ -74,17 +67,17 @@ def clean_error_message(message):
     return message
 
 
-def create_datapackage(description_file):
+def create_datapackage(description_file, source_folder):
     """Convert description.source.yaml into datapackage.json."""
 
-    datapackage_file = description_file.replace('yaml', 'json')
+    datapackage_file = os.path.join(source_folder, DATAPACKAGE_FILE)
 
     with open(description_file) as stream:
         try:
             package = yaml.load(stream.read())
             package['name'] = slugify(package['title'], separator='_')
             package['extraction_processors'] = select_processors(package)
-        except ParserError as error:
+        except (ParserError, ScannerError) as error:
             message = clean_error_message(str(error))
             package = {'yaml_error': message}
             logging.debug('Parser error in %s: %s', description_file, message)
@@ -92,70 +85,61 @@ def create_datapackage(description_file):
     with open(datapackage_file, 'w+') as stream:
         stream.write(json.dumps(package, indent=4))
 
-    logging.debug('Created %s', datapackage_file)
+    pipeline_id = os.path.split(source_folder)[-1]
+    logging.info('%s: created datapackage', pipeline_id)
 
     return package
 
 
-def bootstrap_pipeline(source_folder):
+def bootstrap_pipeline(package, source_folder):
     """Save the pipeline file inside the source folder."""
 
     _, source_name = os.path.split(source_folder)
-    package = load_source_datapackage(source_folder)
     pipeline = {source_name: DEFAULT_PIPELINE}
 
     if 'yaml_error' not in package:
         processors = select_processors(package)
-        save_processor_placeholders(processors)
+        save_processor_placeholders(processors, source_folder)
         save_pipeline(pipeline, source_folder)
 
 
 def save_pipeline(pipeline, source_folder):
-    filepath = os.path.join(source_folder, PIPELINE_SPECS)
+    filepath = os.path.join(source_folder, PIPELINE_FILE)
     with open(filepath, 'w+') as stream:
         stream.write(yaml.dump(pipeline))
-    logging.debug('Created %s', filepath)
+    pipeline_id = os.path.split(source_folder)[-1]
+    logging.info('%s: created pipeline specs', pipeline_id)
 
 
 def select_processors(package):
     """Select the appropriate processors for the pipeline."""
 
-    mode = package['extraction_mode']
+    for resource in package['resources']:
+        mode = resource['extraction_mode']
 
-    if sum(map(mode.values(), int)) > 1:
-        message = '{}: extraction mode is ambiguous'
-        raise ValueError(message.format(package['name']))
+        if sum(map(int, mode.values())) > 1:
+            message = '{}: extraction mode is ambiguous'
+            raise ValueError(message.format(package['name']))
 
-    if mode['download_link']:
-        return ['download_remote_sources']
-    elif mode['web_scraper']:
-        return ['scrape_remote_sources']
-    elif mode['pdf_scraper']:
-        return ['download_pdf_sources', 'scrape_pdf_sources']
-    elif mode['user_interface']:
-        raise NotImplementedError('User interface mode not ready yet.')
-    else:
-        ValueError('No extraction mode specified in the description file.')
+        if any([mode['web_scraper'],
+               mode['pdf_scraper'],
+               mode['user_interface']]):
+            return ['scraper']
+        else:
+            return []
 
 
-def save_processor_placeholders(processors):
+def save_processor_placeholders(processors, source_folder):
     """Drop placeholders for processors inside the source folder."""
 
     for processor in processors:
-        if processor in ('scrape_remote_sources', 'scrape_pdf_sources'):
-            with open(processor + '.py') as script:
-                docstring = "A processor to {}"
-                name = processor.replace('_', ' ')
-                script.write(docstring.format(name))
-                script.write('\n# Help wanted!')
-
-
-def load_source_datapackage(source_folder):
-    """Return the contents of the local datapackage file."""
-
-    datapackage_file = os.path.join(source_folder, DATAPACKAGE_FILE)
-    with open(datapackage_file) as stream:
-        return json.loads(stream.read())
+        if processor in ('scraper', 'scrape_pdf_sources'):
+            processor_file = os.path.join(source_folder, processor + '.py')
+            if not os.path.isfile(processor_file):
+                with open(processor_file + '.py', 'w') as script:
+                    docstring = '"""{} processor module: help wanted!"""'
+                    name = processor.replace('_', ' ').title()
+                    script.write(docstring.format(name))
 
 
 def collect_source_folders():
@@ -164,14 +148,14 @@ def collect_source_folders():
     data_folder = os.path.join(ROOT_DIR, 'data')
     valid_geocodes = load_geocodes()
 
-    logging.debug('Collecting sources in %s', data_folder)
+    logging.info('Collecting sources in %s', data_folder)
 
     for root, folders, _ in os.walk(data_folder):
         for folder in folders:
             _, name = os.path.split(folder)
             geocode = name.split('.')[0]
             if geocode in valid_geocodes:
-                logging.debug('Collected %s', folder)
+                logging.debug('%s: detected source folder', folder)
                 yield os.path.join(root, folder)
 
 
@@ -188,7 +172,7 @@ def load_geocodes():
                 geocode = line['NUTS-Code']
                 geocodes.append(geocode)
 
-    logging.debug('List of NUTS geocodes: %s', geocodes)
+    logging.debug('Loaded %d NUTS geocodes', len(geocodes))
     return tuple(geocodes)
 
 
@@ -198,13 +182,11 @@ def bootstrap_all_pipelines():
     for source_folder in collect_source_folders():
         description_file = os.path.join(source_folder, DESCRIPTION_FILE)
         if os.path.isfile(description_file):
-            package = create_datapackage(description_file)
+            package = create_datapackage(description_file, source_folder)
             pipeline_id = os.path.split(source_folder)[-1]
 
-            bootstrap_pipeline(source_folder)
-            save_processor_placeholders(package)
-
-            logging.debug('Updated %s', pipeline_id)
+            bootstrap_pipeline(package, source_folder)
+            logging.info('%s: updated pipeline', pipeline_id)
 
 
 if __name__ == '__main__':
