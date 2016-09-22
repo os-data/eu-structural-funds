@@ -1,3 +1,3 @@
-DK.denmark:
+AT22.steiermark:
   pipeline: {params: source.datapackage.json, run: validate_datapackage}
   schedule: {crontab: '@annually'}

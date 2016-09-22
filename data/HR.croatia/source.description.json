@@ -1,0 +1,131 @@
+{
+    "description": "Dataset with usable amount of fields. Contains all ESIF data from 2008- March 2016",
+    "extraction_processors": [],
+    "image": null,
+    "contributors": [
+        "Bela Seeger <bela.seege\u00ae@okfn.de> (http://okfn.de)",
+        "Marta Rey <martareyruiz@gmail.com>"
+    ],
+    "title": "All ESIF data for Croatia",
+    "sources": [
+        {
+            "name": "Ministry of Regional Development and EU Funds",
+            "web": "http://www.strukturnifondovi.hr/projekti"
+        },
+        {
+            "name": null,
+            "web": null
+        },
+        {
+            "name": null,
+            "web": null
+        }
+    ],
+    "name": "all_esif_data_for_croatia",
+    "resources": [
+        {
+            "publication_date": "yyyy-mm-dd",
+            "title": "Xls file containing all ESIF data for Croatia.",
+            "constants": {
+                "certifying_authority": null,
+                "currency": "HRK"
+            },
+            "end_date": "2016/03",
+            "publication_version": "a description of this file version",
+            "path": null,
+            "start_date": "2008",
+            "periods": {
+                "2014-2020": true,
+                "2007-2013": true
+            },
+            "url": "http://www.strukturnifondovi.hr/UserDocsImages/Documents/KartaProjekataZaWeb%201.4.2016.xls",
+            "extraction_mode": {
+                "download_link": true,
+                "user_interface": false,
+                "pdf_scraper": false,
+                "web_scraper": false
+            },
+            "schema": {
+                "fields": [
+                    {
+                        "missingValue": null,
+                        "name": "Naziv projekta",
+                        "type": "string",
+                        "translation": "Project Name",
+                        "description": null
+                    },
+                    {
+                        "missingValue": null,
+                        "name": "Fond",
+                        "type": "string",
+                        "translation": "Fund",
+                        "description": null
+                    },
+                    {
+                        "missingValue": null,
+                        "name": "\u0160ifra operativnog programa",
+                        "type": "string",
+                        "translation": "Code OP",
+                        "description": null
+                    },
+                    {
+                        "missingValue": null,
+                        "name": "NUTSII",
+                        "type": "string",
+                        "translation": "NUTSII",
+                        "description": null
+                    },
+                    {
+                        "missingValue": null,
+                        "name": "\u017dupanija",
+                        "type": "string",
+                        "translation": "District",
+                        "description": null
+                    },
+                    {
+                        "missingValue": null,
+                        "name": "Korisnik",
+                        "type": "string",
+                        "translation": "User",
+                        "description": null
+                    },
+                    {
+                        "missingValue": null,
+                        "name": "Opis projekta",
+                        "type": "string",
+                        "translation": "Project description",
+                        "description": null
+                    },
+                    {
+                        "missingValue": null,
+                        "name": "Datum ugovaranja",
+                        "type": "date",
+                        "translation": "Date of contract",
+                        "description": null
+                    },
+                    {
+                        "missingValue": null,
+                        "name": "Zaklju\u010dni datum provedbe aktivnosti",
+                        "type": "date",
+                        "translation": "closing date of implementation of activities",
+                        "description": null
+                    },
+                    {
+                        "missingValue": null,
+                        "name": "Bespovratna sredstva",
+                        "type": "number",
+                        "translation": "Grants",
+                        "description": "Official currency is HRK, amounts here are in 'kn'"
+                    },
+                    {
+                        "missingValue": null,
+                        "name": "Ukupno prihvatljivi tro\u0161kovi",
+                        "type": "number",
+                        "translation": "Total eligible costs",
+                        "description": "Official currency is HRK, amounts here are in 'kn'"
+                    }
+                ]
+            }
+        }
+    ]
+}

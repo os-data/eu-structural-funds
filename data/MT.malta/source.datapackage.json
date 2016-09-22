@@ -1,0 +1,151 @@
+{
+    "contributors": [
+        "Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)",
+        "Fernando Blat <fernando@populate.tools> (https://populate.tools)"
+    ],
+    "extraction_processors": [
+        "scraper"
+    ],
+    "title": "The projects regarding the European Regional Development Fund, Cohesion Fund and the European Social Fund in Malta (2007-2013)",
+    "image": null,
+    "sources": [
+        {
+            "name": "Investing in your future",
+            "web": "https://investinginyourfuture.gov.mt/projects"
+        }
+    ],
+    "name": "the_projects_regarding_the_european_regional_development_fund_cohesion_fund_and_the_european_social_fund_in_malta_2007_2013",
+    "resources": [
+        {
+            "schema": {
+                "fields": [
+                    {
+                        "name": "Title",
+                        "translation": null,
+                        "type": "string",
+                        "description": "Title of the project",
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Project Cost",
+                        "translation": null,
+                        "type": "number",
+                        "description": "The cost of the project, in EUR",
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Beneficiary",
+                        "translation": null,
+                        "type": "string",
+                        "description": "The beneficiary of the project",
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Line Ministry",
+                        "translation": null,
+                        "type": "string",
+                        "description": "Associated Ministry. I.e. Ministry for Education and Employment",
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Start Date",
+                        "translation": null,
+                        "type": "date",
+                        "description": "Only the year is provided",
+                        "missingValue": null
+                    },
+                    {
+                        "name": "End Date",
+                        "translation": null,
+                        "type": "date",
+                        "description": "Only the  year is provided",
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Non Technical Short Summary Of Project",
+                        "translation": null,
+                        "type": "string",
+                        "description": null,
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Operational Programme",
+                        "translation": null,
+                        "type": "string",
+                        "description": "Name of the operational programme",
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Fund",
+                        "translation": null,
+                        "type": "string",
+                        "description": "Name of the fund",
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Operational Objective",
+                        "translation": null,
+                        "type": "string",
+                        "description": null,
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Priority Axis",
+                        "translation": null,
+                        "type": "string",
+                        "description": null,
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Focus Area Of Intervention",
+                        "translation": null,
+                        "type": "string",
+                        "description": null,
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Project Objectives",
+                        "translation": null,
+                        "type": "string",
+                        "description": null,
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Project Results",
+                        "translation": null,
+                        "type": "string",
+                        "description": "A medium length text describing the project results",
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Project Purpose",
+                        "translation": null,
+                        "type": "string",
+                        "description": null,
+                        "missingValue": null
+                    }
+                ]
+            },
+            "path": null,
+            "constants": {
+                "currency": "EUR",
+                "certifying_authority": "The Planning and Priorities Co-ordination Division"
+            },
+            "url": "https://investinginyourfuture.gov.mt/projects",
+            "periods": {
+                "2007-2013": true,
+                "2014-2020": false
+            },
+            "extraction_mode": {
+                "web_scraper": true,
+                "pdf_scraper": false,
+                "user_interface": false,
+                "download_link": false
+            },
+            "publication_date": null,
+            "title": "A web page with list of all projects developed with the EU funds",
+            "publication_version": null
+        }
+    ],
+    "description": null
+}

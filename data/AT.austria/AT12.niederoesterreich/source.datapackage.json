@@ -1,0 +1,81 @@
+{
+    "contributors": [
+        "Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)"
+    ],
+    "extraction_processors": [],
+    "title": "ERDF data for Nieder\u00f6sterreich (AT) 2007-2013",
+    "image": null,
+    "sources": [
+        {
+            "name": "Amt der N\u00d6 Landesregierung - Raumordnung und Regionalpolitik",
+            "web": "http://www.raumordnung-noe.at/index.php?id=67"
+        },
+        {
+            "name": "Bundeskanzleramt \u00d6sterreich",
+            "web": "https://www.bka.gv.at/site/6093/default.aspx"
+        },
+        {
+            "name": "\u00d6sterreichische Raumordnungskonferenz / Austrian Conference on Spatial Planning",
+            "web": "http://www.oerok.gv.at/eu-regionalpolitik/eu-strukturfonds-in-oesterreich-2007-2013.html"
+        }
+    ],
+    "name": "erdf_data_for_niederosterreich_at_2007_2013",
+    "resources": [
+        {
+            "schema": {
+                "fields": [
+                    {
+                        "name": "Beg\u00fcnstigte/r",
+                        "translation": "Beneficiary",
+                        "type": "string",
+                        "description": null,
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Bezeichnung des Vorhabens",
+                        "translation": "name of the operation",
+                        "type": "string",
+                        "description": null,
+                        "missingValue": null
+                    },
+                    {
+                        "name": "\u00f6ffentliche Beteiligung (EU+nationale Kofinanzierung)*",
+                        "translation": "allocated pulic funding (EU+national cofinancing)* (in Euro)",
+                        "type": "number",
+                        "description": null,
+                        "missingValue": null
+                    },
+                    {
+                        "name": "Status G = genehmigt, A = ausbezahlt",
+                        "translation": "G = commited, A = paid out",
+                        "type": "string",
+                        "description": null,
+                        "missingValue": null
+                    }
+                ]
+            },
+            "path": null,
+            "constants": {
+                "currency": "EUR",
+                "certifying_authority": "Amt der N\u00d6 Landesregierung - Raumordnung und Regionalpolitik"
+            },
+            "url": "http://www.raumordnung-noe.at/fileadmin/root_raumordnung/land/eu_regionalpolitik/RWB_Niederoesterreich.pdf",
+            "end_date": "2016-07-10",
+            "start_date": "2007-01-01",
+            "extraction_mode": {
+                "web_scraper": false,
+                "pdf_scraper": false,
+                "user_interface": false,
+                "download_link": true
+            },
+            "periods": {
+                "2007-2013": true,
+                "2014-2020": false
+            },
+            "publication_date": "2016-07-13",
+            "title": "ERDF data Nieder\u00f6sterreich (AT) (2007-2013)",
+            "publication_version": null
+        }
+    ],
+    "description": "Nieder\u00f6sterreich is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called \"St\u00e4rkung der Regionalen Wettbewerbsf\u00e4higkeit und Besch\u00e4ftigung Nieder\u00f6sterreich 2007-2013\". The dataset at hand describes the funding distributed through said program."
+}

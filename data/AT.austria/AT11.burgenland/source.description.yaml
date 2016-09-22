@@ -18,146 +18,140 @@ contributors:
   - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
 resources:
+  - title: ESF data Burgenland (AT) (2007-today)
+    url: http://www.phasing-out.at/media/file/914_Projektliste_ESF_30.06.2016.pdf
+    path:
+
+    publication_date: "2016-06-30"
+    publication_version:
+    start_date: "2007-01-01"
+    end_date: "2016-06-30"
+
+    periods:
+      2007-2013: true
+      2014-2020: false
+
+    extraction_mode:
+      user_interface: false
+      download_link: true
+      pdf_scraper: false
+      web_scraper: false
+
+    constants:
+      currency: EUR
+      certifying_authority: Regionalmanagement Burgenland
+      # We need a complete list of possible constants here
+
+    schema:
+      fields:
+        - name: Begünstigte/r
+          translation: Beneficiary
+          type: string
+          missingValue:
+          description:
+
+        - name: Adresse Begünstigter
+          translation: address of beneficiary
+          type: string
+          missingValue:
+          description:
 
 
-  title: ESF data Burgenland (AT) (2007-today)
-  url: http://www.phasing-out.at/media/file/914_Projektliste_ESF_30.06.2016.pdf
-  path: 
+        - name: Projekttitel
+          translation: project name
+          type: string
+          missingValue:
+          description:
 
-  publication_date: "2016-06-30"
-  publication_version: 
-  start_date: "2007-01-01"
-  end_date: "2016-06-30"
+        - name: Projektbeschreibung
+          translation: project description
+          type: string
+          missingValue:
+          description:
 
-  periods:
-    2007-2013: true
-    2014-2020: false
+        - name: öffentliche Beteiligung (EU+nationale Kofinanzierung)*
+          translation: allocated pulic funding (EU+national cofinancing)* (in Euro)
+          type: number
+          missingValue:
+          description:
 
-  extraction_mode:
-    user_interface: false
-    download_link: true
-    pdf_scraper: false
-    web_scraper: false
+        - name: Status G = genehmigt, A = ausbezahlt
+          translation: G = commited, A = paid out
+          type: string
+          missingValue:
+          description:
 
-  constants:
-    currency: EUR
-    certifying_authority: Regionalmanagement Burgenland
-    # We need a complete list of possible constants here
+        - name: Förderstelle
+          translation: funding agency
+          type: string
+          missingValue:
+          description:
 
-  schema:
-    fields:
-      - name: Begünstigte/r
-        translation: Beneficiary
-        type: string
-        missingValue: 
-        description: 
+  - title: ERDF data Burgenland (AT) (2007-today)
+    url: http://www.phasing-out.at/media/file/913_Projektliste_EFRE_30.06.2016.pdf
+    path:
 
-     - name: Adresse Begünstigter
-        translation: address of beneficiary
-        type: string
-        missingValue: 
-        description: 
+    publication_date: "2016-06-30"
+    publication_version:
+    start_date: "2007-01-01"
+    end_date: "2016-06-30"
 
+    periods:
+      2007-2013: true
+      2014-2020: false
 
-      - name: Projekttitel
-        translation: project name
-        type: string
-        missingValue: 
-        description: 
+    extraction_mode:
+      user_interface: false
+      download_link: true
+      pdf_scraper: false
+      web_scraper: false
 
-      - name: Projektbeschreibung
-        translation: project description
-        type: string
-        missingValue: 
-        description: 
+    constants:
+      currency: EUR
+      certifying_authority: Regionalmanagement Burgenland
+      # We need a complete list of possible constants here
 
-      - name: öffentliche Beteiligung (EU+nationale Kofinanzierung)*
-        translation: allocated pulic funding (EU+national cofinancing)* (in Euro)
-        type: number
-        missingValue: 
-        description: 
+    schema:
+      fields:
+        - name: Begünstigte/r
+          translation: Beneficiary
+          type: string
+          missingValue:
+          description:
 
-      - name: Status G = genehmigt, A = ausbezahlt
-        translation: G = commited, A = paid out
-        type: string
-        missingValue: 
-        description: 
-
-      - name: Förderstelle
-        translation: funding agency
-        type: string
-        missingValue: 
-        description: 
-
-
-------------------------------------------------------------------------
+        - name: Adresse Begünstigter
+          translation: address of beneficiary
+          type: string
+          missingValue:
+          description:
 
 
-title: ERDF data Burgenland (AT) (2007-today)
-  url: http://www.phasing-out.at/media/file/913_Projektliste_EFRE_30.06.2016.pdf
-  path: 
+        - name: Projekttitel
+          translation: project name
+          type: string
+          missingValue:
+          description:
 
-  publication_date: "2016-06-30"
-  publication_version: 
-  start_date: "2007-01-01"
-  end_date: "2016-06-30"
+        - name: Projektbeschreibung
+          translation: project description
+          type: string
+          missingValue:
+          description:
 
-  periods:
-    2007-2013: true
-    2014-2020: false
+        - name: öffentliche Beteiligung (EU+nationale Kofinanzierung)*
+          translation: allocated pulic funding (EU+national cofinancing)* (in Euro)
+          type: number
+          missingValue:
+          description:
 
-  extraction_mode:
-    user_interface: false
-    download_link: true
-    pdf_scraper: false
-    web_scraper: false
+        - name: Status G = genehmigt, A = ausbezahlt
+          translation: G = commited, A = paid out
+          type: string
+          missingValue:
+          description:
 
-  constants:
-    currency: EUR
-    certifying_authority: Regionalmanagement Burgenland
-    # We need a complete list of possible constants here
-
-  schema:
-    fields:
-      - name: Begünstigte/r
-        translation: Beneficiary
-        type: string
-        missingValue: 
-        description: 
-
-     - name: Adresse Begünstigter
-        translation: address of beneficiary
-        type: string
-        missingValue: 
-        description: 
-
-
-      - name: Projekttitel
-        translation: project name
-        type: string
-        missingValue: 
-        description: 
-
-      - name: Projektbeschreibung
-        translation: project description
-        type: string
-        missingValue: 
-        description: 
-
-      - name: öffentliche Beteiligung (EU+nationale Kofinanzierung)*
-        translation: allocated pulic funding (EU+national cofinancing)* (in Euro)
-        type: number
-        missingValue: 
-        description: 
-
-      - name: Status G = genehmigt, A = ausbezahlt
-        translation: G = commited, A = paid out
-        type: string
-        missingValue: 
-        description: 
-
-      - name: Förderstelle
-        translation: funding agency
-        type: string
-        missingValue: 
-        description: 
+        - name: Förderstelle
+          translation: funding agency
+          type: string
+          missingValue:
+          description:

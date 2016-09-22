@@ -24,7 +24,8 @@ title: ERDF data for Kaernten (AT) 2007-2013
 
 description: Kaernten is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called "Stärkung der Regionalen Wettbewerbsfähigkeit und Beschäftigung Kaernten 2007-2013". The dataset at hand describes the funding distributed through said program.
 
-sources: Kärntner Wirtschaftsförderungs Fonds  
+sources:
+  - name: Kärntner Wirtschaftsförderungs Fonds
     web:  http://kwf.at/?inhalt=Gefoerderte_Projekte_2007-2013&id=6-1-5-0
 
   - name: Bundeskanzleramt Österreich
@@ -50,53 +51,53 @@ resources:
   #      "web_scraper".
   #
   # path: leave blank if there's a url link to the data-file. If there's no
-title: ERDF data Kaernten (AT) (2007-2013)
-  url: http://kwf.at/downloads/deutsch/EU/Publizitaet_Kaernten.pdf
-  path: 
+  - title: ERDF data Kaernten (AT) (2007-2013)
+    url: http://kwf.at/downloads/deutsch/EU/Publizitaet_Kaernten.pdf
+    path:
 
-  publication_date: "2015-04-20"
-  publication_version: 
-  start_date: "2007-01-01"
-  end_date: "2015-04-20"
+    publication_date: "2015-04-20"
+    publication_version:
+    start_date: "2007-01-01"
+    end_date: "2015-04-20"
 
-  periods:
-    2007-2013: true
-    2014-2020: false
+    periods:
+      2007-2013: true
+      2014-2020: false
 
-  extraction_mode:
-    user_interface: false
-    download_link: true
-    pdf_scraper: false
-    web_scraper: false
+    extraction_mode:
+      user_interface: false
+      download_link: true
+      pdf_scraper: false
+      web_scraper: false
 
-  constants:
-    currency: EUR
-    certifying_authority: 
+    constants:
+      currency: EUR
+      certifying_authority:
 
-    # We need a complete list of possible constants here
+      # We need a complete list of possible constants here
 
-  schema:
-    fields:
-      - name: Begünstigte/r
-        translation: Beneficiary
-        type: string
-        missingValue: 
-        description: 
+    schema:
+      fields:
+        - name: Begünstigte/r
+          translation: Beneficiary
+          type: string
+          missingValue:
+          description:
 
-     - name: Bezeichnung des Vorhabens
-        translation: name of the operation
-        type: string
-        missingValue: 
-        description: 
+        - name: Bezeichnung des Vorhabens
+          translation: name of the operation
+          type: string
+          missingValue:
+          description:
 
-      - name: öffentliche Beteiligung (EU+nationale Kofinanzierung)*
-        translation: allocated pulic funding (EU+national cofinancing)* (in Euro)
-        type: number
-        missingValue: 
-        description: 
+        - name: öffentliche Beteiligung (EU+nationale Kofinanzierung)*
+          translation: allocated pulic funding (EU+national cofinancing)* (in Euro)
+          type: number
+          missingValue:
+          description:
 
-      - name: Status G = genehmigt, A = ausbezahlt
-        translation: G = commited, A = paid out
-        type: string
-        missingValue: 
-        description: 
+        - name: Status G = genehmigt, A = ausbezahlt
+          translation: G = commited, A = paid out
+          type: string
+          missingValue:
+          description:
