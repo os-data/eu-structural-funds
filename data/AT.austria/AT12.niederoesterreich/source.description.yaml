@@ -2,7 +2,8 @@ title: ERDF data for Niederösterreich (AT) 2007-2013
 
 description: Niederösterreich is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called "Stärkung der Regionalen Wettbewerbsfähigkeit und Beschäftigung Niederösterreich 2007-2013". The dataset at hand describes the funding distributed through said program.
 
-sources: Amt der NÖ Landesregierung - Raumordnung und Regionalpolitik 
+sources:
+  - name: Amt der NÖ Landesregierung - Raumordnung und Regionalpolitik
     web:  http://www.raumordnung-noe.at/index.php?id=67
 
   - name: Bundeskanzleramt Österreich
@@ -18,54 +19,54 @@ contributors:
 
 resources:
 
-  title: ERDF data Niederösterreich (AT) (2007-2013)
-  url: http://www.raumordnung-noe.at/fileadmin/root_raumordnung/land/eu_regionalpolitik/RWB_Niederoesterreich.pdf
-  path: 
+  - title: ERDF data Niederösterreich (AT) (2007-2013)
+    url: http://www.raumordnung-noe.at/fileadmin/root_raumordnung/land/eu_regionalpolitik/RWB_Niederoesterreich.pdf
+    path:
 
-  publication_date: "2016-07-13"
-  publication_version: 
-  start_date: "2007-01-01"
-  end_date: "2016-07-10"
+    publication_date: "2016-07-13"
+    publication_version:
+    start_date: "2007-01-01"
+    end_date: "2016-07-10"
 
-  periods:
-    2007-2013: true
-    2014-2020: false
+    periods:
+      2007-2013: true
+      2014-2020: false
 
-  extraction_mode:
-    user_interface: false
-    download_link: true
-    pdf_scraper: false
-    web_scraper: false
+    extraction_mode:
+      user_interface: false
+      download_link: true
+      pdf_scraper: false
+      web_scraper: false
 
-  constants:
-    currency: EUR
-    certifying_authority: Amt der NÖ Landesregierung - Raumordnung und Regionalpolitik 
+    constants:
+      currency: EUR
+      certifying_authority: Amt der NÖ Landesregierung - Raumordnung und Regionalpolitik
 
-    # We need a complete list of possible constants here
+      # We need a complete list of possible constants here
 
-  schema:
-    fields:
-      - name: Begünstigte/r
-        translation: Beneficiary
-        type: string
-        missingValue: 
-        description: 
+    schema:
+      fields:
+        - name: Begünstigte/r
+          translation: Beneficiary
+          type: string
+          missingValue:
+          description:
 
-     - name: Bezeichnung des Vorhabens
-        translation: name of the operation
-        type: string
-        missingValue: 
-        description: 
+        - name: Bezeichnung des Vorhabens
+          translation: name of the operation
+          type: string
+          missingValue:
+          description:
 
 
-      - name: öffentliche Beteiligung (EU+nationale Kofinanzierung)*
-        translation: allocated pulic funding (EU+national cofinancing)* (in Euro)
-        type: number
-        missingValue: 
-        description: 
+        - name: öffentliche Beteiligung (EU+nationale Kofinanzierung)*
+          translation: allocated pulic funding (EU+national cofinancing)* (in Euro)
+          type: number
+          missingValue:
+          description:
 
-      - name: Status G = genehmigt, A = ausbezahlt
-        translation: G = commited, A = paid out
-        type: string
-        missingValue: 
-        description: 
+        - name: Status G = genehmigt, A = ausbezahlt
+          translation: G = commited, A = paid out
+          type: string
+          missingValue:
+          description:

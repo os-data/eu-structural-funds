@@ -18,28 +18,28 @@ contributors:
   - Friedrich Lindenberg <pudo@occrp.org> (OCCRP)
 
 resources:
-  title:
-  url:
-  path:
+  - title:
+    url:
+    path:
 
-  publication_date: "2014-10-27"
-  publication_version: web database
+    publication_date: "2014-10-27"
+    publication_version: web database
 
-  periods:
-    2007-2013: true
-    2014-2020: false
+    periods:
+      2007-2013: true
+      2014-2020: false
 
-  extraction_mode:
-    user_interface: true
-    download_link: true
-    pdf_scraper: false
-    web_scraper: true
+    extraction_mode:
+      user_interface: false
+      download_link: false
+      pdf_scraper: false
+      web_scraper: true
 
-  constants:
-    currency: EUR
-    certifying_authority:
-    # We need a complete list of possible constants here
+    constants:
+      currency: EUR
+      certifying_authority:
+      # We need a complete list of possible constants here
 
-  schema:
-    fields:
-    
+    schema:
+      fields:
+
