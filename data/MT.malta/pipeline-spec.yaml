@@ -1,0 +1,5 @@
+MT.malta:
+  pipeline:
+  - {params: source.datapackage.json, run: scraper}
+  - {run: dump}
+  schedule: {crontab: 0 0 1 1 *}
