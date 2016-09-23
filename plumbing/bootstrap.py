@@ -17,13 +17,13 @@
 
         1) looks for the source description file
         2) converts it into a datapackage
-        3) creates a pipeline file with the appropriate processors
-        4) adds placeholder for the processors
+        3) saves a pipeline-specs file with the appropriate processors
+        4) adds placeholder for a scraper if needed
 
-    Usage
-    -----
+    Usage: python3
+    --------------
 
-    This script supports python3 only: python3 bootstrap.py
+    python3 bootstrap.py
 
 """
 
@@ -45,12 +45,11 @@ from plumbing.config import (
     DESCRIPTION_FILE,
     GEOCODES_FILE,
     DEFAULT_PIPELINE,
-)
+    EXTRACTOR_FILE)
 
 
-logging.basicConfig(level=logging.DEBUG, format=('[%(levelname)s] '
-                                                 '[%(funcName)s] '
-                                                 '%(message)s'))
+logging.basicConfig(level=logging.DEBUG,
+                    format='[%(levelname)s] %(message)s')
 
 
 def clean_error_message(message):
@@ -67,16 +66,16 @@ def clean_error_message(message):
     return message
 
 
-def create_datapackage(description_file, source_folder):
+def create_datapackage(source_folder):
     """Convert description.source.yaml into datapackage.json."""
 
+    description_file = os.path.join(source_folder, DESCRIPTION_FILE)
     datapackage_file = os.path.join(source_folder, DATAPACKAGE_FILE)
 
     with open(description_file) as stream:
         try:
             package = yaml.load(stream.read())
             package['name'] = slugify(package['title'], separator='_')
-            package['extraction_processors'] = select_processors(package)
         except (ParserError, ScannerError) as error:
             message = clean_error_message(str(error))
             package = {'yaml_error': message}
@@ -91,55 +90,58 @@ def create_datapackage(description_file, source_folder):
     return package
 
 
-def bootstrap_pipeline(package, source_folder):
-    """Save the pipeline file inside the source folder."""
+def register_processors(processors, pipeline_id):
+    """Register processors according to the datapackage specs."""
 
-    _, source_name = os.path.split(source_folder)
-    pipeline = {source_name: DEFAULT_PIPELINE}
-
-    if 'yaml_error' not in package:
-        processors = select_processors(package)
-        save_processor_placeholders(processors, source_folder)
-        save_pipeline(pipeline, source_folder)
+    pipeline = {pipeline_id: DEFAULT_PIPELINE}
+    pipeline[pipeline_id]['pipeline'] = processors
+    return pipeline
 
 
-def save_pipeline(pipeline, source_folder):
+def save_pipeline(source_folder, pipeline, pipeline_id):
+    """Save the pipeline-specs.yaml file inside the source folder."""
+
     filepath = os.path.join(source_folder, PIPELINE_FILE)
     with open(filepath, 'w+') as stream:
         stream.write(yaml.dump(pipeline))
-    pipeline_id = os.path.split(source_folder)[-1]
     logging.info('%s: created pipeline specs', pipeline_id)
 
 
-def select_processors(package):
-    """Select the appropriate processors for the pipeline."""
+def select_processors_v1(package):
+    """Select the appropriate processors for the pipeline with v1."""
 
-    for resource in package['resources']:
-        mode = resource['extraction_mode']
+    # In v3, the extraction mode is defined at the metadata level
+    mode = package['resources'][0]['extraction_mode']
+    mode_sum = sum(map(int, mode.values()))
 
-        if sum(map(int, mode.values())) > 1:
-            message = '{}: extraction mode is ambiguous'
-            raise ValueError(message.format(package['name']))
+    if mode_sum in (0, 2, 3):
+        message = '{}: extraction mode is ambiguous'
+        raise ValueError(message.format(package['name']))
 
-        if any([mode['web_scraper'],
-               mode['pdf_scraper'],
-               mode['user_interface']]):
-            return ['scraper']
-        else:
-            return []
+    if mode['download_link']:
+        processors = [
+            {'run': 'simple_remote_source', 'params': DATAPACKAGE_FILE},
+            {'run': 'downloader', }
+        ]
+    else:
+        processors = [{'run': 'scraper', 'params': DATAPACKAGE_FILE}]
+
+    processors.append({'run': 'dump'})
+
+    # noinspection PyTypeChecker
+    processor_ids = [processor['run'] for processor in processors]
+    return processors, processor_ids
 
 
-def save_processor_placeholders(processors, source_folder):
+def save_scraper_placeholder(source_folder, pipeline_id):
     """Drop placeholders for processors inside the source folder."""
 
-    for processor in processors:
-        if processor in ('scraper', 'scrape_pdf_sources'):
-            processor_file = os.path.join(source_folder, processor + '.py')
-            if not os.path.isfile(processor_file):
-                with open(processor_file + '.py', 'w') as script:
-                    docstring = '"""{} processor module: help wanted!"""'
-                    name = processor.replace('_', ' ').title()
-                    script.write(docstring.format(name))
+    processor_file = os.path.join(source_folder, EXTRACTOR_FILE)
+    if not os.path.exists(processor_file):
+        with open(processor_file, 'w+') as stream:
+            docstring = '"""Scraping module for {} wanted!"""\n'
+            stream.write(docstring.format(pipeline_id))
+        logging.debug('%s: help wanted for scraper', pipeline_id)
 
 
 def collect_source_folders():
@@ -177,16 +179,24 @@ def load_geocodes():
 
 
 def bootstrap_all_pipelines():
-    """Bootstrap the data pipeline where source descriptions are found."""
+    """Bootstrap data pipelines where source description files are found."""
 
     for source_folder in collect_source_folders():
         description_file = os.path.join(source_folder, DESCRIPTION_FILE)
-        if os.path.isfile(description_file):
-            package = create_datapackage(description_file, source_folder)
-            pipeline_id = os.path.split(source_folder)[-1]
 
-            bootstrap_pipeline(package, source_folder)
-            logging.info('%s: updated pipeline', pipeline_id)
+        if os.path.exists(description_file):
+            pipeline_id = os.path.basename(source_folder)
+            package = create_datapackage(source_folder)
+
+            if 'yaml_error' not in package:
+                processors, processor_ids = select_processors_v1(package)
+                pipeline = register_processors(processors, pipeline_id)
+                save_pipeline(source_folder, pipeline, pipeline_id)
+
+                if 'scraper' in processor_ids:
+                    save_scraper_placeholder(source_folder, pipeline_id)
+
+                logging.info('%s: updated pipeline', pipeline_id)
 
 
 if __name__ == '__main__':
