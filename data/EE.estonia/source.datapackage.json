@@ -1,12 +1,4 @@
 {
-    "contributors": [
-        "Friedrich Lindenberg <pudo@occrp.org> (OCCRP)"
-    ],
-    "extraction_processors": [
-        "scraper"
-    ],
-    "title": "European Union Structural Assistance to Estonia",
-    "image": null,
     "sources": [
         {
             "name": "List of beneficiaries",
@@ -14,31 +6,36 @@
         }
     ],
     "name": "european_union_structural_assistance_to_estonia",
+    "description": "In the period of 2007-2013 Estonia was allocated more than 3.40 billion euros from the structural assistance, which will be channelled to the following fields: energy economies, entrepreneurship, administrative capability, education, information society, environment protection, regional and local development, research and development activities, healthcare and welfare, transportation and labour market.\n",
+    "contributors": [
+        "Friedrich Lindenberg <pudo@occrp.org> (OCCRP)"
+    ],
     "resources": [
         {
-            "schema": {
-                "fields": null
-            },
             "path": null,
-            "constants": {
-                "currency": "EUR",
-                "certifying_authority": null
-            },
             "url": null,
             "periods": {
                 "2007-2013": true,
                 "2014-2020": false
             },
+            "constants": {
+                "certifying_authority": null,
+                "currency": "EUR"
+            },
             "extraction_mode": {
                 "web_scraper": true,
-                "pdf_scraper": false,
+                "download_link": false,
                 "user_interface": false,
-                "download_link": false
+                "pdf_scraper": false
+            },
+            "schema": {
+                "fields": null
             },
             "publication_date": "2014-10-27",
-            "title": null,
-            "publication_version": "web database"
+            "publication_version": "web database",
+            "title": null
         }
     ],
-    "description": "In the period of 2007-2013 Estonia was allocated more than 3.40 billion euros from the structural assistance, which will be channelled to the following fields: energy economies, entrepreneurship, administrative capability, education, information society, environment protection, regional and local development, research and development activities, healthcare and welfare, transportation and labour market.\n"
+    "image": null,
+    "title": "European Union Structural Assistance to Estonia"
 }

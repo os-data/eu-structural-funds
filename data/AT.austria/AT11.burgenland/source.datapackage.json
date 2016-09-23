@@ -1,10 +1,4 @@
 {
-    "contributors": [
-        "Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)"
-    ],
-    "extraction_processors": [],
-    "title": "ERDF data for Burgenland (AT) 2007-",
-    "image": null,
     "sources": [
         {
             "name": "Regionalmanagement Burgenland",
@@ -20,159 +14,164 @@
         }
     ],
     "name": "erdf_data_for_burgenland_at_2007",
+    "description": "Burgenland is a region in Astria that has its own ESIF program called 'phasing out'. Phasing out has a total volume of 444 million \u20ac, 177 of which are proided approximately 70% by ERDF and 30% by ESF. 153 million are co-fiananced by the Republic of Austria and 144 are provided by the Burgenland itself. Therefore, there are two datasets to consider here (ESF contributions to 'Phasing Out' and ERDF contributions to 'Phasing Out').",
+    "contributors": [
+        "Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)"
+    ],
     "resources": [
         {
-            "schema": {
-                "fields": [
-                    {
-                        "name": "Beg\u00fcnstigte/r",
-                        "translation": "Beneficiary",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Adresse Beg\u00fcnstigter",
-                        "translation": "address of beneficiary",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Projekttitel",
-                        "translation": "project name",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Projektbeschreibung",
-                        "translation": "project description",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "\u00f6ffentliche Beteiligung (EU+nationale Kofinanzierung)*",
-                        "translation": "allocated pulic funding (EU+national cofinancing)* (in Euro)",
-                        "type": "number",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Status G = genehmigt, A = ausbezahlt",
-                        "translation": "G = commited, A = paid out",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "F\u00f6rderstelle",
-                        "translation": "funding agency",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    }
-                ]
-            },
             "path": null,
-            "constants": {
-                "currency": "EUR",
-                "certifying_authority": "Regionalmanagement Burgenland"
-            },
             "url": "http://www.phasing-out.at/media/file/914_Projektliste_ESF_30.06.2016.pdf",
-            "end_date": "2016-06-30",
-            "start_date": "2007-01-01",
-            "extraction_mode": {
-                "web_scraper": false,
-                "pdf_scraper": false,
-                "user_interface": false,
-                "download_link": true
-            },
             "periods": {
                 "2007-2013": true,
                 "2014-2020": false
             },
+            "start_date": "2007-01-01",
+            "end_date": "2016-06-30",
+            "constants": {
+                "certifying_authority": "Regionalmanagement Burgenland",
+                "currency": "EUR"
+            },
+            "extraction_mode": {
+                "web_scraper": false,
+                "download_link": true,
+                "user_interface": false,
+                "pdf_scraper": false
+            },
+            "schema": {
+                "fields": [
+                    {
+                        "name": "Beg\u00fcnstigte/r",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Beneficiary",
+                        "description": null
+                    },
+                    {
+                        "name": "Adresse Beg\u00fcnstigter",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "address of beneficiary",
+                        "description": null
+                    },
+                    {
+                        "name": "Projekttitel",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "project name",
+                        "description": null
+                    },
+                    {
+                        "name": "Projektbeschreibung",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "project description",
+                        "description": null
+                    },
+                    {
+                        "name": "\u00f6ffentliche Beteiligung (EU+nationale Kofinanzierung)*",
+                        "type": "number",
+                        "missingValue": null,
+                        "translation": "allocated pulic funding (EU+national cofinancing)* (in Euro)",
+                        "description": null
+                    },
+                    {
+                        "name": "Status G = genehmigt, A = ausbezahlt",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "G = commited, A = paid out",
+                        "description": null
+                    },
+                    {
+                        "name": "F\u00f6rderstelle",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "funding agency",
+                        "description": null
+                    }
+                ]
+            },
             "publication_date": "2016-06-30",
-            "title": "ESF data Burgenland (AT) (2007-today)",
-            "publication_version": null
+            "publication_version": null,
+            "title": "ESF data Burgenland (AT) (2007-today)"
         },
         {
-            "schema": {
-                "fields": [
-                    {
-                        "name": "Beg\u00fcnstigte/r",
-                        "translation": "Beneficiary",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Adresse Beg\u00fcnstigter",
-                        "translation": "address of beneficiary",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Projekttitel",
-                        "translation": "project name",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Projektbeschreibung",
-                        "translation": "project description",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "\u00f6ffentliche Beteiligung (EU+nationale Kofinanzierung)*",
-                        "translation": "allocated pulic funding (EU+national cofinancing)* (in Euro)",
-                        "type": "number",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Status G = genehmigt, A = ausbezahlt",
-                        "translation": "G = commited, A = paid out",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "F\u00f6rderstelle",
-                        "translation": "funding agency",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    }
-                ]
-            },
             "path": null,
-            "constants": {
-                "currency": "EUR",
-                "certifying_authority": "Regionalmanagement Burgenland"
-            },
             "url": "http://www.phasing-out.at/media/file/913_Projektliste_EFRE_30.06.2016.pdf",
-            "end_date": "2016-06-30",
-            "start_date": "2007-01-01",
-            "extraction_mode": {
-                "web_scraper": false,
-                "pdf_scraper": false,
-                "user_interface": false,
-                "download_link": true
-            },
             "periods": {
                 "2007-2013": true,
                 "2014-2020": false
             },
+            "start_date": "2007-01-01",
+            "end_date": "2016-06-30",
+            "constants": {
+                "certifying_authority": "Regionalmanagement Burgenland",
+                "currency": "EUR"
+            },
+            "extraction_mode": {
+                "web_scraper": false,
+                "download_link": true,
+                "user_interface": false,
+                "pdf_scraper": false
+            },
+            "schema": {
+                "fields": [
+                    {
+                        "name": "Beg\u00fcnstigte/r",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Beneficiary",
+                        "description": null
+                    },
+                    {
+                        "name": "Adresse Beg\u00fcnstigter",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "address of beneficiary",
+                        "description": null
+                    },
+                    {
+                        "name": "Projekttitel",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "project name",
+                        "description": null
+                    },
+                    {
+                        "name": "Projektbeschreibung",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "project description",
+                        "description": null
+                    },
+                    {
+                        "name": "\u00f6ffentliche Beteiligung (EU+nationale Kofinanzierung)*",
+                        "type": "number",
+                        "missingValue": null,
+                        "translation": "allocated pulic funding (EU+national cofinancing)* (in Euro)",
+                        "description": null
+                    },
+                    {
+                        "name": "Status G = genehmigt, A = ausbezahlt",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "G = commited, A = paid out",
+                        "description": null
+                    },
+                    {
+                        "name": "F\u00f6rderstelle",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "funding agency",
+                        "description": null
+                    }
+                ]
+            },
             "publication_date": "2016-06-30",
-            "title": "ERDF data Burgenland (AT) (2007-today)",
-            "publication_version": null
+            "publication_version": null,
+            "title": "ERDF data Burgenland (AT) (2007-today)"
         }
     ],
-    "description": "Burgenland is a region in Astria that has its own ESIF program called 'phasing out'. Phasing out has a total volume of 444 million \u20ac, 177 of which are proided approximately 70% by ERDF and 30% by ESF. 153 million are co-fiananced by the Republic of Austria and 144 are provided by the Burgenland itself. Therefore, there are two datasets to consider here (ESF contributions to 'Phasing Out' and ERDF contributions to 'Phasing Out')."
+    "image": null,
+    "title": "ERDF data for Burgenland (AT) 2007-"
 }

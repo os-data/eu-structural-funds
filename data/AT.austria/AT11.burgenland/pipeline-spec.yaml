@@ -1,0 +1,6 @@
+AT11.burgenland:
+  pipeline:
+  - {params: source.datapackage.json, run: simple_remote_source}
+  - {run: downloader}
+  - {run: dump}
+  schedule: {crontab: 0 0 1 1 *}

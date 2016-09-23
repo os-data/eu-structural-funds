@@ -1,12 +1,4 @@
 {
-    "contributors": [
-        "Olaya Argueso <arguesoperezolaya@gmail.com>"
-    ],
-    "extraction_processors": [
-        "scraper"
-    ],
-    "title": "The programmes regarding the European Regional Development Fund and the European Social Fund in Denmark (2007-2013, 2014-2020)",
-    "image": null,
     "sources": [
         {
             "name": "Regionalt Erhvervsstyrelsen",
@@ -18,246 +10,251 @@
         }
     ],
     "name": "the_programmes_regarding_the_european_regional_development_fund_and_the_european_social_fund_in_denmark_2007_2013_2014_2020",
+    "description": "The files included here contain the information about the programmes to which Denmark has allocated the European Structural Funds in the periods 2007-2013 and 2014-2020.",
+    "contributors": [
+        "Olaya Argueso <arguesoperezolaya@gmail.com>"
+    ],
     "resources": [
         {
-            "schema": {
-                "fields": [
-                    {
-                        "name": "Region",
-                        "translation": "Region",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Indsatsomr\u00e5de",
-                        "translation": "Focus",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Dato",
-                        "translation": "Date",
-                        "type": "period",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Budget",
-                        "translation": "Budget",
-                        "type": null,
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Tilskud EU's Socialfond",
-                        "translation": "Grants European Social Fund",
-                        "type": null,
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Tilskud EU's Regionalfond",
-                        "translation": "Subsidies European Regional Development Fund",
-                        "type": null,
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Tilskudsmodtager",
-                        "translation": "Beneficiary",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Partnere",
-                        "translation": "Partners",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": ""
-                    }
-                ]
-            },
             "path": null,
-            "constants": {
-                "currency": "DKK",
-                "certifying_authority": null
-            },
             "url": "hhttp://eustrukturfonde.dk/forside/0/17/0/[l][l]alle[l]alle[l]alle[l]alle[l][l]",
             "periods": {
                 "2007-2013": true,
                 "2014-2020": false
             },
+            "constants": {
+                "certifying_authority": null,
+                "currency": "DKK"
+            },
             "extraction_mode": {
                 "web_scraper": true,
-                "pdf_scraper": false,
+                "download_link": false,
                 "user_interface": false,
-                "download_link": false
+                "pdf_scraper": false
             },
-            "publication_date": null,
-            "title": "All funds data 2007-2013",
-            "publication_version": null
-        },
-        {
             "schema": {
                 "fields": [
                     {
-                        "name": "Projektitel / Operation name",
-                        "translation": "Operation name",
+                        "name": "Region",
                         "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Startdato / Operation start date",
-                        "translation": "Operation start date",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Slutdato / Operation end date",
-                        "translation": "Operation end date",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Prioritetsakse / Priority axis",
-                        "translation": "Priority axis",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Budget / Budget",
-                        "translation": "Budget",
-                        "type": "number",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "EU-medfinansiering / Union co-financing",
-                        "translation": "Union co-financing",
-                        "type": "number",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "EU-medfinansieringssats / Union co-financing rate",
-                        "translation": "Union co-financing rate",
-                        "type": "percentage",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Projektbeskrivelse",
-                        "translation": "Project",
-                        "type": "percentage",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Fond / Fund",
-                        "translation": "Fund",
-                        "type": "string",
-                        "description": "The values for this field are \"R\" (Regional) or \"S\" (Social)",
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Region / Region",
+                        "missingValue": null,
                         "translation": "Region",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
+                        "description": null
                     },
                     {
-                        "name": "Land / Country",
-                        "translation": "Country",
+                        "name": "Indsatsomr\u00e5de",
                         "type": "string",
-                        "description": null,
-                        "missingValue": null
+                        "missingValue": null,
+                        "translation": "Focus",
+                        "description": null
                     },
                     {
-                        "name": "Kontraktansvarlig partner / Beneficiary name",
-                        "translation": "Beneficiary name",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
+                        "name": "Dato",
+                        "type": "period",
+                        "missingValue": null,
+                        "translation": "Date",
+                        "description": null
                     },
                     {
-                        "name": "Vejnavn / Street name",
-                        "translation": "Street name",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
+                        "name": "Budget",
+                        "type": null,
+                        "missingValue": null,
+                        "translation": "Budget",
+                        "description": null
                     },
                     {
-                        "name": "Postnr / Operation postcode",
-                        "translation": "Operation postcode",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
+                        "name": "Tilskud EU's Socialfond",
+                        "type": null,
+                        "missingValue": null,
+                        "translation": "Grants European Social Fund",
+                        "description": null
                     },
                     {
-                        "name": "Bynavn / City name",
-                        "translation": "City name",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
+                        "name": "Tilskud EU's Regionalfond",
+                        "type": null,
+                        "missingValue": null,
+                        "translation": "Subsidies European Regional Development Fund",
+                        "description": null
                     },
                     {
-                        "name": "Koordinat east / Coordinates east",
-                        "translation": "Coordinates east",
+                        "name": "Tilskudsmodtager",
                         "type": "string",
-                        "description": null,
-                        "missingValue": ""
+                        "missingValue": null,
+                        "translation": "Beneficiary",
+                        "description": null
                     },
                     {
-                        "name": "Koordinat north / Coordinates north",
-                        "translation": "Coordinates north",
+                        "name": "Partnere",
                         "type": "string",
-                        "description": null,
-                        "missingValue": ""
-                    },
-                    {
-                        "name": "Kontaktperson / Contacts",
-                        "translation": "Contacts",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Partere / Project partners",
-                        "translation": "Project partners",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": ""
+                        "missingValue": "",
+                        "translation": "Partners",
+                        "description": null
                     }
                 ]
             },
+            "publication_date": null,
+            "publication_version": null,
+            "title": "All funds data 2007-2013"
+        },
+        {
             "path": null,
-            "constants": {
-                "currency": null,
-                "certifying_authority": null
-            },
             "url": "https://regionalt.erhvervsstyrelsen.dk/eu-projekt-eksport.csv",
             "periods": {
                 "2007-2013": false,
                 "2014-2020": true
             },
+            "constants": {
+                "certifying_authority": null,
+                "currency": null
+            },
             "extraction_mode": {
                 "web_scraper": false,
-                "pdf_scraper": false,
+                "download_link": true,
                 "user_interface": false,
-                "download_link": true
+                "pdf_scraper": false
+            },
+            "schema": {
+                "fields": [
+                    {
+                        "name": "Projektitel / Operation name",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Operation name",
+                        "description": null
+                    },
+                    {
+                        "name": "Startdato / Operation start date",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Operation start date",
+                        "description": null
+                    },
+                    {
+                        "name": "Slutdato / Operation end date",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Operation end date",
+                        "description": null
+                    },
+                    {
+                        "name": "Prioritetsakse / Priority axis",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Priority axis",
+                        "description": null
+                    },
+                    {
+                        "name": "Budget / Budget",
+                        "type": "number",
+                        "missingValue": null,
+                        "translation": "Budget",
+                        "description": null
+                    },
+                    {
+                        "name": "EU-medfinansiering / Union co-financing",
+                        "type": "number",
+                        "missingValue": null,
+                        "translation": "Union co-financing",
+                        "description": null
+                    },
+                    {
+                        "name": "EU-medfinansieringssats / Union co-financing rate",
+                        "type": "percentage",
+                        "missingValue": null,
+                        "translation": "Union co-financing rate",
+                        "description": null
+                    },
+                    {
+                        "name": "Projektbeskrivelse",
+                        "type": "percentage",
+                        "missingValue": null,
+                        "translation": "Project",
+                        "description": null
+                    },
+                    {
+                        "name": "Fond / Fund",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Fund",
+                        "description": "The values for this field are \"R\" (Regional) or \"S\" (Social)"
+                    },
+                    {
+                        "name": "Region / Region",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Region",
+                        "description": null
+                    },
+                    {
+                        "name": "Land / Country",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Country",
+                        "description": null
+                    },
+                    {
+                        "name": "Kontraktansvarlig partner / Beneficiary name",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Beneficiary name",
+                        "description": null
+                    },
+                    {
+                        "name": "Vejnavn / Street name",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Street name",
+                        "description": null
+                    },
+                    {
+                        "name": "Postnr / Operation postcode",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Operation postcode",
+                        "description": null
+                    },
+                    {
+                        "name": "Bynavn / City name",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "City name",
+                        "description": null
+                    },
+                    {
+                        "name": "Koordinat east / Coordinates east",
+                        "type": "string",
+                        "missingValue": "",
+                        "translation": "Coordinates east",
+                        "description": null
+                    },
+                    {
+                        "name": "Koordinat north / Coordinates north",
+                        "type": "string",
+                        "missingValue": "",
+                        "translation": "Coordinates north",
+                        "description": null
+                    },
+                    {
+                        "name": "Kontaktperson / Contacts",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Contacts",
+                        "description": null
+                    },
+                    {
+                        "name": "Partere / Project partners",
+                        "type": "string",
+                        "missingValue": "",
+                        "translation": "Project partners",
+                        "description": null
+                    }
+                ]
             },
             "publication_date": null,
-            "title": "All funds data 2014-2020",
-            "publication_version": null
+            "publication_version": null,
+            "title": "All funds data 2014-2020"
         }
     ],
-    "description": "The files included here contain the information about the programmes to which Denmark has allocated the European Structural Funds in the periods 2007-2013 and 2014-2020."
+    "image": null,
+    "title": "The programmes regarding the European Regional Development Fund and the European Social Fund in Denmark (2007-2013, 2014-2020)"
 }

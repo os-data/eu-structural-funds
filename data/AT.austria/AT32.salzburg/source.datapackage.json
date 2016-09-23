@@ -1,10 +1,4 @@
 {
-    "contributors": [
-        "Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)"
-    ],
-    "extraction_processors": [],
-    "title": "ERDF data for Salzburg (AT) 2007-2013",
-    "image": null,
     "sources": [
         {
             "web": "https://www.salzburg.gv.at/"
@@ -19,62 +13,67 @@
         }
     ],
     "name": "erdf_data_for_salzburg_at_2007_2013",
+    "description": "Salzburg is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called \"St\u00e4rkung der Regionalen Wettbewerbsf\u00e4higkeit und Besch\u00e4ftigung Salzburg 2007-2013\". The dataset at hand describes the funding distributed through said program.",
+    "contributors": [
+        "Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)"
+    ],
     "resources": [
         {
-            "schema": {
-                "fields": [
-                    {
-                        "name": "Beg\u00fcnstigte/r",
-                        "translation": "Beneficiary",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Bezeichnung des Vorhabens",
-                        "translation": "name of the operation",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "\u00f6ffentliche Beteiligung (EU+nationale Kofinanzierung)*",
-                        "translation": "allocated pulic funding (EU+national cofinancing)* (in Euro)",
-                        "type": "number",
-                        "description": null,
-                        "missingValue": null
-                    },
-                    {
-                        "name": "Status G = genehmigt, A = ausbezahlt",
-                        "translation": "G = commited, A = paid out",
-                        "type": "string",
-                        "description": null,
-                        "missingValue": null
-                    }
-                ]
-            },
             "path": null,
-            "constants": {
-                "currency": "EUR",
-                "certifying_authority": null
-            },
             "url": "https://www.salzburg.gv.at/wirtschaft_/Documents/rwf-beguenstigte.pdf",
-            "end_date": "2015-12-31",
-            "start_date": "2007-01-01",
-            "extraction_mode": {
-                "web_scraper": false,
-                "pdf_scraper": false,
-                "user_interface": false,
-                "download_link": true
-            },
             "periods": {
                 "2007-2013": true,
                 "2014-2020": false
             },
+            "start_date": "2007-01-01",
+            "end_date": "2015-12-31",
+            "constants": {
+                "certifying_authority": null,
+                "currency": "EUR"
+            },
+            "extraction_mode": {
+                "web_scraper": false,
+                "download_link": true,
+                "user_interface": false,
+                "pdf_scraper": false
+            },
+            "schema": {
+                "fields": [
+                    {
+                        "name": "Beg\u00fcnstigte/r",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "Beneficiary",
+                        "description": null
+                    },
+                    {
+                        "name": "Bezeichnung des Vorhabens",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "name of the operation",
+                        "description": null
+                    },
+                    {
+                        "name": "\u00f6ffentliche Beteiligung (EU+nationale Kofinanzierung)*",
+                        "type": "number",
+                        "missingValue": null,
+                        "translation": "allocated pulic funding (EU+national cofinancing)* (in Euro)",
+                        "description": null
+                    },
+                    {
+                        "name": "Status G = genehmigt, A = ausbezahlt",
+                        "type": "string",
+                        "missingValue": null,
+                        "translation": "G = commited, A = paid out",
+                        "description": null
+                    }
+                ]
+            },
             "publication_date": "2015-08-25",
-            "title": "ERDF data Salzburg (AT) (2007-2013)",
-            "publication_version": null
+            "publication_version": null,
+            "title": "ERDF data Salzburg (AT) (2007-2013)"
         }
     ],
-    "description": "Salzburg is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called \"St\u00e4rkung der Regionalen Wettbewerbsf\u00e4higkeit und Besch\u00e4ftigung Salzburg 2007-2013\". The dataset at hand describes the funding distributed through said program."
+    "image": null,
+    "title": "ERDF data for Salzburg (AT) 2007-2013"
 }
