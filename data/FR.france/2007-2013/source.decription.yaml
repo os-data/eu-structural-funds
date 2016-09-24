@@ -1,0 +1,231 @@
+title: France 2007-2013: beneficiaries of european ERDF and FSE subsidies
+
+language: FR
+
+sources:
+  - name: Europe en France: le portail des Fonds européens (portal)
+    web:  http://www.europe-en-france.gouv.fr/
+
+  - name: PROJETS EXEMPLAIRES (flagship projects)
+    web: http://www.europe-en-france.gouv.fr/Rendez-vous-compte/Projets-exemplaires?thematique=0&region=0&fonds=0&mot-cle=Mot%28s%29+cl%C3%A9%28s%29&annee=0&valider=Valider
+
+  - name: Bénéficiaires de fonds européens (beneficiaries page)
+    web: http://cartobenef.asp-public.fr/cartobenef/carto.php?lang=fr&nivgeos=reg&curCodeDomSB=DS&curCodeThemeSB=benef&typindSB=R&curCodeIndSB=nb_projet_total
+
+scraper_required: false
+
+contributors:
+  - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
+
+resources:
+    - title: EXCEL file for France 2007-2013 FSE national programs
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=nat&typeFonds=FED
+
+      publication_date: # can't find it
+
+      constant_fields:
+        fund_name:
+        offical_period: 2007-2013
+        currency_code: EUR
+        program_name:
+
+      schema:
+        fields:
+          - name: Nom de l'organisme bénéficiaire
+            translates_to: Name of the beneficiary organisation
+            maps_to: benificiary_name
+
+          - name: Libellé du projet
+            translates_to: Project title
+            maps_to: project_name
+
+          - name: Coût total du projet (en euros)
+            translates_to: total_amount
+            maps_to: benficiary_name
+
+          - name: Montant du financement européen (en euros)
+            translates_to: Amount financed by the EU
+            maps_to: transform into the eu_cofinance_rate
+
+          - name: Fonds européen concerné
+            translates_to: Concerned fund
+            maps_to: fund_name
+
+          - name: Localisation du projet
+            translates_to: Project localisation
+            maps_to: part 1 of beneficiary_address
+
+          - name: Nom de la commune de l'organisme bénéficiaire
+            translates_to: Name of the town of the beneficiary
+            maps_to: part 2 of benefciary address
+
+          - name: Code département
+            translates_to: Code of département (sub-region)
+            maps_to: part 3 of beneficiary address
+
+          - name: Nom du programme européen
+            translates_to: Name of the European program
+            maps_to: # this is actually the name of the fund in full: drop it
+
+          - name: Thématique du projet
+            translates_to: Project theme
+            maps_to: program_name
+
+          - name: Année de programmation
+            translates_to: Year scheduled # tentative translation
+            maps_to: program_date
+
+    - title: EXCEL file for France 2007-2013 ERDF national projects
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=nat&typeFonds=FSE
+
+    # regional programs
+
+    - title: EXCEL file for France 2007-2013 FED region code 971
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=971typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 971
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=971typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 972
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=972typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 972
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=972typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 973
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=973typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 973
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=973typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 974
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=974typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 974
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=974typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 72
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=72typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 72
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=72typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 73
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=73typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 73
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=73typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 91
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=91typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 91
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=91typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 93
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=93typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 93
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=93typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 82
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=82typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 82
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=82typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 83
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=83typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 83
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=83typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 74
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=74typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 74
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=74typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 54
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=54typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 54
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=54typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 52
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=52typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 52
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=52typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 24
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=24typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 24
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=24typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 26
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=26typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 26
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=26typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 43
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=43typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 43
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=43typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 42
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=42typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 42
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=42typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 41
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=41typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 41
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=41typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 21
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=21typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 21
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=21typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 11
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=11typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 11
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=11typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 22
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=22typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 22
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=22typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 31
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=31typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 31
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=31typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 23
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=23typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 23
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=23typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 25
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=25typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 25
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=25typeFonds=FSE
+
+    - title: EXCEL file for France 2007-2013 FED region code 53
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=53typeFonds=FED
+
+    - title: EXCEL file for France 2007-2013 FSE region code 53
+      url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=53typeFonds=FSE

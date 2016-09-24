@@ -1,0 +1,81 @@
+title: France 2014-2020: beneficiaries of european ERDS, YEI and FSE subsidies
+
+language: FR
+
+sources:
+  - name: Europe en France: le portail des Fonds européens (portal)
+    web:  http://www.europe-en-france.gouv.fr/
+
+  - name: Bénéficiaires des fonds 2014-2020 (beneficiaries page)
+    web: http://www.europe-en-france.gouv.fr/Rendez-vous-compte/Beneficiaires-des-fonds-2014-2020
+
+  - name: Fonds européens 2014-2020 (funds page)
+    web: http://www.europe-en-france.gouv.fr/L-Europe-s-engage/Fonds-europeens-2014-2020
+
+scraper_required: false
+
+contributors:
+  - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
+
+resources:
+  - title: EXCEL file 2014-2020 for ERDS, YEI and FSE funds
+    url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=75&evenement=&order=&deb=&fi=&page=&typeFonds=&thematique=&bornMin=&bornMax=&anneeProg=&motClef=
+
+    publication_date: 2016-07-01
+
+    constant_fields:
+      fund_name:
+      offical_period: 2014-2020
+      currency_code: EUR
+      program_name:
+
+    schema:
+      fields:
+        - name: Programme
+          translates_to: program
+          maps_to: # leave blank: a french internal code
+
+        - name: Intitulé du projet  - operation name
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: Nom du bénéficiaire - beneficiary name
+          translates_to: beneficiaryname
+          maps_to: benficiary_name
+
+        - name: Code postal du bénéficiaire
+          translates_to: postal code of the beneficiary
+          maps_to: beneficiary_address
+
+        - name: Date de début de l'opération - operation start date
+          translates_to: operation start date
+          maps_to: starting_date
+
+        - name: Date de fin de l'opération - operation end date
+          translates_to: operation end date
+          maps_to: completion_date
+
+        - name: Total dépenses éligibles
+          translates_to: Amount eligible for
+          maps_to: amount_expenditure_eligible
+
+        - name: Montant UE programmé - Union co-financing rate
+          translates_to: union co-financing rate
+          maps_to: eu_cofinance_rate
+
+        - name: Pays - Country
+          translates_to: country
+          maps_to: coutry_code
+
+        - name: Date de programmation
+          translates_to: this is ambiguous
+          maps_to: not quite sure what the date refers to
+
+        - name: Catégorie d'intervention - category of intervention
+          translates_to: category of intervention
+          maps_to: program_name
+
+        - name: Fonds
+          translates_to: fund
+          maps_to: fund_name
+
