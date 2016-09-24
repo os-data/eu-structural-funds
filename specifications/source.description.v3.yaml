@@ -1,0 +1,93 @@
+# Describe the source that you found:
+# ----------------------------------
+#
+# title: a short description of your data source.
+#
+# description: a place to put your notes, remarks aand warnings about the data.
+#              As the specialist of this source, it is especially important that
+#              you communicate.
+#
+# language: the 2-digit language code of the document (e.g. en, fr, es...)
+#
+# sources: only meant as documention: add as many as you want (urls to
+#          the actual data-files are in the resources section).
+#
+# scraper_required: if a web or PDF scraper is needed
+#
+# contributors: put yourself down (email and website are not obligatory).
+#               Follow the simple formatting convention.
+#
+# resources: a single description file like this can describe more than one
+#            resource (file or webpage). For example, the data may be split
+#            by fund or period. Indicate the split in the version property.
+#
+# Good luck!
+
+title: A human readable title for your source
+
+description: This can be a long paragraph but must be written on one line to respect the YAML format. Use soft wraps in your editor if needed.
+language: two-digit ISO 639-1 code (e.g. en, fr, es...)
+
+sources:
+  - Title of the webpage
+    web:  http://data.portal.gov/path/to/index.html
+
+  - Title of another webpage
+    web: http://data.portal.gov/path/to/another/important/page.html
+
+scraper_required: true or false
+
+contributors:
+  - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
+  - Mickey Mouse <mickey.mouse@disney.com> (http://www.disney.com)
+
+resources:
+
+  # Describe each data-resource:
+  # ----------------------------
+  #
+  # title: a short description of the data file
+  #
+  # url: the link to the file if possible. If the data needs to be scraped,
+  #      leave this property blank and set the web_scraper_required to true.
+  #
+  # publication_date: the date that the data was published or updated
+  # time-coverage: the begin and start date of the data (
+  # file_version: use this field if the source has several data-files
+  #
+  # constant_fields: any field from fiscal.fields.yaml that has a fixed value
+  #                  (i.e. is not given row by row).
+  #
+  # schema: please describe each column in the data. Don't change the original
+  #         columns names even in Cyrillic. For the translation, Google will do.
+  #         Refer to fiscal.fields.yaml to see what fiscal field each column
+  #         can be mapped to.
+  #
+  # Good luck!
+
+  - title: A human readable title for you data file
+
+    url: http://data.country.gov/path/to/filename.xlsx
+
+    publication_date: yyyy-mm-dd
+    time_coverage: [yyyy-mm-dd, yyyy-mm-dd]
+    version: what distinguishes this resource from others
+
+    constant_fields:
+      fund_name: ERDF, CF, ESF, EARDF, EMFF or INTERREG
+      offical_period: 2007-2013 or 2014-2020
+      currency_code: ISO 4217 codes (e.g. EUR, GBP...)
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - copy/paste the original column name
+          translates_to: the english translation of the column name
+          maps_to: the matching field in fiscal.fields.yaml e.g. project_id
+
+        - copy/paste the original column name
+          translates_to: the english translation of the column name
+          maps_to: the matching field in fiscal.fields.yaml e.g. start_date
+
+        - # repeat for each column you find in the data
