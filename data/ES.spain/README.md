@@ -6,13 +6,21 @@ An overview of the ESF programm can be found here (http://www.empleo.gob.es/uafs
 
 The landing page for the ESF Spanish dataset is http://www.empleo.gob.es/uafse/es/beneficiarios/index.html. The data found is based on BENEFICIARIES.
 
-ESF data could not be found on the national level, but is available on the regional level (see regional folders).
+ESF data for 2007-2013 based on beneficiaries is divided in the following:
+
+ * Regional level (see regional folders)
+ 
+ * PO ESF Lucha contra la discriminación (OP ESF Fight against discrimination). http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES05UPO002_PO_FSE_LUCHACONTRALADISCRIMINACION.pdf
+ 
+ * PO ESF Adaptabilidad y empleo (OP ESF Adaptability and Employment) 
+ http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES05UPO001_PO_FSE_ADAPTABILIDAD_EMPLEO.pdf
+ 
+ * PO FSE ASISTENCIA TÉCNICA (OP ESF Technical Assistance)
+ http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES05UPO003_PO_FSE_ASISTENCIA_TECNICA.pdf
+
 
 Columns: Beneficiario, Tipo de Operación, Gasto Público
 Columns (translated): Beneficiaries, Type of Operation, Public Spending
-
-Funds: ESF
-Time: 2014- 2020
 
 ESF Programm and database for the period 2014-2020 is not available.
 
@@ -41,8 +49,6 @@ ERDF data for 2007-2013 based on beneficiaries is divided in the following:
  * Programa Operativo Fondo de Cohesion FEDER (OP ERDF Structural Funds) http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/PO%20FCH3516.pdf
  
  
-Funds: ERDF
-Time: 2014-2020
 
 ERDF Beneficiaries database for 2014-2020 is not available. 
 
