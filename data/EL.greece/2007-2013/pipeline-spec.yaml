@@ -1,6 +1,0 @@
-2007-2013:
-  pipeline:
-  - {parameters: source.datapackage.json, run: scraper}
-  - parameters: {out-file: source.datapackage.zip}
-    run: dump
-  schedule: {crontab: 0 0 1 1 *}
