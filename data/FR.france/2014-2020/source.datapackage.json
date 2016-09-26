@@ -1,0 +1,104 @@
+{
+  "name": "france_2014_2020_beneficiaries_of_european_erds_yei_and_fse_subsidies",
+  "sources": [
+    {
+      "name": "Europe en France, le portail des Fonds europ\u00e9ens (portal)",
+      "web": "http://www.europe-en-france.gouv.fr/"
+    },
+    {
+      "name": "B\u00e9n\u00e9ficiaires des fonds 2014-2020 (beneficiaries page)",
+      "web": "http://www.europe-en-france.gouv.fr/Rendez-vous-compte/Beneficiaires-des-fonds-2014-2020"
+    },
+    {
+      "name": "Fonds europ\u00e9ens 2014-2020 (funds page)",
+      "web": "http://www.europe-en-france.gouv.fr/L-Europe-s-engage/Fonds-europeens-2014-2020"
+    }
+  ],
+  "language": "FR",
+  "title": "France 2014-2020, beneficiaries of european ERDS, YEI and FSE subsidies",
+  "scraper_required": false,
+  "contributors": [
+    "Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)"
+  ],
+  "resources": [
+    {
+      "title": "EXCEL file 2014-2020 for ERDS, YEI and FSE funds",
+      "type": [
+        1,
+        2
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Programme",
+            "translates_to": "program",
+            "maps_to": null
+          },
+          {
+            "name": "Intitul\u00e9 du projet  - operation name",
+            "translates_to": "operation name",
+            "maps_to": "project_name"
+          },
+          {
+            "name": "Nom du b\u00e9n\u00e9ficiaire - beneficiary name",
+            "translates_to": "beneficiaryname",
+            "maps_to": "benficiary_name"
+          },
+          {
+            "name": "Code postal du b\u00e9n\u00e9ficiaire",
+            "translates_to": "postal code of the beneficiary",
+            "maps_to": "beneficiary_address"
+          },
+          {
+            "name": "Date de d\u00e9but de l'op\u00e9ration - operation start date",
+            "translates_to": "operation start date",
+            "maps_to": "starting_date"
+          },
+          {
+            "name": "Date de fin de l'op\u00e9ration - operation end date",
+            "translates_to": "operation end date",
+            "maps_to": "completion_date"
+          },
+          {
+            "name": "Total d\u00e9penses \u00e9ligibles",
+            "translates_to": "Amount eligible for",
+            "maps_to": "amount_expenditure_eligible"
+          },
+          {
+            "name": "Montant UE programm\u00e9 - Union co-financing rate",
+            "translates_to": "union co-financing rate",
+            "maps_to": "eu_cofinance_rate"
+          },
+          {
+            "name": "Pays - Country",
+            "translates_to": "country",
+            "maps_to": "coutry_code"
+          },
+          {
+            "name": "Date de programmation",
+            "translates_to": "this is ambiguous",
+            "maps_to": "not quite sure what the date refers to"
+          },
+          {
+            "name": "Cat\u00e9gorie d'intervention - category of intervention",
+            "translates_to": "category of intervention",
+            "maps_to": "program_name"
+          },
+          {
+            "name": "Fonds",
+            "translates_to": "fund",
+            "maps_to": "fund_name"
+          }
+        ]
+      },
+      "publication_date": "01/07/2015",
+      "url": "http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=75&evenement=&order=&deb=&fi=&page=&typeFonds=&thematique=&bornMin=&bornMax=&anneeProg=&motClef=",
+      "constant_fields": {
+        "fund_name": null,
+        "currency_code": "EUR",
+        "offical_period": "2014-2020",
+        "program_name": null
+      }
+    }
+  ]
+}

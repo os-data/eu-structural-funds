@@ -1,0 +1,6 @@
+2014-2020:
+  pipeline:
+  - {parameters: source.datapackage.json, run: validate_source}
+  - {run: excel_downloader}
+  - {run: dump, parameters: {out-file: source.datapackage.zip}}
+  schedule: {crontab: 0 0 1 1 *}

@@ -1,27 +1,58 @@
 {
+  <
+  <
+  <
+  <
+  <
+  <
+  < Updated upstream
+=======
+"name": "european_union_structural_assistance_to_estonia",
+>>>>>>> Stashed changes
     "sources": [
         {
             "name": "List of beneficiaries",
             "web": "http://www.struktuurifondid.ee/list-of-beneficiaries/"
         }
     ],
+<<<<<<< Updated upstream
     "name": "european_union_structural_assistance_to_estonia",
     "description": "In the period of 2007-2013 Estonia was allocated more than 3.40 billion euros from the structural assistance, which will be channelled to the following fields: energy economies, entrepreneurship, administrative capability, education, information society, environment protection, regional and local development, research and development activities, healthcare and welfare, transportation and labour market.\n",
+    =======
+"image": null,
+"description": "In the period of 2007-2013 Estonia was allocated more than 3.40 billion euros from the structural assistance, which will be channelled to the following fields: energy economies, entrepreneurship, administrative capability, education, information society, environment protection, regional and local development, research and development activities, healthcare and welfare, transportation and labour market.\n",
+"title": "European Union Structural Assistance to Estonia",
+>>>>>>> Stashed changes
     "contributors": [
         "Friedrich Lindenberg <pudo@occrp.org> (OCCRP)"
     ],
     "resources": [
         {
+        <<<<<<< Updated upstream
+        =======
+        "constants": {
+        "currency": "EUR",
+        "certifying_authority": null
+        },
+        "type": [
+        1,
+        2
+        ],
+        >>>>>>> Stashed changes
             "path": null,
             "url": null,
-            "periods": {
-                "2007-2013": true,
-                "2014-2020": false
+            "title": null,
+        "schema": {
+        "fields": null
             },
+        <<<<<<< Updated upstream
             "constants": {
                 "certifying_authority": null,
                 "currency": "EUR"
             },
+=======
+"publication_date": "2014-10-27",
+>>>>>>> Stashed changes
             "extraction_mode": {
                 "web_scraper": true,
                 "download_link": false,
@@ -31,6 +62,7 @@
             "schema": {
                 "fields": null
             },
+<<<<<<< Updated upstream
             "publication_date": "2014-10-27",
             "publication_version": "web database",
             "title": null
@@ -38,4 +70,13 @@
     ],
     "image": null,
     "title": "European Union Structural Assistance to Estonia"
+=======
+"publication_version": "web database",
+"periods": {
+"2014-2020": false,
+"2007-2013": true
+}
+}
+]
+>>>>>>> Stashed changes
 }

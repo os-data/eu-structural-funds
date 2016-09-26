@@ -1,9 +1,17 @@
+<<<<<<< Updated upstream
 title: France 2014-2020: beneficiaries of european ERDS, YEI and FSE subsidies
+=======
+title: France 2014-2020, beneficiaries of european ERDS, YEI and FSE subsidies
+>>>>>>> Stashed changes
 
 language: FR
 
 sources:
+<<<<<<< Updated upstream
   - name: Europe en France: le portail des Fonds européens (portal)
+=======
+  - name: Europe en France, le portail des Fonds européens (portal)
+>>>>>>> Stashed changes
     web:  http://www.europe-en-france.gouv.fr/
 
   - name: Bénéficiaires des fonds 2014-2020 (beneficiaries page)
@@ -19,9 +27,15 @@ contributors:
 
 resources:
   - title: EXCEL file 2014-2020 for ERDS, YEI and FSE funds
+<<<<<<< Updated upstream
     url: http://cartobenef.asp-public.fr/cartobenef/liste_benef_excel.php?nivgeo=reg&codgeo=75&evenement=&order=&deb=&fi=&page=&typeFonds=&thematique=&bornMin=&bornMax=&anneeProg=&motClef=
 
     publication_date: 2016-07-01
+=======
+    url: http://www.europe-en-france.gouv.fr/content/download/34797/361872/version/1/file/20160711_listeoperations_FEDER_FSE_14-20.xls
+
+    publication_date: 11/07/2016
+>>>>>>> Stashed changes
 
     constant_fields:
       fund_name:

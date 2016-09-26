@@ -1,4 +1,14 @@
 {
+  <
+  <
+  <
+  <
+  <
+  <
+  < Updated upstream
+=======
+"name": "erdf_data_for_kaernten_at_2007_2013",
+>>>>>>> Stashed changes
     "sources": [
         {
             "name": "K\u00e4rntner Wirtschaftsf\u00f6rderungs Fonds",
@@ -13,13 +23,20 @@
             "web": "http://www.oerok.gv.at/eu-regionalpolitik/eu-strukturfonds-in-oesterreich-2007-2013.html"
         }
     ],
+<<<<<<< Updated upstream
     "name": "erdf_data_for_kaernten_at_2007_2013",
     "description": "Kaernten is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called \"St\u00e4rkung der Regionalen Wettbewerbsf\u00e4higkeit und Besch\u00e4ftigung Kaernten 2007-2013\". The dataset at hand describes the funding distributed through said program.",
+    =======
+"image": null,
+"description": "Kaernten is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called \"St\u00e4rkung der Regionalen Wettbewerbsf\u00e4higkeit und Besch\u00e4ftigung Kaernten 2007-2013\". The dataset at hand describes the funding distributed through said program.",
+"title": "ERDF data for Kaernten (AT) 2007-2013",
+>>>>>>> Stashed changes
     "contributors": [
         "Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)"
     ],
     "resources": [
         {
+        <<<<<<< Updated upstream
             "path": null,
             "url": "http://kwf.at/downloads/deutsch/EU/Publizitaet_Kaernten.pdf",
             "periods": {
@@ -38,43 +55,98 @@
                 "user_interface": false,
                 "pdf_scraper": false
             },
+            =======
+            "constants": {
+            "currency": "EUR",
+            "certifying_authority": null
+            },
+            "type": [
+            1,
+            2
+            ],
+"url": "http://kwf.at/downloads/deutsch/EU/Publizitaet_Kaernten.pdf",
+"path": null,
+"end_date": "2015-04-20",
+"start_date": "2007-01-01",
+"title": "ERDF data Kaernten (AT) (2007-2013)",
+>>>>>>> Stashed changes
             "schema": {
                 "fields": [
                     {
                         "name": "Beg\u00fcnstigte/r",
                         "type": "string",
+                    <<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "Beneficiary",
                         "description": null
+                    =======
+                    "description": null,
+                    "missingValue": null,
+                    "translation": "Beneficiary"
+                    >>>>>>> Stashed changes
                     },
                     {
                         "name": "Bezeichnung des Vorhabens",
                         "type": "string",
+                    <<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "name of the operation",
                         "description": null
+                        =======
+                    "description": null,
+                    "missingValue": null,
+"translation": "name of the operation"
+>>>>>>> Stashed changes
                     },
                     {
                         "name": "\u00f6ffentliche Beteiligung (EU+nationale Kofinanzierung)*",
                         "type": "number",
+<<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "allocated pulic funding (EU+national cofinancing)* (in Euro)",
                         "description": null
+=======
+"description": null,
+"missingValue": null,
+"translation": "allocated pulic funding (EU+national cofinancing)* (in Euro)"
+>>>>>>> Stashed changes
                     },
                     {
                         "name": "Status G = genehmigt, A = ausbezahlt",
                         "type": "string",
+<<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "G = commited, A = paid out",
                         "description": null
+                        =======
+"description": null,
+"missingValue": null,
+"translation": "G = commited, A = paid out"
+>>>>>>> Stashed changes
                     }
                 ]
             },
             "publication_date": "2015-04-20",
+            <<<<<<< Updated upstream
             "publication_version": null,
             "title": "ERDF data Kaernten (AT) (2007-2013)"
         }
     ],
     "image": null,
     "title": "ERDF data for Kaernten (AT) 2007-2013"
+=======
+"extraction_mode": {
+"web_scraper": false,
+"pdf_scraper": false,
+"user_interface": false,
+"download_link": true
+},
+"publication_version": null,
+"periods": {
+"2014-2020": false,
+"2007-2013": true
+}
+}
+]
+>>>>>>> Stashed changes
 }

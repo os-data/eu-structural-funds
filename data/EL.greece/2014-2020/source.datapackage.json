@@ -1,0 +1,144 @@
+{
+  "name": "european_structural_and_investment_funds_esif_for_the_period_2014_2020_for_greece",
+  "sources": [
+    {
+      "name": "ESPA",
+      "web": "https://www.espa.gr/en/pages/default.aspx"
+    }
+  ],
+  "image": null,
+  "description": "A list of all the public projects and state aids selected for co-funding under the Partnership Agreement 2014-2020 by Operational Programme and by Fund",
+  "title": "European Structural and Investment Funds (ESIF) for the period 2014-2020 for Greece",
+  "contributors": [
+    "Olaya Argueso <arguesoperezolaya@gmail.com>"
+  ],
+  "resources": [
+    {
+      "constants": {
+        "currency": null,
+        "certifying_authority": null
+      },
+      "type": [
+        1,
+        2
+      ],
+      "path": null,
+      "url": "https://www.espa.gr/el/Documents/ListOfOperations_20160513.csv",
+      "title": "The list of all projects for the period 2014-2020",
+      "schema": {
+        "fields": [
+          {
+            "name": "\u00c5\u00d0\u00c9\u00d7\u00c5\u00c9\u00d1\u00c7\u00d3\u00c9\u00c1\u00ca\u00cf \u00d0\u00d1\u00cf\u00c3\u00d1\u00c1\u00cc\u00cc\u00c1/ OPERATIONAL PROGRAMME",
+            "type": "string",
+            "description": null,
+            "missingValue": null,
+            "translation": "OPERATIONAL PROGRAMME"
+          },
+          {
+            "name": "\u00c1\u00ce\u00cf\u00cd\u00c1\u00d3 \u00d0\u00d1\u00cf\u00d4\u00c5\u00d1\u00c1\u00c9\u00cf\u00d4\u00c7\u00d4\u00c1\u00d3/PRIORITY",
+            "type": "string",
+            "description": null,
+            "missingValue": null,
+            "translation": "PRIORITY"
+          },
+          {
+            "name": "TAMEIO/ FUND",
+            "type": "string",
+            "description": null,
+            "missingValue": null,
+            "translation": "FUND"
+          },
+          {
+            "name": "\u00cf\u00cd\u00cf\u00cc\u00c1\u00d3\u00c9\u00c1 \u00c4\u00c9\u00ca\u00c1\u00c9\u00cf\u00d5\u00d7\u00cf\u00d5 / BENEFICIARY NAME",
+            "type": "string",
+            "description": null,
+            "missingValue": null,
+            "translation": "BENEFICIARY NAME"
+          },
+          {
+            "name": "\u00cf\u00cd\u00cf\u00cc\u00c1\u00d3\u00c9\u00c1 \u00d0\u00d1\u00c1\u00ce\u00c7\u00d3 / OPERATION NAME",
+            "type": "string",
+            "description": null,
+            "missingValue": null,
+            "translation": "OPERATION NAME"
+          },
+          {
+            "name": "\u00d3\u00d5\u00cd\u00cf\u00d8\u00c7 \u00d0\u00d1\u00c1\u00ce\u00c7\u00d3/OPERATION SUMMARY",
+            "type": "string",
+            "description": null,
+            "missingValue": null,
+            "translation": "OPERATION SUMMARY"
+          },
+          {
+            "name": "\u00c7\u00cc/\u00cd\u00c9\u00c1 \u00c5\u00cd\u00c1\u00d1\u00ce\u00c7\u00d3 \u00d4\u00c7\u00d3 \u00d0\u00d1\u00c1\u00ce\u00c7\u00d3 / OPERATION START DATE",
+            "type": "date",
+            "description": null,
+            "missingValue": null,
+            "translation": "OPERATION START DATE"
+          },
+          {
+            "name": "\u00ca\u00c1\u00d4\u00c1\u00cb\u00c7\u00ca\u00d4\u00c9\u00ca\u00c7 \u00c7\u00cc\u00c5\u00d1\u00cf\u00cc\u00c7\u00cd\u00c9\u00c1 \u00d0\u00d1\u00c1\u00ce\u00c7\u00d3 / OPERATION END DATE",
+            "type": "date",
+            "description": null,
+            "missingValue": null,
+            "translation": "OPERATION END DATE"
+          },
+          {
+            "name": "\u00d3\u00d5\u00cd\u00cf\u00cb\u00c9\u00ca\u00c7 \u00c5\u00d0\u00c9\u00cb\u00c5\u00ce\u00c9\u00cc\u00c7 \u00c4\u00c1\u00d0\u00c1\u00cd\u00c7 \u00d0\u00cf\u00d5  \u00c4\u00c9\u00c1\u00d4\u00c5\u00c8\u00c7\u00ca\u00c5 \u00d3\u00d4\u00c7\u00cd \u00d0\u00d1\u00c1\u00ce\u00c7 (\u00d0\u00d1\u00cf\u00db\u00d0\u00cf\u00cb\u00cf\u00c3\u00c9\u00d3\u00cc\u00cf\u00d3)/ TOTAL ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION",
+            "type": "number",
+            "description": null,
+            "missingValue": "",
+            "translation": "TOTAL ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION"
+          },
+          {
+            "name": "\u00d0\u00cf\u00d3\u00cf\u00d3\u00d4\u00cf \u00d3\u00d5\u00c3\u00d7\u00d1\u00c7\u00cc\u00c1\u00d4\u00cf\u00c4\u00cf\u00d4\u00c7\u00d3\u00c7\u00d3 \u00d4\u00c7\u00d3 \u00c5\u00cd\u00d9\u00d3\u00c7\u00d3 \u00c1\u00cd\u00c1 \u00c1\u00ce\u00cf\u00cd\u00c1 \u00d0\u00d1\u00cf\u00d4\u00c5\u00d1\u00c1\u00c9\u00cf\u00d4\u00c7\u00d4\u00c1\u00d3/ UNION Co-FINANCING RATE  AS PER PRIORITY AXIS",
+            "type": "string",
+            "description": null,
+            "missingValue": null,
+            "translation": "UNION Co-FINANCING RATE  AS PER PRIORITY AXIS"
+          },
+          {
+            "name": "\u00d4\u00c1\u00d7\u00d5\u00c4\u00d1\u00cf\u00cc\u00c9\u00ca\u00cf\u00d3 \u00ca\u00d9\u00c4\u00c9\u00ca\u00c1\u00d3 \u00de \u00a2\u00cb\u00cb\u00c7 \u00ca\u00c1\u00d4\u00c1\u00cb\u00cb\u00c7\u00cb\u00c7 \u00c5\u00cd\u00c4\u00c5\u00c9\u00ce\u00c7 \u00d4\u00cf\u00d0\u00cf\u00c8\u00c5\u00d3\u00c9\u00c1\u00d3/POSTCODE OR OTHER APPROPRIATE LOCATION INDICATOR",
+            "type": "string",
+            "description": null,
+            "missingValue": null,
+            "translation": "POSTCODE OR OTHER APPROPRIATE LOCATION INDICATOR"
+          },
+          {
+            "name": "\u00d7\u00d9\u00d1\u00c1/COUNTRY",
+            "type": "string",
+            "description": null,
+            "missingValue": null,
+            "translation": "COUNTRY"
+          },
+          {
+            "name": "\u00cf\u00cd\u00cf\u00cc\u00c1\u00d3\u00c9\u00c1 \u00ca\u00c1\u00d4\u00c7\u00c3\u00cf\u00d1\u00c9\u00c1\u00d3 \u00d0\u00c1\u00d1\u00c5\u00cc\u00c2\u00c1\u00d3\u00c7\u00d3 \u00d4\u00c7\u00d3 \u00d0\u00d1\u00c1\u00ce\u00c7\u00d3/NAME OF CATEGORY OF INTERVENTION FOR THE OPERATION",
+            "type": "string",
+            "description": null,
+            "missingValue": null,
+            "translation": "NAME OF CATEGORY OF INTERVENTION FOR THE OPERATION"
+          },
+          {
+            "name": "\u00d4\u00c5\u00cb\u00c5\u00d5\u00d4\u00c1\u00c9\u00c1 \u00c5\u00cd\u00c7\u00cc\u00c5\u00d1\u00d9\u00d3\u00c7 \u00ca\u00c1\u00d4\u00c1\u00cb\u00cf\u00c3\u00cf\u00d5/LAST UPDATE OF THE LIST",
+            "type": "date",
+            "description": null,
+            "missingValue": null,
+            "translation": "LAST UPDATE OF THE LIST"
+          }
+        ]
+      },
+      "publication_date": null,
+      "extraction_mode": {
+        "web_scraper": false,
+        "pdf_scraper": false,
+        "user_interface": false,
+        "download_link": true
+      },
+      "publication_version": null,
+      "periods": {
+        "2014-2020": true,
+        "2007-2013": false
+      }
+    }
+  ]
+}

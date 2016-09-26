@@ -1,11 +1,6 @@
-DK.denmark:
+2007-2013:
   pipeline:
-<<<<<<< Updated upstream
-  - {params: source.datapackage.json, run: scraper}
-  - {run: dump}
-=======
   - {parameters: source.datapackage.json, run: scraper}
   - parameters: {out-file: source.datapackage.zip}
     run: dump
->>>>>>> Stashed changes
   schedule: {crontab: 0 0 1 1 *}

@@ -1,4 +1,14 @@
 {
+  <
+  <
+  <
+  <
+  <
+  <
+  < Updated upstream
+=======
+"name": "all_esif_data_for_croatia",
+>>>>>>> Stashed changes
     "sources": [
         {
             "name": "Ministry of Regional Development and EU Funds",
@@ -13,14 +23,21 @@
             "web": null
         }
     ],
+<<<<<<< Updated upstream
     "name": "all_esif_data_for_croatia",
     "description": "Dataset with usable amount of fields. Contains all ESIF data from 2008- March 2016",
+    =======
+"image": null,
+"description": "Dataset with usable amount of fields. Contains all ESIF data from 2008- March 2016",
+"title": "All ESIF data for Croatia",
+>>>>>>> Stashed changes
     "contributors": [
         "Bela Seeger <bela.seege\u00ae@okfn.de> (http://okfn.de)",
         "Marta Rey <martareyruiz@gmail.com>"
     ],
     "resources": [
         {
+        <<<<<<< Updated upstream
             "path": null,
             "url": "http://www.strukturnifondovi.hr/UserDocsImages/Documents/KartaProjekataZaWeb%201.4.2016.xls",
             "periods": {
@@ -39,92 +56,189 @@
                 "user_interface": false,
                 "pdf_scraper": false
             },
+            =======
+            "constants": {
+            "currency": "HRK",
+            "certifying_authority": null
+            },
+            "type": [
+            1,
+            2
+            ],
+"url": "http://www.strukturnifondovi.hr/UserDocsImages/Documents/KartaProjekataZaWeb%201.4.2016.xls",
+"path": null,
+"end_date": "2016/03",
+"start_date": "2008",
+"title": "Xls file containing all ESIF data for Croatia.",
+>>>>>>> Stashed changes
             "schema": {
                 "fields": [
                     {
                         "name": "Naziv projekta",
                         "type": "string",
+                    <<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "Project Name",
                         "description": null
+                    =======
+                    "description": null,
+                    "missingValue": null,
+                    "translation": "Project Name"
+                    >>>>>>> Stashed changes
                     },
                     {
                         "name": "Fond",
                         "type": "string",
+                    <<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "Fund",
                         "description": null
+                        =======
+                    "description": null,
+                    "missingValue": null,
+"translation": "Fund"
+>>>>>>> Stashed changes
                     },
                     {
                         "name": "\u0160ifra operativnog programa",
                         "type": "string",
+<<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "Code OP",
                         "description": null
+=======
+"description": null,
+"missingValue": null,
+"translation": "Code OP"
+>>>>>>> Stashed changes
                     },
                     {
                         "name": "NUTSII",
                         "type": "string",
+<<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "NUTSII",
                         "description": null
+                        =======
+                        "description": null,
+                        "missingValue": null,
+                        "translation": "NUTSII"
+                        >>>>>>> Stashed changes
                     },
                     {
                         "name": "\u017dupanija",
                         "type": "string",
+                        <<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "District",
                         "description": null
+                        =======
+                        "description": null,
+                        "missingValue": null,
+                        "translation": "District"
+                        >>>>>>> Stashed changes
                     },
                     {
                         "name": "Korisnik",
                         "type": "string",
+                    <<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "User",
                         "description": null
+=======
+"description": null,
+"missingValue": null,
+"translation": "User"
+>>>>>>> Stashed changes
                     },
                     {
                         "name": "Opis projekta",
                         "type": "string",
+<<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "Project description",
                         "description": null
+                        =======
+"description": null,
+"missingValue": null,
+"translation": "Project description"
+>>>>>>> Stashed changes
                     },
                     {
                         "name": "Datum ugovaranja",
                         "type": "date",
+<<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "Date of contract",
                         "description": null
+=======
+"description": null,
+"missingValue": null,
+"translation": "Date of contract"
+>>>>>>> Stashed changes
                     },
                     {
                         "name": "Zaklju\u010dni datum provedbe aktivnosti",
                         "type": "date",
+<<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "closing date of implementation of activities",
                         "description": null
+                        =======
+"description": null,
+"missingValue": null,
+"translation": "closing date of implementation of activities"
+>>>>>>> Stashed changes
                     },
                     {
                         "name": "Bespovratna sredstva",
                         "type": "number",
+<<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "Grants",
                         "description": "Official currency is HRK, amounts here are in 'kn'"
+=======
+"description": "Official currency is HRK, amounts here are in 'kn'",
+"missingValue": null,
+"translation": "Grants"
+>>>>>>> Stashed changes
                     },
                     {
                         "name": "Ukupno prihvatljivi tro\u0161kovi",
                         "type": "number",
+                    <<<<<<< Updated upstream
                         "missingValue": null,
                         "translation": "Total eligible costs",
                         "description": "Official currency is HRK, amounts here are in 'kn'"
+=======
+"description": "Official currency is HRK, amounts here are in 'kn'",
+"missingValue": null,
+"translation": "Total eligible costs"
+>>>>>>> Stashed changes
                     }
                 ]
             },
             "publication_date": "yyyy-mm-dd",
+            <<<<<<< Updated upstream
             "publication_version": "a description of this file version",
             "title": "Xls file containing all ESIF data for Croatia."
         }
     ],
     "image": null,
     "title": "All ESIF data for Croatia"
+=======
+"extraction_mode": {
+"web_scraper": false,
+"pdf_scraper": false,
+"user_interface": false,
+"download_link": true
+},
+"publication_version": "a description of this file version",
+"periods": {
+"2014-2020": true,
+"2007-2013": true
+}
+}
+]
+>>>>>>> Stashed changes
 }

@@ -1,0 +1,85 @@
+{
+  "name": "european_regional_development_fund_erdf_european_social_fund_esf_and_cohesion_funds_for_greece",
+  "sources": [
+    {
+      "name": "Anaptyxi",
+      "web": "http://anaptyxi.gov.gr/Default.aspx?tabid=251&language=en-US"
+    },
+    {
+      "name": "National Strategicg Reference Framework (NSFR 2007-2013)",
+      "web": "https://2007-2013.espa.gr/en/Pages/Default.aspx"
+    }
+  ],
+  "image": null,
+  "description": "Information about the projects to which Greece has allocated the funds it has received from the EU during the period 2007-2013.",
+  "title": "European Regional Development Fund (ERDF), European Social Fund (ESF) and Cohesion Funds for Greece",
+  "contributors": [
+    "Olaya Argueso <arguesoperezolaya@gmail.com>"
+  ],
+  "resources": [
+    {
+      "constants": {
+        "currency": "EUR",
+        "certifying_authority": null
+      },
+      "type": [
+        1,
+        2
+      ],
+      "path": null,
+      "url": "http://anaptyxi.gov.gr/Analytika2.aspx?mod=1&~",
+      "title": "Searchable database",
+      "schema": {
+        "fields": [
+          {
+            "name": "Title",
+            "type": "string",
+            "description": "title of the project",
+            "missingValue": null,
+            "translation": "title"
+          },
+          {
+            "name": "Body",
+            "type": "string",
+            "description": "agency that implements the project",
+            "missingValue": null,
+            "translation": "body"
+          },
+          {
+            "name": "Budget",
+            "type": "number",
+            "description": null,
+            "missingValue": null,
+            "translation": "budget"
+          },
+          {
+            "name": "Contracts",
+            "type": "number",
+            "description": null,
+            "missingValue": null,
+            "translation": "contracts"
+          },
+          {
+            "name": "Payment",
+            "type": "number",
+            "description": null,
+            "missingValue": null,
+            "translation": "payment"
+          }
+        ]
+      },
+      "publication_date": null,
+      "extraction_mode": {
+        "web_scraper": false,
+        "pdf_scraper": false,
+        "user_interface": true,
+        "download_link": false
+      },
+      "publication_version": "minimal dataset",
+      "periods": {
+        "2014-2020": false,
+        "2007-2013": true
+      }
+    }
+  ]
+}
