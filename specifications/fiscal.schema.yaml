@@ -72,171 +72,124 @@ fields:
   # Additional (optional) columns about the project
   # -----------------------------------------------
 
-  - original_name: # copy/paste the orginal column name
-
-    # don't modify me:
-    name: project_id
+  - name: project_id
     title: Unique code of the project
     description: if the project has an ID
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-
-    # don't modify me:
-    name: project_description_long
+  - name: project_description_long
     title: Short description of the project
     description: if there is a small paragraph description
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-    value: # fill me in
-
-    # don't modify me:
-    name: priority_number
+  - name: priority_number
     title: Number of priority
     description: Number of the priority under the grant agreement the funds are coming from
     required: false
     codelist: true
 
-  # Information about the project time span:
-  # ----------------------------------------
+  - name: project_category
+    title: Project category
+    description: A sub-category of the subsidy fund
+    required: false
+    codelist: false
 
-  - original_name: # copy/paste the orginal column name
 
-    # don't modify me:
-    name: starting_date
+  # Information about the project time span
+  # ---------------------------------------
+
+  - name: program_date # @anna: this one is ambiguous: can you be more specific?
+    title: Date of the program
+    description: Date of the program
+    required: false
+    codelist: false
+
+  - name: starting_date
     title: Starting date of project
     description: starting date of the project
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-
-    # don't modify me:
-    name: completion_date
+  - name: completion_date
     title: Completion date of project
     description: Completion date of project
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-
-    # don't modify me:
-    name: approval_date
+  - name: approval_date
     title: Approvale date of project
     description: Date that the project is approved
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-
-    # don't modify me:
-    name: payment_date
+  - name: payment_date
     title: Date Payment
     description: Date total payment was made
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-
-    # don't modify me:
-    name: first_payment_date
+  - name: first_payment_date
     title: Date of the first payment
     description: The data at which the first payment was made (pre-financing)
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-
-    # don't modify me:
-    name: final_payment_date
+  - name: final_payment_date
     title: Date of the final payment
     description: The date on which the final payment was made
     required: false
     codelist: false
 
-  # Information about the payments:
-  # -------------------------------
+  # Information about the payments
+  # ------------------------------
 
-  - original_name: # copy/paste the orginal column name
-    currency: # only if the currency is not the currency of the country
-
-    # don't modify me:
-    name: total_amount_applied
+  - name: total_amount_applied
     title: Total amount that project applied for
     description: Total amount that project applied for
     required: true
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-    currency: # only if the currency is not the currency of the country
-
-    # don't modify me:
-    name: total_eligible_expenditure
+  - name: total_eligible_expenditure
     title: Total eligible expenditure
     description:
     required: true
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-    currency: # only if the currency is not the currency of the country
-
-    # don't modify me:
-    name: amount_eu_funding_in_euro
-    title: Amount EU funding in Euro
-    description: Amount that is awarded from EU funds in Euro
+  - name: total_amount_awarded
+    title: Amount EU funding
+    description: Amount that is awarded from EU funds
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-    currency: # only if the currency is not the currency of the country
-
-    # don't modify me:
-    name: member_state_amount
-    title: Amount National/Regional Funding
+  - name: member_state_amount
+    title: Amount of national and regional funding
     description: Amount that is awarded from national funds
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-    currency: # only if the currency is not the currency of the country
-
-    # don't modify me:
-    name: third_party_funding
-    title: Third Party funding
+  - name: third_party_funding
+    title: Third party funding
     description: The total amount that is additional to the action over third party funding
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-    currency: # only if the currency is not the currency of the country
-
-    # don't modify me:
-    name: eu_cofinance_rate
+  - name: eu_cofinance_rate
     title: co-finance rate EU
-    description: The percentage of co-finance from the EU
+    description: The percentage of co-financing from the EU
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-    currency: # only if the currency is not the currency of the country
-
-    # don't modify me:
-    name: member_state_rate
+  - name: member_state_rate
     title: Percentage financed by the Member State
     description: The percentage of the total amount that is financed by the regional/national level
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-    currency: # only if the currency is not the currency of the country
-
-    # don't modify me:
-    name: european_investment_financing
+  - name: european_investment_bank_ financing
     title: European Investment Bank financing
-    description: The amount received from the EIB # Anna please check!
+    description: The amount received from the EIB # @anna: can you confirm?
     required: false
     codelist: false
 
