@@ -107,26 +107,38 @@ def save_pipeline(source_folder, pipeline, pipeline_id):
     logging.info('%s: created pipeline specs', pipeline_id)
 
 
-def select_processors_v1(package):
+def select_processors(package):
     """Select the appropriate processors for the pipeline with v1."""
 
-    # In v3, the extraction mode is defined at the metadata level
-    mode = package['resources'][0]['extraction_mode']
-    mode_sum = sum(map(int, mode.values()))
+    downloader = [
+        {'run': 'validate_source', 'parameters': DATAPACKAGE_FILE},
+        {'run': 'downloader'}]
+    scraper = [
+        {'run': 'scraper', 'parameters': DATAPACKAGE_FILE}
+    ]
 
-    if mode_sum in (0, 2, 3):
-        message = '{}: extraction mode is ambiguous'
-        raise ValueError(message.format(package['name']))
-
-    if mode['download_link']:
-        processors = [
-            {'run': 'simple_remote_source', 'params': DATAPACKAGE_FILE},
-            {'run': 'downloader', }
-        ]
+    if 'scraper_required' in package:
+        # v3 descriptions
+        if package['scraper_required']:
+            processors = scraper
+        else:
+            processors = downloader
     else:
-        processors = [{'run': 'scraper', 'params': DATAPACKAGE_FILE}]
+        # v1 descriptions
+        mode = package['resources'][0]['extraction_mode']
+        mode_sum = sum(map(int, mode.values()))
 
-    processors.append({'run': 'dump'})
+        if mode_sum in (0, 2, 3):
+            message = '{}: extraction mode is ambiguous'
+            raise ValueError(message.format(package['name']))
+
+        if mode['download_link']:
+            processors = downloader
+        else:
+            processors = scraper
+
+    processors.append({'run': 'dump',
+                       'parameters': {'out-file': 'source.datapackage.zip'}})
 
     # noinspection PyTypeChecker
     processor_ids = [processor['run'] for processor in processors]
@@ -156,9 +168,18 @@ def collect_source_folders():
         for folder in folders:
             _, name = os.path.split(folder)
             geocode = name.split('.')[0]
+
             if geocode in valid_geocodes:
                 logging.debug('%s: detected source folder', folder)
                 yield os.path.join(root, folder)
+                main_folder = os.path.join(root, folder)
+                yield main_folder
+
+                for _, sub_folders, _ in os.walk(main_folder):
+                    for sub_folder in sub_folders:
+                        logging.debug('%s/%s: detected source folder',
+                                      folder, sub_folder)
+                        yield os.path.join(main_folder, sub_folder)
 
 
 def load_geocodes():
@@ -189,7 +210,7 @@ def bootstrap_all_pipelines():
             package = create_datapackage(source_folder)
 
             if 'yaml_error' not in package:
-                processors, processor_ids = select_processors_v1(package)
+                processors, processor_ids = select_processors(package)
                 pipeline = register_processors(processors, pipeline_id)
                 save_pipeline(source_folder, pipeline, pipeline_id)
 
