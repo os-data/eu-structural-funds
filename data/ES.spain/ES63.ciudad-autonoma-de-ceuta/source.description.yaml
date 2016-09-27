@@ -17,7 +17,7 @@ contributors:
 resources:
 
   title: PDF file containing ERDF beneficiaries data 2007-2013 for ES63.
-  url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/ME3516.pdf
+  url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/CE3516.pdf
   path: 
 
   publication_date: 2016-09-19
@@ -76,8 +76,8 @@ resources:
         missingValue: 
         description:
         
- title: PDF file containing ESF beneficiaries data for ES64 from 2007 till 2013
- url: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES051PO008_PO_FSE_MELILLA.pdf
+ title: PDF file containing ESF beneficiaries data for ES63 from 2007 till 2013
+ url: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES051PO007_PO_FSE_CEUTA.pdf
  path: 
 
   publication_date: 2013-05-20
