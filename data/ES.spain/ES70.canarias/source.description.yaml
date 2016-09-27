@@ -1,90 +1,32 @@
-# Describe the source that you found:
-# ----------------------------------
-#
-# title: a short description of your data source.
-#
-# description: the place to put your notes, warnings, remarks and limitations
-#              about the data are especially important to communicate.
-#
-# sources: only meant as *documention*. Add as many as you want. The urls to
-#          the actual data-files are in the "resources" section.
-#
-# image: used to illustrate the data source on the website. Check its license.
-#
-# contributors: Put yourself down(email and website are not obligatory).
-#               Follow the simple formatting convention.
-#
-# resources: a single source can have one or more data-files, called
-#            "resources". Why? Because there may be regular data updates or
-#            the data may be broken down by funds for example.
-#
-# Good luck!
+title: European Regional Development Fund (ERDF) and European Social Fund (ESF) for region ES70.Canarias, Spain
 
-title: A human readable title for your source
-
-description: This can be a long paragraph but must be written on one line to respect the YAML format. Use soft wraps in your editor if needed.
+description: Two datasets, one with the information of ERDF beneficiaries and another one with information of ESF beneficiaries. Both contain data from 2007-2013.
 
 sources:
-  - name: Goverment's open data portal name
-    web:  http://data.portal.gov/path/to/index.html
+  - name: Dirección General de Fondos Comunitarios / The Directorate General of Community Funds
+    web:  http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Paginas/BeneficiariosFederCohesion.aspx
 
-  - name: The name of an additional page providing background information
-    web: http://data.portal.gov/path/to/another/important/page.html
+  - name: Unidad de Administración del Fondo Social Europeo / Administration Unit for European Social Funds
+    web: http://www.empleo.gob.es/uafse/es/beneficiarios/index.html
 
-  - name: The link to a document explaining something relevant
-    web: http://data.portal.gov/path/to/a/third/relevant/page.html
-
-image: http://data.portal.gov/a/cool/illustration_for_the_website.png
+image: 
 
 contributors:
-  - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
-  - Mickey Mouse <mickey.mouse@disney.com> (http://www.disney.com)
+  - Marta Rey <martareyruiz@gmail.com>
 
 resources:
 
-  # Describe each data-file:
-  # ------------------------
-  #
-  # title: a short description of the data file
-  #
-  # url: the link to the file if possible. If the data needs to be scraped,
-  #      leave this property blank and set the "extraction_mode" to
-  #      "web_scraper".
-  #
-  # path: leave blank if there's a url link to the data-file. If there's no
-  #       link to the file but you can download it by clicking through
-  #       a user-interface, then do so and then specify its path here.
-  #       The path is the *relative path* (starting from this file). So if you
-  #       put the data-file in the same folder, it's just the filename.
-  #
-  # publication_date: the date that the data was published
-  #
-  # publication_version: should clearly distinguish this data-file from others.
-  #
-  # periods: the "official" fiscal periods that the data-file covers.
-  #
-  # extraction_mode: set one of the options to "true" and the rest to "false"
-  #
-  # constants: Some of the fields we're trying to collect may be constant. Take
-  #            the currency for example: it may not be mentioned in the data
-  #            because it's common to all rows. Identify as many constants as
-  #            you can.
-  #
-  # fields: the columns in the data table. Describe them as best you can.
-  #
-  # Good luck!
+  title: PDF file containing ERDF beneficiaries data 2007-2013 for ES70.
+  url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/IC3516.pdf
+  path: 
 
-  title: A human readable title for you data file
-  url: http://data.country.gov/path/to/data_file.xlsx
-  path: data_filename.ext
-
-  publication_date: yyyy-mm-dd
-  expiry_date: yyyy-mm-dd
-
+  publication_date: 2016-09-19
+  expiry_date: 2016
+  
   update_interval: yearly
 
-  funds:
-  years:
+  funds: ERDF
+  years: 2007-2013
 
   periods:
     2007-2013: true
@@ -98,20 +40,87 @@ resources:
     rest_api: false
 
   constants:
-    currency: a 3-digit currency code, like EUR
-    certifying_authority: the authority certifying authority
+    currency: EUR
+    certifying_authority: Dirección General de Fondos Comunitarios
     # We need a complete list of possible constants here
 
   schema:
     fields:
-      - name: copy/paste the original column name without changing it
-        translation: the english translation of the column name
-        type: can be "string", "number", "date", "period"
-        missingValue: how missing values are represented (e.g. "" or NaN)
-        description: anything important, for example how to  the field
+      - name: Nombre beneficiario
+        translation: Beneficiary name
+        type: string
+        missingValue:
+        description:
 
-      - name: copy/paste the original column name without changing it
-        translation: the english translation of the column name
-        type: can be "string", "number", "date", "period"
-        missingValue: how missing values are represented (e.g. "" or NaN)
-        description: anything important, for example how to  the field
+      - name: Nombre operación
+        translation: Operation name
+        type: string
+        missingValue: 
+        description:
+        
+      - name: Montante concedido
+        translation: Granted amount
+        type: number
+        missingValue: 
+        description:
+        
+     - name: Montante pagado final operación
+        translation: Paid amount final operation
+        type: number
+        missingValue: 
+        description:
+        
+      - name: Año de la concesión / año del pago
+        translation: Year of concession / Payment year
+        type: date
+        missingValue: 
+        description:
+        
+ title: PDF file containing ESF beneficiaries data for ES70 from 2007 till 2013
+ url: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES052PO001_PO_FSE_CANARIAS.pdf
+ path: 
+
+  publication_date: 2013-05-20
+  expiry_date: 
+  
+  update_interval: yearly
+
+  funds: ESF
+  years: 2007-2013
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+    rest_api: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Unidad Administradora del Fondo Social Europeo
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Beneficiario
+        translation: Beneficiary
+        type: string
+        missingValue:
+        description:
+
+      - name: Tipo de Operación
+        translation: Operation type
+        type: string
+        missingValue: 
+        description:
+        
+      - name: Gasto Público
+        translation: Public spending
+        type: number
+        missingValue: 
+        description:
+        
