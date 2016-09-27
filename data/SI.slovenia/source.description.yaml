@@ -1,117 +1,229 @@
-# Describe the source that you found:
-# ----------------------------------
+# I am the latest version: use me.
+
+# 1. Describe the source metadata:
+# -----------------------------
 #
 # title: a short description of your data source.
 #
-# description: the place to put your notes, warnings, remarks and limitations
-#              about the data are especially important to communicate.
+# language: the 2-digit language code of the document (e.g. en, fr, es...)
 #
-# sources: only meant as *documention*. Add as many as you want. The urls to
-#          the actual data-files are in the "resources" section.
+# sources: only meant as documention: add as many as you want (urls to
+#          the actual data-files are in the resources section).
 #
-# image: used to illustrate the data source on the website. Check its license.
+# scraper_required: if a web or PDF scraper is needed
 #
-# contributors: Put yourself down(email and website are not obligatory).
+# contributors: put yourself down (email and website are not obligatory).
 #               Follow the simple formatting convention.
 #
-# resources: a single source can have one or more data-files, called
-#            "resources". Why? Because there may be regular data updates or
-#            the data may be broken down by funds for example.
+# resources: a single description file like this can describe more than one
+#            resource (file or webpage) as long as the data is structured the
+#            same. This happens when the data is split by fund or period for
+#            example.
 #
 # Good luck!
 
-title: A human readable title for your source
+title: Slovenia's ERDF, ESF, and Cohesion Fund data 
 
 description: This can be a long paragraph but must be written on one line to respect the YAML format. Use soft wraps in your editor if needed.
+language: sl
 
 sources:
-  - name: Goverment's open data portal name
-    web:  http://data.portal.gov/path/to/index.html
+  - name: EU Skladi
+    web:  http://www.eu-skladi.si/
 
-  - name: The name of an additional page providing background information
-    web: http://data.portal.gov/path/to/another/important/page.html
-
-  - name: The link to a document explaining something relevant
-    web: http://data.portal.gov/path/to/a/third/relevant/page.html
-
-image: http://data.portal.gov/a/cool/illustration_for_the_website.png
+scraper_required: false
 
 contributors:
-  - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
-  - Mickey Mouse <mickey.mouse@disney.com> (http://www.disney.com)
+  - Bela Seeger (bela.seeger@okfn.de)
 
 resources:
 
-  # Describe each data-file:
-  # ------------------------
+  # 2. Describe each data-resource:
+  # ----------------------------
   #
-  # title: a short description of the data file
+  # title: use this field to distinguish the resources if there's more than one
   #
   # url: the link to the file if possible. If the data needs to be scraped,
-  #      leave this property blank and set the "extraction_mode" to
-  #      "web_scraper".
+  #      enter the url of the webpage and set scraper_required to true.
   #
-  # path: leave blank if there's a url link to the data-file. If there's no
-  #       link to the file but you can download it by clicking through
-  #       a user-interface, then do so and then specify its path here.
-  #       The path is the *relative path* (starting from this file). So if you
-  #       put the data-file in the same folder, it's just the filename.
+  # publication_date: the date that the data was published or updated
   #
-  # publication_date: the date that the data was published
+  # constant_fields: any field from fiscal.fields.yaml that has a fixed value
+  #                  (i.e. is not specified row by row).
   #
-  # publication_version: should clearly distinguish this data-file from others.
-  #
-  # periods: the "official" fiscal periods that the data-file covers.
-  #
-  # extraction_mode: set one of the options to "true" and the rest to "false"
-  #
-  # constants: Some of the fields we're trying to collect may be constant. Take
-  #            the currency for example: it may not be mentioned in the data
-  #            because it's common to all rows. Identify as many constants as
-  #            you can.
-  #
-  # fields: the columns in the data table. Describe them as best you can.
+  # schema: please describe each column in the data. Don't change the original
+  #         columns names even in Cyrillic. For translations, Google will do.
+  #         Refer to fiscal.fields.yaml to discover what fiscal field map to
+  #         the columns that you found. If you can't tell, enter a short comment
+  #         instead. Leave the mapping blank if the column can be dropped.
   #
   # Good luck!
 
-  title: A human readable title for you data file
-  url: http://data.country.gov/path/to/data_file.xlsx
-  path: data_filename.ext
+  - title: Excel file for Slovenia's ERDF, ESF, and Cohesion fund 2007-2013
 
-  publication_date: yyyy-mm-dd
-  expiry_date: yyyy-mm-dd
+    url: http://www.eu-skladi.si/sl/dokumenti/seznam-upravicencev-2007-2013/upravicenci-vsi-4-07-2016-uvoz.xlsx
 
-  update_interval: yearly
+    publication_date: 2016-07-05
 
-  funds:
-  years:
+    constant_fields:
+      fund_name: ESRR, KS, ESS
+      offical_period: 2007-2013
+      currency_code: EUR
 
-  periods:
-    2007-2013: true
-    2014-2020: false
 
-  extraction_mode:
-    user_interface: false
-    download_link: true
-    pdf_scraper: false
-    web_scraper: false
-    rest_api: false
+      # any other field from fiscal.fields.yaml that is constant
 
-  constants:
-    currency: a 3-digit currency code, like EUR
-    certifying_authority: the authority certifying authority
-    # We need a complete list of possible constants here
+    schema:
+      fields:
+        - name: ID (ne spreminjaj)
+          translates_to: ID (not change)
+          maps_to: #row number
 
-  schema:
-    fields:
-      - name: copy/paste the original column name without changing it
-        translation: the english translation of the column name
-        type: can be "string", "number", "date", "period"
-        missingValue: how missing values are represented (e.g. "" or NaN)
-        description: anything important, for example how to  the field
+        - name: NAZIV JAVNEGA RAZPISA/NEPOSREDNE POTRDITVE
+          translates_to: NAME FOR COMPETITION / DIRECT CONFIRMATION
+          maps_to: 
 
-      - name: copy/paste the original column name without changing it
-        translation: the english translation of the column name
-        type: can be "string", "number", "date", "period"
-        missingValue: how missing values are represented (e.g. "" or NaN)
-        description: anything important, for example how to  the field
+        - name: NAZIV UPRAVIČENCA
+          translates_to: name of the beneficiary
+          maps_to: beneficiary_name
+
+        - name: Višina dodeljenih sredstev
+          translates_to: amount of funds allocated
+          maps_to: total_amount_awarded
+
+        - name: Od tega sredstva EU
+          translates_to: Of these EU funds
+          maps_to: amount_eu_funding_in_euro
+                  
+        - name: Od tega nacionalni viri
+          translates_to: From this national resource
+          maps_to: amount_nat_regio_funding_absolute
+          
+        - name: Višina izplačanih EU sredstev
+          translates_to: the amount of EU funds disbursed
+          maps_to: amount_disbursed    
+          
+        - name: NAZIV OPERACIJE
+          translates_to: NAME OF OPERATIONS
+          maps_to: operation_name            
+          
+        - name: NAZIV OPERATIVNEGA PROGRAMA	
+          translates_to: TITLE OF THE OPERATIONAL PROGRAMME
+          maps_to: title_operational_programme         
+
+        - name: SKLAD
+          translates_to: FUND
+          maps_to: fund_name     
+          
+        - name: REGIJA
+          translates_to: REGION
+          maps_to: part of beneficiary_address            
+          
+        - name: OBČINA
+          translates_to: MUNICIPALITY
+          maps_to: municipality                  
+          
+        - name: Leto dodelitve sredstev	
+          translates_to: Year allocation
+          maps_to: year_of_allocation
+          
+        - name: NAČIN DODELITVE SREDSTEV
+          translates_to: General allocation of funds (e.g. Call of Tender)
+          maps_to: form_of_procurement     
+          
+        - name: PODROČJE
+          translates_to: FIELD (e.g. Competitiveness of enterprises and research excellence, Development of Regions, etc.)
+          maps_to: priority_axis            
+          
+        - name: VIR
+          translates_to: SOURCE
+          maps_to:       
+          
+        - name: Objava na spletni strani
+          translates_to: Project Website
+          maps_to: project_website
+   
+  - title: Excel file for Slovenia's ERDF, ESF, and Cohesion fund 2007-2013
+
+    url: http://www.eu-skladi.si/sl/dokumenti/seznam-upravicencev-2007-2013/upravicenci-vsi-4-07-2016-uvoz.xlsx
+
+    publication_date: 2016-07-05
+
+    constant_fields:
+      fund_name: ESRR, KS, ESS
+      offical_period: 2007-2013
+      currency_code: EUR
+
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields: 
+
+        - name: Ime upravičenca/Beneficiary name
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: Ime operacije/Operation name
+          translates_to: Operation name
+          maps_to: operation_name
+
+        - name: Opis operacije/Operation description
+          translates_to: Operation description
+          maps_to: operation_description
+                  
+        - name: Prednostna os
+          translates_to: Priority Axis
+          maps_to: priority_axis
+          
+        - name: Povzetek operacije/Operation summary
+          translates_to: Operation summary
+          maps_to: operation_summary    
+          
+        - name: Leto dodelitve sredstev/Year allocation
+          translates_to: Year allocation
+          maps_to: year_of_allocation          
+          
+        - name: Datum začetka/Operation start year
+          translates_to: Operation start year
+          maps_to: operation_start_year         
+
+        - name: Datum zaključka del/Operation end date
+          translates_to: Operation end date
+          maps_to: operation_end_date    
+          
+        - name: Skupni upravičeni izdatki/Total eligible expenditure allocated to the operation
+          translates_to: Total eligible expenditure allocated to the operation
+          maps_to: total_eligible_expenditure          
+          
+        - name: Odstotek sofinanciranja/union co-financing rate, as per priority axis
+          translates_to: union co-financing rate, as per priority axis
+          maps_to: eu_co_financing_rate                 
+          
+        - name: Naslov upravičenca/Beneficiary address
+          translates_to: Beneficiary address
+          maps_to: beneficiary_address
+          
+        - name: Občina/Municipality
+          translates_to: Municipality
+          maps_to: municipality      
+          
+        - name: Sklad/Fund
+          translates_to: Fund
+          maps_to: fund_name            
+          
+        - name: Regija/Region
+          translates_to: Region
+          maps_to: region      
+          
+        - name: Instrument/Instrument
+          translates_to: Instrument
+          maps_to: instrument 
+          
+        - name: Država/Country
+          translates_to: Country
+          maps_to: country      
+          
+        - name: Stanje na dan/Date of last update of the list of operations
+          translates_to: Date of last update of the list of operations
+          maps_to: date_of_last_update_of_list_of_operations
