@@ -1,0 +1,125 @@
+title: European Regional Development Fund (ERDF) and European Social Fund (ESF) for region ES63.Ciudad Autónoma de Ceuta, Spain
+
+description: Two datasets, one with the information of ERDF beneficiaries and another one with information of ESF beneficiaries. Both contain data from 2007-2013.
+
+sources:
+  - name: Dirección General de Fondos Comunitarios / The Directorate General of Community Funds
+    web:  http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Paginas/BeneficiariosFederCohesion.aspx
+
+  - name: Unidad de Administración del Fondo Social Europeo / Administration Unit for European Social Funds
+    web: http://www.empleo.gob.es/uafse/es/beneficiarios/index.html
+
+image: 
+
+contributors:
+  - Marta Rey <martareyruiz@gmail.com>
+
+resources:
+
+  title: PDF file containing ERDF beneficiaries data 2007-2013 for ES63.
+  url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/ME3516.pdf
+  path: 
+
+  publication_date: 2016-09-19
+  expiry_date: 2016
+  
+  update_interval: yearly
+
+  funds: ERDF
+  years: 2007-2013
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+    rest_api: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Dirección General de Fondos Comunitarios
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Nombre beneficiario
+        translation: Beneficiary name
+        type: string
+        missingValue:
+        description:
+
+      - name: Nombre operación
+        translation: Operation name
+        type: string
+        missingValue: 
+        description:
+        
+      - name: Montante concedido
+        translation: Granted amount
+        type: number
+        missingValue: 
+        description:
+        
+     - name: Montante pagado final operación
+        translation: Paid amount final operation
+        type: number
+        missingValue: 
+        description:
+        
+      - name: Año de la concesión / año del pago
+        translation: Year of concession / Payment year
+        type: date
+        missingValue: 
+        description:
+        
+ title: PDF file containing ESF beneficiaries data for ES64 from 2007 till 2013
+ url: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES051PO008_PO_FSE_MELILLA.pdf
+ path: 
+
+  publication_date: 2013-05-20
+  expiry_date: 
+  
+  update_interval: yearly
+
+  funds: ESF
+  years: 2007-2013
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+    rest_api: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Unidad Administradora del Fondo Social Europeo
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Beneficiario
+        translation: Beneficiary
+        type: string
+        missingValue:
+        description:
+
+      - name: Tipo de Operación
+        translation: Operation type
+        type: string
+        missingValue: 
+        description:
+        
+      - name: Gasto Público
+        translation: Public spending
+        type: number
+        missingValue: 
+        description:
