@@ -42,28 +42,19 @@ fields:
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-
-    # don't modify me:
-    name: beneficiary_address
+  - name: beneficiary_address
     title: Address of the beneficiary
     description: Any geographical information about beneficiary # if available
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-
-    # don't modify me:
-    name: beneficiary_website
+  - name: beneficiary_website
     title: Website of the beneficiary
     description: Website of the beneficiary, if available
     required: false
     codelist: false
 
-  - original_name: # copy/paste the orginal column name
-
-    # don't modify me:
-    name: subcontractor_list
+  - name: subcontractor_list
     title: List of subcontractors
     description: List of all the subcontractors
     required: false
