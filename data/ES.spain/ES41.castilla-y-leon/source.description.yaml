@@ -1,4 +1,4 @@
-title: European Regional Development Fund (ERDF) and European Social Fund (ESF) for region ES43.Extremadura, Spain
+title: European Regional Development Fund (ERDF) and European Social Fund (ESF) for region ES41.Castilla y León, Spain
 
 description: Two datasets, one with the information of ERDF beneficiaries and another one with information of ESF beneficiaries. Both contain data from 2007-2013.
 
@@ -16,8 +16,8 @@ contributors:
 
 resources:
 
-  title: PDF file containing ERDF beneficiaries data 2007-2013 for ES43.
-  url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/EX3516.pdf
+  title: PDF file containing ERDF beneficiaries data 2007-2013 for ES41.
+  url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/CL3516.pdf
   path: 
 
   publication_date: 2016-09-19
@@ -76,8 +76,8 @@ resources:
         missingValue: 
         description:
         
- title: PDF file containing ESF beneficiaries data for ES43 from 2007 till 2013
- url: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES051PO003_PO_FSE_EXTREMADURA.pdf
+ title: PDF file containing ESF beneficiaries data for ES41 from 2007 till 2013
+ url: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES052PO002_PO_FSE_CASTILLALEON.pdf
  path: 
 
   publication_date: 2013-05-20
