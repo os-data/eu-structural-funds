@@ -3,7 +3,7 @@
 # 1. Describe the source metadata:
 # -----------------------------
 #
-# title: Poland's ESF & ERDF data 2007-today 
+# title: A human readable title for your source
 #
 # language: the 2-digit language code of the document (e.g. en, fr, es...)
 #
@@ -22,23 +22,22 @@
 #
 # Good luck!
 
-title: A human readable title for your source
+title: Poland's ESF & ERDF data 2007-today
 
-description: This can be a long paragraph but must be written on one line to respect the YAML format. Use soft wraps in your editor if needed.
-language: two-digit ISO 639-1 code (e.g. en, fr, es...)
+description: Large csv file with all data from 2007-today
+language: PL
 
 sources:
-  - name: Title of the webpage
-    web:  http://data.portal.gov/path/to/index.html
+  - name: Portal Funduszy Europejskich
+    web:  http://www.funduszeeuropejskie.gov.pl/
 
-  - name: Title of another webpage
-    web: http://data.portal.gov/path/to/another/important/page.html
+  - name: mapa dotacji UE
+    web: http://www.mapadotacji.gov.pl/projekty
 
-scraper_required: true or false
+scraper_required: false
 
 contributors:
-  - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
-  - Mickey Mouse <mickey.mouse@disney.com> (http://www.disney.com)
+  - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
 resources:
 
@@ -63,27 +62,58 @@ resources:
   #
   # Good luck!
 
-  - title: A human readable title for you data file
+  - title: Poland's ESF & ERDF data 2007-today
 
-    url: http://data.country.gov/path/to/filename.xlsx
+    url: http://www.mapadotacji.gov.pl/export?sort=none
 
-    publication_date: yyyy-mm-dd
+    publication_date: 2016-09-27
 
     constant_fields:
-      fund_name: ERDF, CF, ESF, EARDF, EMFF or INTERREG
-      offical_period: 2007-2013 or 2014-2020
-      currency_code: ISO 4217 codes (e.g. EUR, GBP...)
+      fund_name: ERDF, ESF
+      offical_period: 2007-2013 & 2014-2020
+      currency_code: PLN
 
       # any other field from fiscal.fields.yaml that is constant
 
     schema:
       fields:
-        - name: copy/paste the original column name
-          translates_to: the english translation of the column name
-          maps_to: the matching field in fiscal.fields.yaml e.g. project_id
+        - name: tytuł projektu
+          translates_to: the title of the project 
+          maps_to: project_name
 
-        - name: copy/paste the original column name
-          translates_to: the english translation of the column name
-          maps_to: the matching field in fiscal.fields.yaml e.g. start_date
+     schema:
+      fields:
+        - name: nazwa beneficjenta
+          translates_to: the name of the beneficiary
+          maps_to: beneficiary_name
 
-        - # repeat for each column you find in the data
+    schema:
+      fields:
+        - name: wartość projektu
+          translates_to: The value of the project [PLN]
+          maps_to: 
+
+    schema:
+      fields:
+        - name: dofinansowanie z UE
+          translates_to: Funding from the EU [PLN]
+          maps_to: eu_funding
+
+    schema:
+      fields:
+        - name: Multimedia
+          translates_to: Multimedia
+          maps_to: multimedia
+
+    schema:
+      fields:
+        - name: Dziedzina
+          translates_to: field
+          maps_to: priority_axis
+
+    schema:
+      fields:
+        - name: Czy projekt jest realizowany na obszarze wiêkszym ni¿ jedna jednostka administracyjna?
+          translates_to: Is the project being implemented on an area of more than one administrative unit?
+          maps_to: multiple_administrative_units
+    
