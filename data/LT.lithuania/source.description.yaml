@@ -1,117 +1,226 @@
-# Describe the source that you found:
-# ----------------------------------
+# I am the latest version: use me.
+
+# 1. Describe the source metadata:
+# -----------------------------
 #
 # title: a short description of your data source.
 #
-# description: the place to put your notes, warnings, remarks and limitations
-#              about the data are especially important to communicate.
+# language: the 2-digit language code of the document (e.g. en, fr, es...)
 #
-# sources: only meant as *documention*. Add as many as you want. The urls to
-#          the actual data-files are in the "resources" section.
+# sources: only meant as documention: add as many as you want (urls to
+#          the actual data-files are in the resources section).
 #
-# image: used to illustrate the data source on the website. Check its license.
+# scraper_required: if a web or PDF scraper is needed
 #
-# contributors: Put yourself down(email and website are not obligatory).
+# contributors: put yourself down (email and website are not obligatory).
 #               Follow the simple formatting convention.
 #
-# resources: a single source can have one or more data-files, called
-#            "resources". Why? Because there may be regular data updates or
-#            the data may be broken down by funds for example.
+# resources: a single description file like this can describe more than one
+#            resource (file or webpage) as long as the data is structured the
+#            same. This happens when the data is split by fund or period for
+#            example.
 #
 # Good luck!
 
-title: A human readable title for your source
 
-description: This can be a long paragraph but must be written on one line to respect the YAML format. Use soft wraps in your editor if needed.
+title: Lithuania's ESIF data 2007-today
+
+description: For 2007-2013, there is a web-portal with the option to download. The resulting file, however, contains less information than is available on the portal. Thus, for 2007-2013, scraping is necessary.
+language: LT
 
 sources:
-  - name: Goverment's open data portal name
-    web:  http://data.portal.gov/path/to/index.html
+  - name: Lithuania landing page 2014-2020
+    web:  http://www.esinvesticijos.lt/en/
 
-  - name: The name of an additional page providing background information
-    web: http://data.portal.gov/path/to/another/important/page.html
+  - name: Lithuania landing page 2007-2013
+    web: http://www.mapadotacji.gov.pl/projekty
 
-  - name: The link to a document explaining something relevant
-    web: http://data.portal.gov/path/to/a/third/relevant/page.html
-
-image: http://data.portal.gov/a/cool/illustration_for_the_website.png
+scraper_required: yes
 
 contributors:
-  - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
-  - Mickey Mouse <mickey.mouse@disney.com> (http://www.disney.com)
+  - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
 resources:
 
-  # Describe each data-file:
-  # ------------------------
+  # 2. Describe each data-resource:
+  # ----------------------------
   #
-  # title: a short description of the data file
+  # title: use this field to distinguish the resources if there's more than one
   #
   # url: the link to the file if possible. If the data needs to be scraped,
-  #      leave this property blank and set the "extraction_mode" to
-  #      "web_scraper".
+  #      enter the url of the webpage and set scraper_required to true.
   #
-  # path: leave blank if there's a url link to the data-file. If there's no
-  #       link to the file but you can download it by clicking through
-  #       a user-interface, then do so and then specify its path here.
-  #       The path is the *relative path* (starting from this file). So if you
-  #       put the data-file in the same folder, it's just the filename.
+  # publication_date: the date that the data was published or updated
   #
-  # publication_date: the date that the data was published
+  # constant_fields: any field from fiscal.fields.yaml that has a fixed value
+  #                  (i.e. is not specified row by row).
   #
-  # publication_version: should clearly distinguish this data-file from others.
-  #
-  # periods: the "official" fiscal periods that the data-file covers.
-  #
-  # extraction_mode: set one of the options to "true" and the rest to "false"
-  #
-  # constants: Some of the fields we're trying to collect may be constant. Take
-  #            the currency for example: it may not be mentioned in the data
-  #            because it's common to all rows. Identify as many constants as
-  #            you can.
-  #
-  # fields: the columns in the data table. Describe them as best you can.
+  # schema: please describe each column in the data. Don't change the original
+  #         columns names even in Cyrillic. For translations, Google will do.
+  #         Refer to fiscal.fields.yaml to discover what fiscal field map to
+  #         the columns that you found. If you can't tell, enter a short comment
+  #         instead. Leave the mapping blank if the column can be dropped.
   #
   # Good luck!
 
-  title: A human readable title for you data file
-  url: http://data.country.gov/path/to/data_file.xlsx
-  path: data_filename.ext
+  - title: Web-portal with Lithuania's ESIF data 2007-today 
 
-  publication_date: yyyy-mm-dd
-  expiry_date: yyyy-mm-dd
+    url: http://www.esparama.lt/igyvendinami-projektai
 
-  update_interval: yearly
+    publication_date: 2016-09-28
 
-  funds:
-  years:
+    constant_fields:
+      fund_name: ERDF, CF, ESF
+      offical_period: 2007-2013
+      currency_code: EUR
 
-  periods:
-    2007-2013: true
-    2014-2020: false
+      # any other field from fiscal.fields.yaml that is constant
 
-  extraction_mode:
-    user_interface: false
-    download_link: true
-    pdf_scraper: false
-    web_scraper: false
-    rest_api: false
+    schema:
+      fields:
+        - name: Projekto būsena
+          translates_to: Project Status
+          maps_to: project_status
 
-  constants:
-    currency: a 3-digit currency code, like EUR
-    certifying_authority: the authority certifying authority
-    # We need a complete list of possible constants here
+        - name: Projekto vykdytojas
+          translates_to: Project promoter
+          maps_to: 
 
-  schema:
-    fields:
-      - name: copy/paste the original column name without changing it
-        translation: the english translation of the column name
-        type: can be "string", "number", "date", "period"
-        missingValue: how missing values are represented (e.g. "" or NaN)
-        description: anything important, for example how to  the field
+        - name: Projekto pradžia
+          translates_to: Project start date
+          maps_to: project_start_date
 
-      - name: copy/paste the original column name without changing it
-        translation: the english translation of the column name
-        type: can be "string", "number", "date", "period"
-        missingValue: how missing values are represented (e.g. "" or NaN)
-        description: anything important, for example how to  the field
+        - name: Projekto pabaiga
+          translates_to: Project completion date
+          maps_to: project_end_date
+
+        - name: Bendra projekto vertė
+          translates_to: The total value of the project
+          maps_to: total_value
+
+        - name: Projektui skirtas finansavimas
+          translates_to: Project funding
+          maps_to: 
+
+        - name: Iš jo ES dali
+          translates_to: EU part of project funding
+          maps_to: funding_eu
+
+        - name: Projektui išmokėta lėšų
+          translates_to: Project funds disbursed
+          maps_to: funding_disbursed
+
+        - name: Iš jo ES dalis
+          translates_to: EU part of disbursed funds
+          maps_to: 
+
+        - name: Detailed project description (without title)
+          translates_to: 
+          maps_to: project_description
+
+        - name: Veiksmų programa
+          translates_to: Action program
+          maps_to: 
+
+        - name: Veiksmų programos prioritetas
+          translates_to: The action program priority measure
+          maps_to: 
+
+        - name: Kvietimo numeris
+          translates_to: Number of call 
+          maps_to: 
+
+        - name: Projekto kodas
+          translates_to: Project code
+          maps_to: project_code
+
+        - name: Projekto įgyvendinimo apskritis
+          translates_to: The project region
+          maps_to: region
+
+        - name: Projekto įgyvendinimo savivaldybė
+          translates_to: The project municipality
+          maps_to: municipality
+
+
+        - # repeat for each column you find in the data
+
+ - title: Web-portal with Lithuania's ESIF data 2007-today 
+
+    url: http://www.esparama.lt/igyvendinami-projektai
+
+    publication_date: 2016-09-28
+
+    constant_fields:
+      fund_name: ERDF, CF, ESF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: Projekto būsena
+          translates_to: Project Status
+          maps_to: project_status
+
+        - name: Projekto vykdytojas
+          translates_to: Project promoter
+          maps_to: 
+
+        - name: Projekto pradžia
+          translates_to: Project start date
+          maps_to: project_start_date
+
+        - name: Projekto pabaiga
+          translates_to: Project completion date
+          maps_to: project_end_date
+
+        - name: Bendra projekto vertė
+          translates_to: The total value of the project
+          maps_to: total_value
+
+        - name: Projektui skirtas finansavimas
+          translates_to: Project funding
+          maps_to: 
+
+        - name: Iš jo ES dali
+          translates_to: EU part of project funding
+          maps_to: funding_eu
+
+        - name: Projektui išmokėta lėšų
+          translates_to: Project funds disbursed
+          maps_to: funding_disbursed
+
+        - name: Iš jo ES dalis
+          translates_to: EU part of disbursed funds
+          maps_to: 
+
+        - name: Detailed project description (without title)
+          translates_to: 
+          maps_to: project_description
+
+        - name: Veiksmų programa
+          translates_to: Action program
+          maps_to: 
+
+        - name: Veiksmų programos prioritetas
+          translates_to: The action program priority measure
+          maps_to: 
+
+        - name: Kvietimo numeris
+          translates_to: Number of call 
+          maps_to: 
+
+        - name: Projekto kodas
+          translates_to: Project code
+          maps_to: project_code
+
+        - name: Projekto įgyvendinimo apskritis
+          translates_to: The project region
+          maps_to: region
+
+        - name: Projekto įgyvendinimo savivaldybė
+          translates_to: The project municipality
+          maps_to: municipality
