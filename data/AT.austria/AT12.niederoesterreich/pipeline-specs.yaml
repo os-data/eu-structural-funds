@@ -1,3 +1,0 @@
-AT12.niederoesterreich:
-  pipeline: {params: source.datapackage.json, run: validate_datapackage}
-  schedule: {crontab: '@annually'}
