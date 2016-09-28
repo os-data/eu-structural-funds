@@ -25,7 +25,7 @@
 
 title: Lithuania's ESIF data 2007-today
 
-description: For 2007-2013, there is a web-portal with the option to download. The resulting file, however, contains less information than is available on the portal. Thus, for 2007-2013, scraping is necessary.
+description: For 2007-2013, there is a web-portal with the option to download a spreadsheet. The resulting file, however, contains less information than is available on the portal. Thus, scraping is necessary.
 language: LT
 
 sources:
@@ -145,15 +145,15 @@ resources:
 
         - # repeat for each column you find in the data
 
- - title: Web-portal with Lithuania's ESIF data 2007-today 
+ - title: Web-portal with XLS export of Lithuania's ESIF data 2014-today 
 
-    url: http://www.esparama.lt/igyvendinami-projektai
+    url: http://www.esinvesticijos.lt/lt/paraiskos_ir_projektai/xlsexport
 
     publication_date: 2016-09-28
 
     constant_fields:
       fund_name: ERDF, CF, ESF
-      offical_period: 2007-2013
+      offical_period: 2014-2020
       currency_code: EUR
 
 
@@ -161,66 +161,42 @@ resources:
 
     schema:
       fields:
-        - name: Projekto būsena
-          translates_to: Project Status
-          maps_to: project_status
+        - name: Projektas
+          translates_to: Project
+          maps_to: project_name
 
-        - name: Projekto vykdytojas
-          translates_to: Project promoter
-          maps_to: 
-
-        - name: Projekto pradžia
-          translates_to: Project start date
-          maps_to: project_start_date
-
-        - name: Projekto pabaiga
-          translates_to: Project completion date
-          maps_to: project_end_date
-
-        - name: Bendra projekto vertė
-          translates_to: The total value of the project
-          maps_to: total_value
-
-        - name: Projektui skirtas finansavimas
-          translates_to: Project funding
-          maps_to: 
-
-        - name: Iš jo ES dali
-          translates_to: EU part of project funding
-          maps_to: funding_eu
-
-        - name: Projektui išmokėta lėšų
-          translates_to: Project funds disbursed
-          maps_to: funding_disbursed
-
-        - name: Iš jo ES dalis
-          translates_to: EU part of disbursed funds
-          maps_to: 
-
-        - name: Detailed project description (without title)
-          translates_to: 
-          maps_to: project_description
-
-        - name: Veiksmų programa
-          translates_to: Action program
-          maps_to: 
-
-        - name: Veiksmų programos prioritetas
-          translates_to: The action program priority measure
-          maps_to: 
-
-        - name: Kvietimo numeris
-          translates_to: Number of call 
-          maps_to: 
-
-        - name: Projekto kodas
+        - name: Kodas
           translates_to: Project code
           maps_to: project_code
 
-        - name: Projekto įgyvendinimo apskritis
-          translates_to: The project region
-          maps_to: region
+        - name: Pareiškėjas/ Vykdytojas	
+          translates_to: Author / Artist
+          maps_to: 
 
-        - name: Projekto įgyvendinimo savivaldybė
-          translates_to: The project municipality
-          maps_to: municipality
+        - name: Paraiškos būsena
+          translates_to: Claim status
+          maps_to: project_status
+
+        - name: rojekto vertė paraiškoje
+          translates_to: Value of the project application
+          maps_to: project_value
+
+        - name: Prašomas finansavimas
+          translates_to: requested funding
+          maps_to: requested_funding
+
+        - name: Projekto išlaidų suma
+          translates_to: The project cost
+          maps_to: project_cost
+
+        - name: Finansavimas
+          translates_to: Financing
+          maps_to: financing
+
+        - name: Išmokėta finansavimo suma
+          translates_to: Paid-financing
+          maps_to: funds_disbursed
+
+        - name: Sutarties pasirašymo data
+          translates_to: Contract date
+          maps_to: contract_date
