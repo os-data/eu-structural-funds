@@ -20,14 +20,19 @@
         3) saves a pipeline-specs file with the appropriate processors
         4) adds placeholder for a scraper if needed
 
-    Usage: python3
-    --------------
+    Usages
+    ------
 
-    python3 bootstrap.py
+    python3 -m plumbing.bootstrap # bootstrap all pipelines
+    python3 -m plumbing.bootstrap FR.france/2014-2020
+    python3 -m plumbing.bootstrap AT.austria/AT11.burgenland
+
+    This script only supports python3.
 
 """
 
 import re
+import sys
 import yaml
 import json
 import os.path
@@ -156,6 +161,7 @@ def save_scraper_placeholder(source_folder, pipeline_id):
         logging.debug('%s: help wanted for scraper', pipeline_id)
 
 
+# noinspection PyAssignmentToLoopOrWithParameter
 def collect_source_folders():
     """Return a generator of source folders."""
 
@@ -171,7 +177,6 @@ def collect_source_folders():
 
             if geocode in valid_geocodes:
                 logging.debug('%s: detected source folder', folder)
-                yield os.path.join(root, folder)
                 main_folder = os.path.join(root, folder)
                 yield main_folder
 
@@ -199,26 +204,48 @@ def load_geocodes():
     return tuple(geocodes)
 
 
-def bootstrap_all_pipelines():
+def bootstrap_pipelines(pipeline_folder=None):
     """Bootstrap data pipelines where source description files are found."""
 
-    for source_folder in collect_source_folders():
-        description_file = os.path.join(source_folder, DESCRIPTION_FILE)
+    if not pipeline_folder:
+        pipeline_folders = collect_source_folders()
+    else:
+        pipeline_folders = [pipeline_folder]
+
+    for pipeline_folder in pipeline_folders:
+        description_file = os.path.join(pipeline_folder, DESCRIPTION_FILE)
 
         if os.path.exists(description_file):
-            pipeline_id = os.path.basename(source_folder)
-            package = create_datapackage(source_folder)
+            pipeline_id = os.path.basename(pipeline_folder)
+            package = create_datapackage(pipeline_folder)
 
             if 'yaml_error' not in package:
                 processors, processor_ids = select_processors(package)
                 pipeline = register_processors(processors, pipeline_id)
-                save_pipeline(source_folder, pipeline, pipeline_id)
+                save_pipeline(pipeline_folder, pipeline, pipeline_id)
 
                 if 'scraper' in processor_ids:
-                    save_scraper_placeholder(source_folder, pipeline_id)
+                    save_scraper_placeholder(pipeline_folder, pipeline_id)
 
                 logging.info('%s: updated pipeline', pipeline_id)
 
 
+def dispatch_command():
+    """Parse the command line argument and call bootstrap_pipelines."""
+
+    pipeline_folder = None
+
+    if len(sys.argv) > 2:
+        ValueError('Too many command line arguments')
+
+    if len(sys.argv) == 2:
+        fullpath = ROOT_DIR, 'data', sys.argv[1]
+        pipeline_folder = os.path.abspath(os.path.join(*fullpath))
+        if not os.path.exists(pipeline_folder):
+            raise FileNotFoundError(pipeline_folder)
+
+    bootstrap_pipelines(pipeline_folder=pipeline_folder)
+
+
 if __name__ == '__main__':
-    bootstrap_all_pipelines()
+    dispatch_command()
