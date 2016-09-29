@@ -1,3 +1,0 @@
-AT11.burgenland:
-  pipeline: {params: source.datapackage.json, run: validate_datapackage}
-  schedule: {crontab: '@annually'}

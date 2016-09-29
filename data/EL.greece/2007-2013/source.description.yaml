@@ -32,11 +32,11 @@ sources:
     web: https://2007-2013.espa.gr/en/Pages/Default.aspx
 
 
-image: 
+image:
 
 contributors:
   - Olaya Argueso <arguesoperezolaya@gmail.com>
-  
+
 resources:
 
   # Describe each data-file:
@@ -71,260 +71,260 @@ resources:
   #
   # Good luck!
 
-  title: REST API 
-  url: http://anaptyxi.gov.gr/Default.aspx?tabid=251&language=en-US
-  path: 
+  - title: REST API
+    url: http://anaptyxi.gov.gr/Default.aspx?tabid=251&language=en-US
+    path:
 
-  publication_date: 
-  publication_version: full dataset
+    publication_date:
+    publication_version: full dataset
 
-  periods:
-    2007-2013: true
-    2014-2020: false
+    periods:
+      2007-2013: true
+      2014-2020: false
 
-  extraction_mode:
-    user_interface: false
-    download_link: false
-    pdf_scraper: false
-    web_scraper: true
+    extraction_mode:
+      user_interface: false
+      download_link: false
+      pdf_scraper: false
+      web_scraper: true
 
-  constants:
-    currency:
-    certifying_authority:
-    # We need a complete list of possible constants here
+    constants:
+      currency:
+      certifying_authority:
+      # We need a complete list of possible constants here
 
-  schema:
-    fields:
-      - name: title
-        translation: Title
-        type: "string"
-        missingValue: ""
-        description: Title of the project
-      
-      - name: body
-        translation: Body
-        type: "string"
-        missingValue: ""
-        description: Agency implementing the project
-      
-      - name: budget
-        translation: Budget
-        type: "number"
-        missingValue: ""
-        description:
-        
-      - name: payments
-        translation: Payments
-        type: "number"
-        missingValue: ""
-        description: Amount paid
-        
-      - name: completion
-        translation: Completion
-        type: "number"
-        missingValue: ""
-        description: % of completion of the project
-        
-      - name: startDate
-        translation: Start Date
-        type: "string"
-        missingValue: ""
-        description:
-        
-      - name: endDate
-        translation: End Date
-        type: "number"
-        missingValue: ""
-        description: 
-        
-      - name: description
-        translation: Description
-        type: "string"
-        missingValue: ""
-        description: 
-        
-      - name: statusReportDate
-        translation: Status Report Date
-        type: "string"
-        missingValue: ""
-        description:
-        
-      - name: statusReport
-        translation: Status Report
-        type: "string"
-        missingValue: ""
-        description:
-        
-      - name: index
-        translation: Index
-        type: "number"
-        missingValue: ""
-        description: Subprojects' index
-        
-      - name: title
-        translation: Title
-        type: "string"
-        missingValue: ""
-        description: Subprojects' title
-        
-      - name: implementors
-        translation: Implementors
-        type: "string"
-        missingValue: ""
-        description: Subprojects' implementors
-      
-      - name: budget
-        translation: Budget
-        type: "number"
-        missingValue: ""
-        description: Subprojects' budget
-        
-      - name: startDate
-        translation: Start Date
-        type: "string"
-        missingValue: ""
-        description: Subprojects' start date
-      
-      - name: endDate
-        translation: End Date
-        type: "string"
-        missingValue: ""
-        description: Subprojects' end date
-        
-      - name: submissionDate
-        translation: Submission Date
-        type: "string"
-        missingValue: ""
-        description: Subprojects' estimated status submission date
-      
-      - name: entranceDate
-        translation: Entrance Date
-        type: "string"
-        missingValue: ""
-        description: Subprojects' estimated status entrance date
-        
-      - name: auctionApproveDate
-        translation: Auction Approve Date
-        type: "string"
-        missingValue: ""
-        description: Subprojects' estimated status auction approve date
-        
-      - name: auctionDate
-        translation: Auction Date
-        type: "string"
-        missingValue: ""
-        description: Subprojects' estimated status auction date
-        
-      - name: contractApproveDate
-        translation: Contract Approve Date
-        type: "string"
-        missingValue: ""
-        description: Subprojects' estimated status contract approve date
-        
-      - name: contractDate
-        translation: Contract Date
-        type: "string"
-        missingValue: ""
-        description: Subprojects' estimated status contract date
-        
-      - name: completionDate
-        translation: Completion Date
-        type: "string"
-        missingValue: ""
-        description: Subprojects' estimated status completion date
-      
-      - name: bodyCategory
-        translation: Body Category
-        type: "string"
-        missingValue: ""
-        description: Subprojects' agencies body category
-        
-      - name: name
-        translation: Name
-        type: "string"
-        missingValue: ""
-        description: Subprojects' agencies name
-      
-      - name: representative
-        translation: Representative
-        type: "string"
-        missingValue: ""
-        description: Subprojects' agencies representative
-        
-      - name: address
-        translation: Address
-        type: "string"
-        missingValue: ""
-        description: Subprojects' agencies address
-        
-      - name: telephone
-        translation: Telephone
-        type: "string"
-        missingValue: ""
-        description: Subprojects' agencies telephone
-        
-      - name: email
-        translation: Email
-        type: "string"
-        missingValue: ""
-        description: Subprojects' agencies email
-        
-      - name: fax
-        translation: Fax
-        type: "string"
-        missingValue: ""
-        description:
-        
-  title: Searchable database 
-  url: http://anaptyxi.gov.gr/Analytika2.aspx?mod=1&~
-  path: 
+    schema:
+      fields:
+        - name: title
+          translation: Title
+          type: "string"
+          missingValue: ""
+          description: Title of the project
 
-  publication_date: 
-  publication_version: minimal dataset
+        - name: body
+          translation: Body
+          type: "string"
+          missingValue: ""
+          description: Agency implementing the project
 
-  periods:
-    2007-2013: true
-    2014-2020: false
+        - name: budget
+          translation: Budget
+          type: "number"
+          missingValue: ""
+          description:
 
-  extraction_mode:
-    user_interface: true
-    download_link: false
-    pdf_scraper: false
-    web_scraper: false
+        - name: payments
+          translation: Payments
+          type: "number"
+          missingValue: ""
+          description: Amount paid
 
-  constants:
-    currency: EUR
-    certifying_authority:
-    # We need a complete list of possible constants here
+        - name: completion
+          translation: Completion
+          type: "number"
+          missingValue: ""
+          description: of completion of the project
 
-  schema:
-    fields:
-      - name: Title
-        translation: title
-        type: "string"
-        missingValue: 
-        description: title of the project
-        
-      - name: Body
-        translation: body
-        type: "string"
-        missingValue: 
-        description: agency that implements the project
-      
-      - name: Budget
-        translation: budget
-        type: "number"
-        missingValue: 
-        description: 
-        
-      - name: Contracts
-        translation: contracts
-        type: "number"
-        missingValue: 
-        description: 
-        
-      - name: Payment
-        translation: payment
-        type: "number"
-        missingValue: 
-        description: 
+        - name: startDate
+          translation: Start Date
+          type: "string"
+          missingValue: ""
+          description:
+
+        - name: endDate
+          translation: End Date
+          type: "number"
+          missingValue: ""
+          description:
+
+        - name: description
+          translation: Description
+          type: "string"
+          missingValue: ""
+          description:
+
+        - name: statusReportDate
+          translation: Status Report Date
+          type: "string"
+          missingValue: ""
+          description:
+
+        - name: statusReport
+          translation: Status Report
+          type: "string"
+          missingValue: ""
+          description:
+
+        - name: index
+          translation: Index
+          type: "number"
+          missingValue: ""
+          description: Subprojects' index
+
+        - name: title
+          translation: Title
+          type: "string"
+          missingValue: ""
+          description: Subprojects' title
+
+        - name: implementors
+          translation: Implementors
+          type: "string"
+          missingValue: ""
+          description: Subprojects' implementors
+
+        - name: budget
+          translation: Budget
+          type: "number"
+          missingValue: ""
+          description: Subprojects' budget
+
+        - name: startDate
+          translation: Start Date
+          type: "string"
+          missingValue: ""
+          description: Subprojects' start date
+
+        - name: endDate
+          translation: End Date
+          type: "string"
+          missingValue: ""
+          description: Subprojects' end date
+
+        - name: submissionDate
+          translation: Submission Date
+          type: "string"
+          missingValue: ""
+          description: Subprojects' estimated status submission date
+
+        - name: entranceDate
+          translation: Entrance Date
+          type: "string"
+          missingValue: ""
+          description: Subprojects' estimated status entrance date
+
+        - name: auctionApproveDate
+          translation: Auction Approve Date
+          type: "string"
+          missingValue: ""
+          description: Subprojects' estimated status auction approve date
+
+        - name: auctionDate
+          translation: Auction Date
+          type: "string"
+          missingValue: ""
+          description: Subprojects' estimated status auction date
+
+        - name: contractApproveDate
+          translation: Contract Approve Date
+          type: "string"
+          missingValue: ""
+          description: Subprojects' estimated status contract approve date
+
+        - name: contractDate
+          translation: Contract Date
+          type: "string"
+          missingValue: ""
+          description: Subprojects' estimated status contract date
+
+        - name: completionDate
+          translation: Completion Date
+          type: "string"
+          missingValue: ""
+          description: Subprojects' estimated status completion date
+
+        - name: bodyCategory
+          translation: Body Category
+          type: "string"
+          missingValue: ""
+          description: Subprojects' agencies body category
+
+        - name: name
+          translation: Name
+          type: "string"
+          missingValue: ""
+          description: Subprojects' agencies name
+
+        - name: representative
+          translation: Representative
+          type: "string"
+          missingValue: ""
+          description: Subprojects' agencies representative
+
+        - name: address
+          translation: Address
+          type: "string"
+          missingValue: ""
+          description: Subprojects' agencies address
+
+        - name: telephone
+          translation: Telephone
+          type: "string"
+          missingValue: ""
+          description: Subprojects' agencies telephone
+
+        - name: email
+          translation: Email
+          type: "string"
+          missingValue: ""
+          description: Subprojects' agencies email
+
+        - name: fax
+          translation: Fax
+          type: "string"
+          missingValue: ""
+          description:
+
+    title: Searchable database
+    url: http://anaptyxi.gov.gr/Analytika2.aspx?mod=1&~
+    path:
+
+    publication_date:
+    publication_version: minimal dataset
+
+    periods:
+      2007-2013: true
+      2014-2020: false
+
+    extraction_mode:
+      user_interface: true
+      download_link: false
+      pdf_scraper: false
+      web_scraper: false
+
+    constants:
+      currency: EUR
+      certifying_authority:
+      # We need a complete list of possible constants here
+
+    schema:
+      fields:
+        - name: Title
+          translation: title
+          type: "string"
+          missingValue:
+          description: title of the project
+
+        - name: Body
+          translation: body
+          type: "string"
+          missingValue:
+          description: agency that implements the project
+
+        - name: Budget
+          translation: budget
+          type: "number"
+          missingValue:
+          description:
+
+        - name: Contracts
+          translation: contracts
+          type: "number"
+          missingValue:
+          description:
+
+        - name: Payment
+          translation: payment
+          type: "number"
+          missingValue:
+          description:
