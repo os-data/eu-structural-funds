@@ -1,18 +1,18 @@
 title: All ESIF data for Croatia
 
-description: Dataset with usable amount of fields. Contains all ESIF data from 2008- March 2016 
+description: Dataset with usable amount of fields. Contains all ESIF data from 2008- March 2016
 
 sources:
   - name: Ministry of Regional Development and EU Funds
     web:  http://www.strukturnifondovi.hr/projekti
 
-  - name: 
-    web: 
+  - name:
+    web:
 
-  - name: 
-    web: 
+  - name:
+    web:
 
-image: 
+image:
 
 contributors:
   - Bela Seeger <bela.seege®@okfn.de> (http://okfn.de)

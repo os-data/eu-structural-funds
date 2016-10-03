@@ -1,0 +1,89 @@
+# I am the latest version: use me.
+
+# 1. Describe the source metadata:
+# -----------------------------
+#
+# title: a short description of your data source.
+#
+# language: the 2-digit language code of the document (e.g. en, fr, es...)
+#
+# sources: only meant as documention: add as many as you want (urls to
+#          the actual data-files are in the resources section).
+#
+# scraper_required: if a web or PDF scraper is needed
+#
+# contributors: put yourself down (email and website are not obligatory).
+#               Follow the simple formatting convention.
+#
+# resources: a single description file like this can describe more than one
+#            resource (file or webpage) as long as the data is structured the
+#            same. This happens when the data is split by fund or period for
+#            example.
+#
+# Good luck!
+
+title: A human readable title for your source
+
+description: This can be a long paragraph but must be written on one line to respect the YAML format. Use soft wraps in your editor if needed.
+language: two-digit ISO 639-1 code (e.g. en, fr, es...)
+
+sources:
+  - name: Title of the webpage
+    web:  http://data.portal.gov/path/to/index.html
+
+  - name: Title of another webpage
+    web: http://data.portal.gov/path/to/another/important/page.html
+
+scraper_required: true or false
+
+contributors:
+  - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
+  - Mickey Mouse <mickey.mouse@disney.com> (http://www.disney.com)
+
+resources:
+
+  # 2. Describe each data-resource:
+  # ----------------------------
+  #
+  # title: use this field to distinguish the resources if there's more than one
+  #
+  # url: the link to the file if possible. If the data needs to be scraped,
+  #      enter the url of the webpage and set scraper_required to true.
+  #
+  # publication_date: the date that the data was published or updated
+  #
+  # constant_fields: any field from fiscal.fields.yaml that has a fixed value
+  #                  (i.e. is not specified row by row).
+  #
+  # schema: please describe each column in the data. Don't change the original
+  #         columns names even in Cyrillic. For translations, Google will do.
+  #         Refer to fiscal.fields.yaml to discover what fiscal field map to
+  #         the columns that you found. If you can't tell, enter a short comment
+  #         instead. Leave the mapping blank if the column can be dropped.
+  #
+  # Good luck!
+
+  - title: A human readable title for you data file
+
+    url: http://data.country.gov/path/to/filename.xlsx
+
+    publication_date: yyyy-mm-dd
+
+    constant_fields:
+      fund_name: ERDF, CF, ESF, EARDF, EMFF or INTERREG
+      offical_period: 2007-2013 or 2014-2020
+      currency_code: ISO 4217 codes (e.g. EUR, GBP...)
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: copy/paste the original column name
+          translates_to: the english translation of the column name
+          maps_to: the matching field in fiscal.fields.yaml e.g. project_id
+
+        - name: copy/paste the original column name
+          translates_to: the english translation of the column name
+          maps_to: the matching field in fiscal.fields.yaml e.g. start_date
+
+        - # repeat for each column you find in the data

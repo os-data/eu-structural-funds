@@ -1,0 +1,230 @@
+fields:
+
+  # Some basic information that that you should find in the data
+  # ------------------------------------------------------------
+
+    name: beneficiary_name
+    title: Name of the beneficiary
+    description: Name of the company or beneficiary
+    required: true
+    codelist: false
+
+    name: project_name
+    title: Name of the project
+    description: Name of the project or short description of the project
+    required: false
+    codelist: false
+
+    name: total_amount
+    title: Total cost of project
+    description: Total cost of project
+    required: true
+    codelist: false
+
+    name: fund_name
+    title: Name of the fund
+    description: name of the fund
+    required: true
+    codelist: true
+
+    name: funding_period
+    title: Official funding period
+    description: Official funding period
+    required: true
+    codelist: true
+
+  # More information about the the benefiary if possible
+  # ----------------------------------------------------
+
+    name: beneficiary_id
+    title: ID of the beneficiary
+    description: fill this in if the beneficiary has an ID
+    required: false
+    codelist: false
+
+  - name: beneficiary_address
+    title: Address of the beneficiary
+    description: Any geographical information about beneficiary # if available
+    required: false
+    codelist: false
+
+  - name: beneficiary_website
+    title: Website of the beneficiary
+    description: Website of the beneficiary, if available
+    required: false
+    codelist: false
+
+  - name: subcontractor_list
+    title: List of subcontractors
+    description: List of all the subcontractors
+    required: false
+    codelist: false
+
+  # Additional (optional) columns about the project
+  # -----------------------------------------------
+
+  - name: project_id
+    title: Unique code of the project
+    description: if the project has an ID
+    required: false
+    codelist: false
+
+  - name: project_description_long
+    title: Short description of the project
+    description: if there is a small paragraph description
+    required: false
+    codelist: false
+
+  - name: priority_number
+    title: Number of priority
+    description: Number of the priority under the grant agreement the funds are coming from
+    required: false
+    codelist: true
+
+  - name: project_category
+    title: Project category
+    description: A sub-category of the subsidy fund
+    required: false
+    codelist: false
+
+
+  # Information about the project time span
+  # ---------------------------------------
+
+  - name: program_date # @anna: this one is ambiguous: can you be more specific?
+    title: Date of the program
+    description: Date of the program
+    required: false
+    codelist: false
+
+  - name: starting_date
+    title: Starting date of project
+    description: starting date of the project
+    required: false
+    codelist: false
+
+  - name: completion_date
+    title: Completion date of project
+    description: Completion date of project
+    required: false
+    codelist: false
+
+  - name: approval_date
+    title: Approvale date of project
+    description: Date that the project is approved
+    required: false
+    codelist: false
+
+  - name: payment_date
+    title: Date Payment
+    description: Date total payment was made
+    required: false
+    codelist: false
+
+  - name: first_payment_date
+    title: Date of the first payment
+    description: The data at which the first payment was made (pre-financing)
+    required: false
+    codelist: false
+
+  - name: final_payment_date
+    title: Date of the final payment
+    description: The date on which the final payment was made
+    required: false
+    codelist: false
+
+  # Information about the payments
+  # ------------------------------
+
+  - name: total_amount_applied
+    title: Total amount that project applied for
+    description: Total amount that project applied for
+    required: true
+    codelist: false
+
+  - name: total_eligible_expenditure
+    title: Total eligible expenditure
+    description:
+    required: true
+    codelist: false
+
+  - name: total_amount_awarded
+    title: Amount EU funding
+    description: Amount that is awarded from EU funds
+    required: false
+    codelist: false
+
+  - name: member_state_amount
+    title: Amount of national and regional funding
+    description: Amount that is awarded from national funds
+    required: false
+    codelist: false
+
+  - name: third_party_funding
+    title: Third party funding
+    description: The total amount that is additional to the action over third party funding
+    required: false
+    codelist: false
+
+  - name: eu_cofinance_rate
+    title: co-finance rate EU
+    description: The percentage of co-financing from the EU
+    required: false
+    codelist: false
+
+  - name: member_state_rate
+    title: Percentage financed by the Member State
+    description: The percentage of the total amount that is financed by the regional/national level
+    required: false
+    codelist: false
+
+  - name: european_investment_bank_ financing
+    title: European Investment Bank financing
+    description: The amount received from the EIB # @anna: can you confirm?
+    required: false
+    codelist: false
+
+  # The following fields will be added automatically: just ignore them
+  # ------------------------------------------------------------------
+
+  - name: nuts_code
+    title: Code of the region or area where the project is carried out
+    description: NUTS code
+    required: true
+    codelist: true
+
+  - name: currency_code
+    title: Currency
+    description: Currency ISO code
+    required: true
+    codelist: true
+
+  - name: operational_program_code
+    title: operational program CCI code
+    description: CCI codes are used at the level of EU to uniquely define prorgams, priorities, funds, and regions they are assigned to
+    required: false
+    codelist: true
+
+  - name: certifying_authority
+    title: Certifying Authority
+    description: certifying_authority are the bodies at regional/national level that certify the right implementation of the programs
+    required: false
+    codelist: true
+
+  - name: managing_authority
+    title: Managing Authority
+    description: manages the funds on country/regional/local level, responsible for the overall execution per fund
+    required: false
+    codelist: true
+
+  - name: intermediate_authority
+    title: Intermediate Authority
+    description: The body that declares expenditure to the certifying authority, if applicable
+    required: false
+    codelist: true
+
+  - name: approval_body
+    title: Body issuing the approval decision
+    description:
+    required: false
+    codelist: true
