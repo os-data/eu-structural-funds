@@ -1,230 +1,373 @@
+# Summary: This file encapsulates the schema part of the fiscal data package.
+# Reference: https://github.com/openspending/os-types/blob/master/src/os-types.json.
+# Author: Loic Jounot <loic@cyberpunk.bike>
+
 fields:
 
-  # Some basic information that that you should find in the data
-  # ------------------------------------------------------------
+  # Activity
+  # ---------------------------------------------------------------------------
 
-    name: beneficiary_name
-    title: Name of the beneficiary
-    description: Name of the company or beneficiary
-    required: true
-    codelist: false
+  # Hierarchy:
+  #   1. Program (period)
+  #   2. Project (program)
+  #   3. Sub-project (project)
 
-    name: project_name
-    title: Name of the project
-    description: Name of the project or short description of the project
-    required: false
-    codelist: false
+  - name: funding_period_number
+    title: Funding period number
+    slug: funding_period_number
+    description: First, second or third funding period.
+    format: default
+    type: string
+    osType: activity:generic:program:code
+    conceptType: activity
 
-    name: total_amount
-    title: Total cost of project
-    description: Total cost of project
-    required: true
-    codelist: false
+  - name: funding_period
+    title: Funding period
+    slug: funding_period
+    description: One of three official funding period e.g. 2007-2013
+    format: default
+    type: string
+    conceptType: activity
+    osType: activity:generic:program:label
 
-    name: fund_name
-    title: Name of the fund
-    description: name of the fund
-    required: true
-    codelist: true
+  - name: cci_program_code
+    title: CCI code
+    slug: cci_program_code
+    description: CCI codes (e.g. 2014BG05M2OP001) identify operational programs (see codelist).
+    format: default
+    type: string
+    osType: activity:generic:project:code
+    conceptType: activity
 
-    name: funding_period
-    title: Official funding period
-    description: Official funding period
-    required: true
-    codelist: true
-
-  # More information about the the benefiary if possible
-  # ----------------------------------------------------
-
-    name: beneficiary_id
-    title: ID of the beneficiary
-    description: fill this in if the beneficiary has an ID
-    required: false
-    codelist: false
-
-  - name: beneficiary_address
-    title: Address of the beneficiary
-    description: Any geographical information about beneficiary # if available
-    required: false
-    codelist: false
-
-  - name: beneficiary_website
-    title: Website of the beneficiary
-    description: Website of the beneficiary, if available
-    required: false
-    codelist: false
-
-  - name: subcontractor_list
-    title: List of subcontractors
-    description: List of all the subcontractors
-    required: false
-    codelist: false
-
-  # Additional (optional) columns about the project
-  # -----------------------------------------------
+  - name: cci_program_title
+    title: Operational program
+    slug: cci_program_title
+    description: The operational program matching the CCI code (see codelist)
+    format: default
+    type: string
+    conceptType: activity
+    osType: activity:generic:project:label
 
   - name: project_id
-    title: Unique code of the project
-    description: if the project has an ID
-    required: false
-    codelist: false
+    title: Project ID
+    slug: project_id
+    description: Unique code of the project (generated if not
+    format: default
+    type: string
+    conceptType: activity
+    osType: activity:generic:subproject:code
 
-  - name: project_description_long
-    title: Short description of the project
-    description: if there is a small paragraph description
-    required: false
-    codelist: false
+  - name: project_name
+    title: Project name
+    slug: project_name
+    description: Name or short description of the project
+    format: default
+    type: string
+    conceptType: activity
+    osType: activity:generic:subproject:label
+
+  # Recipient
+  # ---------------------------------------------------------------------------
+
+  - name: beneficiary_id
+    title: Beneficiary ID
+    slug: beneficiary_id
+    description: The unique ID of the beneficiary
+    format: default
+    type: string
+    conceptType: recipient
+    osType: recipient:generic:id
+
+  - name: beneficiary_name
+    title: Beneficiary name
+    slug: beneficiary_name
+    description: Name of the beneficiary (person, company, organisation)
+    format: default
+    type: string
+    conceptType: recipient
+    osType: recipient:generic:name
+
+  # Geo-source
+  # ---------------------------------------------------------------------------
+
+  - name: beneficiary_postal_code
+    title: Postal code
+    slug: beneficiary_postal_code
+    description: The postal code of the beneficiary
+    format: default
+    type: string
+    conceptType: geo-source
+    osType: geo-source:target:code
+
+  - name: beneficiary_address
+    title: Address
+    slug: beneficiary_address
+    description: Full address of the beneficiary to be geocoded
+    format: default
+    type: string
+    conceptType: geo-source
+    osType: geo-source:generic:title
+
+  # Administrative classification
+  # ---------------------------------------------------------------------------
+
+  # This is a work-around: I would prefer a geographic hierachy if it existed.
+
+  # Hierarchy:
+  #   1. Level1 (country)
+  #   2. Level2 (region)
+  #   3. Level3 (city)
+
+  - name: beneficiary_country_code
+    title: Country code
+    slug: beneficiary_country_code
+    description: Two digit ISO-3166 country code of the beneficiary
+    format: default
+    type: string
+    conceptType: administrative-classification
+    osType: administrative-classification:generic:level1:code:full
+
+  - name: beneficiary_country
+    title: Country
+    slug: beneficiary_country
+    description: The country of the beneficiary
+    format: default
+    type: string
+    conceptType: administrative-classification
+    osType: administrative-classification:generic:level1:label
+
+  - name: beneficiary_nuts_code
+    title: NUTS code
+    slug: beneficiary_nuts_code
+    description: NUTS code of the beneficiary region
+    format: default
+    type: string
+    conceptType: administrative-classification
+    osType: administrative-classification:generic:level2:code:full
+
+  - name: beneficiary_nuts_region
+    title: NUTS region
+    slug: beneficiary_nuts_region
+    description: The region matching the NUTS code
+    format: default
+    type: string
+    conceptType: administrative-classification
+    osType: administrative-classification:generic:level2:label
+
+  - name: beneficiary_city
+    title: City
+    slug: beneficiary_city
+    description: The city of the beneficiary
+    format: default
+    type: string
+    conceptType: administrative-classification
+    osType: administrative-classification:generic:level3:code:full
+
+  # Fiscal attribute
+  # ---------------------------------------------------------------------------
+
+  - name: fund_acronym
+    title: Fund
+    slug: fund_acronym
+    description: Acronym of the fund (see codelist)
+    format: default
+    type: string
+    conceptType: fin-source
+    osType: fin-source:generic:code
+
+  - name: fund_name
+    title: Fund name
+    slug: fund_name
+    description: Full name of the fund (see codelist)
+    format: default
+    type: string
+    conceptType: fin-source
+    osType: fin-source:generic:label
+
+  # Functional classifications
+  # ---------------------------------------------------------------------------
+
+  - name: theme_code
+    title: Thematic objective code
+    slug: theme_code
+    description: Code of the thematic objective (see codelist)
+    format: default
+    type: string
+    conceptType: functional-classification
+    osType: functional-classification:generic:code
+
+  - name: theme_name
+    title: Thematic objective
+    slug: theme_name
+    description: Display name of the thematic objective (see codelist)
+    format: default
+    type: string
+    conceptType: functional-classification
+    osType: functional-classification:generic:label
 
   - name: priority_number
-    title: Number of priority
-    description: Number of the priority under the grant agreement the funds are coming from
-    required: false
-    codelist: true
+    title: Priority number
+    slug: priority_number
+    description: Priority number of the grant agreement (see codelist)
+    format: default
+    type: string
+    conceptType: functional-classification
+    osType: functional-classification:generic:code
 
-  - name: project_category
-    title: Project category
-    description: A sub-category of the subsidy fund
-    required: false
-    codelist: false
+  - name: priority_label
+    title: Priority
+    slug: priority_label
+    description: Description of the priority number of the grant agreement (see codelist)
+    format: default
+    type: string
+    conceptType: expenditure-type
+    osType: expenditure-type:code
 
-
-  # Information about the project time span
-  # ---------------------------------------
-
-  - name: program_date # @anna: this one is ambiguous: can you be more specific?
-    title: Date of the program
-    description: Date of the program
-    required: false
-    codelist: false
+  # Dates
+  # ---------------------------------------------------------------------------
 
   - name: starting_date
-    title: Starting date of project
-    description: starting date of the project
-    required: false
-    codelist: false
+    title: Starting date of the project
+    slug: starting_date
+    description: Starting date of the project
+    format: default
+    type: string
+    conceptType: date
+    osType: date:generic
 
   - name: completion_date
-    title: Completion date of project
-    description: Completion date of project
-    required: false
-    codelist: false
+    title: Completion date of the project
+    slug: completion_date
+    description: Completion date of the project
+    format: default
+    type: string
+    conceptType: date
+    osType: date:generic
 
   - name: approval_date
-    title: Approvale date of project
+    title: Approval date of the project
+    slug: approval_date
     description: Date that the project is approved
-    required: false
-    codelist: false
-
-  - name: payment_date
-    title: Date Payment
-    description: Date total payment was made
-    required: false
-    codelist: false
+    format: default
+    type: string
+    conceptType: date
+    osType: date:generic
 
   - name: first_payment_date
     title: Date of the first payment
+    slug: first_payment_date
     description: The data at which the first payment was made (pre-financing)
-    required: false
-    codelist: false
+    format: default
+    type: string
+    conceptType: date
+    osType: date:generic
 
   - name: final_payment_date
     title: Date of the final payment
+    slug: final_payment_date
     description: The date on which the final payment was made
-    required: false
-    codelist: false
+    format: default
+    type: string
+    conceptType: date
+    osType: date:generic
 
-  # Information about the payments
-  # ------------------------------
+  # Measures
+  # ---------------------------------------------------------------------------
+
+  - name: total_amount
+    title: Total cost of the project
+    slug: total_amount
+    description: Total cost of project
+    format: default
+    type: number
+    conceptType: value
+    osType: value
+    decimalChar: .
+    groupChar: null
 
   - name: total_amount_applied
-    title: Total amount that project applied for
+    title: Total amount the project applied for
+    slug: total_amount_applied
     description: Total amount that project applied for
-    required: true
-    codelist: false
+    format: default
+    type: number
+    conceptType: value
+    osType: value
+    groupChar: null
+    decimalChar: .
 
-  - name: total_eligible_expenditure
+  - name: total_amount_eligible
     title: Total eligible expenditure
-    description:
-    required: true
-    codelist: false
-
-  - name: total_amount_awarded
-    title: Amount EU funding
-    description: Amount that is awarded from EU funds
-    required: false
-    codelist: false
+    slug: total_amount_eligible
+    description: Total eligible expenditure
+    type: number
+    conceptType: value
+    groupChar: null
+    format: default
+    osType: value
+    decimalChar: .
 
   - name: member_state_amount
     title: Amount of national and regional funding
+    slug: member_state_amount
     description: Amount that is awarded from national funds
-    required: false
-    codelist: false
+    type: number
+    format: default
+    conceptType: value
+    osType: value
+    groupChar: null
+    decimalChar: .
 
-  - name: third_party_funding
+  - name: third_party_amount
     title: Third party funding
+    slug: third_party_amount
     description: The total amount that is additional to the action over third party funding
-    required: false
-    codelist: false
+    type: number
+    format: default
+    conceptType: value
+    osType: value
+    groupChar: null
+    decimalChar: .
 
-  - name: eu_cofinance_rate
-    title: co-finance rate EU
-    description: The percentage of co-financing from the EU
-    required: false
-    codelist: false
+  - name: eu_cofinancing_amount
+    title: EU co-financing
+    slug: eu_cofinancing_amount
+    description: The amount of co-financing from the EU
+    type: number
+    conceptType: value
+    format: default
+    osType: value
+    groupChar: null
+    decimalChar: .
 
-  - name: member_state_rate
-    title: Percentage financed by the Member State
-    description: The percentage of the total amount that is financed by the regional/national level
-    required: false
-    codelist: false
-
-  - name: european_investment_bank_ financing
+  - name: european_investment_bank_amount
     title: European Investment Bank financing
-    description: The amount received from the EIB # @anna: can you confirm?
-    required: false
-    codelist: false
+    slug: european_investment_bank_amount
+    description: The amount of co-financing received from the European Investment Bank (EIB)
+    type: number
+    format: default
+    conceptType: value
+    osType: value
+    groupChar: null
+    decimalChar: .
 
-  # The following fields will be added automatically: just ignore them
-  # ------------------------------------------------------------------
+  # Additionnal details
+  # ---------------------------------------------------------------------------
 
-  - name: nuts_code
-    title: Code of the region or area where the project is carried out
-    description: NUTS code
-    required: true
-    codelist: true
+  - name: beneficiary_url
+    title: Beneficiary website
+    slug: beneficiary_url
+    description: URL of the beneficiary (or project)
+    format: default
+    type: string
+    conceptType: unknown
+    osType: unknown:string
 
-  - name: currency_code
-    title: Currency
-    description: Currency ISO code
-    required: true
-    codelist: true
-
-  - name: operational_program_code
-    title: operational program CCI code
-    description: CCI codes are used at the level of EU to uniquely define prorgams, priorities, funds, and regions they are assigned to
-    required: false
-    codelist: true
-
-  - name: certifying_authority
-    title: Certifying Authority
-    description: certifying_authority are the bodies at regional/national level that certify the right implementation of the programs
-    required: false
-    codelist: true
-
-  - name: managing_authority
-    title: Managing Authority
-    description: manages the funds on country/regional/local level, responsible for the overall execution per fund
-    required: false
-    codelist: true
-
-  - name: intermediate_authority
-    title: Intermediate Authority
-    description: The body that declares expenditure to the certifying authority, if applicable
-    required: false
-    codelist: true
-
-  - name: approval_body
-    title: Body issuing the approval decision
-    description:
-    required: false
-    codelist: true
+  - name: project_description
+    title: Project description
+    slug: project_description
+    description: A paragraph description of the project
+    format: default
+    type: string
+    conceptType: unknown
+    osType: unknown:string
