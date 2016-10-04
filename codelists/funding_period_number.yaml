@@ -1,0 +1,6 @@
+label: funding_period
+
+mapping:
+  1: 2000-2006
+  2: 2007-2013
+  3: 2014-2020
