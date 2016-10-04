@@ -1,6 +1,6 @@
 source.datapackage.json
 pipeline-spec.yaml
-
+!specifications/source.description.yaml
 logs/
 .idea/
 .ipynb_checkpoints/
