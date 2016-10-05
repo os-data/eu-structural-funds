@@ -1,3 +1,6 @@
+source.datapackage.json
+pipeline-spec.yaml
+
 logs/
 .idea/
 .ipynb_checkpoints/

@@ -74,44 +74,44 @@ resources:
   #
   # Good luck!
 
-  title: A human readable title for you data file
-  url: http://data.country.gov/path/to/data_file.xlsx
-  path: data_filename.ext
+  - title: A human readable title for you data file
+    url: http://data.country.gov/path/to/data_file.xlsx
+    path: data_filename.ext
 
-  publication_date: yyyy-mm-dd
-  expiry_date: yyyy-mm-dd
+    publication_date: yyyy-mm-dd
+    expiry_date: yyyy-mm-dd
 
-  update_interval: yearly
+    update_interval: yearly
 
-  funds:
-  years:
+    funds:
+    years:
 
-  periods:
-    2007-2013: true
-    2014-2020: false
+    periods:
+      2007-2013: true
+      2014-2020: false
 
-  extraction_mode:
-    user_interface: false
-    download_link: true
-    pdf_scraper: false
-    web_scraper: false
-    rest_api: false
+    extraction_mode:
+      user_interface: false
+      download_link: true
+      pdf_scraper: false
+      web_scraper: false
+      rest_api: false
 
-  constants:
-    currency: a 3-digit currency code, like EUR
-    certifying_authority: the authority certifying authority
-    # We need a complete list of possible constants here
+    constants:
+      currency: a 3-digit currency code, like EUR
+      certifying_authority: the authority certifying authority
+      # We need a complete list of possible constants here
 
-  schema:
-    fields:
-      - name: copy/paste the original column name without changing it
-        translation: the english translation of the column name
-        type: can be "string", "number", "date", "period"
-        missingValue: how missing values are represented (e.g. "" or NaN)
-        description: anything important, for example how to  the field
+    schema:
+      fields:
+        - name: copy/paste the original column name without changing it
+          translation: the english translation of the column name
+          type: can be "string", "number", "date", "period"
+          missingValue: how missing values are represented (e.g. "" or NaN)
+          description: anything important, for example how to  the field
 
-      - name: copy/paste the original column name without changing it
-        translation: the english translation of the column name
-        type: can be "string", "number", "date", "period"
-        missingValue: how missing values are represented (e.g. "" or NaN)
-        description: anything important, for example how to  the field
+        - name: copy/paste the original column name without changing it
+          translation: the english translation of the column name
+          type: can be "string", "number", "date", "period"
+          missingValue: how missing values are represented (e.g. "" or NaN)
+          description: anything important, for example how to  the field
