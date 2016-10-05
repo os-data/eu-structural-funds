@@ -18,7 +18,8 @@ contributors:
   - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
 
 resources:
-  - title: EXCEL file 2014-2020 for ERDS, YEI and FSE funds
+  - name: excel-file-2014-2020-for-erds-yei-and-fse-funds
+    title: EXCEL file 2014-2020 for ERDS, YEI and FSE funds
     # url: http://www.europe-en-france.gouv.fr/content/download/34797/361872/version/1/file/20160711_listeoperations_FEDER_FSE_14-20.xls
     path: 20160711_listeoperations_FEDER_FSE_14-20.xls
 
@@ -34,7 +35,7 @@ resources:
       fields:
         - name: Programme
           translates_to: program
-          maps_to: # leave blank: a french internal code
+          maps_to: cci_program_title
           type: string
 
         - name: Intitulé du projet  - operation name
@@ -43,13 +44,13 @@ resources:
           type: string
 
         - name: Nom du bénéficiaire - beneficiary name
-          translates_to: beneficiaryname
+          translates_to: beneficiary name
           maps_to: benficiary_name
           type: string
 
         - name: Code postal du bénéficiaire
           translates_to: postal code of the beneficiary
-          maps_to: beneficiary_address
+          maps_to: beneficiary_postal_code
           type: number
 
         - name: Date de début de l'opération - operation start date
@@ -69,7 +70,7 @@ resources:
 
         - name: Montant UE programmé - Union co-financing rate
           translates_to: union co-financing rate
-          maps_to: eu_cofinance_rate
+          maps_to: eu_cofinancing_amount
           type: number
 
         - name: Pays - Country
@@ -79,16 +80,15 @@ resources:
 
         - name: Date de programmation
           translates_to: this is ambiguous
-          maps_to: not quite sure what the date refers to
+          maps_to: approval_date
           type: number
 
         - name: Catégorie d'intervention - category of intervention
           translates_to: category of intervention
-          maps_to: program_name
+          maps_to: theme_code
           type: string
 
         - name: Fonds
           translates_to: fund
-          maps_to: fund_name
+          maps_to: fund_acronym
           type: string
-

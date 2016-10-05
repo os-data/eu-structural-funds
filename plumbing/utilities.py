@@ -1,5 +1,6 @@
 """A place for useful functions and classes that don't have a home."""
 
+import logging
 import os
 import yaml
 
@@ -53,3 +54,15 @@ def get_fiscal_datapackage(skip_validation=False):
         DataPackage(datapackage, schema='fiscal').validate()
 
     return datapackage
+
+
+def get_fiscal_fields():
+    """Return the fiscal datapackage fields. """
+
+    with open(FISCAL_SCHEMA_FILE) as stream:
+        schema = yaml.load(stream.read())
+
+    fields = [field_['name'] for field_ in schema['fields']]
+    logging.info('Valid fiscal fields = %s', fields)
+
+    return fields

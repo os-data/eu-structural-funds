@@ -3,7 +3,7 @@ import logging
 from datapackage import DataPackage
 from datapackage_pipelines.wrapper import ingest, spew
 
-parameters, datapackage_descriptor, _ = ingest()
+_, datapackage_descriptor, _ = ingest()
 
 
 def generate_resources():

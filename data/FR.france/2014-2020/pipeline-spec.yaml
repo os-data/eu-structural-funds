@@ -1,0 +1,20 @@
+2014-2020:
+  pipeline:
+    - run: read_description
+      parameters:
+        save_datapackage: true
+
+    - run: stream_from_path
+      cache: true
+
+    - run: map_columns
+
+    - run: nop
+
+    - run: reshape_data
+
+    - run: load_fiscal_datapackage
+      validate: true
+
+  schedule:
+    crontab: 0 0 1 1 *

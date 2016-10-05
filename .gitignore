@@ -1,6 +1,7 @@
 source.datapackage.json
 pipeline-spec.yaml
 !specifications/source.description.yaml
+!data/FR.france/2014-2020/pipeline-spec.yaml
 logs/
 .idea/
 .ipynb_checkpoints/
