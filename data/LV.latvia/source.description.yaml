@@ -132,8 +132,8 @@ resources:
           translates_to: EU funding
           maps_to: funding_eu
 
-	- name: Projekta īstenošanas vieta
+        - name: Projekta īstenošanas vieta
           translates_to: Project will be implemented
-          maps_to: 
+          maps_to:
 
         - # repeat for each column you find in the data
