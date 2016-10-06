@@ -103,7 +103,6 @@ def test_fiscal_schema_fields_have_required_properties(field):
 def test_fiscal_value_fields_have_extra_properties(field):
     if field['osType'] == 'value':
         assert 'decimalChar' in set(field.keys())
-        assert 'groupChar' in set(field.keys())
 
 
 @mark.parametrize('field', fields)
@@ -114,7 +113,7 @@ def test_all_fiscal_schema_fields_properties_are_strings(field):
 @mark.parametrize('field', fields)
 def test_fiscal_schema_fields_properties_have_correct_values(field):
     assert field['conceptType'] == field['osType'].split(':')[0]
-    assert field['type'] in ('number', 'string')
+    assert field['type'] in ('number', 'string', 'date')
     assert field['format'] == 'default'
     assert field['slug'] == field['name']
     assert field['osType'] in valid_os_types
