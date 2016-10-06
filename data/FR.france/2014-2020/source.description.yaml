@@ -19,7 +19,8 @@ contributors:
 
 resources:
   - title: EXCEL file 2014-2020 for ERDS, YEI and FSE funds
-    url: http://www.europe-en-france.gouv.fr/content/download/34797/361872/version/1/file/20160711_listeoperations_FEDER_FSE_14-20.xls
+    # url: http://www.europe-en-france.gouv.fr/content/download/34797/361872/version/1/file/20160711_listeoperations_FEDER_FSE_14-20.xls
+    path: 20160711_listeoperations_FEDER_FSE_14-20.xls
 
     publication_date: 11/07/2016
 
@@ -34,48 +35,60 @@ resources:
         - name: Programme
           translates_to: program
           maps_to: # leave blank: a french internal code
+          type: string
 
         - name: Intitulé du projet  - operation name
           translates_to: operation name
           maps_to: project_name
+          type: string
 
         - name: Nom du bénéficiaire - beneficiary name
           translates_to: beneficiaryname
           maps_to: benficiary_name
+          type: string
 
         - name: Code postal du bénéficiaire
           translates_to: postal code of the beneficiary
           maps_to: beneficiary_address
+          type: number
 
         - name: Date de début de l'opération - operation start date
           translates_to: operation start date
           maps_to: starting_date
+          type: number
 
         - name: Date de fin de l'opération - operation end date
           translates_to: operation end date
           maps_to: completion_date
+          type: number
 
         - name: Total dépenses éligibles
           translates_to: Amount eligible for
           maps_to: amount_expenditure_eligible
+          type: number
 
         - name: Montant UE programmé - Union co-financing rate
           translates_to: union co-financing rate
           maps_to: eu_cofinance_rate
+          type: number
 
         - name: Pays - Country
           translates_to: country
           maps_to: coutry_code
+          type: string
 
         - name: Date de programmation
           translates_to: this is ambiguous
           maps_to: not quite sure what the date refers to
+          type: number
 
         - name: Catégorie d'intervention - category of intervention
           translates_to: category of intervention
           maps_to: program_name
+          type: string
 
         - name: Fonds
           translates_to: fund
           maps_to: fund_name
+          type: string
 
