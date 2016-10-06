@@ -17,13 +17,13 @@
 
     - run: convert_excel_dates
       parameters:
-        date_mode: 0
-        date_fields:
+        date-mode: 0
+        date-fields:
           - starting_date
           - completion_date
           - approval_date
-          - first_payment_date
-          - final_payment_date
+
+    - run: cast_to_fiscal_schema
 
     - run: reshape_data
 
