@@ -15,6 +15,16 @@
 
     - run: map_columns
 
+    - run: convert_excel_dates
+      parameters:
+        date_mode: 0
+        date_fields:
+          - starting_date
+          - completion_date
+          - approval_date
+          - first_payment_date
+          - final_payment_date
+
     - run: reshape_data
 
     - run: load_fiscal_datapackage
