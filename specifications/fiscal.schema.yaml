@@ -231,7 +231,7 @@ fields:
     slug: starting_date
     description: Starting date of the project
     format: default
-    type: string
+    type: date
     conceptType: date
     osType: date:generic
 
@@ -240,7 +240,7 @@ fields:
     slug: completion_date
     description: Completion date of the project
     format: default
-    type: string
+    type: date
     conceptType: date
     osType: date:generic
 
@@ -249,7 +249,7 @@ fields:
     slug: approval_date
     description: Date that the project is approved
     format: default
-    type: string
+    type: date
     conceptType: date
     osType: date:generic
 
@@ -258,7 +258,7 @@ fields:
     slug: first_payment_date
     description: The data at which the first payment was made (pre-financing)
     format: default
-    type: string
+    type: date
     conceptType: date
     osType: date:generic
 
@@ -267,7 +267,7 @@ fields:
     slug: final_payment_date
     description: The date on which the final payment was made
     format: default
-    type: string
+    type: date
     conceptType: date
     osType: date:generic
 
