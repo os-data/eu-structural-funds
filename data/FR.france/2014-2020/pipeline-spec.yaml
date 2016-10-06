@@ -1,0 +1,34 @@
+2014-2020:
+  pipeline:
+    - run: read_description
+      parameters:
+        save_datapackage: true
+
+    - run: stream_from_path
+      validate: true
+      parameters:
+        streamer: tabulator
+
+    - run: dump
+      parameters:
+        out-file: source.datapackage.zip
+
+    - run: map_columns
+
+    - run: reshape_data
+
+    - run: load_fiscal_datapackage
+
+    - run: nop
+      validate: true
+
+    - run: dump
+      parameters:
+        out-file: fiscal.datapackage.zip
+
+    - run: fiscal.upload
+      parameters:
+        in-file: fiscal.datapackage.zip
+
+  schedule:
+    crontab: 0 0 1 1 *

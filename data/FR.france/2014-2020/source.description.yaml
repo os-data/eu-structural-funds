@@ -24,17 +24,11 @@ resources:
 
     publication_date: 11/07/2016
 
-    constant_fields:
-      fund_name:
-      offical_period: 2014-2020
-      currency_code: EUR
-      program_name:
-
     schema:
       fields:
         - name: Programme
           translates_to: program
-          maps_to: # leave blank: a french internal code
+          maps_to: cci_program_code
           type: string
 
         - name: Intitulé du projet  - operation name
@@ -43,13 +37,13 @@ resources:
           type: string
 
         - name: Nom du bénéficiaire - beneficiary name
-          translates_to: beneficiaryname
-          maps_to: benficiary_name
+          translates_to: beneficiary name
+          maps_to: beneficiary_name
           type: string
 
         - name: Code postal du bénéficiaire
           translates_to: postal code of the beneficiary
-          maps_to: beneficiary_address
+          maps_to: beneficiary_postal_code
           type: number
 
         - name: Date de début de l'opération - operation start date
@@ -64,31 +58,31 @@ resources:
 
         - name: Total dépenses éligibles
           translates_to: Amount eligible for
-          maps_to: amount_expenditure_eligible
+          maps_to: total_amount_eligible
           type: number
 
         - name: Montant UE programmé - Union co-financing rate
           translates_to: union co-financing rate
-          maps_to: eu_cofinance_rate
+          maps_to: eu_cofinancing_amount
           type: number
 
         - name: Pays - Country
-          translates_to: country
-          maps_to: coutry_code
+          translates_to: Beneficiary country code
+          maps_to: beneficiary_country_code
           type: string
 
         - name: Date de programmation
           translates_to: this is ambiguous
-          maps_to: not quite sure what the date refers to
+          maps_to: approval_date
           type: number
 
         - name: Catégorie d'intervention - category of intervention
           translates_to: category of intervention
-          maps_to: program_name
+          maps_to: theme_code
           type: string
+          missingValue: NR
 
         - name: Fonds
           translates_to: fund
-          maps_to: fund_name
+          maps_to: fund_acronym
           type: string
-
