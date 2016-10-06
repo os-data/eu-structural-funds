@@ -283,7 +283,6 @@ fields:
     conceptType: value
     osType: value
     decimalChar: .
-    groupChar: null
 
   - name: total_amount_applied
     title: Total amount the project applied for
@@ -293,7 +292,6 @@ fields:
     type: number
     conceptType: value
     osType: value
-    groupChar: null
     decimalChar: .
 
   - name: total_amount_eligible
@@ -302,7 +300,6 @@ fields:
     description: Total eligible expenditure
     type: number
     conceptType: value
-    groupChar: null
     format: default
     osType: value
     decimalChar: .
@@ -315,7 +312,6 @@ fields:
     format: default
     conceptType: value
     osType: value
-    groupChar: null
     decimalChar: .
 
   - name: third_party_amount
@@ -326,7 +322,6 @@ fields:
     format: default
     conceptType: value
     osType: value
-    groupChar: null
     decimalChar: .
 
   - name: eu_cofinancing_amount
@@ -337,7 +332,6 @@ fields:
     conceptType: value
     format: default
     osType: value
-    groupChar: null
     decimalChar: .
 
   - name: european_investment_bank_amount
@@ -348,7 +342,6 @@ fields:
     format: default
     conceptType: value
     osType: value
-    groupChar: null
     decimalChar: .
 
   # Additionnal details
