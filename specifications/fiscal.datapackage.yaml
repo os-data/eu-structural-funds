@@ -45,10 +45,10 @@ model: # placeholder for fiscal.model.yaml
 resources:
   - name: concatenated-csv-data-file-all-years-all-countries
     title: Concatenated CSV data file for all years and all countries
-
     path: data.csv
-
+    mediatype: text/csv
     schema: # placeholder for fiscal.schema.yaml
+
 
 
 
