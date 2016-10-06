@@ -9,11 +9,11 @@ from datapackage_pipelines.wrapper import spew
 # ...how-do-i-read-a-date-in-excel-format-in-python
 
 
-def process_row(row, date_fields, date_mode):
+def convert_dates(row, date_fields, date_mode):
     """Rename the row keys according to the mapping.
     """
     for date_field in date_fields:
-        row[date_field] = xldate_as_datetime(row[date_field], date_mode)
+        row[date_field] = xldate_as_datetime(row[date_field], date_mode).date()
     return row
 
 
@@ -23,7 +23,7 @@ def process_resources(resources, date_fields, date_mode):
     for resource in resources:
         def process_rows(resource_):
             for row in resource_:
-                yield process_row(row, date_fields, date_mode)
+                yield convert_dates(row, date_fields, date_mode)
 
         yield process_rows(resource)
 
