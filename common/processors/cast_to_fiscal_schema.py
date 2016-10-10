@@ -6,7 +6,7 @@ import yaml
 
 from datapackage_pipelines.wrapper import ingest
 from datapackage_pipelines.wrapper import spew
-from plumbing.config import FISCAL_SCHEMA_FILE
+from common.config import FISCAL_SCHEMA_FILE
 
 
 def cast_values(row, fiscal_types):

@@ -2,7 +2,7 @@
 
 from pytest import mark
 
-from plumbing.utilities import get_codelist, get_all_codelists
+from common.utilities import get_codelist, get_all_codelists
 
 all_codelists = get_all_codelists().values()
 

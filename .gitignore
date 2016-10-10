@@ -90,4 +90,4 @@ target/
 .projectile
 datapackage-pipelines.iml
 celerybeat-schedule
-/plumbing/sandbox/
+/common.plumbing.sandbox/

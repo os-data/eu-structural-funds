@@ -1,9 +1,10 @@
 """This processor reshapes the data to match the fiscal schema."""
+
 import logging
 
 from datapackage_pipelines.wrapper import ingest
 from datapackage_pipelines.wrapper import spew
-from plumbing.utilities import get_fiscal_fields
+from common.utilities import get_fiscal_fields
 
 
 def process_row(row, fiscal_fields):
@@ -26,8 +27,6 @@ def process_resources(resources, fiscal_fields):
         def process_rows(resource_):
             for i, row in enumerate(resource_):
                 yield process_row(row, fiscal_fields)
-                if i < 10:
-                    logging.debug('Row %s: %s', i, row)
 
         yield process_rows(resource)
 

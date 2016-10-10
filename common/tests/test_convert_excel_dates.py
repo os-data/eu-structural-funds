@@ -1,6 +1,7 @@
 """Unit-tests for the convert_excel_dates processor."""
 
-from common.convert_excel_dates import convert_dates, process_resources
+from common.processors.convert_excel_dates import convert_dates, \
+    process_resources
 from datetime import date
 
 

@@ -1,7 +1,8 @@
 """Test module for the cast_to_fiscal_types processor."""
 
 from datetime import date
-from common.cast_to_fiscal_schema import cast_values, get_fiscal_types
+from common.processors.cast_to_fiscal_schema import cast_values, \
+    get_fiscal_types
 from pytest import mark
 
 fiscal_types = dict(get_fiscal_types())
