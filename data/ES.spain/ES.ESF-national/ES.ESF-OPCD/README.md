@@ -4,4 +4,6 @@ Info: http://www.empleo.gob.es/uafse/es/programando/programasOperativos/pdf/Luch
 
 Data: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES05UPO002_PO_FSE_LUCHACONTRALADISCRIMINACION.pdf
 
-See: ESF OPCD folder
+Columns: Beneficiario, Tipo de Operación, Gasto Público Columns (translated): Beneficiaries, Type of Operation, Public Spending
+
+ESF OPCD database for the period 2014-2020 is not available.
