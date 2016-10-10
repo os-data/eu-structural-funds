@@ -1,15 +1,17 @@
 """A place for useful functions and classes that don't have a home."""
 
+import json
+import yaml
 import logging
 import os
-import yaml
 
 from datapackage import DataPackage
-from plumbing.config import (
+from .config import (
     CODELISTS_DIR,
     FISCAL_SCHEMA_FILE,
     FISCAL_DATAPACKAGE_FILE,
-    FISCAL_MODEL_FILE
+    FISCAL_MODEL_FILE,
+    FEEDBACK_FILE
 )
 
 
@@ -66,3 +68,22 @@ def get_fiscal_fields():
     logging.info('Valid fiscal fields = %s', fields)
 
     return fields
+
+
+def write_feedback(section, messages, folder=os.getcwd()):
+    """Append messages to the feedback file."""
+
+    filepath = os.path.join(folder, FEEDBACK_FILE)
+
+    with open(filepath) as stream:
+        feedback = json.load(stream)
+
+    if section not in feedback:
+        feedback[section] = []
+
+    for message in messages:
+        feedback[section].append(message)
+        logging.warning('[%s] %s', section, message)
+
+    with open(filepath, 'w+') as stream:
+        json.dump(feedback, stream, indent=4)

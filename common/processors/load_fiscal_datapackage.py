@@ -3,7 +3,7 @@
 import logging
 
 from datapackage_pipelines.wrapper import ingest, spew
-from plumbing.utilities import get_fiscal_datapackage
+from common.utilities import get_fiscal_datapackage
 
 if __name__ == '__main__':
     # noinspection PyRedeclaration

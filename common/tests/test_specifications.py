@@ -7,8 +7,8 @@ import json
 from pytest import mark
 from requests import get
 
-from plumbing.utilities import get_fiscal_datapackage
-from plumbing.config import (
+from common.utilities import get_fiscal_datapackage
+from common.config import (
     FISCAL_SCHEMA_FILE,
     OS_TYPES_URL,
     FISCAL_MODEL_FILE,

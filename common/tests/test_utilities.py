@@ -4,8 +4,8 @@ import os
 
 from unittest.mock import mock_open, patch, call
 
-from plumbing.utilities import get_codelist, get_fiscal_datapackage
-from plumbing.config import CODELISTS_DIR
+from common.utilities import get_codelist, get_fiscal_datapackage
+from common.config import CODELISTS_DIR
 
 
 @patch(

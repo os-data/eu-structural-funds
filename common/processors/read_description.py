@@ -12,7 +12,7 @@ import yaml
 
 from slugify import slugify
 from datapackage_pipelines.wrapper import spew, ingest
-from plumbing.config import DESCRIPTION_FILE, DATAPACKAGE_FILE
+from common.config import DESCRIPTION_FILE, DATAPACKAGE_FILE
 
 
 def create_datapackage(description):

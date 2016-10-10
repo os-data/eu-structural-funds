@@ -2,7 +2,7 @@
 
 import logging
 from datapackage_pipelines.wrapper import ingest, spew
-from plumbing.utilities import get_fiscal_fields
+from common.utilities import get_fiscal_fields
 
 
 def update_datapackage(datapackage):

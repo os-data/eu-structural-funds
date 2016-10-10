@@ -1,7 +1,7 @@
 """Test the common reshape_data processor."""
 
 from pytest import mark
-from common.reshape_data import process_resources, process_row
+from common.processors.reshape_data import process_resources, process_row
 
 test_cases = [
     ({1: 'a', 2: 'b'}, [1, 2, 3], {1: 'a', 2: 'b', 3: None}),
