@@ -1,0 +1,77 @@
+# version 3. I am the latest version. USE ME :-)
+
+
+#------------------------------------------------------------------------------
+# Warning! Please don't modify the document syntax, especially the indentation.
+# Checkout the Q&A page in the wiki or drop us a line in Slack. Thank you!
+#------------------------------------------------------------------------------
+
+
+# Source metadata:
+# ----------------
+#
+# title: a short description of your data source.
+#
+# language: the 2-digit language code of the documents (e.g. EN, FR, ES...)
+#
+# sources: this is meant as documention, so add as many as you want (the links
+#          to the data-files are specified in the resources section).
+#
+# scraper_required: if a web or PDF scraper is needed
+#
+# contributors: put yourself down (email and website are not obligatory).
+#               Follow the simple formatting convention.
+#
+# resources: a resource is a data file. A single description file can describe
+#            more than one resource as long as the data looks the same. This
+#            happens when the data is split by fund or program for example.
+
+
+title: A human readable title for your source
+
+description: This can be a long paragraph but must be written on one line to respect the YAML format. Use soft wraps in your editor if needed.
+language: two-digit ISO 639-1 code (e.g. en, fr, es...)
+
+sources:
+  - name: Title of the webpage
+    web:  http://data.portal.gov/path/to/index.html
+
+  - name: Title of another webpage
+    web: http://data.portal.gov/path/to/another/important/page.html
+
+scraper_required: true or false
+
+contributors:
+  - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
+  - Mickey Mouse <mickey.mouse@disney.com> (http://www.disney.com)
+
+resources:
+
+  # Data-resource:
+  # --------------
+  #
+  # title: use this field to distinguish the resources if there's more than one
+  #
+  # url: the link to the file if possible. If the data needs to be scraped,
+  #      enter the url of the webpage and set scraper_required to true.
+  #
+  # publication_date: the date that the data was published or updated
+  #
+  # schema: please describe each column in the data. Don't change the original
+  #         columns names even in Cyrillic. For translations, Google will do.
+
+  - title: A human readable title for you data file
+    url: http://data.country.gov/path/to/filename.xlsx
+    publication_date: yyyy-mm-dd
+
+    schema:
+      fields:
+        - name: copy/paste the original column name
+          translates_to: the english translation of the column name
+
+        - name: copy/paste the original column name
+          translates_to: the english translation of the column name
+
+        - # repeat for each column you find in the data
+
+  - # repeat for each data file in this source
