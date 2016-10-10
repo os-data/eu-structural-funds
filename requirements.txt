@@ -1,0 +1,4 @@
+datapackage-pipelines
+arrow
+python-slugify
+pytest
