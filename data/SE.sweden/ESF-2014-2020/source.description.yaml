@@ -22,15 +22,15 @@
 #
 # Good luck!
 
-title: ERDF & ESF data for Sweden 2007-today
+title: ESF data for Sweden 2014-2020
 
 description: Swedish ESIF data is available via two web portals, one for ESF, and one for ERDF. There appears to be another fund with the name Integration fund. It may be necessary to investigate further whether the services provided via that fund are part of the ESF data provided. Moreover, data on ERDF is available from 2007-today, while ESF data is only available from 2007-2013, with a second portal in the works for 2014-today (thus far only a website is available that could be scraped).
 language: SE
 
 sources:
 
-  - name: Swedish ERDF fund - Search ERDF Projects 2007-today
-    web: http://projektbank.tillvaxtverket.se/projektbanken#page=eruf
+  - name: Swedish ESF fund - Search Social Fund Projects 2014-2020
+    web: http://www.esf.se/en/Resultat/Projektbanken-2014-2020/
 
 scraper_required: true
 
@@ -60,47 +60,23 @@ resources:
   #
   # Good luck!
 
-  - title: Swedish ERDF data 2007-today
 
-    url: http://projektbank.tillvaxtverket.se/projektbanken#page=eruf
+
+- title: Swedish ESF data 2014-2020
+
+    url: http://www.esf.se/sv/Resultat/Projektbanken-2014-2020/
 
     publication_date: 2016-09-27
 
     constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013 and 2014-2020
+      fund_name: ESF
+      offical_period: 2014-2020
       currency_code: KR
 
       # any other field from fiscal.fields.yaml that is constant
 
     schema:
       fields:
-        - name: Ärende-ID
-          translates_to: Issue ID
-          maps_to: project_id
-
-        - name: Beslutande organisation
-          translates_to: Deciding organization
-          maps_to: organization_name
-
-        - name: Projektnamn
-          translates_to: Project name
-          maps_to: project_name
-
-        - name: Stödmottagare
-          translates_to: beneficiaries
-          maps_to: beneficiary_name
-
-        - name: Projekt Starttid
-          translates_to: Project starting time
-          maps_to: project_start_time
-
-        - name: Projekt Sluttid
-          translates_to: project ending time
-          maps_to: project_end_time
-
-        - name: Beviljat belopp - sek
-          translates_to: amount granted - sec
-          maps_to: 
-
-        - # repeat for each column you find in the data
+        - name: N/A
+          translates_to: N/A
+          maps_to: N/A

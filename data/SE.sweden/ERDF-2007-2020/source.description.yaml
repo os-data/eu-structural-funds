@@ -22,7 +22,7 @@
 #
 # Good luck!
 
-title: ERDF & ESF data for Sweden 2007-today
+title: ERDF data for Sweden 2007-2020
 
 description: Swedish ESIF data is available via two web portals, one for ESF, and one for ERDF. There appears to be another fund with the name Integration fund. It may be necessary to investigate further whether the services provided via that fund are part of the ESF data provided. Moreover, data on ERDF is available from 2007-today, while ESF data is only available from 2007-2013, with a second portal in the works for 2014-today (thus far only a website is available that could be scraped).
 language: SE
