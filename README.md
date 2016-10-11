@@ -1,38 +1,28 @@
 [![Stories in Ready](https://badge.waffle.io/os-data/eu-structural-funds.png?label=ready&title=Ready)](https://waffle.io/os-data/eu-structural-funds)
-# EU Cohesion and Structural Funds 
 
-## Introduction
+# EU Subsidies Data
 
-Structural and Cohesion Funds are financial tools set up to implement the regional policy of the European Union. They aim to reduce regional disparities in income, wealth and opportunities. The overal budget for the 2007-2013 period was __€347 billion__ [according to wikipedia](https://en.wikipedia.org/wiki/Structural_Funds_and_Cohesion_Fund).
+## Project overview
 
-This repository is a __data pipeline__. It channels information about the beneficiaries of the funds into the [Open-Spending](http:next.openspending.org) datastore. The goal is to provide a __unified dataset that is easy to visualize and query__, so that citizens and journalists can follow the money on a local and global scale. 
+Structural and Cohesion Funds are financial tools set up to implement the regional policy of the European Union. They aim to reduce regional disparities in income, wealth and opportunities. The overall budget for the 2007-2013 period was __€347 billion__ [according to wikipedia](https://en.wikipedia.org/wiki/Structural_Funds_and_Cohesion_Fund). 
 
-This project is a collaborative effort between [Open-Knowledge Germany](https://www.okfn.de/en/), [Open-Knowledge International](http://okfn.org/) and a number of journalists and developers. This repository builds on research and sourcing work that was previously organised inside a [google spreadsheet](https://docs.google.com/spreadsheets/d/1RkC_YuWWlhGxyDRc-bpD_zaWAXK78GpPr8nfPesQfSY/edit?pref=2&pli=1#gid=0). 
+This project is a collaborative effort between [Open-Knowledge Germany](https://www.okfn.de/en/), [Open-Knowledge International](http://okfn.org/) and a number of citizens, journalists and developers. You can join us on our public [Slack channel](https://alleusubsidydata.slack.com/messages/general/).
 
-##  What's in here?
+This repository is a __data pipeline__. It channels beneficiary data from various national or regional sources into the [Open-Spending](http:next.openspending.org) datastore. The goal is to provide a unified european dataset for all subsidies funds for at least two funding periods: 2007-3013 and 2014-2020.
+
+## What's in the repository?
 
 The repository contains the following:
 
-- `data/`: all the data goes in here
-- `resources/`: project documentation and ancillary data
-- `fields.official.yaml`: the list of fields we expect in the raw data
-- `geocodes.nuts.yaml`: the nomenclature for naming countries and regions
-- `datapackage.template.raw.json`: the template for raw datasets
-- `datapackage.template.fiscal.json`: the template for fiscal datasets
-- `codelist.yaml`: describes *category* fields common to all datasets
+- `codelists/`: codelist information (fields of type *category*) 
+- `common/`: python code, including reusable project-wide pipeline processors
+- `data/`: data sources broken down by [NUTS code](http://ec.europa.eu/eurostat/web/nuts/overview)
+- `geography/`: geographical data (list of NUTS codes and associated shape files) 
+- `documentation/`: project documentation
+- `specifications/`: source description and Fiscal Data Package files
 
-## Philosophy
-
-We believe that data pipelining is a fine blend of manual and automated processing. We believe in the almighty power of [Frictionless-Data](http://www.frictionlessdata.io/) to glue the two together. We believe over-engineering is a sin, albeit a really enjoyable one (*note to self*). 
 
 ## How do I contribute?
-
-Before you decide what to do, please:
-
-- Check out [data pipeline](https://github.com/os-data/eu-structural-funds/wiki)
-- Read the [contribution guidelines](https://github.com/os-data/eu-structural-funds/wiki/Contribution-guidelines)
-- Register on [Slack](https://followthesubsidies.slack.com)
-- Check-out the list of [issues](https://github.com/os-data/eu-structural-funds/issues)
 
 There are many ways to contribute, depending on your skills. You can:
 
@@ -40,14 +30,13 @@ There are many ways to contribute, depending on your skills. You can:
 - Send FOAI requests for missing datasets
 - Describe, translate and clean-up datasets
 - Write python spiders to scrape datasets
-- Write python ETL scripts to automize processes
-- Raise [issues](https://github.com/os-data/eu-structural-funds/issues) about bugs in the code or the data
+- Write python ETL scripts to automate processes
+- Raise issues about bugs in the code or the data
 
-Please adhere to the following workflow (*note to self*):
+## Further information
 
-- Fork the repository
-- Create a new branch
-- Make your contribution
-- Send a pull request. 
 
-Thanks!
+- [Original project spreadsheet](https://docs.google.com/spreadsheets/d/1RkC_YuWWlhGxyDRc-bpD_zaWAXK78GpPr8nfPesQfSY/edit?pref=2&pli=1#gid=0)
+- [Project wiki](https://github.com/os-data/eu-structural-funds/wiki/)
+- [Slack channels](https://followthesubsidies.slack.com)
+- [GitHub issues](https://github.com/os-data/eu-structural-funds/issues)
