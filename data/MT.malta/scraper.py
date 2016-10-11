@@ -64,7 +64,7 @@ def scrape():
         writer = csv.writer(f, quoting=csv.QUOTE_NONNUMERIC)
         writer.writerow(headers)
 
-        page = 28
+        page = 1
         while True:
             res = requests.get(PAGINATION_URL + str(page))
             if 'Content-Length' in res.headers and res.headers['Content-Length'] == '0':
