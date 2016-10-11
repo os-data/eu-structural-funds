@@ -1,4 +1,4 @@
-title: France 2014-2020, beneficiaries of european ERDS, YEI and FSE subsidies
+title: france 2014-2020, beneficiaries of european erds, yei and fse subsidies
 
 language: FR
 
@@ -18,7 +18,7 @@ contributors:
   - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
 
 resources:
-  - title: EXCEL file 2014-2020 for ERDS, YEI and FSE funds
+  - title: excel file 2014-2020 for erds, yei and fse funds
     # url: http://www.europe-en-france.gouv.fr/content/download/34797/361872/version/1/file/20160711_listeoperations_FEDER_FSE_14-20.xls
     path: 20160711_listeoperations_FEDER_FSE_14-20.xls
 

@@ -1,10 +1,10 @@
 2014-2020:
   pipeline:
-    - run: read_description
+    - run: processors.read_description
       parameters:
         save_datapackage: true
 
-    - run: stream_from_path
+    - run: processors.stream_from_path
       validate: true
       parameters:
         streamer: tabulator
@@ -13,9 +13,9 @@
       parameters:
         out-file: source.datapackage.zip
 
-    - run: map_columns
+    - run: processors.map_columns
 
-    - run: convert_excel_dates
+    - run: processors.convert_excel_dates
       parameters:
         date-mode: 0
         date-fields:
@@ -23,11 +23,11 @@
           - completion_date
           - approval_date
 
-    - run: cast_to_fiscal_schema
+    - run: processors.cast_to_fiscal_schema
 
-    - run: reshape_data
+    - run: processors.reshape_data
 
-    - run: load_fiscal_datapackage
+    - run: processors.load_fiscal_datapackage
 
     - run: nop
       validate: true
