@@ -1,12 +1,23 @@
+# Project specific
+source.datapackage.zip
+fiscal.datapackage.zip
 source.datapackage.json
-pipeline-spec.yaml
 
-logs/
-.idea/
+# Extras
+.projectile
+datapackage-pipelines.iml
+celerybeat-schedule
+
+# PyCharm stuff
 .ipynb_checkpoints/
+.idea/
+
+# IOS
 .DS_Store
-source.data.*
+
+# Linux
 .~lock.*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -84,8 +95,3 @@ target/
 
 # Spyder project settings
 .spyderproject
-
-# Extras
-.projectile
-datapackage-pipelines.iml
-celerybeat-schedule

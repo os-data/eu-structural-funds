@@ -1,0 +1,45 @@
+2014-2020:
+  pipeline:
+    - run: processors.read_description
+      validate: true
+      parameters:
+        save_datapackage: false
+
+    - run: processors.stream_from_path
+      validate: true
+      parameters:
+        streamer: tabulator
+
+    - run: dump
+      parameters:
+        out-file: source.datapackage.zip
+
+    - run: processors.map_columns
+
+    - run: processors.convert_excel_dates
+      parameters:
+        date-mode: 0
+        date-fields:
+          - starting_date
+          - completion_date
+          - approval_date
+
+    - run: processors.cast_to_fiscal_schema
+
+    - run: processors.reshape_data
+
+    - run: processors.load_fiscal_datapackage
+
+    - run: nop
+      validate: true
+
+    - run: dump
+      parameters:
+        out-file: fiscal.datapackage.zip
+
+    - run: fiscal.upload
+      parameters:
+        in-file: fiscal.datapackage.zip
+
+  schedule:
+    crontab: 0 0 1 1 *
