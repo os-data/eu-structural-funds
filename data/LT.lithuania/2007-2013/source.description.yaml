@@ -30,7 +30,7 @@ language: LT
 
 sources:
   - name: Lithuania landing page 2007-2013
-    web:  http://www.esparama.lt/
+    web:  http://www.esinvesticijos.lt/en/
 
 
 scraper_required: yes
