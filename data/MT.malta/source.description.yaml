@@ -37,6 +37,12 @@ resources:
 
     schema:
       fields:
+        - name: Code
+          translation:
+          type: "string"
+          missingValue:
+          description: Project reference code
+
         - name: Title
           translation:
           type: "string"

@@ -74,4 +74,4 @@ resources:
 
         - # repeat for each column you find in the data
 
-  - # repeat for each data file in this source
+# - repeat for each data file in this source
