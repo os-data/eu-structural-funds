@@ -27,23 +27,19 @@
 #            happens when the data is split by fund or program for example.
 
 
-title: A human readable title for your source
+title: Czech ESF & ERDF data 2007-today
 
-description: This can be a long paragraph but must be written on one line to respect the YAML format. Use soft wraps in your editor if needed.
-language: two-digit ISO 639-1 code (e.g. en, fr, es...)
+description: There are two datasets: one lists all beneficiaries from the funding periods 2007-2013, and the other lists operations for the second funding period 2014-2020. 
+language: CZ
 
 sources:
-  - name: Title of the webpage
-    web:  http://data.portal.gov/path/to/index.html
+  - name: Dotaceez.cz
+    web:  http://www.dotaceeu.cz/cs/Informace-o-cerpani/Seznamy-prijemcu
 
-  - name: Title of another webpage
-    web: http://data.portal.gov/path/to/another/important/page.html
-
-scraper_required: true or false
+scraper_required: false
 
 contributors:
-  - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
-  - Mickey Mouse <mickey.mouse@disney.com> (http://www.disney.com)
+  - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
 resources:
 
@@ -60,18 +56,69 @@ resources:
   # schema: please describe each column in the data. Don't change the original
   #         columns names even in Cyrillic. For translations, Google will do.
 
-  - title: A human readable title for you data file
-    url: http://data.country.gov/path/to/filename.xlsx
-    publication_date: yyyy-mm-dd
+  - title: Czech ESIF beneficiaries 2007-2013
+    url: http://www.dotaceeu.cz/getmedia/b4a6fd6f-44ce-4cef-ab9d-872279a16c9a/Seznam-prijemcu-(List-of-Beneficiaries)-09_2016.xlsx?ext=.xlsx
+    publication_date: 2016-09-08
 
     schema:
       fields:
-        - name: copy/paste the original column name
-          translates_to: the english translation of the column name
+        - name: Name of Beneficiary 
 
-        - name: copy/paste the original column name
-          translates_to: the english translation of the column name
+        - name: ID
+
+        - name: Operation
+
+        - name: Operational Programme
+
+        - name: Fund EU
+
+        - name: Date of allocation (EU funding)
+        
+        - name: Amounts allocated (EU funding)
+
+        - name: Date of interim payment (EU funding)
+
+        - name: Total Amounts paid from the start of the Project
+
+        - name: Status
+
 
         - # repeat for each column you find in the data
 
+  - title: List of Czech ESIF operations 2014-2020
+    url: http://www.dotaceeu.cz/getmedia/413c34d0-71c3-4c0a-b0f9-191c88994d1d/benefi8_22.xlsx?ext=.xlsx
+    publication_date: 2016-09-08
+
+    schema:
+      fields:
+        - name: Registrační číslo projektu
+        - translates_to: Project registration number
+
+        - name: Název projektu CZ
+        - translates_to: Project Title CZ
+
+        - name: Žadatel
+        - translates_to: Applicant
+
+        - name: Kód stavu
+        - translates_to: status code
+
+        - name: Název stavu
+        - translates_to: state name
+
+        - name: Číslo výzvy
+        - translates_to: Call number
+
+        - name: Název výzvy
+        - translates_to: Call title
+
+        - name: Operační program
+        - translates_to: Operational program
+
+        - name: CZV projektu
+        - translates_to: Total amount 
+
+        - name: Příspěvek EU
+        - translates_to: EU amount
+        
   - # repeat for each data file in this source
