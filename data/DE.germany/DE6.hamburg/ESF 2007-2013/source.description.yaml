@@ -22,16 +22,11 @@
 #
 # Good luck!
 
-title: EFRE and ESF Data for Hamburg (2007-2013)
+title: ESF Data for Hamburg (2007-2013)
 
-description: The beneficiary list of the ERDF and ESF programme for Hamburg
+description: The beneficiary list of the ESF programme for Hamburg
 language: de
 
-sources:
-  - name: EFRE Hamburg (2007-2013)
-    web: https://www.hamburg.de/efre/
-
-scraper_required: true
 
   - name: Hamburg 2007-2013
     web: http://www.esf-hamburg.de/
@@ -67,51 +62,14 @@ resources:
   #
   # Good luck!
 
-  - title: ERDF Hamburg 2007-2013
 
-    url: http://www.hamburg.de/contentblob/3117844/aa6827caa9ffceca2bb885f75f1729ac/data/efre-beguenstigte.pdf
-    publication_date: 2015-12-31
-
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
-
-      # any other field from fiscal.fields.yaml that is constant
-
-    schema:
-      fields:
-        - name: Name des Begünstigten
-          translates_to: Name of the Beneficiary
-          maps_to: beneficiary_name
-
-        - name: Bezeichnung des Vorhabens
-          translates_to: Name of the Project
-          maps_to: project_name
-
-        - name: Jahr der Bewilligung
-          translates_to: Year of Approval
-          maps_to: approval_date
-
-        - name: Bewilligter Betrag
-          translates_to: Approved Amount in Euro
-          maps_to: total_amount_applied
-
-        - name: Ausgezahlter Betrag zum Vorhabenabschluss
-          translates_to: Paid amount at the end of the project
-          maps_to: total_eligible_expenditure
-
-        - # repeat for each column you find in the data
-
-
-
-  - title: ERDF Hamburg 2007-2013
+  - title: ESF Hamburg 2007-2013
 
     url: http://static.hamburg.de/fhh/behoerden/basfi/esf-hamburg.de/www.esf-hamburg.de/contentblob/1379164/data/verzeichnis-der-beguenstigten.pdf
     publication_date: 2013-06-30
 
     constant_fields:
-      fund_name: ERDF
+      fund_name: ESF
       offical_period: 2007-2013
       currency_code: EUR
 
