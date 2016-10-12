@@ -1,0 +1,70 @@
+title: Brandenburg 2014-2020 ESF
+
+description: The beneficiary list for Brandenburg 2014-2020 ESF
+language: de
+
+sources:
+  - name: ESF in Baden-Württemberg 2014-2020
+    web:  http://www.esf.brandenburg.de/cms/detail.php/bb3.c.208471.de
+
+scraper_required: false
+
+contributors:
+  - Anna Alberts (anna.alberts@okfn.de)
+
+resources:
+
+  - title: ESF in Baden-Württemberg 2014-2020
+
+    url: #add url from github after sourcing, the online url is locked, so use the one from github
+
+    publication_date: 2016-06-01
+
+    constant_fields:
+      fund_name: ESF
+      offical_period: 2014-2020
+      currency_code: EUR
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields: #ignore first 3 lines
+        - name: Name des Begünstigten beneficiary name
+          translates_to: Name of the Beneficiary
+          maps_to: beneficiary_name
+
+        - name: Bezeichnung des Vorhabens operation name
+          translates_to: Name of the Project
+          maps_to: project_name
+
+        - name: Zusammenfassung des Vorhabens operation summery
+          translation: Project Summary
+          maps_to: project_description_long
+
+        - name: Datum des Beginns des Vorhabens operation start date
+          translation:
+          maps_to: starting_date
+
+        - name: Datum des Endes des Vorhabens operation end date
+          translation:
+          maps_to: completion_date
+
+        - name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens total eligible expenditure allocated to the operation
+          translation: total eligible expenditure allocated to the operation
+          maps_to: total_amount_eligible
+
+        - name: Unions-Kofinanzierungssatz pro Prioritätsachse
+          translation: Union co-financing rate, as per priority axis
+          maps_to: #missing field in schema
+
+        - name: Ort des Vorhabens Operation Location
+          translation: location
+          maps_to: beneficiary_city #actual project place, so this is false, but the model is too imprecise
+
+        - name: Land/country
+          translation: country
+          maps_to: beneficiary_country
+
+        - name: Bezeichnung der Interventionskategorie für das Vorhaben/name of category of intervention for the operation
+          translation:
+          maps_to: #unclear in the mapping where this is now

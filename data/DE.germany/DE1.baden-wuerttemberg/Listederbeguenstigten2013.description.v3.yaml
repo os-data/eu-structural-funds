@@ -1,0 +1,52 @@
+title: Baden-Württemberg 2007-2013 ESF
+
+description: The beneficiary list for Baden-Württemberg 2007-2013 ESF
+language: de
+
+sources:
+  - name: ESF in Baden-Württemberg 2007-2013
+    web:  http://www.esf-bw.de/
+
+scraper_required: false
+
+contributors:
+  - Anna Alberts (anna.alberts@okfn.de)
+
+resources:
+
+  - title: VERZEICHNIS DER BEGÜNSTIGTEN FÜR BADEN-WÜRTTEMBERG, FÖRDERPERIODE 2007 - 2013, STAND 30.04.2014
+
+    url: #add url from github after sourcing
+
+    publication_date: 2014-04-30
+
+    constant_fields:
+      fund_name: ESF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: Name des Begünstigten
+          translates_to: Name of the Beneficiary
+          maps_to: beneficiary_name
+
+        - name: Bezeichnung des Vorhabens
+          translates_to: Name of the Project
+          maps_to: project_name
+
+        - name: Auszahlung von öffentlichen Mitteln an die Begünstigten Jahr der Bewilligung/Jahr der Schlusszahlung
+          translates_to: Year of approval/year of last payment
+          maps_to: project_date
+
+        - name: Gewährte Beträge in €
+          translates_to: Approved Amount
+          maps_to: total_amount_applied
+
+        - name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge in €
+          translates_to: Paid amount at the end of the project
+          maps_to: total_eligible_expenditure
+
+        - # repeat for each column you find in the date

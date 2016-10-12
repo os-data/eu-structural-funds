@@ -1,0 +1,70 @@
+title: Baden-Württemberg 2014-2020 ERDF
+
+description: The beneficiary list for Baden-Württemberg 2014-2020 ERDF
+language: de
+
+sources:
+  - name: EFRE Investition in Ihre Zukunft
+    web:  https://efre-bw.de/
+
+scraper_required: false
+
+contributors:
+  - Anna Alberts (anna.alberts@okfn.de)
+
+resources:
+
+  - title: EFRE-Programm in Baden-Württemberg 2014-2020 - Innovation und Energiewende
+
+    url: https://efre-bw.de/wp-content/uploads/Liste-der-Vorhaben_31-03-2016.xlsx
+
+    publication_date: 2016-05-27
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2014-2020
+      currency_code: EUR
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields: #ignore first 9 lines, column names are divided over two lines, one german one english
+        - name: Name des Begünstigten (Nennung ausschließlich von juristischen Personen und nicht von natürlichen Personen)
+          translates_to: beneficiary name (only of legal entities; no natural persons shall be named)
+          maps_to: beneficiary_name
+
+        - name: Bezeichnung des Vorhabens
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: Zusammenfassung des Vorhabens
+          translation: Operation Summary
+          maps_to: project_description_long
+
+        - name: Datum des Beginns des Vorhabens
+          translation: Operation start date
+          maps_to: starting_date
+
+        - name: Datum des Endes des Vorhabens (voraussichtliches Datum des Abschlusses der konkreten Arbeiten oder der vollständigen Durchführung des Vorhabens)
+          translation: operation end date (expected date for physical completion or full implementation of the operation)
+          maps_to: completion_date
+
+        - name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens
+          translation: Total eligible expenditure allocated to the operation
+          maps_to: total_amount_eligible
+
+        - name: Unions-Kofinanzierungssatz pro Prioritätsachse
+          translation: Union co-financing rate, as per priority axis
+          maps_to: #missing field in schema
+
+        - name: Postleitzahl des Vorhabens/operation postcode
+          translation: postcode
+          maps_to: beneficiary_postal_code #actual project postal code, so this is false, but the model is too imprecise
+
+        - name: Land/country
+          translation: country
+          maps_to: beneficiary_country
+
+        - name: Bezeichnung der Interventionskategorie für das Vorhaben/name of category of intervention for the operation
+          translation:
+          maps_to: #unclear in the mapping where this is now
