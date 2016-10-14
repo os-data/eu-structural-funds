@@ -22,15 +22,15 @@
 #
 # Good luck!
 
-title: ESF Data for Niedersachsen (2014-2020)
+title: ESF Data for Rheinland-Pfalz (2014-2020)
 
-description: The beneficiary list of the ESF programme for Niedersachsen.
+description: The beneficiary list of the ESF programme for Rheinland-Pfalz.
 language: de
 
 sources:
 
-  - name: ESF Niedersachsen (2014-2020)
-    web: http://www.stk.niedersachsen.de/startseite/themen/regionale_landesentwicklung_und_eufoerderung/eufoerderung/efre_esf/efre-und-esf-124140.html
+  - name: ESF Rheinland-Pfalz (2014-2020)
+    web: http://www.esf.rlp.de/
 
 scraper_required: false
 
@@ -64,11 +64,11 @@ resources:
   # Good luck!
 
 
-  - title: ESF in Niedersachsen 2014-2020
+  - title: ESF in Rheinland-Pfalz 2014-2020
 
-    url: http://www.stk.niedersachsen.de/download/108094
+    url: http://esf.rlp.de/fileadmin/esf/Downloads/ESF_2014-2020/Liste_der_Vorhaben/Liste_der_Vorhaben_25.4.2016.xlsx
 
-    publication_date: 2016-03-31
+    publication_date: 2016-04-25
 
     constant_fields:
       fund_name: ESF
@@ -79,77 +79,67 @@ resources:
 
     schema:
       fields:
-        - name: Name des Begünstigten
+        - name: "Name des Begünstigten
+beneficiary name"
 
           translates_to: Beneficiary name
           maps_to: beneficiary_name
 
-        - name: "Bezeichnung
-des Vorhabens"
+        - name: "Bezeichnung des Vorhabens
+operation name"
 
           translates_to: operation name
           maps_to: project_name
 
-        - name: Zusammenfassung des Vorhabens
+        - name: "Zusammenfassung des Vorhabens
+operation summary"
 
           translates_to: project description
           maps_to: project_description
 
-        - name: "Datum des
-Beginns des
-Vorhabens"
+        - name: "Datum des Beginns des Vorhabens
+operation start date"
 
           translates_to: starting date of the project
           maps_to: starting_date
 
-        - name: "Datum des
-Endes des
-Vorhabens"
+        - name: "Datum des Endes des Vorhabens
+operation end date"
 
           translates_to: completion date of the project
           maps_to: completion_date
 
-        - name: "Gesamtbetrag der
-förderfähigen Ausgaben des
-Vorhabens in €"
+        - name: "Gesamtbetrag der förderfähigen Ausgaben
+des Vorhabens
+total eligible expenditure
+allocated to the operation "
 
           translates_to: total eligible expenditure allocated to the operation in €
           maps_to: total_amount_eligible
 
-        - name: "Unions-
-Kofinan-
-zierungssatz"
+        - name: "Unions-Kofinan-zierungssatz
+Union co-financing rate"
 
           translates_to: Union co-financing rate
           maps_to: eu_cofinancing_amount
 
-        - name: Kategorie der Region
+        -  name: "Postleitzahl und Ort des Vorhabens
+operation postcode and place"
 
-          translates_to: Category of region
-          maps_to: beneficiary_nuts_region
-
-        - name: PLZ
-
-          translates_to: operation postcode
+          translates_to: postal code and city
           maps_to: beneficiary_postal_code
 
-        - name: Land
+        - name: "Land
+country"
 
           translates_to: country
           maps_to: beneficiary_country
 
-        - name: Landkreis
-
-          translates_to: county
-
-
-        - name: Interven-tionsbe-reich
+        - name: "Interventions-bereich
+Intervention field"
 
           translates_to: Intervention field
-
-
-
-
+          maps_to: theme_code
 
 
 
