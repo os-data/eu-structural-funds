@@ -1,0 +1,52 @@
+title: Baden-Württemberg 2007-2013 ERDF
+
+description: The beneficiary list for Baden-Württemberg 2007-2013 ERDF
+language: de
+
+sources:
+  - name: EFRE in Baden-Württemberg 2007-2013
+    web:  http://www.rwb-efre.baden-wuerttemberg.de/
+
+scraper_required: false
+
+contributors:
+  - Anna Alberts (anna.alberts@okfn.de)
+
+resources:
+
+  - title: Regionale Wettbewerbsfähigkeit und Beschäftigung (RWB) - Bereich EFRE in Baden-Württemberg 2007-2013
+
+    url: #add url from github after sourcing
+
+    publication_date: 2014-12-31
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: Name des Begünstigten
+          translates_to: Name of the Beneficiary
+          maps_to: beneficiary_name
+
+        - name: Bezeichnung des Vorhabens
+          translates_to: Name of the Project
+          maps_to: project_name
+
+        - name: Betrag der für das Vorhaben bereitgestellten öffentlichen Beteiligungen1) mit Kofinanzierung aus dem Europäischen Fonds für Regionale Entwicklung (EFRE) Jahr der Bewilligung/Jahr der Schlusszahlung
+          translates_to: Year
+          maps_to: project_date
+
+        - name: Bewilligter Betrag
+          translates_to: Approved Amount
+          maps_to: total_amount_applied
+
+        - name: Ausgezahlter Betrag bei Projekt- abschluss2)
+          translates_to: Paid amount at the end of the project
+          maps_to: total_eligible_expenditure
+
+        - # repeat for each column you find in the date

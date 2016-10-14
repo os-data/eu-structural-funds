@@ -15,7 +15,7 @@ fields:
   - name: funding_period_number
     title: Funding period number
     slug: funding_period_number
-    description: First, second or third funding period.
+    description: First, second or third funding period. #use the actual periods in the description
     format: default
     type: string
     osType: activity:generic:program:code
@@ -24,7 +24,7 @@ fields:
   - name: funding_period
     title: Funding period
     slug: funding_period
-    description: One of three official funding period e.g. 2007-2013
+    description: One of three official funding period e.g. 2007-2013 #again, what do you refer to? One of the three? We only have 2007-2013 and 2014-2020
     format: default
     type: string
     conceptType: activity
@@ -217,7 +217,7 @@ fields:
   - name: priority_label
     title: Priority
     slug: priority_label
-    description: Description of the priority number of the grant agreement (see codelist)
+    description: Description of the priority number of the grant agreement (see codelist) #is this the same as the project category?
     format: default
     type: string
     conceptType: expenditure-type

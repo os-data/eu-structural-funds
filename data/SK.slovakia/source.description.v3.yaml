@@ -1,0 +1,88 @@
+# I am version V3.
+
+title: ERDF and ESF Data for Slovakia (2007-2013)
+
+description: The beneficiary list of the ERDF and ESF programme for Slovakia 2007-2013. #The data for 2014-2020 is still missing.
+language: sk
+
+sources:
+  - name: List of Beneficiaries ERDF and ESF Slovakia 2007-2013
+    web:  http://www.nsrr.sk/cerpanie/
+
+scraper_required: false
+
+contributors:
+  - Anna Alberts (anna.alberts@okfn.de)
+
+resources:
+
+  - title: ERDF, ESF, Cohesion Funds Beneficiary List Slovakia 2007-2013
+
+    url: http://www.nsrr.sk/download.php?FNAME=1385992763.upl&ANAME=zoznam-13_11_30.xls
+
+    publication_date: 2013-11-30
+
+    constant_fields:
+      fund_name: ERDF, CF, ESF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: Operačný program
+          translates_to: Operational_program
+          maps_to: project_category
+
+        - name: Názov prijímateľa
+          translates_to: Name Recipient
+          maps_to: beneficiary_name
+
+        - name: Názov projektu
+          translates_to: Project Name
+          maps_to: project_name
+
+        - name: Začiatok realizácie: rok #note this field is divided over two lines.
+          translates_to: start of implementation: year
+          maps_to: starting_date
+
+        - name: Začiatok realizácie: mesiac #note this field is divided over two lines
+          translates_to: start of implementation: month
+          maps_to: starting_date
+
+        - name: Koniec realizácie: rok #note this field is divided over two lines
+          translates_to: end of the implementation: year
+          maps_to: completion_date
+
+        - name: Koniec realizácie: mesiac  #note this field is divided over two lines
+          translates_to: end of the implementation: month
+          maps_to: completion_date
+
+        - name: Spolufinancovanie
+          translates_to: co-financing amount
+          maps_to: eu_cofinance_rate
+
+        - name: Zazmluvnené prostriedky: EÚ zdroje
+          translates_to: contracted resources: EU funds
+          maps_to: total_amount_applied_eu
+
+        - name: Zazmluvnené prostriedky: ŠR zdroje
+          translates_to: contracted resources: Slovak funds
+          maps_to: total_amount_applied_ms
+
+        - name: Zazmluvnené prostriedky: Spolu
+          translates_to: contracted resources: together/total
+          maps_to: total_amount_applied
+
+        - name: Vyčerpané prostriedky: EÚ zdroje
+          translates_to: paid out resources: EU Funds
+          maps_to: total_amount_awarded_eu
+
+        - name: Vyčerpané prostriedky: ŠR zdroje
+          translates_to: paid out resources: Slovak Funds
+          maps_to: total_amount_awarded_ms
+
+        - name: Vyčerpané prostriedky: Spolu
+          translates_to: pait out resources: together
+          maps_to: total_amount_awarded
