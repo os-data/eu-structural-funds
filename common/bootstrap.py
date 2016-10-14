@@ -147,10 +147,13 @@ def load_description_file(description_file):
             write_feedback(section, [str(error)], folder=source_folder)
 
 
-def bootstrap_pipelines(pipeline_folders=None):
+def bootstrap_pipelines(pipeline_folder):
     """Bootstrap data pipelines where source description files are found."""
 
-    pipeline_folders = pipeline_folders or collect_source_folders()
+    if pipeline_folder:
+        pipeline_folders = [pipeline_folder]
+    else:
+        pipeline_folders = collect_source_folders()
 
     for pipeline_folder in pipeline_folders:
         description_file = os.path.join(pipeline_folder, DESCRIPTION_FILE)
@@ -172,8 +175,6 @@ def bootstrap_pipelines(pipeline_folders=None):
 def dispatch_command():
     """Parse the command line argument and call bootstrap_pipelines."""
 
-    pipeline_folder = None
-
     if len(sys.argv) > 2:
         ValueError('Too many command line arguments')
 
@@ -182,8 +183,10 @@ def dispatch_command():
         pipeline_folder = os.path.abspath(os.path.join(*fullpath))
         if not os.path.exists(pipeline_folder):
             raise FileNotFoundError(pipeline_folder)
+    else:
+        pipeline_folder = None
 
-    bootstrap_pipelines(pipeline_folders=[pipeline_folder])
+    bootstrap_pipelines(pipeline_folder)
 
 
 if __name__ == '__main__':
