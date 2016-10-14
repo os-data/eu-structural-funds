@@ -1,0 +1,65 @@
+MT.malta:
+  schedule: {crontab: 0 0 1 1 *}
+
+  pipeline:
+    - run: processors.read_description
+      parameters:
+        save_datapackage: false
+
+    - run: processors.MT.scraper
+
+#    - run: processors.stream_from_path
+#      parameters:
+#        streamer: tabulator
+
+    - run: processors.parse_currency_fields
+      parameters:
+        fields:
+          - Project Cost
+        characters:
+          decimal: "."
+          grouping: ","
+          currency: "€"
+
+    - run: processors.MT.parse_dates
+      parameters:
+        date_fields:
+          - Start Date
+          - End Date
+    
+    - run: processors.map_values
+      parameters:
+        mappings:
+          - field: Fund
+            mapping:
+              ESF: [European Social Fund]
+              CF: [Cohesion Fund]
+              ERDF: [European Regional Development Fund]
+
+    - run: processors.map_columns
+      parameters:
+
+    - run: processors.reshape_data
+
+    - run: processors.fill_in_constant_fields
+      parameters:
+        constants:
+          funding_period: 2
+
+    - run: processors.cast_to_fiscal_schema
+
+    - run: processors.show_sample_in_console
+      parameters:
+        sample_size: 1000
+
+    - run: processors.load_fiscal_datapackage
+
+    - run: dump
+      validate: true
+      parameters:
+        out-file: fiscal.datapackage.zip
+
+    - run: fiscal.upload
+      parameters:
+        in-file: fiscal.datapackage.zip
+
