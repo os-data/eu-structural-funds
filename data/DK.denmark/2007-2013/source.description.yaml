@@ -20,9 +20,9 @@
 #
 # Good luck!
 
-title: The programmes regarding the European Regional Development Fund and the European Social Fund in Denmark (2007-2013, 2014-2020)
+title: The programmes regarding the European Regional Development Fund and the European Social Fund in Denmark (2007-2013)
 
-description: The files included here contain the information about the programmes to which Denmark has allocated the European Structural Funds in the periods 2007-2013 and 2014-2020.
+description: The files included here contain the information about the programmes to which Denmark has allocated the European Structural Funds in the period 2007-2013.
 
 sources:
   - name: Regionalt Erhvervsstyrelsen
@@ -72,7 +72,7 @@ resources:
   # Good luck!
 
   - title: All funds data 2007-2013
-    url: hhttp://eustrukturfonde.dk/forside/0/17/0/[l][l]alle[l]alle[l]alle[l]alle[l][l]
+    url: http://eustrukturfonde.dk/forside/0/17/0/[l][l]alle[l]alle[l]alle[l]alle[l][l]
     path:
 
     publication_date:
@@ -142,141 +142,4 @@ resources:
           type: "string"
           missingValue: ""
           description:
-      
-  - title: All funds data 2014-2020
-    url: https://regionalt.erhvervsstyrelsen.dk/eu-projekt-eksport.csv
-    path:
-
-    publication_date:
-    publication_version:
-
-    periods:
-      2007-2013: false
-      2014-2020: true
-
-    extraction_mode:
-      user_interface: false
-      download_link: true
-      pdf_scraper: false
-      web_scraper: false
-
-    constants:
-      currency:
-      certifying_authority:
-      # We need a complete list of possible constants here
-
-    schema:
-      fields:
-        - name: Projektitel / Operation name
-          translation: Operation name
-          type: "string"
-          missingValue:
-          description:
-
-        - name: Startdato / Operation start date
-          translation: Operation start date
-          type: "string"
-          missingValue:
-          description:
-
-        - name: Slutdato / Operation end date
-          translation: Operation end date
-          type: "string"
-          missingValue:
-          description:
-
-        - name: Prioritetsakse / Priority axis
-          translation: Priority axis
-          type: "string"
-          missingValue:
-          description:
-
-        - name: Budget / Budget
-          translation: Budget
-          type: "number"
-          missingValue:
-          description:
-
-        - name: EU-medfinansiering / Union co-financing
-          translation: Union co-financing
-          type: "number"
-          missingValue:
-          description:
-
-        - name: EU-medfinansieringssats / Union co-financing rate
-          translation: Union co-financing rate
-          type: "percentage"
-          missingValue:
-          description:
-
-        - name: Projektbeskrivelse
-          translation: Project
-          type: "percentage"
-          missingValue:
-          description:
-
-        - name: Fond / Fund
-          translation: Fund
-          type: "string"
-          missingValue:
-          description: The values for this field are "R" (Regional) or "S" (Social)
-
-        - name: Region / Region
-          translation: Region
-          type: "string"
-          missingValue:
-          description:
-
-        - name: Land / Country
-          translation: Country
-          type: "string"
-          missingValue:
-          description:
-
-        - name: Kontraktansvarlig partner / Beneficiary name
-          translation: Beneficiary name
-          type: "string"
-          missingValue:
-          description:
-
-        - name: Vejnavn / Street name
-          translation: Street name
-          type: "string"
-          missingValue:
-          description:
-
-        - name: Postnr / Operation postcode
-          translation: Operation postcode
-          type: "string"
-          missingValue:
-          description:
-
-        - name: Bynavn / City name
-          translation: City name
-          type: "string"
-          missingValue:
-          description:
-
-        - name: Koordinat east / Coordinates east
-          translation: Coordinates east
-          type: "string"
-          missingValue: ""
-          description:
-
-        - name: Koordinat north / Coordinates north
-          translation: Coordinates north
-          type: "string"
-          missingValue: ""
-          description:
-
-        - name: Kontaktperson / Contacts
-          translation: Contacts
-          type: "string"
-          missingValue:
-          description:
-
-        - name: Partere / Project partners
-          translation: Project partners
-          type: "string"
-          missingValue: ""
-          description:
+  
