@@ -22,14 +22,14 @@
 #
 # Good luck!
 
-title: ERDF Data for Rheinland-Pfalz (2014-2020)
+title: ERDF Data for Thüringen (2014-2020)
 
-description: The beneficiary list of the ERDF programme for Rheinland-Pfalz.
+description: The beneficiary list of the ERDF programme for Thüringen.
 language: de
 
 sources:
 
-  - name: ERDF Rheinland-Pfalz (2014-2020)
+  - name: ERDF Thüringen (2014-2020)
     web: http://www.efre.rlp.de/
 
 scraper_required: false
@@ -64,11 +64,11 @@ resources:
   # Good luck!
 
 
-  - title: ERDF in Rheinland-Pfalz 2014-2020
+  - title: ERDF in Thüringen 2014-2020
 
-    url: http://www.stk.niedersachsen.de/download/108095
+    url: http://www.efre20-thueringen.de/mam/efre20/liste/160630_liste_der_vorhaben_efre_14_20_endg.csv
 
-    publication_date: 2016-10-07
+    publication_date: 2016-06-30
 
     constant_fields:
       fund_name: ERDF
@@ -79,81 +79,46 @@ resources:
 
     schema:
       fields:
-        - name: "Name des Begünstigten
-(beneficiary name, nom du bénéfictiaire)"
-
+        - name: Name des Begünstigten -  beneficiary name
           translates_to: Beneficiary name
           maps_to: beneficiary_name
 
-        - name: "Bezeichnung des Vorhabens
-(operation name, nom de l'opération)"
-
+        - name: Bezeichnung des Vorhabens - operation name
           translates_to: operation name
           maps_to: project_name
 
-        - name: "Zusammenfassung des Vorhabens
-(operation summary, résumé de l'opération)"
-
+        - name: Zusammenfassung des Vorhabens - operation summary
           translates_to: project description
           maps_to: project_description
 
-        - name: "Datum des Beginns des Vorhabens
-(operation start date, date de début de l'opération)"
-
+        - name: Beginns des Vorhabens - operation start date
           translates_to: starting date of the project
           maps_to: starting_date
 
-        - name: "Datum des Endes des Vorhabens
-(operation end date, date de fin de l'opération)"
-
+        - name: Ende des Vorhabens  - operation end date
           translates_to: completion date of the project
           maps_to: completion_date
 
-        - name: "Gesamtbetrag der förderfähigen Ausgaben des Vorhabens in €
-(total eligible expenditure allocated to the operation in €, total des dépenses éligibles attribué à l'opération)"
-
+        - name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens - total eligible expenditure allocated to the operation
           translates_to: total eligible expenditure allocated to the operation in €
           maps_to: total_amount_eligible
 
-        - name: "Unions-Kofinanzierungssatz
-(Union co-financing rate, taux de cofinancement par l'Union)"
-
-          translates_to: Union co-financing rate
+        - name: Unions-Kofinanz-ierungs-satz  pro Prioritätsachse - Union co-financing rate
+          translates_to: Union co-financing rate in %
           maps_to: eu_cofinancing_amount
 
-        - name: "Kategorie der Region
-(category of region; catégorie de régions)"
-
-          translates_to: Category of region
-          maps_to: beneficiary_nuts_region
-
-        -  name: "Postleitzahl
-(operation postcode, code postal de l'opération;)"
-
+        -  name: Postleitzahl des Vorhabens - operation postcode
           translates_to: operation postcode
           maps_to: beneficiary_postal_code
 
-        - name: "Land
-(country, pays)"
-
+        - name: Land -country
           translates_to: country
           maps_to: beneficiary_country
 
-        - name: "Landkreis
-(county, arrondissement rural )"
+        - name: Bezeichnung der Interventionskategorie-  name of category of intervention
+          translates_to: Intervention field and number (includes category number and description of field)
 
-          translates_to: county
 
-        - name: "Bezeichnung der Interventionskategorie
-(name of category of intervention, dénomination de la catégorie d'intervention)"
-
-          translates_to: Intervention field
-          maps_to: theme_name
-
-        - name: "Datum der letzten Aktualisierung
-(date of last update, date de mise à jour)"
-
-          translates_to: Date of last updated
 
 
 

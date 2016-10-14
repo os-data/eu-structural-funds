@@ -79,23 +79,33 @@ resources:
 
     schema:
       fields:
-        - name: Name des Begünstigten
+        - name: "Name des Begünstigten
+beneficiary name"
+
           translates_to: Beneficiary name
           maps_to: beneficiary_name
 
-        - name: Bezeichnung des Vorhabens
+        - name: "Bezeichnung des Vorhabens
+operation name"
+
           translates_to: operation name
           maps_to: project_name
 
-        - name: Zusammenfassung des Vorhabens
+        - name: "Zusammenfassung des Vorhabens
+operation summary"
+
           translates_to: project description
           maps_to: project_description
 
-        - name: Datum des Beginns des Vorhabens
+        - name: "Datum des Beginns des Vorhabens
+operation start date"
+
           translates_to: starting date of the project
           maps_to: starting_date
 
-        - name: Datum des Endes des Vorhabens
+        - name: "Datum des Endes des Vorhabens
+operation end date"
+
           translates_to: completion date of the project
           maps_to: completion_date
 
