@@ -1,0 +1,100 @@
+# I am the latest version: use me.
+
+# 1. Describe the source metadata:
+# -----------------------------
+#
+# title: a short description of your data source.
+#
+# language: the 2-digit language code of the document (e.g. en, fr, es...)
+#
+# sources: only meant as documention: add as many as you want (urls to
+#          the actual data-files are in the resources section).
+#
+# scraper_required: if a web or PDF scraper is needed
+#
+# contributors: put yourself down (email and website are not obligatory).
+#               Follow the simple formatting convention.
+#
+# resources: a single description file like this can describe more than one
+#            resource (file or webpage) as long as the data is structured the
+#            same. This happens when the data is split by fund or period for
+#            example.
+#
+# Good luck!
+
+title: ESF data for Sweden 2007-2013
+
+description: Swedish ESIF data is available via two web portals, one for ESF, and one for ERDF. There appears to be another fund with the name Integration fund. It may be necessary to investigate further whether the services provided via that fund are part of the ESF data provided. Moreover, data on ERDF is available from 2007-today, while ESF data is only available from 2007-2013, with a second portal in the works for 2014-today (thus far only a website is available that could be scraped).
+language: SE
+
+sources:
+  - name: Swedish ESF fund - Search Social Fund Projects 2007-2013
+    web:  http://www.esf.se/Resultat/Projektbanken/Search-project/
+
+scraper_required: true
+
+contributors:
+  - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
+
+resources:
+
+  # 2. Describe each data-resource:
+  # ----------------------------
+  #
+  # title: use this field to distinguish the resources if there's more than one
+  #
+  # url: the link to the file if possible. If the data needs to be scraped,
+  #      enter the url of the webpage and set scraper_required to true.
+  #
+  # publication_date: the date that the data was published or updated
+  #
+  # constant_fields: any field from fiscal.fields.yaml that has a fixed value
+  #                  (i.e. is not specified row by row).
+  #
+  # schema: please describe each column in the data. Don't change the original
+  #         columns names even in Cyrillic. For translations, Google will do.
+  #         Refer to fiscal.fields.yaml to discover what fiscal field map to
+  #         the columns that you found. If you can't tell, enter a short comment
+  #         instead. Leave the mapping blank if the column can be dropped.
+  #
+  # Good luck!
+
+
+ - title: Swedish ESF data 2007-2013
+
+    url: http://www.esf.se/Resultat/Projektbanken/Search-project/
+
+    publication_date: 2016-09-27
+
+    constant_fields:
+      fund_name: ESF
+      offical_period: 2007-2013
+      currency_code: KR
+
+    schema:
+      fields:
+        - name: Projektnamn
+          translates_to: Project name
+          maps_to: project_name
+
+        - name: Projektägare
+          translates_to: Project
+          maps_to: project
+
+        - name: Projektnamn
+          translates_to: Project name
+          maps_to: project_name
+
+        - name: Projektperiod
+          translates_to: Project period
+          maps_to: project_period
+
+        - name: Region
+          translates_to: Region
+          maps_to: region
+
+        - name: Projektbudget
+          translates_to: project budget
+          maps_to: project_budget
+
+        - # repeat for each column you find in the data
