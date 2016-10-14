@@ -8,6 +8,7 @@ The conversion
 """
 
 import json
+import logging
 import yaml
 
 from slugify import slugify
@@ -15,14 +16,33 @@ from datapackage_pipelines.wrapper import spew, ingest
 from common.config import DESCRIPTION_FILE, DATAPACKAGE_FILE
 
 
+def remove_empty_properties(properties):
+    """Remove empty properties because they cause the validation to fail."""
+    return {
+        key: value
+        for key, value
+        in properties.items()
+        if value
+        }
+
+
 def create_datapackage(description):
+    """Generate a python object from the source description file."""
+
+    description = remove_empty_properties(description)
     description['name'] = slugify(description['title'], separator='-')
     first_resource = description['resources'][0]
 
     for resource in description['resources']:
+        # resource = remove_empty_properties(resource)
+
         for property_ in first_resource.keys():
             if property_ not in resource:
                 resource[property_] = first_resource[property_]
+
+        for i, field in enumerate(resource['schema']['fields']):
+            resource['schema']['fields'][i] = remove_empty_properties(field)
+
         resource['name'] = slugify(resource['title'])
 
     return description
@@ -45,4 +65,5 @@ if __name__ == '__main__':
     datapackage = create_datapackage(description_)
     if save_:
         save_datapackage_file(description_)
+    logging.debug('Datapackage: %s', datapackage)
     spew(datapackage, [])

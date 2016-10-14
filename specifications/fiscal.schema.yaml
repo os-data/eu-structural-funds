@@ -36,7 +36,7 @@ fields:
     description: CCI codes (e.g. 2014BG05M2OP001) identify operational programs (see codelist).
     format: default
     type: string
-    osType: activity:generic:project:code
+    osType: activity:generic:project:code:full
     conceptType: activity
 
   - name: cci_program_title
@@ -55,7 +55,7 @@ fields:
     format: default
     type: string
     conceptType: activity
-    osType: activity:generic:subproject:code
+    osType: activity:generic:subproject:code:full
 
   - name: project_name
     title: Project name
