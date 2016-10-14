@@ -1,0 +1,83 @@
+# version 3. I am the latest version. USE ME :-)
+
+
+#------------------------------------------------------------------------------
+# Warning! Please don't modify the document syntax, especially the indentation.
+# Checkout the Q&A page in the wiki or drop us a line in Slack. Thank you!
+#------------------------------------------------------------------------------
+
+
+# Source metadata:
+# ----------------
+#
+# title: a short description of your data source.
+#
+# language: the 2-digit language code of the documents (e.g. EN, FR, ES...)
+#
+# sources: this is meant as documention, so add as many as you want (the links
+#          to the data-files are specified in the resources section).
+#
+# scraper_required: if a web or PDF scraper is needed
+#
+# contributors: put yourself down (email and website are not obligatory).
+#               Follow the simple formatting convention.
+#
+# resources: a resource is a data file. A single description file can describe
+#            more than one resource as long as the data looks the same. This
+#            happens when the data is split by fund or program for example.
+
+
+title: Czech ESF & ERDF beneficiaries data 2007-2013
+
+description: There are two datasets: one lists all beneficiaries from the funding periods 2007-2013, and the other lists operations for the second funding period 2014-2020. 
+language: CZ
+
+sources:
+  - name: Dotaceez.cz
+    web:  http://www.dotaceeu.cz/cs/Informace-o-cerpani/Seznamy-prijemcu
+
+scraper_required: false
+
+contributors:
+  - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
+
+resources:
+
+  # Data-resource:
+  # --------------
+  #
+  # title: use this field to distinguish the resources if there's more than one
+  #
+  # url: the link to the file if possible. If the data needs to be scraped,
+  #      enter the url of the webpage and set scraper_required to true.
+  #
+  # publication_date: the date that the data was published or updated
+  #
+  # schema: please describe each column in the data. Don't change the original
+  #         columns names even in Cyrillic. For translations, Google will do.
+
+  - title: Czech ESIF beneficiaries 2007-2013
+    url: http://www.dotaceeu.cz/getmedia/b4a6fd6f-44ce-4cef-ab9d-872279a16c9a/Seznam-prijemcu-(List-of-Beneficiaries)-09_2016.xlsx?ext=.xlsx
+    publication_date: 2016-09-08
+
+    schema:
+      fields:
+        - name: Name of Beneficiary 
+
+        - name: ID
+
+        - name: Operation
+
+        - name: Operational Programme
+
+        - name: Fund EU
+
+        - name: Date of allocation (EU funding)
+        
+        - name: Amounts allocated (EU funding)
+
+        - name: Date of interim payment (EU funding)
+
+        - name: Total Amounts paid from the start of the Project
+
+        - name: Status
