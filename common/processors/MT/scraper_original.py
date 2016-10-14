@@ -1,7 +1,15 @@
+"""A scraper for Malta 2007-2013."""
+from logging import info
+
 import requests
-from lxml import html
-from pprint import pprint
+import lxml
 import csv
+
+from lxml import html
+from datapackage_pipelines.wrapper import spew, ingest
+
+__author__ = 'Fernando Blat'
+
 
 # Base URL is the host of the page
 BASE_URL = 'https://investinginyourfuture.gov.mt'
@@ -18,8 +26,8 @@ def scrape_project(url):
     project_data = []
     url = BASE_URL + url
 
-    res = requests.get(url)
-    doc = html.fromstring(res.content)
+    response = requests.get(url)
+    doc = lxml.html.fromstring(response.content)
     # Code
     project_data.append(get_text(doc.find('.//span[@id="mainPlaceHolder_coreContentPlaceHolder_mainContentPlaceHolder_projectRefCode"]')))
     # Title
@@ -76,10 +84,20 @@ def scrape():
             for link in doc.findall('.//div[@class="project-listing-item-title"]/a'):
                 project_data_row = scrape_project(link.get('href'))
                 writer.writerow(project_data_row)
+                # row_dict = dict(zip(headers, project_data_row))
+                # info('Scraped row = %s', row_dict)
+                # yield row_dict
 
-            page = page + 1
+            page += 1
             print("\n")
 
 
+def process_resources():
+    yield scrape()
+
+
 if __name__ == '__main__':
+    # _, datapackage_, _ = ingest()
+    # resources_ = process_resources()
+    # spew(datapackage_, resources_)
     scrape()
