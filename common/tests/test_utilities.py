@@ -1,11 +1,14 @@
 """Unit tests for the utilities module."""
 
 import os
+from unittest.mock import mock_open, patch
 
-from unittest.mock import mock_open, patch, call
-
-from common.utilities import get_codelist, get_fiscal_datapackage
 from common.config import CODELISTS_DIR
+from common.utilities import (
+    get_codelist,
+    get_fiscal_datapackage,
+    process
+)
 
 
 @patch(
@@ -28,3 +31,7 @@ def test_get_fiscal_datapackage_assembles_datapackage_from_parts(mocked):
     assert mocked.call_count == 3
     assert isinstance(datapackage, dict)
     assert 'model' in datapackage
+
+
+def test_process_returns_a_generator_of_generators():
+    assert next(next(process([['foo']], lambda x: x))) == 'foo'

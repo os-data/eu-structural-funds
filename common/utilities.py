@@ -87,3 +87,18 @@ def write_feedback(section, messages, folder=os.getcwd()):
 
     with open(filepath, 'w+') as stream:
         json.dump(feedback, stream, indent=4)
+
+
+def process(resources, row_processor, **parameters):
+    """Apply a row processor to each row of each datapackage resource."""
+
+    # TODO: Put the `process` function inside the pipeline-framework
+
+    logging.info('Parameters = %s', parameters)
+
+    for resource in resources:
+        def process_rows(resource_):
+            for row in resource_:
+                yield row_processor(row, **parameters)
+
+        yield process_rows(resource)
