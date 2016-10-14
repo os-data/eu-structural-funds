@@ -1,0 +1,145 @@
+# I am the latest version: use me.
+
+# 1. Describe the source metadata:
+# -----------------------------
+#
+# title: a short description of your data source.
+#
+# language: the 2-digit language code of the document (e.g. en, fr, es...)
+#
+# sources: only meant as documention: add as many as you want (urls to
+#          the actual data-files are in the resources section).
+#
+# scraper_required: if a web or PDF scraper is needed
+#
+# contributors: put yourself down (email and website are not obligatory).
+#               Follow the simple formatting convention.
+#
+# resources: a single description file like this can describe more than one
+#            resource (file or webpage) as long as the data is structured the
+#            same. This happens when the data is split by fund or period for
+#            example.
+#
+# Good luck!
+
+
+title: Lithuania's ESIF data 2007-2013
+
+description: For 2007-2013, there is a web-portal with the option to download a spreadsheet. The resulting file, however, contains less information than is available on the portal. Thus, scraping is necessary.
+language: LT
+
+sources:
+  - name: Lithuania landing page 2007-2013
+    web:  http://www.esparama.lt/
+
+
+scraper_required: yes
+
+contributors:
+  - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
+
+resources:
+
+  # 2. Describe each data-resource:
+  # ----------------------------
+  #
+  # title: use this field to distinguish the resources if there's more than one
+  #
+  # url: the link to the file if possible. If the data needs to be scraped,
+  #      enter the url of the webpage and set scraper_required to true.
+  #
+  # publication_date: the date that the data was published or updated
+  #
+  # constant_fields: any field from fiscal.fields.yaml that has a fixed value
+  #                  (i.e. is not specified row by row).
+  #
+  # schema: please describe each column in the data. Don't change the original
+  #         columns names even in Cyrillic. For translations, Google will do.
+  #         Refer to fiscal.fields.yaml to discover what fiscal field map to
+  #         the columns that you found. If you can't tell, enter a short comment
+  #         instead. Leave the mapping blank if the column can be dropped.
+  #
+  # Good luck!
+
+  - title: Web-portal with Lithuania's ESIF data 2007-today 
+
+    url: http://www.esparama.lt/igyvendinami-projektai
+
+    publication_date: 2016-09-28
+
+    constant_fields:
+      fund_name: ERDF, CF, ESF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: Projekto būsena
+          translates_to: Project Status
+          maps_to: project_status
+
+        - name: Projekto vykdytojas
+          translates_to: Project promoter
+          maps_to: 
+
+        - name: Projekto pradžia
+          translates_to: Project start date
+          maps_to: project_start_date
+
+        - name: Projekto pabaiga
+          translates_to: Project completion date
+          maps_to: project_end_date
+
+        - name: Bendra projekto vertė
+          translates_to: The total value of the project
+          maps_to: total_value
+
+        - name: Projektui skirtas finansavimas
+          translates_to: Project funding
+          maps_to: 
+
+        - name: Iš jo ES dali
+          translates_to: EU part of project funding
+          maps_to: funding_eu
+
+        - name: Projektui išmokėta lėšų
+          translates_to: Project funds disbursed
+          maps_to: funding_disbursed
+
+        - name: Iš jo ES dalis
+          translates_to: EU part of disbursed funds
+          maps_to: 
+
+        - name: Detailed project description (without title)
+          translates_to: 
+          maps_to: project_description
+
+        - name: Veiksmų programa
+          translates_to: Action program
+          maps_to: 
+
+        - name: Veiksmų programos prioritetas
+          translates_to: The action program priority measure
+          maps_to: 
+
+        - name: Kvietimo numeris
+          translates_to: Number of call 
+          maps_to: 
+
+        - name: Projekto kodas
+          translates_to: Project code
+          maps_to: project_code
+
+        - name: Projekto įgyvendinimo apskritis
+          translates_to: The project region
+          maps_to: region
+
+        - name: Projekto įgyvendinimo savivaldybė
+          translates_to: The project municipality
+          maps_to: municipality
+
+
+        - # repeat for each column you find in the data
+
