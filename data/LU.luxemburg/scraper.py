@@ -57,15 +57,10 @@ def scrape_project(url):
     # Coût total
     box = div_boxes[2]
     cost = box.findall('.//li')[0]
-    pdb.set_trace()
-    n = re.search('([\d\.]+\d{3}[\,\d]*).*€', cost.text).group(1)
-    cost = float(n.replace('.','').replace(',', '.'))
-    project_data.append(cost)
+    project_data.append(cost.text)
     # Coût de fonds
     cost = box.findall('.//li')[1]
-    n = re.search('([\d\.]+\d{3}[\,\d]*).*€', cost.text).group(1)
-    cost = float(n.replace('.','').replace(',', '.'))
-    project_data.append(cost)
+    project_data.append(cost.text)
     # Durée
     box = div_boxes[3]
     duration = box.findall('.//li')[0]
