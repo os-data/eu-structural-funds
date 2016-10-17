@@ -1,35 +1,34 @@
 """Pipeline configuration parameters."""
 
 from os.path import dirname, abspath, join
+from sqlalchemy import create_engine
 
 OS_TYPES_URL = ('https://raw.githubusercontent.com/'
                 'openspending/os-types/master/src/os-types.json')
 
 PIPELINE_FILE = 'pipeline-spec.yaml'
 DATAPACKAGE_FILE = 'source.datapackage.json'
-DESCRIPTION_FILE = 'source.description.yaml'
-FEEDBACK_FILE = 'pipeline-status.json'
-EXTRACTOR_FILE = 'scraper.py'
+SOURCE_FILE = 'source.description.yaml'
+STATUS_FILE = 'pipeline-status.json'
+SCRAPER_FILE = 'scraper.py'
 
 ROOT_DIR = abspath(join(dirname(__file__), '..'))
-GEOCODES_FILE = join(ROOT_DIR, 'geography', 'geocodes.nuts.csv')
-VALIDATOR_PROCESSOR = 'validate_datapackage'
-
+DATA_DIR = join(ROOT_DIR, 'data')
 SPECIFICATIONS_DIR = join(ROOT_DIR, 'specifications')
+PROCESSORS_DIR = join(ROOT_DIR, 'common', 'processors')
 CODELISTS_DIR = join(ROOT_DIR, 'codelists')
 
+GEOCODES_FILE = join(ROOT_DIR, 'geography', 'geocodes.nuts.csv')
 FISCAL_SCHEMA_FILE = join(SPECIFICATIONS_DIR, 'fiscal.schema.yaml')
 FISCAL_MODEL_FILE = join(SPECIFICATIONS_DIR, 'fiscal.model.yaml')
-FISCAL_DATAPACKAGE_FILE = join(SPECIFICATIONS_DIR, 'fiscal.datapackage.yaml')
+FISCAL_DATAPACKAGE_FILE = join(SPECIFICATIONS_DIR, 'fiscal.metadata.yaml')
+DEFAULT_PIPELINE_FILE = join(SPECIFICATIONS_DIR, 'default-pipeline-spec.yaml')
+TEMPLATE_SCRAPER_FILE = join(PROCESSORS_DIR, 'scraper_template.py')
+DESCRIPTION_SCHEMA_FILE = join(SPECIFICATIONS_DIR, 'source.schema.json')
 
-DEFAULT_PIPELINE = {
-    'schedule': {
-        'crontab': '0 0 1 1 *'
-    },
-    'pipeline': [{
-        'run': 'processors.read_description',
-        'parameters': {
-            'save_datapackage': False
-        }
-    }]
-}
+LOCAL_PATH_EXTRACTOR = 'processors.stream_from_path'
+REMOTE_CSV_EXTRACTOR = 'processors.simple_remote_source'
+REMOTE_EXCEL_EXTRACTOR = 'processors.stream_remote_excel'
+
+DB_URI = 'sqlite:///{}/metrics.sqlite'
+DB_ENGINE = create_engine(DB_URI.format(ROOT_DIR))
