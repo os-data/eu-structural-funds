@@ -2,6 +2,7 @@
 source.datapackage.zip
 fiscal.datapackage.zip
 source.datapackage.json
+metrics.sqlite
 
 # Extras
 .projectile
