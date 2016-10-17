@@ -18,7 +18,7 @@ resources:
   url: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES05UPO002_PO_FSE_LUCHACONTRALADISCRIMINACION.pdf
   path: 
 
-  publication_date: 2013-05-20
+  publication_date: 20-05-2013
   expiry_date: 2016
   
   update_interval: yearly
@@ -68,7 +68,7 @@ resources:
   url: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES05UPO001_PO_FSE_ADAPTABILIDAD_EMPLEO.pdf
   path: 
 
-  publication_date: 2013-05-20
+  publication_date: 20-05-2013
   expiry_date: 2016
   
   update_interval: yearly
@@ -116,7 +116,7 @@ resources:
   url: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES05UPO003_PO_FSE_ASISTENCIA_TECNICA.pdf
   path: 
 
-  publication_date: 2013-05-20
+  publication_date: 20-05-2013
   expiry_date: 2016
   
   update_interval: yearly
