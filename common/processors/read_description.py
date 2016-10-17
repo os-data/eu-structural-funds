@@ -13,7 +13,7 @@ import yaml
 
 from slugify import slugify
 from datapackage_pipelines.wrapper import spew, ingest
-from common.config import DESCRIPTION_FILE, DATAPACKAGE_FILE
+from common.config import SOURCE_FILE, DATAPACKAGE_FILE
 
 
 def remove_empty_properties(properties):
@@ -49,7 +49,7 @@ def create_datapackage(description):
 
 
 def load_description_file():
-    with open(DESCRIPTION_FILE) as stream:
+    with open(SOURCE_FILE) as stream:
         return yaml.load(stream.read())
 
 
@@ -60,7 +60,7 @@ def save_datapackage_file(description):
 
 if __name__ == '__main__':
     parameters, _, _ = ingest()
-    save_ = parameters['save_datapackage']
+    save_ = parameters.get('save_datapackage')
     description_ = load_description_file()
     datapackage = create_datapackage(description_)
     if save_:
