@@ -1,0 +1,56 @@
+
+
+title: ERDF Data for Berlin (2007-2013)
+
+description: The beneficiary list of the ERDF and ERDF programme for Berlin
+language: de
+
+sources:
+  - name: ERDF Berlin (2007-2013)
+    web: https://www.berlin.de/sen/wirtschaft/gruenden-und-foerdern/europaeische-strukturfonds/esf/dokumente-a-z/
+
+scraper_required: false
+
+
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+
+  - title: ERDF Berlin 2007-2013
+
+    path: C:\Users\Michael\Documents\GitHub\eu-structural-funds\data\DE.germany\DE3.berlin\ERDF 2007-2013\Berlin ERDF 2007-2013.xlsx
+    publication_date: 2015-03-31
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+    schema:
+      fields:
+        - name: Name des Begünstigten
+          translates_to: Name of the Beneficiary
+          maps_to: beneficiary_name
+
+        - name: Bezeichnung des Vorhabens
+          translates_to: Name of the Project
+          maps_to: project_name
+
+        - name: Jahr der Bewilligung
+          translates_to: Year of Approval
+          maps_to: approval_date
+
+        - name: Jahr der Restzahlung
+          translates_to:  Year of final payment
+          maps_to: final_payment_date
+
+        - name: Bewilligung öffentliche Mittel
+          translates_to: Approved Amount in Euro
+          maps_to: total_amount_applied
+
+        - name: Gesamtauszahlungsbetrag abgeschlossene Projekte
+          translates_to: Paid amount at the end of the project
+          maps_to: total_amount
