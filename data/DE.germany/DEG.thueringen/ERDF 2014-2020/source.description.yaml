@@ -107,7 +107,7 @@ resources:
           translates_to: Union co-financing rate in %
           maps_to: eu_cofinancing_amount
 
-        -  name: Postleitzahl des Vorhabens - operation postcode
+        - name: Postleitzahl des Vorhabens - operation postcode
           translates_to: operation postcode
           maps_to: beneficiary_postal_code
 
