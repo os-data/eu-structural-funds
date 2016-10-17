@@ -17,7 +17,7 @@ resources:
   url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/PO%20FT3516.pdf
   path: 
 
-  publication_date: 2016-09-19
+  publication_date: 19-09-2016
   expiry_date: 2016
   
   update_interval: yearly
@@ -77,7 +77,7 @@ resources:
   url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/PO%20EC3516.pdf
   path: 
 
-  publication_date: 2016-09-19
+  publication_date: 19-09-2016
   expiry_date: 2016
   
   update_interval: yearly
@@ -137,7 +137,7 @@ resources:
   url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/PO%20AT3516.pdf
   path: 
 
-  publication_date: 2016-09-19
+  publication_date: 19-09-2016
   expiry_date: 2016
   
   update_interval: yearly
@@ -197,7 +197,7 @@ resources:
   url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/PO%20FCH3516.pdf
   path: 
 
-  publication_date: 2016-09-19
+  publication_date: 19-09-2016
   expiry_date: 2016
   
   update_interval: yearly
