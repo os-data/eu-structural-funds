@@ -18,7 +18,7 @@ resources:
  url: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES051PO004_PO_FSE_GALICIA.pdf
  path: 
 
-  publication_date: 2013-05-20
+  publication_date: 20-05-2013
   expiry_date: 
   
   update_interval: yearly
