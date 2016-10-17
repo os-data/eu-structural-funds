@@ -1,26 +1,4 @@
-# I am the latest version: use me.
 
-# 1. Describe the source metadata:
-# -----------------------------
-#
-# title: a short description of your data source.
-#
-# language: the 2-digit language code of the document (e.g. en, fr, es...)
-#
-# sources: only meant as documention: add as many as you want (urls to
-#          the actual data-files are in the resources section).
-#
-# scraper_required: if a web or PDF scraper is needed
-#
-# contributors: put yourself down (email and website are not obligatory).
-#               Follow the simple formatting convention.
-#
-# resources: a single description file like this can describe more than one
-#            resource (file or webpage) as long as the data is structured the
-#            same. This happens when the data is split by fund or period for
-#            example.
-#
-# Good luck!
 
 title: ERDF Data for Nordrhein-Westfalen (2014-2020)
 
@@ -29,40 +7,16 @@ language: de
 
 sources:
 
-  - name: EFRE Nordrhein-Westfalen (2014-2020)
+  - name: ERDF Nordrhein-Westfalen (2014-2020)
     web: https://www.efre.nrw.de/fileadmin/16-01-22_DN_Liste_der_Vorhaben_20151231.xlsx
 
 scraper_required: false
-
-
 
 
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
-
-  # 2. Describe each data-resource:
-  # ----------------------------
-  #
-  # title: use this field to distinguish the resources if there's more than one
-  #
-  # url: the link to the file if possible. If the data needs to be scraped,
-  #      enter the url of the webpage and set scraper_required to true.
-  #
-  # publication_date: the date that the data was published or updated
-  #
-  # constant_fields: any field from fiscal.fields.yaml that has a fixed value
-  #                  (i.e. is not specified row by row).
-  #
-  # schema: please describe each column in the data. Don't change the original
-  #         columns names even in Cyrillic. For translations, Google will do.
-  #         Refer to fiscal.fields.yaml to discover what fiscal field map to
-  #         the columns that you found. If you can't tell, enter a short comment
-  #         instead. Leave the mapping blank if the column can be dropped.
-  #
-  # Good luck!
-
 
   - title: ERDF in Nordrhein-Westfalen 2014-2020
 
@@ -74,8 +28,6 @@ resources:
       fund_name: ERDF
       offical_period: 2014-2020
       currency_code: EUR
-
-      # any other field from fiscal.fields.yaml that is constant
 
     schema:
       fields:
@@ -91,11 +43,11 @@ resources:
           translates_to: project description
           maps_to: project_description
 
-        - name: Durchführungsbeginn
+        - name: Durchführungs-beginn
           translates_to: starting date of the project
           maps_to: starting_date
 
-        - name: Durchführungsende
+        - name: Durchführungs-ende
           translates_to: completion date of the project
           maps_to: completion_date
 
@@ -110,13 +62,10 @@ resources:
           translates_to: name of country
           maps_to: beneficiary_country
 
-        - name: EU Interventionskategorie
+        - name: EU-Interventions-kategorie
           translates_to: EU intervention category (number) which declares under which category the company applied for funds
           maps_to: theme_code
 
         - name: Bezeichnung der EU-Interventionskategorie
           translates_to: thematic objective (category that company applied for funds description)
           maps_to: theme_name
-
-
-        - # repeat for each column you find in the data
