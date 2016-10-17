@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "contributors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minLength": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "format": "uri"
+          },
+          "web": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "publication_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "schema": {
+            "type": "object",
+            "properties": {
+              "fields": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "translates_to": {
+                      "type": "string"
+                    },
+                    "maps_to": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "fields"
+            ]
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "publication_date",
+          "schema",
+          "url"
+        ]
+      }
+    },
+    "description": {
+      "type": "string"
+    },
+    "scraper_required": {
+      "type": "boolean"
+    },
+    "language": {
+      "type": "string",
+      "pattern": "(\\w{2})"
+    }
+  },
+  "required": [
+    "title",
+    "contributors",
+    "sources",
+    "resources",
+    "scraper_required",
+    "language"
+  ]
+}
