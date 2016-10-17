@@ -199,7 +199,7 @@ class Source(object):
     @property
     def scraper_path(self):
         """Scrapers are named by slug and saved to common.processors.XX."""
-        filename = slugify(self.id) + '_' + SCRAPER_FILE
+        filename = self.slug + '_' + SCRAPER_FILE
         return join(PROCESSORS_DIR, self.country_code, filename)
 
     @property
