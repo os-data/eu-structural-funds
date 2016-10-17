@@ -4,6 +4,7 @@ import json
 import yaml
 import logging
 import os
+import csv
 
 from datapackage import DataPackage
 from .config import (
@@ -11,8 +12,25 @@ from .config import (
     FISCAL_SCHEMA_FILE,
     FISCAL_DATAPACKAGE_FILE,
     FISCAL_MODEL_FILE,
-    FEEDBACK_FILE
+    STATUS_FILE,
+    GEOCODES_FILE
 )
+
+
+def get_nuts_codes():
+    """Return a list of valid NUTS codes."""
+
+    with open(GEOCODES_FILE) as stream:
+        lines = csv.DictReader(stream)
+        geocodes = []
+        for i, line in enumerate(lines):
+            # The first line has an empty NUTS-code
+            if i > 0:
+                geocode = line['NUTS-Code']
+                geocodes.append(geocode)
+
+    logging.debug('Loaded %d NUTS geocodes', len(geocodes))
+    return tuple(geocodes)
 
 
 def get_all_codelists():
@@ -71,9 +89,9 @@ def get_fiscal_fields():
 
 
 def write_feedback(section, messages, folder=os.getcwd()):
-    """Append messages to the feedback file."""
+    """Append messages to the status file."""
 
-    filepath = os.path.join(folder, FEEDBACK_FILE)
+    filepath = os.path.join(folder, STATUS_FILE)
 
     with open(filepath) as stream:
         feedback = json.load(stream)
