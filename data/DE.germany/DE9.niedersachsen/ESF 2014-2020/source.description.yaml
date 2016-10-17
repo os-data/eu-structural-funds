@@ -111,7 +111,7 @@ resources:
           translates_to: Category of region
           maps_to: beneficiary_nuts_region
 
-        -  name: PLZ
+        - name: PLZ
           translates_to: operation postcode
           maps_to: beneficiary_postal_code
 
@@ -121,7 +121,7 @@ resources:
 
         - name: Landkreis
           translates_to: county
-          
+
 
         - name: Interventionsbereich
           translates_to: Intervention field
