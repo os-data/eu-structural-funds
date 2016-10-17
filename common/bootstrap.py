@@ -312,29 +312,31 @@ class Source(object):
         return self.id < other.id
 
 
+@command('show')
+@argument('pipeline_id', required=True)
+@option('-d', '--description', is_flag=True, help='Show description file.')
+def show_file(pipeline_id, description):
+    """Show the pipeline (or description) file."""
+
+    source = collect_sources(pipeline_id).pop()
+
+    if description:
+        echo(json.dumps(source.description, indent=4))
+    else:
+        echo(json.dumps(source.pipeline, indent=4))
+
+
 @command('status')
 @argument('pipeline_id', required=False)
-@option('-t', '--table', is_flag=True)
-@option('-p', '--pipeline', 'specs', flag_value='pipeline')
-@option('-d', '--description', 'specs', flag_value='description')
-def report_status(pipeline_id, table, specs):
+@option('-t', '--table', is_flag=True, help='Verbose table format.')
+def report_status(pipeline_id, table):
     """Show the current bootstrap status."""
-
-    if specs:
-        message = '{} option requires a pipeline id argument'
-        assert specs and pipeline_id, message.format(specs)
 
     if pipeline_id:
         source = collect_sources(pipeline_id).pop()
-
-        if specs == 'description':
-            echo(json.dumps(source.description, indent=4))
-        elif specs == 'pipeline':
-            echo(json.dumps(source.pipeline, indent=4))
-        else:
-            secho('Updated :{}'.format(source.updated), **SUCCESS)
-            secho('Path: {}\n'.format(source.folder), **SUCCESS)
-            source.echo()
+        secho('Updated :{}'.format(source.updated), **SUCCESS)
+        secho('Path: {}\n'.format(source.folder), **SUCCESS)
+        source.echo()
 
     else:
         timestamp, stats, sums = get_latest_stats()
@@ -374,7 +376,7 @@ def bootstrap_pipelines(pipeline_id=None):
 
 
 @command(name='list')
-@option('-v', '--validation', is_flag=True, help='List by validation status')
+@option('-v', '--validation', is_flag=True, help='List by validation status.')
 def list_pipelines(validation):
     """List sources by pipeline status."""
 
@@ -429,6 +431,7 @@ main.add_command(list_pipelines)
 main.add_command(bootstrap_pipelines)
 main.add_command(validate_descriptions)
 main.add_command(report_status)
+main.add_command(show_file)
 
 
 if __name__ == '__main__':
