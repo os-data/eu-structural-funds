@@ -1,12 +1,30 @@
 title: The projects regarding the European Regional Development Fund, Cohesion Fund and the European Social Fund in Malta (2007-2013)
 
-description:
+language: EN
+
+description: >
+  Welcome to investinginyourfuture.gov.mt. This site gives users an interactive
+  way of learning more about projects being implemented under Cohesion Policy
+  2007-2013, co-financed under the European Regional Development Fund (ERDF),
+  Cohesion Fund and the European Social Fund (ESF). This site groups projects
+  under different themes highlighting the government’s main priorities which
+  are - Heritage and tourism; Equal Opportunities; Health; Research, Science
+  and Technology; Education; Life Long Learning & Employment; Environment;
+  Climate Change & Renewable Energy Sources; Waste Management & Risk
+  Prevention; Public Infrastructure; Public Administration; and Private Sector.
+  Through this website, users can acquire information on individual projects
+  and can also share information about projects on social media. This website
+  is ideal therefore for all those interested in EU Funded projects.
+  Investinginyourfuture.gov.mt website is managed by the Planning and
+  Priorities Co-ordination Division (PPCD) which is the Managing Authority
+  for Cohesion Policy 2007-2013 and which falls under the responsibilities of
+  the Parliamentary Secretariat for EU Presidency 2017 and EU Funds.
+
+scraper_required: True
 
 sources:
   - name: Investing in your future
     web:  https://investinginyourfuture.gov.mt/projects
-
-image:
 
 contributors:
   - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
@@ -15,120 +33,94 @@ contributors:
 resources:
 
   - title: A web page with list of all projects developed with the EU funds
-    url: https://investinginyourfuture.gov.mt/projects
-    path:
+    path: data.csv
 
     publication_date:
-    publication_version:
-
-    periods:
-      2007-2013: true
-      2014-2020: false
-
-    extraction_mode:
-      user_interface: false
-      download_link: false
-      pdf_scraper: false
-      web_scraper: true
-
-    constants:
-      currency: EUR
-      certifying_authority: The Planning and Priorities Co-ordination Division
 
     schema:
       fields:
         - name: Code
-          translation:
-          type: "string"
-          missingValue:
+          translates_to: Code
+          maps_to: project_id
           description: Project reference code
 
         - name: Title
-          translation:
-          type: "string"
-          missingValue:
+          translates_to: Title
+          maps_to: project_name
           description: Title of the project
 
         - name: Project Cost
-          translation:
-          type: number
-          missingValue:
+          translates_to: Project Cost
+          maps_to: total_amount
           description: The cost of the project, in EUR
 
         - name: Beneficiary
-          translation:
-          type: string
-          missingValue:
+          translates_to: Beneficiary
+          maps_to: beneficiary_name
           description: The beneficiary of the project
 
         - name: Line Ministry
-          translation:
-          type: string
-          missingValue:
-          description: Associated Ministry. I.e. Ministry for Education and Employment
+          translates_to: Line Ministry
+          maps_to: # not in the fiscal schema as of October 13 2016
+          description: The sssociated Ministry, for example the Ministry for Education and Employment
 
         - name: Start Date
-          translation:
-          type: date
-          missingValue:
+          translates_to: Strat Date
+          maps_to: starting_date
           description: Only the year is provided
 
         - name: End Date
-          translation:
-          type: date
-          missingValue:
+          translates_to: End Date
+          maps_to: completion_date
           description: Only the  year is provided
 
         - name: Non Technical Short Summary Of Project
-          translation:
-          type: string
-          missingValue:
+          translates_to: Non Technical Short Summary Of Project
+          maps_to: project_description
           description:
 
         - name: Operational Programme
-          translation:
-          type: string
-          missingValue:
+          translates_to: operational Programme
+          maps_to: cci_program_code
           description: Name of the operational programme
 
         - name: Fund
-          translation:
-          type: string
-          missingValue:
+          translates_to: Fund
+          maps_to: fund_acronym
           description: Name of the fund
 
         - name: Operational Objective
-          translation:
-          type: string
-          missingValue:
+          translates_to: Operational Objective
+          maps_to:
           description:
 
         - name: Priority Axis
-          translation:
-          type: string
-          missingValue:
+          translates_to: Priority Axis
+          maps_to: priority_number
           description:
 
         - name: Focus Area Of Intervention
-          translation:
-          type: string
-          missingValue:
-          description:
+          translates_to: Focus Area of Intervention
+          maps_to: # unclear and/or redundant?
+          description: >
+            e.g. OPIIPA2 Continuous training and education. This field looks
+            like a concatenation of Operational Programme II and Priority Axis
+            2. It's unclear what Operational Programme II refers to since there
+            is only one Operational Programme listed for Malta for the period
+            2007-2013. Also the description after the code cannot be cross
+            reference to any other description. So this field is not mapped.
 
         - name: Project Objectives
-          translation:
-          type: string
-          missingValue:
+          translates_to: Project Objectives
+          maps_to: project_description
           description:
 
         - name: Project Results
-          translation:
-          type: string
-          missingValue:
+          translates_to: Project Results
+          maps_to: project_description
           description: A medium length text describing the project results
 
         - name: Project Purpose
-          translation:
-          type: string
-          missingValue:
+          translates_to: Project Purpose
+          maps_to: project_description
           description:

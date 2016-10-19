@@ -1,0 +1,198 @@
+# I am the latest version: use me.
+
+# 1. Describe the source metadata:
+# -----------------------------
+#
+# title: a short description of your data source.
+#
+# language: the 2-digit language code of the document (e.g. en, fr, es...)
+#
+# sources: only meant as documention: add as many as you want (urls to
+#          the actual data-files are in the resources section).
+#
+# scraper_required: if a web or PDF scraper is needed
+#
+# contributors: put yourself down (email and website are not obligatory).
+#               Follow the simple formatting convention.
+#
+# resources: a single description file like this can describe more than one
+#            resource (file or webpage) as long as the data is structured the
+#            same. This happens when the data is split by fund or period for
+#            example.
+#
+# Good luck!
+
+title: ERDF and ESF Data for Bremen
+
+description: The beneficiary list of the ERDF (2007-2020) programme for Bremen and the beneficiary list for the ESF (2007-2013) program for Bremen.
+language: de
+
+sources:
+  - name: EFRE Bremen
+    web: http://www.efre-bremen.de/sixcms/detail.php?gsid=bremen59.c.15110.de
+
+  - name: Der Europaeische Sozialfonds (ESF) im Land Bremen
+    web: http://www.esf-bremen.de/sixcms/detail.php?gsid=bremen02.c.730.de
+
+scraper_required: true
+
+contributors:
+  - Anna Alberts (anna.alberts@okfn.de)
+
+resources:
+
+  # 2. Describe each data-resource:
+  # ----------------------------
+  #
+  # title: use this field to distinguish the resources if there's more than one
+  #
+  # url: the link to the file if possible. If the data needs to be scraped,
+  #      enter the url of the webpage and set scraper_required to true.
+  #
+  # publication_date: the date that the data was published or updated
+  #
+  # constant_fields: any field from fiscal.fields.yaml that has a fixed value
+  #                  (i.e. is not specified row by row).
+  #
+  # schema: please describe each column in the data. Don't change the original
+  #         columns names even in Cyrillic. For translations, Google will do.
+  #         Refer to fiscal.fields.yaml to discover what fiscal field map to
+  #         the columns that you found. If you can't tell, enter a short comment
+  #         instead. Leave the mapping blank if the column can be dropped.
+  #
+  # Good luck!
+
+  - title: ERDF Bremen 2007-2013
+
+    url: http://www.stmwi.bayern.de/EFRE/_Downloads/Wettbewerbsfaehigkeit_Beschaeftigung/Transparenzliste-31.12.2015.pdf
+
+    publication_date: 2015-12-30
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: Name des Begünstigten
+          translates_to: Name of the Beneficiary
+          maps_to: beneficiary_name
+
+        - name: Name des Projekts
+          translates_to: Name of the Project
+          maps_to: project_name
+
+        - name: Jahr der Bewilligung / Jahr des Abschlusses
+          translates_to: Year of Approval / Year of Finalisation
+          maps_to: completion_date
+
+        - name: Vorgesehene Öffentliche Beteiligung
+          translates_to: Approved Amount in Euro
+          maps_to: total_amount_applied
+
+        - name: Endgultige Beteiligung nach absluss des projekts
+          translates_to: Paid amount at the end of the project
+          maps_to: total_eligible_expenditure
+
+        - # repeat for each column you find in the data
+
+  - title: LISTE DER VORHABEN / LIST OF OPERATIONS: OPERATIONELLES PROGRAMM DES LANDES BREMEN 2014 - 2020 (Stand: 30.06.2016)
+
+    url: http://www.efre-bremen.de/sixcms/media.php/13/2016-06-30_Bremen_Liste%20der%20Vorhaben.xlsx
+
+    publication_date: 2016-06-30
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2014-2020
+      currency_code: EUR
+
+# any other field from fiscal.fields.yaml that is constant
+
+            schema:
+              fields:
+                - name: lfd. Nr.
+                  translates_to: Identification Number
+                  maps_to: project_id
+
+                - name: Bezeichnung des Vorhabens - operation name
+                  translates_to: Name of the operation
+                  maps_to: project_name
+
+                - name: Zusammenfassung des Vorhabens - operation summary
+                  translates_to: Operation Summary
+                  maps_to: project_description
+
+                - name: Beginn des Vorhabens - operation start date
+                  translates_to: operation start date
+                  maps_to: starting_date
+
+                - name: Ende des Vorhabens  - operation end date
+                  translates_to: operation end date
+                  maps_to: completion_date
+
+                - name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens - total eligible expenditure allocated to the operation
+                  translates_to: total eligible expenditure allocated to the operation
+                  maps_to: total_eligible_expenditure
+
+                - name: Unions-Kofinanzierungssatz pro Prioritätsachse - Union co-financing rate
+                  translates_to: Paid amount at the end of the project
+                  maps_to: eu_cofinancing_amount
+
+                - name: Postleitzahl des Vorhabens - operation postcode
+                  translates_to: operation post
+                  maps_to: beneficiary_postal_code
+
+                - name: Land - country
+                  translates_to: Paid amount at the end of the project
+                  maps_to: beneficiary_country
+
+                - name: Bezeichnung der Interventionskategorie-  name of category of intervention
+                  translates_to: name of category of intervention
+                  maps_to: priority_label
+
+# any other field from fiscal.fields.yaml that is constant
+
+
+  - title: Bremen ESF 2007-2013: Report S06-02: Liste der Begünstigten gem. Art 7 (2) d) VO 1828/2006 (EG).
+
+    url: http://www.esf.bayern.de/imperia/md/content/stmas/stmas_internet/esf/inf-beguenstigte-2015.pdf
+
+    publication_date: 2013-11-06
+    constant_fields:
+      fund_name: ESF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: Name des Begünstigten
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: Bezeichnung des Vorhabens
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: Jahr Bewilligung
+          translates_to: Year of Approval
+          maps_to: approval_date
+
+        - name: Jahr Projektende
+          translates_to: Year of the end of the project
+          maps_to: completion_date
+
+        - name: Gewährte Beträge in €
+          translates_to: Granted Contribution in Euro
+          maps_to: total_eligible_expenditure
+
+        - name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge in €
+          translates_to: Amounts paid on the completion of the project
+          maps_to: total_amount
+
+        - # repeat for each column you find in the data

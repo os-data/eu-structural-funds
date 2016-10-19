@@ -9,12 +9,12 @@ from datapackage_pipelines.wrapper import spew
 from common.config import FISCAL_SCHEMA_FILE
 
 
-def cast_values(row, fiscal_types):
+def cast_values(row, converter):
     """Cast values to fiscal types.
     """
     for key, value in row.items():
         if value:
-            row[key] = fiscal_types[key](row[key])
+            row[key] = converter[key](value)
     return row
 
 

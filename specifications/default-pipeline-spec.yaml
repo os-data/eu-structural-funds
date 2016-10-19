@@ -1,0 +1,29 @@
+pipeline-id:
+  schedule:
+    - crontab: 0 0 1 1 *
+
+  pipeline:
+    - run: processors.read_description
+
+    - run: # placeholder for data streamer
+
+    - run: dump
+      validate: true
+      parameters:
+        out-file: source.datapackage.zip
+
+    - run: processors.map_columns
+    - run: processors.reshape_data
+    - run: processors.cast_to_fiscal_schema
+    - run: processors.show_sample_in_console
+    - run: processors.load_fiscal_datapackage
+
+    - run: dump
+      validate: true
+      parameters:
+        out-file: fiscal.datapackage.zip
+
+    - run: fiscal.upload
+      parameters:
+        in-file: fiscal.datapackage.zip
+

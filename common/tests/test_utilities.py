@@ -1,11 +1,17 @@
 """Unit tests for the utilities module."""
 
 import os
+import os.path
 
-from unittest.mock import mock_open, patch, call
+from glob import glob
+from unittest.mock import mock_open, patch
 
-from common.utilities import get_codelist, get_fiscal_datapackage
-from common.config import CODELISTS_DIR
+from common.config import CODELISTS_DIR, DATA_DIR
+from common.utilities import (
+    get_codelist,
+    get_fiscal_datapackage,
+    process,
+    get_nuts_codes)
 
 
 @patch(
@@ -28,3 +34,21 @@ def test_get_fiscal_datapackage_assembles_datapackage_from_parts(mocked):
     assert mocked.call_count == 3
     assert isinstance(datapackage, dict)
     assert 'model' in datapackage
+
+
+def test_process_returns_a_generator_of_generators():
+    assert next(next(process([['foo']], lambda x: x))) == 'foo'
+
+
+def test_nuts_codes_in_data_tree_are_valid():
+    nuts_codes = get_nuts_codes()
+    for node in glob(DATA_DIR + '/*/*'):
+        if os.path.isdir(os.path.join(os.path.dirname(__file__), node)):
+            parts = node.split('/')[-1].split('.')
+            if len(parts) == 2:
+                like_geofolder = (
+                    parts[0].isupper(),
+                    parts[1].islower()
+                )
+                if all(like_geofolder):
+                    assert parts[0] in nuts_codes

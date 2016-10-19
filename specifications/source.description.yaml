@@ -68,10 +68,12 @@ resources:
       fields:
         - name: copy/paste the original column name
           translates_to: the english translation of the column name
-
+          maps_to: 
+          
         - name: copy/paste the original column name
           translates_to: the english translation of the column name
+          maps_to:
 
-        - # repeat for each column you find in the data
+#       - repeat for each field you find in the data
 
-# - repeat for each data file in this source
+# - repeat for each data file

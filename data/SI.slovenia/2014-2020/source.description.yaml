@@ -1,0 +1,145 @@
+# I am the latest version: use me.
+
+# 1. Describe the source metadata:
+# -----------------------------
+#
+# title: a short description of your data source.
+#
+# language: the 2-digit language code of the document (e.g. en, fr, es...)
+#
+# sources: only meant as documention: add as many as you want (urls to
+#          the actual data-files are in the resources section).
+#
+# scraper_required: if a web or PDF scraper is needed
+#
+# contributors: put yourself down (email and website are not obligatory).
+#               Follow the simple formatting convention.
+#
+# resources: a single description file like this can describe more than one
+#            resource (file or webpage) as long as the data is structured the
+#            same. This happens when the data is split by fund or period for
+#            example.
+#
+# Good luck!
+
+title: Slovenia's ERDF, ESF, and Cohesion Fund data 2014-2020
+
+description: 
+language: sl
+
+sources:
+  - name: EU Skladi
+    web:  http://www.eu-skladi.si/
+
+scraper_required: false
+
+contributors:
+  - Bela Seeger (bela.seeger@okfn.de)
+
+resources:
+
+  # 2. Describe each data-resource:
+  # ----------------------------
+  #
+  # title: use this field to distinguish the resources if there's more than one
+  #
+  # url: the link to the file if possible. If the data needs to be scraped,
+  #      enter the url of the webpage and set scraper_required to true.
+  #
+  # publication_date: the date that the data was published or updated
+  #
+  # constant_fields: any field from fiscal.fields.yaml that has a fixed value
+  #                  (i.e. is not specified row by row).
+  #
+  # schema: please describe each column in the data. Don't change the original
+  #         columns names even in Cyrillic. For translations, Google will do.
+  #         Refer to fiscal.fields.yaml to discover what fiscal field map to
+  #         the columns that you found. If you can't tell, enter a short comment
+  #         instead. Leave the mapping blank if the column can be dropped.
+  #
+  # Good luck!
+
+  - title: Excel file for Slovenia's ERDF, ESF, and Cohesion fund 2014-2020
+
+    url: http://www.eu-skladi.si/sl/dokumenti/seznam-projektov/seznam-projektov-28-6-2016.xls
+
+    publication_date: 2016-09-16
+
+    constant_fields:
+      fund_name: ESRR, KS, ESS
+      offical_period: 2014-2020
+      currency_code: EUR
+
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields: 
+
+        - name: Ime upravičenca/Beneficiary name
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: Ime operacije/Operation name
+          translates_to: Operation name
+          maps_to: operation_name
+
+        - name: Opis operacije/Operation description
+          translates_to: Operation description
+          maps_to: operation_description
+                  
+        - name: Prednostna os
+          translates_to: Priority Axis
+          maps_to: priority_axis
+          
+        - name: Povzetek operacije/Operation summary
+          translates_to: Operation summary
+          maps_to: operation_summary    
+          
+        - name: Leto dodelitve sredstev/Year allocation
+          translates_to: Year allocation
+          maps_to: year_of_allocation          
+          
+        - name: Datum začetka/Operation start year
+          translates_to: Operation start year
+          maps_to: operation_start_year         
+
+        - name: Datum zaključka del/Operation end date
+          translates_to: Operation end date
+          maps_to: operation_end_date    
+          
+        - name: Skupni upravičeni izdatki/Total eligible expenditure allocated to the operation
+          translates_to: Total eligible expenditure allocated to the operation
+          maps_to: total_eligible_expenditure          
+          
+        - name: Odstotek sofinanciranja/union co-financing rate, as per priority axis
+          translates_to: union co-financing rate, as per priority axis
+          maps_to: eu_co_financing_rate                 
+          
+        - name: Naslov upravičenca/Beneficiary address
+          translates_to: Beneficiary address
+          maps_to: beneficiary_address
+          
+        - name: Občina/Municipality
+          translates_to: Municipality
+          maps_to: municipality      
+          
+        - name: Sklad/Fund
+          translates_to: Fund
+          maps_to: fund_name            
+          
+        - name: Regija/Region
+          translates_to: Region
+          maps_to: region      
+          
+        - name: Instrument/Instrument
+          translates_to: Instrument
+          maps_to: instrument 
+          
+        - name: Država/Country
+          translates_to: Country
+          maps_to: country      
+          
+        - name: Stanje na dan/Date of last update of the list of operations
+          translates_to: Date of last update of the list of operations
+          maps_to: date_of_last_update_of_list_of_operations
