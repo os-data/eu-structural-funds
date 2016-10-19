@@ -140,10 +140,9 @@
       "pattern": "(\\w{2})"
     },
     "extension": {
-      "type": "string",
       "enum": [
         ".xls",
-        ".xls",
+        ".xlsx",
         ".csv",
         ".pdf"
       ]
