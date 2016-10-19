@@ -39,9 +39,6 @@ resources:
 
         - name: Status
 
-
-        - # repeat for each column you find in the data
-
   - title: List of Czech ESIF operations 2014-2020
     url: http://www.dotaceeu.cz/getmedia/413c34d0-71c3-4c0a-b0f9-191c88994d1d/benefi8_22.xlsx?ext=.xlsx
     publication_date: 2016-09-08
@@ -78,4 +75,3 @@ resources:
         - name: Příspěvek EU
         - translates_to: EU amount
         
-  - # repeat for each data file in this source
