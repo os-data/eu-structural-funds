@@ -41,21 +41,21 @@ resources:
 
         - name: wartość projektu
           translates_to: The value of the project [PLN]
-          maps_to: 
+          maps_to: total_amount
 
         - name: dofinansowanie z UE
           translates_to: Funding from the EU [PLN]
-          maps_to: eu_funding
+          maps_to: eu_cofinancing_amount
 
         - name: Multimedia
           translates_to: Multimedia
-          maps_to: multimedia
+          maps_to: # Loic: no website for now, maybe in the future
 
         - name: Dziedzina
           translates_to: field
-          maps_to: priority_axis
+          maps_to: # The priority axis is missing but should be added in the future
 
         - name: Czy projekt jest realizowany na obszarze wiêkszym ni¿ jedna jednostka administracyjna?
           translates_to: Is the project being implemented on an area of more than one administrative unit?
-          maps_to: multiple_administrative_units
+          maps_to: # Loic: this really looks like a corner case
     
