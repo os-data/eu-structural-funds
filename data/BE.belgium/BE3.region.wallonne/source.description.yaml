@@ -1,0 +1,90 @@
+
+title: Region Wallonne ESF data 2014-2020
+
+description:
+language: FR / EN
+
+sources:
+  - name: Region Wallonne ESF data 2014-2020
+    web:  http://www.fse.be/
+
+scraper_required: false
+
+contributors:
+  - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
+
+resources:
+
+
+
+  - title: Region Wallonne ESF data 2014-2020
+
+    path: C:\Users\Michael\Documents\GitHub\eu-structural-funds\data\BE.belgium\BE3.region.wallonne\Liste_beneficiaires_-_final_-_13avril2016.xlsx
+
+    publication_date: 2016-04-13
+
+    constant_fields:
+      fund_name: ESF
+      offical_period: 2014-2020
+      currency_code: EUR
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: CODE IDENTIFIANT / LOGIN CODE
+          translates_to: Login CODE
+
+        - name: PROJET-PLAN D'ACTION / PROJECT-ACTION PLAN
+          translates_to: Action plan (what form of action)
+
+        - name: AXE /  AXIS
+          translates_to: Axis (number)
+          note: unclear what it refers to
+
+        - name: MESURE / MEASURE
+          translates_to: Measure (number of measure that the project is filed to)
+
+        - name: CATEGORIE D'INTERVENTION/CATEGORY OF INTERVENTION
+          translates_to: Intervention CATEGORY
+          maps_to: theme_code
+
+        - name: NOM DE L'OPERATEUR / BENEFICIARY NAME
+          translates_to: beneficiary
+          maps_to: beneficiary_name
+
+        - name: NOM DU PROJET / PROJECT NAME
+          translates_to: project title
+          maps_to: project_name
+
+        - name: ZONE / AREA
+          translates_to: Area (either transition zone or development zone)
+          maps_to: beneficiary_url
+
+        - name: CODE POSTAL / POSTCODE
+          translates_to: Postal CODE
+          maps_to: beneficiary_postal_code
+
+        - name: PAYS/COUNTRY
+          translates_to: COUNTRY
+          maps_to: beneficiary_country_code
+
+        - name: DATE DE DEBUT /    START DATE
+          translates_to: project's starting date
+          maps_to: starting_date
+
+        - name: DATE DE FIN /     END DATE
+          translates_to: completion date
+          maps_to: completion_date
+
+        - name: TOTAL FSE / ESF
+          translates_to: total cost of project
+          maps_to: total_amount
+
+        - name: TOTAL DES DEPENSES ELIGIBLES / TOTAL ELIGIBLE EXPENDITURE
+          translates_to: eligible amount
+          maps_to: total_amount_eligible
+
+        - name: TAUX DE COFINANCEMENT EU /  EU CO-FINANCING RATE
+          translates_to: EU cofinancing amount
+          maps_to: eu_cofinancing_amount
