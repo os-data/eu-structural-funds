@@ -383,9 +383,9 @@ def validate_descriptions(ctx):
     level = {'broken': ERROR, 'loaded': WARN, 'valid': SUCCESS}
     valid_keys = str(get_fiscal_fields()).replace('[', '[None, ')
 
-    for i, source in enumerate(ctx.obj['sources']):
+    for source in ctx.obj['sources']:
         color = level[source.validation_status]
-        echo('\n{} - {}\n'.format(i + 1, source.id))
+        echo('\n{}\n'.format(join('data', source.id, SOURCE_FILE)))
         messages = []
 
         if source.validation_status == 'broken':
