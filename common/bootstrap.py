@@ -17,29 +17,24 @@
     placeholder if required. The module never overwrites existing files. The
     process will fail if the description file is ambiguous.
 
-    Usages
-    ------
+    Usage
+    -----
 
-    python3 -m common.bootstrap list [--validation]
-    python3 -m common.bootstrap validate
-    python3 -m common.bootstrap update
-    python3 -m common.bootstrap update AT.austria/AT11.burgenland
-    python3 -m common.bootstrap status [--pipeline|--description] AT.austria
-    python3 -m common.bootstrap status [--table]
-
-    This script only supports python3.
+    This module supports python3. For help: python3 -m common.bootstrap.
 
 """
 
 import re
 import os
+from collections import Counter
+from copy import deepcopy
+
 import yaml
-import json
 
 from shutil import copyfile
-from click import argument, command, group, secho, echo
-from click import option
-from petl import fromdicts, look, sort
+from click import command, secho, echo, option, pass_context
+from click import group
+from petl import fromdicts, look, sort, cut
 from slugify import slugify
 from jsonschema import Draft4Validator
 from sqlalchemy.orm import sessionmaker
@@ -48,7 +43,6 @@ from yaml.scanner import ScannerError
 from os.path import join, exists, splitext
 from datetime import datetime
 
-from common.metrics import get_latest_stats
 from common.metrics import Snapshot
 from common.config import (
     PIPELINE_FILE,
@@ -64,6 +58,8 @@ from common.config import (
     DESCRIPTION_SCHEMA_FILE,
     DB_ENGINE
 )
+from common.utilities import get_fiscal_fields
+
 
 ERROR = dict(fg='red', bold=True)
 WARN = dict(fg='yellow')
@@ -72,29 +68,10 @@ COUNTRY = re.compile(r'/data/([A-Z]{2})\.')
 NUTS = re.compile(r'([A-Z\d]{2,}\.[a-z]+)')
 
 
-def collect_sources(pipeline_id=None):
-    """Return a sorted list of Source objects."""
-
-    now_ = datetime.now()
-    session = sessionmaker(bind=DB_ENGINE)()
-
-    if pipeline_id:
-        return [Source(pipeline_id, timestamp=now_, db_session=session)]
-    else:
-        sources = []
-
-        for folder, _, filenames in os.walk(DATA_DIR):
-            if SOURCE_FILE in filenames:
-                pipeline_id = folder.replace(DATA_DIR + '/', '')
-                source = Source(pipeline_id,
-                                timestamp=now_,
-                                db_session=session)
-                sources.append(source)
-        return sorted(sources)
-
-
 class Source(object):
     """This class represents a data source."""
+
+    db_keys = Snapshot.__table__.columns.keys()
 
     def __init__(self, pipeline_id, timestamp=None, db_session=None):
         self.timestamp = timestamp
@@ -203,21 +180,12 @@ class Source(object):
         return join(PROCESSORS_DIR, self.country_code, filename)
 
     @property
-    def color(self):
-        """The ANSI color of the validation status."""
-        return {
-            'broken': ERROR,
-            'loaded': WARN,
-            'valid': SUCCESS
-        }[self.validation_status]
-
-    @property
     def has_scraper(self):
         """Whether the scraper module exists."""
         return exists(self.scraper_path)
 
     @property
-    def updated(self):
+    def updated_on(self):
         """Return the last bootstrap timestamp."""
         return (self.db_session.query(Snapshot, Snapshot.timestamp,
                                       Snapshot.pipeline_id == self.id)
@@ -230,33 +198,23 @@ class Source(object):
     def dump_to_db(self):
         """Save the current state to the database."""
 
-        update = Snapshot(
-            pipeline_id=self.id,
-            timestamp=self.timestamp,
-            validation_status=self.validation_status,
-            pipeline_status=self.pipeline_status,
-            scraper_required=self.scraper_required,
-            resource_type=self.resource_type,
-            extension=self.extension,
-            has_scraper=self.has_scraper,
-            country_code=self.country_code,
-            nuts_code=self.nuts_code,
-            slug=self.slug,
-            nb_validation_errors=len(self.validation_errors)
-        )
-        self.db_session.add(update)
+        row = deepcopy(dict(self.state))
+        del row['id']
+        row.update(pipeline_id=self.id)
+        self.db_session.add(Snapshot(**row))
         self.db_session.commit()
 
-    def echo(self):
-        """Echo the current state."""
+    @property
+    def nb_validation_errors(self):
+        return len(self.validation_errors)
 
-        echo('pipeline_status = {}'.format(self.pipeline_status))
-        echo('validation_status = {}'.format(self.validation_status))
-        echo('nb_validation_errors = {}'.format(len(self.validation_errors)))
-        echo('resource_type = {}'.format(self.resource_type))
-        echo('extension = {}'.format(self.extension))
-        echo('scraper_required = {}'.format(self.scraper_required))
-        echo('has_scraper = {}'.format(self.has_scraper))
+    @property
+    def state(self):
+        for key in self.db_keys:
+            if key == 'pipeline_id':
+                yield key, self.id
+            else:
+                yield key, getattr(self, key)
 
     def _read_description(self):
         try:
@@ -296,9 +254,9 @@ class Source(object):
             return self._scraper_module()
         elif self.resource_type == 'path':
             return LOCAL_PATH_EXTRACTOR
-        elif self.extension in ('xls', 'xlsx'):
+        elif self.extension in ('.xls', '.xlsx'):
             return REMOTE_EXCEL_EXTRACTOR
-        elif self.resource_type == 'csv':
+        elif self.resource_type == '.csv':
             return REMOTE_CSV_EXTRACTOR
         else:
             return
@@ -312,53 +270,71 @@ class Source(object):
         return self.id < other.id
 
 
-@command('show')
-@argument('pipeline_id', required=True)
-@option('-d', '--description', is_flag=True, help='Show description file.')
-def show_file(pipeline_id, description):
-    """Show the pipeline (or description) file."""
-
-    source = collect_sources(pipeline_id).pop()
-
-    if description:
-        echo(json.dumps(source.description, indent=4))
-    else:
-        echo(json.dumps(source.pipeline, indent=4))
-
-
 @command('status')
-@argument('pipeline_id', required=False)
-@option('-t', '--table', is_flag=True, help='Verbose table format.')
-def report_status(pipeline_id, table):
-    """Show the current bootstrap status."""
+@pass_context
+def report_pipeline_status(ctx):
+    """Report the current status of the pipeline(s)."""
 
-    if pipeline_id:
-        source = collect_sources(pipeline_id).pop()
-        secho('Updated :{}'.format(source.updated), **SUCCESS)
-        secho('Path: {}\n'.format(source.folder), **SUCCESS)
-        source.echo()
+    for source in ctx.obj['sources']:
+        secho('\nID: {}'.format(source.id), **SUCCESS)
+        secho('Updated :{}'.format(source.updated_on), **SUCCESS)
+        for contributor in source.description.get('contributors', []):
+            secho('Author: {}'.format(contributor), **SUCCESS)
 
-    else:
-        timestamp, stats, sums = get_latest_stats()
-        secho('Last update: {}'.format(timestamp), **SUCCESS)
-        secho('Total sources: {}\n'.format(stats.count()), **SUCCESS)
+        echo()
+        for key in source.db_keys:
+            if key not in ('pipeline_id', 'id', 'timestamp'):
+                echo('{} = {}'.format(key, getattr(source, key)))
 
-        if table:
-            rows = [dict(zip(row.keys(), row)) for row in stats.all()]
-            sorted_rows = sort(fromdicts(rows), key='pipeline_id')
-            echo(look(sorted_rows, limit=None))
-        else:
-            for key, value in sums.items():
-                args = key, value, value / stats.count()
-                echo('{} = {} ({:.0%})'.format(*args))
+
+@command('stats')
+@pass_context
+def compute_stats(ctx):
+    """Compute bootstrap current stats."""
+
+    rows = [dict(source.state) for source in ctx.obj['sources']]
+    message = '\nNumber of pipelines = {}\n'
+    secho(message.format(len(rows)), **SUCCESS)
+
+    for key in Source.db_keys:
+        if key not in ('timestamp', 'id', 'pipeline_id'):
+            if key == 'nb_validation_errors':
+                stat = sum([row[key] for row in rows])
+            elif key in ('nuts_code', 'country_code'):
+                stat = len({row[key] for row in rows})
+            else:
+                stat = dict(Counter([row[key] for row in rows]))
+            echo('{}: {}'.format(key, stat))
+
+
+@command('table')
+@pass_context
+def print_table(ctx):
+    """Output a list of pipelines as table."""
+
+    rows = [dict(source.state) for source in ctx.obj['sources']]
+    message = '\nNumber of pipelines = {}\n'
+    secho(message.format(len(rows)), **SUCCESS)
+
+    subset = [
+        'id',
+        'pipeline_status',
+        'validation_status',
+        'nb_validation_errors',
+        'scraper_required',
+        'resource_type',
+        'extension'
+    ]
+    sorted_rows = sort(cut(fromdicts(rows), *subset), key='id')
+    echo(look(sorted_rows, limit=None))
 
 
 @command('update')
-@argument('pipeline_id', required=False)
-def bootstrap_pipelines(pipeline_id=None):
-    """Initialize pipelines where possible."""
+@pass_context
+def bootstrap_pipelines(ctx):
+    """Bootstrap pipelines where possible."""
 
-    for source in collect_sources(pipeline_id=pipeline_id):
+    for source in ctx.obj['sources']:
         if source.description:
             if not source.pipeline:
                 source.bootstrap()
@@ -376,63 +352,100 @@ def bootstrap_pipelines(pipeline_id=None):
 
 
 @command(name='list')
-@option('-v', '--validation', is_flag=True, help='List by validation status.')
-def list_pipelines(validation):
+@option('--validation', is_flag=True, help='List by validation status.')
+@pass_context
+def list_pipelines(ctx, validation):
     """List sources by pipeline status."""
 
-    sources = collect_sources()
+    level = {
+        True: {'broken': ERROR, 'loaded': WARN, 'valid': SUCCESS},
+        False: {'up': SUCCESS, 'down': ERROR}
+    }
 
-    if validation:
-        for source in sources:
-            args = source.id, source.validation_status
-            secho('{}: {}'.format(*args), **source.color)
-    else:
-        for source in sources:
-            color = SUCCESS if source.pipeline else ERROR
-            message = '{}: {}'.format(source.id, source.pipeline_status)
-            secho(message, **color)
+    sources = ctx.obj['sources']
+    for source in sources:
+        if validation:
+            status = source.validation_status
+        else:
+            status = source.pipeline_status
+        color = level[bool(validation)][status]
+        secho('{}: {}'.format(source.id, status), **color)
 
     message = '\nCollected {} description files'
     echo(message.format(len(sources)))
 
 
 @command(name='validate')
-def validate_descriptions():
-    """List the bugs in the source descriptions.
+@pass_context
+def validate_descriptions(ctx):
+    """Validate source description files."""
 
-    Description files are validated against a custom JSONSchema validation
-    because the specs are somewhat different from a pure JSONTableSchema.
-    The conversion happens later in the pipeline.
-    """
+    level = {'broken': ERROR, 'loaded': WARN, 'valid': SUCCESS}
+    valid_keys = str(get_fiscal_fields()).replace('[', '[None, ')
 
-    line = '-' * 80
-    separator = '\n{}\n{:^80}\n'
-
-    for source in collect_sources():
-        secho(separator.format(line, source.id), **source.color)
+    for i, source in enumerate(ctx.obj['sources']):
+        color = level[source.validation_status]
+        echo('\n{} - {}\n'.format(i + 1, source.id))
+        messages = []
 
         if source.validation_status == 'broken':
-            message = '{}'.format(source.traceback)
-        elif source.validation_status == 'loaded':
-            errors = map(lambda e: e.message, source.validation_errors)
-            message = '\n'.join(errors)
-        else:
-            message = 'Valid source description.'
+            messages.append('{}'.format(source.traceback))
 
-        secho(message, **source.color)
+        elif source.validation_status == 'loaded':
+            for e in source.validation_errors:
+                error = e.message.replace(valid_keys, 'fiscal fields')
+                messages.append(error)
+        else:
+            messages.append('Valid :-)')
+
+        message = '{}'.format('\n'.join(messages))
+        secho(message, **color)
+
+
+def collect_sources(select, **kwargs):
+    """Return a sorted list of sources."""
+
+    sources = []
+    for folder, _, filenames in os.walk(DATA_DIR):
+        if SOURCE_FILE in filenames:
+            subfolder = folder.replace(DATA_DIR + '/', '')
+            source = Source(subfolder, **kwargs)
+            sources.append(source)
+
+    if not select:
+        return sources
+
+    subset = set()
+    for key, value in select:
+        for source in sources:
+            if getattr(source, key) == value:
+                subset.add(source)
+
+    return sorted(subset)
 
 
 @group()
-def main():
-    pass
+@option(
+    '--select', type=(str, str), multiple=True,
+    help='KEY VALUE selector (Source class attributes).'
+)
+@pass_context
+def main(ctx, select):
+    """Bootstrap command tools."""
+    ctx.obj['sources'] = collect_sources(
+        select,
+        timestamp=datetime.now(),
+        db_session=sessionmaker(bind=DB_ENGINE)()
+    )
 
 
 main.add_command(list_pipelines)
 main.add_command(bootstrap_pipelines)
 main.add_command(validate_descriptions)
-main.add_command(report_status)
-main.add_command(show_file)
+main.add_command(report_pipeline_status)
+main.add_command(compute_stats)
+main.add_command(print_table)
 
 
 if __name__ == '__main__':
-    main()
+    main(obj={})
