@@ -2,7 +2,8 @@ title: ERDF data for Vorarlberg (AT) 2007-2013
 
 description: Vorarlberg is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called "Stärkung der Regionalen Wettbewerbsfähigkeit und Beschäftigung Vorarlberg 2007-2013". The dataset at hand describes the funding distributed through said program.
 
-sources: https://www.Vorarlberg.gv.at/
+sources: 
+  - name: https://www.Vorarlberg.gv.at/
     web:  https://www.Vorarlberg.gv.at/
 
   - name: Bundeskanzleramt Österreich
@@ -11,62 +12,57 @@ sources: https://www.Vorarlberg.gv.at/
   - name: Österreichische Raumordnungskonferenz / Austrian Conference on Spatial Planning
     web: http://www.oerok.gv.at/eu-regionalpolitik/eu-strukturfonds-in-oesterreich-2007-2013.html
 
-image: 
-
 contributors:
   - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
 resources:
+  - title: ERDF data Vorarlberg (AT) (2007-2013)
+    url: https://www.Vorarlberg.gv.at/fileadmin/themen/Vorarlberg-europa/eu-regionalfoerderung-fuer-Vorarlberg/downloads/Regionale_Wettbewerbsf_higkeit/2014/Liste_der_Beguenstigten_April_14.pdf
+    path: 
 
+    publication_date: "2015-08-25"
+    publication_version: 
+    start_date: "2007-01-01"
+    end_date: "2016-01-11"
 
-  title: ERDF data Vorarlberg (AT) (2007-2013)
-  url: https://www.Vorarlberg.gv.at/fileadmin/themen/Vorarlberg-europa/eu-regionalfoerderung-fuer-Vorarlberg/downloads/Regionale_Wettbewerbsf_higkeit/2014/Liste_der_Beguenstigten_April_14.pdf
-  path: 
+    periods:
+      2007-2013: true
+      2014-2020: false
 
-  publication_date: "2015-08-25"
-  publication_version: 
-  start_date: "2007-01-01"
-  end_date: "2016-01-11"
+    extraction_mode:
+      user_interface: false
+      download_link: true
+      pdf_scraper: false
+      web_scraper: false
 
-  periods:
-    2007-2013: true
-    2014-2020: false
+    constants:
+      currency: EUR
+      certifying_authority: 
 
-  extraction_mode:
-    user_interface: false
-    download_link: true
-    pdf_scraper: false
-    web_scraper: false
+      # We need a complete list of possible constants here
 
-  constants:
-    currency: EUR
-    certifying_authority: 
+    schema:
+      fields:
+        - name: Begünstigter
+          translation: Beneficiary
+          type: string
+          missingValue: 
+          description: 
 
-    # We need a complete list of possible constants here
+        - name: Bezeichnung des Vorhabens
+          translation: name of the operation
+          type: string
+          missingValue: 
+          description: 
 
-  schema:
-    fields:
-      - name: Begünstigte/r
-        translation: Beneficiary
-        type: string
-        missingValue: 
-        description: 
+        - name: öffentliche Beteiligung (EU+nationale Kofinanzierung)*
+          translation: allocated pulic funding (EU+national cofinancing)* (in Euro)
+          type: number
+          missingValue: 
+          description: 
 
-     - name: Bezeichnung des Vorhabens
-        translation: name of the operation
-        type: string
-        missingValue: 
-        description: 
-
-
-      - name: öffentliche Beteiligung (EU+nationale Kofinanzierung)*
-        translation: allocated pulic funding (EU+national cofinancing)* (in Euro)
-        type: number
-        missingValue: 
-        description: 
-
-      - name: Status G = genehmigt, A = ausbezahlt
-        translation: G = commited, A = paid out
-        type: string
-        missingValue: 
-        description: 
+        - name: Status G = genehmigt, A = ausbezahlt
+          translation: G = commited, A = paid out
+          type: string
+          missingValue: 
+          description: 

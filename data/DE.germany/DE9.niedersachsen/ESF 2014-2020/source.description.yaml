@@ -1,81 +1,28 @@
-# I am the latest version: use me.
-
-# 1. Describe the source metadata:
-# -----------------------------
-#
-# title: a short description of your data source.
-#
-# language: the 2-digit language code of the document (e.g. en, fr, es...)
-#
-# sources: only meant as documention: add as many as you want (urls to
-#          the actual data-files are in the resources section).
-#
-# scraper_required: if a web or PDF scraper is needed
-#
-# contributors: put yourself down (email and website are not obligatory).
-#               Follow the simple formatting convention.
-#
-# resources: a single description file like this can describe more than one
-#            resource (file or webpage) as long as the data is structured the
-#            same. This happens when the data is split by fund or period for
-#            example.
-#
-# Good luck!
-
 title: ESF Data for Niedersachsen (2014-2020)
 
 description: The beneficiary list of the ESF programme for Niedersachsen.
 language: de
 
 sources:
-
   - name: ESF Niedersachsen (2014-2020)
     web: http://www.stk.niedersachsen.de/startseite/themen/regionale_landesentwicklung_und_eufoerderung/eufoerderung/efre_esf/efre-und-esf-124140.html
 
 scraper_required: false
 
-
-
-
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
-
-  # 2. Describe each data-resource:
-  # ----------------------------
-  #
-  # title: use this field to distinguish the resources if there's more than one
-  #
-  # url: the link to the file if possible. If the data needs to be scraped,
-  #      enter the url of the webpage and set scraper_required to true.
-  #
-  # publication_date: the date that the data was published or updated
-  #
-  # constant_fields: any field from fiscal.fields.yaml that has a fixed value
-  #                  (i.e. is not specified row by row).
-  #
-  # schema: please describe each column in the data. Don't change the original
-  #         columns names even in Cyrillic. For translations, Google will do.
-  #         Refer to fiscal.fields.yaml to discover what fiscal field map to
-  #         the columns that you found. If you can't tell, enter a short comment
-  #         instead. Leave the mapping blank if the column can be dropped.
-  #
-  # Good luck!
-
-
   - title: ESF in Niedersachsen 2014-2020
 
     url: http://www.stk.niedersachsen.de/download/108094
 
-    publication_date: 2016-03-31
+    publication_date: 31-03-2016
 
     constant_fields:
       fund_name: ESF
       offical_period: 2014-2020
       currency_code: EUR
-
-      # any other field from fiscal.fields.yaml that is constant
 
     schema:
       fields:
@@ -111,7 +58,7 @@ resources:
           translates_to: Category of region
           maps_to: beneficiary_nuts_region
 
-        -  name: PLZ
+        - name: PLZ
           translates_to: operation postcode
           maps_to: beneficiary_postal_code
 
@@ -122,15 +69,6 @@ resources:
         - name: Landkreis
           translates_to: county
           
-
         - name: Interventionsbereich
           translates_to: Intervention field
           maps_to: theme_code
-
-
-
-
-
-
-
-        - # repeat for each column you find in the data
