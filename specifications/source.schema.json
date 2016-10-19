@@ -54,10 +54,54 @@
                       "type": "string"
                     },
                     "translates_to": {
-                      "type": "string"
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "maps_to": {
-                      "type": "string"
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "enum": [
+                        null,
+                        "funding_period_number",
+                        "funding_period",
+                        "cci_program_code",
+                        "cci_program_title",
+                        "project_id",
+                        "project_name",
+                        "beneficiary_id",
+                        "beneficiary_name",
+                        "beneficiary_postal_code",
+                        "beneficiary_address",
+                        "beneficiary_country_code",
+                        "beneficiary_country",
+                        "beneficiary_nuts_code",
+                        "beneficiary_nuts_region",
+                        "beneficiary_city",
+                        "fund_acronym",
+                        "fund_name",
+                        "theme_code",
+                        "theme_name",
+                        "priority_number",
+                        "priority_label",
+                        "starting_date",
+                        "completion_date",
+                        "approval_date",
+                        "first_payment_date",
+                        "final_payment_date",
+                        "total_amount",
+                        "total_amount_applied",
+                        "total_amount_eligible",
+                        "member_state_amount",
+                        "third_party_amount",
+                        "eu_cofinancing_amount",
+                        "european_investment_bank_amount",
+                        "beneficiary_url",
+                        "project_description"
+                      ]
                     }
                   },
                   "required": [
@@ -83,10 +127,26 @@
       }
     },
     "description": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "scraper_required": {
       "type": "boolean"
+    },
+    "language": {
+      "type": "string",
+      "pattern": "(\\w{2})"
+    },
+    "extension": {
+      "type": "string",
+      "enum": [
+        ".xls",
+        ".xls",
+        ".csv",
+        ".pdf"
+      ]
     },
     "language": {
       "type": "string",
@@ -99,6 +159,7 @@
     "sources",
     "resources",
     "scraper_required",
-    "language"
+    "language",
+    "description"
   ]
 }
