@@ -1,3 +1,4 @@
+petl
 PyYaml
 datapackage-pipelines
 arrow
