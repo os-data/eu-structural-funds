@@ -1,81 +1,24 @@
-# I am the latest version: use me.
-
-# 1. Describe the source metadata:
-# -----------------------------
-#
-# title: a short description of your data source.
-#
-# language: the 2-digit language code of the document (e.g. en, fr, es...)
-#
-# sources: only meant as documention: add as many as you want (urls to
-#          the actual data-files are in the resources section).
-#
-# scraper_required: if a web or PDF scraper is needed
-#
-# contributors: put yourself down (email and website are not obligatory).
-#               Follow the simple formatting convention.
-#
-# resources: a single description file like this can describe more than one
-#            resource (file or webpage) as long as the data is structured the
-#            same. This happens when the data is split by fund or period for
-#            example.
-#
-# Good luck!
-
 title: EFRE and ESF Data for Nordrhein-Westfalen (2007-2020)
 
 description: The beneficiary list of the ERDF and ESF programme for Nordrhein-Westfalen.
 language: de
 
+scraper_required: true
+
 sources:
   - name: EFRE Nordrhein-Westfalen (2007-2013)
     web: http://www.ziel2.nrw.de/1_NRW-EU_Ziel_2_Programm_2007-2013/3_Ergebnisse/Verzeichnis_Beguenstigte_2014_12_31.pdf
-
-scraper_required: true
-
   - name: EFRE Nordrhein-Westfalen (2014-2020)
     web: https://www.efre.nrw.de/fileadmin/16-01-22_DN_Liste_der_Vorhaben_20151231.xlsx
-
-scraper_required: false
-
   - name: ESF Nordrhein-Westfalen 2007-2013
     web:  https://www.mais.nrw/sites/default/files/asset/document/esf_operationelles_programm_beguenstigtenverzeichnis_barr.pdf
-
-scraper_required: true
-
   - name: ESF Nordrhein-Westfalen 2014-2020
     web: http://www.arbeit.nrw.de/esf/foerderphase_2014_bis_2020/oeffentlichkeitsarbeit/download/docs/liste_der_vorhaben.xlsx
-
-scraper_required: false
-
-
 
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
-
-  # 2. Describe each data-resource:
-  # ----------------------------
-  #
-  # title: use this field to distinguish the resources if there's more than one
-  #
-  # url: the link to the file if possible. If the data needs to be scraped,
-  #      enter the url of the webpage and set scraper_required to true.
-  #
-  # publication_date: the date that the data was published or updated
-  #
-  # constant_fields: any field from fiscal.fields.yaml that has a fixed value
-  #                  (i.e. is not specified row by row).
-  #
-  # schema: please describe each column in the data. Don't change the original
-  #         columns names even in Cyrillic. For translations, Google will do.
-  #         Refer to fiscal.fields.yaml to discover what fiscal field map to
-  #         the columns that you found. If you can't tell, enter a short comment
-  #         instead. Leave the mapping blank if the column can be dropped.
-  #
-  # Good luck!
-
   - title: ERDF Nordrhein-Westfalen 2007-2013
 
     url: http://www.ziel2.nrw.de/1_NRW-EU_Ziel_2_Programm_2007-2013/3_Ergebnisse/Verzeichnis_Beguenstigte_2014_12_31.pdf
@@ -85,8 +28,6 @@ resources:
       fund_name: ERDF
       offical_period: 2007-2013
       currency_code: EUR
-
-      # any other field from fiscal.fields.yaml that is constant
 
     schema:
       fields:
@@ -110,9 +51,6 @@ resources:
           translates_to: Paid amount at the end of the project
           maps_to: total_eligible_expenditure
 
-        - # repeat for each column you find in the data
-
-
   - title: ERDF in Nordrhein-Westfalen 2014-2020
 
     url: https://www.efre.nrw.de/fileadmin/16-01-22_DN_Liste_der_Vorhaben_20151231.xlsx
@@ -123,8 +61,6 @@ resources:
       fund_name: ERDF
       offical_period: 2014-2020
       currency_code: EUR
-
-      # any other field from fiscal.fields.yaml that is constant
 
     schema:
       fields:
@@ -178,8 +114,6 @@ resources:
       fund_name: ESF
       offical_period: 2007-2013
       currency_code: EUR
-
-      # any other field from fiscal.fields.yaml that is constant
 
     schema:
       fields:
@@ -255,8 +189,3 @@ resources:
         - name: Bezeichnung der Interventionskategorie für das Vorhaben
           translates_to: EU intervention category (number) which declares under which category the company applied for funds
           maps_to: theme_code
-
-
-
-
-        - # repeat for each column you find in the data
