@@ -1,0 +1,83 @@
+
+title: Finland ERDF data 2014-2020
+
+description:
+language: FI
+
+sources:
+  - name: Finland ERDF data 2014-2020
+    web:  https://www.rakennerahastot.fi/rahoitetut-hankkeet#.V1A2dJN95E4
+
+scraper_required: false
+
+contributors:
+  - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
+
+resources:
+
+
+
+  - title: Finland ERDF data 2014-2020
+
+    path: C:\Users\Michael\Documents\GitHub\eu-structural-funds\data\FI.finland\ERDF 2014-2020\projektilista-csv-final.csv
+
+    publication_date: 2014-11-1
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2014-2020
+      currency_code: EUR
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+
+        - name: Koodi
+          translates_to: Code
+          maps_to: cci_program_code
+
+        - name: Rahasto
+          translates_to: Fund
+          maps_to: fund_acronym
+
+        - name: Hankkeen nimi
+          translates_to: project title
+          maps_to: project_name
+
+        - name: Tl
+          translates_to: some number defining the project either 1 or 2
+
+        - name: Viranomainen
+          translates_to: Authority / beneficiary
+          maps_to: beneficiary_name
+
+        - name: Tila
+          translates_to: Status of project
+
+        - name: Aloituspvm
+          translates_to: project's starting date
+          maps_to: starting_date
+
+        - name: Päättymispvm
+          translates_to: project's completion date
+          maps_to: completion_date
+
+        - name: Toteuttajan nimi
+          translates_to: names of the executor
+
+        - name: Myönnetty EU- ja valtion rahoitus
+          translates_to: Granted state funding in the EU
+          maps_to: total_amount_eligible
+
+        - name: Toteutunut EU- ja valtion rahoitus
+          translates_to: Actual state funding in the EU
+          maps_to: eu_cofinancing_amount
+
+        - name: Suunniteltu julkinen rahoitus yhteensä
+          translates_to: amount of public funding
+          maps_to: member_state_amount
+
+        - name: Toteutunut julki
+          translates_to: total cost of project
+          maps_to: total_amount
