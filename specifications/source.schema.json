@@ -39,8 +39,8 @@
             "type": "string"
           },
           "publication_date": {
-            "type": "string",
-            "format": "date-time"
+            "type": ["string", "null"],
+            "format": "(\\d{2}-(\\d{2})-(\\d{4}))"
           },
           "schema": {
             "type": "object",
