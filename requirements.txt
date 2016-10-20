@@ -4,7 +4,6 @@ datapackage-pipelines
 arrow
 xlrd
 python-slugify
-pytest
 tabulator
 requests
 datapackage
