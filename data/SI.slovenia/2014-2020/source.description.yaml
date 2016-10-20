@@ -17,15 +17,11 @@ resources:
 
     url: http://www.eu-skladi.si/sl/dokumenti/seznam-projektov/seznam-projektov-28-6-2016.xls
 
-    publication_date: 2016-09-16
+    publication_date: 16-09-2016
 
-    constant_fields:
-      fund_name: ESRR, KS, ESS
-      offical_period: 2014-2020
-      currency_code: EUR
-
-
-      # any other field from fiscal.fields.yaml that is constant
+    fund_name: ESRR, KS, ESS
+    offical_period: 2014-2020
+    currency_code: EUR
 
     schema:
       fields: 
