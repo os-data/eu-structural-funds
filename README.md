@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/os-data/eu-structural-funds.svg?branch=master)](https://travis-ci.org/os-data/eu-structural-funds
+[![Build Status](https://travis-ci.org/os-data/eu-structural-funds.svg?branch=master)](https://travis-ci.org/os-data/eu-structural-funds)
 
 [![Stories in Ready](https://badge.waffle.io/os-data/eu-structural-funds.png?label=ready&title=Ready)](https://waffle.io/os-data/eu-structural-funds)
 
