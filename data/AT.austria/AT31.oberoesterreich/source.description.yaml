@@ -12,7 +12,8 @@ sources:
   - name: Österreichische Raumordnungskonferenz / Austrian Conference on Spatial Planning
     web: http://www.oerok.gv.at/eu-regionalpolitik/eu-strukturfonds-in-oesterreich-2007-2013.html
 
-image: 
+scraper_required: true
+language: DE
 
 contributors:
   - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)

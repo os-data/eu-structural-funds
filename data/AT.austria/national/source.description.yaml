@@ -12,7 +12,8 @@ sources:
   - name: Österreichische Raumordnungskonferenz / Austrian Conference on Spatial Planning
     web: http://www.oerok.gv.at/eu-regionalpolitik/eu-strukturfonds-in-oesterreich-2007-2013.html
 
-image:
+scraper_required: true
+language: DE
 
 contributors:
   - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
@@ -22,7 +23,7 @@ resources:
     url: http://www.esf.at/esf/wp-content/uploads/ESF-List-of-Beneficiaries-Austria-2007-2008.pdf
     path:
 
-    publication_date: "lk2008-12-31"
+    publication_date: 31-12-2008
     publication_version: part 1/7
     start_date: "2007-01-01"
     end_date: "2008-12-31"
@@ -37,10 +38,8 @@ resources:
       pdf_scraper: false
       web_scraper: false
 
-    constants:
-      currency: EUR
-      certifying_authority: Bundesministerium für Arbeit, Soziales und Konsumentenschutz
-      # We need a complete list of possible constants here
+    currency: EUR
+    certifying_authority: Bundesministerium für Arbeit, Soziales und Konsumentenschutz
 
     schema:
       fields:
