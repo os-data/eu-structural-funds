@@ -107,3 +107,4 @@ resources:
 
         - name: EMAIL
           translates_to: email of person responsible for project
+          
