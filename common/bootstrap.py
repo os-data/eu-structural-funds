@@ -34,6 +34,7 @@ import yaml
 from shutil import copyfile
 from click import command, secho, echo, option, pass_context
 from click import group
+from jsonschema import FormatChecker
 from petl import fromdicts, look, sort, cut
 from slugify import slugify
 from jsonschema import Draft4Validator
@@ -140,6 +141,9 @@ class Source(object):
 
         if 'resources' in self.description:
             for resource in self.description['resources']:
+                if not resource:
+                    return
+
                 ambiguities = (
                     resource.get('path') and resource.get('url'),
                     not resource.get('path') and not resource.get('url')
@@ -242,7 +246,8 @@ class Source(object):
             with open(DESCRIPTION_SCHEMA_FILE) as stream:
                 description_schema = yaml.load(stream)
 
-            validator = Draft4Validator(description_schema)
+            validator = Draft4Validator(description_schema,
+                                        format_checker=FormatChecker(['date']))
             if validator.is_valid(self.description):
                 self.validation_status = 'valid'
 
