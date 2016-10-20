@@ -2,7 +2,8 @@ title: ERDF data for Salzburg (AT) 2007-2013
 
 description: Salzburg is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called "Stärkung der Regionalen Wettbewerbsfähigkeit und Beschäftigung Salzburg 2007-2013". The dataset at hand describes the funding distributed through said program.
 
-scraped_required: true
+scraper_required: true
+language: de
 
 sources: 
   - name: https://www.salzburg.gv.at/
@@ -23,7 +24,7 @@ resources:
     url: https://www.salzburg.gv.at/wirtschaft_/Documents/rwf-beguenstigte.pdf
     path: 
 
-    publication_date: "2015-08-25"
+    publication_date: 25-08-2015kjhkjhk
     publication_version: 
     start_date: "2007-01-01"
     end_date: "2015-12-31"
