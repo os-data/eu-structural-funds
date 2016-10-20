@@ -1,7 +1,5 @@
 """Test for the bootstrap module."""
 
-import sys
-print(sys.path)
 from common.bootstrap import collect_sources
 from pytest import mark
 

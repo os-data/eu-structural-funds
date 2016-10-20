@@ -1,7 +1,5 @@
 """This processor reshapes the data to match the fiscal schema."""
 
-import logging
-
 from datapackage_pipelines.wrapper import ingest
 from datapackage_pipelines.wrapper import spew
 from common.utilities import get_fiscal_fields
