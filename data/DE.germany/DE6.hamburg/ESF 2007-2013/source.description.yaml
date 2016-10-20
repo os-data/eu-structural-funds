@@ -3,7 +3,7 @@ title: ESF Data for Hamburg (2007-2013)
 description: The beneficiary list of the ESF programme for Hamburg
 language: de
 
-source:
+sources:
   - name: Hamburg 2007-2013
     web: http://www.esf-hamburg.de/
 
@@ -17,7 +17,7 @@ resources:
   - title: ESF Hamburg 2007-2013
 
     url: http://static.hamburg.de/fhh/behoerden/basfi/esf-hamburg.de/www.esf-hamburg.de/contentblob/1379164/data/verzeichnis-der-beguenstigten.pdf
-    publication_date: 2013-06-30
+    publication_date: 30-06-2013
 
     constant_fields:
       fund_name: ESF

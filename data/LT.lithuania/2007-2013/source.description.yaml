@@ -1,28 +1,3 @@
-# I am the latest version: use me.
-
-# 1. Describe the source metadata:
-# -----------------------------
-#
-# title: a short description of your data source.
-#
-# language: the 2-digit language code of the document (e.g. en, fr, es...)
-#
-# sources: only meant as documention: add as many as you want (urls to
-#          the actual data-files are in the resources section).
-#
-# scraper_required: if a web or PDF scraper is needed
-#
-# contributors: put yourself down (email and website are not obligatory).
-#               Follow the simple formatting convention.
-#
-# resources: a single description file like this can describe more than one
-#            resource (file or webpage) as long as the data is structured the
-#            same. This happens when the data is split by fund or period for
-#            example.
-#
-# Good luck!
-
-
 title: Lithuania's ESIF data 2007-2013
 
 description: For 2007-2013, there is a web-portal with the option to download a spreadsheet. The resulting file, however, contains less information than is available on the portal. Thus, scraping is necessary.
@@ -39,78 +14,54 @@ contributors:
   - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
 resources:
-
-  # 2. Describe each data-resource:
-  # ----------------------------
-  #
-  # title: use this field to distinguish the resources if there's more than one
-  #
-  # url: the link to the file if possible. If the data needs to be scraped,
-  #      enter the url of the webpage and set scraper_required to true.
-  #
-  # publication_date: the date that the data was published or updated
-  #
-  # constant_fields: any field from fiscal.fields.yaml that has a fixed value
-  #                  (i.e. is not specified row by row).
-  #
-  # schema: please describe each column in the data. Don't change the original
-  #         columns names even in Cyrillic. For translations, Google will do.
-  #         Refer to fiscal.fields.yaml to discover what fiscal field map to
-  #         the columns that you found. If you can't tell, enter a short comment
-  #         instead. Leave the mapping blank if the column can be dropped.
-  #
-  # Good luck!
-
   - title: Web-portal with Lithuania's ESIF data 2007-today 
 
     url: http://www.esparama.lt/igyvendinami-projektai
 
-    publication_date: 2016-09-28
+    publication_date: 28-09-2016
 
     constant_fields:
       fund_name: ERDF, CF, ESF
       offical_period: 2007-2013
       currency_code: EUR
 
-      # any other field from fiscal.fields.yaml that is constant
-
     schema:
       fields:
         - name: Projekto būsena
           translates_to: Project Status
-          maps_to: project_status
+          maps_to: # Loic: a project_status ('Done'|'Ungoing') would be relevant here
 
         - name: Projekto vykdytojas
           translates_to: Project promoter
-          maps_to: 
+          maps_to: beneficiary_name
 
         - name: Projekto pradžia
           translates_to: Project start date
-          maps_to: project_start_date
+          maps_to: starting_date
 
         - name: Projekto pabaiga
           translates_to: Project completion date
-          maps_to: project_end_date
+          maps_to: completion_date
 
         - name: Bendra projekto vertė
           translates_to: The total value of the project
-          maps_to: total_value
+          maps_to: total_amount_eligible
 
         - name: Projektui skirtas finansavimas
           translates_to: Project funding
-          maps_to: 
+          maps_to: total_amount
 
         - name: Iš jo ES dali
           translates_to: EU part of project funding
-          maps_to: funding_eu
+          maps_to: eu_cofinancing_amount
 
         - name: Projektui išmokėta lėšų
           translates_to: Project funds disbursed
-          maps_to: funding_disbursed
+          maps_to: # Loic: This will be amount_paid_out in the future
 
         - name: Iš jo ES dalis
           translates_to: EU part of disbursed funds
-          maps_to: 
+          maps_to: # Loic: This is like the amount_paid_out field, but if you follow the logic, all amount fields should be split into amount and paid out amount
 
         - name: Detailed project description (without title)
           translates_to: 
@@ -118,28 +69,24 @@ resources:
 
         - name: Veiksmų programa
           translates_to: Action program
-          maps_to: 
+          maps_to: cci_program_code
 
         - name: Veiksmų programos prioritetas
           translates_to: The action program priority measure
-          maps_to: 
+          maps_to: # This could be the priority_axis code, in which case it will be introduced
 
         - name: Kvietimo numeris
           translates_to: Number of call 
-          maps_to: 
+          maps_to: # Loic: are we dumping this one?
 
         - name: Projekto kodas
           translates_to: Project code
-          maps_to: project_code
+          maps_to: project_id
 
         - name: Projekto įgyvendinimo apskritis
           translates_to: The project region
-          maps_to: region
+          maps_to: beneficiary_nuts_code
 
         - name: Projekto įgyvendinimo savivaldybė
           translates_to: The project municipality
-          maps_to: municipality
-
-
-        - # repeat for each column you find in the data
-
+          maps_to: beneficiary_city

@@ -4,7 +4,6 @@ description: The beneficiary list of the ERDF programme for Thüringen.
 language: de
 
 sources:
-
   - name: ERDF Thüringen (2014-2020)
     web: http://www.efre.rlp.de/
 
@@ -15,10 +14,8 @@ contributors:
 
 resources:
   - title: ERDF in Thüringen 2014-2020
-
     url: http://www.efre20-thueringen.de/mam/efre20/liste/160630_liste_der_vorhaben_efre_14_20_endg.csv
-
-    publication_date: 2016-06-30
+    publication_date: 30-06-2016
 
     constant_fields:
       fund_name: ERDF

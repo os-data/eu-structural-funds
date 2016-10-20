@@ -4,24 +4,18 @@ description: The beneficiary list of the ERDF programme for Niedersachsen.
 language: de
 
 sources:
-
   - name: ERDF Niedersachsen (2014-2020)
     web: http://www.stk.niedersachsen.de/startseite/themen/regionale_landesentwicklung_und_eufoerderung/eufoerderung/efre_esf/efre-und-esf-124140.html
 
 scraper_required: false
-
-
-
 
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
   - title: ERDF in Niedersachsen 2014-2020
-
     url: http://www.stk.niedersachsen.de/download/108095
-
-    publication_date: 2016-03-31
+    publication_date: 31-03-2016
 
     constant_fields:
       fund_name: ESF

@@ -17,8 +17,8 @@ resources:
 
     url: http://projektbank.tillvaxtverket.se/projektbanken#page=eruf
 
-    publication_date: 2016-09-27
-
+    publication_date: 27-09-2016
+    
     constant_fields:
       fund_name: ERDF
       offical_period: 2007-2013 and 2014-2020

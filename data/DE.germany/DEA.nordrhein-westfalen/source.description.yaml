@@ -2,7 +2,6 @@ title: EFRE and ESF Data for Nordrhein-Westfalen (2007-2020)
 
 description: The beneficiary list of the ERDF and ESF programme for Nordrhein-Westfalen.
 language: de
-
 scraper_required: true
 
 sources:
@@ -22,12 +21,7 @@ resources:
   - title: ERDF Nordrhein-Westfalen 2007-2013
 
     url: http://www.ziel2.nrw.de/1_NRW-EU_Ziel_2_Programm_2007-2013/3_Ergebnisse/Verzeichnis_Beguenstigte_2014_12_31.pdf
-    publication_date: 2014-12-31
-
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
+    publication_date: 31-12-2014
 
     schema:
       fields:
@@ -49,13 +43,13 @@ resources:
 
         - name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge
           translates_to: Paid amount at the end of the project
-          maps_to: total_eligible_expenditure
+          maps_to: total_amount_eligible
 
   - title: ERDF in Nordrhein-Westfalen 2014-2020
 
     url: https://www.efre.nrw.de/fileadmin/16-01-22_DN_Liste_der_Vorhaben_20151231.xlsx
 
-    publication_date: 2015-12-31
+    publication_date: 31-12-2015
 
     constant_fields:
       fund_name: ERDF
@@ -108,7 +102,7 @@ resources:
   - title: ESF Nordrhein-Westfalen 2007-2013
 
     url: https://www.mais.nrw/sites/default/files/asset/document/esf_operationelles_programm_beguenstigtenverzeichnis_barr.pdf
-    publication_date: 2015-12-31
+    publication_date: 31-12-2015
 
     constant_fields:
       fund_name: ESF
@@ -143,7 +137,7 @@ resources:
 
     url: http://www.arbeit.nrw.de/esf/foerderphase_2014_bis_2020/oeffentlichkeitsarbeit/download/docs/liste_der_vorhaben.xlsx
 
-    publication_date: 2016-08-25
+    publication_date: 25-08-2016
 
     constant_fields:
       fund_name: ESF

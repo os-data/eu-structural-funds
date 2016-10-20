@@ -14,21 +14,14 @@ contributors:
 
 resources:
   - title: ESF in Hessen 2014-2020
-
     url: https://www.esf-hessen.de/upload/2016-07-01_Liste_der_Vorhaben_8911.xlsx
-
-    publication_date: 2016-07-01
-
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2014-2020
-      currency_code: EUR
+    publication_date: 01-07-2016
 
     schema:
       fields:
-        - name: 'Name des Begünstigten'
+        - name: "Name des Begünstigten
 
-# Beneficiary name'
+Beneficiary name"
 
           translates_to: Beneficiary name
           maps_to: beneficiary_name

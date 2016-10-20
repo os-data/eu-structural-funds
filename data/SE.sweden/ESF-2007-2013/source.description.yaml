@@ -17,7 +17,7 @@ resources:
 
     url: http://www.esf.se/Resultat/Projektbanken/Search-project/
 
-    publication_date: 2016-09-27
+    publication_date: 27-09-2016
 
     constant_fields:
       fund_name: ESF
