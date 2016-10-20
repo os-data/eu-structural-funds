@@ -28,6 +28,6 @@ resources:
 
     schema:
       fields:
-        - name: N/A
+        - name: 
           translates_to: N/A
           maps_to: N/A

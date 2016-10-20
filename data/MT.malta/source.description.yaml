@@ -33,6 +33,7 @@ contributors:
 resources:
 
   - title: A web page with list of all projects developed with the EU funds
+    url: https://investinginyourfuture.gov.mt/projects
     path: data.csv
 
     publication_date:

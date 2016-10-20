@@ -4,7 +4,6 @@ description:
 language: LV
 
 sources:
-
   - name: Latvian Republic Ministry of Finance, data from 2014-2020
     web: http://www.esfondi.lv/es-fondu-projektu-mekletajs
 
@@ -15,10 +14,9 @@ contributors:
 
 resources:
   - title: Latvia's ESIF data 2014-2020
+    url: # Loic: @bela where is the link?
 
-    url: http://data.country.gov/path/to/filename.xlsx
-
-    publication_date: 2016-10-05
+    publication_date: 05-10-2016
 
     constant_fields:
       fund_name: ERDF, CF, ESF, EARDF
@@ -30,7 +28,7 @@ resources:
       fields:
         - name: SAM / pasākuma nr.
           translates_to: SAM / event no.
-          maps_to: project_number
+          maps_to: project_id
 
         - name: Projekta nosaukums
           translates_to: Project name
@@ -42,12 +40,12 @@ resources:
 
         - name: Kopējais finansējums
           translates_to: Total funding
-          maps_to: funding_total
+          maps_to: total_amount
 
         - name: ES finansējums
           translates_to: EU funding
-          maps_to: funding_eu
+          maps_to: eu_cofinancing_amount
 
         - name: Projekta īstenošanas vieta
           translates_to: Project will be implemented
-          maps_to:
+          maps_to: # Loic: why is this field missing?

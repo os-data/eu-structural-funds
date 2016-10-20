@@ -1,29 +1,8 @@
-
-# Describe the source that you found:
-# ----------------------------------
-#
-# title: a short description of your data source.
-#
-# description: the place to put your notes, warnings, remarks and limitations
-#              about the data are especially important to communicate.
-#
-# sources: only meant as *documention*. Add as many as you want. The urls to
-#          the actual data-files are in the "resources" section.
-#
-# image: used to illustrate the data source on the website. Check its license.
-#
-# contributors: Put yourself down(email and website are not obligatory).
-#               Follow the simple formatting convention.
-#
-# resources: a single source can have one or more data-files, called
-#            "resources". Why? Because there may be regular data updates or
-#            the data may be broken down by funds for example.
-#
-# Good luck!
-
 title: European Structural and Investment Funds (ESIF) for the period 2014-2020 for Greece
 
 description: A list of all the public projects and state aids selected for co-funding under the Partnership Agreement 2014-2020 by Operational Programme and by Fund
+language: EL
+scraper_required: false
 
 sources:
   - name: ESPA
@@ -35,39 +14,6 @@ contributors:
   - Olaya Argueso <arguesoperezolaya@gmail.com>
 
 resources:
-
-  # Describe each data-file:
-  # ------------------------
-  #
-  # title: a short description of the data file
-  #
-  # url: the link to the file if possible. If the data needs to be scraped,
-  #      leave this property blank and set the "extraction_mode" to
-  #      "web_scraper".
-  #
-  # path: leave blank if there's a url link to the data-file. If there's no
-  #       link to the file but you can download it by clicking through
-  #       a user-interface, then do so and then specify its path here.
-  #       The path is the *relative path* (starting from this file). So if you
-  #       put the data-file in the same folder, it's just the filename.
-  #
-  # publication_date: the date that the data was published
-  #
-  # publication_version: should clearly distinguish this data-file from others.
-  #
-  # periods: the "official" fiscal periods that the data-file covers.
-  #
-  # extraction_mode: set one of the options to "true" and the rest to "false"
-  #
-  # constants: Some of the fields we're trying to collect may be constant. Take
-  #            the currency for example: it may not be mentioned in the data
-  #            because it's common to all rows. Identify as many constants as
-  #            you can.
-  #
-  # fields: the columns in the data table. Describe them as best you can.
-  #
-  # Good luck!
-
   - title: The list of all projects for the period 2014-2020
     url: https://www.espa.gr/el/Documents/ListOfOperations_20160513.csv
     path:

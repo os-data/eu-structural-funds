@@ -62,7 +62,8 @@
                     "maps_to": {
                       "type": [
                         "null",
-                        "string"
+                        "string",
+                        "array"
                       ],
                       "enum": [
                         null,
@@ -146,10 +147,6 @@
         ".csv",
         ".pdf"
       ]
-    },
-    "language": {
-      "type": "string",
-      "pattern": "(\\w{2})"
     }
   },
   "required": [

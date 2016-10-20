@@ -12,15 +12,15 @@ sources:
   - name: List of beneficiaries
     web: http://www.struktuurifondid.ee/list-of-beneficiaries/
 
-image:
+language: ee
+scraper_required: true
 
 contributors:
   - Friedrich Lindenberg <pudo@occrp.org> (OCCRP)
 
 resources:
-  - title:
-    url:
-    path:
+  - title: Beneficiary webpage
+    url: http://www.struktuurifondid.ee/list-of-beneficiaries/
 
     publication_date: "2014-10-27"
     publication_version: web database
@@ -38,8 +38,6 @@ resources:
     constants:
       currency: EUR
       certifying_authority:
-      # We need a complete list of possible constants here
 
     schema:
-      fields:
 

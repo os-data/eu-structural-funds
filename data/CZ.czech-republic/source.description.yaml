@@ -15,7 +15,7 @@ contributors:
 resources:
   - title: Czech ESIF beneficiaries 2007-2013
     url: http://www.dotaceeu.cz/getmedia/b4a6fd6f-44ce-4cef-ab9d-872279a16c9a/Seznam-prijemcu-(List-of-Beneficiaries)-09_2016.xlsx?ext=.xlsx
-    publication_date: 2016-09-08
+    publication_date: 08-09-2016
 
     schema:
       fields:
@@ -39,43 +39,38 @@ resources:
 
         - name: Status
 
-
-        - # repeat for each column you find in the data
-
   - title: List of Czech ESIF operations 2014-2020
     url: http://www.dotaceeu.cz/getmedia/413c34d0-71c3-4c0a-b0f9-191c88994d1d/benefi8_22.xlsx?ext=.xlsx
-    publication_date: 2016-09-08
+    publication_date: 08-09-2016
 
     schema:
       fields:
         - name: Registrační číslo projektu
-        - translates_to: Project registration number
+          translates_to: Project registration number
 
         - name: Název projektu CZ
-        - translates_to: Project Title CZ
+          translates_to: Project Title CZ
 
         - name: Žadatel
-        - translates_to: Applicant
+          translates_to: Applicant
 
         - name: Kód stavu
-        - translates_to: status code
+          translates_to: status code
 
         - name: Název stavu
-        - translates_to: state name
+          translates_to: state name
 
         - name: Číslo výzvy
-        - translates_to: Call number
+          translates_to: Call number
 
         - name: Název výzvy
-        - translates_to: Call title
+          translates_to: Call title
 
         - name: Operační program
-        - translates_to: Operational program
+          translates_to: Operational program
 
         - name: CZV projektu
-        - translates_to: Total amount 
+          translates_to: Total amount 
 
         - name: Příspěvek EU
-        - translates_to: EU amount
-        
-  - # repeat for each data file in this source
+          translates_to: EU amount

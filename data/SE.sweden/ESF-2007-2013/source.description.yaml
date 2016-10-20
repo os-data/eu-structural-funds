@@ -17,7 +17,7 @@ resources:
 
     url: http://www.esf.se/Resultat/Projektbanken/Search-project/
 
-    publication_date: 27-09/2016
+    publication_date: 27-09-2016
 
     constant_fields:
       fund_name: ESF
@@ -32,22 +32,16 @@ resources:
 
         - name: Projektägare
           translates_to: Project
-          maps_to: project
-
-        - name: Projektnamn
-          translates_to: Project name
-          maps_to: project_name
+          maps_to: beneficiary_name
 
         - name: Projektperiod
           translates_to: Project period
-          maps_to: project_period
+          maps_to: [starting_date, completion_date]
 
         - name: Region
           translates_to: Region
-          maps_to: region
+          maps_to: beneficiary_nuts_code
 
         - name: Projektbudget
           translates_to: project budget
-          maps_to: project_budget
-
-        - # repeat for each column you find in the data
+          maps_to: total_amount

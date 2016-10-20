@@ -4,31 +4,18 @@ description: The beneficiary list of the ESF programme for Thüringen.
 language: de
 
 sources:
-
   - name: ESF Thüringen (2014-2020)
     web: http://www.esf-thueringen.de/esf_2014/
 
 scraper_required: false
-
-
-
 
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
   - title: ESF in Thüringen 2014-2020
-
     url: http://www.esf-thueringen.de/imperia/md/content/esf_2014/listedervorhaben/liste_der_vorhaben_stand_01.07.2016.xls
-
-    publication_date: 2016-07-01
-
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2014-2020
-      currency_code: EUR
-
-      # any other field from fiscal.fields.yaml that is constant
+    publication_date: 01-07-2016
 
     schema:
       fields:
@@ -71,8 +58,3 @@ resources:
         - name: Bezeichnung der Interventionskategorie
           translates_to: name of category of intervention
           maps_to: theme_name
-
-
-
-
-        - # repeat for each column you find in the data
