@@ -248,7 +248,7 @@ class Source(object):
 
             validator = Draft4Validator(
                 description_schema,
-                format_checker=FormatChecker(['date'])
+                format_checker=FormatChecker()
             )
             if validator.is_valid(self.description):
                 self.validation_status = 'valid'
