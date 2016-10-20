@@ -418,7 +418,7 @@ def collect_sources(select, **kwargs):
             sources.append(source)
 
     if not select:
-        return sources
+        return sorted(sources)
 
     subset = set()
     for key, value in select:
