@@ -1,12 +1,10 @@
 """A scraper for Malta 2007-2013."""
-from logging import info
 
 import requests
 import lxml
 import csv
 
 from lxml import html
-from datapackage_pipelines.wrapper import spew, ingest
 
 __author__ = 'Fernando Blat'
 
@@ -65,8 +63,10 @@ def scrape_project(url):
 
 
 def scrape():
-    headers = [ 'Code', 'Title', 'Project Cost', 'Beneficiary', 'Line Ministry', 'Start Date', 'End Date', 'Non Technical Short Summary Of Project', 'Operational Programme', 'Fund', 'Operational Objective',
-                'Priority Axis', 'Focus Area Of Intervention', 'Project Objectives', 'Project Results', 'Project Purpose' ]
+    headers = [
+        'Code', 'Title', 'Project Cost', 'Beneficiary', 'Line Ministry', 'Start Date', 'End Date', 'Non Technical Short Summary Of Project', 'Operational Programme', 'Fund', 'Operational Objective',
+        'Priority Axis', 'Focus Area Of Intervention', 'Project Objectives', 'Project Results', 'Project Purpose'
+    ]
 
     with open('data.csv', 'w', newline='') as f:
         writer = csv.writer(f, quoting=csv.QUOTE_NONNUMERIC)
@@ -97,7 +97,4 @@ def process_resources():
 
 
 if __name__ == '__main__':
-    # _, datapackage_, _ = ingest()
-    # resources_ = process_resources()
-    # spew(datapackage_, resources_)
     scrape()

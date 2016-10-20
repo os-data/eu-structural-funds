@@ -26,11 +26,10 @@
 
 import re
 import os
-from collections import Counter
-from copy import deepcopy
-
 import yaml
 
+from collections import Counter
+from copy import deepcopy
 from shutil import copyfile
 from click import command, secho, echo, option, pass_context
 from click import group

@@ -42,10 +42,10 @@ def get_latest_stats():
 
     timestamp = (
         session.query(Snapshot, Snapshot.timestamp)
-            .order_by(Snapshot.timestamp.desc())
-            .limit(1)
-            .all()
-            .pop()
+        .order_by(Snapshot.timestamp.desc())
+        .limit(1)
+        .all()
+        .pop()
     ).timestamp
 
     stats = session.query(
@@ -66,16 +66,16 @@ def get_latest_stats():
         ('Broken', Snapshot.validation_status == 'broken'),
         ('Loaded', Snapshot.validation_status == 'loaded'),
         ('Valid', Snapshot.validation_status == 'valid'),
-        ('Unknown origin', Snapshot.resource_type == None),
-        ('Unknown extension', Snapshot.extension == None),
+        ('Unknown origin', Snapshot.resource_type == None),  # noqa
+        ('Unknown extension', Snapshot.extension == None),  # noqa
     ))
 
     sums = OrderedDict()
     for key, select in sum_queries.items():
         sums[key] = (
             session.query(Snapshot)
-                .filter(and_(Snapshot.timestamp == timestamp, select))
-                .count()
+            .filter(and_(Snapshot.timestamp == timestamp, select))
+            .count()
         )
 
     return timestamp, stats, sums
