@@ -246,13 +246,16 @@ class Source(object):
             with open(DESCRIPTION_SCHEMA_FILE) as stream:
                 description_schema = yaml.load(stream)
 
-            validator = Draft4Validator(description_schema,
-                                        format_checker=FormatChecker(['date']))
+            validator = Draft4Validator(
+                description_schema,
+                format_checker=FormatChecker(['date'])
+            )
             if validator.is_valid(self.description):
                 self.validation_status = 'valid'
 
             errors = validator.iter_errors(self.description)
-            self.validation_errors = sorted(errors, key=str)
+            messages = [error.message for error in errors]
+            self.validation_errors = sorted(messages)
 
     def _get_extractor(self):
         if self.scraper_required:
@@ -273,6 +276,9 @@ class Source(object):
 
     def __lt__(self, other):
         return self.id < other.id
+
+    def __str__(self):
+        return self.id
 
 
 @command('status')
@@ -398,7 +404,7 @@ def validate_descriptions(ctx):
 
         elif source.validation_status == 'loaded':
             for e in source.validation_errors:
-                error = e.message.replace(valid_keys, 'fiscal fields')
+                error = e.replace(valid_keys, 'fiscal fields')
                 messages.append(error)
         else:
             messages.append('Valid :-)')
@@ -407,7 +413,7 @@ def validate_descriptions(ctx):
         secho(message, **color)
 
 
-def collect_sources(select, **kwargs):
+def collect_sources(select=None, **kwargs):
     """Return a sorted list of sources."""
 
     sources = []
@@ -438,7 +444,7 @@ def collect_sources(select, **kwargs):
 def main(ctx, select):
     """Bootstrap command tools."""
     ctx.obj['sources'] = collect_sources(
-        select,
+        select=select,
         timestamp=datetime.now(),
         db_session=sessionmaker(bind=DB_ENGINE)()
     )
