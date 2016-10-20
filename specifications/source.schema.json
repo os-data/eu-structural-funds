@@ -147,10 +147,6 @@
         ".csv",
         ".pdf"
       ]
-    },
-    "language": {
-      "type": "string",
-      "pattern": "(\\w{2})"
     }
   },
   "required": [
