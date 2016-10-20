@@ -17,7 +17,7 @@ resources:
   - title: Swedish ERDF data 2007-today
     url: http://projektbank.tillvaxtverket.se/projektbanken#page=eruf
 
-    publication_date: 2016-09-27
+    publication_date: 27-09-2016
 
     constant_fields:
       fund_name: ERDF

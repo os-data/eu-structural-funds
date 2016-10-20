@@ -8,25 +8,13 @@ sources:
     web: http://www.arbeit.nrw.de/esf/foerderphase_2014_bis_2020/oeffentlichkeitsarbeit/download/docs/liste_der_vorhaben.xlsx
 
 scraper_required: false
-
-
-
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
   - title: ESF in Nordrhein-Westfalen 2014-2020
-
     url: http://www.arbeit.nrw.de/esf/foerderphase_2014_bis_2020/oeffentlichkeitsarbeit/download/docs/liste_der_vorhaben.xlsx
-
-    publication_date: 2016-08-25
-
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2014-2020
-      currency_code: EUR
-
-      # any other field from fiscal.fields.yaml that is constant
+    publication_date: 25-08-2016
 
     schema:
       fields:
@@ -65,8 +53,3 @@ resources:
         - name: Bezeichnung der Interventionskategorie für das Vorhaben
           translates_to: EU intervention category (number) which declares under which category the company applied for funds
           maps_to: theme_code
-
-
-
-
-        - # repeat for each column you find in the data

@@ -9,6 +9,8 @@ sources:
 
 scraper_required: false
 
+
+
 contributors:
   - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
@@ -17,7 +19,7 @@ resources:
 
     url: http://data.country.gov/path/to/filename.xlsx
 
-    publication_date: 2016-10-05
+    publication_date: 05-10-2016
 
     constant_fields:
       fund_name: ERDF, CF, ESF, EARDF

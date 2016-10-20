@@ -4,7 +4,6 @@ description: The beneficiary list of the ESF programme for Rheinland-Pfalz.
 language: de
 
 sources:
-
   - name: ESF Rheinland-Pfalz (2014-2020)
     web: http://www.esf.rlp.de/
 
@@ -15,15 +14,8 @@ contributors:
 
 resources:
   - title: ESF in Rheinland-Pfalz 2014-2020
-
     url: http://esf.rlp.de/fileadmin/esf/Downloads/ESF_2014-2020/Liste_der_Vorhaben/Liste_der_Vorhaben_25.4.2016.xlsx
-
-    publication_date: 2016-04-25
-
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2014-2020
-      currency_code: EUR
+    publication_date: 25-04-2016
 
     schema:
       fields:

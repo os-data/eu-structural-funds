@@ -20,7 +20,7 @@ resources:
 
     url: http://www.mapadotacji.gov.pl/export?sort=none
 
-    publication_date: 2016-09-27
+    publication_date: 27-09-2016
 
     constant_fields:
       fund_name: ERDF, ESF

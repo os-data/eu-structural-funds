@@ -16,7 +16,7 @@ resources:
   - title: Latvia's ESIF data 2014-2020
     url: # Loic: @bela where is the link?
 
-    publication_date: 2016-10-05
+    publication_date: 05-10-2016
 
     constant_fields:
       fund_name: ERDF, CF, ESF, EARDF
