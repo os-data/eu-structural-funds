@@ -40,4 +40,6 @@ resources:
       certifying_authority:
 
     schema:
+      fields:
+        - name: this source file has no columns
 

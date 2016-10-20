@@ -14,7 +14,6 @@ contributors:
 
 resources:
   - title: Swedish ESF data 2007-2013
-
     url: http://www.esf.se/Resultat/Projektbanken/Search-project/
 
     publication_date: 27-09-2016
@@ -36,7 +35,7 @@ resources:
 
         - name: Projektperiod
           translates_to: Project period
-          maps_to: [starting_date, completion_date]
+          maps_to: # Loic: this field maps to 2: [starting_date, completion_date]
 
         - name: Region
           translates_to: Region
