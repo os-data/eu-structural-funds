@@ -1,0 +1,68 @@
+title: ESF Data for Nordrhein-Westfalen (2014-2020)
+
+description: The beneficiary list of the ESF programme for Nordrhein-Westfalen.
+language: de
+
+sources:
+    - name: ESF Nordrhein-Westfalen 2014-2020
+      web: http://www.saarland.de/36004.htm
+scraper_required: false
+
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+  - title: ESF in Nordrhein-Westfalen 2014-2020
+
+    url: http://www.saarland.de/dokumente/thema_strukturfondsfoerderung/Vorhabenliste-25-05-2016.xlsx
+
+    publication_date: 2016-08-25
+
+    constant_fields:
+      fund_name: ESF
+      offical_period: 2014-2020
+      currency_code: EUR
+
+    schema:
+      fields:
+        - name: Name des Begünstigten/ beneficiary name
+          translates_to: beneficiary name
+          maps_to:  beneficiary_name
+
+        - name: Bezeichnung/Zusammenf. d. Vorhabens/ operation name
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: Projektbeginn/ operation start date
+          translates_to: starting date of the project
+          maps_to: starting_date
+
+        - name: Projektende/
+          translates_to: completion date of the project
+          maps_to: completion_date
+
+        - name: Gesamtbetrag der förderfähigen Ausgaben/
+          translates_to: total eligible expenditure
+          maps_to: total_amount_eligible
+
+        - name: Kofinanzierungssatz Prio-Achse in %/
+          translates_to: EU co-financing rate in percent
+          maps_to: eu_cofinancing_amount
+
+        - name: Gemeindekennziffer (Vorhaben)/
+          translates_to: operations regional code
+          maps_to: beneficiary_nuts_region
+
+        - name: Land/
+          translates_to: name of country
+          maps_to: beneficiary_country
+
+        - name: Interventionsbereich
+          translates_to: EU intervention category (number) which declares under which category the company applied for funds
+          maps_to: theme_code
+
+        - name: Thematisches Ziel/
+          translates_to: thematic objective
+          maps_to: theme_name
