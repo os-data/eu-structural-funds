@@ -68,6 +68,7 @@ resources:
 
         - name: Landkreis
           translates_to: county
+          maps_to: beneficiary_nuts_code
           
         - name: Interventionsbereich
           translates_to: Intervention field
