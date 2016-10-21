@@ -1,4 +1,3 @@
-
 title: ESF Data for Bremen
 
 description: The beneficiary list for the ESF (2007-2013) program for Bremen.
@@ -20,13 +19,7 @@ resources:
     path: ESF-Daten_Bremen_07_13-csv.csv
     url: http://www.esf-bremen.de/sixcms/media.php/13/reportS0602-0-0-36-131106.pdf
 
-    publication_date: 2013-06-13
-
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2007-2013
-      currency_code: EUR
-
+    publication_date: "2013-06-13"
 
     schema:
       fields:
@@ -48,7 +41,7 @@ resources:
 
         - name: Gewährte Beträge €
           translates_to: Granted Contribution in Euro
-          maps_to: total_eligible_expenditure
+          maps_to: total_amount_eligible
 
         - name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge €
           translates_to: total cost of project
