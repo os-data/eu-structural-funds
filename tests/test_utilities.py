@@ -1,5 +1,8 @@
 """Unit tests for the utilities module."""
 
+import os
+
+from glob import glob
 from unittest import skipIf
 from unittest.mock import mock_open, patch
 
