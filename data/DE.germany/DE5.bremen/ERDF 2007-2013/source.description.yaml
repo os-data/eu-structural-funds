@@ -1,0 +1,50 @@
+title: ERDF Data for Bremen
+
+description: The beneficiary list for the ERDF (2007-2013) program for Bremen.
+language: de
+
+sources:
+  - name: ERDF Bremen
+    web: http://www.efre-bremen.de/sixcms/detail.php?gsid=bremen59.c.15110.de
+
+scraper_required: false
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+  - title: ERDF Bremen 2007-2013
+
+    path: ERDF-Daten_Bremen_07_13-csv.csv
+    url: http://www.efre-bremen.de/sixcms/media.php/13/BEGUENSTIGTENVERZEICHNIS_Stand%2030-12-2015_Version%20Web.pdf
+
+    publication_date: 2015-12-31
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+
+    schema:
+      fields:
+        - name: Name des Begünstigten
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: Name des Projekts
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: JAHR DER BEWILLIGUNG / JAHR DES ABSCHLUSSES
+          translates_to: Year of Approval / year of completion
+          maps_to: approval_date
+
+        - name: VORGESEHENE ÖFFENTLICHE BETEILIGUNG
+          translates_to: Granted Contribution in Euro
+          maps_to: total_eligible_expenditure
+
+        - name: ENDGÜLTIGE BETEILIGUNG NACH ABSCHLUSS DES PROJEKTS
+          translates_to: Amounts paid by EU at completion of the project
+          maps_to: eu_cofinancing_amount

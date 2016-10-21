@@ -1,0 +1,41 @@
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column ÖFFENTLICHE BETEILIGUNG AUS DEM EFRE-PROGRAMM to JAHR DER BEWILLIGUNG / JAHR DES ABSCHLUSSES",
+    "oldColumnName": "ÖFFENTLICHE BETEILIGUNG AUS DEM EFRE-PROGRAMM",
+    "newColumnName": "JAHR DER BEWILLIGUNG / JAHR DES ABSCHLUSSES"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column to VORGESEHENE ÖFFENTLICHE BETEILIGUNG",
+    "oldColumnName": "Column",
+    "newColumnName": "VORGESEHENE ÖFFENTLICHE BETEILIGUNG"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column2 to ENDGÜLTIGE BETEILIGUNG NACH ABSCHLUSS DES PROJEKTS",
+    "oldColumnName": "Column2",
+    "newColumnName": "ENDGÜLTIGE BETEILIGUNG NACH ABSCHLUSS DES PROJEKTS"
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": true,
+          "selection": [],
+          "selectError": false,
+          "invert": false,
+          "name": "NAME DES BEGÜNSTIGTEN",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "NAME DES BEGÜNSTIGTEN"
+        }
+      ]
+    }
+  }
+]

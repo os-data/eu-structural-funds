@@ -1,0 +1,71 @@
+[
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Column",
+    "columnName": "Column"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column2 to Name des Begünstigten",
+    "oldColumnName": "Column2",
+    "newColumnName": "Name des Begünstigten"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column3 to Bezeichnung des Vorhabens",
+    "oldColumnName": "Column3",
+    "newColumnName": "Bezeichnung des Vorhabens"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Bereitgestellte öffentliche Mittel to Jahr Bewilligung ",
+    "oldColumnName": "Bereitgestellte öffentliche Mittel",
+    "newColumnName": "Jahr Bewilligung "
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column4 to Jahr Projektende",
+    "oldColumnName": "Column4",
+    "newColumnName": "Jahr Projektende"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column5 to Gewährte Beträge *)",
+    "oldColumnName": "Column5",
+    "newColumnName": "Gewährte Beträge *)"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column6 to bei Abschluss des Vorhabens gezahlte Gesamtbeträge *)",
+    "oldColumnName": "Column6",
+    "newColumnName": "bei Abschluss des Vorhabens gezahlte Gesamtbeträge *)"
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Name des Begünstigten",
+                "l": "Name des Begünstigten"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Name des Begünstigten",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Name des Begünstigten"
+        }
+      ]
+    }
+  }
+]
