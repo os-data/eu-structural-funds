@@ -5,7 +5,7 @@ language: de
 
 sources:
 
-  - name: EFRE Nordrhein-Westfalen (2014-2020)
+  - name: ERDF Nordrhein-Westfalen (2014-2020)
     web: https://www.efre.nrw.de/fileadmin/16-01-22_DN_Liste_der_Vorhaben_20151231.xlsx
 
 scraper_required: false
@@ -15,7 +15,6 @@ contributors:
 
 resources:
   - title: ERDF in Nordrhein-Westfalen 2014-2020
-
     url: https://www.efre.nrw.de/fileadmin/16-01-22_DN_Liste_der_Vorhaben_20151231.xlsx
 
     publication_date: 31-12-2015
@@ -34,11 +33,11 @@ resources:
           translates_to: project description
           maps_to: project_description
 
-        - name: Durchführungsbeginn
+        - name: Durchführungs-beginn
           translates_to: starting date of the project
           maps_to: starting_date
 
-        - name: Durchführungsende
+        - name: Durchführungs-ende
           translates_to: completion date of the project
           maps_to: completion_date
 
@@ -53,7 +52,7 @@ resources:
           translates_to: name of country
           maps_to: beneficiary_country
 
-        - name: EU Interventionskategorie
+        - name: EU-Interventions-kategorie
           translates_to: EU intervention category (number) which declares under which category the company applied for funds
           maps_to: theme_code
 
