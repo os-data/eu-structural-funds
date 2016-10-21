@@ -1,13 +1,6 @@
 """Unit tests for the utilities module."""
 
-import os
-import os.path
-
-from glob import glob
-<<<<<<< HEAD:tests/test_utilities.py
 from unittest import skipIf
-=======
->>>>>>> 9359549346c39676e631ef8cfd05c2d20619d06f:tests/test_utilities.py
 from unittest.mock import mock_open, patch
 
 from common.config import CODELISTS_DIR, DATA_DIR
