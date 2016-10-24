@@ -22,7 +22,7 @@ resources:
     path: C:\Users\Michael\Documents\GitHub\eu-structural-funds\data\FI.finland\ERDF 2007-2013\projektilista-2007-2013.csv
     note: this file still requires cleaning 
 
-    publication_date: 2015-12-31
+    publication_date: "2015-12-31"
 
     constant_fields:
       fund_name: ERDF

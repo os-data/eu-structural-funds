@@ -18,7 +18,7 @@ resources:
 
     url: http://www.saarland.de/dokumente/thema_strukturfondsfoerderung/Vorhabenliste-25-05-2016.xlsx
 
-    publication_date: 2016-08-25
+    publication_date: "2016-08-25"
 
     constant_fields:
       fund_name: ESF

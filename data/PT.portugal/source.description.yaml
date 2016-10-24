@@ -20,7 +20,7 @@ resources:
   - title: ERDF and ESF data for Portugal 2007-2013
 
     url: http://www.qren.pt/np4/%7B%24clientServletPath%7D/?newsId=3001&fileName=Lista_Operacoes_QREN_mar15.xlsx
-    publication_date: 2015-03-01
+    publication_date: "2015-03-01"
 
     constant_fields:
       fund_name: ERDF, ESF

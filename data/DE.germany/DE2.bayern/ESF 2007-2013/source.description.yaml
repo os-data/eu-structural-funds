@@ -15,11 +15,12 @@ contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 
+resources:
   - title: ESF in Bayern 2007-2013
 
     url: http://www.esf.bayern.de/imperia/md/content/stmas/stmas_internet/esf/inf-beguenstigte-2015.pdf
 
-    publication_date: 2015-05-29
+    publication_date: "2015-05-29"
 
     constant_fields:
       fund_name: ESF
@@ -40,7 +41,7 @@ contributors:
 
         - name: Förderaktivität/ funding activity
           translates_to: funding activity
-          maps_to: project_category
+          maps_to: 
 
         - name: Bewilligungsjahr/ Jahr der Restzahlung
           translates_to: Year of Approval/ Year of Final Payment
@@ -48,10 +49,8 @@ contributors:
 
         - name: Gewährte Beträge in €
           translates_to: Granted Contribution in Euro
-          maps_to: total_eligible_expenditure
+          maps_to: total_amount_eligible
 
         - name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge in €
           translates_to: Amounts paid on the completion of the project
           maps_to: total_amount
-
-        - # repeat for each column you find in the data
