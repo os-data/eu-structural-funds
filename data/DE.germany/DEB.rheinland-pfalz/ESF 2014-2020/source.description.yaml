@@ -67,7 +67,7 @@ Union co-financing rate"
           translates_to: Union co-financing rate
           maps_to: eu_cofinancing_amount
 
-        -  name: "Postleitzahl und Ort des Vorhabens
+        - name: "Postleitzahl und Ort des Vorhabens
 operation postcode and place"
 
           translates_to: postal code and city
