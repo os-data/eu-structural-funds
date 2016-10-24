@@ -72,7 +72,7 @@ zierungssatz"
           translates_to: Category of region
           maps_to: beneficiary_nuts_region
 
-       -  name: PLZ
+        - name: PLZ
           translates_to: operation postcode
           maps_to: beneficiary_postal_code
 
