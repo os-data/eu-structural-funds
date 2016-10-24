@@ -67,13 +67,12 @@ zierungssatz"
 
           translates_to: Union co-financing rate
           maps_to: eu_cofinancing_amount
-
         - name: Kategorie der Region
 
           translates_to: Category of region
           maps_to: beneficiary_nuts_region
 
-        - name: PLZ
+       -  name: PLZ
           translates_to: operation postcode
           maps_to: beneficiary_postal_code
 
@@ -83,6 +82,7 @@ zierungssatz"
 
         - name: Landkreis
           translates_to: county
+          maps_to: beneficiary_country
 
         - name: Interven-tions-bereich
           translates_to: Intervention field
