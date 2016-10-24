@@ -1,10 +1,9 @@
-import requests
-from lxml import html
-from lxml import etree
-from pprint import pprint
 import csv
-import re
-import pdb
+
+import requests
+from lxml import etree
+from lxml import html
+
 # pdb.set_trace()
 
 # Base URL is the main page
@@ -77,8 +76,11 @@ def scrape_project(url):
 
 
 def scrape():
-    headers = [ 'Title', 'Description', 'Fonds', 'Objectifs thématiques', 'Programme', 'Porteur de project', 'Porteur de project URL', 'Commune', 
-            'Coût total', 'Coût de fonds', 'Durée', "Catégorie d'intervention"]
+    headers = [
+        'Title', 'Description', 'Fonds', 'Objectifs thématiques',
+        'Programme', 'Porteur de project', 'Porteur de project URL', 'Commune',
+        'Coût total', 'Coût de fonds', 'Durée', "Catégorie d'intervention"
+    ]
 
     with open('data.csv', 'w', newline='') as f:
         writer = csv.writer(f, quoting=csv.QUOTE_NONNUMERIC)
@@ -89,7 +91,7 @@ def scrape():
             doc = html.fromstring(res.content)
 
             next_page = doc.find(".//a[@class='icon-right']")
-            if next_page == None:
+            if next_page is None:
                 print("Exiting...")
                 break
 
