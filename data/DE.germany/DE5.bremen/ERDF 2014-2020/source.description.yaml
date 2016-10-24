@@ -1,0 +1,68 @@
+title: ERDF Data for Bremen 2014-2020
+
+description: The beneficiary list of the ERDF (2014-2020) programme for Bremen
+language: de
+
+sources:
+  - name: ERDF Bremen
+    web: http://www.efre-bremen.de/sixcms/detail.php?gsid=bremen59.c.15110.de
+
+
+scraper_required: false
+
+contributors:
+  - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
+
+
+resources:
+
+
+
+  - title: ERDF Data for Bremen 2014-2020
+
+    url: http://www.efre-bremen.de/sixcms/media.php/13/2016-06-30_Bremen_Liste%20der%20Vorhaben.xlsx
+
+    publication_date: "2016-06-30"
+
+    schema:
+      fields:
+        - name: lfd. Nr.
+          translates_to: Identification Number
+          maps_to: project_id
+
+        - name: Bezeichnung des Vorhabens - operation name
+          translates_to: Name of the operation
+          maps_to: project_name
+
+        - name: Zusammenfassung des Vorhabens - operation summary
+          translates_to: Operation Summary
+          maps_to: project_description
+
+        - name: Beginn des Vorhabens - operation start date
+
+          translates_to: operation start date
+          maps_to: starting_date
+
+        - name: Ende des Vorhabens  - operation end date
+          translates_to: operation end date
+          maps_to: completion_date
+
+        - name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens - total eligible expenditure allocated to the operation
+          translates_to: total eligible expenditure allocated to the operation
+          maps_to: total_amount_eligible
+
+        - name: Unions-Kofinanzierungssatz pro Prioritätsachse - Union co-financing rate
+          translates_to: Paid amount at the end of the project
+          maps_to: eu_cofinancing_amount
+
+        - name: Postleitzahl des Vorhabens - operation postcode
+          translates_to: operation post
+          maps_to: beneficiary_postal_code
+
+        - name: Land - country
+          translates_to: Paid amount at the end of the project
+          maps_to: beneficiary_country
+
+        - name: Bezeichnung der Interventionskategorie-  name of category of intervention
+          translates_to: name of category of intervention
+          maps_to: priority_label

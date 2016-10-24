@@ -116,14 +116,16 @@
             ]
           },
           "url": {
-            "type": "string"
+            "type": ["string", "null"]
+          },
+          "path": {
+            "type": ["string", "null"]
           }
         },
         "required": [
           "title",
           "publication_date",
-          "schema",
-          "url"
+          "schema"
         ]
       }
     },

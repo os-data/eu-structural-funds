@@ -13,16 +13,10 @@ contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
-
   - title: ESF Hamburg 2007-2013
 
     url: http://static.hamburg.de/fhh/behoerden/basfi/esf-hamburg.de/www.esf-hamburg.de/contentblob/1379164/data/verzeichnis-der-beguenstigten.pdf
     publication_date: 30-06-2013
-
-    constant_fields:
-      fund_name: ESF
-      official_period: 2007-2013
-      currency_code: EUR
 
     schema:
       fields:

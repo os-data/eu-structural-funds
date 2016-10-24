@@ -1,7 +1,6 @@
 """Unit tests for the utilities module."""
 
 import os
-import os.path
 
 from glob import glob
 from unittest import skipIf
