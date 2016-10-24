@@ -1,0 +1,55 @@
+
+title: ERDF Data for Bayern (2007-2013)
+
+description: The beneficiary list of the ERDF programme for Bayern.
+language: de
+
+sources:
+  - name: EFRE Bayern
+    web:  https://www.stmwi.bayern.de/EFRE/
+
+
+scraper_required: false
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+
+
+  - title: ERDF Bayern 2007-2013
+
+    path: C:\Users\Michael\Documents\GitHub\eu-structural-funds\data\DE.germany\DE2.bayern\ERDF 2007-2013\Transparenzliste_FIPS2007_31_12_2015_bayern.xlsx
+
+    publication_date: 2015-12-31
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: Name des Begünstigten
+          translates_to: Name of the Beneficiary
+          maps_to: beneficiary_name
+
+        - name: Name des Projekts
+
+          translates_to: Name of the Project
+          maps_to: project_name
+
+        - name: Jahr der Bewilligung
+          translates_to: Year of Approval
+          maps_to: approval_date
+
+        - name: Bewilligter Betrag in Euro
+          translates_to: Approved Amount in Euro
+          maps_to: total_amount_applied
+
+        - name: Ausbezahlter Betrag zum Projektende
+          translates_to: Paid amount at the end of the project
+          maps_to: total_eligible_expenditure
+
+        - # repeat for each column you find in the data
