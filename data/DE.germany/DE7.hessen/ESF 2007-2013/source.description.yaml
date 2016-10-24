@@ -1,0 +1,54 @@
+title: ESF Data for Hessen
+
+description: The beneficiary list for the ESF (2007-2013) program for Hessen.
+language: de
+
+sources:
+  - name: ESF Hessen
+    web: https://www.esf-hessen.de/Startseite.esf
+
+scraper_required: false
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+  - title: ESF Hessen 2007-2013
+
+    path: Hessen-ESF-2007_2013.csv
+    #url: https://www.esf-hessen.de/upload/esf_verzeichnis_der_beg%C3%BCnstigten_2007_bis_2013_stand_12_2014_8161.pdf
+
+    publication_date: "2015-03-05"
+
+    constant_fields:
+      fund_name: ESF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+
+    schema:
+      fields:
+        - name: Name des Begünstigten
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: Ort
+          translates_to: project location
+          maps_to: beneficiary_city
+
+        - name: Bezeichnung des Vorhabens
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: Jahr der Bewilligung
+          translates_to: Year of Approval / year of completion
+          maps_to: approval_date
+
+        - name: Bewilligungszeitraum
+          translates_to: Time of approval (start and end date)
+          maps_to: approval_date
+
+        - name: Gewährte öffentliche Beträge in EUR
+          translates_to: total cost of project (EU and public funding)
+          maps_to: total_amount
