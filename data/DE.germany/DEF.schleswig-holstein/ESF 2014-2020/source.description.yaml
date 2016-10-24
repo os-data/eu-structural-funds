@@ -25,7 +25,7 @@ resources:
 
     url: http://www.ib-sh.de/fileadmin/user_upload/downloads/Arbeit_Bildung/LPNA/allgemein/ldv.xlsx
 
-    publication_date: 2016-06-30
+    publication_date: "2016-06-30"
 
     constant_fields:
       fund_name: ESF
@@ -74,12 +74,3 @@ resources:
         - name: Kurzbeschreibung
           translates_to: project description
           maps_to: project_description          
-
-
-
-
-
-
-
-
-        - # repeat for each column you find in the data

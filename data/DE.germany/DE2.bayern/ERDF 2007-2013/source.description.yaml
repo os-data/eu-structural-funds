@@ -15,12 +15,12 @@ contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 
-
+resources:
   - title: ERDF Bayern 2007-2013
 
     path: C:\Users\Michael\Documents\GitHub\eu-structural-funds\data\DE.germany\DE2.bayern\ERDF 2007-2013\Transparenzliste_FIPS2007_31_12_2015_bayern.xlsx
 
-    publication_date: 2015-12-31
+    publication_date: "2015-12-31"
 
     constant_fields:
       fund_name: ERDF
@@ -50,6 +50,4 @@ contributors:
 
         - name: Ausbezahlter Betrag zum Projektende
           translates_to: Paid amount at the end of the project
-          maps_to: total_eligible_expenditure
-
-        - # repeat for each column you find in the data
+          maps_to: total_amount_eligible

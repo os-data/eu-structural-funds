@@ -22,7 +22,7 @@ resources:
   - title: ERDF Berlin 2007-2013
 
     path: C:\Users\Michael\Documents\GitHub\eu-structural-funds\data\DE.germany\DE3.berlin\ERDF 2007-2013\Berlin ERDF 2007-2013.xlsx
-    publication_date: 2015-03-31
+    publication_date: "2015-03-31"
 
     constant_fields:
       fund_name: ERDF

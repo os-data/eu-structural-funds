@@ -1,6 +1,8 @@
 title: Luxemburg ESF and ERDF data 
 
 description: 
+language: EN
+scraper_required: true
 
 sources:
   - name: Fonds Européns

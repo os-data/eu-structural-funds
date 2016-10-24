@@ -25,7 +25,7 @@ resources:
 
     url: http://www.ib-sh.de/fileadmin/user_upload/downloads/Arbeit_Bildung/LPNA/allgemein/ldv.xlsx
 
-    publication_date: 2016-07-21
+    publication_date: "2016-07-21"
 
     constant_fields:
       fund_name: ERDF
@@ -70,11 +70,3 @@ resources:
 
         - name: "Bezeichnung der Interventions-kategorie"
           translates_to: Intervention field and number (includes category number and description of field)
-
-
-
-
-
-
-
-        - # repeat for each column you find in the data

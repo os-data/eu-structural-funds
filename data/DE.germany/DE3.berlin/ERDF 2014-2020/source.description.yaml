@@ -16,17 +16,16 @@ contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 
+resources:
   - title: ERDF Berlin 2014-2020
 
     url: http://www.berlin.de/sen/wirtschaft/gruenden-und-foerdern/europaeische-strukturfonds/efre/publikationen/liste-der-vorhaben-2016-03-30_final.xlsx
-    publication_date: 2016-03-30
+    publication_date: "2016-03-30"
 
     constant_fields:
       fund_name: ERDF
       offical_period: 2014-2020
       currency_code: EUR
-
-      # any other field from fiscal.fields.yaml that is constant
 
     schema:
       fields:
@@ -69,8 +68,3 @@ contributors:
         - name: Interventions-kategorie
           translates_to: Intervention field
           maps_to: theme_code
-
-
-
-
-        - # repeat for each column you find in the data

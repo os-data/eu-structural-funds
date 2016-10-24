@@ -10,9 +10,6 @@ sources:
 
 scraper_required: false
 
-
-
-
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
@@ -106,16 +103,3 @@ resources:
         - name: 17. Anzahl der FV
 
           translates_to: frequency of application
-
-
-
-
-
-
-
-
-
-
-
-
-        - # repeat for each column you find in the data

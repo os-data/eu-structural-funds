@@ -20,7 +20,7 @@ resources:
 
     url: http://www.structuralfunds.org.cy/structuralfunds2007-2013/uploadfiles/BeneficiariesLIST_FebERDF_CF_%CE%99%CF%83%CF%84%CE%BF%CF%83%CE%B5%CE%BB%CE%AF%CE%B4%CE%B11.xlsx
 
-    publication_date: 2016-06-15
+    publication_date: "2016-06-15"
 
     constant_fields:
       fund_name: ERDF, ESF
@@ -33,7 +33,7 @@ resources:
       fields:
         - name: Τίτλος Έργου
           translates_to: project title
-          maps_to: project_title
+          maps_to: project_name
 
         - name: Δικαιούχος
           translates_to: name of beneficiary
