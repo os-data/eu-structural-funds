@@ -71,7 +71,6 @@ zierungssatz"
           maps_to: eu_cofinancing_amount
 
         - name: Kategorie der Region
-
           translates_to: Category of region
           maps_to: beneficiary_nuts_region
 
@@ -87,9 +86,5 @@ zierungssatz"
           translates_to: county
           maps_to: beneficiary_nuts_code
           
-        - name: Interventionsbereich
-          translates_to: Intervention field
-          maps_to: theme_code
-
         - name: Interven-tionsbe-reich
           translates_to: Intervention field
