@@ -9,8 +9,10 @@ The conversion
 
 import json
 import logging
+import arrow
 import yaml
 
+from parser import ParserError
 from slugify import slugify
 from datapackage_pipelines.wrapper import spew, ingest
 from common.config import SOURCE_FILE, DATAPACKAGE_FILE
@@ -24,6 +26,17 @@ def remove_empty_properties(properties):
         in properties.items()
         if value
         }
+
+
+def parse_date(raw_date):
+    try:
+        # This swallows a bunch of formats
+        # but doesn't always get it right
+        return arrow.get(raw_date).timestamp
+    except ParserError:
+        message = 'Could not parse publication date = %s'
+        logging.warning(message, raw_date)
+        return
 
 
 def create_datapackage(description):
@@ -45,6 +58,7 @@ def create_datapackage(description):
             resource['schema']['fields'][i]['type'] = 'string'
 
         resource['name'] = slugify(resource['title'], separator='-').lower()
+        resource['publication_date'] = parse_date(resource['publication_date'])
 
     return description
 
