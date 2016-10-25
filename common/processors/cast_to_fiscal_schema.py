@@ -7,31 +7,12 @@ import yaml
 from datapackage_pipelines.wrapper import ingest
 from datapackage_pipelines.wrapper import spew
 from common.config import FISCAL_SCHEMA_FILE
-
-
-def cast_values(row, converter):
-    """Cast values to fiscal types.
-    """
-    for key, value in row.items():
-        if value:
-            row[key] = converter[key](value)
-    return row
-
-
-def process_resources(resources, fiscal_types):
-    """Return an iterator of row iterators.
-    """
-    for resource in resources:
-        def process_rows(resource_):
-            for row in resource_:
-                yield cast_values(row, fiscal_types)
-
-        yield process_rows(resource)
+from common.utilities import process
 
 
 def get_fiscal_types():
-    """Return the fiscal datapackage fields.
-    """
+    """Return the fiscal datapackage fields."""
+
     with open(FISCAL_SCHEMA_FILE) as stream:
         schema = yaml.load(stream.read())
 
@@ -52,8 +33,25 @@ def get_fiscal_types():
         yield field_['name'], converters[field_['type']]
 
 
+converter = dict(get_fiscal_types())
+
+
+def cast_values(row):
+    """Cast values to fiscal types."""
+
+    for key, value in row.items():
+        if value:
+            try:
+                row[key] = converter[key](value)
+            except ValueError:
+                message = 'Could not cast %s = %s to %s, returning None'
+                logging.warning(message, key, row[key], converter[key])
+                row[key] = None
+
+    return row
+
+
 if __name__ == '__main__':
-    parameters, datapackage_, resources_ = ingest()
-    fiscal_types_ = dict(get_fiscal_types())
-    new_resources_ = process_resources(resources_, fiscal_types_)
-    spew(datapackage_, new_resources_)
+    _, datapackage, resources = ingest()
+    new_resources = process(resources, cast_values)
+    spew(datapackage, new_resources)
