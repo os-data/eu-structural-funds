@@ -14,8 +14,10 @@ contributors:
 
 resources:
   - title: ERDF Hamburg 2007-2013
-    url: http://www.hamburg.de/contentblob/3117844/aa6827caa9ffceca2bb885f75f1729ac/data/efre-beguenstigte.pdf
-    publication_date: 31-12-2015
+
+    path: ERDF-data-Hamburg_2007_2013.csv
+    #url: http://www.hamburg.de/contentblob/3117844/aa6827caa9ffceca2bb885f75f1729ac/data/efre-beguenstigte.pdf
+    publication_date: "31-12-2015"
 
     schema:
       fields:
@@ -32,9 +34,9 @@ resources:
           maps_to: approval_date
 
         - name: Bewilligter Betrag
-          translates_to: Approved Amount in Euro
-          maps_to: total_amount_applied
+          translates_to: Eligible Amount
+          maps_to: total_amount_eligible
 
         - name: Ausgezahlter Betrag zum Vorhabenabschluss
           translates_to: Paid amount at the end of the project
-          maps_to: total_amount_eligible
+          maps_to: total_amount

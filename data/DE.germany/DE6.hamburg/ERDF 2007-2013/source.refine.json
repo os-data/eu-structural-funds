@@ -1,0 +1,88 @@
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column to Name des Begünstigten",
+    "oldColumnName": "Column",
+    "newColumnName": "Name des Begünstigten"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column 2 to Bezeichnung des Vorhabens",
+    "oldColumnName": "Column 2",
+    "newColumnName": "Bezeichnung des Vorhabens"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column 3 to Jahr der Bewilligung",
+    "oldColumnName": "Column 3",
+    "newColumnName": "Jahr der Bewilligung"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column 4 to Bewilligter Betrag",
+    "oldColumnName": "Column 4",
+    "newColumnName": "Bewilligter Betrag"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column 5 to Ausgezahlter Betrag zum Vorhabenabschluss",
+    "oldColumnName": "Column 5",
+    "newColumnName": "Ausgezahlter Betrag zum Vorhabenabschluss"
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "record-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Name des Begünstigten",
+                "l": "Name des Begünstigten"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Name des Begünstigten",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Name des Begünstigten"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "record-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Verzeichnis der Begünstigten in der Freien und Hansestadt Hamburg",
+                "l": "Verzeichnis der Begünstigten in der Freien und Hansestadt Hamburg"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Name des Begünstigten",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Name des Begünstigten"
+        }
+      ]
+    }
+  }
+]
