@@ -16,7 +16,7 @@ resources:
 
   - title: ERDF Steiermark 2007-2013
 
-    path: ERDF-Daten-Steiermark-2007-2013.csv
+    path: Steiermark-ERDF-2007-2013.csv
     #url: http://www.innovation-steiermark.at/de/projekte/verzeichnis/Beguenstigte_25.08.15_R57.pdf
 
     publication_date: "2015-08-25"
