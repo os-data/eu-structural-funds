@@ -20,7 +20,7 @@ resources:
 
   - title: ERDF and ESF data The Netherlands 2007-2013
 
-    path: ‪C:\Users\Michael\Documents\GitHub\eu-structural-funds\data\NL.the-netherlands\StructuralFundsNL2007NOW.csv
+    path: StructuralFundsNL2007NOW.csv
     publication_date: "2015-03-31"
 
     constant_fields:
