@@ -6,11 +6,7 @@ from datapackage import DataPackage
 from datapackage_pipelines.wrapper import ingest, spew
 from tabulator import Stream
 
-from common.config import (
-    DEFAULT_ENCODING,
-    DEFAULT_PARSER_OPTIONS,
-    DEFAULT_HEADERS
-)
+from common.config import DEFAULT_HEADERS
 
 
 def process_with_tabulator(datapackage,
@@ -44,17 +40,18 @@ def process_with_datapackage(datapackage):
 
 
 def stream_local_file(datapackage, **params):
-    streamer = params.pop('streamer')
+    streamer = params.pop('streamer') if 'streamer' in params else 'tabulator'
 
-    if streamer is None or streamer == 'tabulator':
+    if streamer == 'tabulator':
         return process_with_tabulator(datapackage, **params)
     elif streamer == 'datapackage':
         return process_with_datapackage(datapackage)
     else:
-        raise ValueError('%s is must be tabulator or datapackage', streamer)
+        raise ValueError('%s must be tabulator or datapackage', streamer)
 
 
 if __name__ == '__main__':
     parameters_, datapackage_, _ = ingest()
+    parameters_ = {} if parameters_ is None else parameters_
     resources = stream_local_file(datapackage_, **parameters_)
     spew(datapackage_, resources)
