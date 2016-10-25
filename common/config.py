@@ -37,3 +37,4 @@ DB_ENGINE = create_engine(DB_URI.format(ROOT_DIR))
 DEFAULT_HEADERS = 1
 DEFAULT_ENCODING = 'utf-8'
 DEFAULT_PARSER_OPTIONS = {'delimiter': ',', 'quotechar': '"'}
+DEFAULT_VERBOSE = True
