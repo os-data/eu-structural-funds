@@ -1,0 +1,109 @@
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column öffentliche Beteiligung\n(EU+nationale Kofinanzierung)*\nDOORFDWHG SXEOLF IXQGLQJ\n(8 QDWLRQDO FR ILQDQFLQJ\n(in Euro) to öffentliche Beteiligung(EU+nationale Kofinanzierung)",
+    "oldColumnName": "öffentliche Beteiligung\n(EU+nationale Kofinanzierung)*\nDOORFDWHG SXEOLF IXQGLQJ\n(8 QDWLRQDO FR ILQDQFLQJ\n(in Euro)",
+    "newColumnName": "öffentliche Beteiligung(EU+nationale Kofinanzierung)"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column 6WDWXV\n*  JHQHKPLJW\n$  DXVEH]DKOW\n*  FRPPLWHG\n$  SDLG RXW to Status - G genehmigt - A ausbezahlt",
+    "oldColumnName": "6WDWXV\n*  JHQHKPLJW\n$  DXVEH]DKOW\n*  FRPPLWHG\n$  SDLG RXW",
+    "newColumnName": "Status - G genehmigt - A ausbezahlt"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Bezeichnung des Vorhabens\nname of the operation to Bezeichnung des Vorhabens",
+    "oldColumnName": "Bezeichnung des Vorhabens\nname of the operation",
+    "newColumnName": "Bezeichnung des Vorhabens"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Begünstigte/r\nbeneficiary to Begünstigte",
+    "oldColumnName": "Begünstigte/r\nbeneficiary",
+    "newColumnName": "Begünstigte"
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "öffentliche Beteiligung\n(EU+nationale Kofinanzierung)*\nDOORFDWHG SXEOLF IXQGLQJ\n(8 QDWLRQDO FR ILQDQFLQJ\n(in Euro)",
+                "l": "öffentliche Beteiligung\n(EU+nationale Kofinanzierung)*\nDOORFDWHG SXEOLF IXQGLQJ\n(8 QDWLRQDO FR ILQDQFLQJ\n(in Euro)"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "öffentliche Beteiligung(EU+nationale Kofinanzierung)",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "öffentliche Beteiligung(EU+nationale Kofinanzierung)"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-star",
+    "description": "Star rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": true,
+          "selection": [],
+          "selectError": false,
+          "invert": false,
+          "name": "Status - G genehmigt - A ausbezahlt",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Status - G genehmigt - A ausbezahlt"
+        }
+      ]
+    },
+    "starred": true
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Status - G genehmigt - A ausbezahlt using expression grel:\"A\"",
+    "engineConfig": {
+      "mode": "record-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "row.starred",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": ""
+        }
+      ]
+    },
+    "columnName": "Status - G genehmigt - A ausbezahlt",
+    "expression": "grel:\"A\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  }
+]
