@@ -7,7 +7,7 @@ from common.utilities import get_fiscal_datapackage
 
 if __name__ == '__main__':
     # noinspection PyRedeclaration
-    _, _, resources_ = ingest()
-    datapackage_ = get_fiscal_datapackage()
-    logging.debug('Datapackage = %s', datapackage_)
-    spew(datapackage_, resources_)
+    _, datapackage, resources = ingest()
+    fiscal_datapackage = get_fiscal_datapackage(source=datapackage)
+    logging.debug('Datapackage = %s', datapackage)
+    spew(fiscal_datapackage, resources)

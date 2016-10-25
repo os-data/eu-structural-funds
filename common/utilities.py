@@ -55,16 +55,19 @@ def get_codelist(codelist_file):
         return yaml.load(text)
 
 
-def get_fiscal_datapackage(skip_validation=False):
+def get_fiscal_datapackage(skip_validation=False, source=None):
     """Create the master fiscal datapackage from parts."""
 
     with open(FISCAL_DATAPACKAGE_FILE) as stream:
         text = stream.read()
-        datapackage = yaml.load(text)
+        fiscal_datapackage = yaml.load(text)
+
+    datapackage = source if source else fiscal_datapackage
 
     with open(FISCAL_SCHEMA_FILE) as stream:
         text = stream.read()
         datapackage['resources'][0]['schema'] = yaml.load(text)
+        datapackage['resources'][0].update(mediatype='text/csv')
 
     with open(FISCAL_MODEL_FILE) as stream:
         text = stream.read()
