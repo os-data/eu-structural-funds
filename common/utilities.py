@@ -7,14 +7,16 @@ import os
 import csv
 
 from datapackage import DataPackage
+from petl import fromdicts, look
+from common.processors.show_sample_in_console import DEFAULT_SAMPLE_SIZE
 from .config import (
     CODELISTS_DIR,
     FISCAL_SCHEMA_FILE,
     FISCAL_DATAPACKAGE_FILE,
     FISCAL_MODEL_FILE,
     STATUS_FILE,
-    GEOCODES_FILE
-)
+    GEOCODES_FILE,
+    DEFAULT_VERBOSE)
 
 
 def get_nuts_codes():
@@ -113,13 +115,27 @@ def write_feedback(section, messages, folder=os.getcwd()):
 def process(resources, row_processor, **parameters):
     """Apply a row processor to each row of each datapackage resource."""
 
-    # TODO: Put the `process` function inside the pipeline-framework
-
     logging.info('Parameters = %s', parameters)
+
+    if 'verbose' in parameters:
+        verbose = parameters.pop('verbose')
+    else:
+        verbose = DEFAULT_VERBOSE
+
+    sample_rows = []
 
     for resource in resources:
         def process_rows(resource_):
-            for row in resource_:
-                yield row_processor(row, **parameters)
+            for i, row in enumerate(resource_):
+                new_row = row_processor(row, **parameters)
+                yield new_row
+
+                if verbose and i < DEFAULT_SAMPLE_SIZE:
+                    sample_rows.append(new_row)
+
+            if verbose:
+                message = 'Output of row processor %s is...\n%s'
+                table = look(fromdicts(sample_rows), limit=DEFAULT_SAMPLE_SIZE)
+                logging.info(message, row_processor.__name__, table)
 
         yield process_rows(resource)
