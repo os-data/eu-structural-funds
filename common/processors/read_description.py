@@ -80,5 +80,5 @@ if __name__ == '__main__':
     datapackage = create_datapackage(description_)
     if save_:
         save_datapackage_file(description_)
-    logging.debug('Datapackage: %s', datapackage)
+    logging.debug('Datapackage: %s', json.dumps(datapackage, indent=4))
     spew(datapackage, [])
