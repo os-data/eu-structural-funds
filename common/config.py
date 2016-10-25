@@ -25,6 +25,7 @@ FISCAL_DATAPACKAGE_FILE = join(SPECIFICATIONS_DIR, 'fiscal.metadata.yaml')
 DEFAULT_PIPELINE_FILE = join(SPECIFICATIONS_DIR, 'default-pipeline-spec.yaml')
 TEMPLATE_SCRAPER_FILE = join(PROCESSORS_DIR, 'scraper_template.py')
 DESCRIPTION_SCHEMA_FILE = join(SPECIFICATIONS_DIR, 'source.schema.json')
+TEMPLATE_SOURCE_FILE = join(SPECIFICATIONS_DIR, SOURCE_FILE)
 
 LOCAL_PATH_EXTRACTOR = 'processors.stream_from_path'
 REMOTE_CSV_EXTRACTOR = 'processors.simple_remote_source'
@@ -32,3 +33,7 @@ REMOTE_EXCEL_EXTRACTOR = 'processors.stream_remote_excel'
 
 DB_URI = 'sqlite:///{}/metrics.sqlite'
 DB_ENGINE = create_engine(DB_URI.format(ROOT_DIR))
+
+DEFAULT_HEADERS = 1
+DEFAULT_ENCODING = 'utf-8'
+DEFAULT_PARSER_OPTIONS = {'delimiter': ',', 'quotechar': '"'}

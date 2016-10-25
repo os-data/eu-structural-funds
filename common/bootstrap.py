@@ -259,12 +259,16 @@ class Source(object):
     def _get_extractor(self):
         if self.scraper_required:
             return self._scraper_module()
+
+        if self.resource_type == 'url':
+            if self.extension == '.csv':
+                return REMOTE_CSV_EXTRACTOR
+            elif self.extension in ('.xls', 'xlsx'):
+                return REMOTE_EXCEL_EXTRACTOR
+            else:
+                return
         elif self.resource_type == 'path':
             return LOCAL_PATH_EXTRACTOR
-        elif self.extension in ('.xls', '.xlsx'):
-            return REMOTE_EXCEL_EXTRACTOR
-        elif self.resource_type == '.csv':
-            return REMOTE_CSV_EXTRACTOR
         else:
             return
 
