@@ -14,14 +14,16 @@ from common.config import (
 
 
 def process_with_tabulator(datapackage,
-                           encoding=DEFAULT_ENCODING,
-                           parser_options=DEFAULT_PARSER_OPTIONS,
-                           headers=DEFAULT_HEADERS):
+                           encoding=None,
+                           parser_options={},
+                           headers=DEFAULT_HEADERS,
+                           format=None):
 
     for resource in datapackage['resources']:
         with Stream(resource['path'],
                     headers=headers,
                     encoding=encoding,
+                    format=format,
                     parser_options=parser_options) as table:
 
             def process_rows(rows):
