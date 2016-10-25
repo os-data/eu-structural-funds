@@ -1,0 +1,35 @@
+[
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Zuwendungsempfänger",
+                "l": "Zuwendungsempfänger"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Zuwendungsempfänger",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Zuwendungsempfänger"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Column",
+    "columnName": "Column"
+  }
+]
