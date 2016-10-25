@@ -1,30 +1,35 @@
 """A processor too stream in data files."""
 
 import logging
+import json
 
 from datapackage import DataPackage
 from datapackage_pipelines.wrapper import ingest, spew
 from tabulator import Stream
 
-from common.config import DEFAULT_HEADERS
+from common.config import DEFAULT_HEADER_LINES
 
 
 def process_with_tabulator(datapackage,
                            encoding=None,
                            parser_options={},
-                           headers=DEFAULT_HEADERS,
+                           header_lines=DEFAULT_HEADER_LINES,
                            format=None):
 
     for resource in datapackage['resources']:
         with Stream(resource['path'],
-                    headers=headers,
+                    headers=header_lines,
                     encoding=encoding,
                     format=format,
                     parser_options=parser_options) as table:
 
+            columns = list(map(lambda x: ' '.join(x.split()), table.headers))
+            message = 'Found the following columns: \n%s'
+            logging.info(message, json.dumps(columns, indent=4))
+
             def process_rows(rows):
                 for i, row in enumerate(rows):
-                    row_dict = dict(zip(table.headers, row))
+                    row_dict = dict(zip(columns, row))
                     if i < 10:
                         logging.debug('Row %s = %s', i, row_dict)
                     yield row_dict

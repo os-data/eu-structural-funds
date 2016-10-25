@@ -8,7 +8,6 @@ import csv
 
 from datapackage import DataPackage
 from petl import fromdicts, look
-from common.processors.show_sample_in_console import DEFAULT_SAMPLE_SIZE
 from .config import (
     CODELISTS_DIR,
     FISCAL_SCHEMA_FILE,
@@ -16,7 +15,9 @@ from .config import (
     FISCAL_MODEL_FILE,
     STATUS_FILE,
     GEOCODES_FILE,
-    DEFAULT_VERBOSE)
+    DEFAULT_VERBOSE,
+    DEFAULT_SAMPLE_SIZE
+)
 
 
 def get_nuts_codes():
@@ -88,7 +89,6 @@ def get_fiscal_fields():
         schema = yaml.load(stream.read())
 
     fields = [field_['name'] for field_ in schema['fields']]
-    logging.info('Valid fiscal fields = %s', fields)
 
     return fields
 
@@ -115,7 +115,7 @@ def write_feedback(section, messages, folder=os.getcwd()):
 def process(resources, row_processor, **parameters):
     """Apply a row processor to each row of each datapackage resource."""
 
-    logging.info('Parameters = %s', parameters)
+    logging.info('Parameters = \n%s', json.dumps(parameters, indent=4))
 
     if 'verbose' in parameters:
         verbose = parameters.pop('verbose')

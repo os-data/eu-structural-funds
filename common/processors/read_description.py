@@ -47,15 +47,18 @@ def create_datapackage(description):
     first_resource = description['resources'][0]
 
     for resource in description['resources']:
-        # resource = remove_empty_properties(resource)
-
         for property_ in first_resource.keys():
             if property_ not in resource:
                 resource[property_] = first_resource[property_]
 
         for i, field in enumerate(resource['schema']['fields']):
-            resource['schema']['fields'][i] = remove_empty_properties(field)
-            resource['schema']['fields'][i]['type'] = 'string'
+            new_properties = {
+                'type': 'string',
+                'name': ' '.join(field['name'].split())
+            }
+
+            resource['schema']['fields'][i].update(new_properties)
+            remove_empty_properties(resource['schema']['fields'][i])
 
         resource['name'] = slugify(resource['title'], separator='-').lower()
         resource['publication_date'] = parse_date(resource['publication_date'])
@@ -80,5 +83,5 @@ if __name__ == '__main__':
     datapackage = create_datapackage(description_)
     if save_:
         save_datapackage_file(description_)
-    logging.debug('Datapackage: %s', json.dumps(datapackage, indent=4))
+    logging.debug('Datapackage: \n%s', json.dumps(datapackage, indent=4))
     spew(datapackage, [])
