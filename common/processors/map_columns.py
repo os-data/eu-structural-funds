@@ -46,6 +46,6 @@ def apply_mapping(row, mapping=None):
 
 if __name__ == '__main__':
     _, datapackage, resources = ingest()
-    lookup_table = build_lookup_table(datapackage)
+    lookup_table = tuple(build_lookup_table(datapackage))
     new_resources = process(resources, apply_mapping, mapping=lookup_table)
     spew(datapackage, new_resources)
