@@ -32,7 +32,7 @@ def parse_date(raw_date):
     try:
         # This swallows a bunch of formats
         # but doesn't always get it right
-        return arrow.get(raw_date).timestamp
+        return arrow.get(raw_date).format('YYYY-MM-DD')
     except ParserError:
         message = 'Could not parse publication date = %s'
         logging.warning(message, raw_date)
