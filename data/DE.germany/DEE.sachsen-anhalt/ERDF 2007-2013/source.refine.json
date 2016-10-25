@@ -1,0 +1,154 @@
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Auszahlungen von öffentlichen Mitteln an die Begünstigten in Euro to Jahr der Bewilligung / Jahr der Restzahlung",
+    "oldColumnName": "Auszahlungen von öffentlichen Mitteln an die Begünstigten in Euro",
+    "newColumnName": "Jahr der Bewilligung / Jahr der Restzahlung"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column to Gewährte Beträge",
+    "oldColumnName": "Column",
+    "newColumnName": "Gewährte Beträge"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column2 to Bei Abschluss des Vorhabens gezahlte Gesamtbeträge",
+    "oldColumnName": "Column2",
+    "newColumnName": "Bei Abschluss des Vorhabens gezahlte Gesamtbeträge"
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Name des Begünstigten",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Name des Begünstigten"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Jahr der Bewilligung /\nJahr der Restzahlung",
+                "l": "Jahr der Bewilligung /\nJahr der Restzahlung"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Bezeichnung des Vorhabens",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Bezeichnung des Vorhabens"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Name des Begünstigten",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Name des Begünstigten"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": true,
+          "selection": [],
+          "selectError": false,
+          "invert": false,
+          "name": "Bezeichnung des Vorhabens",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Bezeichnung des Vorhabens"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Name des Begünstigten",
+                "l": "Name des Begünstigten"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Name des Begünstigten",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Name des Begünstigten"
+        },
+        {
+          "selectNumeric": true,
+          "expression": "grel:facetCount(value, \"value\", \"Name des Begünstigten\")",
+          "selectBlank": true,
+          "selectNonNumeric": true,
+          "selectError": true,
+          "name": "Name des Begünstigten",
+          "from": 20,
+          "to": 490,
+          "type": "range",
+          "columnName": "Name des Begünstigten"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column Bezeichnung des Vorhabens",
+    "columnName": "Bezeichnung des Vorhabens",
+    "keyColumnName": "Name des Begünstigten",
+    "separator": ""
+  }
+]
