@@ -9,12 +9,17 @@
       validate: true
       parameters:
         streamer: tabulator
+        format: xls
 
     - run: dump
       parameters:
         out-file: source.datapackage.zip
 
     - run: map_columns
+
+    - run: show_sample_in_console
+      parameters:
+        sample_size: 10000000
 
     - run: convert_excel_dates
       parameters:
@@ -32,6 +37,10 @@
 
     - run: nop
       validate: true
+
+    - run: show_sample_in_console
+      parameters:
+        sample_size: 10000000
 
     - run: dump
       parameters:
