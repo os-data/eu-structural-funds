@@ -1,0 +1,50 @@
+title: ESF Data for Sachsen Anhalt
+
+description: The beneficiary list for the ESF (2007-2013) program for Sachsen Anhalt.
+language: de
+
+sources:
+  - name: ESF Sachsen Anhalt
+    web: http://www.europa.sachsen-anhalt.de/eu-fonds-in-sachsen-anhalt/die-europaeischen-struktur-und-investitionsfonds-esi-fonds/esf/
+
+scraper_required: false
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+  - title: ESF Sachsen Anhalt 2007-2013
+
+    path: ESF-Data-Sachsen-Anhalt-2007-2013.csv
+    #url: http://www.europa.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/StK/Europa/Publikationen/Liste_der_Beguenstigten/16_04_27_Beguenstigtenverzeichnis_EFRE_Stand_31.12.15.pdf
+
+    publication_date: "2014-12-31"
+
+    constant_fields:
+      fund_name: ESF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+
+    schema:
+      fields:
+        - name: Name des Begünstigten
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: Bezeichnung des Vorhabens
+          translates_to: operation name
+          maps_to: project_description
+
+        - name: Jahr der Bewilligung / Jahr der Restzahlung
+          translates_to: Year of Approval / year of completion
+          maps_to: approval_date
+
+        - name: Gewährte Beträge
+          translates_to: total eligible expenditure of project (EU and public funding)
+          maps_to: total_amount_eligible
+
+        - name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge
+          translates_to: total amount paid
+          maps_to: total_amount
