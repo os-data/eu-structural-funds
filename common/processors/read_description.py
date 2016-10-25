@@ -30,7 +30,7 @@ def create_datapackage(description):
     """Generate a python object from the source description file."""
 
     description = remove_empty_properties(description)
-    description['name'] = slugify(description['title'], separator='-')
+    description['name'] = slugify(description['title'], separator='-').lower()
     first_resource = description['resources'][0]
 
     for resource in description['resources']:
@@ -42,8 +42,9 @@ def create_datapackage(description):
 
         for i, field in enumerate(resource['schema']['fields']):
             resource['schema']['fields'][i] = remove_empty_properties(field)
+            resource['schema']['fields'][i]['type'] = 'string'
 
-        resource['name'] = slugify(resource['title'])
+        resource['name'] = slugify(resource['title'], separator='-').lower()
 
     return description
 

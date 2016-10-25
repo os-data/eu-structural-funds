@@ -1,0 +1,34 @@
+nl_the_netherlands:
+  pipeline:
+  - {run: read_description}
+  - run: stream_from_path
+    parameters:
+      streamer: tabulator
+      encoding: ISO-8859-2
+      headers: 1
+      parser_options:
+        delimiter: ";"
+        quotechar: '"'
+
+  - run: nop
+    validate: true
+
+  - parameters: {out-file: source.datapackage.zip}
+    run: dump
+    validate: true
+
+  - {run: NL.parse_dates}
+  - {run: show_sample_in_console}
+
+  - {run: map_columns}
+  - {run: reshape_data}
+  - {run: cast_to_fiscal_schema}
+  - {run: load_fiscal_datapackage}
+  - parameters: {out-file: fiscal.datapackage.zip}
+    run: dump
+    validate: true
+  - {run: show_sample_in_console}
+  - parameters: {in-file: fiscal.datapackage.zip}
+    run: fiscal.upload
+  schedule:
+    crontab: 0 0 1 1 *
