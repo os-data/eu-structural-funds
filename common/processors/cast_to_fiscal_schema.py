@@ -3,6 +3,7 @@
 import logging
 import arrow
 import yaml
+import json
 
 from datapackage_pipelines.wrapper import ingest
 from datapackage_pipelines.wrapper import spew
@@ -29,11 +30,12 @@ def get_fiscal_types():
     }
 
     for field_ in schema['fields']:
-        logging.debug('Casting %s to %s', field_['name'], field_['type'])
         yield field_['name'], converters[field_['type']]
 
 
 converter = dict(get_fiscal_types())
+dump = {k: v.__name__ for k, v in converter.items()}
+logging.debug('Fiscal type casting: \n%s', json.dumps(dump, indent=4))
 
 
 def cast_values(row):
