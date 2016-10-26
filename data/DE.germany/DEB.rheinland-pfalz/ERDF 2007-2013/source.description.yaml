@@ -1,0 +1,51 @@
+title: ERDF Data for Rheinland-Pfalz
+
+description: The beneficiary list for the ERDF (2007-2013) program for Rheinland-Pfalz.
+language: de
+
+sources:
+  - name: ERDF Rheinland-Pfalz
+    web: http://www.europa-mv.de/cms2/Europamv_prod/Europamv/de/eufoerderinstrumente/Europaeische_Fonds_in_Mecklenburg-Vorpommern/EFRE/index.jsp
+
+scraper_required: false
+
+contributors:
+  - Bela Seeger (bela.seeger@okfn.de)
+
+resources:
+
+  - title: ERDF Rheinland-Pfalz 2007-2013
+
+    path: ERDF-Data-Rheinland-Pfalz-2007-2013.csv
+    #url: 
+
+    publication_date: "2015-07-01"
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+
+    schema:
+      fields:
+
+        - name: Name des Begünstigten
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: Bezeichnung des Vorhabens
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: Jahr der Bewilligung / Jahr der Restzahlung
+          translates_to: Year of Approval / year of completion
+          maps_to: approval_date
+
+        - name: Gewährte Beträge
+          translates_to: total eligible amount (EU and public funding)
+          maps_to: total_amount_eligible
+
+        - name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge
+          translates_to: total amount
+          maps_to: total_amount
