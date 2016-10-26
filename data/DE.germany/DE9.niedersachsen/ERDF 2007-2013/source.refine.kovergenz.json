@@ -1,0 +1,155 @@
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column to NAME DES BEG‹NSTIGTEN",
+    "oldColumnName": "Column",
+    "newColumnName": "NAME DES BEG‹NSTIGTEN"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column2 to BEZEICHNUNG DES VORHABENS",
+    "oldColumnName": "Column2",
+    "newColumnName": "BEZEICHNUNG DES VORHABENS"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column3 to Jahr der Bewilligung",
+    "oldColumnName": "Column3",
+    "newColumnName": "Jahr der Bewilligung"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column4 to Jahr der abschlieﬂenden Restzahlung",
+    "oldColumnName": "Column4",
+    "newColumnName": "Jahr der abschlieﬂenden Restzahlung"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column5 to Gew‰hrte Betr‰ge",
+    "oldColumnName": "Column5",
+    "newColumnName": "Gew‰hrte Betr‰ge"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column6 to Bei Abschluss des Vorhabens gezahlte Gesamtbetr‰ge",
+    "oldColumnName": "Column6",
+    "newColumnName": "Bei Abschluss des Vorhabens gezahlte Gesamtbetr‰ge"
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "VERZEICHNIS DER BEG‹NSTIGTEN NIEDERSACHSEN/DEUTSCHLAND - Stand: 31.05.2016, ‹berarbeitung Juni 2016",
+                "l": "VERZEICHNIS DER BEG‹NSTIGTEN NIEDERSACHSEN/DEUTSCHLAND - Stand: 31.05.2016, ‹berarbeitung Juni 2016"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "NAME DES BEG‹NSTIGTEN",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "NAME DES BEG‹NSTIGTEN"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Vorhaben",
+                "l": "Vorhaben"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "NAME DES BEG‹NSTIGTEN",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "NAME DES BEG‹NSTIGTEN"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "NAME DES BEG‹NSTIGTEN",
+                "l": "NAME DES BEG‹NSTIGTEN"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "NAME DES BEG‹NSTIGTEN",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "NAME DES BEG‹NSTIGTEN"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": true,
+          "selection": [],
+          "selectError": false,
+          "invert": false,
+          "name": "NAME DES BEG‹NSTIGTEN",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "NAME DES BEG‹NSTIGTEN"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": true,
+          "selection": [],
+          "selectError": false,
+          "invert": false,
+          "name": "BEZEICHNUNG DES VORHABENS",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "BEZEICHNUNG DES VORHABENS"
+        }
+      ]
+    }
+  }
+]
