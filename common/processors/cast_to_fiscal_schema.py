@@ -45,7 +45,7 @@ def cast_values(row):
         if value:
             try:
                 row[key] = converter[key](value)
-            except ValueError:
+            except (ValueError, arrow.parser.ParserError):
                 message = 'Could not cast %s = %s to %s, returning None'
                 logging.warning(message, key, row[key], converter[key])
                 row[key] = None
