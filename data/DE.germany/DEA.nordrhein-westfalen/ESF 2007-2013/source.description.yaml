@@ -1,40 +1,51 @@
-title: ESF Data for Nordrhein-Westfalen (2007-2013)
+title: ESF Data for Nordrhein-Westfalen
 
-description: The beneficiary list of the ERDF and ESF programme for Nordrhein-Westfalen.
+description: The beneficiary list for the ESF (2007-2013) program for Nordrhein-Westfalen.
 language: de
 
 sources:
-  - name: ESF Nordrhein-Westfalen 2007-2013
-    web:  https://www.mais.nrw/sites/default/files/asset/document/esf_operationelles_programm_beguenstigtenverzeichnis_barr.pdf
+  - name: ESF Nordrhein-Westfalen
+    web: https://www.mais.nrw/esf-2007-2013
 
-scraper_required: true
+scraper_required: false
 
 contributors:
-  - Michael Peters (michael.peters@okfn.de)
+  - Bela Seeger (bela.seeger@okfn.de)
 
 resources:
-  - title: ESF Nordrhein-Westfalen 2007-2013
-    url: https://www.mais.nrw/sites/default/files/asset/document/esf_operationelles_programm_beguenstigtenverzeichnis_barr.pdf
-    publication_date: 31-12-2015
+
+  - title: ERDF Nordrhein-Westfalen
+
+    path: ESF-Data-NRW-2007-2013.csv
+    #url: http://www.arbeit.nrw.de/pdf/esf/operationelles_programm_beguenstigtenverzeichnis_barr.pdf
+
+    publication_date: "2015-12-31"
+
+    constant_fields:
+      fund_name: ESF
+      offical_period: 2007-2013
+      currency_code: EUR
+
 
     schema:
       fields:
+
         - name: Jahr der Bewilligung
-          translates_to: Year of Approval
+          translates_to: Year of Approval / year of completion
           maps_to: approval_date
 
         - name: Name des Begünstigten
-          translates_to: Name of the Beneficiary
+          translates_to: Beneficiary name
           maps_to: beneficiary_name
 
         - name: Sitz des Begünstigten
-          translates_to: Location of the Beneficiary
-          maps_to: beneficiary_city
+          translates_to: Beneficiary adress
+          maps_to: beneficiary_address
 
         - name: Bezeichnung des Vorhabens
-          translates_to: Name of the Project
+          translates_to: operation name
           maps_to: project_name
 
         - name: Zuwendungen des Landes NRW
-          translates_to: Approved Amount in Euro
-          maps_to: total_amount_applied
+          translates_to: member state amount
+          maps_to: member_state_amount
