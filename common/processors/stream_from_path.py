@@ -40,6 +40,10 @@ def process_with_tabulator(datapackage,
 
     for resource in datapackage['resources']:
         encoding = encoding or detect_encoding(resource['path'])
+        parser_options = resource.get('parser_options') or parser_options
+
+        logging.info('Using %s encoding', encoding)
+        logging.info('Parsing options are %s', parser_options)
 
         with Stream(resource['path'],
                     headers=header_lines,
