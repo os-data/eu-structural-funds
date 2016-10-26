@@ -7,6 +7,9 @@ sources:
   - name: ERDF Thüringen (2014-2020)
     web: http://www.efre.rlp.de/
 
+  - name: Link to the CSV file
+    web: http://www.efre20-thueringen.de/mam/efre20/liste/160630_liste_der_vorhaben_efre_14_20_endg.csv
+
 scraper_required: false
 
 contributors:
@@ -14,15 +17,11 @@ contributors:
 
 resources:
   - title: ERDF in Thüringen 2014-2020
-    url: http://www.efre20-thueringen.de/mam/efre20/liste/160630_liste_der_vorhaben_efre_14_20_endg.csv
+    path: 160630_liste_der_vorhaben_efre_14_20_endg.csv
     publication_date: 30-06-2016
 
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2014-2020
-      currency_code: EUR
-
-      # any other field from fiscal.fields.yaml that is constant
+    parser_options:
+      delimiter: ;
 
     schema:
       fields:
