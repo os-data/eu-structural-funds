@@ -14,12 +14,9 @@ contributors:
   - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
 
 resources:
-
-
-
   - title: Finland ERDF data 2014-2020
 
-    path: C:\Users\Michael\Documents\GitHub\eu-structural-funds\data\FI.finland\ERDF 2014-2020\projektilista-csv-final.csv
+    path: projektilista-csv-final.csv
 
     publication_date: 2014-11-1
 
@@ -27,8 +24,6 @@ resources:
       fund_name: ERDF
       offical_period: 2014-2020
       currency_code: EUR
-
-      # any other field from fiscal.fields.yaml that is constant
 
     schema:
       fields:
@@ -78,6 +73,6 @@ resources:
           translates_to: amount of public funding
           maps_to: member_state_amount
 
-        - name: Toteutunut julki
+        - name: Toteutunut julkinen rahoitus yhteensä
           translates_to: total cost of project
           maps_to: total_amount

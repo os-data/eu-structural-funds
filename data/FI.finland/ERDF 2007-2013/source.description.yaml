@@ -19,7 +19,7 @@ resources:
 
   - title: Finland ERDF data 2007-2013
 
-    path: C:\Users\Michael\Documents\GitHub\eu-structural-funds\data\FI.finland\ERDF 2007-2013\projektilista-2007-2013.csv
+    path: projektilista-2007-2013.csv
     note: this file still requires cleaning 
 
     publication_date: "2015-12-31"
