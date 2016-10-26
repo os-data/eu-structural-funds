@@ -39,3 +39,4 @@ DEFAULT_ENCODING = 'utf-8'
 DEFAULT_PARSER_OPTIONS = {'delimiter': ',', 'quotechar': '"'}
 DEFAULT_VERBOSE = True
 DEFAULT_SAMPLE_SIZE = 50
+JSON_FORMAT = dict(indent=4, ensure_ascii=False)
