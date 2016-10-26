@@ -10,15 +10,16 @@ sources:
 scraper_required: false
 
 contributors:
-  - Anna Alberts (anna.alberts@okfn.de)
+  -  Michael Peters (michael.peters@okfn.de)
 
 resources:
 
-  - title: ESF in Baden-Württemberg 2014-2020
+  - title: ESF in  2014-2020
 
-    url: #add url from github after sourcing, the online url is locked, so use the one from github
+    #url: #add url from github after sourcing, the online url is locked, so use the one from github
+    path: ESF Data Brandenburg 2014-2020.xlsx
 
-    publication_date: 2016-06-01
+    publication_date: 2016-06-30
 
     constant_fields:
       fund_name: ESF
@@ -39,14 +40,14 @@ resources:
 
         - name: Zusammenfassung des Vorhabens operation summery
           translation: Project Summary
-          maps_to: project_description_long
+          maps_to: project_description
 
         - name: Datum des Beginns des Vorhabens operation start date
-          translation:
+          translation: start date
           maps_to: starting_date
 
         - name: Datum des Endes des Vorhabens operation end date
-          translation:
+          translation: completion date
           maps_to: completion_date
 
         - name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens total eligible expenditure allocated to the operation
@@ -54,8 +55,7 @@ resources:
           maps_to: total_amount_eligible
 
         - name: Unions-Kofinanzierungssatz pro Prioritätsachse
-          translation: Union co-financing rate, as per priority axis
-          maps_to: #missing field in schema
+          translation: Union co-financing rate, as per priority axis (in percent)
 
         - name: Ort des Vorhabens Operation Location
           translation: location
@@ -66,5 +66,4 @@ resources:
           maps_to: beneficiary_country
 
         - name: Bezeichnung der Interventionskategorie für das Vorhaben/name of category of intervention for the operation
-          translation:
-          maps_to: #unclear in the mapping where this is now
+          translation: category of intervention
