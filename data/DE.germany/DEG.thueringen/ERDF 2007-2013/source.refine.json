@@ -1,0 +1,98 @@
+[
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Column",
+    "columnName": "Column"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Verzeichnis der Begünstigten für die Region Thüringen/den Mitgliedstaat Bundesrepublik Deutschland\n31.12.2014\nAngaben in EUR to Verzeichnis der Begünstigten",
+    "oldColumnName": "Verzeichnis der Begünstigten für die Region Thüringen/den Mitgliedstaat Bundesrepublik Deutschland\n31.12.2014\nAngaben in EUR",
+    "newColumnName": "Verzeichnis der Begünstigten"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column2 to Vorhaben",
+    "oldColumnName": "Column2",
+    "newColumnName": "Vorhaben"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Vorhaben to Bezeichnung des Vorhabens",
+    "oldColumnName": "Vorhaben",
+    "newColumnName": "Bezeichnung des Vorhabens"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column3 to Jahr der Bewilligung / Jahr der Restzahlung",
+    "oldColumnName": "Column3",
+    "newColumnName": "Jahr der Bewilligung / Jahr der Restzahlung"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column4 to Gewährte Beträge",
+    "oldColumnName": "Column4",
+    "newColumnName": "Gewährte Beträge"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column5 to Bei Abschluss des Vorhabens gezahlte Gesamtbeträge",
+    "oldColumnName": "Column5",
+    "newColumnName": "Bei Abschluss des Vorhabens gezahlte Gesamtbeträge"
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Auszahlung von öffentlichen Mitteln an die\nBegünstigten",
+                "l": "Auszahlung von öffentlichen Mitteln an die\nBegünstigten"
+              }
+            },
+            {
+              "v": {
+                "v": "Jahr der\nBewillig-\nung/ Jahr\nder Rest-",
+                "l": "Jahr der\nBewillig-\nung/ Jahr\nder Rest-"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Jahr der Bewilligung / Jahr der Restzahlung",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Jahr der Bewilligung / Jahr der Restzahlung"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": true,
+          "selection": [],
+          "selectError": false,
+          "invert": false,
+          "name": "Jahr der Bewilligung / Jahr der Restzahlung",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Jahr der Bewilligung / Jahr der Restzahlung"
+        }
+      ]
+    }
+  }
+]
