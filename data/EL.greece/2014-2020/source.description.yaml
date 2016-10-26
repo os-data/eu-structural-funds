@@ -15,36 +15,20 @@ contributors:
 
 resources:
   - title: The list of all projects for the period 2014-2020
-    url: https://www.espa.gr/el/Documents/ListOfOperations_20160513.csv
-    path:
+    path: ListOfOperations_20160513.csv
 
-    publication_date:
-    publication_version:
-
-    periods:
-      2007-2013: false
-      2014-2020: true
-
-    extraction_mode:
-      user_interface: false
-      download_link: true
-      pdf_scraper: false
-      web_scraper: false
-
-    constants:
-      currency:
-      certifying_authority:
-      # We need a complete list of possible constants here
+    parser_options:
+      delimiter: ';'
 
     schema:
       fields:
-        - name: ÅÐÉ×ÅÉÑÇÓÉÁÊÏ ÐÑÏÃÑÁÌÌÁ/ OPERATIONAL PROGRAMME
+        - name: ΕΠΙΧΕΙΡΗΣΙΑΚΟ ΠΡΟΓΡΑΜΜΑ/ OPERATIONAL PROGRAMME
           translation: OPERATIONAL PROGRAMME
           type: "string"
           missingValue:
           description:
 
-        - name: ÁÎÏÍÁÓ ÐÑÏÔÅÑÁÉÏÔÇÔÁÓ/PRIORITY
+        - name: ΑΞΟΝΑΣ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ/PRIORITY
           translation: PRIORITY
           type: "string"
           missingValue:
@@ -56,67 +40,67 @@ resources:
           missingValue:
           description:
 
-        - name: ÏÍÏÌÁÓÉÁ ÄÉÊÁÉÏÕ×ÏÕ / BENEFICIARY NAME
+        - name: ΟΝΟΜΑΣΙΑ ΔΙΚΑΙΟΥΧΟΥ / BENEFICIARY NAME
           translation: BENEFICIARY NAME
           type: "string"
           missingValue:
           description:
 
-        - name: ÏÍÏÌÁÓÉÁ ÐÑÁÎÇÓ / OPERATION NAME
+        - name: ΟΝΟΜΑΣΙΑ ΠΡΑΞΗΣ / OPERATION NAME
           translation: OPERATION NAME
           type: "string"
           missingValue:
           description:
 
-        - name: ÓÕÍÏØÇ ÐÑÁÎÇÓ/OPERATION SUMMARY
+        - name: ΣΥΝΟΨΗ ΠΡΑΞΗΣ/ OPERATION SUMMARY
           translation: OPERATION SUMMARY
           type: "string"
           missingValue:
           description:
 
-        - name: ÇÌ/ÍÉÁ ÅÍÁÑÎÇÓ ÔÇÓ ÐÑÁÎÇÓ / OPERATION START DATE
+        - name: ΗΜ/ΝΙΑ ΕΝΑΡΞΗΣ ΤΗΣ ΠΡΑΞΗΣ / OPERATION START DATE
           translation: OPERATION START DATE
           type: "date"
           missingValue:
           description:
 
-        - name: ÊÁÔÁËÇÊÔÉÊÇ ÇÌÅÑÏÌÇÍÉÁ ÐÑÁÎÇÓ / OPERATION END DATE
+        - name: ΚΑΤΑΛΗΚΤΙΚΗ ΗΜΕΡΟΜΗΝΙΑ ΠΡΑΞΗΣ / OPERATION END DATE
           translation: OPERATION END DATE
           type: "date"
           missingValue:
           description:
 
-        - name: ÓÕÍÏËÉÊÇ ÅÐÉËÅÎÉÌÇ ÄÁÐÁÍÇ ÐÏÕ  ÄÉÁÔÅÈÇÊÅ ÓÔÇÍ ÐÑÁÎÇ (ÐÑÏÛÐÏËÏÃÉÓÌÏÓ)/ TOTAL ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION
+        - name: ΣΥΝΟΛΙΚΗ ΕΠΙΛΕΞΙΜΗ ΔΑΠΑΝΗ ΠΟΥ ΔΙΑΤΕΘΗΚΕ ΣΤΗΝ ΠΡΑΞΗ (ΠΡΟΫΠΟΛΟΓΙΣΜΟΣ)/ TOTAL ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION
           translation: TOTAL ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION
           type: "number"
           missingValue: ""
           description:
 
-        - name: ÐÏÓÏÓÔÏ ÓÕÃ×ÑÇÌÁÔÏÄÏÔÇÓÇÓ ÔÇÓ ÅÍÙÓÇÓ ÁÍÁ ÁÎÏÍÁ ÐÑÏÔÅÑÁÉÏÔÇÔÁÓ/ UNION Co-FINANCING RATE  AS PER PRIORITY AXIS
+        - name: ΠΟΣΟΣΤΟ ΣΥΓΧΡΗΜΑΤΟΔΟΤΗΣΗΣ ΤΗΣ ΕΝΩΣΗΣ ΑΝΑ ΑΞΟΝΑ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ/ UNION Co-FINANCING RATE AS PER PRIORITY AXIS
           translation: UNION Co-FINANCING RATE  AS PER PRIORITY AXIS
           type: "string"
           missingValue:
           description:
 
-        - name: ÔÁ×ÕÄÑÏÌÉÊÏÓ ÊÙÄÉÊÁÓ Þ ¢ËËÇ ÊÁÔÁËËÇËÇ ÅÍÄÅÉÎÇ ÔÏÐÏÈÅÓÉÁÓ/POSTCODE OR OTHER APPROPRIATE LOCATION INDICATOR
+        - name: ΤΑΧΥΔΡΟΜΙΚΟΣ ΚΩΔΙΚΑΣ ή ’ΛΛΗ ΚΑΤΑΛΛΗΛΗ ΕΝΔΕΙΞΗ ΤΟΠΟΘΕΣΙΑΣ/ POSTCODE OR OTHER APPROPRIATE LOCATION INDICATOR
           translation: POSTCODE OR OTHER APPROPRIATE LOCATION INDICATOR
           type: "string"
           missingValue:
           description:
 
-        - name: ×ÙÑÁ/COUNTRY
+        - name: ΧΩΡΑ/ COUNTRY
           translation: COUNTRY
           type: "string"
           missingValue:
           description:
 
-        - name: ÏÍÏÌÁÓÉÁ ÊÁÔÇÃÏÑÉÁÓ ÐÁÑÅÌÂÁÓÇÓ ÔÇÓ ÐÑÁÎÇÓ/NAME OF CATEGORY OF INTERVENTION FOR THE OPERATION
+        - name: ΟΝΟΜΑΣΙΑ ΚΑΤΗΓΟΡΙΑΣ ΠΑΡΕΜΒΑΣΗΣ ΤΗΣ ΠΡΑΞΗΣ/ NAME OF CATEGORY OF INTERVENTION FOR THE OPERATION
           translation: NAME OF CATEGORY OF INTERVENTION FOR THE OPERATION
           type: "string"
           missingValue:
           description:
 
-        - name: ÔÅËÅÕÔÁÉÁ ÅÍÇÌÅÑÙÓÇ ÊÁÔÁËÏÃÏÕ/LAST UPDATE OF THE LIST
+        - name: ΤΕΛΕΥΤΑΙΑ ΕΝΗΜΕΡΩΣΗ ΚΑΤΑΛΟΓΟΥ/ LAST UPDATE OF THE LIST
           translation: LAST UPDATE OF THE LIST
           type: "date"
           missingValue:
