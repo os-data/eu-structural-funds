@@ -5,9 +5,21 @@ import json
 
 from datapackage import DataPackage
 from datapackage_pipelines.wrapper import ingest, spew
+from petl import fromdicts
+from petl import look
 from tabulator import Stream
 
-from common.config import DEFAULT_HEADER_LINES
+from common.config import DEFAULT_HEADER_LINES, DEFAULT_SAMPLE_SIZE
+
+
+def remove_empty_headers(headers):
+    """Remove columns with no name from the header list."""
+
+    for i, header in enumerate(headers):
+        if not header:
+            logging.warning('Removing empty header %s', i)
+        else:
+            yield i, header
 
 
 def process_with_tabulator(datapackage,
@@ -21,20 +33,40 @@ def process_with_tabulator(datapackage,
                     headers=header_lines,
                     encoding=encoding,
                     format=format,
-                    parser_options=parser_options) as table:
+                    parser_options=parser_options) as stream:
 
-            columns = list(map(lambda x: ' '.join(x.split()), table.headers))
+            raw_headers = [' '.join(h.split()) for h in stream.headers]
+            i_columns, columns = zip(*list(remove_empty_headers(raw_headers)))
             message = 'Found the following columns: \n%s'
+            logging.info(message, json.dumps(raw_headers, indent=4))
+            message = 'Ingested the following columns: \n%s'
             logging.info(message, json.dumps(columns, indent=4))
 
+            sample_rows = []
+
             def process_rows(rows):
-                for i, row in enumerate(rows):
+                for i, raw_row in enumerate(rows):
+                    row = [raw_row[i]
+                           for i, column in enumerate(columns)
+                           if i in i_columns]
                     row_dict = dict(zip(columns, row))
-                    if i < 10:
-                        logging.debug('Row %s = %s', i, row_dict)
+
+                    if len(row) != len(columns):
+                        row = [v for v in row if v]
+                        logging.warning('Bad row %s = %s', i, row)
+                        continue
+
+                    if i < DEFAULT_SAMPLE_SIZE:
+                        sample_rows.append(row_dict)
+
+                    if i == DEFAULT_SAMPLE_SIZE:
+                        table = look(fromdicts(sample_rows),
+                                     limit=DEFAULT_SAMPLE_SIZE)
+                        logging.info('Content of CSV file is...\n%s', table)
+
                     yield row_dict
 
-            yield process_rows(table)
+            yield process_rows(stream)
 
 
 def process_with_datapackage(datapackage):
