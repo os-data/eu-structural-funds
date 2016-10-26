@@ -1,0 +1,42 @@
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column öffentliche Beteiligung\n(EU+nationale Kofinanzierung)*\nDOORFDWHG SXEOLF IXQGLQJ\n(8 QDWLRQDO FR ILQDQFLQJ\n(in Euro) to öffentliche Beteiligung(EU+nationale Kofinanzierung)",
+    "oldColumnName": "öffentliche Beteiligung\n(EU+nationale Kofinanzierung)*\nDOORFDWHG SXEOLF IXQGLQJ\n(8 QDWLRQDO FR ILQDQFLQJ\n(in Euro)",
+    "newColumnName": "öffentliche Beteiligung(EU+nationale Kofinanzierung)"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column 6WDWXV\n*  JHQHKPLJW\n$  DXVEH]DKOW\n*  FRPPLWHG\n$  SDLG RXW to Status - G genehmigt - A ausbezahlt",
+    "oldColumnName": "6WDWXV\n*  JHQHKPLJW\n$  DXVEH]DKOW\n*  FRPPLWHG\n$  SDLG RXW",
+    "newColumnName": "Status - G genehmigt - A ausbezahlt"
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Bezeichnung des Vorhabens\nname of the operation",
+                "l": "Bezeichnung des Vorhabens\nname of the operation"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Bezeichnung des Vorhabens\nname of the operation",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Bezeichnung des Vorhabens\nname of the operation"
+        }
+      ]
+    }
+  }
+]

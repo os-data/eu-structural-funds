@@ -1,69 +1,45 @@
-title: ERDF data for Salzburg (AT) 2007-2013
+title: ERDF Data for Salzburg
 
-description: Salzburg is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called "Stärkung der Regionalen Wettbewerbsfähigkeit und Beschäftigung Salzburg 2007-2013". The dataset at hand describes the funding distributed through said program.
+description: The beneficiary list for the ERDF (2007-2013) program for Salzburg.
+language: de
 
 sources:
-  - name: Regional government portal
-    web:  https://www.salzburg.gv.at/
+  - name: ERDF Salzburg
+    web:  https://www.salzburg.gv.at/wirtschaft_/Seiten/efre-foerderung.aspx
 
-  - name: Bundeskanzleramt Österreich
-    web: https://www.bka.gv.at/site/6093/default.aspx
-
-  - name: Österreichische Raumordnungskonferenz / Austrian Conference on Spatial Planning
-    web: http://www.oerok.gv.at/eu-regionalpolitik/eu-strukturfonds-in-oesterreich-2007-2013.html
-
-scraper_required: true
-language: DE 
+scraper_required: false
 
 contributors:
-  - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
+  - Michael Peters (michael.peters@okfn.de)
 
 resources:
-  - title: ERDF data Salzburg (AT) (2007-2013)
-    url: https://www.salzburg.gv.at/wirtschaft_/Documents/rwf-beguenstigte.pdf
-    path:
 
-    publication_date: "2015-08-25"
-    publication_version:
-    start_date: "2007-01-01"
-    end_date: "2015-12-31"
+  - title: ERDF Salzburg 2007-2013
 
-    periods:
-      2007-2013: true
-      2014-2020: false
+    path: ERDF-Salzburg-2007-2013.csv
+    #url: https://www.salzburg.gv.at/wirtschaft_/Documents/rwf-beguenstigte.pdf
 
-    extraction_mode:
-      user_interface: false
-      download_link: true
-      pdf_scraper: false
-      web_scraper: false
+    publication_date: "2016-07-07"
 
-    constants:
-      currency: EUR
-      certifying_authority:
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2007-2013
+      currency_code: EUR
+
 
     schema:
       fields:
-        - name: Begünstigte/r
-          translation: Beneficiary
-          type: string
-          missingValue:
-          description:
+        - name: "Begünstigte/r beneficiary"
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
 
-        - name: Bezeichnung des Vorhabens
-          translation: name of the operation
-          type: string
-          missingValue:
-          description:
+        - name: "Bezeichnung des Vorhabens name of the operation"
+          translates_to: operation name
+          maps_to: project_description
 
-        - name: öffentliche Beteiligung (EU+nationale Kofinanzierung)*
-          translation: allocated pulic funding (EU+national cofinancing)* (in Euro)
-          type: number
-          missingValue:
-          description:
+        - name: öffentliche Beteiligung(EU+nationale Kofinanzierung)
+          translates_to: Public Contribution (EU and national)
+          maps_to: total_amount
 
-        - name: Status G = genehmigt, A = ausbezahlt
-          translation: G = commited, A = paid out
-          type: string
-          missingValue:
-          description:
+        - name: Status - G genehmigt - A ausbezahlt
+          translates_to: Status of Project - G confirmed A paid
