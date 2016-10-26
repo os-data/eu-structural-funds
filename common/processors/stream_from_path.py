@@ -2,6 +2,7 @@
 
 import logging
 import json
+import cchardet as chardet
 
 from datapackage import DataPackage
 from datapackage_pipelines.wrapper import ingest, spew
@@ -22,6 +23,15 @@ def remove_empty_headers(headers):
             yield i, header
 
 
+def detect_encoding(path):
+    """Detect the encoding automatically."""
+
+    with open(path, 'rb') as stream:
+        text = stream.read()
+    result = chardet.detect(text)
+    return result['encoding']
+
+
 def process_with_tabulator(datapackage,
                            encoding=None,
                            parser_options={},
@@ -29,6 +39,8 @@ def process_with_tabulator(datapackage,
                            format=None):
 
     for resource in datapackage['resources']:
+        encoding = encoding or detect_encoding(resource['path'])
+
         with Stream(resource['path'],
                     headers=header_lines,
                     encoding=encoding,
@@ -38,9 +50,11 @@ def process_with_tabulator(datapackage,
             raw_headers = [' '.join(h.split()) for h in stream.headers]
             i_columns, columns = zip(*list(remove_empty_headers(raw_headers)))
             message = 'Found the following columns: \n%s'
-            logging.info(message, json.dumps(raw_headers, indent=4))
+            logging.info(message,
+                         json.dumps(raw_headers, indent=4, ensure_ascii=False))
             message = 'Ingested the following columns: \n%s'
-            logging.info(message, json.dumps(columns, indent=4))
+            logging.info(message,
+                         json.dumps(columns, indent=4, ensure_ascii=False))
 
             sample_rows = []
 
