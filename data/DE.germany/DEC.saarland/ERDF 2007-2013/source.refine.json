@@ -1,0 +1,512 @@
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Verzeichnis der Begünstigten für das Saarland (Stand: 31. Dezember 2015) to Name der Begünstigten",
+    "oldColumnName": "Verzeichnis der Begünstigten für das Saarland (Stand: 31. Dezember 2015)",
+    "newColumnName": "Name der Begünstigten"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column2 to Vorhaben",
+    "oldColumnName": "Column2",
+    "newColumnName": "Vorhaben"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column3 to Jahr der Bewilligung",
+    "oldColumnName": "Column3",
+    "newColumnName": "Jahr der Bewilligung"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column4 to Gewährte Beträge (insgesamt)",
+    "oldColumnName": "Column4",
+    "newColumnName": "Gewährte Beträge (insgesamt)"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column5 to Bei Abschluss des Vorhabens gezahlte Gesamtbeträge",
+    "oldColumnName": "Column5",
+    "newColumnName": "Bei Abschluss des Vorhabens gezahlte Gesamtbeträge"
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Name der\nBegünstigten",
+                "l": "Name der\nBegünstigten"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Name der Begünstigten",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Name der Begünstigten"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Auszahlung von öffentlichen Mitteln an die\nBegünstigten",
+                "l": "Auszahlung von öffentlichen Mitteln an die\nBegünstigten"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Vorhaben",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Vorhaben"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Bei Abschluss des Vorhabens gezahlte Gesamtbeträge using expression grel:cells[\"Gewährte Beträge (insgesamt)\"].value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Bei Abschluss des Vorhabens gezahlte Gesamtbeträge",
+    "expression": "grel:cells[\"Gewährte Beträge (insgesamt)\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Gewährte Beträge (insgesamt) using expression grel:\"\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Gewährte Beträge (insgesamt)",
+    "expression": "grel:\"\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Gewährte Beträge (insgesamt) using expression grel:cells[\"Jahr der Bewilligung\"].value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Gewährte Beträge (insgesamt)",
+    "expression": "grel:cells[\"Jahr der Bewilligung\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Jahr der Bewilligung using expression grel:\"\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Jahr der Bewilligung",
+    "expression": "grel:\"\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Jahr der Bewilligung using expression grel:cells[\"Vorhaben\"].value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Jahr der Bewilligung",
+    "expression": "grel:cells[\"Vorhaben\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Vorhaben using expression grel:\"\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Vorhaben",
+    "expression": "grel:\"\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Vorhaben using expression grel:cells[\"Name der Begünstigten\"].value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Vorhaben",
+    "expression": "grel:cells[\"Name der Begünstigten\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Name der Begünstigten using expression grel:\"\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Name der Begünstigten",
+    "expression": "grel:\"\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Name der Begünstigten using expression grel:cells[\"Column\"].value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Name der Begünstigten",
+    "expression": "grel:cells[\"Column\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Column using expression grel:\"\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Column",
+    "expression": "grel:\"\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Column",
+    "columnName": "Column"
+  },
+  {
+    "op": "core/multivalued-cell-join",
+    "description": "Join multi-valued cells in column Name der Begünstigten",
+    "columnName": "Name der Begünstigten",
+    "keyColumnName": "Name der Begünstigten",
+    "separator": ""
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "record-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": true,
+          "selection": [],
+          "selectError": false,
+          "invert": false,
+          "name": "Name der Begünstigten",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Name der Begünstigten"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "den",
+                "l": "den"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Vorhaben",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Vorhaben"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": true,
+          "selection": [],
+          "selectError": false,
+          "invert": false,
+          "name": "Name der Begünstigten",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Name der Begünstigten"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": true,
+          "selection": [],
+          "selectError": false,
+          "invert": false,
+          "name": "Jahr der Bewilligung",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Jahr der Bewilligung"
+        }
+      ]
+    }
+  }
+]
