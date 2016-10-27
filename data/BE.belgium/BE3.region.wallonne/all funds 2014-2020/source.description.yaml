@@ -1,0 +1,82 @@
+title: ERDF and ESF and ESF Data for Region Wallonne
+
+description: The beneficiary list for the ERDF and ESF (2014-2020) program for Region Wallonne.
+language: de
+
+sources:
+  - name: ERDF and ESF Region Wallonne
+    web:  http://www.fonds-europeens.public.lu/fr/projets-cofinances/index.php
+
+scraper_required: false
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+  - title: ERDF and ESF Region Wallonne 2014-2020
+
+    path: Region_Wallone_all_funds_2014-2020.json
+    #url:
+
+    publication_date: "2016-10-25"
+
+    constant_fields:
+      fund_name: ERDF and ESF
+      offical_period: 2014-2020
+      currency_code: EUR
+
+
+    schema:
+      fields:
+        - name: title
+          translates_to: operation name
+          maps_to: project_description
+
+        - name: _source
+          translates_to: source
+
+        - name: financement
+          translates_to: name of fund
+          maps_to: fund_acronym
+
+        - name: autorité_publique
+          translates_to: public authority
+          maps_to: beneficiary_nuts_region
+
+        - name: programme
+          translates_to: programme
+          maps_to: cci_program_title
+
+        - name: bénéficiaire
+          translates_to: beneficiary
+          maps_to: beneficiary_name
+
+        - name: montant_du_financement
+          translates_to: total amount
+          maps_to: total_amount
+
+        - name: financement_européen_(fse/feder)
+          translates_to: european cofinancing amount
+          maps_to: eu_cofinancing_amount
+
+        - name: financement_wallonie
+          translates_to: regional funding wallonie
+          maps_to: member_state_amount
+
+        - name: contact
+          translates_to: contact person
+
+        - name: email
+          translates_to: Email Address
+
+        - name: tél.
+          translates_to: telephone number
+
+        - name: adresse
+          translates_to: Address
+          maps_to: beneficiary_address
+
+        - name: localité
+          translates_to: city and postal code
+          maps_to: beneficiary_city
