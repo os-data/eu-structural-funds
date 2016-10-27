@@ -7,6 +7,9 @@ sources:
   - name: ESF Brandenburg
     web: http://www.esf.brandenburg.de/cms/detail.php/bb3.c.208471.de
 
+  - name: Link to original PDF file
+    web: http://www.esf.brandenburg.de/media_fast/667/Beg%C3%BCnstigtenverzeichnis_ESF_BB_2007-2014.pdf
+
 scraper_required: false
 
 contributors:
@@ -15,17 +18,8 @@ contributors:
 resources:
 
 - title: ESF Data Brandenburg 2007-2013
-
   path: Brandenburg-ESF-2007-2013.csv
-  #url: http://www.esf.brandenburg.de/media_fast/667/Beg%C3%BCnstigtenverzeichnis_ESF_BB_2007-2014.pdf
-
   publication_date: "2014-12-31"
-
-  constant_fields:
-    fund_name: ESF
-    offical_period: 2007-2013
-    currency_code: EUR
-
 
   schema:
     fields:
@@ -41,10 +35,10 @@ resources:
         translates_to: Year of Approval / Year of Final Payment
         maps_to: final_payment_date
 
-      - name: Bewilligte Beträge
+      - name: Bewilligte Beträge
         translates_to: Granted Contribution in Euro
         maps_to: total_amount_eligible
 
-      - name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge
+      - name: 'Bei Abschluss des Vorhabens gezahlte Gesamtbeträge'
         translates_to: Amounts paid on the completion of the project
         maps_to: total_amount
