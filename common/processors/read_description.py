@@ -9,8 +9,10 @@ The conversion
 
 import json
 import logging
+import arrow
 import yaml
 
+from parser import ParserError
 from slugify import slugify
 from datapackage_pipelines.wrapper import spew, ingest
 from common.config import SOURCE_FILE, DATAPACKAGE_FILE
@@ -26,6 +28,17 @@ def remove_empty_properties(properties):
         }
 
 
+def parse_date(raw_date):
+    try:
+        # This swallows a bunch of formats
+        # but doesn't always get it right
+        return arrow.get(raw_date).format('YYYY-MM-DD')
+    except ParserError:
+        message = 'Could not parse publication date = %s'
+        logging.warning(message, raw_date)
+        return
+
+
 def create_datapackage(description):
     """Generate a python object from the source description file."""
 
@@ -34,17 +47,21 @@ def create_datapackage(description):
     first_resource = description['resources'][0]
 
     for resource in description['resources']:
-        # resource = remove_empty_properties(resource)
-
         for property_ in first_resource.keys():
             if property_ not in resource:
                 resource[property_] = first_resource[property_]
 
         for i, field in enumerate(resource['schema']['fields']):
-            resource['schema']['fields'][i] = remove_empty_properties(field)
-            resource['schema']['fields'][i]['type'] = 'string'
+            new_properties = {
+                'type': 'string',
+                'name': ' '.join(field['name'].split())
+            }
+
+            resource['schema']['fields'][i].update(new_properties)
+            remove_empty_properties(resource['schema']['fields'][i])
 
         resource['name'] = slugify(resource['title'], separator='-').lower()
+        resource['publication_date'] = parse_date(resource['publication_date'])
 
     return description
 
@@ -66,5 +83,5 @@ if __name__ == '__main__':
     datapackage = create_datapackage(description_)
     if save_:
         save_datapackage_file(description_)
-    logging.debug('Datapackage: %s', datapackage)
+    logging.debug('Datapackage: \n%s', json.dumps(datapackage, indent=4))
     spew(datapackage, [])

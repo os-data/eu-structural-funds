@@ -42,10 +42,10 @@ resources:
         - name: öffentliche Beteiligung
           translates_to: total amount of public expenditure EU and local  #this is the EU amount and the public member state amount together
           maps_to: total_amount
+          decimal:
 
         - name: Status G = genehmigt A = ausbezahlt
-          translates_to:  Status G = committed A = paid
-
+          translates_to: Status G = committed A = paid
 
         - name: Förderstelle
           translates_to: funding agency

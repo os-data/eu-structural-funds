@@ -1,9 +1,9 @@
 pipeline-id:
   schedule:
-    - crontab: 0 0 1 1 *
+    crontab: 0 0 1 1 *
 
   pipeline:
-    - run: processors.read_description
+    - run: read_description
 
     - run: # placeholder for data streamer
 
@@ -12,11 +12,11 @@ pipeline-id:
       parameters:
         out-file: source.datapackage.zip
 
-    - run: processors.map_columns
-    - run: processors.reshape_data
-    - run: processors.cast_to_fiscal_schema
-    - run: processors.show_sample_in_console
-    - run: processors.load_fiscal_datapackage
+    - run: map_columns
+    - run: reshape_data
+    - run: cast_to_fiscal_schema
+    - run: show_sample_in_console
+    - run: load_fiscal_datapackage
 
     - run: dump
       validate: true
