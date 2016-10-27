@@ -5,7 +5,7 @@ language: de
 
 sources:
   - name: ESF Schleswig Holstein
-    web:
+    web: http://www.ib-sh.de/die-ibsh/foerderprogramme-des-landes/landesprogramm-arbeit/
 
 scraper_required: false
 
