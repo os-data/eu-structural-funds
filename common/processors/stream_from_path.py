@@ -42,14 +42,16 @@ def process_with_tabulator(datapackage,
         encoding = encoding or detect_encoding(resource['path'])
         parser_options = resource.get('parser_options') or parser_options
 
-        logging.info('Using %s encoding', encoding)
-        logging.info('Parsing options are %s', parser_options)
+        logging.info('Resource %s uses %s encoding',
+                     resource['title'], encoding)
+        logging.info('Resource %s parsing options are %s',
+                     resource['title'], parser_options)
 
         with Stream(resource['path'],
                     headers=header_lines,
                     encoding=encoding,
                     format=format,
-                    parser_options=parser_options) as stream:
+                    **parser_options) as stream:
 
             raw_headers = [' '.join(h.split()) for h in stream.headers]
             i_columns, columns = zip(*list(remove_empty_headers(raw_headers)))
