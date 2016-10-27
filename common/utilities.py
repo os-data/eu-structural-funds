@@ -16,7 +16,8 @@ from .config import (
     STATUS_FILE,
     GEOCODES_FILE,
     DEFAULT_VERBOSE,
-    DEFAULT_SAMPLE_SIZE
+    DEFAULT_SAMPLE_SIZE,
+    JSON_FORMAT
 )
 
 
@@ -115,7 +116,8 @@ def write_feedback(section, messages, folder=os.getcwd()):
 def process(resources, row_processor, **parameters):
     """Apply a row processor to each row of each datapackage resource."""
 
-    logging.info('Parameters = \n%s', json.dumps(parameters, indent=4))
+    parameters_as_json = json.dumps(parameters, **JSON_FORMAT)
+    logging.info('Parameters = \n%s', parameters_as_json)
 
     if 'verbose' in parameters:
         verbose = parameters.pop('verbose')
@@ -124,18 +126,19 @@ def process(resources, row_processor, **parameters):
 
     sample_rows = []
 
-    for resource in resources:
+    for resource_index, resource in enumerate(resources):
         def process_rows(resource_):
-            for i, row in enumerate(resource_):
+            for row_index, row in enumerate(resource_):
                 new_row = row_processor(row, **parameters)
                 yield new_row
 
-                if verbose and i < DEFAULT_SAMPLE_SIZE:
+                if verbose and row_index < DEFAULT_SAMPLE_SIZE:
                     sample_rows.append(new_row)
 
             if verbose:
-                message = 'Output of row processor %s is...\n%s'
                 table = look(fromdicts(sample_rows), limit=DEFAULT_SAMPLE_SIZE)
-                logging.info(message, row_processor.__name__, table)
+                message = 'Output of processor %s for resource %s is...\n%s'
+                args = row_processor.__name__, resource_index, table
+                logging.info(message, *args)
 
         yield process_rows(resource)
