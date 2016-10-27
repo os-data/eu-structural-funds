@@ -1,4 +1,4 @@
-title: ERDF Data for Niederösterreich
+title: ERDF Data for Niederösterreich 2007-2013
 
 description: The beneficiary list for the ERDF (2007-2013) program for Niederösterreich.
 language: de
@@ -6,6 +6,9 @@ language: de
 sources:
   - name: ERDF Niederösterreich
     web: http://www.phasing-out.at/
+
+  - name: Link to original PDF file
+    web: http://www.raumordnung-noe.at/fileadmin/root_raumordnung/land/eu_regionalpolitik/RWB_Niederoesterreich.pdf
 
 scraper_required: false
 
@@ -15,17 +18,8 @@ contributors:
 resources:
 
   - title: ERDF Niederösterreich 2007-2013
-
     path: ERDF-AT-Niederösterreich-2007-2013.csv
-    #url: http://www.raumordnung-noe.at/fileadmin/root_raumordnung/land/eu_regionalpolitik/RWB_Niederoesterreich.pdf
-
     publication_date: "2016-10-10"
-
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
-
 
     schema:
       fields:
