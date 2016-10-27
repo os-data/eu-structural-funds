@@ -30,6 +30,11 @@ resources:
           translates_to: Identification Number
           maps_to: project_id
 
+        - name: Name des Begünstigten -  beneficiary name
+          translates_to: beneficiary name
+          maps_to: beneficiary_name
+
+
         - name: Bezeichnung des Vorhabens - operation name
           translates_to: Name of the operation
           maps_to: project_name
