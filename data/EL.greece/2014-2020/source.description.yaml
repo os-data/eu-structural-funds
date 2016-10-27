@@ -8,15 +8,13 @@ sources:
   - name: ESPA
     web:  https://www.espa.gr/en/pages/default.aspx
 
-image:
-
 contributors:
   - Olaya Argueso <arguesoperezolaya@gmail.com>
 
 resources:
   - title: The list of all projects for the period 2014-2020
     path: ListOfOperations_20160513.csv
-
+    publication_date:
     parser_options:
       delimiter: ';'
 
