@@ -1,4 +1,4 @@
-title: ESF Data for Bayern
+title: ESF Data for Bayern 2007-2013
 
 description: The beneficiary list for the ESF (2007-2013) program for Bayern.
 language: de
@@ -6,6 +6,9 @@ language: de
 sources:
   - name: ESF Bayern
     web: http://www.esf.bayern.de
+
+  - name: Link to original PDF
+    web: http://www.esf.bayern.de/imperia/md/content/stmas/stmas_internet/esf/inf-beguenstigte-2015.pdf
 
 scraper_required: false
 
@@ -15,17 +18,8 @@ contributors:
 resources:
 
   - title: ESF Bayern 2007-2013
-
     path: ESF-Bayern-2007-2013.csv
-    #url: http://www.esf.bayern.de/imperia/md/content/stmas/stmas_internet/esf/inf-beguenstigte-2015.pdf
-
     publication_date: "2015-05-29"
-
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2007-2013
-      currency_code: EUR
-
 
     schema:
       fields:
