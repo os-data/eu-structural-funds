@@ -7,6 +7,9 @@ sources:
   - name: ERDF Mecklenburg Vorpommern
     web: http://www.europa-mv.de/cms2/Europamv_prod/Europamv/de/eufoerderinstrumente/Europaeische_Fonds_in_Mecklenburg-Vorpommern/EFRE/index.jsp
 
+  - name: Link to the original PDF file
+    web: https://www.ERDF-Mecklenburg Vorpommern.de/upload/ERDF_verzeichnis_der_beg%C3%BCnstigten_2007_bis_2013_stand_12_2014_8161.pdf
+
 scraper_required: false
 
 contributors:
@@ -15,10 +18,7 @@ contributors:
 resources:
 
   - title: ERDF Mecklenburg Vorpommern 2007-2013
-
     path: Mecklenburg-Vorpommern-Data-ERDF-2007-2013.csv
-    #url: https://www.ERDF-Mecklenburg Vorpommern.de/upload/ERDF_verzeichnis_der_beg%C3%BCnstigten_2007_bis_2013_stand_12_2014_8161.pdf
-
     publication_date: "2014-12-31"
 
     constant_fields:
@@ -39,10 +39,6 @@ resources:
 
         - name: "JAHR DER BEWILLIGUNG/ JAHR DER RESTZAHLUNG"
           translates_to: Year of Approval / year of completion
-          maps_to: approval_date
-
-        - name: Bewilligungszeitraum
-          translates_to: Time of approval (start and end date)
           maps_to: approval_date
 
         - name: GEWÄHRTE BETRÄGE (ERDF und nationale Mittel)
