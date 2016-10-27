@@ -7,6 +7,8 @@ sources:
   - name: Hamburg 2007-2013
     web: http://www.esf-hamburg.de/
 
+  - name: Link to original PDF file
+    web: http://static.hamburg.de/fhh/behoerden/basfi/esf-hamburg.de/www.esf-hamburg.de/contentblob/1379164/data/verzeichnis-der-beguenstigten.pdf
 scraper_required: false
 
 contributors:
@@ -14,9 +16,7 @@ contributors:
 
 resources:
   - title: ESF Hamburg 2007-2013
-
     path: ESF data Hamburg 2007-2013.csv
-    #url: http://static.hamburg.de/fhh/behoerden/basfi/esf-hamburg.de/www.esf-hamburg.de/contentblob/1379164/data/verzeichnis-der-beguenstigten.pdf
     publication_date: "30-06-2013"
 
     schema:
