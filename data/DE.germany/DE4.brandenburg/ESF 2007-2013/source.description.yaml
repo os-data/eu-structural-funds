@@ -19,7 +19,7 @@ resources:
   path: Brandenburg-ESF-2007-2013.csv
   #url: http://www.esf.brandenburg.de/media_fast/667/Beg%C3%BCnstigtenverzeichnis_ESF_BB_2007-2014.pdf
 
-  publication_date: 2014-12-31
+  publication_date: "2014-12-31"
 
   constant_fields:
     fund_name: ESF

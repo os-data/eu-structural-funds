@@ -7,6 +7,9 @@ sources:
   - name: ERDF Thüringen
     web: http://www.efre20-thueringen.de/efre_2014/
 
+  - name: Link to the original PDF file
+    web: http://www.efre-thueringen.de/mam/efre/beguenstigtenliste/beguenstigten_liste_2014.pdf
+
 scraper_required: false
 
 contributors:
@@ -15,17 +18,8 @@ contributors:
 resources:
 
   - title: ERDF Thüringen 2007-2013
-
     path: ERDF-Data-Thueringen-2007-2013.csv
-    #url: http://www.efre-thueringen.de/mam/efre/beguenstigtenliste/beguenstigten_liste_2014.pdf
-
     publication_date: "2014-12-31"
-
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
-
 
     schema:
       fields:

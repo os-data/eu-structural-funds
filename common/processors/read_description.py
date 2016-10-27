@@ -1,11 +1,4 @@
-"""A processor to convert the description file into a datapackage.
-
-The conversion
-    - 1) adds `name` fields in the metadata and in each resource
-    - 2) duplicates fields from the first resource to other resources if they
-         are missing (so that the description file can stay "dry")
-
-"""
+"""A processor to convert the description file into a datapackage."""
 
 import json
 import logging
@@ -15,73 +8,96 @@ import yaml
 from parser import ParserError
 from slugify import slugify
 from datapackage_pipelines.wrapper import spew, ingest
-from common.config import SOURCE_FILE, DATAPACKAGE_FILE
+from common.config import SOURCE_FILE, DATAPACKAGE_FILE, JSON_FORMAT
 
 
-def remove_empty_properties(properties):
-    """Remove empty properties because they cause the validation to fail."""
-    return {
-        key: value
-        for key, value
-        in properties.items()
-        if value
-        }
-
-
-def parse_date(raw_date):
-    try:
-        # This swallows a bunch of formats
-        # but doesn't always get it right
-        return arrow.get(raw_date).format('YYYY-MM-DD')
-    except ParserError:
-        message = 'Could not parse publication date = %s'
-        logging.warning(message, raw_date)
-        return
-
-
-def create_datapackage(description):
-    """Generate a python object from the source description file."""
-
-    description = remove_empty_properties(description)
-    description['name'] = slugify(description['title'], separator='-').lower()
-    first_resource = description['resources'][0]
-
-    for resource in description['resources']:
-        for property_ in first_resource.keys():
-            if property_ not in resource:
-                resource[property_] = first_resource[property_]
-
-        for i, field in enumerate(resource['schema']['fields']):
-            new_properties = {
-                'type': 'string',
-                'name': ' '.join(field['name'].split())
-            }
-
-            resource['schema']['fields'][i].update(new_properties)
-            remove_empty_properties(resource['schema']['fields'][i])
-
-        resource['name'] = slugify(resource['title'], separator='-').lower()
-        resource['publication_date'] = parse_date(resource['publication_date'])
-
-    return description
-
-
-def load_description_file():
+def load_description():
+    """Return the description file as dictionary.
+    """
     with open(SOURCE_FILE) as stream:
         return yaml.load(stream.read())
 
 
-def save_datapackage_file(description):
+def save_to_file(datapackage):
+    """Save the datapackage dictionary to JSON.
+    """
     with open(DATAPACKAGE_FILE, 'w+') as stream:
-        stream.write(json.dumps(description, indent=4))
+        stream.write(json.dumps(datapackage, indent=4, ensure_ascii=False))
+
+
+def drop_empty_properties(field):
+    """Remove empty properties, as they cause the validation to fail.
+    """
+    return {
+        key: value
+        for key, value
+        in field.items()
+        if value
+        }
+
+
+def fix_date(raw_date):
+    """Return an ISO-8601 date or None if parsing is impossible.
+    """
+    try:
+        return arrow.get(raw_date).format('YYYY-MM-DD')
+    except ParserError:
+        logging.warning('Could not parse date = %s', raw_date)
+
+
+def fix_resource(first_resource, resource):
+    """Use the first resource to fill in other resources.
+    """
+    for property_ in first_resource.keys():
+        if property_ not in resource:
+            resource[property_] = first_resource[property_]
+    return resource
+
+
+def convert_to_name(title):
+    """Return the name property given the title.
+    """
+    return slugify(title, separator='-').lower()
+
+
+def fix_fields(fields):
+    """Return a valid and clean version of the field property.
+    """
+    for i, field in enumerate(fields):
+        new_field = drop_empty_properties(field)
+        new_field['name'] = ' '.join(new_field['name'].split())
+        new_field['type'] = 'string'
+        fields[i] = new_field
+    return fields
+
+
+def create_datapackage(save_datapackage=False):
+    """Convert a source description to a standard datapackage."""
+
+    description = load_description()
+    datapackage = drop_empty_properties(description)
+    datapackage['name'] = convert_to_name(datapackage['title'])
+    first_resource = datapackage['resources'][0]
+
+    for resource in datapackage['resources']:
+        resource = fix_resource(first_resource, resource)
+        resource['name'] = convert_to_name(resource['title'])
+        resource['schema']['fields'] = fix_fields(resource['schema']['fields'])
+
+        if 'publication_date' in resource:
+            raw_date = resource['publication_date']
+            resource['publication_date'] = fix_date(raw_date)
+
+    if save_datapackage:
+        save_to_file(datapackage)
+
+    datapackage_dump = json.dumps(datapackage, **JSON_FORMAT)
+    logging.debug('Datapackage: \n%s', datapackage_dump)
+
+    return datapackage
 
 
 if __name__ == '__main__':
     parameters, _, _ = ingest()
-    save_ = parameters.get('save_datapackage')
-    description_ = load_description_file()
-    datapackage = create_datapackage(description_)
-    if save_:
-        save_datapackage_file(description_)
-    logging.debug('Datapackage: \n%s', json.dumps(datapackage, indent=4))
-    spew(datapackage, [])
+    datapackage_ = create_datapackage(**parameters)
+    spew(datapackage_, [])
