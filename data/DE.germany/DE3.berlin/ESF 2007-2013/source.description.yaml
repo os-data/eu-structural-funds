@@ -1,0 +1,53 @@
+title: ESF Data for Berlin
+
+description: The beneficiary list for the ESF (2007-2013) program for Berlin.
+language: de
+
+sources:
+  - name: ESF Berlin 2007-2013
+    web: https://www.berlin.de/sen/wirtschaft/gruenden-und-foerdern/europaeische-strukturfonds/esf/dokumente-a-z/
+
+scraper_required: false
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+  - title: ESF Berlin 2007-2013
+
+    path: Berlin_ESF_2007-2013.json 
+    #url: https://www.berlin.de/sen/wirtschaft/gruenden-und-foerdern/europaeische-strukturfonds/esf/informationen-fuer-verwaltungen-partner-eu/beguenstigtenverzeichnis_2014.pdf
+
+    publication_date: "2014-12-31"
+
+    constant_fields:
+      fund_name: ESF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: sources
+
+        - name: beneficiary
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: name_of_operation
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: date
+          translates_to: Year of Approval / year of completion
+          maps_to: approval_date
+
+        - name: allocated_public_funding
+          translates_to: total eligible amount (EU and public funding)
+          maps_to: total_amount_eligible
+
+        - name: on_finish_total_value
+          translates_to: total amount
+          maps_to: total_amount
