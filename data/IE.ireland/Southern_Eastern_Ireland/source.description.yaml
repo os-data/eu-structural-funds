@@ -1,0 +1,72 @@
+title: ERDF Data for Southern and Eastern Ireland (2007-2013)
+
+description: The beneficiary list of the ERDF programme for Southern and Eastern Ireland.
+language: de
+
+sources:
+  - name: ERDF Southern and Eastern Ireland (2007-2013)
+    web: http://www.southernassembly.ie/en/project/view_projects
+
+scraper_required: false
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+  - title: ERDF in Southern and Eastern Ireland 2008
+
+    path: ESF_southern_Ireland_2007-2013.json
+    #url: http://www.southernassembly.ie/en/project/view_projects
+    publication_date: "2016-02-22"
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+
+        - name: title
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: summary
+          translates_to: summary
+          maps_to: project_description
+
+        - name: location
+          translates_to: location / county
+
+        - name: project_type
+          translates_to: project type
+          maps_to: theme_name
+
+        - name: start_date
+          translates_to: starting date
+          maps_to: starting_date
+
+        - name: start_date
+          translates_to: starting date
+          maps_to: starting_date
+
+        - name: end_date
+          translates_to: completion date
+          maps_to: completion_date
+
+        - name: total_eligible_expenditure_(€)
+          translates_to: total eligible expenditure
+          maps_to: total_amount_eligible
+
+        - name: total_public_eligible_expenditure_(€)
+          translates_to: total amount
+          maps_to: total_amount
+
+        - name: project_theme_subtheme
+          translates_to: project theme / subtheme
+
+        - name: erdf_(€)
+          translates_to: ERDF co financing amount
+          maps_to: eu_cofinancing_amount
