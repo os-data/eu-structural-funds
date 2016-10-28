@@ -54,14 +54,14 @@ resources:
 
         - name: Despesas Elegíveis Totais Atribuídas à Operação | Total Eligible Expenditure Allocated to the Operation
           translates_to: Total Eligible Expenditure Allocated to the Operation
-          maps_to: total_amount_applied
+          maps_to: total_amount_eligible
 
         - name: FEEI | ESI Fund
           translates_to: Fund (either ERDF or ESF)
 
         - name: Fundo Total Aprovado | Total Aproved Fund
           translates_to: total approved amount
-          maps_to: total_amount_approved
+          maps_to: total_amount
 
         - name: Objetivo Temático | Thematic Objective
           translates_to: Thematic objective
