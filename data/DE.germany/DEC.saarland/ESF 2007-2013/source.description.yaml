@@ -37,10 +37,6 @@ resources:
           translates_to: Beneficiary name
           maps_to: beneficiary_name
 
-        - name: BEZEICHNUNG DES VORHABENS
-          translates_to: operation name
-          maps_to: project_name
-
         - name: year_from
           translates_to: start date
           maps_to: starting_date
