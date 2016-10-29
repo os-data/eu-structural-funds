@@ -1,40 +1,52 @@
-title: EFRE Data for Nordrhein-Westfalen (2007-2013)
+title: ERDF Data for Nordrhein Westfalen
 
-description: The beneficiary list of the ERDF programme for Nordrhein-Westfalen.
+description: The beneficiary list for the ERDF (2007-2013) program for Nordrhein Westfalen.
 language: de
 
 sources:
-  - name: EFRE Nordrhein-Westfalen (2007-2013)
-    web: http://www.ziel2.nrw.de/1_NRW-EU_Ziel_2_Programm_2007-2013/3_Ergebnisse/Verzeichnis_Beguenstigte_2014_12_31.pdf
+  - name: ERDF Nordrhein Westfalen
+    web: https://www.efre.nrw.de/
 
-scraper_required: true
+scraper_required: false
 
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
-  - title: ERDF Nordrhein-Westfalen 2007-2013
-    url: http://www.ziel2.nrw.de/1_NRW-EU_Ziel_2_Programm_2007-2013/3_Ergebnisse/Verzeichnis_Beguenstigte_2014_12_31.pdf
-    publication_date: 31-12-2014
+
+  - title: ERDF Nordrhein Westfalen 2007-2013
+
+    path: ERDF Data NRW 2007-2013.json
+    #url: http://www.ziel2.nrw.de/1_NRW-EU_Ziel_2_Programm_2007-2013/3_Ergebnisse/Verzeichnis_Beguenstigte_2014_12_31.pdf
+    publication_date: "2014-12-31"
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2007-2013
+      currency_code: EUR
+
 
     schema:
       fields:
-        - name: Name des Begünstigten
-          translates_to: Name of the Beneficiary
+        - name: _source
+          translates_to: source
+
+        - name: beneficiary
+          translates_to: Beneficiary name
           maps_to: beneficiary_name
 
-        - name: Bezeichnung des Vorhabens
-          translates_to: Name of the Project
+        - name: name_of_operation
+          translates_to: operation name
           maps_to: project_name
 
-        - name: Jahr der Bewilligung
-          translates_to: Year of Approval
+        - name: years
+          translates_to: Year of Approval / year of completion
           maps_to: approval_date
 
-        - name: Bewilligter Betrag
-          translates_to: Approved Amount in Euro
-          maps_to: total_amount_applied
-
-        - name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge
-          translates_to: Paid amount at the end of the project
+        - name: allocated_public_funding
+          translates_to: total eligible amount (EU and public funding)
           maps_to: total_amount_eligible
+
+        - name: on_finish_total_value
+          translates_to: total amount
+          maps_to: total_amount
