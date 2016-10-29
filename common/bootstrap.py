@@ -435,9 +435,9 @@ def collect_sources(select=None, **kwargs):
         return sorted(sources)
 
     subset = set()
-    for key, value in select:
+    for key, value in select.items():
         for source in sources:
-            if getattr(source, key) == value:
+            if getattr(source, key) is value or getattr(source, key) == value:
                 subset.add(source)
 
     return sorted(subset)
@@ -451,6 +451,11 @@ def collect_sources(select=None, **kwargs):
 @pass_context
 def main(ctx, select):
     """Bootstrap command tools."""
+
+    select = dict(select)
+    for key, value in select.items():
+        select[key] = None if value == 'None' else value
+
     ctx.obj['sources'] = collect_sources(
         select=select,
         timestamp=datetime.now(),
