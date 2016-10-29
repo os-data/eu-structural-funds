@@ -82,7 +82,8 @@ def process_with_tabulator(datapackage,
                     if i == DEFAULT_SAMPLE_SIZE:
                         table = look(fromdicts(sample_rows),
                                      limit=DEFAULT_SAMPLE_SIZE)
-                        logging.info('Content of CSV file is...\n%s', table)
+                        message_ = 'Content of %s is...\n%s'
+                        logging.info(message_, resource['path'], table)
 
                     yield row_dict
 
