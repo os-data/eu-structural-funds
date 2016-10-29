@@ -1,113 +1,77 @@
-title: Luxemburg ESF and ERDF data 
+title: ERDF and ESF and ESF Data for Luxembourg
 
-description: 
-language: EN
-scraper_required: true
+description: The beneficiary list for the ERDF and ESF (2007-2020) program for Luxembourg.
+language: de
 
 sources:
-  - name: Fonds Européns
+  - name: ERDF and ESF Luxembourg
     web:  http://www.fonds-europeens.public.lu/fr/projets-cofinances/index.php
 
-image:
+scraper_required: false
 
 contributors:
-  - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
-  - Fernando Blat <fernando@populate.tools> (https://populate.tools)
+  - Michael Peters (michael.peters@okfn.de)
 
 resources:
 
-  - title: Fonds Européns including 2007-2013 and 2014-2020
-    url:  http://www.fonds-europeens.public.lu/fr/projets-cofinances/index.php
-    path:
+  - title: ERDF and ESF Luxembourg 2007-2013
 
-    publication_date: "2015-01-22"
+    path: all_funds_data_luxembourg_2007-2020.json
+    #url:
 
-    update_interval: yearly
+    publication_date: "2016-10-25"
 
-    periods:
-      2007-2013: true
-      2014-2020: true
+    constant_fields:
+      fund_name: ERDF and ESF
+      offical_period: 2007-2020
+      currency_code: EUR
 
-    extraction_mode:
-      user_interface: true
-      download_link: false
-      pdf_scraper: false
-      web_scraper: true
-      rest_api: false
-
-    constants:
-      currency: EUR
 
     schema:
       fields:
-        - name: Title
-          translation:
-          type: string
-          missingValue:
-          description: Title of the project
+        - name: _source
+          translates_to: source
 
-        - name: Description
-          translation:
-          type: string
-          missingValue:
-          description: Description of the project
+        - name: title
+          translates_to: operation name
+          maps_to: project_description
 
-        - name: Fonds
-          translation: Fund name
-          type: string
-          missingValue:
-          description: Name of the fund. Values, FSE or ERDF
+        - name: fonds
+          translates_to: name of fund
+          maps_to: fund_acronym
 
-        - name: Objectifs thématiques
-          translation: Objectives
-          type: string
-          missingValue:
-          description:
+        - name: objectifs_thématiques
+          translates_to: theme name
+          maps_to: theme_name
 
-        - name: Programme
-          translation: Program name
-          type: string
-          missingValue:
-          description:
+        - name: programme
+          translates_to: programme
+          maps_to: cci_program_title
 
-        - name: Porteur de projet
-          translation: Project's holder
-          type: string
-          missingValue:
-          description:
+        - name: porteur(s)_de_projet
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
 
-        - name: Porteur de projet URL
-          translation: Project's holder URL
-          type: string
-          missingValue: ""
-          description:
+        - name: commune(s)
+          translates_to: city / county
+          maps_to: beneficiary_city
 
-        - name: Commune
-          translation: Commune
-          type: string
-          missingValue:
-          description:
+        - name: coût_total
+          translates_to: total amount
+          maps_to: total_amount
 
-        - name: Coût total
-          translation: Total Cost
-          type: number
-          missingValue:
-          description: the total cost of the project
+        - name: total
+          translates_to: total amount eligible
+          maps_to: total_amount_eligible
 
-        - name: Coût de fonds
-          translation: Funds cost
-          type: number
-          missingValue:
-          description: the cost of the project paid with the fund
+        - name: feder
+          translates_to: eu cofinancing amount ERDF
+          maps_to:  eu_cofinancing_amount
 
-        - name: Durée
-          translation: Duration
-          type: period
-          missingValue:
-          description: The period the project was developed.
+        - name: part_fse_(50%)
+          translates_to: eu cofinancing amount ESF
+          maps_to: eu_cofinancing_amount
 
-        - name: Catégorie d'intervention
-          translation: Category
-          type: string
-          missingValue: ""
-          description: Category code
+        - name: durée
+          translates_to: duration of project
+          maps_to: starting_date
