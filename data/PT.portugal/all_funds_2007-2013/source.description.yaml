@@ -19,7 +19,8 @@ resources:
 
   - title: ERDF and ESF data for Portugal 2007-2013
 
-    url: http://www.qren.pt/np4/%7B%24clientServletPath%7D/?newsId=3001&fileName=Lista_Operacoes_QREN_mar15.xlsx
+    path: Portugal_all_funds_2007-2013.xlsx
+    #url: http://www.qren.pt/np4/%7B%24clientServletPath%7D/?newsId=3001&fileName=Lista_Operacoes_QREN_mar15.xlsx
     publication_date: "2015-03-01"
 
     constant_fields:
@@ -75,7 +76,6 @@ resources:
         - name: Investimento Elegível Aprovado (€)
           translates_to: eligible amount in Euro
           maps_to: total_amount_eligible
-          note: not completely sure which expenditure is which but the EU cofinancing should be about 80 percent of the total since that fits the data thats what I chose
 
         - name: "Fundo Comunitário Aprovado (€)"
           translates_to: eu cofinancing amount
