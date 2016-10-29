@@ -56,7 +56,8 @@ from common.config import (
     PROCESSORS_DIR,
     SCRAPER_FILE,
     DESCRIPTION_SCHEMA_FILE,
-    DB_ENGINE
+    DB_ENGINE,
+    DATAPACKAGE_MUTATOR
 )
 from common.utilities import get_fiscal_fields
 
@@ -108,6 +109,10 @@ class Source(object):
 
         if extractor:
             self.pipeline[self.slug]['pipeline'][1]['run'] = extractor
+            if self.extension in ('.json', '.xls', 'xlsx'):
+                self.pipeline[self.slug]['pipeline'].insert(
+                    2, {'run': DATAPACKAGE_MUTATOR}
+                )
 
             with open(join(self.folder, PIPELINE_FILE), 'w') as stream:
                 yaml.dump(self.pipeline, stream)
