@@ -66,14 +66,13 @@ def process_with_tabulator(datapackage,
 
             def process_rows(rows):
                 for i, raw_row in enumerate(rows):
-                    row = [raw_row[i]
-                           for i, column in enumerate(columns)
-                           if i in i_columns]
-                    row_dict = dict(zip(columns, row))
-
-                    if len(row) != len(columns):
-                        row = [v for v in row if v]
-                        logging.warning('Bad row %s = %s', i, row)
+                    try:
+                        row = [raw_row[j]
+                               for j, column in enumerate(columns)
+                               if j in i_columns]
+                        row_dict = dict(zip(columns, row))
+                    except IndexError:
+                        logging.warning('Bad row %s = %s', i, raw_row)
                         continue
 
                     if i < DEFAULT_SAMPLE_SIZE:
