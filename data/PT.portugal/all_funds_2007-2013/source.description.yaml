@@ -1,0 +1,82 @@
+
+title: ERDF and ESF data for Portugal 2007-2013
+
+description:
+language: PT
+
+sources:
+  - name: ERDF and ESF data for Portugal 2007-2013
+    web:  http://www.pofc.qren.pt/Projectos/Projectos-Aprovados-QREN?area=2&regiao=105&Search=y
+
+scraper_required: false
+
+contributors:
+  - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
+
+resources:
+
+
+
+  - title: ERDF and ESF data for Portugal 2007-2013
+
+    path: Portugal_all_funds_2007-2013.xlsx
+    #url: http://www.qren.pt/np4/%7B%24clientServletPath%7D/?newsId=3001&fileName=Lista_Operacoes_QREN_mar15.xlsx
+    publication_date: "2015-03-01"
+
+    constant_fields:
+      fund_name: ERDF, ESF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: Programa Operacional
+          translates_to: operational programme
+          maps_to: cci_program_title
+
+        - name: Fundo
+          translates_to: Fund (either ERDF or ESF)
+
+        - name: Agenda
+          translates_to: operational programme code
+          maps_to: cci_program_code
+
+        - name: Domínio de Intervenção
+          translates_to: Intervention field / project objective
+          maps_to: theme_name
+
+        - name: Tipologia de Operação
+          translates_to: Operating Type
+
+        - name: Beneficiário
+          translates_to: beneficiary
+          maps_to: beneficiary_name
+
+        - name: Operações
+          translates_to: project title (includes project number)
+          maps_to: project_name
+
+        - name: "Região NUT II"
+          translates_to: region nuts code
+          maps_to: beneficiary_nuts_region
+
+        - name: Código de Concelho
+          translates_to: postal code
+          maps_to: beneficiary_postal_code
+
+        - name: Concelho
+          translates_to: County
+
+        - name: Data de Aprovação
+          translates_to: approval date
+          maps_to: approval_date
+
+        - name: Investimento Elegível Aprovado (€)
+          translates_to: eligible amount in Euro
+          maps_to: total_amount_eligible
+
+        - name: "Fundo Comunitário Aprovado (€)"
+          translates_to: eu cofinancing amount
+          maps_to: eu_cofinancing_amount
