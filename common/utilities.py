@@ -8,6 +8,8 @@ import csv
 
 from datapackage import DataPackage
 from petl import fromdicts, look
+from slugify import slugify
+
 from .config import (
     CODELISTS_DIR,
     FISCAL_SCHEMA_FILE,
@@ -15,10 +17,10 @@ from .config import (
     FISCAL_MODEL_FILE,
     STATUS_FILE,
     GEOCODES_FILE,
-    DEFAULT_VERBOSE,
-    DEFAULT_SAMPLE_SIZE,
-    JSON_FORMAT
-)
+    VERBOSE,
+    SAMPLE_SIZE,
+    JSON_FORMAT,
+    DATA_DIR)
 
 
 def get_nuts_codes():
@@ -65,7 +67,11 @@ def get_fiscal_datapackage(skip_validation=False, source=None):
     with open(FISCAL_DATAPACKAGE_FILE) as stream:
         fiscal_datapackage = yaml.load(stream.read())
 
-    datapackage = source if source else fiscal_datapackage
+    if source:
+        datapackage = source
+        datapackage['name'] = slugify(os.getcwd().lstrip(DATA_DIR)).lower()
+    else:
+        datapackage = fiscal_datapackage
 
     with open(FISCAL_SCHEMA_FILE) as stream:
         schema = yaml.load(stream.read())
@@ -123,7 +129,7 @@ def process(resources, row_processor, **parameters):
     if 'verbose' in parameters:
         verbose = parameters.pop('verbose')
     else:
-        verbose = DEFAULT_VERBOSE
+        verbose = VERBOSE
 
     sample_rows = []
 
@@ -133,13 +139,17 @@ def process(resources, row_processor, **parameters):
                 new_row = row_processor(row, **parameters)
                 yield new_row
 
-                if verbose and row_index < DEFAULT_SAMPLE_SIZE:
+                if verbose and row_index < SAMPLE_SIZE:
                     sample_rows.append(new_row)
 
             if verbose:
-                table = look(fromdicts(sample_rows), limit=DEFAULT_SAMPLE_SIZE)
+                table = look(fromdicts(sample_rows), limit=SAMPLE_SIZE)
                 message = 'Output of processor %s for resource %s is...\n%s'
                 args = row_processor.__name__, resource_index, table
                 logging.info(message, *args)
 
         yield process_rows(resource)
+
+
+def format_to_json(blob):
+    return json.dumps(blob, **JSON_FORMAT)

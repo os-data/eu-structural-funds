@@ -1,30 +1,31 @@
 """A processor too stream in data files."""
 
-import logging
+import os
 import json
+
 import cchardet as chardet
-
-from datapackage import DataPackage
-from datapackage_pipelines.wrapper import ingest, spew
-from petl import fromdicts
-from petl import look
 from tabulator import Stream
+from logging import warning, info
+from datapackage_pipelines.wrapper import ingest, spew
+from petl import look, fromdicts
+from common.config import SAMPLE_SIZE
+from common.utilities import format_to_json
 
-from common.config import DEFAULT_HEADER_LINES, DEFAULT_SAMPLE_SIZE
 
+def get_json_headers(path):
+    """Return all field names encountered in the file."""
 
-def remove_empty_headers(headers):
-    """Remove columns with no name from the header list."""
+    keys = set()
 
-    for i, header in enumerate(headers):
-        if not header:
-            logging.warning('Removing empty header %s', i)
-        else:
-            yield i, header
+    with open(path) as stream:
+        rows = json.loads(stream.read())
+        for row in rows:
+            keys.update(set(row))
+        return list(keys)
 
 
 def detect_encoding(path):
-    """Detect the encoding automatically."""
+    """Detect the data file encoding with Chardet."""
 
     with open(path, 'rb') as stream:
         text = stream.read()
@@ -32,79 +33,85 @@ def detect_encoding(path):
     return result['encoding']
 
 
-def process_with_tabulator(datapackage,
-                           encoding=None,
-                           parser_options={},
-                           header_lines=DEFAULT_HEADER_LINES,
-                           format=None):
+def drop_bad_rows(rows):
+    """Drop rows where fields don't match headers."""
+
+    for index, headers, row in rows:
+        if len(row) == len(headers):
+            yield (index, headers, row)
+        else:
+            warning('Bad row %s = %s', index, row)
+
+
+def drop_empty_columns(rows):
+    """Drop fields with no name."""
+
+    for row_nb, headers, row in rows:
+        for field_nb, header in enumerate(headers):
+            if not header:
+                headers.remove(field_nb)
+                row.remove(field_nb)
+            if row_nb < SAMPLE_SIZE:
+                message = 'Dropped untitled field %s in row %s'
+                warning(message, field_nb, row_nb)
+
+        yield (row_nb, headers, row)
+
+
+def fill_missing_fields(path):
+    """Pre-fill incomplete JSON rows (necessary to avoid mixing up fields)."""
+
+    headers = get_json_headers(path)
+
+    with open(path) as stream:
+        rows = json.loads(stream.read())
+
+    for row in rows:
+        for header in headers:
+            if header not in row:
+                row[header] = None
+
+    with open(path, 'w+') as stream:
+        stream.write(format_to_json(rows))
+
+
+def format_sample_table(stream):
+    """Return a tabular representation of stream for diagnosis."""
+
+    samples = list(map(lambda x: dict(zip(stream.headers, x)), stream.sample))
+    return '\n' + str(look(fromdicts(samples), limit=len(stream.sample)))
+
+
+def stream_local_file(datapackage, **parameters):
+    """Read local files and return row iterators."""
+
+    if not parameters.get('sample_size'):
+        parameters.update(sample_size=SAMPLE_SIZE)
 
     for resource in datapackage['resources']:
-        encoding = encoding or detect_encoding(resource['path'])
-        parser_options = resource.get('parser_options') or parser_options
+        path = resource['path']
+        _, extension = os.path.splitext(path)
 
-        logging.info('Resource %s uses %s encoding',
-                     resource['title'], encoding)
-        logging.info('Resource %s parsing options are %s',
-                     resource['title'], parser_options)
+        if not parameters.get('encoding'):
+            parameters.update(encoding=detect_encoding(path))
 
-        with Stream(resource['path'],
-                    headers=header_lines,
-                    encoding=encoding,
-                    format=format,
-                    **parser_options) as stream:
+        if 'parser_options' in resource:
+            parameters.update(**resource.get('parser_options'))
 
-            raw_headers = [' '.join(h.split()) for h in stream.headers]
-            i_columns, columns = zip(*list(remove_empty_headers(raw_headers)))
-            message = 'Found the following columns: \n%s'
-            logging.info(message,
-                         json.dumps(raw_headers, indent=4, ensure_ascii=False))
-            message = 'Ingested the following columns: \n%s'
-            logging.info(message,
-                         json.dumps(columns, indent=4, ensure_ascii=False))
+        if extension == '.csv':
+            parameters.update(headers=1)
+            parameters.update(post_parse=[drop_bad_rows])
 
-            sample_rows = []
+        if extension == '.json':
+            fill_missing_fields(path)
+            parameters.update(headers=1)
 
-            def process_rows(rows):
-                for i, raw_row in enumerate(rows):
-                    try:
-                        row = [raw_row[j]
-                               for j, column in enumerate(columns)
-                               if j in i_columns]
-                        row_dict = dict(zip(columns, row))
-                    except IndexError:
-                        logging.warning('Bad row %s = %s', i, raw_row)
-                        continue
+        info('Ingesting file = %s', path)
+        info('Ingestion parameters = %s', format_to_json(parameters))
 
-                    if i < DEFAULT_SAMPLE_SIZE:
-                        sample_rows.append(row_dict)
-
-                    if i == DEFAULT_SAMPLE_SIZE:
-                        table = look(fromdicts(sample_rows),
-                                     limit=DEFAULT_SAMPLE_SIZE)
-                        message_ = 'Content of %s is...\n%s'
-                        logging.info(message_, resource['path'], table)
-
-                    yield row_dict
-
-            yield process_rows(stream)
-
-
-def process_with_datapackage(datapackage):
-    for resource in DataPackage(datapackage).resources:
-        logging.debug(resource.descriptor)
-        logging.debug('Streaming %s', resource.descriptor['path'])
-        yield resource.iter()
-
-
-def stream_local_file(datapackage, **params):
-    streamer = params.pop('streamer') if 'streamer' in params else 'tabulator'
-
-    if streamer == 'tabulator':
-        return process_with_tabulator(datapackage, **params)
-    elif streamer == 'datapackage':
-        return process_with_datapackage(datapackage)
-    else:
-        raise ValueError('%s must be tabulator or datapackage', streamer)
+        with Stream(path, **parameters) as stream:
+            info('Data sample = %s', format_sample_table(stream))
+            yield stream.iter(keyed=True)
 
 
 if __name__ == '__main__':

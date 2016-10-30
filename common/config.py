@@ -35,9 +35,6 @@ DATAPACKAGE_MUTATOR = 'mutate_datapackage'
 DB_URI = 'sqlite:///{}/metrics.sqlite'
 DB_ENGINE = create_engine(DB_URI.format(ROOT_DIR))
 
-DEFAULT_HEADER_LINES = 1
-DEFAULT_ENCODING = 'utf-8'
-DEFAULT_PARSER_OPTIONS = {'delimiter': ',', 'quotechar': '"'}
-DEFAULT_VERBOSE = True
-DEFAULT_SAMPLE_SIZE = 15
-JSON_FORMAT = dict(indent=4, ensure_ascii=False)
+VERBOSE = True
+SAMPLE_SIZE = 15
+JSON_FORMAT = dict(indent=4, ensure_ascii=False, default=repr)
