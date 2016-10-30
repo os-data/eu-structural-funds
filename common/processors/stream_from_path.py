@@ -106,19 +106,17 @@ def stream_local_file(datapackage, **parameters):
         path = resource['path']
         _, extension = os.path.splitext(path)
 
-        if not parameters.get('encoding'):
-            parameters.update(encoding=detect_encoding(path))
+        parameters.update(encoding=get_encoding(parameters, resource))
+        parameters.update(headers=1)
 
         if 'parser_options' in resource:
             parameters.update(**resource.get('parser_options'))
 
         if extension == '.csv':
-            parameters.update(headers=1)
             parameters.update(post_parse=[drop_bad_rows])
 
         if extension == '.json':
             fill_missing_fields(path)
-            parameters.update(headers=1)
 
         info('Ingesting file = %s', path)
         info('Ingestion parameters = %s', format_to_json(parameters))
@@ -127,6 +125,17 @@ def stream_local_file(datapackage, **parameters):
             check_fields_match(resource, stream)
             log_sample_table(stream)
             yield stream.iter(keyed=True)
+
+
+def get_encoding(parameters, resource):
+    """Return either the specified encoding or a best guess."""
+
+    encoding = detect_encoding(resource['path'])
+    if parameters.get('encoding'):
+        encoding = parameters.get('encoding')
+    if resource.get('encoding'):
+        encoding = resource.get('encoding')
+    return encoding
 
 
 if __name__ == '__main__':
