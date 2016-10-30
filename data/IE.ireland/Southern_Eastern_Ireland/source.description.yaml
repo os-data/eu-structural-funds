@@ -43,11 +43,6 @@ resources:
         - name: project_type
           translates_to: project type
           maps_to: theme_name
-
-        - name: start_date
-          translates_to: starting date
-          maps_to: starting_date
-
         - name: start_date
           translates_to: starting date
           maps_to: starting_date
