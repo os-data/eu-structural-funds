@@ -7,16 +7,17 @@ sources:
   - name: Lithuania landing page 2014-2020
     web:  http://www.esinvesticijos.lt/en/
 
-scraper_required: yes
+  - name: Link to original Excel file
+    web: http://www.esinvesticijos.lt/lt/paraiskos_ir_projektai/xlsexport
+
+scraper_required: false
 
 contributors:
   - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
 resources:
   - title: Web-portal with Lithuania's ESIF data 2014-2020 
-
-    url: http://www.esinvesticijos.lt/lt/paraiskos_ir_projektai/xlsexport
-
+    path: Paraiškų informacija_20161030.csv
     publication_date: 29-09-2016
     
     constant_fields:
@@ -42,7 +43,7 @@ resources:
           translates_to: Claim status
           maps_to: # Loic: What is the status about? 
 
-        - name: rojekto vertė paraiškoje
+        - name: Projekto vertė paraiškoje
           translates_to: Value of the project application
           maps_to: # Loic: this field is unclear
 

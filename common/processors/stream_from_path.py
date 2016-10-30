@@ -75,11 +75,25 @@ def fill_missing_fields(path):
         stream.write(format_to_json(rows))
 
 
-def format_sample_table(stream):
-    """Return a tabular representation of stream for diagnosis."""
+def log_sample_table(stream):
+    """Record a tabular representation of the stream sample to the log."""
 
     samples = list(map(lambda x: dict(zip(stream.headers, x)), stream.sample))
-    return '\n' + str(look(fromdicts(samples), limit=len(stream.sample)))
+    table = str(look(fromdicts(samples), limit=len(stream.sample)))
+    info('Data sample =\n%s', table)
+
+
+def check_fields_match(resource, stream):
+    """Check if the datapackage and the data have the same set of fields."""
+
+    data_fields = set(stream.headers)
+    sourced_fields = {field['name'] for field in resource['schema']['fields']}
+
+    info('Fields sourced = %s', format_to_json(list(sourced_fields)))
+    info('Fields in data = %s', format_to_json(list(data_fields)))
+
+    message = 'Data and source fields do not match'
+    assert data_fields == sourced_fields, message
 
 
 def stream_local_file(datapackage, **parameters):
@@ -110,7 +124,8 @@ def stream_local_file(datapackage, **parameters):
         info('Ingestion parameters = %s', format_to_json(parameters))
 
         with Stream(path, **parameters) as stream:
-            info('Data sample = %s', format_sample_table(stream))
+            check_fields_match(resource, stream)
+            log_sample_table(stream)
             yield stream.iter(keyed=True)
 
 
