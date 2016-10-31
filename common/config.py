@@ -11,12 +11,14 @@ DATAPACKAGE_FILE = 'source.datapackage.json'
 SOURCE_FILE = 'source.description.yaml'
 STATUS_FILE = 'pipeline-status.json'
 SCRAPER_FILE = 'scraper.py'
+SOURCE_ZIP = 'source.datapackage.zip'
 
 ROOT_DIR = abspath(join(dirname(__file__), '..'))
 DATA_DIR = join(ROOT_DIR, 'data')
 SPECIFICATIONS_DIR = join(ROOT_DIR, 'specifications')
 PROCESSORS_DIR = join(ROOT_DIR, 'common', 'processors')
 CODELISTS_DIR = join(ROOT_DIR, 'codelists')
+DROPBOX_DIR = join(ROOT_DIR, 'dropbox')
 
 GEOCODES_FILE = join(ROOT_DIR, 'geography', 'geocodes.nuts.csv')
 FISCAL_SCHEMA_FILE = join(SPECIFICATIONS_DIR, 'fiscal.schema.yaml')
