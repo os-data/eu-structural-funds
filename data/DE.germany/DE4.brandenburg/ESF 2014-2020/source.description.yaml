@@ -17,7 +17,7 @@ resources:
   - title: ESF in  2014-2020
 
     #url: #add url from github after sourcing, the online url is locked, so use the one from github
-    path: ESF Data Brandenburg 2014-2020.xlsx
+    path: ESF Data Brandenburg 2014-2020.json
 
     publication_date: "2016-06-30"
 
