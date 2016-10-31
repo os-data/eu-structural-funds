@@ -20,7 +20,8 @@ resources:
 
   - title: ERDF Data for Bremen 2014-2020
 
-    url: http://www.efre-bremen.de/sixcms/media.php/13/2016-06-30_Bremen_Liste%20der%20Vorhaben.xlsx
+    path: ERDF_Bremen_2014-2020.xlsx
+    #url: http://www.efre-bremen.de/sixcms/media.php/13/2016-06-30_Bremen_Liste%20der%20Vorhaben.xlsx
 
     publication_date: "2016-06-30"
 
@@ -57,8 +58,7 @@ resources:
           maps_to: total_amount_eligible
 
         - name: Unions-Kofinanzierungssatz pro Prioritätsachse - Union co-financing rate
-          translates_to: Paid amount at the end of the project
-          maps_to: eu_cofinancing_amount
+          translates_to: percent rate that EU will cover
 
         - name: Postleitzahl des Vorhabens - operation postcode
           translates_to: operation post
