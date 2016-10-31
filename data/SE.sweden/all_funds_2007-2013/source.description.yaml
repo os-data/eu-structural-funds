@@ -48,11 +48,11 @@ resources:
           translates_to: project ending time
           maps_to: completion_date
 
-        - name: Beviljat belopp - SEK
+        - name: beviljat_belopp_-_sek
           translates_to: amount granted - sec
           maps_to: total_amount # sometimes the funds are granted in SKE...
 
-        - name: Beviljat belopp - euro
+        - name: beviljat_belopp_-_euro
           translates_to: amount granted - Euro
           maps_to: total_amount # ...and sometimes in EUR, never both
 
@@ -84,9 +84,10 @@ resources:
           translates_to: program title
           maps_to: cci_program_title
 
-        - name: Beslutande organisation
-          translates_to: Deciding organization
-          maps_to: beneficiary_name
+#        - name: Beslutande organisation
+#          translates_to: Deciding organization
+#          maps_to: beneficiary_name
+#          Loic: this field is not in the data
 
         - name: område
           translates_to: Region
