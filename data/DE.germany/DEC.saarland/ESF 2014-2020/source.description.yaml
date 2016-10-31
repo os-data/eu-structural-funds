@@ -1,10 +1,10 @@
-title: ESF Data for Nordrhein-Westfalen (2014-2020)
+title: ESF Data for Saarland (2014-2020)
 
-description: The beneficiary list of the ESF programme for Nordrhein-Westfalen.
+description: The beneficiary list of the ESF programme for Saarland.
 language: de
 
 sources:
-    - name: ESF Nordrhein-Westfalen 2014-2020
+    - name: ESF Saarland 2014-2020
       web: http://www.saarland.de/36004.htm
 
     - name: Original link to Excel file
@@ -17,8 +17,8 @@ contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
-  - title: ESF in Nordrhein-Westfalen 2014-2020
-    path: Vorhabenliste-25-05-2016_Saarland.xlsx
+  - title: ESF in Saarland 2014-2020
+    path: Vorhabenliste-25-05-2016_Saarland.json
     publication_date: "2016-08-25"
     parser_options:
       headers: 11
