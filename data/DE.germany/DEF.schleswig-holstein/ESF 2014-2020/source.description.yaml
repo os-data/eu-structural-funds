@@ -19,7 +19,7 @@ contributors:
 
 resources:
   - title: ESF in Schleswig-Holstein 2014-2020
-    path: ldv.xlsx
+    path: ldv.json
     publication_date: "2016-06-30"
     parser_options:
       headers: 7
