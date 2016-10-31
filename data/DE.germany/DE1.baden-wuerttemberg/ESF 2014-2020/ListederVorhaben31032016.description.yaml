@@ -38,13 +38,9 @@ resources:
           translates_to: Name of the Project
           maps_to: project_name
 
-        - name: Bezeichnung des Vorhabens/operation name
-          translates_to: Name of the Project
-          maps_to: project_name
-
         - name: Zusammenfassung des Vorhabens/operation summary
           translation: Project Summary
-          maps_to: project_description_long
+          maps_to: project_description
 
         - name: Datum des Beginns des Vorhabens/operation start date
           translation:
