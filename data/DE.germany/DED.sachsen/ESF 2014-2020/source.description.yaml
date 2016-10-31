@@ -4,9 +4,11 @@ description: The beneficiary list of the ESF programme for Sachsen.
 language: de
 
 sources:
-
   - name: ESF Sachsen (2014-2020)
     web: http://www.strukturfonds.sachsen.de/
+
+  - name: Original link to zip file
+    web: http://www.strukturfonds.sachsen.de/download/2016-06-30_Liste_der_Vorhaben_ESF_2014-2020.zip
 
 scraper_required: false
 
@@ -14,12 +16,12 @@ contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
-
   - title: ESF in Sachsen 2014-2020
-
-    url: http://www.strukturfonds.sachsen.de/download/2016-06-30_Liste_der_Vorhaben_ESF_2014-2020.zip
-
+    path:
     publication_date: "2016-07-08"
+    encoding: windows-1253
+    parser_options:
+      delimiter: ';'
 
     constant_fields:
       fund_name: ESF
