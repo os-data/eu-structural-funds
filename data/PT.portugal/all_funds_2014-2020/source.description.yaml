@@ -19,7 +19,7 @@ resources:
 
   - title: ERDF and ESF data for Portugal 2014-2020
 
-    path: Portugal_all_funds_2014-2020.xlsx
+    path: Portugal_all_funds_2014-2020.json
     #url: https://www.portugal2020.pt/Portal2020/Media/Default/Docs/Operacoes%20Aprovadas/Lista%20de%20opera%C3%A7%C3%B5es%2031.08.2016_NCD.xlsx
     publication_date: "2016-08-31"
 
