@@ -127,6 +127,18 @@ class Source(object):
             message = '{}: ambiguous extractor'
             secho(message.format(self.id), **WARN)
 
+        if len(self.description['resources']) > 1:
+            for i, processor in self.pipeline[self.slug]:
+                if processor['run'] == 'reshape_data':
+                    reshape_index = i
+                    break
+            else:
+                reshape_index = None
+
+            self.pipeline[self.slug]['pipeline'].insert(
+                reshape_index, {'run': 'concatenate_identical_resources'}
+            )
+
     def save_scraper(self):
         """Copy the scraper placeholder to where it belongs."""
 
