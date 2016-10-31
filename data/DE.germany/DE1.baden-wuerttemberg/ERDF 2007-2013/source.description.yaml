@@ -30,7 +30,7 @@ resources:
 
     schema:
       fields:
-        - name: Name des Begünstigten
+        - name: Name des Begünstigten
           translates_to: Name of the Beneficiary
           maps_to: beneficiary_name
 
@@ -43,10 +43,8 @@ resources:
 
         - name: Bewilligter Betrag
           translates_to: Approved Amount
-          maps_to: total_eligible_amount
+          maps_to: total_amount_eligible
 
         - name: Ausgezahlter Betrag bei Projekt- abschluss
           translates_to: Paid amount at the end of the project
           maps_to: total_amount
-
-        - # repeat for each column you find in the date
