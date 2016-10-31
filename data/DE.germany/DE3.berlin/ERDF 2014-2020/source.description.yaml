@@ -19,7 +19,8 @@ contributors:
 resources:
   - title: ERDF Berlin 2014-2020
 
-    url: http://www.berlin.de/sen/wirtschaft/gruenden-und-foerdern/europaeische-strukturfonds/efre/publikationen/liste-der-vorhaben-2016-03-30_final.xlsx
+    path: ERDF_Berlin_2014-2020.xlsx
+    #url: http://www.berlin.de/sen/wirtschaft/gruenden-und-foerdern/europaeische-strukturfonds/efre/publikationen/liste-der-vorhaben-2016-03-30_final.xlsx
     publication_date: "2016-03-30"
 
     constant_fields:

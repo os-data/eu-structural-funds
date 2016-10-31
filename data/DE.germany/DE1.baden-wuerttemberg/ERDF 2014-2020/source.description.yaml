@@ -16,9 +16,10 @@ resources:
 
   - title: EFRE-Programm in Baden-Württemberg 2014-2020 - Innovation und Energiewende
 
-    url: https://efre-bw.de/wp-content/uploads/Liste-der-Vorhaben_31-03-2016.xlsx
+    path: ERDF_BaWü_2014-2020.xlsx 
+    #url: https://efre-bw.de/wp-content/uploads/Liste-der-Vorhaben_31-03-2016.xlsx
 
-    publication_date: 2016-05-27
+    publication_date: "2016-05-27"
 
     constant_fields:
       fund_name: ERDF
@@ -39,7 +40,7 @@ resources:
 
         - name: Zusammenfassung des Vorhabens
           translation: Operation Summary
-          maps_to: project_description_long
+          maps_to: project_description
 
         - name: Datum des Beginns des Vorhabens
           translation: Operation start date
@@ -66,5 +67,5 @@ resources:
           maps_to: beneficiary_country
 
         - name: Bezeichnung der Interventionskategorie für das Vorhaben/name of category of intervention for the operation
-          translation:
-          maps_to: #unclear in the mapping where this is now
+          translation: intervention category 
+          maps_to: theme_name

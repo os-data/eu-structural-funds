@@ -19,7 +19,7 @@ resources:
 
   - title: Belgium Region Vlaams ERDF data 2007-2013
 
-    path: ERDF_Flandern_2007-2013.xlsx
+    path: ERDF_Flandern_2007-2013.json
     #url: http://www.vlaio.be/sites/default/files/documenten/ef_20120410_overzicht_projecten.xlsx
 
     publication_date: "2014-11-01"
