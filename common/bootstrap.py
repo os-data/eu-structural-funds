@@ -109,7 +109,7 @@ class Source(object):
 
         if extractor:
             self.pipeline[self.slug]['pipeline'][1]['run'] = extractor
-            if self.extension in ('.json', '.xls', 'xlsx'):
+            if self.extension in ('.json', '.xls', '.xlsx'):
                 self.pipeline[self.slug]['pipeline'].insert(
                     2, {'run': DATAPACKAGE_MUTATOR}
                 )
