@@ -16,9 +16,10 @@ resources:
 
   - title: ESF in Baden-Württemberg 2014-2020
 
-    url: #add url from github after sourcing, the online url is locked, so use the one from github
+    path: ESF_BaWü_2014-2020.xlsx
+    #url: #add url from github after sourcing, the online url is locked, so use the one from github
 
-    publication_date: 2016-06-01
+    publication_date: "2016-06-01"
 
     constant_fields:
       fund_name: ESF
@@ -66,15 +67,15 @@ resources:
           maps_to: beneficiary_country
 
         - name: Bezeichnung der Interventionskategorie für das Vorhaben/name of category of intervention for the operation
-          translation:
-          maps_to: #unclear in the mapping where this is now
+          translation: Category of Intervention
+          maps_to: theme_code
 
         - name: Spezifisches Ziel/specific objective
-          translation:
-          maps_to: #not precise enough in the mapping
+          translation: specific objective
+          maps_to: cci_program_code
 
         - name: Internet-Adresse des Vorhabens/website of the operation
-          translation:
+          translation: website of the operation
           maps_to: beneficiary_url
 
         - # repeat for each column you find in the date
