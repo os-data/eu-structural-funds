@@ -20,7 +20,7 @@ resources:
 
   - title: ERDF Data for Bremen 2014-2020
 
-    path: ERDF_Bremen_2014-2020.xlsx
+    path: ERDF_Bremen_2014-2020.json
     #url: http://www.efre-bremen.de/sixcms/media.php/13/2016-06-30_Bremen_Liste%20der%20Vorhaben.xlsx
 
     publication_date: "2016-06-30"
