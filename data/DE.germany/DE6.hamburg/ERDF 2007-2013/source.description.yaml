@@ -7,7 +7,7 @@ sources:
   - name: ERDF Hamburg (2007-2013)
     web: https://www.hamburg.de/efre/
 
-scraper_required: true
+scraper_required: false
 
 contributors:
   - Michael Peters (michael.peters@okfn.de)
