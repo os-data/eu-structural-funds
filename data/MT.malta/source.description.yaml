@@ -20,7 +20,7 @@ description: >
   for Cohesion Policy 2007-2013 and which falls under the responsibilities of
   the Parliamentary Secretariat for EU Presidency 2017 and EU Funds.
 
-scraper_required: True
+scraper_required: false
 
 sources:
   - name: Investing in your future
@@ -33,7 +33,7 @@ contributors:
 resources:
 
   - title: A web page with list of all projects developed with the EU funds
-    url: https://investinginyourfuture.gov.mt/projects
+    #url: https://investinginyourfuture.gov.mt/projects
     path: data.csv
 
     publication_date:
