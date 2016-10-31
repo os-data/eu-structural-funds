@@ -12,7 +12,7 @@ scraper_required: false
 contributors:
   - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
-  resources:
+resources:
   - title: Czech ESIF beneficiaries 2007-2013
 
     path:
