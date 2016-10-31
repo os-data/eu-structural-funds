@@ -1,0 +1,293 @@
+title: ERDF Data for Spain (2007-2013)
+
+description: The beneficiary list of the ERDF programme for Spain.
+language: de
+
+sources:
+  - name: ERDF Spain (2007-2013)
+    web: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/en-GB/Paginas/inicio.aspx
+
+scraper_required: false
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+  - title: ERDF in Andalucia
+
+    path: AN4016.json
+    #url:
+    publication_date: "2016-10-24"
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+
+        - name: nombre_beneficiario
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: nombre_operacion
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: montante_concedido
+          translates_to: amount granted
+          maps_to: total_amount_eligible
+
+        - name: montante_pagado_final_operacion
+          translates_to: total amount
+          maps_to: total_amount
+
+        - name: ano_de_la_concesion
+          translates_to: approval date
+          maps_to: approval_date
+
+
+  - title: ERDF in Aragon
+
+    path: AR4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+  - title: ERDF in Asturias
+
+    path: AS4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+      fund_name: ERDF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+
+  - title: ERDF in Islas Baleares
+
+    path: BB4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF in Ceuta
+
+    path: CE4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+
+  - title: ERDF Castilla y Leon
+
+    path: CL4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF Castilla la Mancha
+
+    path: CM4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF Cantabria
+
+    path: CN4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF Catalunya
+
+    path: CT4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF Comunidad Valenciana
+
+    path: CV4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+
+  - title: ERDF Pais Vasco
+
+    path: EU4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF Extremadura
+
+    path: EX4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF Galicia
+
+    path: GA4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+
+  - title: ERDF Islas Canarias
+
+    path: IC4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF La Rioja
+
+    path: LR4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF Madrid
+    path: MD4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF Melilla
+
+    path: ME4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF Murcia
+
+    path: MU4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+
+  - title: ERDF Navarra
+
+    path: NA4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF Spain
+
+    path: PO%20AT4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF Spain
+
+    path: PO%20EC4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+  - title: ERDF Spain
+
+    path: PO%20FCH4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
+
+
+  - title: ERDF Spain
+
+    path: PO%20FT4016.json
+    publication_date: "2016-10-24"
+
+    constant_fields:
+        fund_name: ERDF
+        offical_period: 2007-2013
+        currency_code: EUR
