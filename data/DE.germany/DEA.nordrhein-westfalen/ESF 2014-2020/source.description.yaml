@@ -18,8 +18,7 @@ resources:
 
     schema:
       fields:
-        - name: "Name des Begünstigten
-                (Nennung ausschließlich von juristischen, nicht von natürlichen Personen)"
+        - name: "Name des Begünstigten (Nennung ausschließlich von juristischen, nicht von natürlichen Personen)"
           translates_to: Beneficiary name
           maps_to: beneficiary_name
 
@@ -35,8 +34,7 @@ resources:
           translates_to: starting date of the project
           maps_to: starting_date
 
-        - name: "Datum des Endes des Vorhabens
-                (voraussichtliches Datum des Abschlusses der konkreten Arbeiten oder der vollständigen Durchführung des Vorhabens)"
+        - name: "Datum des Endes des Vorhabens (voraussichtliches Datum des Abschlusses der konkreten Arbeiten oder der vollständigen Durchführung des Vorhabens)"
           translates_to: completion date of the project
           maps_to: completion_date
 
