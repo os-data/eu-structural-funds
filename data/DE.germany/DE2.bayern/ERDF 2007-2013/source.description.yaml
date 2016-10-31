@@ -18,7 +18,7 @@ contributors:
 resources:
   - title: ERDF Bayern 2007-2013
 
-    path: C:\Users\Michael\Documents\GitHub\eu-structural-funds\data\DE.germany\DE2.bayern\ERDF 2007-2013\Transparenzliste_FIPS2007_31_12_2015_bayern.xlsx
+    path: Transparenzliste_FIPS2007_31_12_2015_bayern.json
 
     publication_date: "2015-12-31"
 
