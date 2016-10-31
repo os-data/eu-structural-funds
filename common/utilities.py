@@ -23,6 +23,19 @@ from .config import (
     DATA_DIR)
 
 
+def sanitize_field_names(raw_fields):
+    """Return the field name without redundant blanks and line breaks."""
+
+    clean_fields = []
+    for raw_field in raw_fields:
+        if raw_field:
+            tokens = raw_field.split()
+            clean_field = ' '.join(tokens)
+            clean_fields.append(clean_field)
+
+    return clean_fields
+
+
 def get_nuts_codes():
     """Return a list of valid NUTS codes."""
 
