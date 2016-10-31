@@ -18,9 +18,10 @@ contributors:
 resources:
   - title: Poland's ESF & ERDF data 2007-today
 
-    url: http://www.mapadotacji.gov.pl/export?sort=none
+    path: lista_projektow.csv
+    #url: http://www.mapadotacji.gov.pl/export?sort=none
 
-    publication_date: 27-09-2016
+    publication_date: "2016-09-27" 
 
     constant_fields:
       fund_name: ERDF, ESF
@@ -32,7 +33,7 @@ resources:
     schema:
       fields:
         - name: tytuł projektu
-          translates_to: the title of the project 
+          translates_to: the title of the project
           maps_to: project_name
 
         - name: nazwa beneficjenta
@@ -58,4 +59,3 @@ resources:
         - name: Czy projekt jest realizowany na obszarze wiêkszym ni¿ jedna jednostka administracyjna?
           translates_to: Is the project being implemented on an area of more than one administrative unit?
           maps_to: # Loic: this really looks like a corner case
-    
