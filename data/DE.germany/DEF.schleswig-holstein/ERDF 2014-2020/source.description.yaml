@@ -1,41 +1,35 @@
-
 title: ERDF Data for Schleswig-Holstein (2014-2020)
 
 description: The beneficiary list of the ERDF programme for Schleswig-Holstein.
 language: de
 
 sources:
-
   - name: ERDF Schleswig-Holstein (2014-2020)
     web: http://www.ib-sh.de/die-ibsh/foerderprogramme-des-landes/landesprogramm-arbeit/
 
+  - name: Original link to Excel file
+    web: http://www.ib-sh.de/fileadmin/user_upload/downloads/Arbeit_Bildung/LPNA/allgemein/ldv.xlsx
+
 scraper_required: false
-
-
-
 
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
-
-
-
   - title: ERDF in Schleswig-Holstein 2014-2020
-
-    url: http://www.ib-sh.de/fileadmin/user_upload/downloads/Arbeit_Bildung/LPNA/allgemein/ldv.xlsx
-
+    path: LPW-Liste_der_Vorhaben_Schleswig Holstein.xlsx
     publication_date: "2016-07-21"
+
+    parser_options:
+      headers: 8
 
     constant_fields:
       fund_name: ERDF
       offical_period: 2014-2020
       currency_code: EUR
 
-
     schema:
       fields:
-
         - name: Name des Begünstigten
           translates_to: Beneficiary name
           maps_to: beneficiary_name

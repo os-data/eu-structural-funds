@@ -38,7 +38,7 @@ resources:
         - name: Gewährte Beträge
           translates_to: total eligible expenditure of project (EU and public funding)
           maps_to: total_amount_eligible
-          decimal: ,
+          decimal: ","
 
 
         - name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge

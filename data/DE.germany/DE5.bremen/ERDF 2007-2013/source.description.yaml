@@ -1,4 +1,4 @@
-title: ERDF Data for Bremen
+title: ERDF Data for Bremen 2014-2020
 
 description: The beneficiary list for the ERDF (2007-2013) program for Bremen.
 language: de
@@ -7,18 +7,17 @@ sources:
   - name: ERDF Bremen
     web: http://www.efre-bremen.de/sixcms/detail.php?gsid=bremen59.c.15110.de
 
+  - name: Original link to PDF file
+    web: http://www.efre-bremen.de/sixcms/media.php/13/BEGUENSTIGTENVERZEICHNIS_Stand%2030-12-2015_Version%20Web.pdf
+
 scraper_required: false
 
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
-
   - title: ERDF Bremen 2007-2013
-
-    path: ERDF-Daten_Bremen_07_13-csv.csv
-    url: http://www.efre-bremen.de/sixcms/media.php/13/BEGUENSTIGTENVERZEICHNIS_Stand%2030-12-2015_Version%20Web.pdf
-
+    path: ERDF-Data-Bremen-07-13-csv.csv
     publication_date: "2015-12-31"
 
     constant_fields:
@@ -26,14 +25,13 @@ resources:
       offical_period: 2007-2013
       currency_code: EUR
 
-
     schema:
       fields:
-        - name: Name des Begünstigten
+        - name: NAME DES BEGÜNSTIGTEN
           translates_to: Beneficiary name
           maps_to: beneficiary_name
 
-        - name: Name des Projekts
+        - name: NAME DES PROJEKTS
           translates_to: operation name
           maps_to: project_name
 

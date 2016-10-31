@@ -9,23 +9,20 @@ sources:
   - name: ESF Schleswig-Holstein (2014-2020)
     web: http://www.ib-sh.de/die-ibsh/foerderprogramme-des-landes/landesprogramm-arbeit/
 
+  - name: Original Excel file link
+    web: http://www.ib-sh.de/fileadmin/user_upload/downloads/Arbeit_Bildung/LPNA/allgemein/ldv.xlsx
+
 scraper_required: false
-
-
-
 
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
-
-
-
   - title: ESF in Schleswig-Holstein 2014-2020
-
-    url: http://www.ib-sh.de/fileadmin/user_upload/downloads/Arbeit_Bildung/LPNA/allgemein/ldv.xlsx
-
+    path: ldv.xlsx
     publication_date: "2016-06-30"
+    parser_options:
+      headers: 7
 
     constant_fields:
       fund_name: ESF
