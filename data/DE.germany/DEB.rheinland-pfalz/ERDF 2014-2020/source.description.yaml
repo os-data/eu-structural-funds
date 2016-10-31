@@ -15,7 +15,7 @@ contributors:
 resources:
   - title: ERDF in Rheinland-Pfalz 2014-2020
 
-    path: ERDF_Rheinland_Pfalz_2014-2020.xlsx
+    path: ERDF_Rheinland_Pfalz_2014-2020.json
     #url: http://www.stk.niedersachsen.de/download/108095
 
     publication_date: "2016-10-07"
