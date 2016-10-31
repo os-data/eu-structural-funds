@@ -17,9 +17,8 @@ contributors:
 
 resources:
   - title: ESF in Sachsen 2014-2020
-    path:
+    path: 2016-06-30_Liste_der_Vorhaben_ESF_2014-2020.csv
     publication_date: "2016-07-08"
-    encoding: windows-1253
     parser_options:
       delimiter: ';'
 
@@ -87,21 +86,5 @@ resources:
 
           translates_to: supported action
 
-        - name: 13. Richtliniennummer
-          translates_to: directive code
-
-        - name: 14. Fördergegenstand
-
+        - name: 13. Fördergegenstand
           translates_to: programme
-
-        - name: 15. Fördergegenstandsnummer
-
-          translates_to: program number
-
-        - name: 16. Vorhabensident
-
-          translates_to: operations ID
-
-        - name: 17. Anzahl der FV
-
-          translates_to: frequency of application
