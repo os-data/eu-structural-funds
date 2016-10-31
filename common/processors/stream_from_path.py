@@ -105,9 +105,12 @@ def check_fields_match(resource, stream):
     sourced_fields = [field['name'] for field in resource['schema']['fields']]
     nb_untitled_fields = len(stream.headers) - len(data_fields)
 
-    info('Fields sourced = %s', format_to_json(sorted(sourced_fields)))
-    info('Found %s untitled columns in the data', nb_untitled_fields)
-    info('Data columns with a title = %s', format_to_json(sorted(data_fields)))
+    fields_as_json = format_to_json(sorted(sourced_fields))
+    data_fields_as_json = format_to_json(sorted(data_fields))
+
+    info('%s fields sourced = %s', len(sourced_fields), fields_as_json)
+    info('%s untitled fields in the data', nb_untitled_fields)
+    info('%s fields in the data = %s', len(data_fields), data_fields_as_json)
 
     message = 'Data and source fields do not match'
     assert set(data_fields) == set(sourced_fields), message
@@ -144,6 +147,7 @@ def stream_local_file(datapackage, **parameters):
 
         if extension == '.json':
             fill_missing_fields(path)
+            parameters.update(post_parse=[force_strings])
 
         info('Ingesting file = %s', path)
         info('Ingestion parameters = %s', format_to_json(parameters))
