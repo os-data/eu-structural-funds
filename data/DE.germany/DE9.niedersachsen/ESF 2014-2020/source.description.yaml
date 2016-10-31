@@ -15,7 +15,7 @@ contributors:
 resources:
   - title: ESF in Niedersachsen 2014-2020
 
-    path: ESF_Niedersachsen_2014-2020.xlsx
+    path: ESF_Niedersachsen_2014-2020.json
     #url: http://www.stk.niedersachsen.de/download/108094
 
     publication_date: "2016-03-31"
