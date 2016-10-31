@@ -15,7 +15,7 @@ contributors:
 resources:
   - title: ESF in Rheinland-Pfalz 2014-2020
 
-    path: ESF_Rheinland_Pfalz_2014-2020.xlsx
+    path: ESF_Rheinland_Pfalz_2014-2020.json
     #url: http://esf.rlp.de/fileadmin/esf/Downloads/ESF_2014-2020/Liste_der_Vorhaben/Liste_der_Vorhaben_25.4.2016.xlsx
     publication_date: "2016-04-25"
 
