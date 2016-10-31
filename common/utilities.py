@@ -8,6 +8,8 @@ import csv
 
 from datapackage import DataPackage
 from petl import fromdicts, look
+from slugify import slugify
+
 from .config import (
     CODELISTS_DIR,
     FISCAL_SCHEMA_FILE,
@@ -15,9 +17,10 @@ from .config import (
     FISCAL_MODEL_FILE,
     STATUS_FILE,
     GEOCODES_FILE,
-    DEFAULT_VERBOSE,
-    DEFAULT_SAMPLE_SIZE
-)
+    VERBOSE,
+    SAMPLE_SIZE,
+    JSON_FORMAT,
+    DATA_DIR)
 
 
 def get_nuts_codes():
@@ -62,19 +65,24 @@ def get_fiscal_datapackage(skip_validation=False, source=None):
     """Create the master fiscal datapackage from parts."""
 
     with open(FISCAL_DATAPACKAGE_FILE) as stream:
-        text = stream.read()
-        fiscal_datapackage = yaml.load(text)
+        fiscal_datapackage = yaml.load(stream.read())
 
-    datapackage = source if source else fiscal_datapackage
+    if source:
+        datapackage = source
+        datapackage['name'] = slugify(os.getcwd().lstrip(DATA_DIR)).lower()
+    else:
+        datapackage = fiscal_datapackage
 
     with open(FISCAL_SCHEMA_FILE) as stream:
-        text = stream.read()
-        datapackage['resources'][0]['schema'] = yaml.load(text)
+        schema = yaml.load(stream.read())
+        datapackage['resources'][0]['schema'] = schema
         datapackage['resources'][0].update(mediatype='text/csv')
+        datapackage['resources'] = [datapackage['resources'][0]]
+
+        # TODO: Update the resource properties in the fiscal data-package
 
     with open(FISCAL_MODEL_FILE) as stream:
-        text = stream.read()
-        datapackage['model'] = yaml.load(text)
+        datapackage['model'] = yaml.load(stream.read())
 
     if not skip_validation:
         DataPackage(datapackage, schema='fiscal').validate()
@@ -115,27 +123,33 @@ def write_feedback(section, messages, folder=os.getcwd()):
 def process(resources, row_processor, **parameters):
     """Apply a row processor to each row of each datapackage resource."""
 
-    logging.info('Parameters = \n%s', json.dumps(parameters, indent=4))
+    parameters_as_json = json.dumps(parameters, **JSON_FORMAT)
+    logging.info('Parameters = \n%s', parameters_as_json)
 
     if 'verbose' in parameters:
         verbose = parameters.pop('verbose')
     else:
-        verbose = DEFAULT_VERBOSE
+        verbose = VERBOSE
 
     sample_rows = []
 
-    for resource in resources:
+    for resource_index, resource in enumerate(resources):
         def process_rows(resource_):
-            for i, row in enumerate(resource_):
+            for row_index, row in enumerate(resource_):
                 new_row = row_processor(row, **parameters)
                 yield new_row
 
-                if verbose and i < DEFAULT_SAMPLE_SIZE:
+                if verbose and row_index < SAMPLE_SIZE:
                     sample_rows.append(new_row)
 
             if verbose:
-                message = 'Output of row processor %s is...\n%s'
-                table = look(fromdicts(sample_rows), limit=DEFAULT_SAMPLE_SIZE)
-                logging.info(message, row_processor.__name__, table)
+                table = look(fromdicts(sample_rows), limit=SAMPLE_SIZE)
+                message = 'Output of processor %s for resource %s is...\n%s'
+                args = row_processor.__name__, resource_index, table
+                logging.info(message, *args)
 
         yield process_rows(resource)
+
+
+def format_to_json(blob):
+    return json.dumps(blob, **JSON_FORMAT)

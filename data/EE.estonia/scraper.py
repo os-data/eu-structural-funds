@@ -1,5 +1,10 @@
+import csv
+
 import requests
 from lxml import html
+from petl import tojson, fromdicts
+
+from common.config import JSON_FORMAT
 
 BASE_URL = 'http://www.struktuurifondid.ee/list-of-beneficiaries/'
 
@@ -24,6 +29,7 @@ def scrape_measure(query, measure):
 
         from pprint import pprint
         pprint(data)
+        yield data
 
 
 def scrape():
@@ -36,10 +42,14 @@ def scrape():
             continue
         query[inp.get('name')] = inp.get('value')
 
+    rows = []
     for option in doc.findall('.//select[@id="meede"]/option'):
         measure = option.get('value')
         if len(measure):
-            scrape_measure(query, measure)
+            rows.extend(list(scrape_measure(query, measure)))
+
+    tojson(fromdicts(rows), 'Estonia_scraper_dump.json',
+           sort_keys=True, **JSON_FORMAT)
 
 
 if __name__ == '__main__':

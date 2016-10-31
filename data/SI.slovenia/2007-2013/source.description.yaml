@@ -7,6 +7,9 @@ sources:
   - name: EU Skladi
     web:  http://www.eu-skladi.si/
 
+  - name: Original link to Excel file
+    web: http://www.eu-skladi.si/sl/dokumenti/seznam-upravicencev-2007-2013/upravicenci-vsi-4-07-2016-uvoz.xlsx
+
 scraper_required: false
 
 contributors:
@@ -14,9 +17,7 @@ contributors:
 
 resources:
   - title: Excel file for Slovenia's ERDF, ESF, and Cohesion fund 2007-2013
-
-    url: http://www.eu-skladi.si/sl/dokumenti/seznam-upravicencev-2007-2013/upravicenci-vsi-4-07-2016-uvoz.xlsx
-
+    path: upravicenci-vsi-4-07-2016-uvoz.xlsx
     publication_date: 05-07-2016
 
     constant_fields:

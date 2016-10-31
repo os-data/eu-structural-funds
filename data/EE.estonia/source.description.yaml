@@ -13,15 +13,15 @@ sources:
     web: http://www.struktuurifondid.ee/list-of-beneficiaries/
 
 language: ee
-scraper_required: true
+scraper_required: false
 
 contributors:
   - Friedrich Lindenberg <pudo@occrp.org> (OCCRP)
+  - Loic Jounot (loic@cyberpunk.bike)
 
 resources:
   - title: Beneficiary webpage
-    url: http://www.struktuurifondid.ee/list-of-beneficiaries/
-
+    path: Estonia_scraper_dump.json
     publication_date: 27-10-2014
     publication_version: web database
 
@@ -41,5 +41,9 @@ resources:
 
     schema:
       fields:
-        - name: this source file has no columns
-
+        - name: beneficiary
+        - name: name_of_project
+        - name: structural_assistance
+        - name: 2nd_level_intermediate_body
+        - name: period
+        - name: measure

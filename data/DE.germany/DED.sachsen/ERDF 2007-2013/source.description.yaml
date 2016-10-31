@@ -32,22 +32,24 @@ resources:
         - name: _source
           translates_to: source
 
-        - name: beneficiary
+        - name: col1
           translates_to: Beneficiary name
           maps_to: beneficiary_name
 
-        - name: name_of_operation
+        - name: col2
           translates_to: operation name
           maps_to: project_name
 
-        - name: years
+        - name: year
           translates_to: Year of Approval / year of completion
           maps_to: approval_date
 
-        - name: allocated_public_funding
+        - name: val1
           translates_to: total eligible amount (EU and public funding)
           maps_to: total_amount_eligible
 
-        - name: on_finish_total_value
+        - name: val2
           translates_to: total amount
           maps_to: total_amount
+
+  # Loic: I corrected this file but was not sure about col1 and col2: they might be inverted.

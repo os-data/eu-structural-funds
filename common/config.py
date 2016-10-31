@@ -30,13 +30,11 @@ TEMPLATE_SOURCE_FILE = join(SPECIFICATIONS_DIR, SOURCE_FILE)
 LOCAL_PATH_EXTRACTOR = 'stream_from_path'
 REMOTE_CSV_EXTRACTOR = 'simple_remote_source'
 REMOTE_EXCEL_EXTRACTOR = 'stream_remote_excel'
+DATAPACKAGE_MUTATOR = 'mutate_datapackage'
 
 DB_URI = 'sqlite:///{}/metrics.sqlite'
 DB_ENGINE = create_engine(DB_URI.format(ROOT_DIR))
 
-DEFAULT_HEADER_LINES = 1
-DEFAULT_ENCODING = 'utf-8'
-DEFAULT_PARSER_OPTIONS = {'delimiter': ',', 'quotechar': '"'}
-DEFAULT_VERBOSE = True
-DEFAULT_SAMPLE_SIZE = 15
-JSON_FORMAT = dict(indent=4, ensure_ascii=False)
+VERBOSE = True
+SAMPLE_SIZE = 15
+JSON_FORMAT = dict(indent=4, ensure_ascii=False, default=repr)

@@ -1,4 +1,3 @@
-
 title: ESF Data for Niedersachsen (2007-2013)
 
 description: The beneficiary list of the ERDF and ESF programme for Niedersachsen
@@ -8,15 +7,19 @@ sources:
   - name: ESF Niedersachsen (2007-2013)
     web: http://www.stk.niedersachsen.de/startseite/themen/regionale_landesentwicklung_und_eufoerderung/eufoerderung/efre_esf/efre-und-esf-124140.html
 
+  - name: Original PDF link to ESF Niedersachsen 2007-2013 Konvergenz
+    web: http://www.stk.niedersachsen.de/download/98223/Verzeichnis_der_Beguenstigten_Stand_31.03.2015_Ueberarbeitung_Juni_2015_EFRE_Konvergenz.pdf
+
+  - name: Original PDF link to ESF Niedersachsen 2007-2013 RWB
+    web: http://www.stk.niedersachsen.de/download/98223/Verzeichnis_der_Beguenstigten_Stand_31.03.2015_Ueberarbeitung_Juni_2015_EFRE_Konvergenz.pdf
+
 scraper_required: false
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
 resources:
   - title: ESF Niedersachsen 2007-2013 Konvergenz
-
     path: ERDF-Niedersachsen-2007-2013_Konvergenz.csv
-    #url: http://www.stk.niedersachsen.de/download/98223/Verzeichnis_der_Beguenstigten_Stand_31.03.2015_Ueberarbeitung_Juni_2015_EFRE_Konvergenz.pdf
     publication_date: "2016-05-31"
 
     schema:
@@ -45,11 +48,8 @@ resources:
           translates_to: Paid amount at the end of the project
           maps_to: total_amount
 
-
   - title: ESF Niedersachsen 2007-2013 RWB
-
     path: ERDF-Niedersachsen-2007-2013_RWB.csv
-    #url: http://www.stk.niedersachsen.de/download/98223/Verzeichnis_der_Beguenstigten_Stand_31.03.2015_Ueberarbeitung_Juni_2015_EFRE_Konvergenz.pdf
     publication_date: "2016-05-31"
 
     schema:

@@ -1,0 +1,20 @@
+DE_germany_DEB_rheinland_pfalz_ESF_2007_2013:
+  pipeline:
+  - {run: read_description}
+  - {run: stream_from_path}
+  - {run: mutate_datapackage}
+  - parameters: {out-file: source.datapackage.zip}
+    run: dump
+    validate: true
+  - {run: map_columns}
+  - {run: reshape_data}
+  - {run: cast_to_fiscal_schema}
+  - {run: show_sample_in_console}
+  - {run: concatenate_identical_resources}
+  - {run: load_fiscal_datapackage}
+  - parameters: {out-file: fiscal.datapackage.zip}
+    run: dump
+    validate: true
+  - parameters: {in-file: fiscal.datapackage.zip}
+    run: fiscal.upload
+  schedule: {crontab: 0 0 1 1 *}

@@ -26,6 +26,8 @@ resources:
       offical_period: 2007-2020
       currency_code: EUR
 
+    aliases:
+      porteur_de_projet: porteur(s)_de_projet
 
     schema:
       fields:
@@ -52,6 +54,10 @@ resources:
           translates_to: Beneficiary name
           maps_to: beneficiary_name
 
+        - name: porteur_de_projet
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
         - name: commune(s)
           translates_to: city / county
           maps_to: beneficiary_city
@@ -75,3 +81,7 @@ resources:
         - name: durée
           translates_to: duration of project
           maps_to: starting_date
+
+        - name: catégorie_d'intervention
+          translates_to:
+          maps_to:
