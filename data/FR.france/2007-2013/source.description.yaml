@@ -12,7 +12,7 @@ sources:
   - name: Bénéficiaires de fonds européens (beneficiaries page)
     web: http://cartobenef.asp-public.fr/cartobenef/carto.php?lang=fr&nivgeos=reg&curCodeDomSB=DS&curCodeThemeSB=benef&typindSB=R&curCodeIndSB=nb_projet_total
 
-scraper_required: false
+scraper_required: true
 
 contributors:
   - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
@@ -20,7 +20,6 @@ contributors:
 resources:
     - title: EXCEL file for France 2007-2013 FSE national programs
       url: http://cartobenef.asp-public.fr/cartobenef/carto.php
-
       publication_date: # Loic: I can't find it
 
       schema:

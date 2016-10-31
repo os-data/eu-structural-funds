@@ -7,14 +7,14 @@ sources:
   - name: Latvian Republic Ministry of Finance, data from 2014-2020
     web: http://www.esfondi.lv/es-fondu-projektu-mekletajs
 
-scraper_required: false
+scraper_required: true
 
 contributors:
   - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
 resources:
   - title: Latvia's ESIF data 2014-2020
-    url: http://i.am.missing.com # Loic: @bela where is the link?
+    url: http://www.esfondi.lv/es-fondu-projektu-mekletajs
 
     publication_date: 05-10-2016
 
