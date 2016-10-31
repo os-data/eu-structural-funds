@@ -15,7 +15,7 @@ contributors:
 
 resources:
   - title: ERDF in Nordrhein-Westfalen 2014-2020
-    path: ERDF_NRW_2014-2020.xlsx 
+    path: ERDF_NRW_2014-2020.json
     #url: https://www.efre.nrw.de/fileadmin/16-01-22_DN_Liste_der_Vorhaben_20151231.xlsx
 
     publication_date: "2015-12-31"
