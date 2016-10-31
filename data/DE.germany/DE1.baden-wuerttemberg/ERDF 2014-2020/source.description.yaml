@@ -40,7 +40,7 @@ resources:
 
         - name: Zusammenfassung des Vorhabens
           translation: Operation Summary
-          maps_to: project_description_long
+          maps_to: project_description
 
         - name: Datum des Beginns des Vorhabens
           translation: Operation start date
@@ -67,5 +67,5 @@ resources:
           maps_to: beneficiary_country
 
         - name: Bezeichnung der Interventionskategorie für das Vorhaben/name of category of intervention for the operation
-          translation:
-          maps_to: #unclear in the mapping where this is now
+          translation: intervention category 
+          maps_to: theme_name
