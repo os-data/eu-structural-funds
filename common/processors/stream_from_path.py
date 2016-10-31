@@ -1,4 +1,4 @@
-"""A processor too stream in data files."""
+"""A processor to stream data from files."""
 
 import os
 import json
@@ -9,7 +9,7 @@ from logging import warning, info
 from datapackage_pipelines.wrapper import ingest, spew
 from petl import look, fromdicts
 from common.config import SAMPLE_SIZE
-from common.utilities import format_to_json
+from common.utilities import format_to_json, sanitize_field_names
 
 
 def get_json_headers(path):
@@ -24,13 +24,18 @@ def get_json_headers(path):
         return list(keys)
 
 
-def detect_encoding(path):
-    """Detect the data file encoding with Chardet."""
+def get_encoding(parameters, resource):
+    """Return either the specified encoding or a best guess."""
 
-    with open(path, 'rb') as stream:
+    with open(resource['path'], 'rb') as stream:
         text = stream.read()
-    result = chardet.detect(text)
-    return result['encoding']
+        encoding = chardet.detect(text)['encoding']
+
+    if parameters.get('encoding'):
+        encoding = parameters.get('encoding')
+    if resource.get('encoding'):
+        encoding = resource.get('encoding')
+    return encoding
 
 
 def drop_bad_rows(rows):
@@ -46,20 +51,30 @@ def drop_bad_rows(rows):
 def drop_empty_columns(rows):
     """Drop fields with no name."""
 
-    for row_nb, headers, row in rows:
-        for field_nb, header in enumerate(headers):
-            if not header:
-                headers.remove(field_nb)
-                row.remove(field_nb)
-            if row_nb < SAMPLE_SIZE:
-                message = 'Dropped untitled field %s in row %s'
-                warning(message, field_nb, row_nb)
+    for index, headers, values in rows:
+        valid_headers = [header for header in headers if header]
+        valid_values = [value for i, value in enumerate(values) if headers[i]]
 
-        yield (row_nb, headers, row)
+        if index < SAMPLE_SIZE:
+            nb_empty_headers = len(headers) - len(valid_headers)
+
+            if nb_empty_headers > 0:
+                message = 'Dropped %s columns from row %s'
+                warning(message, nb_empty_headers, index)
+
+        yield (index, valid_headers, valid_values)
+
+
+def force_strings(rows):
+    """Force all fields to strings."""
+
+    for index, headers, values in rows:
+        values_as_strings = list(map(str, values))
+        yield (index, headers, values_as_strings)
 
 
 def fill_missing_fields(path):
-    """Pre-fill incomplete JSON rows (necessary to avoid mixing up fields)."""
+    """Pre-fill incomplete JSON rows (to avoid fields mixing up)."""
 
     headers = get_json_headers(path)
 
@@ -79,21 +94,30 @@ def log_sample_table(stream):
     """Record a tabular representation of the stream sample to the log."""
 
     samples = list(map(lambda x: dict(zip(stream.headers, x)), stream.sample))
-    table = str(look(fromdicts(samples), limit=len(stream.sample)))
+    table = look(fromdicts(samples), limit=len(stream.sample))
     info('Data sample =\n%s', table)
 
 
 def check_fields_match(resource, stream):
     """Check if the datapackage and the data have the same set of fields."""
 
-    data_fields = set(stream.headers)
-    sourced_fields = {field['name'] for field in resource['schema']['fields']}
+    data_fields = [str(field) for field in stream.headers if field]
+    sourced_fields = [field['name'] for field in resource['schema']['fields']]
+    nb_untitled_fields = len(stream.headers) - len(data_fields)
 
-    info('Fields sourced = %s', format_to_json(list(sourced_fields)))
-    info('Fields in data = %s', format_to_json(list(data_fields)))
+    info('Fields sourced = %s', format_to_json(sorted(sourced_fields)))
+    info('Found %s untitled columns in the data', nb_untitled_fields)
+    info('Data columns with a title = %s', format_to_json(sorted(data_fields)))
 
     message = 'Data and source fields do not match'
-    assert data_fields == sourced_fields, message
+    assert set(data_fields) == set(sourced_fields), message
+
+
+def get_headers(parameters, path):
+    """Return a list of cleaned up headers."""
+
+    with Stream(path, **parameters) as stream:
+        return sanitize_field_names(stream.headers)
 
 
 def stream_local_file(datapackage, **parameters):
@@ -106,14 +130,17 @@ def stream_local_file(datapackage, **parameters):
         path = resource['path']
         _, extension = os.path.splitext(path)
 
-        parameters.update(encoding=get_encoding(parameters, resource))
         parameters.update(headers=1)
 
         if 'parser_options' in resource:
             parameters.update(**resource.get('parser_options'))
 
         if extension == '.csv':
-            parameters.update(post_parse=[drop_bad_rows])
+            parameters.update(post_parse=[drop_bad_rows, drop_empty_columns])
+            parameters.update(encoding=get_encoding(parameters, resource))
+
+        if extension in ('.xls', '.xlsx'):
+            parameters.update(post_parse=[drop_empty_columns, force_strings])
 
         if extension == '.json':
             fill_missing_fields(path)
@@ -121,21 +148,12 @@ def stream_local_file(datapackage, **parameters):
         info('Ingesting file = %s', path)
         info('Ingestion parameters = %s', format_to_json(parameters))
 
+        parameters.update(headers=get_headers(parameters, path))
+
         with Stream(path, **parameters) as stream:
             check_fields_match(resource, stream)
             log_sample_table(stream)
             yield stream.iter(keyed=True)
-
-
-def get_encoding(parameters, resource):
-    """Return either the specified encoding or a best guess."""
-
-    encoding = detect_encoding(resource['path'])
-    if parameters.get('encoding'):
-        encoding = parameters.get('encoding')
-    if resource.get('encoding'):
-        encoding = resource.get('encoding')
-    return encoding
 
 
 if __name__ == '__main__':
