@@ -57,7 +57,9 @@ from common.config import (
     SCRAPER_FILE,
     DESCRIPTION_SCHEMA_FILE,
     DB_ENGINE,
-    DATAPACKAGE_MUTATOR
+    DATAPACKAGE_MUTATOR,
+    DROPBOX_DIR,
+    SOURCE_ZIP
 )
 from common.utilities import get_fiscal_fields
 
@@ -348,6 +350,25 @@ def print_table(ctx):
     echo(look(sorted_rows, limit=None))
 
 
+@command('collect')
+@pass_context
+def copy_zip_files(ctx):
+    """Copy all zipped source packages to one folder."""
+
+    for source in ctx.obj['sources']:
+        target_path = join(DROPBOX_DIR, source.slug + '.zip')
+        source_path = join(source.folder, SOURCE_ZIP)
+        args = source.id, source_path
+
+        if exists(source_path):
+            copyfile(source_path, target_path)
+            secho('{}: copied {}'.format(*args), **SUCCESS)
+        else:
+            secho('{}: no {} to copy'.format(*args), **ERROR)
+
+    echo('\nDestination folder: {}'.format(DROPBOX_DIR))
+
+
 @command('update')
 @pass_context
 def bootstrap_pipelines(ctx):
@@ -469,6 +490,7 @@ main.add_command(validate_descriptions)
 main.add_command(report_pipeline_status)
 main.add_command(compute_stats)
 main.add_command(print_table)
+main.add_command(copy_zip_files)
 
 
 if __name__ == '__main__':
