@@ -13,8 +13,10 @@ contributors:
 
 resources:
   - title: ESF in Nordrhein-Westfalen 2014-2020
-    url: http://www.arbeit.nrw.de/esf/foerderphase_2014_bis_2020/oeffentlichkeitsarbeit/download/docs/liste_der_vorhaben.xlsx
-    publication_date: 25-08-2016
+
+    path: ESF_NRW_2014-2020.xlsx 
+    #url: http://www.arbeit.nrw.de/esf/foerderphase_2014_bis_2020/oeffentlichkeitsarbeit/download/docs/liste_der_vorhaben.xlsx
+    publication_date: "2016-08-25"
 
     schema:
       fields:
