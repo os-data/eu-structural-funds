@@ -39,14 +39,14 @@ resources:
           maps_to: project_name
 
         - name: Jahr der Bewilligung / Jahr der Schlusszahlung
-          maps_to: project_date
+          maps_to: starting_date
 
         - name: Bewilligter Betrag
           translates_to: Approved Amount
-          maps_to: total_amount_applied
+          maps_to: total_eligible_amount
 
         - name: Ausgezahlter Betrag bei Projekt- abschluss
           translates_to: Paid amount at the end of the project
-          maps_to: total_eligible_expenditure
+          maps_to: total_amount
 
         - # repeat for each column you find in the date
