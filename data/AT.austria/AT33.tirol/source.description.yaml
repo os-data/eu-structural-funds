@@ -44,7 +44,7 @@ resources:
 
         - name: allocated_public_funding
           translation: allocated pulic funding (EU+national cofinancing)
-          maps_to: total amount
+          maps_to: total_amount
 
         - name: status
           translation: G = commited, A = paid out
