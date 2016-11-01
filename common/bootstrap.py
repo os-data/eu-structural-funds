@@ -116,6 +116,16 @@ class Source(object):
                     2, {'run': DATAPACKAGE_MUTATOR}
                 )
 
+            if len(self.description['resources']) > 1:
+                for i, processor in enumerate(
+                        self.pipeline[self.slug]['pipeline']):
+                    print(processor)
+                    if processor['run'] == 'reshape_data':
+                        self.pipeline[self.slug]['pipeline'].insert(
+                            i + 1, {'run': 'concatenate_identical_resources'}
+                        )
+                        break
+
             with open(join(self.folder, PIPELINE_FILE), 'w') as stream:
                 yaml.dump(self.pipeline, stream)
 
@@ -126,18 +136,6 @@ class Source(object):
         else:
             message = '{}: ambiguous extractor'
             secho(message.format(self.id), **WARN)
-
-        if len(self.description['resources']) > 1:
-            for i, processor in self.pipeline[self.slug]:
-                if processor['run'] == 'reshape_data':
-                    reshape_index = i
-                    break
-            else:
-                reshape_index = None
-
-            self.pipeline[self.slug]['pipeline'].insert(
-                reshape_index, {'run': 'concatenate_identical_resources'}
-            )
 
     def save_scraper(self):
         """Copy the scraper placeholder to where it belongs."""
