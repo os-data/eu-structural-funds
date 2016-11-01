@@ -1,0 +1,77 @@
+# I am version V3.
+
+title: ERDF and ESF Data for Slovakia (2007-2013)
+
+description: The beneficiary list of the ERDF and ESF programme for Slovakia 2007-2013. #The data for 2014-2020 is still missing.
+language: sk
+
+sources:
+  - name: List of Beneficiaries ERDF and ESF Slovakia 2007-2013
+    web:  http://www.nsrr.sk/cerpanie/
+
+scraper_required: false
+
+contributors:
+  - Anna Alberts (anna.alberts@okfn.de)
+
+resources:
+
+  - title: ERDF, ESF, Cohesion Funds Beneficiary List Slovakia 2007-2013
+
+    path: all_funds_Slovakia_2007-2013.csv
+    #url: http://www.nsrr.sk/download.php?FNAME=1385992763.upl&ANAME=zoznam-13_11_30.xls
+
+    publication_date: "2013-11-30"
+
+    constant_fields:
+      fund_name: ERDF, CF, ESF
+      offical_period: 2007-2013
+      currency_code: EUR
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: ICO
+          translates_to: unclear (some number)
+          maps_to: project_id
+
+        - name: PRIJIMATEL
+          translates_to: Name Recipient
+          maps_to: beneficiary_name
+
+        - name: ITMS
+          translates_to: unclear (some number)
+
+        - name: KRATKY_NAZOV
+          translates_to: short title
+          maps_to: project_name
+
+        - name: ZACIATOK
+          translates_to: starting date
+          maps_to: starting_date
+
+        - name: KONIEC
+          translates_to: end date
+          maps_to: completion_date
+
+        - name: STAV_PROJEKTU
+          translates_to: project status
+
+        - name: ZMLUVA_NEPODPISANA
+          translates_to: contracts signed
+
+        - name: KOD
+          translates_to: code
+
+        - name: PLANOVANA_SUMA_EUR_KK
+          translates_to: planned amount
+          maps_to: total_amount_eligible
+
+        - name: CERPANIE_RO_EUR_KK
+          translates_to: paid amount RO (public financing?)
+          maps_to: member_state_amount
+
+        - name: CERPANIE_EU_EUR_KK
+          translates_to: paid amount EU amount
+          maps_to: eu_cofinancing_amount
