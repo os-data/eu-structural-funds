@@ -10,40 +10,79 @@ sources:
     web: http://eustrukturfonde.dk/
 
 language: DK
-scraper_required: true
+scraper_required: false
 
 contributors:
   - Olaya Argueso <arguesoperezolaya@gmail.com>
-  
+
 
 resources:
   - title: All funds data 2007-2013
-    url: http://eustrukturfonde.dk/forside/0/17/0/[l][l]alle[l]alle[l]alle[l]alle[l][l]
 
-    publication_date:
+    path: ERDF_Denmark_2007-2013.csv
+    #url: http://eustrukturfonde.dk/forside/0/17/0/[l][l]alle[l]alle[l]alle[l]alle[l][l]
+
+    publication_date: "2016-10-01"
+
     schema:
       fields:
-        - name: Region
-          translation: Region
+
+        - name: projekttitel
+          translation: Operation name
+          maps_to: project_name
+
+        - name: start_dato
+          translation: Operation start date
+          maps_to: start_date
+
+        - name: slut_dato
+          translation: Operation end date
+          maps_to: completion_date
+
+        - name: ordning
+          translation: Fund
+          maps_to: fund_acronym
 
         - name: Indsatsområde
-          translation: Focus
+          translates_to: Focus
+          maps_to: priority_label
 
-        - name: Dato
-          translation: Date
-
-        - name: Budget
+        - name: budget
           translation: Budget
+          maps_to: total_amount
 
-        - name: Tilskud EU's Socialfond
-          translation: Grants European Social Fund
+        - name: eu
+          translation: Union co-financing
+          maps_to: eu_cofinancing_amount
 
-        - name: Tilskud EU's Regionalfond
-          translation: Subsidies European Regional Development Fund
+        - name: tas_projekt_besk
+          translation: Project
+          maps_to: project_description
 
-        - name: Tilskudsmodtager
-          translation: Beneficiary
+        - name: region
+          translation: Region
+          maps_to: beneficiary_nuts_region
 
-        - name: Partnere
-          translation: Partners
-  
+        - name: cvr
+          translates_to: code
+          maps_to: project_id
+
+        - name: navn
+          translation: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: vejnavn
+          translation: Street name
+          maps_to: beneficiary_address
+
+        - name: postnr
+          translation: Operation postcode
+          maps_to: beneficiary_postal_code
+
+        - name: bynavn
+          translation: City name
+          maps_to: beneficiary_city
+
+
+        - name: parter
+          translation: Project partners
