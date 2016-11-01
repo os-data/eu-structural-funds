@@ -12,58 +12,54 @@ sources:
   - name: Bénéficiaires de fonds européens (beneficiaries page)
     web: http://cartobenef.asp-public.fr/cartobenef/carto.php?lang=fr&nivgeos=reg&curCodeDomSB=DS&curCodeThemeSB=benef&typindSB=R&curCodeIndSB=nb_projet_total
 
-scraper_required: true
+scraper_required: false
 
 contributors:
   - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
 
 resources:
-    - title: EXCEL file for France 2007-2013 FSE national programs
-      url: http://cartobenef.asp-public.fr/cartobenef/carto.php
+    - title: JSON file for France 2007-2013 FSE national programs
+
+      path: data.json
+      #url: http://cartobenef.asp-public.fr/cartobenef/carto.php
       publication_date: # Loic: I can't find it
 
       schema:
         fields:
-          - name: Nom de l'organisme bénéficiaire
-            translates_to: Name of the beneficiary organisation
-            maps_to: beneficiary_name
+          - name: _source
+            translates_to: source
 
-          - name: Libellé du projet
-            translates_to: Project title
-            maps_to: project_name
+          - name: annee
+            translates_to: year
+            maps_to: starting_date
 
-          - name: Coût total du projet (en euros)
-            translates_to: total_amount
-            maps_to: total_amount
+          - name: fond
+            translates_to: fund
+            maps_to: fund_acronym
 
-          - name: Montant du financement européen (en euros)
+          - name: fond_coût
             translates_to: Amount financed by the EU
             maps_to: eu_cofinancing_amount
 
-          - name: Fonds européen concerné
-            translates_to: Concerned fund
-            maps_to: fund_acronym
+          - name: région
+            translates_to: region
+            maps_to: beneficiary_nuts_region
 
-          - name: Localisation du projet
-            translates_to: Project localisation
-            maps_to: beneficiary_nuts_code
+          - name: titre
+            translates_to: Project title
+            maps_to: project_name
 
-          - name: Nom de la commune de l'organisme bénéficiaire
-            translates_to: Name of the town of the beneficiary
-            maps_to: beneficiary_city
+          - name: thématique(s)
+            translates_to: theme
+            maps_to: theme_name
 
-          - name: Code département
-            translates_to: Code of département (sub-region)
-            maps_to: beneficiary_nuts_code
+          - name: bénéficiaire
+            translates_to: Name of the beneficiary organisation
+            maps_to: beneficiary_name
 
-          - name: Nom du programme européen
-            translates_to: Name of the European program
-            maps_to: fund_acronym
+          - name: durée
+            translates_to: duration
 
-          - name: Thématique du projet
-            translates_to: Project theme
-            maps_to: # Loic: I think that 
-
-          - name: Année de programmation
-            translates_to: Year scheduled # tentative translation
-            maps_to: starting_date
+          - name: coût_total
+            translates_to: total_amount
+            maps_to: total_amount
