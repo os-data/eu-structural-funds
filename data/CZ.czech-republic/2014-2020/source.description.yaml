@@ -15,6 +15,7 @@ contributors:
 resources:
   - title: List of Czech ESIF operations 2014-2020
 
+    path: ERDF_Czech Republic_2014-2020.xlsx 
     #url: http://www.dotaceeu.cz/getmedia/413c34d0-71c3-4c0a-b0f9-191c88994d1d/benefi8_22.xlsx?ext=.xlsx
     publication_date: "2016-08-01"
 
@@ -44,7 +45,7 @@ resources:
 
         - name: Název výzvy
           translates_to: Call title
-          maps_to: project_description 
+          maps_to: project_description
 
         - name: Operační program
           translates_to: Operational program
