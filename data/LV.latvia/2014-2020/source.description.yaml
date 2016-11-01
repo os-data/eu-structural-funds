@@ -1,22 +1,23 @@
 title: Latvia's ESIF data 2007-today
 
-description: 
+description:
 language: LV
 
 sources:
   - name: Latvian Republic Ministry of Finance, data from 2014-2020
     web: http://www.esfondi.lv/es-fondu-projektu-mekletajs
 
-scraper_required: true
+scraper_required: false
 
 contributors:
   - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
 resources:
   - title: Latvia's ESIF data 2014-2020
-    url: http://www.esfondi.lv/es-fondu-projektu-mekletajs
+    #url: http://www.esfondi.lv/es-fondu-projektu-mekletajs
+    path: all_funds_Latvia_2014-2020.xls
 
-    publication_date: 05-10-2016
+    publication_date: "2016-11-01"
 
     constant_fields:
       fund_name: ERDF, CF, ESF, EARDF
@@ -33,7 +34,7 @@ resources:
         - name: Projekta nosaukums
           translates_to: Project name
           maps_to: project_name
-       
+
         - name: Finansējuma saņēmējs
           translates_to: Final beneficiary
           maps_to: beneficiary_name
