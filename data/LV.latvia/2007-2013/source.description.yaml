@@ -7,20 +7,17 @@ sources:
   - name: Latvian Republic Ministry of Finance, data from 2007-2013
     web:  http://www.esfondi.lv/aktivitates
 
+  - name: Link to original Excel file
+    web: http://data.country.gov/path/to/filename.xlsx
+
 scraper_required: false
-
-
 
 contributors:
   - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
 resources:
   - title: Latvia's ESIF data 2007-2013
-
-
-    path: all_funds_Latvia_2007-2013.xls
-    #url: http://data.country.gov/path/to/filename.xlsx
-
+    path: all_funds_Latvia_2007-2013.csv
     publication_date: 05-10-2016
 
     constant_fields:

@@ -7,6 +7,9 @@ sources:
   - name: Latvian Republic Ministry of Finance, data from 2014-2020
     web: http://www.esfondi.lv/es-fondu-projektu-mekletajs
 
+  - name: Link to the original Excel file
+    web: http://www.esfondi.lv/es-fondu-projektu-mekletajs
+
 scraper_required: false
 
 contributors:
@@ -14,8 +17,7 @@ contributors:
 
 resources:
   - title: Latvia's ESIF data 2014-2020
-    #url: http://www.esfondi.lv/es-fondu-projektu-mekletajs
-    path: all_funds_Latvia_2014-2020.xls
+    path: all_funds_Latvia_2014-2020.csv
 
     publication_date: "2016-11-01"
 
