@@ -38,6 +38,20 @@ def get_encoding(parameters, resource):
     return encoding
 
 
+def get_skip_rows(row_to_skip):
+    """Return a post-parse processor to skip arbitrary rows."""
+
+    def skip_rows(rows):
+        for index, headers, row in rows:
+            if index not in row_to_skip:
+                yield (index, headers, row)
+            else:
+                row_as_json = format_to_json(dict(zip(headers, row)))
+                warning('Skipping row %s = %s', index, row_as_json)
+
+    return skip_rows
+
+
 def drop_bad_rows(rows):
     """Drop rows where fields don't match headers."""
 
@@ -46,23 +60,6 @@ def drop_bad_rows(rows):
             yield (index, headers, row)
         else:
             warning('Bad row %s = %s', index, row)
-
-
-def drop_empty_columns(rows):
-    """Drop fields with no name."""
-
-    for index, headers, values in rows:
-        valid_headers = [header for header in headers if header]
-        valid_values = [value for i, value in enumerate(values) if headers[i]]
-
-        if index < SAMPLE_SIZE:
-            nb_empty_headers = len(headers) - len(valid_headers)
-
-            if nb_empty_headers > 0:
-                message = 'Dropped %s columns from row %s'
-                warning(message, nb_empty_headers, index)
-
-        yield (index, valid_headers, valid_values)
 
 
 def force_strings(rows):
@@ -134,20 +131,25 @@ def stream_local_file(datapackage, **parameters):
         _, extension = os.path.splitext(path)
 
         parameters.update(headers=1)
+        parameters['post_parse'] = []
 
         if 'parser_options' in resource:
+            if resource['parser_options'].get('skip_rows'):
+                row_numbers = resource['parser_options'].pop('skip_rows') or []
+                if row_numbers:
+                    parameters['post_parse'] = [get_skip_rows(row_numbers)]
             parameters.update(**resource.get('parser_options'))
 
         if extension == '.csv':
-            parameters.update(post_parse=[drop_bad_rows, drop_empty_columns])
+            parameters['post_parse'].append(drop_bad_rows)
             parameters.update(encoding=get_encoding(parameters, resource))
 
         if extension in ('.xls', '.xlsx'):
-            parameters.update(post_parse=[drop_empty_columns, force_strings])
+            parameters['post_parse'].append(force_strings)
 
         if extension == '.json':
             fill_missing_fields(path)
-            parameters.update(post_parse=[force_strings])
+            parameters['post_parse'].append(force_strings)
 
         info('Ingesting file = %s', path)
         info('Ingestion parameters = %s', format_to_json(parameters))
