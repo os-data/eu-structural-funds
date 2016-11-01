@@ -8,19 +8,17 @@ sources:
   - name: Cyprus ERDF and ESF data from 2007-2013
     web:  http://www.structuralfunds.org.cy/
 
+  - name: Original link to Excel file
+    web: http://www.structuralfunds.org.cy/structuralfunds2007-2013/uploadfiles/BeneficiariesLIST_FebERDF_CF_%CE%99%CF%83%CF%84%CE%BF%CF%83%CE%B5%CE%BB%CE%AF%CE%B4%CE%B11.xlsx
+
 scraper_required: false
 
 contributors:
   - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
 
 resources:
-
-
   - title: Cyprus ERDF and ESF data 2007-2013
-
-    path: BeneficiariesLIST_FebERDF_CF_Ιστοσελίδα1_cyprus.xlsx
-    #url: http://www.structuralfunds.org.cy/structuralfunds2007-2013/uploadfiles/BeneficiariesLIST_FebERDF_CF_%CE%99%CF%83%CF%84%CE%BF%CF%83%CE%B5%CE%BB%CE%AF%CE%B4%CE%B11.xlsx
-
+    path: BeneficiariesLIST_FebERDF_CF_Ιστοσελίδα1_cyprus.csv
     publication_date: "2016-06-15"
 
     constant_fields:
@@ -43,11 +41,10 @@ resources:
         - name: Έτος Έγκρισης Δαπάνης / Έτος Τελικής Πληρωμής
           translates_to: Year Expenditure Approval / Year Final Payment (two dates)
 
-
-        - name: Επιλέξιμη Δημόσια Δαπάνη Ενταγμένων Έργων                   (€)
+        - name: Επιλέξιμη Δημόσια Δαπάνη Ενταγμένων Έργων (€)
           translates_to: total eligible Expenditure
           maps_to: total_amount_eligible
 
-        - name: Συνολική Δαπάνη που Χορηγήθηκε με την Ολοκλήρωση του Έργου              (€)
+        - name: Συνολική Δαπάνη που Χορηγήθηκε με την Ολοκλήρωση του Έργου (€)
           translates_to: total expenditure awarded at completion
           maps_to: total_amount
