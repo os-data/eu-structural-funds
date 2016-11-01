@@ -17,7 +17,9 @@ contributors:
 resources:
   - title: Latvia's ESIF data 2007-2013
 
-    url: http://data.country.gov/path/to/filename.xlsx
+
+    path: all_funds_Latvia_2007-2013.xls
+    #url: http://data.country.gov/path/to/filename.xlsx
 
     publication_date: 05-10-2016
 
@@ -37,7 +39,7 @@ resources:
         - name: Pasākuma, aktivitātes, apakšaktivitātes nosaukums
           translates_to: Event, activity, sub name
           maps_to: project_name
-       
+
         - name: Ieviešanas kārtība
           translates_to: Implementation Procedures
           maps_to: # are we dumping this @bela?
@@ -45,7 +47,7 @@ resources:
         - name: Atbildīgā iestāde
           translates_to: responsible authority
           maps_to: # Loic: are we dumping this @bela?
-        
+
         - name: Sadarbības iestāde
           translates_to: cooperation authority
           maps_to: # Loic: are we dumping this @bela?
