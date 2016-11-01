@@ -21,7 +21,7 @@ contributors:
 
 resources:
   - title: ERDF in Mecklenburg-Vorpommern 2014-2020
-    path: EFRE_MV_Liste_Vorhaben_310820165102528359859520306.cvs
+    path: EFRE_MV_Liste_Vorhaben_310820165102528359859520306.csv
     publication_date: "2016-03-31"
 
     constant_fields:
