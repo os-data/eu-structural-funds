@@ -7,6 +7,9 @@ sources:
   - name: EFRE Investition in Ihre Zukunft
     web:  https://efre-bw.de/
 
+  - name: Link to the original Excel file
+    web: https://efre-bw.de/wp-content/uploads/Liste-der-Vorhaben_31-03-2016.xlsx
+
 scraper_required: false
 
 contributors:
@@ -15,11 +18,12 @@ contributors:
 resources:
 
   - title: EFRE-Programm in Baden-Württemberg 2014-2020 - Innovation und Energiewende
-
-    path: ERDF_BaWü_2014-2020.xlsx 
-    #url: https://efre-bw.de/wp-content/uploads/Liste-der-Vorhaben_31-03-2016.xlsx
-
+    path: ERDF_BaWü_2014-2020.xlsx
     publication_date: "2016-05-27"
+
+    parser_options:
+      headers: 10
+      skip_rows: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
     constant_fields:
       fund_name: ERDF
@@ -58,14 +62,14 @@ resources:
           translation: Union co-financing rate, as per priority axis
           maps_to: #missing field in schema
 
-        - name: Postleitzahl des Vorhabens/operation postcode
+        - name: Postleitzahl des Vorhabens oder andere angemessene Standortindikatoren
           translation: postcode
           maps_to: beneficiary_postal_code #actual project postal code, so this is false, but the model is too imprecise
 
-        - name: Land/country
+        - name: Land
           translation: country
           maps_to: beneficiary_country
 
-        - name: Bezeichnung der Interventionskategorie für das Vorhaben/name of category of intervention for the operation
+        - name: Bezeichnung der Interventionskategorie für das Vorhaben gemäß Artikel 96 Absatz 2 Unterabsatz 1 Buchstabe b Ziffer vi;
           translation: intervention category 
           maps_to: theme_name

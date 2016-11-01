@@ -8,6 +8,9 @@ sources:
   - name: ESF Mecklenburg-Vorpommern (2014-2020)
     web: http://cms.mv-regierung.de/cms2/Europamv_prod/Europamv/de/eufoerderinstrumente/Europaeische_Fonds_in_Mecklenburg-Vorpommern/ESF/index.jsp
 
+  - name: Original link to Excel file
+    web: http://www.europa-mv.de/cms2/Europamv_prod/Europamv/de/_Dokumente/EU_Foerderinstrumente_2014_2020/Liste_der_Vorhaben_ESF_14_MV.xlsx
+
 scraper_required: false
 
 contributors:
@@ -15,10 +18,12 @@ contributors:
 
 resources:
   - title: ESF in Mecklenburg-Vorpommern 2014-2020
-
-    url: http://www.europa-mv.de/cms2/Europamv_prod/Europamv/de/_Dokumente/EU_Foerderinstrumente_2014_2020/Liste_der_Vorhaben_ESF_14_MV.xlsx
-
+    path: Liste_der_Vorhaben_ESF_14_MV.xlsx
     publication_date: "2016-03-31"
+
+    parser_options:
+      headers: 6
+      skip_rows: [7, 1453, 1454, 1455, 1456, 1457, 1458, 1459]
 
     constant_fields:
       fund_name: ESF
