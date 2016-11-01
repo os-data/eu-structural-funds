@@ -7,6 +7,9 @@ sources:
   - name: EU Skladi
     web:  http://www.eu-skladi.si/
 
+  - name: Link to original Excel file
+    web: http://www.eu-skladi.si/sl/dokumenti/seznam-projektov/seznam-projektov-28-6-2016.xls
+
 scraper_required: false
 
 contributors:
@@ -14,9 +17,7 @@ contributors:
 
 resources:
   - title: Excel file for Slovenia's ERDF, ESF, and Cohesion fund 2014-2020
-
-    url: http://www.eu-skladi.si/sl/dokumenti/seznam-projektov/seznam-projektov-28-6-2016.xls
-
+    path: seznam-projektov-28-6-2016.xls
     publication_date: 16-09-2016
 
     fund_name: ESRR, KS, ESS
@@ -93,3 +94,5 @@ resources:
         - name: Stanje na dan/Date of last update of the list of operations
           translates_to: Date of last update of the list of operations
           maps_to: # Loic: I'm relunctant to add another field for this one
+
+        - name: Statistična regija/Statistical region
