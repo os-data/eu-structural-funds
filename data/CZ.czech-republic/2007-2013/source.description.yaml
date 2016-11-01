@@ -15,7 +15,7 @@ contributors:
 resources:
   - title: Czech ESIF beneficiaries 2007-2013
 
-    path:
+    path: ERDF_Czech_Republic_2007-2013.xlsx
     #url: http://www.dotaceeu.cz/getmedia/b4a6fd6f-44ce-4cef-ab9d-872279a16c9a/Seznam-prijemcu-(List-of-Beneficiaries)-09_2016.xlsx?ext=.xlsx
     publication_date: "2015-12-31"
 
