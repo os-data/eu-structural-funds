@@ -7,6 +7,9 @@ sources:
   - name: ESF Hessen (2014-2020)
     web: https://www.esf-hessen.de/Startseite.esf
 
+  - name: Link to the original Excel file
+    web: https://www.esf-hessen.de/upload/2016-07-01_Liste_der_Vorhaben_8911.xlsx
+
 scraper_required: false
 
 contributors:
@@ -14,8 +17,8 @@ contributors:
 
 resources:
   - title: ESF in Hessen 2014-2020
-    url: https://www.esf-hessen.de/upload/2016-07-01_Liste_der_Vorhaben_8911.xlsx
     publication_date: 01-07-2016
+    path: 2016-07-01_Liste_der_Vorhaben_8911.csv
 
     schema:
       fields:
@@ -61,13 +64,13 @@ Total eligible expenditure allocated to the operation"
           translates_to: total eligible expenditure allocated to the operation
           maps_to: total_amount_eligible
 
-        - name: Unions-Kofinan-zierungssatz
-          translates_to: Union co-financing rate
-          maps_to: eu_cofinancing_amount
-
-        - name: Kategorie der Region
-          translates_to: Category of region
-          maps_to: beneficiary_nuts_region
+#        - name: Unions-Kofinan-zierungssatz
+#          translates_to: Union co-financing rate
+#          maps_to: eu_cofinancing_amount
+#
+#        - name: Kategorie der Region
+#          translates_to: Category of region
+#          maps_to: beneficiary_nuts_region
 
         - name: "Postleitzahl des Vorhabens oder andere angemessene Standortindikatoren
 
