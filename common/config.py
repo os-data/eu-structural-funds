@@ -12,6 +12,7 @@ SOURCE_FILE = 'source.description.yaml'
 STATUS_FILE = 'pipeline-status.json'
 SCRAPER_FILE = 'scraper.py'
 SOURCE_ZIP = 'source.datapackage.zip'
+SOURCE_DB = 'source.db.xlsx'
 
 ROOT_DIR = abspath(join(dirname(__file__), '..'))
 DATA_DIR = join(ROOT_DIR, 'data')
