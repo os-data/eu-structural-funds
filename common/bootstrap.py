@@ -236,6 +236,17 @@ class Source(object):
             else:
                 yield key, getattr(self, key)
 
+    @property
+    def fields_mapping(self):
+        mappings = []
+        for resource in self.description['resources']:
+            if 'schema' in resource and 'fields' in resource['schema']:
+                for field in resource['schema']['fields']:
+                    mapping = {'pipeline_id': self.id}
+                    mapping.update(**field)
+                    mappings.append(mapping)
+        return mappings
+
     def _read_description(self):
         try:
             with open(join(self.folder, SOURCE_FILE)) as stream:
