@@ -28,6 +28,8 @@ import re
 import os
 import yaml
 
+# noinspection PyPackageRequirements
+from pandas import DataFrame
 from collections import Counter
 from copy import deepcopy
 from shutil import copyfile
@@ -59,8 +61,8 @@ from common.config import (
     DB_ENGINE,
     DATAPACKAGE_MUTATOR,
     DROPBOX_DIR,
-    SOURCE_ZIP
-)
+    SOURCE_ZIP,
+    ROOT_DIR, SOURCE_DB)
 from common.utilities import get_fiscal_fields
 
 
@@ -237,6 +239,26 @@ class Source(object):
                 yield key, getattr(self, key)
 
     @property
+    def flat_fields(self):
+        """Return a flat representation of the source (one field per line)."""
+
+        mappings = []
+
+        for resource in self.description['resources']:
+            if 'schema' in resource and 'fields' in resource['schema']:
+                for field in resource['schema']['fields']:
+                    mapping = {'pipeline_id': self.id}
+                    mapping.update(**field)
+
+                    for key, value in self.description.items():
+                        if key != 'resources':
+                            mapping.update({key: value})
+
+                    mappings.append(mapping)
+
+        return mappings
+
+    @property
     def fields_mapping(self):
         mappings = []
         for resource in self.description['resources']:
@@ -310,6 +332,21 @@ class Source(object):
 
     def __str__(self):
         return self.id
+
+
+@command('db')
+@pass_context
+def dump_database(ctx):
+    """Dump a flat database of all the sources, one field per line.."""
+
+    mappings = DataFrame()
+
+    for source in ctx.obj['sources']:
+        mappings = mappings.append(source.flat_fields, ignore_index=True)
+
+    filepath = join(ROOT_DIR, SOURCE_DB)
+    mappings.to_excel(filepath, sheet_name='All sourced fields', index=False)
+    secho('Dumped the source database to {}'.format(filepath), **SUCCESS)
 
 
 @command('status')
@@ -512,6 +549,7 @@ main.add_command(report_pipeline_status)
 main.add_command(compute_stats)
 main.add_command(print_table)
 main.add_command(copy_zip_files)
+main.add_command(dump_database)
 
 
 if __name__ == '__main__':
