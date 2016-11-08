@@ -8,3 +8,4 @@ tabulator
 requests
 datapackage
 lxml
+pandas
