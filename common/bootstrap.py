@@ -247,12 +247,20 @@ class Source(object):
         for resource in self.description['resources']:
             if 'schema' in resource and 'fields' in resource['schema']:
                 for field in resource['schema']['fields']:
-                    mapping = {'pipeline_id': self.id}
+                    mapping = {}
+
+                    mapping.update(**dict(self.state))
                     mapping.update(**field)
 
                     for key, value in self.description.items():
                         if key != 'resources':
                             mapping.update({key: value})
+
+                    for key, value in resource.items():
+                        if key != 'schema':
+                            mapping.update({key: value})
+                        if key == 'title':
+                            mapping.update(resource_title=value)
 
                     mappings.append(mapping)
 
