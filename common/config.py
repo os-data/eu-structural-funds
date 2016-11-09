@@ -7,12 +7,14 @@ OS_TYPES_URL = ('https://raw.githubusercontent.com/'
                 'openspending/os-types/master/src/os-types.json')
 
 PIPELINE_FILE = 'pipeline-spec.yaml'
-DATAPACKAGE_FILE = 'source.datapackage.json'
+SOURCE_DATAPACKAGE_FILE = 'source.datapackage.json'
 SOURCE_FILE = 'source.description.yaml'
 STATUS_FILE = 'pipeline-status.json'
 SCRAPER_FILE = 'scraper.py'
 SOURCE_ZIP = 'source.datapackage.zip'
+FISCAL_ZIP_FILE = 'fiscal.datapackage.zip'
 SOURCE_DB = 'source.db.xlsx'
+DATAPACKAGE_FILE = 'datapackage.json'
 
 ROOT_DIR = abspath(join(dirname(__file__), '..'))
 DATA_DIR = join(ROOT_DIR, 'data')

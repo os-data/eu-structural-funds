@@ -1,0 +1,10 @@
+merged_dataset:
+  pipeline:
+    - run: concatenate_all_pipelines
+    - parameters: {out-file: fiscal.datapackage.zip}
+      run: dump
+      validate: true
+    - parameters: {in-file: fiscal.datapackage.zip}
+      run: fiscal.upload
+  schedule: {crontab: 0 0 1 1 *}
+

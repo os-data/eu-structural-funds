@@ -26,6 +26,8 @@
 
 import re
 import os
+from zipfile import ZipFile
+
 import yaml
 
 # noinspection PyPackageRequirements
@@ -62,7 +64,7 @@ from common.config import (
     DATAPACKAGE_MUTATOR,
     DROPBOX_DIR,
     SOURCE_ZIP,
-    ROOT_DIR, SOURCE_DB)
+    ROOT_DIR, SOURCE_DB, DATAPACKAGE_FILE, FISCAL_ZIP_FILE)
 from common.utilities import get_fiscal_fields
 
 
@@ -189,6 +191,14 @@ class Source(object):
                 value = values.pop()
                 if '?' not in value:
                     return value
+
+    @property
+    def fiscal_zip_file(self):
+        """Return the fiscal datapackage."""
+
+        filepath = join(self.folder, FISCAL_ZIP_FILE)
+        if exists(filepath):
+            return filepath
 
     @property
     def scraper_required(self):

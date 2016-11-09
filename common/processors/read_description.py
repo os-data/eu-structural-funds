@@ -8,7 +8,7 @@ import yaml
 from parser import ParserError
 from slugify import slugify
 from datapackage_pipelines.wrapper import spew, ingest
-from common.config import SOURCE_FILE, DATAPACKAGE_FILE, JSON_FORMAT
+from common.config import SOURCE_FILE, SOURCE_DATAPACKAGE_FILE, JSON_FORMAT
 
 
 def load_description():
@@ -21,7 +21,7 @@ def load_description():
 def save_to_file(datapackage):
     """Save the datapackage dictionary to JSON.
     """
-    with open(DATAPACKAGE_FILE, 'w+') as stream:
+    with open(SOURCE_DATAPACKAGE_FILE, 'w+') as stream:
         stream.write(json.dumps(datapackage, indent=4, ensure_ascii=False))
 
 
