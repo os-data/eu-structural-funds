@@ -14,7 +14,8 @@ contributors:
 
 resources:
   - title: ESF in Thüringen 2014-2020
-    url: http://www.esf-thueringen.de/imperia/md/content/esf_2014/listedervorhaben/liste_der_vorhaben_stand_01.07.2016.xls
+    path: liste_der_beguenstigten_2014.json
+    #url: http://www.esf-thueringen.de/imperia/md/content/esf_2014/listedervorhaben/liste_der_vorhaben_stand_01.07.2016.xls
     publication_date: 01-07-2016
 
     schema:
