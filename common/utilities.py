@@ -13,7 +13,7 @@ from slugify import slugify
 from .config import (
     CODELISTS_DIR,
     FISCAL_SCHEMA_FILE,
-    FISCAL_DATAPACKAGE_FILE,
+    FISCAL_METADATA_FILE,
     FISCAL_MODEL_FILE,
     STATUS_FILE,
     GEOCODES_FILE,
@@ -77,7 +77,7 @@ def get_codelist(codelist_file):
 def get_fiscal_datapackage(skip_validation=False, source=None):
     """Create the master fiscal datapackage from parts."""
 
-    with open(FISCAL_DATAPACKAGE_FILE) as stream:
+    with open(FISCAL_METADATA_FILE) as stream:
         fiscal_datapackage = yaml.load(stream.read())
 
     if source:
