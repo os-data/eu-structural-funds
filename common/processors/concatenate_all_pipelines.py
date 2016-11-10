@@ -3,7 +3,6 @@
 import yaml
 
 from logging import warning, info
-
 from datapackage_pipelines.wrapper import ingest
 from petl import fromdicts, look
 from tabulator import Stream
@@ -17,7 +16,9 @@ from common.config import (
     FISCAL_SCHEMA_FILE,
     FISCAL_MODEL_FILE,
     DATAPACKAGE_FILE,
-    SAMPLE_SIZE)
+    SAMPLE_SIZE,
+    DATA_DIR
+)
 
 
 STREAM_OPTIONS = {
@@ -29,45 +30,61 @@ STREAM_OPTIONS = {
 }
 
 
-def format_as_table(stream):
-    """Convert extended rows to a petl table."""
+def format_data_sample(stream):
+    """Return a table representation of a sample of the streamed data."""
 
     keyed_rows = []
-
     for row in stream.sample:
         keyed_rows.append(dict(zip(stream.headers, row)))
 
-    return repr(look(fromdicts(keyed_rows), limit=None))
+    petl_table = fromdicts(keyed_rows)
+    return repr(look(petl_table, limit=None))
 
 
-def concatenate(select=None):
-    """Return one generator of rows for all datasets."""
+def collect_local_datasets(select=None):
+    """Collect all local fiscal datasets."""
 
-    for source in collect_sources(select):
+    for source in collect_sources(select=select):
         if source.fiscal_zip_file:
+            info('Found %s', source.fiscal_zip_file.lstrip(DATA_DIR))
+
             try:
                 with ZipFile(source.fiscal_zip_file) as zipped_files:
-                    csv_files = zipped_files.namelist()
-                    csv_files.remove(DATAPACKAGE_FILE)
+                    filenames = zipped_files.namelist()
+                    filenames.remove(DATAPACKAGE_FILE)
 
-                    for i, csv_file in enumerate(csv_files):
-                        csv_text = zipped_files.read(csv_file).decode()
+                    for i, filename in enumerate(filenames):
+                        csv_bytes = zipped_files.read(filename)
+                        csv_text = csv_bytes.decode()
 
-                        with Stream(csv_text, **STREAM_OPTIONS) as stream:
-                            message = 'Concatenating resource %s of %s...'
-                            info(message, i, csv_file)
+                        yield filename, csv_text
 
-                            for row in stream.iter(keyed=True):
-                                yield row
-
-                            message = 'Done. File sample:\n%s'
-                            info(message, format_as_table(stream))
+                        message = 'Collected resource %s of %s: %s'
+                        info(message, i, source.id, filename)
 
             except BadZipFile:
                 warning('%s has a bad zip file', source.id)
 
 
-def describe():
+def concatenate(csv_files):
+    """Return a single resource generator for all datasets."""
+
+    nb_files = 0
+
+    for filename, csv_text in csv_files:
+        nb_files += 1
+
+        with Stream(csv_text, **STREAM_OPTIONS) as stream:
+            for row in stream.iter(keyed=True):
+                yield row
+
+            args = filename, format_data_sample(stream)
+            info('Concatenated %s:\n%s', *args)
+
+    info('Done concatenating %s files', nb_files)
+
+
+def assemble_fiscal_datapackage():
     """Assemble the fiscal datapackage for the concatenated dataset."""
 
     with open(FISCAL_METADATA_FILE) as stream:
@@ -87,6 +104,7 @@ def describe():
 
 if __name__ == '__main__':
     parameters, datapackage, _ = ingest()
-    resources = concatenate(select=parameters)
-    datapackage = describe()
-    spew(datapackage, [resources])
+    datapackage = assemble_fiscal_datapackage()
+    datasets = collect_local_datasets(select=parameters)
+    resource = concatenate(datasets)
+    spew(datapackage, [resource])
