@@ -12,7 +12,7 @@ from common.config import (
     FISCAL_SCHEMA_FILE,
     OS_TYPES_URL,
     FISCAL_MODEL_FILE,
-    FISCAL_DATAPACKAGE_FILE
+    FISCAL_METADATA_FILE
 )
 
 # Constraints
@@ -21,7 +21,7 @@ from common.config import (
 datapackage_parts = {
     FISCAL_MODEL_FILE,
     FISCAL_SCHEMA_FILE,
-    FISCAL_DATAPACKAGE_FILE
+    FISCAL_METADATA_FILE
 }
 
 required_properties = {
