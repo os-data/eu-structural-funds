@@ -26,8 +26,6 @@
 
 import re
 import os
-from zipfile import ZipFile
-
 import yaml
 
 # noinspection PyPackageRequirements
@@ -48,6 +46,7 @@ from os.path import join, exists, splitext
 from datetime import datetime
 
 from common.metrics import Snapshot
+from common.utilities import get_fiscal_fields
 from common.config import (
     PIPELINE_FILE,
     SOURCE_FILE,
@@ -64,8 +63,8 @@ from common.config import (
     DATAPACKAGE_MUTATOR,
     DROPBOX_DIR,
     SOURCE_ZIP,
-    ROOT_DIR, SOURCE_DB, DATAPACKAGE_FILE, FISCAL_ZIP_FILE)
-from common.utilities import get_fiscal_fields
+    ROOT_DIR, SOURCE_DB, FISCAL_ZIP_FILE
+)
 
 
 ERROR = dict(fg='red', bold=True)
