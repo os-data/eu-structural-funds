@@ -12,7 +12,7 @@ sources:
     web: http://eustrukturfonde.dk/
 
 scraper_required: false
-
+language: DK
 
 contributors:
   - Michael Peters <michael.peters@okfn.de>
@@ -40,7 +40,7 @@ resources:
 
         - name: Startdato / Operation start date
           translation: Operation start date
-          maps_to: start_date
+          maps_to: starting_date
 
 
         - name: Slutdato / Operation end date

@@ -46,6 +46,7 @@ from os.path import join, exists, splitext
 from datetime import datetime
 
 from common.metrics import Snapshot
+from common.utilities import get_fiscal_fields
 from common.config import (
     PIPELINE_FILE,
     SOURCE_FILE,
@@ -62,8 +63,8 @@ from common.config import (
     DATAPACKAGE_MUTATOR,
     DROPBOX_DIR,
     SOURCE_ZIP,
-    ROOT_DIR, SOURCE_DB)
-from common.utilities import get_fiscal_fields
+    ROOT_DIR, SOURCE_DB, FISCAL_ZIP_FILE
+)
 
 
 ERROR = dict(fg='red', bold=True)
@@ -191,6 +192,14 @@ class Source(object):
                     return value
 
     @property
+    def fiscal_zip_file(self):
+        """Return the fiscal datapackage."""
+
+        filepath = join(self.folder, FISCAL_ZIP_FILE)
+        if exists(filepath):
+            return filepath
+
+    @property
     def scraper_required(self):
         """Whether a pdf or web scraper is needed."""
         return self.description.get('scraper_required')
@@ -247,12 +256,20 @@ class Source(object):
         for resource in self.description['resources']:
             if 'schema' in resource and 'fields' in resource['schema']:
                 for field in resource['schema']['fields']:
-                    mapping = {'pipeline_id': self.id}
+                    mapping = {}
+
+                    mapping.update(**dict(self.state))
                     mapping.update(**field)
 
                     for key, value in self.description.items():
                         if key != 'resources':
                             mapping.update({key: value})
+
+                    for key, value in resource.items():
+                        if key != 'schema':
+                            mapping.update({key: value})
+                        if key == 'title':
+                            mapping.update(resource_title=value)
 
                     mappings.append(mapping)
 

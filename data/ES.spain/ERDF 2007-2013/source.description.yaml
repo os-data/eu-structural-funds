@@ -60,6 +60,8 @@ resources:
       offical_period: 2007-2013
       currency_code: EUR
 
+    schema:
+
   - title: ERDF in Asturias
 
     path: AS4016.json
@@ -70,6 +72,7 @@ resources:
       offical_period: 2007-2013
       currency_code: EUR
 
+    schema:
 
   - title: ERDF in Islas Baleares
 
@@ -81,6 +84,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF in Ceuta
 
@@ -92,7 +96,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
-
+    schema:
 
   - title: ERDF Castilla y Leon
 
@@ -104,6 +108,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF Castilla la Mancha
 
@@ -115,6 +120,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF Cantabria
 
@@ -126,6 +132,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF Catalunya
 
@@ -137,6 +144,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF Comunidad Valenciana
 
@@ -148,7 +156,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
-
+    schema:
 
   - title: ERDF Pais Vasco
 
@@ -160,6 +168,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF Extremadura
 
@@ -171,6 +180,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF Galicia
 
@@ -182,7 +192,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
-
+    schema:
 
   - title: ERDF Islas Canarias
 
@@ -194,6 +204,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF La Rioja
 
@@ -205,6 +216,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF Madrid
     path: MD4016.json
@@ -215,6 +227,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF Melilla
 
@@ -226,6 +239,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF Murcia
 
@@ -237,7 +251,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
-
+    schema:
 
   - title: ERDF Navarra
 
@@ -249,6 +263,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF Spain
 
@@ -260,6 +275,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF Spain
 
@@ -271,6 +287,8 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
+
   - title: ERDF Spain
 
     path: PO%20FCH4016.json
@@ -281,6 +299,7 @@ resources:
         offical_period: 2007-2013
         currency_code: EUR
 
+    schema:
 
   - title: ERDF Spain
 
@@ -291,3 +310,5 @@ resources:
         fund_name: ERDF
         offical_period: 2007-2013
         currency_code: EUR
+
+    schema:

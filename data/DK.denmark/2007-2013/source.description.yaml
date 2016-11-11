@@ -33,7 +33,7 @@ resources:
 
         - name: start_dato
           translation: Operation start date
-          maps_to: start_date
+          maps_to: starting_date
 
         - name: slut_dato
           translation: Operation end date
