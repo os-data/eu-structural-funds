@@ -9,7 +9,7 @@ from tabulator import Stream
 from zipfile import BadZipFile, ZipFile
 from datapackage_pipelines.wrapper import spew
 
-from common.utilities import format_to_json
+from common.utilities import format_to_json, get_fiscal_fields
 from common.bootstrap import collect_sources
 from common.config import (
     FISCAL_METADATA_FILE,
@@ -41,10 +41,10 @@ def format_data_sample(stream):
     return repr(look(petl_table, limit=None))
 
 
-def collect_local_datasets(select=None):
+def collect_local_datasets(**params):
     """Collect all local fiscal datasets."""
 
-    for source in collect_sources(select=select):
+    for source in collect_sources(select=params.get('pipelines')):
         if source.fiscal_zip_file:
             info('Found %s', source.fiscal_zip_file.lstrip(DATA_DIR))
 
@@ -66,17 +66,23 @@ def collect_local_datasets(select=None):
                 warning('%s has a bad zip file', source.id)
 
 
-def concatenate(csv_files):
+def concatenate(csv_files, **params):
     """Return a single resource generator for all datasets."""
 
-    nb_files = 0
+    fiscal_fields = get_fiscal_fields()
+    fields_subset = params.get('fields') or fiscal_fields
+    if not (set(fields_subset) <= set(fiscal_fields)):
+        raise ValueError('Invalid subset of fields')
 
+    nb_files = 0
     for filename, csv_text in csv_files:
         nb_files += 1
 
         with Stream(csv_text, **STREAM_OPTIONS) as stream:
             for row in stream.iter(keyed=True):
-                yield row
+                yield {key: value
+                       for key, value in row.items()
+                       if key in fields_subset}
 
             args = filename, format_data_sample(stream)
             info('Concatenated %s:\n%s', *args)
@@ -105,6 +111,6 @@ def assemble_fiscal_datapackage():
 if __name__ == '__main__':
     parameters, datapackage, _ = ingest()
     datapackage = assemble_fiscal_datapackage()
-    datasets = collect_local_datasets(select=parameters)
-    resource = concatenate(datasets)
+    datasets = collect_local_datasets(**parameters)
+    resource = concatenate(datasets, **parameters)
     spew(datapackage, [resource])

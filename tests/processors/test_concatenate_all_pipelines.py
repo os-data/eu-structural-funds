@@ -2,6 +2,8 @@
 
 from datapackage import DataPackage
 from os.path import splitext
+from pytest import fixture
+from pytest import raises
 from tabulator import Stream
 
 from common.processors.concatenate_all_pipelines import (
@@ -11,22 +13,20 @@ from common.processors.concatenate_all_pipelines import (
     concatenate,
     STREAM_OPTIONS)
 
-column_name = 'col1'
-dummy_data = '{}\nfoo\nbar'.format(column_name)
-more_dummy_data = '{}\nspam\neggs'.format(column_name)
 
-
-def test_describe_returns_a_dict():
+def test_assemble_fiscal_datapackage_returns_a_dict():
     assert isinstance(assemble_fiscal_datapackage(), dict)
 
 
-def test_describe_returns_a_valid_fiscal_descriptor():
+def test_assemble_fiscal_datapackage_returns_a_valid_fiscal_descriptor():
     datapackage = assemble_fiscal_datapackage()
+    # The validation raises an exception if the validation fails
     assert DataPackage(datapackage, schema='fiscal').validate() is None
 
 
 def test_format_as_table():
-    expected = (
+    dummy_data = 'col1\nfoo\nbar'
+    expected_representation = (
         "+-------+\n"
         "| col1  |\n"
         "+=======+\n"
@@ -36,13 +36,13 @@ def test_format_as_table():
         "+-------+\n"
     )
     with Stream(dummy_data, **STREAM_OPTIONS) as stream:
-        assert format_data_sample(stream) == expected
+        assert format_data_sample(stream) == expected_representation
 
 
 def test_collect_local_datasets():
     # I shouldn't use the actual data to run tests but hey
-    datasets = collect_local_datasets(select={'country_code': 'FR'})
-    for filename, csv_text in datasets:
+    datasets_ = collect_local_datasets(pipelines={'country_code': 'FR'})
+    for filename, csv_text in datasets_:
         _, extension = splitext(filename)
 
         assert isinstance(filename, str)
@@ -52,11 +52,36 @@ def test_collect_local_datasets():
         # TODO: ensure the dump processor toggles file extensions to csv
 
 
-def test_concatenate():
-    csv_text = [dummy_data, more_dummy_data]
+@fixture
+def datasets():
+    csv_texts = [
+        'beneficiary_name, starting_date\nfoo,eggs',
+        'beneficiary_name, starting_date\nbar,spam'
+    ]
     filenames = ['foobar.csv', 'spameggs.csv']
-    resource = list(concatenate(zip(filenames, csv_text)))
+    return list(zip(filenames, csv_texts))
 
-    assert len(resource) == 4
+
+# noinspection PyShadowingNames
+def test_concatenate_all_fields(datasets):
+    resource = list(concatenate(datasets))
+    expected_fields = {'beneficiary_name', 'starting_date'}
+
+    assert len(resource) == 2
+    assert isinstance(resource, list)
     assert all(map(lambda x: isinstance(x, dict), resource))
-    assert all(map(lambda x: list(x.keys()).pop() == column_name, resource))
+    assert all(map(lambda x: set(x.keys()) == expected_fields, resource))
+
+
+# noinspection PyShadowingNames
+def test_concatenate_a_subset_of_fields(datasets):
+    resource = list(concatenate(datasets, fields=['beneficiary_name']))
+
+    assert all(map(lambda x: set(x.keys()) == {'beneficiary_name'}, resource))
+    assert len(resource) == 2
+
+
+# noinspection PyShadowingNames
+def test_concatenate_raises_assertion_error_on_invalid_field(datasets):
+    with raises(ValueError):
+        list(concatenate(datasets, fields=['invalid_field']))
