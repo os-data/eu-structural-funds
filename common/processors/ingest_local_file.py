@@ -8,7 +8,6 @@
 # This new object oriented approach should improve readability and facilitate
 # the handling of special cases through subclassing.
 
-
 import json
 import chardet
 
@@ -61,18 +60,22 @@ class BaseIngestor(object):
         for pre_processor in self._pre_processors:
             pre_processor()
 
-        with Stream(self.resource['path'], **self._options) as stream:
+        with Stream(self.resource['path'], **self._body_options) as stream:
             info('First %s rows =\n%s', SAMPLE_SIZE, self._show(stream))
             for row in stream.iter(keyed=True):
                 yield row
 
     @property
-    def _options(self):
+    def _body_options(self):
         return {
             'headers': self._headers,
             'sample_size': SAMPLE_SIZE,
             'post_parse': self._post_processors,
         }
+
+    @property
+    def _header_options(self):
+        return {'headers': 1}
 
     def _check_headers(self):
         message = 'Fields and headers do no match'
@@ -91,7 +94,9 @@ class BaseIngestor(object):
     @property
     def _raw_headers(self):
         """Headers as found in the data file."""
-        return ['']
+
+        with Stream(self.resource['path'], **self._header_options) as stream:
+            return stream.headers
 
     @property
     def _headers(self):
@@ -117,7 +122,7 @@ class BaseIngestor(object):
 
         fields_as_json = format_to_json(sorted(self._fields))
         headers_as_json = format_to_json(sorted(self._headers))
-        options_as_json = format_to_json(self._options)
+        options_as_json = format_to_json(self._body_options)
         nb_empty_headers = len(self._fields) - len(self._headers)
 
         info('Ignoring %s empty header fields', nb_empty_headers)
@@ -145,8 +150,8 @@ class CSVIngestor(BaseIngestor):
     """An ingestor for csv files."""
 
     @property
-    def _options(self):
-        options = super(CSVIngestor, self)._options
+    def _body_options(self):
+        options = super(CSVIngestor, self)._body_options
         options.update(encoding=self._encoding)
         return options
 
@@ -173,12 +178,8 @@ class CSVIngestor(BaseIngestor):
             return encoding
 
     @property
-    def _raw_headers(self):
-        """Return headers as found in the data file."""
-
-        options = dict(headers=1, encoding=self._encoding)
-        with Stream(self.resource['path'], **options) as stream:
-            return stream.headers
+    def _header_options(self):
+        return dict(headers=1, encoding=self._encoding)
 
     @staticmethod
     def _drop_bad_rows(rows):
@@ -240,7 +241,7 @@ class JSONIngestor(BaseIngestor):
 
 
 class XLSIngestor(BaseIngestor):
-    """An ingestor for xls and xlsx files."""
+    """An ingestor for xls files."""
 
     @staticmethod
     def force_strings(rows):
@@ -249,6 +250,10 @@ class XLSIngestor(BaseIngestor):
         for index, headers, values in rows:
             values_as_strings = list(map(str, values))
             yield index, headers, values_as_strings
+
+    @property
+    def _post_processors(self):
+        return [self.force_strings]
 
 
 def ingest_resources(datapackage):
