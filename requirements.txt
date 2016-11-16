@@ -1,3 +1,4 @@
+chardet
 petl
 PyYaml
 datapackage-pipelines
