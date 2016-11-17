@@ -15,7 +15,7 @@ contributors:
 resources:
   - title: ERDF in Southern and Eastern Ireland 2008
 
-    path: ESF_southern_Ireland_2007-2013.json
+    path: http___www.southernassembly.ie_docs_LoB_July_2016_For_Website.json
     #url: http://www.southernassembly.ie/en/project/view_projects
     publication_date: "2016-02-22"
 
@@ -26,42 +26,50 @@ resources:
 
     schema:
       fields:
-        - name: _source
-          translates_to: source
+        - name: Type of Grant
+          translates_to: type of grant
+          maps_to: fund_acronym
 
-        - name: title
+        - name: Beneficiary
           translates_to: Beneficiary name
           maps_to: beneficiary_name
 
-        - name: summary
+        - name: Project Summary
           translates_to: summary
           maps_to: project_description
 
-        - name: location
-          translates_to: location / county
+        - name: Project Location
+          translates_to: location
+          maps_to: beneficiary_nuts_code
 
-        - name: project_type
-          translates_to: project type
-          maps_to: theme_name
-        - name: start_date
+        - name: Code of region or area where operation is located
+          translates_to: Code of region or area where operation is located
+          maps_to: beneficiary_county
+
+        - name: Unique code number of the operation
+          translates_to: Unique code number of the operation
+          maps_to: project_id
+
+        - name: Project Start Date
           translates_to: starting date
           maps_to: starting_date
 
-        - name: end_date
+        - name: Project End Date
           translates_to: completion date
           maps_to: completion_date
 
-        - name: total_eligible_expenditure_(€)
-          translates_to: total eligible expenditure
-          maps_to: total_amount_eligible
+        - name: Theme/subtheme
+          translates_to: project theme / subtheme
+          maps_to: priority_label
 
-        - name: total_public_eligible_expenditure_(€)
-          translates_to: total amount
+        - name: Total Eligible Expenditure
+          translates_to: total amount of project (incl. third party amount)
+          maps_to:
+
+        - name: Total Public Eligible Expenditure
+          translates_to: total amount (EU + national public)
           maps_to: total_amount
 
-        - name: project_theme_subtheme
-          translates_to: project theme / subtheme
-
-        - name: erdf_(€)
-          translates_to: ERDF co financing amount
+        - name: ERDF (40% of Total Public Eligible Expenditure)
+          translates_to: ERDF Expenditure
           maps_to: eu_cofinancing_amount
