@@ -2,11 +2,11 @@
 
 import logging
 from datapackage_pipelines.wrapper import ingest, spew
-from common.utilities import get_fiscal_fields
+from common.utilities import get_fiscal_field_names
 
 
 def update_datapackage(datapackage):
-    valid_fiscal_fields = get_fiscal_fields()
+    valid_fiscal_fields = get_fiscal_field_names()
     for resource in datapackage['resources']:
         for field in resource['schema']['fields']:
             if field['maps_to'] in valid_fiscal_fields:

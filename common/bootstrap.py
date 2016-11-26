@@ -46,7 +46,7 @@ from os.path import join, exists, splitext
 from datetime import datetime
 
 from common.metrics import Snapshot
-from common.utilities import get_fiscal_fields
+from common.utilities import get_fiscal_field_names
 from common.config import (
     PIPELINE_FILE,
     SOURCE_FILE,
@@ -496,7 +496,7 @@ def validate_descriptions(ctx):
     """Validate source description files."""
 
     level = {'broken': ERROR, 'loaded': WARN, 'valid': SUCCESS}
-    valid_keys = str(get_fiscal_fields()).replace('[', '[None, ')
+    valid_keys = str(get_fiscal_field_names()).replace('[', '[None, ')
 
     for source in ctx.obj['sources']:
         color = level[source.validation_status]

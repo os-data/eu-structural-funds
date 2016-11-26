@@ -9,14 +9,14 @@ from tabulator import Stream
 from zipfile import BadZipFile, ZipFile
 from datapackage_pipelines.wrapper import spew
 
-from common.utilities import format_to_json, get_fiscal_fields
+from common.utilities import format_to_json, get_fiscal_field_names
 from common.bootstrap import collect_sources
 from common.config import (
     FISCAL_METADATA_FILE,
     FISCAL_SCHEMA_FILE,
     FISCAL_MODEL_FILE,
     DATAPACKAGE_FILE,
-    SAMPLE_SIZE,
+    LOG_SAMPLE_SIZE,
     DATA_DIR
 )
 
@@ -26,7 +26,7 @@ STREAM_OPTIONS = {
     'format': 'csv',
     'encoding': 'utf-8',
     'headers': 1,
-    'sample_size': SAMPLE_SIZE
+    'sample_size': LOG_SAMPLE_SIZE
 }
 
 
@@ -69,7 +69,7 @@ def collect_local_datasets(**params):
 def concatenate(csv_files, **params):
     """Return a single resource generator for all datasets."""
 
-    fiscal_fields = get_fiscal_fields()
+    fiscal_fields = get_fiscal_field_names()
     fields_subset = params.get('fields') or fiscal_fields
     if not (set(fields_subset) <= set(fiscal_fields)):
         raise ValueError('Invalid subset of fields')

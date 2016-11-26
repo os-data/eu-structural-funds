@@ -18,7 +18,7 @@ from .config import (
     STATUS_FILE,
     GEOCODES_FILE,
     VERBOSE,
-    SAMPLE_SIZE,
+    LOG_SAMPLE_SIZE,
     JSON_FORMAT,
     DATA_DIR)
 
@@ -103,15 +103,22 @@ def get_fiscal_datapackage(skip_validation=False, source=None):
     return datapackage
 
 
-def get_fiscal_fields():
-    """Return the fiscal datapackage fields. """
+def get_fiscal_field_names():
+    """Return the list of fiscal fields names."""
 
     with open(FISCAL_SCHEMA_FILE) as stream:
         schema = yaml.load(stream.read())
 
-    fields = [field_['name'] for field_ in schema['fields']]
+    return [field_['name'] for field_ in schema['fields']]
 
-    return fields
+
+def get_fiscal_fields(key):
+    """Return a lookup table matching the field name to another property."""
+
+    with open(FISCAL_SCHEMA_FILE) as stream:
+        schema = yaml.load(stream.read())
+
+    return {field_['name']: field_[key] for field_ in schema['fields']}
 
 
 def write_feedback(section, messages, folder=os.getcwd()):
@@ -133,7 +140,11 @@ def write_feedback(section, messages, folder=os.getcwd()):
         json.dump(feedback, stream, indent=4)
 
 
-def process(resources, row_processor, **parameters):
+def process(resources,
+            row_processor,
+            pass_resource_index=False,
+            pass_row_index=False,
+            **parameters):
     """Apply a row processor to each row of each datapackage resource."""
 
     parameters_as_json = json.dumps(parameters, **JSON_FORMAT)
@@ -147,16 +158,22 @@ def process(resources, row_processor, **parameters):
     sample_rows = []
 
     for resource_index, resource in enumerate(resources):
+        if pass_resource_index:
+            parameters.update(resource_index=resource_index)
+
         def process_rows(resource_):
             for row_index, row in enumerate(resource_):
+                if pass_row_index:
+                    parameters.update(row_index=row_index)
+
                 new_row = row_processor(row, **parameters)
                 yield new_row
 
-                if verbose and row_index < SAMPLE_SIZE:
+                if verbose and row_index < LOG_SAMPLE_SIZE:
                     sample_rows.append(new_row)
 
             if verbose:
-                table = look(fromdicts(sample_rows), limit=SAMPLE_SIZE)
+                table = look(fromdicts(sample_rows), limit=LOG_SAMPLE_SIZE)
                 message = 'Output of processor %s for resource %s is...\n%s'
                 args = row_processor.__name__, resource_index, table
                 logging.info(message, *args)
