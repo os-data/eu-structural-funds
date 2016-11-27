@@ -7,6 +7,7 @@ import os
 import csv
 
 from datapackage import DataPackage
+from os.path import isfile, join
 from petl import fromdicts, look
 from slugify import slugify
 
@@ -20,7 +21,11 @@ from .config import (
     VERBOSE,
     LOG_SAMPLE_SIZE,
     JSON_FORMAT,
-    DATA_DIR)
+    DATA_DIR, PROCESSORS_DIR)
+
+
+def format_to_json(blob):
+    return json.dumps(blob, **JSON_FORMAT)
 
 
 def sanitize_field_names(raw_fields):
@@ -140,6 +145,21 @@ def write_feedback(section, messages, folder=os.getcwd()):
         json.dump(feedback, stream, indent=4)
 
 
+def get_available_processors():
+    """Return the list of available processors modules."""
+
+    modules = [item.replace('.py', '')
+               for item in os.listdir(PROCESSORS_DIR)
+               if isfile(join(PROCESSORS_DIR, item))]
+
+    message = 'Available processors : %s'
+    logging.debug(message, format_to_json(modules))
+    return modules
+
+
+processor_names = get_available_processors()
+
+
 def process(resources,
             row_processor,
             pass_resource_index=False,
@@ -179,7 +199,3 @@ def process(resources,
                 logging.info(message, *args)
 
         yield process_rows(resource)
-
-
-def format_to_json(blob):
-    return json.dumps(blob, **JSON_FORMAT)
