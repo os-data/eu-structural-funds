@@ -125,7 +125,7 @@ fields:
     format: default
     type: string
     conceptType: administrative-classification
-    osType: administrative-classification:generic:level1:code:full
+    osType: administrative-classification:generic:level1:code
 
   - name: beneficiary_country
     title: Country
