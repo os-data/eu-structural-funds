@@ -86,13 +86,27 @@ class BaseSniffer(object):
         self.format = {key: field.get(key) for key in self.format_keys}
         self.field = deepcopy(field)
         self.nb_failures = 0
+        self._caster = None
 
-        self._caster = self._get_caster()
+    def get_caster(self):
+        """Get a ready made caster if possible, else guess from the data."""
+
+        if all(self.format.values()):
+            self.field.update(self.format)
+            return self.jst_type_class(self.field)
+        else:
+            return self._guess_caster()
 
     def cast(self, value):
         if self.jst_type_class == NumberType:
             return self._caster.cast_currency(value)
         return self._caster.cast(value)
+
+    def _pre_cast_checks_ok(self, value):
+        return True
+
+    def _post_cast_check_ok(self, value):
+        return True
 
     @staticmethod
     def _get_field_sample(resource_sample, field):
@@ -101,15 +115,6 @@ class BaseSniffer(object):
         sample_table = petl.fromdicts(resource_sample)
         sample_column = list(petl.values(sample_table, field['name']))
         return sample_column
-
-    def _get_caster(self):
-        """Get a ready made caster if possible, else guess from the data."""
-
-        if all(self.format.values()):
-            self.field.update(self.format)
-            return self.jst_type_class(self.field)
-        else:
-            return self._guess_caster()
 
     def _guess_caster(self):
         """Return the first caster that succeeds."""
@@ -120,8 +125,12 @@ class BaseSniffer(object):
 
             caster = self.jst_type_class(self.field)
 
-            for i, value in enumerate(self.sample_values):
-                if not caster.test(value):
+            for i, raw_value in enumerate(self.sample_values):
+                try:
+                    assert self._pre_cast_checks_ok(raw_value)
+                    casted_value = caster.cast(raw_value)
+                    assert self._post_cast_check_ok(casted_value)
+                except (AssertionError, InvalidCastError):
                     self.nb_failures += 1
 
             if self.nb_failures < self.max_nb_failures:
@@ -161,6 +170,23 @@ class NumberSniffer(BaseSniffer):
     format_keys = ['decimalChar', 'groupChar']
     format_guesses = NUMBER_FORMATS
 
+    def _pre_cast_checks_ok(self, value):
+        if value.count(self.format['decimalChar']) > 1:
+            return False
+
+        if self.format['decimalChar'] in value:
+            decimal_index = value.find(self.format['decimalChar'])
+            group_index = value.find(self.format['groupChar'])
+            if decimal_index < group_index:
+                return False
+
+        return True
+
+    # noinspection PyMethodMayBeStatic
+    def _post_cast_check_ok(self, value):
+        if len(str(value).split('.')[1]) > 2:
+            return True
+
 
 def update_field_types(datapackage):
     """Update the field types by looking up the fiscal schema."""
@@ -197,7 +223,8 @@ def get_casters(datapackage,
 
         else:
             sniffer_class = select_sniffer(field)
-            caster = sniffer_class(field, resource_sample, max_failure_rate)
+            sniffer = sniffer_class(field, resource_sample, max_failure_rate)
+            caster = sniffer.get_caster()
 
         casters.update({field['name']: caster})
 

@@ -216,3 +216,38 @@ def test_get_caster_raises_caster_not_found_from_bad_number_samples(format):
                                             nb_bad_rows=_TOO_MANY_BAD_ROWS)
     with raises(CasterNotFound):
         get_casters(datapackage, bad_sample_rows)
+
+
+# Pre-casting and post-casting checks
+# -----------------------------------------------------------------------------
+
+number_field = {
+    'name': 'foo',
+    'type': 'number',
+    'decimalChar': '.',
+    'groupChar': ','
+}
+sample_resources = [
+    {'foo': 'bar'},
+    {'foo': 'baz'}
+]
+
+number_sniffer = NumberSniffer(number_field, sample_resources, 0)
+
+
+# noinspection PyProtectedMember
+def test_has_two_many_decimal_chars():
+    assert not number_sniffer._pre_cast_checks_ok('1.2.3')
+    assert number_sniffer._pre_cast_checks_ok('1.2')
+
+
+# noinspection PyProtectedMember
+def test_group_char_comes_after_decimal_char():
+    assert number_sniffer._pre_cast_checks_ok('1,234.567')
+    assert not number_sniffer._pre_cast_checks_ok('1.234,567')
+
+
+# noinspection PyProtectedMember
+def test_has_more_than_two_decimals():
+    assert number_sniffer._post_cast_check_ok(1.233)
+    assert not number_sniffer._post_cast_check_ok(1.2)
