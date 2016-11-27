@@ -152,8 +152,6 @@ def get_available_processors():
                for item in os.listdir(PROCESSORS_DIR)
                if isfile(join(PROCESSORS_DIR, item))]
 
-    message = 'Available processors : %s'
-    logging.debug(message, format_to_json(modules))
     return modules
 
 
