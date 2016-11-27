@@ -588,7 +588,7 @@ def modify_pipeline(ctx, action, processor, before, after, index, parameter):
     options = dict(before=before, after=after, index=index)
     nb_positions = list(map(bool, options.values())).count(True)
 
-    if nb_positions != 1:
+    if nb_positions not in (0, 1):
         raise BadParameter('Use exactly one of the 3 options')
 
     for source in ctx.obj['sources']:
@@ -600,7 +600,7 @@ def modify_pipeline(ctx, action, processor, before, after, index, parameter):
             raise BadParameter(message.format(after, source.id))
 
         if action == 'remove':
-            source.remove_processor(processor, **options)
+            source.remove_processor(processor)
 
         if action == 'insert':
             options.update(processor_parameters=dict(parameter))
