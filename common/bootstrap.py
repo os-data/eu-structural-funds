@@ -29,12 +29,11 @@ import os
 import yaml
 
 # noinspection PyPackageRequirements
+from click import BadParameter
 from pandas import DataFrame
 from collections import Counter
 from copy import deepcopy
 from shutil import copyfile
-from click import command, secho, echo, option, pass_context
-from click import group
 from jsonschema import FormatChecker
 from petl import fromdicts, look, sort, cut
 from slugify import slugify
@@ -44,9 +43,11 @@ from yaml.parser import ParserError
 from yaml.scanner import ScannerError
 from os.path import join, exists, splitext
 from datetime import datetime
+from click import (command, secho, echo, option,
+                   pass_context, group, Choice, argument)
 
 from common.metrics import Snapshot
-from common.utilities import get_fiscal_field_names
+from common.utilities import get_fiscal_field_names, processor_names
 from common.config import (
     PIPELINE_FILE,
     SOURCE_FILE,
@@ -79,11 +80,18 @@ class Source(object):
 
     db_keys = Snapshot.__table__.columns.keys()
 
-    def __init__(self, pipeline_id, timestamp=None, db_session=None):
+    def __init__(self,
+                 pipeline_id,
+                 timestamp=None,
+                 db_session=None,
+                 data_dir=DATA_DIR):
+
         self.timestamp = timestamp
         self.id = pipeline_id
         self.slug = slugify(self.id, separator='_')
-        self.folder = join(DATA_DIR, *pipeline_id.split(os.sep))
+        self.folder = join(data_dir, *pipeline_id.split(os.sep))
+        self.pipeline_spec_file = join(data_dir, PIPELINE_FILE)
+        self.description_file = join(data_dir, SOURCE_FILE)
 
         self.nuts_code = NUTS.findall(self.folder)[-1].split('.')[0]
         self.country_code = COUNTRY.search(self.folder).group(1)
@@ -94,7 +102,7 @@ class Source(object):
         self.validation_errors = []
 
         self.description = self._read_description()
-        self.pipeline = self._read_pipeline()
+        self.pipeline_spec = self._read_pipeline_spec()
         self._validate()
 
         self.db_session = db_session
@@ -109,28 +117,28 @@ class Source(object):
         with open(DEFAULT_PIPELINE_FILE) as stream:
             default_pipeline = yaml.load(stream)
 
-        self.pipeline[self.slug] = default_pipeline.pop('pipeline-id')
+        self.pipeline_spec[self.slug] = default_pipeline.pop('pipeline-id')
         extractor = self._get_extractor()
 
         if extractor:
-            self.pipeline[self.slug]['pipeline'][1]['run'] = extractor
+            self._pipeline[1]['run'] = extractor
             if self.extension in ('.json', '.xls', '.xlsx'):
-                self.pipeline[self.slug]['pipeline'].insert(
+                self._pipeline.insert(
                     2, {'run': DATAPACKAGE_MUTATOR}
                 )
 
             if len(self.description['resources']) > 1:
                 for i, processor in enumerate(
-                        self.pipeline[self.slug]['pipeline']):
+                        self._pipeline):
                     print(processor)
                     if processor['run'] == 'reshape_data':
-                        self.pipeline[self.slug]['pipeline'].insert(
+                        self._pipeline.insert(
                             i + 1, {'run': 'concatenate_identical_resources'}
                         )
                         break
 
             with open(join(self.folder, PIPELINE_FILE), 'w') as stream:
-                yaml.dump(self.pipeline, stream)
+                yaml.dump(self.pipeline_spec, stream)
 
             message = '{}: added default {}'
             secho(message.format(self.id, PIPELINE_FILE), **SUCCESS)
@@ -143,7 +151,7 @@ class Source(object):
     def save_scraper(self):
         """Copy the scraper placeholder to where it belongs."""
 
-        if self.pipeline:
+        if self.pipeline_spec:
             scraper_folder = join(PROCESSORS_DIR, self.country_code)
             if not exists(scraper_folder):
                 os.mkdir(scraper_folder)
@@ -151,6 +159,10 @@ class Source(object):
 
             message = '{}: added default {}'
             secho(message.format(self.id, SCRAPER_FILE), **SUCCESS)
+
+    @property
+    def _pipeline(self):
+        return self.pipeline_spec[self.slug]['pipeline']
 
     @property
     def resource_type(self):
@@ -286,6 +298,51 @@ class Source(object):
                     mappings.append(mapping)
         return mappings
 
+    def remove_processor(self, name):
+        """Remove a processor by name."""
+        index = self._get_processor_index(name)
+        del self._pipeline[index]
+
+    def insert_processor(self, name,
+                         before=None, after=None, index=None,
+                         processor_parameters=None):
+        """Insert a processor in the pipeline."""
+
+        positions = list(map(bool, [before, after, index]))
+        assert positions.count(True) == 1
+
+        processor = {'run': name}
+        if processor_parameters:
+            processor.update(parameters=processor_parameters)
+
+        if before:
+            index = self._get_processor_index(before)
+        if after:
+            index = self._get_processor_index(after) + 1
+
+        self._pipeline.insert(index, processor)
+
+    def save_pipeline_spec(self):
+        with open(join(self.folder, PIPELINE_FILE), 'w+') as stream:
+            yaml.dump(self.pipeline_spec, stream)
+
+    @property
+    def processors(self):
+        return [processor['run'] for processor in self._pipeline]
+
+    def _get_processor_index(self, name):
+        """Return the index of a pipeline"""
+
+        for i, processor in enumerate(self._pipeline):
+            if processor['run'] == name:
+                return i
+
+        raise ValueError('{} processor not in pipeline'.format(name))
+
+    @property
+    def _pipeline(self):
+        return self.pipeline_spec[self.slug]['pipeline']
+
     def _read_description(self):
         try:
             with open(join(self.folder, SOURCE_FILE)) as stream:
@@ -297,7 +354,7 @@ class Source(object):
             self.traceback = str(error)
             return {}
 
-    def _read_pipeline(self):
+    def _read_pipeline_spec(self):
         try:
             with open(join(self.folder, PIPELINE_FILE)) as stream:
                 pipeline = yaml.load(stream)
@@ -517,6 +574,40 @@ def validate_descriptions(ctx):
         secho(message, **color)
 
 
+@command(name='pipeline')
+@argument('action', type=Choice(('insert', 'remove')), required=True)
+@argument('processor', type=Choice(processor_names), required=True)
+@option('--before', type=Choice(processor_names))
+@option('--after', type=Choice(processor_names))
+@option('--index', type=int)
+@pass_context
+def modify_pipeline(ctx, action, processor, before, after, index):
+    """Insert or delete pipeline processors."""
+
+    options = dict(before=before, after=after, index=index)
+
+    if list(map(bool, options.values())).count(True) != 1:
+        raise BadParameter('Use exactly one of the 3 options')
+
+    for source in ctx.obj['sources']:
+
+        message = '{} not found in {}'
+        if processor not in source.processors:
+            raise BadParameter(message.format(processor, source.id))
+        if before and before not in source.processors:
+            raise BadParameter(message.format(before, source.id))
+        if after and after not in source.processors:
+            raise BadParameter(message.format(after, source.id))
+
+        if action == 'remove':
+            source.remove_processor(processor, **options)
+        if action == 'insert':
+            source.insert_processor(processor, **options)
+
+        source.save_pipeline_spec()
+        secho('Saved changes for {}'.format(source.id), **SUCCESS)
+
+
 def collect_sources(select=None, **kwargs):
     """Return a sorted list of sources."""
 
@@ -567,6 +658,7 @@ main.add_command(compute_stats)
 main.add_command(print_table)
 main.add_command(copy_zip_files)
 main.add_command(dump_database)
+main.add_command(modify_pipeline)
 
 
 if __name__ == '__main__':
