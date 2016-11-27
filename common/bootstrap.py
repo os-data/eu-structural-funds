@@ -579,21 +579,21 @@ def validate_descriptions(ctx):
 @argument('processor', type=Choice(processor_names), required=True)
 @option('--before', type=Choice(processor_names))
 @option('--after', type=Choice(processor_names))
+@option('--parameter', type=(str, str), nargs=2, multiple=True)
 @option('--index', type=int)
 @pass_context
-def modify_pipeline(ctx, action, processor, before, after, index):
+def modify_pipeline(ctx, action, processor, before, after, index, parameter):
     """Insert or delete pipeline processors."""
 
     options = dict(before=before, after=after, index=index)
+    nb_positions = list(map(bool, options.values())).count(True)
 
-    if list(map(bool, options.values())).count(True) != 1:
+    if nb_positions != 1:
         raise BadParameter('Use exactly one of the 3 options')
 
     for source in ctx.obj['sources']:
 
         message = '{} not found in {}'
-        if processor not in source.processors:
-            raise BadParameter(message.format(processor, source.id))
         if before and before not in source.processors:
             raise BadParameter(message.format(before, source.id))
         if after and after not in source.processors:
@@ -601,7 +601,9 @@ def modify_pipeline(ctx, action, processor, before, after, index):
 
         if action == 'remove':
             source.remove_processor(processor, **options)
+
         if action == 'insert':
+            options.update(processor_parameters=dict(parameter))
             source.insert_processor(processor, **options)
 
         source.save_pipeline_spec()
