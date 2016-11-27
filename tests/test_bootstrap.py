@@ -20,7 +20,7 @@ class TestSource(TestCase):
     pipeline_spec_file = os.path.join(pipeline_folder, PIPELINE_FILE)
 
     pipeline_spec = {
-        pipeline_id: {
+        'XX_dummy_id': {
             'schedule': 'dummy schedule',
             'pipeline': [
                 {'run': 'processor 0'},
