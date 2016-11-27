@@ -251,3 +251,11 @@ def test_group_char_comes_after_decimal_char():
 def test_has_more_than_two_decimals():
     assert number_sniffer._post_cast_check_ok(1.233)
     assert not number_sniffer._post_cast_check_ok(1.2)
+
+
+# noinspection PyProtectedMember
+def test_pre_and_post_checks_with_corner_cases():
+    assert number_sniffer._pre_cast_checks_ok('')
+    assert number_sniffer._pre_cast_checks_ok(None)
+    assert number_sniffer._post_cast_check_ok(None)
+    assert number_sniffer._post_cast_check_ok(1)

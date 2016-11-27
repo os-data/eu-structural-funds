@@ -171,21 +171,27 @@ class NumberSniffer(BaseSniffer):
     format_guesses = NUMBER_FORMATS
 
     def _pre_cast_checks_ok(self, value):
-        if value.count(self.format['decimalChar']) > 1:
-            return False
-
-        if self.format['decimalChar'] in value:
-            decimal_index = value.find(self.format['decimalChar'])
-            group_index = value.find(self.format['groupChar'])
-            if decimal_index < group_index:
+        if value is not None:
+            if value.count(self.format['decimalChar']) > 1:
                 return False
+
+            if self.format['decimalChar'] in value:
+                decimal_index = value.find(self.format['decimalChar'])
+                group_index = value.find(self.format['groupChar'])
+                if decimal_index < group_index:
+                    return False
 
         return True
 
     # noinspection PyMethodMayBeStatic
     def _post_cast_check_ok(self, value):
-        if len(str(value).split('.')[1]) > 2:
-            return True
+        if value is not None:
+            value_as_string = str(value)
+            if '.' in value_as_string:
+                if not len(value_as_string.split('.')[1]) > 2:
+                    return False
+
+        return True
 
 
 def update_field_types(datapackage):
