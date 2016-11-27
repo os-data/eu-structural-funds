@@ -133,7 +133,7 @@ class BaseSniffer(object):
                 except (AssertionError, InvalidCastError):
                     self.nb_failures += 1
 
-            if self.nb_failures < self.max_nb_failures:
+            if self.nb_failures <= self.max_nb_failures:
                 self._log_success()
                 return caster
 
@@ -269,7 +269,8 @@ def extract_data_sample(resource, sample_size=SNIFFER_SAMPLE_SIZE):
     for i, row in enumerate(resource):
         data_sample.append(row)
         if i + 1 == sample_size:
-            return data_sample, resource
+            break
+    return data_sample, resource
 
 
 def concatenate_data_sample(data_sample, resource):
