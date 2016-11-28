@@ -16,9 +16,8 @@ from common.utilities import (
 )
 
 
-def test_get_available_processors_returns_list_of_strings(caplog):
+def test_get_available_processors_returns_list_of_strings():
     modules = get_available_processors()
-    assert caplog.records()[0].levelname == 'DEBUG'
     assert len(modules) > 0
     assert isinstance(modules, list)
     for processor in modules:
