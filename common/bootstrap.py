@@ -588,6 +588,11 @@ def modify_pipeline(ctx, action, processor, before, after, parameter):
         raise BadParameter('Ambiguous position')
 
     for source in ctx.obj['sources']:
+        if not source.pipeline_spec:
+            message = '{}: no pipeline found, skipping'
+            secho(message.format(source.id), **ERROR)
+            continue
+
         positions = dict(before=before, after=after)
         position = before or after
 
