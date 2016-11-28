@@ -614,7 +614,7 @@ def modify_pipeline(ctx, action, processor, before, after, parameter):
 
         else:
             message = '{}: skipped because {} not in pipeline'
-            secho(message.format(position, source.id), **WARN)
+            secho(message.format(source.id, position), **WARN)
 
 
 def collect_sources(select=None, **kwargs):
