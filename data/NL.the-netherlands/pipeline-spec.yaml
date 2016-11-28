@@ -1,4 +1,4 @@
-nl_the_netherlands:
+NL_the_netherlands:
   pipeline:
   - {run: read_description}
   - run: stream_from_path
