@@ -584,37 +584,41 @@ def validate_descriptions(ctx):
 def modify_pipeline(ctx, action, processor, before, after, parameter):
     """Insert or delete pipeline processors."""
 
-    if before and after:
-        raise BadParameter('Ambiguous position')
-
     for source in ctx.obj['sources']:
         if not source.pipeline_spec:
             message = '{}: no pipeline found, skipping'
             secho(message.format(source.id), **ERROR)
             continue
 
-        positions = dict(before=before, after=after)
-        position = before or after
-
-        if position in source.processors:
-            if action == 'remove':
+        if action == 'remove':
+            if processor in source.processors:
                 source.remove_processor(processor)
+            else:
+                message = '{}: {} not in pipeline, skipping'
+                secho(message.format(source.id, processor, **WARN))
 
-            if action == 'insert':
+        if action == 'insert':
+            if before and after:
+                raise BadParameter('Ambiguous position')
+
+            position = before or after
+
+            if position in source.processors:
                 if processor in source.processors:
                     message = '{}: {} already exists'
                     secho(message.format(source.id, processor, **WARN))
 
+                positions = dict(before=before, after=after)
                 positions.update(processor_parameters=dict(parameter))
                 source.insert_processor(processor, **positions)
 
-            source.save_pipeline_spec()
-            message = '{}: saved changes'
-            secho(message.format(source.id), **SUCCESS)
+            else:
+                message = '{}: skipped because {} not in pipeline'
+                secho(message.format(source.id, position), **WARN)
 
-        else:
-            message = '{}: skipped because {} not in pipeline'
-            secho(message.format(source.id, position), **WARN)
+        source.save_pipeline_spec()
+        message = '{}: saved changes'
+        secho(message.format(source.id), **SUCCESS)
 
 
 def collect_sources(select=None, **kwargs):
