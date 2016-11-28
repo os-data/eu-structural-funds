@@ -1,4 +1,4 @@
-2014-2020:
+FR_france_2014_2020:
   pipeline:
     - run: read_description
       validate: true
