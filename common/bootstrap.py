@@ -580,34 +580,36 @@ def validate_descriptions(ctx):
 @option('--before', type=Choice(processor_names))
 @option('--after', type=Choice(processor_names))
 @option('--parameter', type=(str, str), nargs=2, multiple=True)
-@option('--index', type=int)
 @pass_context
-def modify_pipeline(ctx, action, processor, before, after, index, parameter):
+def modify_pipeline(ctx, action, processor, before, after, parameter):
     """Insert or delete pipeline processors."""
 
-    options = dict(before=before, after=after, index=index)
-    nb_positions = list(map(bool, options.values())).count(True)
-
-    if nb_positions not in (0, 1):
-        raise BadParameter('Use exactly one of the 3 options')
+    if before and after:
+        raise BadParameter('Ambiguous position')
 
     for source in ctx.obj['sources']:
+        positions = dict(before=before, after=after)
+        position = before or after
 
-        message = '{} not found in {}'
-        if before and before not in source.processors:
-            raise BadParameter(message.format(before, source.id))
-        if after and after not in source.processors:
-            raise BadParameter(message.format(after, source.id))
+        if position in source.processors:
+            if action == 'remove':
+                source.remove_processor(processor)
 
-        if action == 'remove':
-            source.remove_processor(processor)
+            if action == 'insert':
+                if processor in source.processors:
+                    message = '{}: {} already exists'
+                    secho(message.format(source.id, processor, **WARN))
 
-        if action == 'insert':
-            options.update(processor_parameters=dict(parameter))
-            source.insert_processor(processor, **options)
+                positions.update(processor_parameters=dict(parameter))
+                source.insert_processor(processor, **positions)
 
-        source.save_pipeline_spec()
-        secho('Saved changes for {}'.format(source.id), **SUCCESS)
+            source.save_pipeline_spec()
+            message = '{}: saved changes'
+            secho(message.format(source.id), **SUCCESS)
+
+        else:
+            message = '{}: skipped because {} not in pipeline'
+            secho(message.format(position, source.id), **WARN)
 
 
 def collect_sources(select=None, **kwargs):
