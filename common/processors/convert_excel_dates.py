@@ -3,6 +3,7 @@
 from xlrd.xldate import xldate_as_datetime
 from datapackage_pipelines.wrapper import ingest
 from datapackage_pipelines.wrapper import spew
+from logging import warning
 
 
 # See http://stackoverflow.com/questions/1108428/...
@@ -13,7 +14,12 @@ def convert_dates(row, date_fields, date_mode):
     """Rename the row keys according to the mapping.
     """
     for date_field in date_fields:
-        row[date_field] = xldate_as_datetime(row[date_field], date_mode).date()
+        try:
+            row[date_field] = \
+                xldate_as_datetime(float(row[date_field]), date_mode).date()
+        except ValueError:
+            warning('Could not convert excel date = %s', row[date_field])
+            row[date_field] = None
     return row
 
 
