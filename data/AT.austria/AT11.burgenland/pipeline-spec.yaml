@@ -1,23 +1,19 @@
 AT_austria_AT11_burgenland:
   pipeline:
   - {run: read_description}
-  - run: ingest_local_file
+  - {run: ingest_local_file}
   - parameters: {out-file: source.datapackage.zip}
     run: dump
     validate: true
-  - {run: map_columns}
-  - run: parse_currency_fields
-    parameters:
-      fields:
-        - total_amount
-      characters:
-        decimal: ","
-        grouping: "."
-        currency: ""
+  - {run: map_fields}
+  - {run: concatenate_identical_resources}
+  - {run: sniff_and_cast}
+  - parameters:
+      characters: {currency: '', decimal: ',', grouping: .}
+      fields: [total_amount]
       verbose: false
-
+    run: parse_currency_fields
   - {run: reshape_data}
-  - {run: cast_to_fiscal_schema}
   - {run: show_sample_in_console}
   - {run: load_fiscal_datapackage}
   - parameters: {out-file: fiscal.datapackage.zip}

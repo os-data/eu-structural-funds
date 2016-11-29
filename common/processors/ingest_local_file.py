@@ -19,7 +19,7 @@ from petl import fromdicts, look
 from pip.utils import cached_property
 from tabulator import Stream
 
-from common.config import SAMPLE_SIZE
+from common.config import LOG_SAMPLE_SIZE
 from common.utilities import format_to_json
 
 
@@ -61,7 +61,7 @@ class BaseIngestor(object):
             pre_processor()
 
         with Stream(self.resource['path'], **self._body_options) as stream:
-            info('First %s rows =\n%s', SAMPLE_SIZE, self._show(stream))
+            info('First %s rows =\n%s', LOG_SAMPLE_SIZE, self._show(stream))
             for row in stream.iter(keyed=True):
                 yield row
 
@@ -69,7 +69,7 @@ class BaseIngestor(object):
     def _body_options(self):
         return {
             'headers': self._headers,
-            'sample_size': SAMPLE_SIZE,
+            'sample_size': LOG_SAMPLE_SIZE,
             'post_parse': self._post_processors,
         }
 
@@ -253,7 +253,19 @@ class XLSIngestor(BaseIngestor):
 
     @property
     def _post_processors(self):
-        return [self.force_strings]
+        return [self._skip_header, self.force_strings]
+
+    @staticmethod
+    def _skip_header(rows):
+        """Skip the header (post-processor)."""
+
+        # Headers are passed as an option and need to be explicitly ignored.
+        for index, headers, row in rows:
+            if index != 1:
+                yield index, headers, row
+
+
+XLSXIngestor = XLSIngestor
 
 
 def ingest_resources(datapackage):

@@ -1,65 +1,36 @@
-MT.malta:
-  schedule: {crontab: 0 0 1 1 *}
-
+MT_malta:
   pipeline:
-    - run: read_description
-      parameters:
-        save_datapackage: false
-
-    - run: MT.mt_malta_scraper
-
-#    - run: stream_from_path
-#      parameters:
-#        streamer: tabulator
-
-    - run: parse_currency_fields
-      parameters:
-        fields:
-          - Project Cost
-        characters:
-          decimal: "."
-          grouping: ","
-          currency: "€"
-
-    - run: MT.parse_dates
-      parameters:
-        date_fields:
-          - Start Date
-          - End Date
-    
-    - run: map_values
-      parameters:
-        mappings:
-          - field: Fund
-            mapping:
-              ESF: [European Social Fund]
-              CF: [Cohesion Fund]
-              ERDF: [European Regional Development Fund]
-
-    - run: map_columns
-      parameters:
-
-    - run: reshape_data
-
-    - run: fill_in_constant_fields
-      parameters:
-        constants:
-          funding_period: 2
-
-    - run: cast_to_fiscal_schema
-
-    - run: show_sample_in_console
-      parameters:
-        sample_size: 1000
-
-    - run: load_fiscal_datapackage
-
-    - run: dump
-      validate: true
-      parameters:
-        out-file: fiscal.datapackage.zip
-
-    - run: fiscal.upload
-      parameters:
-        in-file: fiscal.datapackage.zip
-
+  - parameters: {save_datapackage: false}
+    run: read_description
+  - {run: MT.mt_malta_scraper}
+  - parameters:
+      characters: {currency: "\u20AC", decimal: ., grouping: ','}
+      fields: [Project Cost]
+    run: parse_currency_fields
+  - parameters:
+      date_fields: [Start Date, End Date]
+    run: MT.parse_dates
+  - parameters:
+      mappings:
+      - field: Fund
+        mapping:
+          CF: [Cohesion Fund]
+          ERDF: [European Regional Development Fund]
+          ESF: [European Social Fund]
+    run: map_values
+  - {run: map_fields}
+  - {run: concatenate_identical_resources}
+  - {run: sniff_and_cast}
+  - {run: reshape_data}
+  - parameters:
+      constants: {funding_period: 2}
+    run: fill_in_constant_fields
+  - parameters: {sample_size: 1000}
+    run: show_sample_in_console
+  - {run: load_fiscal_datapackage}
+  - parameters: {out-file: fiscal.datapackage.zip}
+    run: dump
+    validate: true
+  - parameters: {in-file: fiscal.datapackage.zip}
+    run: fiscal.upload
+  schedule: {crontab: 0 0 1 1 *}

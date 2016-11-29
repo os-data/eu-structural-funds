@@ -5,9 +5,10 @@ DE_germany_DED_sachsen_ESF_2014_2020:
   - parameters: {out-file: source.datapackage.zip}
     run: dump
     validate: true
-  - {run: map_columns}
+  - {run: map_fields}
+  - {run: concatenate_identical_resources}
+  - {run: sniff_and_cast}
   - {run: reshape_data}
-  - {run: cast_to_fiscal_schema}
   - {run: show_sample_in_console}
   - {run: load_fiscal_datapackage}
   - parameters: {out-file: fiscal.datapackage.zip}

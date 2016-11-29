@@ -11,7 +11,17 @@ from common.utilities import (
     get_codelist,
     get_fiscal_datapackage,
     process,
-    get_nuts_codes)
+    get_nuts_codes,
+    get_available_processors
+)
+
+
+def test_get_available_processors_returns_list_of_strings():
+    modules = get_available_processors()
+    assert len(modules) > 0
+    assert isinstance(modules, list)
+    for processor in modules:
+        assert isinstance(processor, str)
 
 
 @skipIf(True, 'Travis cannot find the build-in open object')

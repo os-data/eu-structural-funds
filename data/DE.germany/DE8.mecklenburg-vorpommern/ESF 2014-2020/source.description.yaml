@@ -33,50 +33,36 @@ resources:
     schema:
       fields:
         - name: ANTRAGSNUMMER
-
           translates_to: project number
           maps_to: project_id
 
         - name: Interventionskategorie
-
           translates_to: Intervention field
 
-
         - name: Name des Begünstigten
-
           translates_to: Beneficiary name
           maps_to: beneficiary_name
 
         - name: PLZ
-
           translates_to: operation postcode
           maps_to: beneficiary_postal_code
 
         - name: BEGINN
-
           translates_to: starting date of the project
           maps_to: starting_date
 
         - name: ENDE
-
           translates_to: completion date of the project
           maps_to: completion_date
 
         - name: ZUSAMMENFASSUNG
-
           translates_to: project description
           maps_to: project_description
 
-
         - name: BEZEICHNUNG
-
           translates_to: operation name
           maps_to: project_name
 
-
-
-
         - name: GESAMTBETRAG 1)
-
           translates_to: total eligible expenditure allocated to the operation
           maps_to: total_amount_eligible
