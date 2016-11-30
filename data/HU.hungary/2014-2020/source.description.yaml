@@ -16,13 +16,16 @@ contributors:
 resources:
 
   - title: ESF Hungary 2014-2020
+  
+    fund_name: ESF
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: HUF    
+    
     path: data-uszt-ESZA.json
     publication_date: "2016-10-31"
 
-    constant_fields:
-        fund_name: ESF
-        offical_period: 2014-2020
-        currency_code: HUF
+ 
 
     schema:
 
@@ -91,12 +94,15 @@ resources:
   - title: ERDF in Hungary 2014-2020
 
     path: data-uszt-ERFA.json
+
+    fund_name: ERDF
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: HUF    
+ 
     publication_date: "2016-10-31"
 
-    constant_fields:
-        fund_name: ERDF
-        offical_period: 2014-2020
-        currency_code: HUF
+ 
 
     schema:
 
