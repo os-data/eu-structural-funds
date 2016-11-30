@@ -16,15 +16,16 @@ resources:
 
   - title: ERDF Vorarlberg 2007-2013
 
+    fund_name: ERDF
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
+
+
     path: ERDF Vorarlberg 2007-2013.json
     #url: http://www.innovation-Vorarlberg.at/de/projekte/verzeichnis/Beguenstigte_25.08.15_R57.pdf
 
     publication_date: "2015-08-25"
-
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
 
 
     schema:
