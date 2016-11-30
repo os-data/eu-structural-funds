@@ -15,14 +15,15 @@ contributors:
 resources:
   - title: ERDF in Southern and Eastern Ireland 2008
 
+    fund_name: ERDF
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR 
+
     path: http___www.southernassembly.ie_docs_LoB_July_2016_For_Website.json
     #url: http://www.southernassembly.ie/en/project/view_projects
     publication_date: "2016-02-22"
 
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
 
     schema:
       fields:
