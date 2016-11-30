@@ -15,19 +15,18 @@ contributors:
 
 resources:
 
-
-
   - title: Region Brussels ERDF data 2007-2013
+
+    fund_name: ERDF
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
 
     path: ERDF_Brussels_2007-2013.xls
     #url: https://sharing.oodrive.com/easyshare/wjshacc?action=download&s=M%2FBFSa3iRA5yGG6%2FYCAHd5p19JySMEUaASkcJ10hzAUg1kPYqIL7o87dr65z0NZCtT910OV%2BVeB9%0D%0A7DB3wC2%2FxmwgmwD7HL6u&iid=172984430
 
     publication_date: "2014-11-01"
 
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
 
       # any other field from fiscal.fields.yaml that is constant
 
