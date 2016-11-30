@@ -18,13 +18,16 @@ contributors:
 
 resources:
   - title: Belgium Region Vlaams ERDF data 2014-2020
+
+    fund_name: ERDF
+    funding_period: 2014-2020
+    cci_code: 2014BE16RFOP001
+    currency_code: EUR
+
     path: ERDF_Data_Flandern_2014-2020.xls
     publication_date: "2015-06-01"
 
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2014-2020
-      currency_code: EUR
+ 
 
     schema:
       fields:
