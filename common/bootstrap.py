@@ -508,7 +508,7 @@ def bootstrap_pipelines(ctx):
 
     for source in ctx.obj['sources']:
         if source.description:
-            if not source.pipeline:
+            if not source.pipeline_spec:
                 source.bootstrap()
                 if source.scraper_required:
                     if not source.has_scraper:
