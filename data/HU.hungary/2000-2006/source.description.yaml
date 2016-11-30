@@ -16,13 +16,15 @@ contributors:
 resources:
 
   - title: ESF Hungary 2000-2006
+
+    fund_name: ESF
+    funding_period: 2000-2006
+    cci_code: 
+    currency_code: HUF
+    
     path: data-nft-ESZA.json
     publication_date: "2016-10-31"
 
-    constant_fields:
-        fund_name: ESF
-        offical_period: 2000-2006
-        currency_code: HUF
 
     schema:
 
@@ -88,11 +90,13 @@ resources:
   - title: ERDF in Hungary 2000-2006
 
     path: data-nft-ERFA.json
+ 
+    fund_name: ERDF
+    funding_period: 2000-2006
+    cci_code: 
+    currency_code: HUF 
+ 
     publication_date: "2016-10-31"
 
-    constant_fields:
-        fund_name: ERDF
-        offical_period: 2000-2006
-        currency_code: HUF
-
+ 
     schema:
