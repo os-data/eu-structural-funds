@@ -18,13 +18,16 @@ contributors:
 
 resources:
   - title: Cyprus ERDF and ESF data 2007-2013
+
+    fund_name: ERDF, ESF
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
+
     path: BeneficiariesLIST_FebERDF_CF_Ιστοσελίδα1_cyprus.csv
     publication_date: "2016-06-15"
 
-    constant_fields:
-      fund_name: ERDF, ESF
-      offical_period: 2007-2013
-      currency_code: EUR
+
 
       # any other field from fiscal.fields.yaml that is constant
 
