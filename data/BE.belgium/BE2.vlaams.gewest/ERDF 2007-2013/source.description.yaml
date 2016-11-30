@@ -19,15 +19,15 @@ resources:
 
   - title: Belgium Region Vlaams ERDF data 2007-2013
 
+    fund_name: ERDF
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
+
     path: ERDF_Flandern_2007-2013.json
     #url: http://www.vlaio.be/sites/default/files/documenten/ef_20120410_overzicht_projecten.xlsx
 
     publication_date: "2014-11-01"
-
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
 
       # any other field from fiscal.fields.yaml that is constant
 
