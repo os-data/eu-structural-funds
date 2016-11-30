@@ -16,17 +16,18 @@ resources:
 
   - title: Regionale Wettbewerbsfähigkeit und Beschäftigung (RWB) - Bereich EFRE in Baden-Württemberg 2007-2013
 
+    fund_name: ERDF
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
+
+
     path: ERDF_BaWü_2007-2013.csv
         #url: #add url from github after sourcing
 
     publication_date: "2014-12-31"
 
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
-
-      # any other field from fiscal.fields.yaml that is constant
+       # any other field from fiscal.fields.yaml that is constant
 
     schema:
       fields:
