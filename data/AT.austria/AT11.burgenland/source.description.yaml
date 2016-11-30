@@ -16,6 +16,12 @@ contributors:
 resources:
   - title: ERDF Burgenland 2007-2013
 
+    fund_name: ERDF
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
+    
+
     # url: http://www.phasing-out.at/media/file/822_Projektliste_EFRE_31.12.2012.pdf
     path: tabula-913_Projektliste_EFRE_30.06.2016_burgenland_07_13.csv
 
