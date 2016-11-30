@@ -18,6 +18,12 @@ contributors:
 resources:
 
   - title: ERDF Niederösterreich 2007-2013
+  
+    fund_name: ERDF
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR  
+  
     path: ERDF-AT-Niederösterreich-2007-2013.csv
     publication_date: "2016-10-10"
 
