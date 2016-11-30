@@ -17,6 +17,13 @@ contributors:
 
 resources:
   - title: List of Czech ESIF operations 2014-2020
+    
+    fund_name: ERDF, ESF
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: CZK  
+  
+  
     path: ERDF_Czech Republic_2014-2020.xlsx 
     publication_date: "2016-08-01"
     parser_options:
