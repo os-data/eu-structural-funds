@@ -21,11 +21,10 @@ resources:
 
     publication_date: "2015-12-31"
 
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2007-2013
-      currency_code: EUR
-
+    fund_acronym: ESF
+    funding_period: 2007-2013
+    cci_code: 2007DE052PO008
+    currency_code: EUR
 
     schema:
       fields:
