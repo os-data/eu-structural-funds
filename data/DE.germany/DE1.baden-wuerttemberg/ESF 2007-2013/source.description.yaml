@@ -16,7 +16,7 @@ resources:
 
   - title: VERZEICHNIS DER BEGÜNSTIGTEN FÜR BADEN-WÜRTTEMBERG, FÖRDERPERIODE 2007 - 2013, STAND 30.04.2014
 
-    fund_name: ESF
+    fund_acronym: ESF
     funding_period: 2007-2013
     cci_code: 
     currency_code: EUR
