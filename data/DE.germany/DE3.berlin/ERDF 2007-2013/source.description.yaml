@@ -26,7 +26,7 @@ resources:
     
     fund_acronym: ERDF
     funding_period: 2007-2013
-    cci_code: 
+    cci_code: 2007DE162PO004
     currency_code: EUR
 
     schema:
