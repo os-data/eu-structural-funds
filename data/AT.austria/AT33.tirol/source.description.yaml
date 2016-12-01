@@ -17,7 +17,7 @@ resources:
 
     fund_acronym: ERDF
     funding_period: 2007-2013
-    cci_code: 
+    cci_code: 2007AT162PO008
     currency_code: EUR
 
     path: ERDF_Tiro_2007-2013.json
