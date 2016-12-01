@@ -65,7 +65,7 @@ class CasterNotFound(Exception):
             sample_rows=format_to_json(self.sniffer.sample_values),
             nb_failures=self.sniffer.nb_failures,
             max_nb_failures=self.sniffer.max_nb_failures,
-            sample_size=self.sniffer.sample_size
+            sample_size=self.sniffer.sample_size,
         )
 
 
@@ -79,13 +79,15 @@ class BaseSniffer(object):
     def __init__(self, field, resource_sample, max_failure_rate):
         self.max_failure_rate = max_failure_rate
         self.sample_values = self._get_field_sample(resource_sample, field)
-        self.sample_size = len(self.sample_values)
+        self._nb_empty_sample_values = self.sample_values.count('')
+        self.sample_size = len(
+            self.sample_values) - self._nb_empty_sample_values
         self.max_nb_failures = ceil(self.max_failure_rate * self.sample_size)
 
         # The following get updated with each guess
         self.format = {key: field.get(key) for key in self.format_keys}
         self.field = deepcopy(field)
-        self.nb_failures = 0
+        self.nb_failures = None
         self._caster = None
 
     def get_caster(self):
@@ -121,12 +123,13 @@ class BaseSniffer(object):
             caster = self.jst_type_class(self.field)
 
             for i, raw_value in enumerate(self.sample_values):
-                try:
-                    assert self._pre_cast_checks_ok(raw_value)
-                    casted_value = caster.cast(raw_value)
-                    assert self._post_cast_check_ok(casted_value)
-                except (AssertionError, InvalidCastError):
-                    self.nb_failures += 1
+                if raw_value:
+                    try:
+                        assert self._pre_cast_checks_ok(raw_value)
+                        casted_value = caster.cast(raw_value)
+                        assert self._post_cast_check_ok(casted_value)
+                    except (AssertionError, InvalidCastError):
+                        self.nb_failures += 1
 
             if self.nb_failures <= self.max_nb_failures:
                 self._log_success()
@@ -137,13 +140,15 @@ class BaseSniffer(object):
     def _log_success(self):
         message = (
             'Caster guess for %s is %s, '
-            'number of failures = %s '
-            '(allowed %s)'
+            'number of failures = %s (allowed %s), '
+            'sample size = %s (%s empty values)'
         )
         args = (
             self.field['name'], self,
             self.nb_failures,
-            self.max_nb_failures
+            self.max_nb_failures,
+            self.sample_size,
+            self._nb_empty_sample_values
         )
         info(message, *args)
 
