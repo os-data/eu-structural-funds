@@ -18,6 +18,13 @@ contributors:
 resources:
 
 - title: ESF Data Brandenburg 2007-2013
+
+  fund_acronym: ERDF
+  funding_period: 2007-2013
+  cci_code: 
+  currency_code: EUR
+ 
+
   path: Brandenburg-ESF-2007-2013.csv
   publication_date: "2014-12-31"
 
