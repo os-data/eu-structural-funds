@@ -15,6 +15,11 @@ contributors:
 resources:
   - title: ERDF Niedersachsen 2007-2013 Konvergenz
 
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 2007DE161PO006
+    currency_code: EUR
+
     path: ERDF-Niedersachsen-2007-2013_Konvergenz.csv
     #url: http://www.stk.niedersachsen.de/download/98222/Verzeichnis_der_Beguenstigten_Stand_31.03.2015_Ueberarbeitung_Juni_2015_EFRE_RWB.pdf
     publication_date: "2016-05-31"
@@ -52,6 +57,10 @@ resources:
     #url: http://www.stk.niedersachsen.de/download/98222/Verzeichnis_der_Beguenstigten_Stand_31.03.2015_Ueberarbeitung_Juni_2015_EFRE_RWB.pdf
     publication_date: "2016-06-30"
 
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 2007DE162PO010
+    currency_code: EUR
 
     schema:
       fields:
