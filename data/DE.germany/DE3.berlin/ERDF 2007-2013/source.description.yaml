@@ -23,11 +23,11 @@ resources:
 
     path: Berlin ERDF 2007-2013.json
     publication_date: "2015-03-31"
-
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
+    
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
 
     schema:
       fields:
