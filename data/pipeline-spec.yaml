@@ -70,7 +70,7 @@ concatenate_datasets:
 
           starting_date: date:generic
 
-          beneficiary_country_code: administrative-classification:generic:level1:code:full
+          beneficiary_country_code: administrative-classification:generic:level1:code
           beneficiary_nuts_code: administrative-classification:generic:level2:code:full
           fund_name: fin-source:generic:code
 
