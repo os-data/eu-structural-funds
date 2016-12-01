@@ -249,8 +249,8 @@ def test_group_char_comes_after_decimal_char():
 
 # noinspection PyProtectedMember
 def test_has_more_than_two_decimals():
-    assert number_sniffer._post_cast_check_ok(1.233)
-    assert not number_sniffer._post_cast_check_ok(1.2)
+    assert not number_sniffer._post_cast_check_ok(1.233)
+    assert number_sniffer._post_cast_check_ok(1.2)
 
 
 # noinspection PyProtectedMember
