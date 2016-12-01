@@ -23,6 +23,13 @@ resources:
     parser_options:
       delimiter: ;
 
+
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+    cci_code: 2014DE16RFOP015
+    currency_code: EUR
+
+
     schema:
       fields:
         - name: Name des Begünstigten -  beneficiary name
