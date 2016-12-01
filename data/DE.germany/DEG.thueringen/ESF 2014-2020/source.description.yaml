@@ -17,6 +17,11 @@ resources:
     url: http://www.esf-thueringen.de/imperia/md/content/esf_2014/listedervorhaben/liste_der_vorhaben_stand_01.07.2016.xls
     publication_date: 01-07-2016
 
+    fund_acronym: ESF
+    funding_period: 2014-2020
+    cci_code: 2014DE05SFOP014
+    currency_code: EUR
+
     schema:
       fields:
         - name: Name des Begünstigten
