@@ -1,11 +1,11 @@
 
-title: Cyprus ERDF and ESF data 2007-2013
+title: Cyprus ERDF and CF data 2007-2013
 
 description:
 language: GR
 
 sources:
-  - name: Cyprus ERDF and ESF data from 2007-2013
+  - name: Cyprus ERDF and CF data from 2007-2013
     web:  http://www.structuralfunds.org.cy/
 
   - name: Original link to Excel file
@@ -17,9 +17,9 @@ contributors:
   - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
 
 resources:
-  - title: Cyprus ERDF and ESF data 2007-2013
+  - title: Cyprus ERDF and CF data 2007-2013
 
-    fund_name: ERDF, ESF
+    fund_acronym: ERDF
     funding_period: 2007-2013
     cci_code: 
     currency_code: EUR
