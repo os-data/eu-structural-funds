@@ -23,7 +23,7 @@ resources:
 
     fund_acronym: ESF
     funding_period: 2007-2013
-    cci_code: 
+    cci_code: 2007DE052PO004
     currency_code: EUR
 
     schema:
