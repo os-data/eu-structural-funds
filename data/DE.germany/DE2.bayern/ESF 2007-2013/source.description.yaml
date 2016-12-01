@@ -18,6 +18,12 @@ contributors:
 resources:
 
   - title: ESF Bayern 2007-2013
+
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
+
     path: ESF-Bayern-2007-2013.csv
     publication_date: "2015-05-29"
 
