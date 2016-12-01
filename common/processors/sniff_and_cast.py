@@ -188,7 +188,7 @@ class NumberSniffer(BaseSniffer):
         if value is not None:
             value_as_string = str(value)
             if '.' in value_as_string:
-                if not len(value_as_string.split('.')[1]) > 2:
+                if len(value_as_string.split('.')[1]) > 2:
                     return False
 
         return True
