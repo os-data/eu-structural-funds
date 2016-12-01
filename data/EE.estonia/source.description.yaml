@@ -23,27 +23,36 @@ resources:
   - title: Beneficiary webpage
     path: Estonia_scraper_dump.json
     publication_date: 27-10-2014
-    publication_version: web database
 
-    periods:
-      2007-2013: true
-      2014-2020: false
 
-    extraction_mode:
-      user_interface: false
-      download_link: false
-      pdf_scraper: false
-      web_scraper: true
+    fund_acronym: 
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
 
-    constants:
-      currency: EUR
-      certifying_authority:
 
     schema:
       fields:
         - name: beneficiary
+          translation: beneficiary
+          maps_to: beneficiary_name  
+        
         - name: name_of_project
+          translation: name
+          maps_to: project_name
+        
         - name: structural_assistance
+          translation: eu confinancing amount
+          maps_to: eu_cofinancing_amount
+          
         - name: 2nd_level_intermediate_body
+          translation: 2nd level intermediate body
+          maps_to: management_authority
+ 
         - name: period
+          translation: project duration
+          maps_to: project_duration
+          
         - name: measure
+          translation: measure 
+          maps_to: priority_label
