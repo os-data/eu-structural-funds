@@ -18,7 +18,7 @@ resources:
 
     path: Steiermark-ERDF-2007-2013.csv
 
-    fund_name: ERDF
+    fund_acronym: ERDF
     funding_period: 2007-2013
     cci_code: 
     currency_code: EUR
