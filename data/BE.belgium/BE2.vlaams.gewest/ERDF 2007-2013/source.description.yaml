@@ -21,7 +21,7 @@ resources:
 
     fund_acronym: ERDF
     funding_period: 2007-2013
-    cci_code: 
+    cci_code: 2007BE162PO002
     currency_code: EUR
 
     path: ERDF_Flandern_2007-2013.json
