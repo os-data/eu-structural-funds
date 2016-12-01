@@ -21,7 +21,7 @@ resources:
   
     fund_acronym: ERDF
     funding_period: 2007-2013
-    cci_code: 
+    cci_code: 2007AT162PO001
     currency_code: EUR  
   
     path: ERDF-AT-Niederösterreich-2007-2013.csv
