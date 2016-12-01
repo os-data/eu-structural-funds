@@ -1,4 +1,4 @@
-title: Czech ESF & ERDF data 2014-2020
+title: Czech ERDF data 2014-2020
 
 description: There are two datasets. One lists all beneficiaries from the funding periods 2007-2013, and the other lists operations for the second funding period 2014-2020.
 language: CZ
@@ -16,11 +16,11 @@ contributors:
   - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
 resources:
-  - title: List of Czech ESIF operations 2014-2020
+  - title: List of Czech ERDF operations 2014-2020
     
-    fund_name: ERDF, ESF
+    fund_acronym: ERDF
     funding_period: 2014-2020
-    cci_code: 
+    cci_code: 2014CZ05M2OP001
     currency_code: CZK  
   
   
