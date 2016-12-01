@@ -21,6 +21,12 @@ resources:
     path: ESF-Data-Sachsen-Anhalt-2007-2013.csv
     publication_date: "2014-12-31"
 
+    fund_acronym: ESF
+    funding_period: 2007-2013
+    cci_code: 2007DE051PO005
+    currency_code: EUR
+
+
     schema:
       fields:
         - name: Name des Begünstigten
