@@ -15,6 +15,10 @@ contributors:
 resources:
   - title: ESF Hamburg 2014-2020
 
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+    cci_code: 2014DE16RFOP006
+    currency_code: EUR
 
     path: ESF Data Hamburg 2014-2020.json
     #url: http://esf-hamburg.de/contentblob/5307350/data/liste-der-vorhaben-stand-maerz-2016.xlsx
