@@ -50,19 +50,22 @@ UNKNOWN_FIELD_TAG = '_unknown'
 WARNING_CUTOFF = 10
 
 NUMBER_FORMATS = [
-    {'decimalChar': '.', 'groupChar': ','},
-    {'decimalChar': ',', 'groupChar': '.'},
-    # {'decimalChar': '.', 'groupChar': '`'},
-    # {'decimalChar': '.', 'groupChar': '\''},
-    # {'decimalChar': '.', 'groupChar': ' '},
-    # {'decimalChar': ',', 'groupChar': '`'},
-    # {'decimalChar': ',', 'groupChar': '\''},
-    # {'decimalChar': ',', 'groupChar': ' '},
+    {'format': 'currency', 'decimalChar': '.', 'groupChar': ','},
+    {'format': 'currency', 'decimalChar': ',', 'groupChar': '.'},
+    {'format': 'currency', 'decimalChar': '.', 'groupChar': ' '},
+    {'format': 'currency', 'decimalChar': ',', 'groupChar': ' '},
+    {'format': 'currency', 'decimalChar': '.', 'groupChar': ''},
+    {'format': 'currency', 'decimalChar': '.', 'groupChar': '`'},
+    {'format': 'currency', 'decimalChar': ',', 'groupChar': '\''},
+    {'format': 'currency', 'decimalChar': ',', 'groupChar': ' '},
 ]
 
 DATE_FORMATS = [
     {'format': 'fmt:%y'},
     {'format': 'fmt:%Y'},
     {'format': 'fmt:%y-%m-%d'},
-    {'format': 'fmt:%y.%m.%d'}
+    {'format': 'fmt:%Y-%m-%d'},
+    {'format': 'fmt:%y.%m.%d'},
+    {'format': 'fmt:%d.%m.%Y'},
+    {'format': 'fmt:%d.%m.%y'},
 ]
