@@ -22,6 +22,11 @@ resources:
     path: ERDF-Niedersachsen-2007-2013_Konvergenz.csv
     publication_date: "2016-05-31"
 
+    fund_acronym: ESF
+    funding_period: 2007-2013
+    cci_code: 2007DE051PO003
+    currency_code: EUR
+
     schema:
       fields:
         - name: NAME DES BEGÜNSTIGTEN
@@ -51,6 +56,12 @@ resources:
   - title: ESF Niedersachsen 2007-2013 RWB
     path: ERDF-Niedersachsen-2007-2013_RWB.csv
     publication_date: "2016-05-31"
+
+    fund_acronym: ESF
+    funding_period: 2007-2013
+    cci_code: 2007DE052PO007
+    currency_code: EUR
+
 
     schema:
       fields:
