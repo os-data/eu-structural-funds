@@ -21,10 +21,12 @@ resources:
 
     publication_date: "2016-06-30"
 
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2014-2020
-      currency_code: EUR
+
+    fund_acronym: ESF
+    funding_period: 2014-2020
+    cci_code: 2014DE05SFOP006
+    currency_code: EUR
+
 
       # any other field from fiscal.fields.yaml that is constant
 
