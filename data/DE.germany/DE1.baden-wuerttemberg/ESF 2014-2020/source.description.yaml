@@ -16,7 +16,7 @@ resources:
 
   - title: ESF in Baden-Württemberg 2014-2020
 
-    fund_name: ERDF
+    fund_acronym: ERDF
     funding_period: 2014-2020
     cci_code: 2014DE05SFOP003
     currency_code: EUR
