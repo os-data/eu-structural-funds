@@ -97,11 +97,6 @@ class BaseSniffer(object):
         else:
             return self._guess_caster()
 
-    def cast(self, value):
-        if self.jst_type_class == NumberType:
-            return self._caster.cast_currency(value)
-        return self._caster.cast(value)
-
     def _pre_cast_checks_ok(self, value):
         return True
 

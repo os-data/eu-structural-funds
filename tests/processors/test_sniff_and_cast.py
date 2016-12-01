@@ -148,10 +148,10 @@ class _BaseGenerator(UserList):
 
 
 class _NumberGenerator(_BaseGenerator):
-    value = 999999.999
+    value = 123456.78
 
     def __str__(self):
-        template = '999{groupChar}999{decimalChar}999'
+        template = '123{groupChar}456{decimalChar}78'
         return template.format(**self.format)
 
 
@@ -259,3 +259,32 @@ def test_pre_and_post_checks_with_corner_cases():
     assert number_sniffer._pre_cast_checks_ok(None)
     assert number_sniffer._post_cast_check_ok(None)
     assert number_sniffer._post_cast_check_ok(1)
+
+
+# Basic casting: dates, numbers and currencies
+# -----------------------------------------------------------------------------
+
+_VALID_RAW_CURRENCIES = [
+    '1090141.18',
+    '€ 1090141.18',
+    '€1090141.18',
+    '1090141.18 €',
+    '1090141.18€',
+    '€ 1,090,141.18',
+]
+
+currency_field = {
+    'name': 'foo',
+    'type': 'number',
+    'decimalChar': '.',
+    'groupChar': ',',
+    'format': 'currency'
+}
+
+currency_sniffer = NumberSniffer(currency_field, sample_resources, 0)
+currency_caster = currency_sniffer.get_caster()
+
+
+@mark.parametrize('value', _VALID_RAW_CURRENCIES)
+def test_number_sniffer_on_values_with_currency_units(value):
+    assert currency_caster.cast(value)
