@@ -19,7 +19,7 @@ resources:
 
   - title: ERDF Salzburg 2007-2013
   
-    fund_name: ERDF
+    fund_acronym: ERDF
     funding_period: 2007-2013
     cci_code: 
     currency_code: EUR  
