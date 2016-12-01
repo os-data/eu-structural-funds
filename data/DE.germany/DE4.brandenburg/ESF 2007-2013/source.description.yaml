@@ -19,7 +19,7 @@ resources:
 
 - title: ESF Data Brandenburg 2007-2013
 
-  fund_acronym: ERDF
+  fund_acronym: ESF
   funding_period: 2007-2013
   cci_code: 
   currency_code: EUR
