@@ -91,6 +91,16 @@ class BaseIngestor(object):
         """A list of processors invoked after streaming."""
         return []
 
+    @staticmethod
+    def _lowercase_empty_values(rows):
+        # This is a workaround waiting on the following to be fixed:
+        # https://github.com/frictionlessdata/jsontableschema-py/issues/139
+        for index, headers, row in rows:
+            row = [field.lower() if field in ['None', 'Null', 'Nil', 'NaN']
+                   else field for field in row]
+            yield index, headers, row
+
+
     @property
     def _raw_headers(self):
         """Headers as found in the data file."""
@@ -157,7 +167,8 @@ class CSVIngestor(BaseIngestor):
 
     @property
     def _post_processors(self):
-        return [self._skip_header, self._drop_bad_rows]
+        return [self._lowercase_empty_values,
+                self._skip_header, self._drop_bad_rows]
 
     @cached_property
     def _encoding(self):
@@ -253,7 +264,8 @@ class XLSIngestor(BaseIngestor):
 
     @property
     def _post_processors(self):
-        return [self._skip_header, self.force_strings]
+        return [self._lowercase_empty_values,
+                self._skip_header, self.force_strings]
 
     @staticmethod
     def _skip_header(rows):
