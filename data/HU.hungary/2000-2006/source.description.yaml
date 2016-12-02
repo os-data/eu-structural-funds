@@ -1,0 +1,102 @@
+title: ESIF Data for Hungary 2000-2006
+
+description: The beneficiary list for the ESIF (2000-2006) program for Hungary.
+language: de
+
+sources:
+  - name: ESIF Hungary
+    web: http://eupalyazatiportal.hu/
+
+
+scraper_required: false
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+  - title: ESF Hungary 2000-2006
+
+    fund_name: ESF
+    funding_period: 2000-2006
+    cci_code: 
+    currency_code: HUF
+    
+    path: data-nft-ESZA.json
+    publication_date: "2016-10-31"
+
+
+    schema:
+
+    fields:
+        - name: _program
+          translates_to: programme
+          maps_to:
+
+        - name: _program_id
+          translates_to: programme id
+          maps_to:
+
+        - name: _fund
+          translates_to: fund
+          maps_to: fund_acronym
+
+        - name: Pályázó neve
+          translates_to: name of applicant
+          maps_to: beneficiary_name
+
+        - name: Projekt megnevezése
+          translates_to: projekt name
+          maps_to: project_name
+
+        - name: OP név
+          translates_to: Name of Operational Programme
+          maps_to: operational_programme
+
+        - name: Pályázati kiírás megnevezése
+          translates_to: Name of calls for applications
+          maps_to: priority_label
+
+        - name: Forrás megnevezése
+          translates_to: name source
+          maps_to: source
+
+        - name: Beruházás helye (régió)
+          translates_to: Investment Location (Region)
+          maps_to: beneficiary_nuts_region
+
+        - name: Beruházás helye (megye)
+          translates_to: Investment in local (county)
+          maps_to: beneficiary_city
+
+        - name: Beruházás helye (helység)
+          translates_to: Investment in place (town)
+          maps_to: beneficiary_city
+
+        - name: Megítélt összeg
+          translates_to: amount granted HUF
+          maps_to: total_amount
+
+        - name: Támogatás aránya
+          translates_to: support rate
+          maps_to: eu_cofinancing_rate
+
+        - name: Támogatási döntés dátuma
+          translates_to: Date of funding decision
+          maps_to: approval_date
+
+
+
+  - title: ERDF in Hungary 2000-2006
+
+    path: data-nft-ERFA.json
+ 
+    fund_name: ERDF
+    funding_period: 2000-2006
+    cci_code: 
+    currency_code: HUF 
+ 
+    publication_date: "2016-10-31"
+
+ 
+    schema:
