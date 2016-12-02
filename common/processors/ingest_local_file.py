@@ -9,7 +9,7 @@
 # the handling of special cases through subclassing.
 
 import json
-import chardet
+import cchardet
 
 from logging import warning, info
 from datapackage_pipelines.wrapper import ingest
@@ -173,8 +173,8 @@ class CSVIngestor(BaseIngestor):
 
         with open(self.resource['path'], 'rb') as stream:
             text = stream.read()
-            encoding = chardet.detect(text)['encoding']
-            info('Detected %s encoding with chardet', encoding)
+            encoding = cchardet.detect(text)['encoding']
+            info('Detected %s encoding with cchardet', encoding)
             return encoding
 
     @property
