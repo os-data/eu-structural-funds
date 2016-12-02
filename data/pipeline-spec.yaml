@@ -58,15 +58,12 @@ concatenate_datasets:
             currency: EUR
         os-types:
           beneficiary_name: recipient:generic:name
-
           funding_period_number: activity:generic:program:code
           cci_program_code: activity:generic:project:code:full
           project_name: activity:generic:subproject:code:full
-
           total_amount: value
-
           starting_date: date:generic
-
+          approval_date: date:generic
           beneficiary_country_code: administrative-classification:generic:level1:code
           beneficiary_nuts_code: administrative-classification:generic:level2:code:full
           fund_name: fin-source:generic:code
