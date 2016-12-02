@@ -131,16 +131,23 @@ class _BaseGenerator(UserList):
             'number': _NumberGenerator
         }[field_type](format, **kwargs)
 
-    def __init__(self, format, nb_rows=SNIFFER_SAMPLE_SIZE, nb_bad_rows=0):
+    def __init__(self, format,
+                 nb_rows=SNIFFER_SAMPLE_SIZE,
+                 nb_bad_rows=0,
+                 nb_empty_rows=0):
+
         self.nb_rows = nb_rows
+        self.nb_empty_rows = nb_empty_rows
         self.nb_bad_rows = nb_bad_rows
-        self.nb_good_rows = nb_rows - nb_bad_rows
+        self.nb_good_rows = nb_rows - nb_bad_rows - nb_empty_rows
         self.format = format
 
         super(_BaseGenerator, self).__init__(self.rows)
 
     @property
     def rows(self):
+        for _ in range(self.nb_empty_rows):
+            yield {'foo': ''}
         for _ in range(self.nb_bad_rows):
             yield {'foo': 'bad row'}
         for _ in range(self.nb_good_rows):
@@ -218,6 +225,20 @@ def test_get_caster_raises_caster_not_found_from_bad_number_samples(format):
         get_casters(datapackage, bad_sample_rows)
 
 
+# Sniffing with empty values in the sample
+# -----------------------------------------------------------------------------
+
+@mark.parametrize('format', DATE_FORMATS)
+def test_get_caster_fails_with_too_many_empty_sample_values(format):
+    datapackage, just_enough_empty_samples_to_fail = _prepare(
+        'date', format,
+        nb_bad_rows=_TOO_MANY_BAD_ROWS - 1,
+        nb_empty_rows=floor(1 / SNIFFER_MAX_FAILURE_RATIO + 1)
+    )
+    with raises(CasterNotFound):
+        get_casters(datapackage, just_enough_empty_samples_to_fail)
+
+
 # Pre-casting and post-casting checks
 # -----------------------------------------------------------------------------
 
@@ -261,7 +282,7 @@ def test_pre_and_post_checks_with_corner_cases():
     assert number_sniffer._post_cast_check_ok(1)
 
 
-# Basic casting: dates, numbers and currencies
+# Casting currencies
 # -----------------------------------------------------------------------------
 
 _VALID_RAW_CURRENCIES = [
