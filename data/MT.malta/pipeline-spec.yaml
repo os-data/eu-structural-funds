@@ -2,11 +2,12 @@ MT_malta:
   pipeline:
   - parameters: {save_datapackage: false}
     run: read_description
-  - {run: MT.mt_malta_scraper}
-  - parameters:
-      characters: {currency: "\u20AC", decimal: ., grouping: ','}
-      fields: [Project Cost]
-    run: parse_currency_fields
+  - run: ingest_local_file
+#  - {run: MT.mt_malta_scraper}
+#  - parameters:
+#      characters: {currency: "\u20AC", decimal: ., grouping: ','}
+#      fields: [Project Cost]
+#    run: parse_currency_fields
   - parameters:
       date_fields: [Start Date, End Date]
     run: MT.parse_dates
@@ -22,9 +23,9 @@ MT_malta:
   - {run: concatenate_identical_resources}
   - {run: sniff_and_cast}
   - {run: reshape_data}
-  - parameters:
-      constants: {funding_period: 2}
-    run: fill_in_constant_fields
+#  - parameters:
+#      constants: {funding_period: 2}
+#    run: fill_in_constant_fields
   - parameters: {sample_size: 1000}
     run: show_sample_in_console
   - {run: load_fiscal_datapackage}
