@@ -43,11 +43,14 @@ def build_mapping_tables(datapackage):
             if not field.get('maps_to'):
                 field['maps_to'] = '_unknown'
 
+            message = ('{} is neither a valid fiscal field, '
+                       '_unknown or _ignore')
+
             assert any([
                 field['maps_to'] == '_unknown',
                 field['maps_to'] == '_ignored',
                 field['maps_to'] in fiscal_field_names
-            ])
+            ]), message.format(field['maps_to'])
 
             mapping.update({field['name']: field['maps_to']})
 
