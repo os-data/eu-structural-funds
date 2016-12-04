@@ -45,7 +45,7 @@ resources:
 
         - name: Code of region or area where operation is located
           translates_to: Code of region or area where operation is located
-          maps_to: beneficiary_county
+          maps_to: #beneficiary_county
 
         - name: Unique code number of the operation
           translates_to: Unique code number of the operation

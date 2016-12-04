@@ -100,7 +100,6 @@ class BaseIngestor(object):
                    else field for field in row]
             yield index, headers, row
 
-
     @property
     def _raw_headers(self):
         """Headers as found in the data file."""
@@ -163,6 +162,8 @@ class CSVIngestor(BaseIngestor):
     def _body_options(self):
         options = super(CSVIngestor, self)._body_options
         options.update(encoding=self._encoding)
+        if self.resource.get('delimiter'):
+            options.update(delimiter=self.resource['delimiter'])
         return options
 
     @property
@@ -190,7 +191,10 @@ class CSVIngestor(BaseIngestor):
 
     @property
     def _header_options(self):
-        return dict(headers=1, encoding=self._encoding)
+        options = dict(headers=1, encoding=self._encoding)
+        if self.resource.get('delimiter'):
+            options.update(delimiter=self.resource['delimiter'])
+        return options
 
     @staticmethod
     def _drop_bad_rows(rows):
@@ -218,6 +222,10 @@ class JSONIngestor(BaseIngestor):
     @property
     def _pre_processors(self):
         return [self._fill_missing_fields]
+
+    @property
+    def _post_processors(self):
+        return [self._lowercase_empty_values]
 
     @property
     def _fill_missing_fields(self):
