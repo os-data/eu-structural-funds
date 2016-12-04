@@ -224,6 +224,10 @@ class JSONIngestor(BaseIngestor):
         return [self._fill_missing_fields]
 
     @property
+    def _post_processors(self):
+        return [self._lowercase_empty_values]
+
+    @property
     def _fill_missing_fields(self):
         """Pre-fill incomplete JSON rows (to avoid fields mixing up)."""
 
