@@ -162,6 +162,8 @@ class CSVIngestor(BaseIngestor):
     def _body_options(self):
         options = super(CSVIngestor, self)._body_options
         options.update(encoding=self._encoding)
+        if self.resource.get('delimiter'):
+            options.update(delimiter=self.resource['delimiter'])
         return options
 
     @property
@@ -189,7 +191,10 @@ class CSVIngestor(BaseIngestor):
 
     @property
     def _header_options(self):
-        return dict(headers=1, encoding=self._encoding)
+        options = dict(headers=1, encoding=self._encoding)
+        if self.resource.get('delimiter'):
+            options.update(delimiter=self.resource['delimiter'])
+        return options
 
     @staticmethod
     def _drop_bad_rows(rows):

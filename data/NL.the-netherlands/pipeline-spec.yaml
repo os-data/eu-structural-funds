@@ -1,11 +1,10 @@
 NL_the_netherlands:
   pipeline:
   - {run: read_description}
-  - parameters:
-      encoding: ISO-8859-2
-      parser_options: {delimiter: ;, quotechar: '"'}
-      streamer: tabulator
-    run: stream_from_path
+  - run: ingest_local_file
+#    parameters:
+#      encoding: ISO-8859-2
+#      parser_options: {delimiter: ;, quotechar: '"'}
   - {run: nop, validate: true}
   - parameters: {out-file: source.datapackage.zip}
     run: dump

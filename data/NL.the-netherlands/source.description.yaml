@@ -29,7 +29,8 @@ resources:
       currency_code: EUR
 
       # any other field from fiscal.fields.yaml that is constant
-
+    encoding: ISO-8859-2
+    delimiter: ;
     schema:
       fields:
         - name: Begunstigde
@@ -86,8 +87,8 @@ resources:
           translates_to:  Date of final payment
           maps_to: final_payment_date
 
-        - name: Gewährte Gesamtbeträge
-          translates_to: Approved Amount in Euro
+#        - name: Gewährte Gesamtbeträge
+#          translates_to: Approved Amount in Euro
 
         - name: Thematische doelstelling
           translates_to: Theme of Project
