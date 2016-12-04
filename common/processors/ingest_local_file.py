@@ -100,7 +100,6 @@ class BaseIngestor(object):
                    else field for field in row]
             yield index, headers, row
 
-
     @property
     def _raw_headers(self):
         """Headers as found in the data file."""
