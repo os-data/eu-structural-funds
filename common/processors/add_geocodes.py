@@ -36,7 +36,7 @@ def add_geocodes(row, source):
     row['beneficiary_country_code'] = source.country_code
     row['beneficiary_country'] = source.country
     row['beneficiary_nuts_code'] = source.nuts_code
-    row['beneficiary_nuts_region'] = source.region
+    row['beneficiary_region'] = source.region
 
     return row
 
