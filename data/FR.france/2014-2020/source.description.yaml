@@ -26,6 +26,16 @@ resources:
 
     publication_date: 11/07/2016
 
+    fund_acronym:
+      - FEDER: [ERDF]
+      - ESF: [ESF]
+      
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: EUR
+
+
+
     schema:
       fields:
         - name: Programme
