@@ -12,8 +12,8 @@ from common.utilities import (
     get_fiscal_datapackage,
     process,
     get_nuts_codes,
-    get_available_processors
-)
+    get_available_processors,
+    GEOCODES)
 
 
 def test_get_available_processors_returns_list_of_strings():
@@ -64,3 +64,9 @@ def test_nuts_codes_in_data_tree_are_valid():
                 )
                 if all(like_geofolder):
                     assert parts[0] in nuts_codes
+
+
+def test_get_geocodes_returns_a_list_of_dicts():
+    assert isinstance(GEOCODES, list)
+    for line in GEOCODES:
+        assert isinstance(line, dict)
