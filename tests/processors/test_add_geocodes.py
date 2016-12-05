@@ -8,14 +8,14 @@ class TestAddGeoCodes(TestGeoProperties):
     def test_add_geocodes_fills_geographical_information(self):
         input_row = {
             'beneficiary_country_code': None,
-            'beneficiary_country_name': None,
+            'beneficiary_country': None,
             'beneficiary_nuts_code': None,
-            'beneficiary_nuts_region': None
+            'beneficiary_region': None
         }
         output_row = {
             'beneficiary_country_code': 'XX',
-            'beneficiary_country_name': 'NUTS LEVEL 1',
+            'beneficiary_country': 'NUTS LEVEL 1',
             'beneficiary_nuts_code': 'XX',
-            'beneficiary_nuts_region': 'NUTS LEVEL 1'
+            'beneficiary_region': 'NUTS LEVEL 1'
         }
         self.assertEquals(add_geocodes(input_row, self.source), output_row)
