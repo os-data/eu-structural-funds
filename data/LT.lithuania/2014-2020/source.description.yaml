@@ -20,10 +20,13 @@ resources:
     path: Paraiškų informacija_20161030.csv
     publication_date: 29-09-2016
     
-    constant_fields:
-      fund_name: ERDF, CF, ESF
-      offical_period: 2014-2020
-      currency_code: EUR
+
+    fund_acronym: 
+    funding_period: 2014-2020
+    cci_code: 2014LT16MAOP001
+    currency_code: EUR
+
+
 
     schema:
       fields:
