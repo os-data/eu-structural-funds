@@ -107,9 +107,9 @@ class TestGeoProperties(TestSource):
 
     def test_geographical_information(self):
         self.assertEquals(self.source.country_code, 'XX')
-        self.assertEquals(self.source.country_name, 'NUTS LEVEL 1')
+        self.assertEquals(self.source.country, 'NUTS LEVEL 1')
         self.assertEquals(self.source.nuts_code, 'XX')
-        self.assertEquals(self.source.region_name, 'NUTS LEVEL 1')
+        self.assertEquals(self.source.region, 'NUTS LEVEL 1')
 
 
 class TestInitSource(TestSource):
