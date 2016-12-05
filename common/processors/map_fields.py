@@ -1,38 +1,41 @@
-"""Rename fields according to 'maps_to` in the source description.
+"""Rename fields according to the 'maps_to` property in the source file.
 
 Assumptions
 -----------
 
-The processor assumes that each `maps_to` property is:
+The processor assumes that each  `maps_to` property is either:
 
-    1. a valid fiscal field name
-    2. tagged '_unknown'
-    3. tagged '_ignored'
+    1. empty or missing
+    2. tagged '_ignored'
+    3. valid fiscal field name
+    4. a list of valid field name
 
-If it's empty, the processor toggles it to '_unknown' and a warning is issued.
-In any other case an `AssertionError` is raised. The convention is that fields
-tagged as '_ignored' have been deemed irrelevant and those tagged as '_unknown'
-require some more research.
+If it's empty or missing, a warning is issued. If it's none of the above,
+an `AssertionError` is raised. Empty or missing fields require more research.
+Fields tagged as '_ignored' have been double-checked and deemed irrelevant.
 
-Processing
-----------
+Data processing
+---------------
 
 If `maps_to` is a valid fiscal field name, the processor renames the keys in
-the data and updates the datapackage accordingly. If `maps_to` is '_unknown`
-or `_ignored`, the field is dropped altogether from the data and the
-datapackage.
+the data. If `maps_to` is missing, empty or '_ignored', the field is dropped.
+If a list is found, the value is passed to each field in the list.
 
+Datapackage mutation
+--------------------
+
+The datapackage is updated to match the changes in the data.
 
 """
 
+from copy import copy
 from datapackage_pipelines.wrapper import ingest, spew
-from common.utilities import get_fiscal_field_names, process
+
+from common.utilities import FISCAL_KEYS, process, get_field
 
 
 def build_mapping_tables(datapackage):
-    """Return one mapping table per resource."""
-
-    fiscal_field_names = get_fiscal_field_names()
+    """Return one lookup table per resource."""
 
     mappings = []
 
@@ -40,18 +43,9 @@ def build_mapping_tables(datapackage):
         mapping = {}
 
         for field in resource['schema']['fields']:
-            if not field.get('maps_to'):
-                field['maps_to'] = '_unknown'
-
-            message = ('{} is neither a valid fiscal field, '
-                       '_unknown or _ignore')
-
-            assert any([
-                field['maps_to'] == '_unknown',
-                field['maps_to'] == '_ignored',
-                field['maps_to'] in fiscal_field_names
-            ]), message.format(field['maps_to'])
-
+            if 'maps_to' not in field:
+                field['maps_to'] = None
+            check_mapping_target(field['maps_to'])
             mapping.update({field['name']: field['maps_to']})
 
         mappings.append(mapping)
@@ -59,21 +53,50 @@ def build_mapping_tables(datapackage):
     return mappings
 
 
+def check_mapping_target(value):
+    """Check the mapping target."""
+
+    message = ('{target} is neither '
+               'a valid fiscal field, '
+               'a list of valid fiscal fields '
+               'or an "_ignored" tag').format(target=value)
+
+    valid_cases = [
+        not value,
+        value == '_ignored',
+        value in FISCAL_KEYS,
+        isinstance(value, list) and
+        all(field_key in FISCAL_KEYS for field_key in value)
+    ]
+
+    assert any(valid_cases), message
+
+
 def update_datapackage(datapackage, mappings):
     """Update the field names and delete the `maps_to` properties."""
 
-    for i, resource in enumerate(datapackage['resources']):
-        fields = []
+    # Datapackage mutation is deliberately kept separate to avoid
+    # writing functions with side-effects and facilitate unit-tests.
 
-        for field in resource['schema']['fields']:
-            fiscal_key = mappings[i][field['name']]
+    for i, mapping in enumerate(mappings):
+        fields = datapackage['resources'][i]['schema']['fields']
 
-            if fiscal_key not in ('_unknown', '_ignored'):
-                field.update({'name': fiscal_key})
-                del field['maps_to']
-                fields.append(field)
+        for raw_key, fiscal_keys in mapping.items():
+            j = get_field(raw_key, fields, index=True)
 
-        resource['schema']['fields'] = fields
+            fields[j]['mapped_from'] = raw_key
+            del fields[j]['maps_to']
+
+            if fiscal_keys and fiscal_keys != '_ignored':
+                if not isinstance(fiscal_keys, list):
+                    fiscal_keys = [fiscal_keys]
+
+                for fiscal_key in fiscal_keys:
+                    new_field = copy(fields[j])
+                    new_field.update(name=fiscal_key)
+                    fields.append(new_field)
+
+            del fields[j]
 
     return datapackage
 
@@ -81,11 +104,15 @@ def update_datapackage(datapackage, mappings):
 def apply_mapping(row, mappings=None, resource_index=None):
     """Rename data keys with a valid mapping and drop the rest."""
 
-    for raw_key, fiscal_key in mappings[resource_index].items():
-        if fiscal_key in ('_ignored', '_unknown'):
+    for raw_key, fiscal_keys in mappings[resource_index].items():
+        if not fiscal_keys or fiscal_keys == '_ignored':
             del row[raw_key]
         else:
-            row[fiscal_key] = row.pop(raw_key)
+            if not isinstance(fiscal_keys, list):
+                fiscal_keys = [fiscal_keys]
+            for fiscal_key in fiscal_keys:
+                row[fiscal_key] = row[raw_key]
+            row.pop(raw_key)
 
     return row
 
