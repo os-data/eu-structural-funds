@@ -88,6 +88,30 @@ class TestSource(TestCase):
         rmtree(self.pipeline_folder)
 
 
+class TestGeoProperties(TestSource):
+    def setUp(self):
+        """Create a source by passing the folder and test geo-properties."""
+
+        try:
+            os.mkdir(self.pipeline_folder)
+        except FileExistsError:
+            pass
+
+        with open(self.pipeline_spec_file, 'w+') as stream:
+            json.dump(self.pipeline_spec, stream)
+
+        with open(self.pipeline_source_file, 'w+') as stream:
+            json.dump(self.source_description, stream)
+
+        self.source = Source(folder=self.pipeline_folder)
+
+    def test_geographical_information(self):
+        self.assertEquals(self.source.country_code, 'XX')
+        self.assertEquals(self.source.country_name, 'NUTS LEVEL 1')
+        self.assertEquals(self.source.nuts_code, 'XX')
+        self.assertEquals(self.source.region_name, 'NUTS LEVEL 1')
+
+
 class TestInitSource(TestSource):
     """Test instantiation."""
 
