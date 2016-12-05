@@ -23,10 +23,15 @@ resources:
     path: StructuralFundsNL2007NOW.csv
     publication_date: "2015-03-31"
 
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
+
+    fund_acronym:
+      - EFRO: [ERDF]
+      - ESF: [ESF]
+      
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
+
 
       # any other field from fiscal.fields.yaml that is constant
 
@@ -45,6 +50,7 @@ resources:
 
         - name: Fonds
           translates_to: Fund (ERDF, ESF...)
+          maps_to: fund_acronym
 
         - name: Autoriteit
           translates_to: Government body (authority)
