@@ -8,6 +8,7 @@ LT_lithuania_2007_2013:
     validate: true
   - {run: map_columns}
   - {run: reshape_data}
+  - {run: add_geocodes}
   - {run: cast_to_fiscal_schema}
   - {run: show_sample_in_console}
   - {run: load_fiscal_datapackage}

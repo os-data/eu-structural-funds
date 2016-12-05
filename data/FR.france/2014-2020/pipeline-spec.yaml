@@ -18,6 +18,7 @@ FR_france_2014_2020:
   - parameters: {sample_size: 10000000}
     run: show_sample_in_console
   - {run: reshape_data}
+  - {run: add_geocodes}
   - {run: load_fiscal_datapackage}
   - {run: nop, validate: true}
   - parameters: {sample_size: 10000000}

@@ -8,6 +8,7 @@ HU_hungary_2000_2006:
     validate: true
   - {run: map_columns}
   - {run: reshape_data}
+  - {run: add_geocodes}
   - {run: concatenate_identical_resources}
   - {run: cast_to_fiscal_schema}
   - {run: show_sample_in_console}
