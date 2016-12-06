@@ -19,7 +19,7 @@ concatenate_datasets:
           approval_date: []
           beneficiary_country_code: []
           beneficiary_country: []
-          beneficiary_region: []
+          beneficiary_nuts_region: []
           beneficiary_nuts_code: []
           fund_name: []
 
@@ -68,7 +68,7 @@ concatenate_datasets:
           approval_date: date:generic
           beneficiary_country_code: administrative-classification:generic:level1:code
           beneficiary_country: administrative-classification:generic:level1:label
-          beneficiary_region: administrative-classification:generic:level2:code:part
+          beneficiary_nuts_region: administrative-classification:generic:level2:code:part
           beneficiary_nuts_code: administrative-classification:generic:level3:code:full
           fund_name: fin-source:generic:code
 

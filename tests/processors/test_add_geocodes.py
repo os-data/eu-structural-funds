@@ -10,12 +10,12 @@ class TestAddGeoCodes(TestGeoProperties):
             'beneficiary_country_code': None,
             'beneficiary_country': None,
             'beneficiary_nuts_code': None,
-            'beneficiary_region': None
+            'beneficiary_nuts_region': None
         }
         output_row = {
             'beneficiary_country_code': 'XX',
             'beneficiary_country': 'NUTS LEVEL 1',
             'beneficiary_nuts_code': 'XX',
-            'beneficiary_region': 'NUTS LEVEL 1'
+            'beneficiary_nuts_region': 'NUTS LEVEL 1'
         }
         self.assertEquals(add_geocodes(input_row, self.source), output_row)
