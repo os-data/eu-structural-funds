@@ -1,10 +1,7 @@
 NL_the_netherlands:
   pipeline:
   - {run: read_description}
-  - run: ingest_local_file
-#    parameters:
-#      encoding: ISO-8859-2
-#      parser_options: {delimiter: ;, quotechar: '"'}
+  - {run: ingest_local_file}
   - {run: nop, validate: true}
   - parameters: {out-file: source.datapackage.zip}
     run: dump
@@ -15,6 +12,7 @@ NL_the_netherlands:
   - {run: concatenate_identical_resources}
   - {run: sniff_and_cast}
   - {run: reshape_data}
+  - {run: add_geocodes}
   - {run: load_fiscal_datapackage}
   - parameters: {out-file: fiscal.datapackage.zip}
     run: dump

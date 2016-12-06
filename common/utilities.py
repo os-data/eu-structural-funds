@@ -8,7 +8,7 @@ import csv
 
 from datapackage import DataPackage
 from os.path import isfile, join
-from petl import fromdicts, look
+from petl import fromdicts, look, fromcsv, dicts
 from slugify import slugify
 
 from .config import (
@@ -55,6 +55,9 @@ def get_nuts_codes():
 
     logging.debug('Loaded %d NUTS geocodes', len(geocodes))
     return tuple(geocodes)
+
+
+GEOCODES = list(dicts(fromcsv(GEOCODES_FILE)))
 
 
 def get_all_codelists():

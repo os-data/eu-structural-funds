@@ -47,7 +47,7 @@ from click import (command, secho, echo, option,
                    pass_context, group, Choice, argument)
 
 from common.metrics import Snapshot
-from common.utilities import get_fiscal_field_names, processor_names
+from common.utilities import get_fiscal_field_names, processor_names, GEOCODES
 from common.config import (
     PIPELINE_FILE,
     SOURCE_FILE,
@@ -81,20 +81,32 @@ class Source(object):
     db_keys = Snapshot.__table__.columns.keys()
 
     def __init__(self,
-                 pipeline_id,
+                 pipeline_id=None,
+                 folder=None,
                  timestamp=None,
                  db_session=None,
                  data_dir=DATA_DIR):
 
+        message = 'Source takes either folder or pipeline_id argument'
+        assert bool(pipeline_id) != bool(folder), message
+
+        if pipeline_id:
+            self.id = pipeline_id
+            self.folder = join(data_dir, *pipeline_id.split(os.sep))
+
+        if folder:
+            self.folder = folder
+            self.id = os.sep.join(folder.split(os.sep)[1:])
+
         self.timestamp = timestamp
-        self.id = pipeline_id
         self.slug = slugify(self.id, separator='_')
-        self.folder = join(data_dir, *pipeline_id.split(os.sep))
         self.pipeline_spec_file = join(data_dir, PIPELINE_FILE)
         self.description_file = join(data_dir, SOURCE_FILE)
 
         self.nuts_code = NUTS.findall(self.folder)[-1].split('.')[0]
         self.country_code = COUNTRY.search(self.folder).group(1)
+        self.country = self._lookup_geocode(self.country_code)
+        self.region = self._lookup_geocode(self.nuts_code)
 
         self.validation_status = 'broken'
         self.pipeline_status = 'down'
@@ -400,6 +412,12 @@ class Source(object):
         module = 'processors.{}.{}-{}'
         name = SCRAPER_FILE.replace('.py', '')
         return module.format(self.id, self.country_code, self.slug, name)
+
+    @staticmethod
+    def _lookup_geocode(nuts_code):
+        for info in GEOCODES:
+            if info['NUTS-Code'] == nuts_code:
+                return info['Description']
 
     def __lt__(self, other):
         return self.id < other.id

@@ -10,6 +10,7 @@ DE_germany_DE9_niedersachsen_ESF_2014_2020:
   - {run: concatenate_identical_resources}
   - {run: sniff_and_cast}
   - {run: reshape_data}
+  - {run: add_geocodes}
   - {run: show_sample_in_console}
   - {run: load_fiscal_datapackage}
   - parameters: {out-file: fiscal.datapackage.zip}

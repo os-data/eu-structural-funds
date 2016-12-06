@@ -9,6 +9,7 @@ DE_germany_DE8_mecklenburg_vorpommern_ERDF_2007_2013:
   - {run: concatenate_identical_resources}
   - {run: sniff_and_cast}
   - {run: reshape_data}
+  - {run: add_geocodes}
   - {run: show_sample_in_console}
   - {run: load_fiscal_datapackage}
   - parameters: {out-file: fiscal.datapackage.zip}
