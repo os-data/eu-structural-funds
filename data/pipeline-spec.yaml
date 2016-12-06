@@ -59,7 +59,7 @@ concatenate_datasets:
           total_amount:
             currency: EUR
         os-types:
-          beneficiary_name: recipient:generic:name
+          beneficiary_name: recipient:generic:id
           funding_period_number: activity:generic:program:code
           cci_program_code: activity:generic:project:code:full
           project_name: activity:generic:subproject:code:full
