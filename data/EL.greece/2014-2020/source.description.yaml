@@ -18,6 +18,18 @@ resources:
     parser_options:
       delimiter: ';'
 
+
+    fund_acronym:
+      - 1-ΕΤΠΑ: [ERDF]
+      - 2-ΕΚΤ: [ESF]
+      - 6-ΤΣ: [CF]
+
+      
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: EUR
+
+
     schema:
       fields:
         - name: ΕΠΙΧΕΙΡΗΣΙΑΚΟ ΠΡΟΓΡΑΜΜΑ/ OPERATIONAL PROGRAMME
