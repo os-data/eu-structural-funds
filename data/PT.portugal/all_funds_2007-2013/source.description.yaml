@@ -43,6 +43,7 @@ resources:
 
         - name: Fundo
           translates_to: Fund (either ERDF or ESF)
+          maps_to: fund_acronym
 
         - name: Agenda
           translates_to: operational programme code
