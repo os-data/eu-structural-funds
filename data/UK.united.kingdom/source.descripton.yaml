@@ -22,7 +22,7 @@ resources:
 
   - title: ESF and ERDF in the United Kingdom 2007-2013
 
-    url: ‪C:\Users\Michael\Documents\GitHub\eu-structural-funds\data\UK.united.kingdom\UK_subsidies_final_LAU1.csv
+    path: UK_subsidies_final_LAU1.csv
 
     publication_date: 2015-12-31
     
