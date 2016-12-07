@@ -23,7 +23,7 @@ resources:
     fund_acronym: 
     funding_period: 2007-2013
     cci_code: 
-    currency_code: EUR
+    currency_code: SEK
 
 
     schema:
