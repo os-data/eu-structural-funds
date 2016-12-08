@@ -26,7 +26,7 @@ resources:
       - KF: [CF]
       
     funding_period: 2014-2020
-    cci_code: 
+    cci_code: 2014SI16MAOP001
     currency_code: EUR
 
     schema:
