@@ -5,7 +5,7 @@ language: EL
 scraper_required: false
 
 sources:
-  - name: ESPA
+  - name: ESIF data for Greece 2014-2020
     web:  https://www.espa.gr/en/pages/default.aspx
 
 contributors:
@@ -17,6 +17,18 @@ resources:
     publication_date:
     parser_options:
       delimiter: ';'
+
+
+    fund_acronym:
+      - 1-ΕΤΠΑ: [ERDF]
+      - 2-ΕΚΤ: [ESF]
+      - 6-ΤΣ: [CF]
+
+      
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: EUR
+
 
     schema:
       fields:

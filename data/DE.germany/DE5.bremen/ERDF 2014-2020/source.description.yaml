@@ -25,6 +25,14 @@ resources:
 
     publication_date: "2016-06-30"
 
+
+
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 2014DE16RFOP005
+    currency_code: EUR
+
+
     schema:
       fields:
         - name: lfd. Nr.

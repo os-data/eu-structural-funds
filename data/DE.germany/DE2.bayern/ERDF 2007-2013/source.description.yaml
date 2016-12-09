@@ -18,14 +18,17 @@ contributors:
 resources:
   - title: ERDF Bayern 2007-2013
 
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 2007DE162PO001
+    currency_code: EUR
+
+
     path: Transparenzliste_FIPS2007_31_12_2015_bayern.json
 
     publication_date: "2015-12-31"
 
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
+
 
       # any other field from fiscal.fields.yaml that is constant
 

@@ -19,6 +19,12 @@ resources:
     path: ESF data Hamburg 2007-2013.csv
     publication_date: "30-06-2013"
 
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 2007DE052PO005
+    currency_code: EUR
+
+
     schema:
       fields:
         - name: Zuwendungsempfänger

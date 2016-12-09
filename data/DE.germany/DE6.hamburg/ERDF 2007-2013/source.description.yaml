@@ -15,6 +15,12 @@ contributors:
 resources:
   - title: ERDF Hamburg 2007-2013
 
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 2007DE162PO009
+    currency_code: EUR
+
+
     path: ERDF-data-Hamburg_2007_2013.csv
     #url: http://www.hamburg.de/contentblob/3117844/aa6827caa9ffceca2bb885f75f1729ac/data/efre-beguenstigte.pdf
     publication_date: "31-12-2015"

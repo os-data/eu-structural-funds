@@ -19,10 +19,10 @@ resources:
     #url: http://esf.rlp.de/fileadmin/esf/Downloads/ESF_2014-2020/Liste_der_Vorhaben/Liste_der_Vorhaben_25.4.2016.xlsx
     publication_date: "2016-04-25"
 
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2014-2020
-      currency_code: EUR
+    fund_acronym: ESF
+    funding_period: 2014-2020
+    cci_code: 2014DE05SFOP015
+    currency_code: EUR
 
     schema:
       fields:

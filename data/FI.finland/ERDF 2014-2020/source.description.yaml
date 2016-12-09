@@ -5,7 +5,7 @@ description:
 language: FI
 
 sources:
-  - name: Finland ERDF data 2014-2020
+  - name: Finland ERDF and ESF data 2014-2020
     web:  https://www.rakennerahastot.fi/rahoitetut-hankkeet#.V1A2dJN95E4
 
 scraper_required: false
@@ -14,16 +14,19 @@ contributors:
   - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
 
 resources:
-  - title: Finland ERDF data 2014-2020
+  - title: Finland ERDF and ESF data 2014-2020
 
     path: projektilista-csv-final.csv
 
     publication_date: 2014-11-1
 
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2014-2020
-      currency_code: EUR
+     fund_acronym:
+      - EAKR: [ERDF]
+      - ESR: [ESF]
+      
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: EUR
 
     schema:
       fields:

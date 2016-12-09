@@ -19,18 +19,19 @@ contributors:
   - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 
 resources:
-  - title: Poland's ESF & ERDF data 2007-today
-    path: lista_projektow.csv
-    publication_date: "2016-09-27"
+  - title: Poland ERDF data 2007-2013
+    path: Poland_ERDF_2007_2013.csv
+    publication_date: "2016-12-07"
     encoding: windows-1250
     parser_options:
       delimiter: ';'
 
-    constant_fields:
-      fund_name: ERDF, ESF
-      offical_period: 2007-2013 & 2014-2020
-      currency_code: PLN
-
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: PLN
+   
+   
       # any other field from fiscal.fields.yaml that is constant
 
     schema:
@@ -57,8 +58,68 @@ resources:
 
         - name: Dziedzina
           translates_to: field
-          maps_to: # The priority axis is missing but should be added in the future
+          maps_to: 
 
         - name: Czy projekt jest realizowany na obszarze większym niż jedna jednostka administracyjna?
           translates_to: Is the project being implemented on an area of more than one administrative unit?
-          maps_to: # Loic: this really looks like a corner case
+          maps_to:
+          
+  - title: Poland ESF data 2007-2013
+    path: Poland_ESF_2007_2013.csv
+    publication_date: "2016-12-07"
+    encoding: windows-1250
+    parser_options:
+      delimiter: ';'
+
+    fund_acronym: ESF
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: PLN
+           
+  - title: Poland CF data 2007-2013
+    path: Poland_CF_2007_2013.csv
+    publication_date: "2016-12-07"
+    encoding: windows-1250
+    parser_options:
+      delimiter: ';'
+
+    fund_acronym: CF
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: PLN
+                     
+  - title: Poland ERDF data 2014-2020
+    path: Poland_ERDF_2014_2020.csv
+    publication_date: "2016-12-07"
+    encoding: windows-1250
+    parser_options:
+      delimiter: ';'
+
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: PLN
+ 
+  - title: Poland ESF data 2014-2020
+    path: Poland_ESF_2014_2020.csv
+    publication_date: "2016-12-07"
+    encoding: windows-1250
+    parser_options:
+      delimiter: ';'
+
+    fund_acronym: ESF
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: PLN
+                     
+  - title: Poland CF data 2014-2020
+    path: Poland_CF_2014_2020.csv
+    publication_date: "2016-12-07"
+    encoding: windows-1250
+    parser_options:
+      delimiter: ';'
+
+    fund_acronym: CF
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: PLN                     

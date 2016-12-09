@@ -18,6 +18,12 @@ resources:
     path: ERDF_NRW_2014-2020.json
     #url: https://www.efre.nrw.de/fileadmin/16-01-22_DN_Liste_der_Vorhaben_20151231.xlsx
 
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+    cci_code: 2014DE16RFOP009
+    currency_code: EUR
+
+
     publication_date: "2015-12-31"
 
     schema:

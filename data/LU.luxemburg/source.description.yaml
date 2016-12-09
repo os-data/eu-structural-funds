@@ -21,10 +21,18 @@ resources:
 
     publication_date: "2016-10-25"
 
-    constant_fields:
-      fund_name: ERDF and ESF
-      offical_period: 2007-2020
-      currency_code: EUR
+
+
+    fund_acronym:
+      - FEDER: [ERDF]
+      - FSE: [ESF]
+      
+    funding_period: 2007-2020
+    cci_code: 2014LU05SFOP001
+    currency_code: EUR
+
+
+
 
     aliases:
       porteur_de_projet: porteur(s)_de_projet

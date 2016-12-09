@@ -17,15 +17,18 @@ contributors:
 
 resources:
   - title: ESF in Sachsen 2014-2020
+  
+    fund_acronym: ESF
+    funding_period: 2014-2020
+    cci_code: 2014DE05SFOP012
+    currency_code: EUR
+
+ 
     path: 2016-06-30_Liste_der_Vorhaben_ESF_2014-2020.csv
     publication_date: "2016-07-08"
     parser_options:
       delimiter: ';'
 
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2014-2020
-      currency_code: EUR
 
       # any other field from fiscal.fields.yaml that is constant
 

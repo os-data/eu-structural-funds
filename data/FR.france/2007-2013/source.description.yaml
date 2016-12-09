@@ -24,6 +24,14 @@ resources:
       #url: http://cartobenef.asp-public.fr/cartobenef/carto.php
       publication_date: # Loic: I can't find it
 
+    fund_acronym:
+      - FEDER: [ERDF]
+      - FSE: [ESF]
+      
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
+
       schema:
         fields:
           - name: _source

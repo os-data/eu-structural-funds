@@ -23,10 +23,11 @@ resources:
 
     publication_date: "2013-11-30"
 
-    constant_fields:
-      fund_name: ERDF, CF, ESF
-      offical_period: 2007-2013
-      currency_code: EUR
+    fund_acronym: 
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR    
+    
 
       # any other field from fiscal.fields.yaml that is constant
 

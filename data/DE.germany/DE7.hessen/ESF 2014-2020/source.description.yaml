@@ -20,6 +20,12 @@ resources:
     publication_date: 01-07-2016
     path: 2016-07-01_Liste_der_Vorhaben_8911.csv
 
+    fund_acronym: ESF
+    funding_period: 2014-2020
+    cci_code: 2014DE05SFOP008
+    currency_code: EUR
+
+
     schema:
       fields:
         - name: "Name des Begünstigten

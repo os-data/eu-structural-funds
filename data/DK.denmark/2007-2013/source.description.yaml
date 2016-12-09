@@ -24,6 +24,27 @@ resources:
 
     publication_date: "2016-10-01"
 
+    fund_acronym:
+      - ERDFB: [ERDF]
+      - ERDFD: [ERDF]
+      - ERDFH: [ERDF]
+      - ERDFK: [ERDF]
+      - ERDFM: [ERDF]
+      - ERDFN: [ERDF]
+      - ERDFS: [ERDF]
+      - ESFB: [ESF]
+      - ESFD: [ESF]
+      - ESFH: [ESF]
+      - ESFK: [ESF]
+      - ESFM: [ESF]
+      - ESFN: [ESF]
+      - ESFS: [ESF]
+
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: EUR
+
+
     schema:
       fields:
 

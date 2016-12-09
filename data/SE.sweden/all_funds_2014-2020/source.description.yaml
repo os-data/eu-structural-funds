@@ -20,10 +20,11 @@ resources:
 
     publication_date: 27-09-2016
 
-    constant_fields:
-      fund_name: ERDF and ESF
-      offical_period: 2014-2020
-      currency_code: KR
+    fund_acronym: 
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: SEK
+
 
     schema:
       fields:

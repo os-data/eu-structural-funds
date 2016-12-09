@@ -19,14 +19,14 @@ resources:
   - title: ERDF in Schleswig-Holstein 2014-2020
     path: LPW-Liste_der_Vorhaben_Schleswig Holstein.xlsx
     publication_date: "2016-07-21"
-
+    
     parser_options:
       headers: 8
 
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2014-2020
-      currency_code: EUR
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+    cci_code: 2014DE16RFOP014
+    currency_code: EUR
 
     schema:
       fields:

@@ -21,14 +21,18 @@ resources:
     path: Liste_der_Vorhaben_ESF_14_MV.xlsx
     publication_date: "2016-03-31"
 
+    fund_acronym: ESF
+    funding_period: 2014-2020
+    cci_code: 2014DE05SFOP009
+    currency_code: EUR
+
+
+
     parser_options:
       headers: 6
       skip_rows: [7, 1453, 1454, 1455, 1456, 1457, 1458, 1459]
 
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2014-2020
-      currency_code: EUR
+
 
     schema:
       fields:
