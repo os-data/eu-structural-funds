@@ -20,10 +20,10 @@ resources:
     #url: http://www.ziel2.nrw.de/1_NRW-EU_Ziel_2_Programm_2007-2013/3_Ergebnisse/Verzeichnis_Beguenstigte_2014_12_31.pdf
     publication_date: "2014-12-31"
 
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 2007DE162PO007
+    currency_code: EUR
 
 
     schema:

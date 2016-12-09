@@ -23,9 +23,10 @@ resources:
 
     publication_date: "2016-06-30"
 
-
-    constants:
-      currency: EUR
+    fund_acronym: 
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
 
     schema:
       fields:

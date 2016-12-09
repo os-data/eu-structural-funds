@@ -36,6 +36,15 @@ resources:
     #url: https://investinginyourfuture.gov.mt/projects
     path: data.csv
 
+    fund_acronym:
+      - European Regional Development Fund: [ERDF]
+      - European Social Fund: [ESF]
+      - Cohesion Fund: [CF]
+
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
+
     publication_date:
 
     schema:

@@ -21,6 +21,12 @@ resources:
     path: ERDF-Data-Thueringen-2007-2013.csv
     publication_date: "2014-12-31"
 
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 2007DE161PO001
+    currency_code: EUR
+
+
     schema:
       fields:
         - name: Verzeichnis der Begünstigten

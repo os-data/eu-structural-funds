@@ -22,11 +22,15 @@ resources:
     path: Portugal_all_funds_2014-2020.json
     #url: https://www.portugal2020.pt/Portal2020/Media/Default/Docs/Operacoes%20Aprovadas/Lista%20de%20opera%C3%A7%C3%B5es%2031.08.2016_NCD.xlsx
     publication_date: "2016-08-31"
-
-    constant_fields:
-      fund_name: ERDF, ESF
-      offical_period: 2014-2020
-      currency_code: EUR
+    
+    fund_acronym:
+      - FEDER: [ERDF]
+      - FSE: [ESF]
+      - CF: [CF]
+      
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: EUR  
 
       # any other field from fiscal.fields.yaml that is constant
 

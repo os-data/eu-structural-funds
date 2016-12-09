@@ -18,6 +18,12 @@ contributors:
 resources:
 
   - title: EFRE-Programm in Baden-Württemberg 2014-2020 - Innovation und Energiewende
+
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+    cci_code: 2014DE16RFOP001
+    currency_code: EUR
+
     path: ERDF_BaWü_2014-2020.xlsx
     publication_date: "2016-05-27"
 

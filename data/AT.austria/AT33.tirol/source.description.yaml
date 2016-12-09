@@ -15,17 +15,16 @@ contributors:
 resources:
   - title: ERDF data Tirol (AT) (2007-2013)
 
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 2007AT162PO008
+    currency_code: EUR
+
     path: ERDF_Tiro_2007-2013.json
     #url: https://www.tirol.gv.at/fileadmin/themen/tirol-europa/eu-regionalfoerderung-fuer-tirol/downloads/Regionale_Wettbewerbsf_higkeit/2014/Liste_der_Beguenstigten_April_14.pdf
 
 
     publication_date: "2014-04-14"
-
-
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
 
 
     schema:

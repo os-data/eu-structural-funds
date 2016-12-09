@@ -20,11 +20,11 @@ resources:
     #url: http://www.strukturfonds.sachsen.de/download/FP_0713_Verzeichnis_der_Beguenstigten_Stand_30.06.2016.pdf
 
     publication_date: "2014-12-31"
-
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
+    
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 2007DE161PO004
+    currency_code: EUR
 
 
     schema:

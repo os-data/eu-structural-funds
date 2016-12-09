@@ -1,5 +1,5 @@
 
-title: Finland ERDF data 2007-2013
+title: Finland ESIF data 2007-2013
 
 description:
 language: FI
@@ -17,17 +17,19 @@ resources:
 
 
 
-  - title: Finland ERDF data 2007-2013
+  - title: Finland ERDF and ESF data 2007-2013
 
     path: projektilista-2007-2013.csv
-    note: this file still requires cleaning 
 
     publication_date: "2015-12-31"
 
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
+    fund_acronym:
+      - EAKR: [ERDF]
+      - ESR: [ESF]
+      
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
 
       # any other field from fiscal.fields.yaml that is constant
 

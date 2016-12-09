@@ -18,13 +18,14 @@ contributors:
 resources:
 
   - title: ERDF Oberösterreich 2007-2013
-    path: ERDF-AT-Oberösterreich-2007-2013.csv
+   
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+    cci_code: 2007AT162PO002
+    currency_code: EUR
+    
+   path: ERDF-AT-Oberösterreich-2007-2013.csv
     publication_date: "2015-12-31"
-
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
 
 
     schema:

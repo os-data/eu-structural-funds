@@ -24,10 +24,11 @@ resources:
     path: EFRE_MV_Liste_Vorhaben_310820165102528359859520306.csv
     publication_date: "2016-03-31"
 
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2014-2020
-      currency_code: EUR
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+    cci_code: 2014DE16RFOP008
+    currency_code: EUR
+
 
     schema:
       fields:

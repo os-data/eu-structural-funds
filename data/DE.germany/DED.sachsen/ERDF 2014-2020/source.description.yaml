@@ -20,10 +20,10 @@ resources:
     path: FP_14-20_Verzeichnis_der_Beguenstigten_Stand_30-06-2016.csv
     publication_date: "2016-03-31"
 
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2014-2020
-      currency_code: EUR
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+    cci_code: 2014DE16RFOP012
+    currency_code: EUR
 
     schema:
       fields:

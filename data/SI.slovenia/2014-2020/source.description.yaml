@@ -20,8 +20,13 @@ resources:
     path: seznam-projektov-28-6-2016.xls
     publication_date: 16-09-2016
 
-    fund_name: ESRR, KS, ESS
-    offical_period: 2014-2020
+    fund_acronym:
+      - ESRR: [ERDF]
+      - ESS: [ESF]
+      - KF: [CF]
+      
+    funding_period: 2014-2020
+    cci_code: 2014SI16MAOP001
     currency_code: EUR
 
     schema:

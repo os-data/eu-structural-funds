@@ -24,11 +24,10 @@ resources:
     parser_options:
       headers: 7
 
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2014-2020
-      currency_code: EUR
-
+    fund_acronym: ESF
+    funding_period: 2014-2020
+    cci_code: 2014DE05SFOP001
+    currency_code: EUR
 
     schema:
       fields:

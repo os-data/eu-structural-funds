@@ -16,15 +16,16 @@ resources:
 
   - title: VERZEICHNIS DER BEGÜNSTIGTEN FÜR BADEN-WÜRTTEMBERG, FÖRDERPERIODE 2007 - 2013, STAND 30.04.2014
 
+    fund_acronym: ESF
+    funding_period: 2007-2013
+    cci_code: 2007DE052PO001
+    currency_code: EUR
+
     path: ESF_BaWü_2007-2013.csv
     #url: #add url from github after sourcing
 
     publication_date: "2014-04-30"
 
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2007-2013
-      currency_code: EUR
 
       # any other field from fiscal.fields.yaml that is constant
 

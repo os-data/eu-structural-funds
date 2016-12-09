@@ -1,0 +1,78 @@
+title: Baden-Württemberg 2014-2020 ESF
+
+description: The beneficiary list for Baden-Württemberg 2014-2020 ESF
+language: de
+
+sources:
+  - name: ESF in Baden-Württemberg 2014-2020
+    web:  http://www.esf-bw.de/
+
+scraper_required: false
+
+contributors:
+  - Anna Alberts (anna.alberts@okfn.de)
+
+resources:
+
+  - title: ESF in Baden-Württemberg 2014-2020
+
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+    cci_code: 2014DE05SFOP003
+    currency_code: EUR
+
+    path: ESF_BaWü_2014-2020.xlsx
+    #url: #add url from github after sourcing, the online url is locked, so use the one from github
+
+    publication_date: "2016-06-01"
+
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields: #ignore first 7 lines
+        - name: Name des Begünstigten/beneficiary name
+          translates_to: Name of the Beneficiary
+          maps_to: beneficiary_name
+
+        - name: Bezeichnung des Vorhabens/operation name
+          translates_to: Name of the Project
+          maps_to: project_name
+
+        - name: Zusammenfassung des Vorhabens/operation summary
+          translation: Project Summary
+          maps_to: project_description
+
+        - name: Datum des Beginns des Vorhabens/operation start date
+          translation:
+          maps_to: starting_date
+
+        - name: Datum des Endes des Vorhabens/operation end date
+          translation: Project Summary
+          maps_to: completion_date
+
+        - name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens/total eligible expenditure allocated to the operation
+          translation: total eligible expenditure allocated to the operation
+          maps_to: total_amount_eligible
+
+        - name: Postleitzahl des Vorhabens/operation postcode
+          translation: postcode
+          maps_to: beneficiary_postal_code #actual project postal code, so this is false, but the model is too imprecise
+
+        - name: Land/country
+          translation: country
+          maps_to: beneficiary_country
+
+        - name: Bezeichnung der Interventionskategorie für das Vorhaben/name of category of intervention for the operation
+          translation: Category of Intervention
+          maps_to: theme_code
+
+        - name: Spezifisches Ziel/specific objective
+          translation: specific objective
+          maps_to: cci_program_code
+
+        - name: Internet-Adresse des Vorhabens/website of the operation
+          translation: website of the operation
+          maps_to: beneficiary_url
+
+        - # repeat for each column you find in the date

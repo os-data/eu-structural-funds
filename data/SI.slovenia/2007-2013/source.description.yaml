@@ -20,10 +20,15 @@ resources:
     path: upravicenci-vsi-4-07-2016-uvoz.json
     publication_date: 05-07-2016
 
-    constant_fields:
-      fund_name: ESRR, KS, ESS
-      offical_period: 2007-2013
-      currency_code: EUR
+
+    fund_acronym:
+      - ESRR: [ERDF]
+      - ESS: [ESF]
+      - KF: [CF]
+      
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
 
     schema:
       fields:

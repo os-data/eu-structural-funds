@@ -20,6 +20,12 @@ resources:
 
     publication_date: "2013-06-13"
 
+
+    fund_acronym: ESF
+    funding_period: 2007-2013
+    cci_code: 2007DE052PO004
+    currency_code: EUR
+
     schema:
       fields:
         - name: Name des Begünstigten

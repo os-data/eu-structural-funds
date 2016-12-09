@@ -21,10 +21,13 @@ resources:
 
     publication_date: "2016-10-25"
 
-    constant_fields:
-      fund_name: ERDF and ESF
-      offical_period: 2014-2020
-      currency_code: EUR
+    fund_acronym:
+      - FEDER: [ERDF]
+      - ESF: [ESF]
+      
+    funding_period: 2014-2020
+    cci_code: 
+    currency_code: EUR
 
 
     schema:
