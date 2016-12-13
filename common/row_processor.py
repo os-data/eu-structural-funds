@@ -12,7 +12,8 @@ from datapackage_pipelines.wrapper.wrapper import processor
 
 def _override_parameters(pipeline_parameters,
                          datapackage, resource_index,
-                         processor_name=processor()):
+                         processor_name=None):
+    processor_name = processor_name or processor().lower().strip()
     parameters = copy.deepcopy(pipeline_parameters)
 
     datapackage_parameters = datapackage.get(processor_name, {})
