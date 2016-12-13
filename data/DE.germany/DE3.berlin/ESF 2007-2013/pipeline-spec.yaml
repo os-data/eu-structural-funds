@@ -1,21 +1,26 @@
 DE_germany_DE3_berlin_ESF_2007_2013:
   pipeline:
-  - {run: read_description}
-  - {run: stream_from_path}
-  - {run: mutate_datapackage}
-  - parameters: {out-file: source.datapackage.zip}
+  - run: read_description
+  - run: stream_from_path
+  - run: mutate_datapackage
+  - parameters:
+      out-file: source.datapackage.zip
     run: dump
     validate: true
-  - {run: map_fields}
-  - {run: concatenate_identical_resources}
-  - {run: sniff_and_cast}
-  - {run: reshape_data}
-  - {run: add_geocodes}
-  - {run: show_sample_in_console}
-  - {run: load_fiscal_datapackage}
-  - parameters: {out-file: fiscal.datapackage.zip}
+  - run: map_fields
+  - run: concatenate_identical_resources
+  - run: sniff_and_cast
+  - run: reshape_data
+  - run: add_geocodes
+  - run: add_constants
+  - run: show_sample_in_console
+  - run: load_fiscal_datapackage
+  - parameters:
+      out-file: fiscal.datapackage.zip
     run: dump
     validate: true
-  - parameters: {in-file: fiscal.datapackage.zip}
+  - parameters:
+      in-file: fiscal.datapackage.zip
     run: fiscal.upload
-  schedule: {crontab: 0 0 1 1 *}
+  schedule:
+    crontab: 0 0 1 1 *

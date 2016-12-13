@@ -1,30 +1,43 @@
 FR_france_2014_2020:
   pipeline:
-  - parameters: {save_datapackage: false}
+  - parameters:
+      save_datapackage: false
     run: read_description
     validate: true
-  - parameters: {format: xls}
+  - parameters:
+      format: xls
     run: stream_from_path
     validate: true
-  - parameters: {out-file: source.datapackage.zip}
-    run: dump
-  - {run: map_fields}
   - parameters:
-      date-fields: [starting_date, completion_date, approval_date]
+      out-file: source.datapackage.zip
+    run: dump
+  - run: map_fields
+  - parameters:
+      date-fields:
+      - starting_date
+      - completion_date
+      - approval_date
       date-mode: 0
     run: convert_excel_dates
-  - {run: concatenate_identical_resources}
-  - {run: sniff_and_cast}
-  - parameters: {sample_size: 10000000}
+  - run: concatenate_identical_resources
+  - run: sniff_and_cast
+  - parameters:
+      sample_size: 10000000
     run: show_sample_in_console
-  - {run: reshape_data}
-  - {run: add_geocodes}
-  - {run: load_fiscal_datapackage}
-  - {run: nop, validate: true}
-  - parameters: {sample_size: 10000000}
+  - run: reshape_data
+  - run: add_geocodes
+  - run: add_constants
+  - run: load_fiscal_datapackage
+  - run: nop
+    validate: true
+  - parameters:
+      sample_size: 10000000
     run: show_sample_in_console
-  - parameters: {out-file: fiscal.datapackage.zip}
+  - parameters:
+      out-file: fiscal.datapackage.zip
     run: dump
-  - parameters: {in-file: fiscal.datapackage.zip}
+  - parameters:
+      in-file: fiscal.datapackage.zip
     run: fiscal.upload
-  schedule: {crontab: 0 0 1 1 *}
+  schedule:
+    crontab: 0 0 1 1 *
