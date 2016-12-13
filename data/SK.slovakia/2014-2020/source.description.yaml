@@ -15,90 +15,123 @@ resources:
     fields:
     - name: _source
       translates_to: source
-    - maps_to: cci_program_code
-      name: základné_údaje-údaje_o_projekte-kód_projektu
-      translates_to: cci program code
-    - maps_to: project_name
-      name: základné_údaje-údaje_o_projekte-názov_projektu
-      translates_to: project title
-    - maps_to: theme_name
-      name: základné_údaje-údaje_o_projekte-výzva
+    
+    - name: základné_údaje-údaje_o_projekte-kód_projektu
+      translates_to: some code
+
+    - name: základné_údaje-údaje_o_projekte-názov_projektu
+      translates_to: project name
+    - maps_to: project_name 
+
+    - name: základné_údaje-údaje_o_projekte-výzva
       translates_to: theme
-    - maps_to: beneficiary_name
-      name: poskytovateľ_pomoci-poskytovateľ_pomoci-názov
+      maps_to: beneficiary_name
+
+    - name: poskytovateľ_pomoci-poskytovateľ_pomoci-názov
       translates_to: beneficiary name
-    - maps_to: fund_name
-      name: poskytovateľ_pomoci-poskytovateľ_pomoci-orgán_implementácie_fondov
+      maps_to: beneficiary_name
+
+    - name: poskytovateľ_pomoci-poskytovateľ_pomoci-orgán_implementácie_fondov
       translates_to: fund
+      maps_to: management_authority
+
     - name: poskytovateľ_pomoci-poskytovateľ_pomoci-ičo
       translates_to: code
+
     - name: poskytovateľ_pomoci-vyhlasovateľ-subjekt
-      translates_to: theme
+      translates_to: announcer donor entity
+
     - name: poskytovateľ_pomoci-vyhlasovateľ-orgán_implementácie_fondov
       translates_to: fund
+
     - name: poskytovateľ_pomoci-vyhlasovateľ-ičo
       translates_to: code
-    - maps_to: beneficiary_address
+  
       name: poskytovateľ_pomoci-vyhlasovateľ-adresa
       translates_to: address
+      maps_to: beneficiary_address
+  
     - name: prijímateľ_a_partneri-prijímateľ-obchodné_meno_/_názov
       translates_to: project name
+  
     - name: prijímateľ_a_partneri-prijímateľ-sídlo_(ulica,_číslo,_psč,_obec)
       translates_to: address
+  
     - name: prijímateľ_a_partneri-prijímateľ-ičo
       translates_to: code
+  
     - name: prijímateľ_a_partneri-prijímateľ-dič
       translates_to: code
+  
     - name: prijímateľ_a_partneri-prijímateľ-ičz/ič
       translates_to: code
+  
     - name: prijímateľ_a_partneri-prijímateľ-platiteľ_dph
       translates_to: Recipient payer
+  
     - name: prijímateľ_a_partneri-prijímateľ-ič_dph
       translates_to: empty column
+  
     - name: prijímateľ_a_partneri-prijímateľ-právna_forma
       translates_to: company form
-    - maps_to: project_description
-      name: stručný_popis_projektu--popis_projektu
+      
+    - name: stručný_popis_projektu--popis_projektu
       translates_to: project description
-    - maps_to: total_amount_eligible
-      name: výška_finančných_prostiedkov_projektu-zazmluvnená_výška_nfp-celková_zazmluvnená_suma
+      maps_to: project_description
+      
+    - name: výška_finančných_prostiedkov_projektu-zazmluvnená_výška_nfp-celková_zazmluvnená_suma
       translates_to: total amount eligible
-    - maps_to: total_amount
-      name: výška_finančných_prostiedkov_projektu-zazmluvnená_výška_nfp-zazmluvnená_suma_nfp
+      maps_to: total_amount_eligible
+
+    - name: výška_finančných_prostiedkov_projektu-zazmluvnená_výška_nfp-zazmluvnená_suma_nfp
       translates_to: total amount
-    - maps_to: third_party_amount
-      name: výška_finančných_prostiedkov_projektu-zazmluvnená_výška_nfp-poskytnuté_finančné_prostriedky_prijímateľovi_(nfp)
+      maps_to: total_amount
+
+    - name: výška_finančných_prostiedkov_projektu-zazmluvnená_výška_nfp-poskytnuté_finančné_prostriedky_prijímateľovi_(nfp)
       translates_to: own funds provided
-    - maps_to: priority_number
-      name: harmonogram_realizácie_projektu--celková_dĺžka_realizácie_aktivít_projektu_(v_mesiacoch,_vrátane_podporných_aktivít)
-      translates_to: priority number
-    - maps_to: starting_date
-      name: harmonogram_realizácie_projektu--začiatok_realizácie_hlavných_aktivít_projektu
+      maps_to: third_party_amount
+
+    - name: harmonogram_realizácie_projektu--začiatok_realizácie_hlavných_aktivít_projektu
       translates_to: starting date
-    - maps_to: completion_date
-      name: harmonogram_realizácie_projektu--ukončenie_realizácie_hlavných_aktivít_projektu
+      maps_to: starting_date
+     
+    - name: harmonogram_realizácie_projektu--ukončenie_realizácie_hlavných_aktivít_projektu
       translates_to: completion date
+      maps_to: completion_date
+
     - name: harmonogram_realizácie_projektu--celková_dĺžka_realizácie_hlavných_aktivít_projektu_(v_mesiacoch)
       translates_to: priority number
+      maps_to: priority_number 
+
     - name: zmluva_o_poskytnutí_nfp_a_dodatky-zmluva-číslo_zmluvy
       translates_to: agreement contract number
+
     - name: zmluva_o_poskytnutí_nfp_a_dodatky-zmluva-dátum_platnosti_zmluvy
       translates_to: unclear
+
     - name: zmluva_o_poskytnutí_nfp_a_dodatky-zmluva-dátum_účinnosti_zmluvy
       translates_to: unclear
+
     - name: zmluva_o_poskytnutí_nfp_a_dodatky-zmluva-url_adresa
       translates_to: unclear
-    - maps_to: beneficiary_nuts_region
-      name: kategorizácia_v_zmysle_nariadení_európskej_komisie-kategorizácia_v_zmysle_nariadení_európskej_komisie-kategórie_regiónov
+      maps_to: beneficiary_url
+
+    - name: kategorizácia_v_zmysle_nariadení_európskej_komisie-kategorizácia_v_zmysle_nariadení_európskej_komisie-kategórie_regiónov
       translates_to: region
+      maps_to: beneficiary_nuts_region 
+
     - name: kategorizácia_v_zmysle_nariadení_európskej_komisie-kategorizácia_v_zmysle_nariadení_európskej_komisie-projekt_s_relevanciou_k_regionálnym_investičným_územným_stratégiám
       translates_to: unclear
+
     - name: kategorizácia_v_zmysle_nariadení_európskej_komisie-kategorizácia_v_zmysle_nariadení_európskej_komisie-projekt_s_relevanciou_k_udržateľnému_rozvoju_miest
       translates_to: unclear
+
     - name: kategorizácia_v_zmysle_nariadení_európskej_komisie-kategorizácia_v_zmysle_nariadení_európskej_komisie-identifikácia_príspevku_k_princípu_udržateľného_rozvoja
       translates_to: unclear
+
     - name: kategorizácia_v_zmysle_nariadení_európskej_komisie-kategorizácia_v_zmysle_nariadení_európskej_komisie-identifikácia_príspevku_k_princípu_podpory_rovnosti_mužov_a_žien_a_nediskriminácia
       translates_to: unclear
+
   title: ERDF, ESF, Cohesion Funds Beneficiary List Slovakia 2014-2020
 scraper_required: false
 sources:
