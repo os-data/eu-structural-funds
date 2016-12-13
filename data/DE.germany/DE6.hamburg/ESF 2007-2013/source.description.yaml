@@ -1,56 +1,44 @@
-title: ESF Data for Hamburg (2007-2013)
-
+contributors:
+- Michael Peters (michael.peters@okfn.de)
 description: The beneficiary list of the ESF programme for Hamburg
 language: de
-
-sources:
-  - name: Hamburg 2007-2013
-    web: http://www.esf-hamburg.de/
-
-  - name: Link to original PDF file
-    web: http://static.hamburg.de/fhh/behoerden/basfi/esf-hamburg.de/www.esf-hamburg.de/contentblob/1379164/data/verzeichnis-der-beguenstigten.pdf
-scraper_required: false
-
-contributors:
-  - Michael Peters (michael.peters@okfn.de)
-
 resources:
-  - title: ESF Hamburg 2007-2013
-    path: ESF data Hamburg 2007-2013.csv
-    publication_date: "30-06-2013"
-
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007DE052PO005
     fund_acronym: ERDF
     funding_period: 2007-2013
-    cci_code: 2007DE052PO005
-    currency_code: EUR
-
-
-    schema:
-      fields:
-        - name: Zuwendungsempfänger
-          translates_to: Name of the Beneficiary
-          maps_to: beneficiary_name
-
-        - name: Projekt
-          translates_to: Name of the Project
-          maps_to: project_name
-
-        - name: Beginn
-          translates_to: starting date of the project
-          maps_to: starting_date
-
-        - name: Ende
-          translates_to: completion date of the project
-          maps_to: completion_date
-
-        - name: bereitgestellte öffentliche Mittel
-          translates_to: Approved Amount in Euro
-          maps_to: total_amount_eligible
-
-        - name: davon bewilligter EU-Betrag
-          translates_to: Amount of EU co-financing
-          maps_to: eu_cofinancing_amount
-
-        - name: bei Abschluss des Vorhabens gezahlte Gesamtbeträge
-          translates_to: Paid amount at the end of the project
-          maps_to: total_amount
+  currency_code: EUR
+  path: ESF data Hamburg 2007-2013.csv
+  publication_date: 30-06-2013
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: Zuwendungsempfänger
+      translates_to: Name of the Beneficiary
+    - maps_to: project_name
+      name: Projekt
+      translates_to: Name of the Project
+    - maps_to: starting_date
+      name: Beginn
+      translates_to: starting date of the project
+    - maps_to: completion_date
+      name: Ende
+      translates_to: completion date of the project
+    - maps_to: total_amount_eligible
+      name: bereitgestellte öffentliche Mittel
+      translates_to: Approved Amount in Euro
+    - maps_to: eu_cofinancing_amount
+      name: davon bewilligter EU-Betrag
+      translates_to: Amount of EU co-financing
+    - maps_to: total_amount
+      name: bei Abschluss des Vorhabens gezahlte Gesamtbeträge
+      translates_to: Paid amount at the end of the project
+  title: ESF Hamburg 2007-2013
+scraper_required: false
+sources:
+- name: Hamburg 2007-2013
+  web: http://www.esf-hamburg.de/
+- name: Link to original PDF file
+  web: http://static.hamburg.de/fhh/behoerden/basfi/esf-hamburg.de/www.esf-hamburg.de/contentblob/1379164/data/verzeichnis-der-beguenstigten.pdf
+title: ESF Data for Hamburg (2007-2013)

@@ -1,48 +1,36 @@
-title: ERDF Data for Hamburg (2007-2013)
-
+contributors:
+- Michael Peters (michael.peters@okfn.de)
 description: The beneficiary list of the ERDF programme for Hamburg
 language: de
-
-sources:
-  - name: ERDF Hamburg (2007-2013)
-    web: https://www.hamburg.de/efre/
-
-scraper_required: false
-
-contributors:
-  - Michael Peters (michael.peters@okfn.de)
-
 resources:
-  - title: ERDF Hamburg 2007-2013
-
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007DE162PO009
     fund_acronym: ERDF
     funding_period: 2007-2013
-    cci_code: 2007DE162PO009
-    currency_code: EUR
-
-
-    path: ERDF-data-Hamburg_2007_2013.csv
-    #url: http://www.hamburg.de/contentblob/3117844/aa6827caa9ffceca2bb885f75f1729ac/data/efre-beguenstigte.pdf
-    publication_date: "31-12-2015"
-
-    schema:
-      fields:
-        - name: Name des Begünstigten
-          translates_to: Name of the Beneficiary
-          maps_to: beneficiary_name
-
-        - name: Bezeichnung des Vorhabens
-          translates_to: Name of the Project
-          maps_to: project_name
-
-        - name: Jahr der Bewilligung
-          translates_to: Year of Approval
-          maps_to: approval_date
-
-        - name: Bewilligter Betrag
-          translates_to: Eligible Amount
-          maps_to: total_amount_eligible
-
-        - name: Ausgezahlter Betrag zum Vorhabenabschluss
-          translates_to: Paid amount at the end of the project
-          maps_to: total_amount
+  currency_code: EUR
+  path: ERDF-data-Hamburg_2007_2013.csv
+  publication_date: 31-12-2015
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: Name des Begünstigten
+      translates_to: Name of the Beneficiary
+    - maps_to: project_name
+      name: Bezeichnung des Vorhabens
+      translates_to: Name of the Project
+    - maps_to: approval_date
+      name: Jahr der Bewilligung
+      translates_to: Year of Approval
+    - maps_to: total_amount_eligible
+      name: Bewilligter Betrag
+      translates_to: Eligible Amount
+    - maps_to: total_amount
+      name: Ausgezahlter Betrag zum Vorhabenabschluss
+      translates_to: Paid amount at the end of the project
+  title: ERDF Hamburg 2007-2013
+scraper_required: false
+sources:
+- name: ERDF Hamburg (2007-2013)
+  web: https://www.hamburg.de/efre/
+title: ERDF Data for Hamburg (2007-2013)

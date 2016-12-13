@@ -1,81 +1,76 @@
-title: Baden-Württemberg 2014-2020 ERDF
-
+contributors:
+- Anna Alberts (anna.alberts@okfn.de)
 description: The beneficiary list for Baden-Württemberg 2014-2020 ERDF
 language: de
-
-sources:
-  - name: EFRE Investition in Ihre Zukunft
-    web:  https://efre-bw.de/
-
-  - name: Link to the original Excel file
-    web: https://efre-bw.de/wp-content/uploads/Liste-der-Vorhaben_31-03-2016.xlsx
-
-scraper_required: false
-
-contributors:
-  - Anna Alberts (anna.alberts@okfn.de)
-
 resources:
-
-  - title: EFRE-Programm in Baden-Württemberg 2014-2020 - Innovation und Energiewende
-
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2014DE16RFOP001
     fund_acronym: ERDF
     funding_period: 2014-2020
-    cci_code: 2014DE16RFOP001
+  constant_fields:
     currency_code: EUR
-
-    path: ERDF_BaWü_2014-2020.xlsx
-    publication_date: "2016-05-27"
-
-    parser_options:
-      headers: 10
-      skip_rows: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2014-2020
-      currency_code: EUR
-
-      # any other field from fiscal.fields.yaml that is constant
-
-    schema:
-      fields: #ignore first 9 lines, column names are divided over two lines, one german one english
-        - name: Name des Begünstigten (Nennung ausschließlich von juristischen Personen und nicht von natürlichen Personen)
-          translates_to: beneficiary name (only of legal entities; no natural persons shall be named)
-          maps_to: beneficiary_name
-
-        - name: Bezeichnung des Vorhabens
-          translates_to: operation name
-          maps_to: project_name
-
-        - name: Zusammenfassung des Vorhabens
-          translation: Operation Summary
-          maps_to: project_description
-
-        - name: Datum des Beginns des Vorhabens
-          translation: Operation start date
-          maps_to: starting_date
-
-        - name: Datum des Endes des Vorhabens (voraussichtliches Datum des Abschlusses der konkreten Arbeiten oder der vollständigen Durchführung des Vorhabens)
-          translation: operation end date (expected date for physical completion or full implementation of the operation)
-          maps_to: completion_date
-
-        - name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens
-          translation: Total eligible expenditure allocated to the operation
-          maps_to: total_amount_eligible
-
-        - name: Unions-Kofinanzierungssatz pro Prioritätsachse
-          translation: Union co-financing rate, as per priority axis
-          maps_to: #missing field in schema
-
-        - name: Postleitzahl des Vorhabens oder andere angemessene Standortindikatoren
-          translation: postcode
-          maps_to: beneficiary_postal_code #actual project postal code, so this is false, but the model is too imprecise
-
-        - name: Land
-          translation: country
-          maps_to: beneficiary_country
-
-        - name: Bezeichnung der Interventionskategorie für das Vorhaben gemäß Artikel 96 Absatz 2 Unterabsatz 1 Buchstabe b Ziffer vi;
-          translation: intervention category 
-          maps_to: theme_name
+    fund_name: ERDF
+    offical_period: 2014-2020
+  currency_code: EUR
+  parser_options:
+    headers: 10
+    skip_rows:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+  path: ERDF_BaWü_2014-2020.xlsx
+  publication_date: '2016-05-27'
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: Name des Begünstigten (Nennung ausschließlich von juristischen Personen
+        und nicht von natürlichen Personen)
+      translates_to: beneficiary name (only of legal entities; no natural persons
+        shall be named)
+    - maps_to: project_name
+      name: Bezeichnung des Vorhabens
+      translates_to: operation name
+    - maps_to: project_description
+      name: Zusammenfassung des Vorhabens
+      translation: Operation Summary
+    - maps_to: starting_date
+      name: Datum des Beginns des Vorhabens
+      translation: Operation start date
+    - maps_to: completion_date
+      name: Datum des Endes des Vorhabens (voraussichtliches Datum des Abschlusses
+        der konkreten Arbeiten oder der vollständigen Durchführung des Vorhabens)
+      translation: operation end date (expected date for physical completion or full
+        implementation of the operation)
+    - maps_to: total_amount_eligible
+      name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens
+      translation: Total eligible expenditure allocated to the operation
+    - maps_to: null
+      name: Unions-Kofinanzierungssatz pro Prioritätsachse
+      translation: Union co-financing rate, as per priority axis
+    - maps_to: beneficiary_postal_code
+      name: Postleitzahl des Vorhabens oder andere angemessene Standortindikatoren
+      translation: postcode
+    - maps_to: beneficiary_country
+      name: Land
+      translation: country
+    - maps_to: theme_name
+      name: Bezeichnung der Interventionskategorie für das Vorhaben gemäß Artikel
+        96 Absatz 2 Unterabsatz 1 Buchstabe b Ziffer vi;
+      translation: intervention category
+  title: EFRE-Programm in Baden-Württemberg 2014-2020 - Innovation und Energiewende
+scraper_required: false
+sources:
+- name: EFRE Investition in Ihre Zukunft
+  web: https://efre-bw.de/
+- name: Link to the original Excel file
+  web: https://efre-bw.de/wp-content/uploads/Liste-der-Vorhaben_31-03-2016.xlsx
+title: Baden-Württemberg 2014-2020 ERDF

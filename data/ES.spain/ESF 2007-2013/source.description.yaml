@@ -1,66 +1,50 @@
-title: ESF Data for Spain (2007-2013)
-
+contributors:
+- Michael Peters (michael.peters@okfn.de)
 description: The beneficiary list of the ESF programme for Spain.
 language: de
-
-sources:
-  - name: ESF Spain (2007-2013)
-    web: http://www.empleo.gob.es/uafse/es/index.html
-
-scraper_required: false
-
-contributors:
-  - Michael Peters (michael.peters@okfn.de)
-
 resources:
-  - title: ESF in Spain
-
-    path: data.json
-    #url:
-    publication_date: "2016-10-24"
-
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
     fund_acronym: ESF
     funding_period: 2007-2013
-    cci_code: 
-    currency_code: EUR
-
-    schema:
-      fields:
-        - name: _source
-          translates_to: source
-
-        - name: proyecto
-          translates_to: project name
-          maps_to: project_name
-
-        - name: país
-          translates_to: country
-          maps_to: beneficiary_country
-
-        - name: ámbito_geográfico
-          translates_to: region
-          maps_to: beneficiary_nuts_region
-
-        - name: duración
-          translates_to: duration
-          maps_to: starting_date
-
-        - name: grupos_destinatarios
-          translates_to: project aimed at
-          maps_to: project_description
-
-        - name: area_prioritaria_fse
-          translates_to: priority field ESF
-          maps_to: priority_label
-
-        - name: entidad_responsable
-          translates_to: responsible entity
-          maps_to: beneficiary_name
-
-        - name: ayuda_fse
-          translates_to: eu cofinancing amount
-          maps_to: eu_cofinancing_amount
-
-        - name: presupuesto_total
-          translates_to: total amount
-          maps_to: total_amount
+  currency_code: EUR
+  path: data.json
+  publication_date: '2016-10-24'
+  schema:
+    fields:
+    - name: _source
+      translates_to: source
+    - maps_to: project_name
+      name: proyecto
+      translates_to: project name
+    - maps_to: beneficiary_country
+      name: país
+      translates_to: country
+    - maps_to: beneficiary_nuts_region
+      name: ámbito_geográfico
+      translates_to: region
+    - maps_to: starting_date
+      name: duración
+      translates_to: duration
+    - maps_to: project_description
+      name: grupos_destinatarios
+      translates_to: project aimed at
+    - maps_to: priority_label
+      name: area_prioritaria_fse
+      translates_to: priority field ESF
+    - maps_to: beneficiary_name
+      name: entidad_responsable
+      translates_to: responsible entity
+    - maps_to: eu_cofinancing_amount
+      name: ayuda_fse
+      translates_to: eu cofinancing amount
+    - maps_to: total_amount
+      name: presupuesto_total
+      translates_to: total amount
+  title: ESF in Spain
+scraper_required: false
+sources:
+- name: ESF Spain (2007-2013)
+  web: http://www.empleo.gob.es/uafse/es/index.html
+title: ESF Data for Spain (2007-2013)
