@@ -16,6 +16,7 @@ NL_the_netherlands:
   - run: reshape_data
   - run: add_geocodes
   - run: add_constants
+  - run: add_categories
   - run: load_fiscal_datapackage
   - parameters:
       out-file: fiscal.datapackage.zip

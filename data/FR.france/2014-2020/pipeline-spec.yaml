@@ -27,6 +27,7 @@ FR_france_2014_2020:
   - run: reshape_data
   - run: add_geocodes
   - run: add_constants
+  - run: add_categories
   - run: load_fiscal_datapackage
   - run: nop
     validate: true

@@ -12,6 +12,7 @@ DE_germany_DE1_baden_wuerttemberg_ERDF_2007_2013:
   - run: reshape_data
   - run: add_geocodes
   - run: add_constants
+  - run: add_categories
   - run: show_sample_in_console
   - run: load_fiscal_datapackage
   - parameters:

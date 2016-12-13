@@ -11,6 +11,7 @@ HR_croatia:
   - run: reshape_data
   - run: add_geocodes
   - run: add_constants
+  - run: add_categories
   - run: cast_to_fiscal_schema
   - run: show_sample_in_console
   - run: load_fiscal_datapackage

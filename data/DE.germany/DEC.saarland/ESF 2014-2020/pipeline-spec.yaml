@@ -13,6 +13,7 @@ DE_germany_DEC_saarland_ESF_2014_2020:
   - run: reshape_data
   - run: add_geocodes
   - run: add_constants
+  - run: add_categories
   - run: show_sample_in_console
   - run: load_fiscal_datapackage
   - parameters:

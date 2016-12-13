@@ -26,6 +26,7 @@ MT_malta:
   - run: reshape_data
   - run: add_geocodes
   - run: add_constants
+  - run: add_categories
   - parameters:
       sample_size: 1000
     run: show_sample_in_console

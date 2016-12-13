@@ -21,6 +21,7 @@ AT_austria_AT11_burgenland:
   - run: reshape_data
   - run: add_geocodes
   - run: add_constants
+  - run: add_categories
   - run: show_sample_in_console
   - run: load_fiscal_datapackage
   - parameters:
