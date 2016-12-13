@@ -20,7 +20,7 @@ class TestSource(TestCase):
     pipeline_spec_file = os.path.join(pipeline_folder, PIPELINE_FILE)
 
     pipeline_spec = {
-        'XX_dummy_id': {
+        'xx_dummy_id': {
             'schedule': 'dummy schedule',
             'pipeline': [
                 {'run': 'processor 0'},
@@ -71,10 +71,10 @@ class TestSource(TestCase):
     def setUp(self):
         """Create a source object from temporary files."""
 
-        try:
-            os.mkdir(self.pipeline_folder)
-        except FileExistsError:
-            pass
+        # try:
+        os.mkdir(self.pipeline_folder)
+        # except FileExistsError:
+        #     pass
 
         with open(self.pipeline_spec_file, 'w+') as stream:
             json.dump(self.pipeline_spec, stream)

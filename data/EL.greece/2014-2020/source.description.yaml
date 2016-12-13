@@ -1,117 +1,102 @@
-title: European Structural and Investment Funds (ESIF) for the period 2014-2020 for Greece
-
-description: A list of all the public projects and state aids selected for co-funding under the Partnership Agreement 2014-2020 by Operational Programme and by Fund
-language: EL
-scraper_required: false
-
-sources:
-  - name: ESIF data for Greece 2014-2020
-    web:  https://www.espa.gr/en/pages/default.aspx
-
 contributors:
-  - Olaya Argueso <arguesoperezolaya@gmail.com>
-
+- Olaya Argueso <arguesoperezolaya@gmail.com>
+description: A list of all the public projects and state aids selected for co-funding
+  under the Partnership Agreement 2014-2020 by Operational Programme and by Fund
+language: EL
 resources:
-  - title: The list of all projects for the period 2014-2020
-    path: ListOfOperations_20160513.csv
-    publication_date:
-    parser_options:
-      delimiter: ';'
-
-
+- add_categories:
     fund_acronym:
-      - 1-ΕΤΠΑ: [ERDF]
-      - 2-ΕΚΤ: [ESF]
-      - 6-ΤΣ: [CF]
-
-      
+      1-ΕΤΠΑ: ERDF
+      2-ΕΚΤ: ESF
+      6-ΤΣ: CF
+  add_constants:
+    cci_program_code: null
     funding_period: 2014-2020
-    cci_code: 
-    currency_code: EUR
-
-
-    schema:
-      fields:
-        - name: ΕΠΙΧΕΙΡΗΣΙΑΚΟ ΠΡΟΓΡΑΜΜΑ/ OPERATIONAL PROGRAMME
-          translation: OPERATIONAL PROGRAMME
-          type: "string"
-          missingValue:
-          description:
-
-        - name: ΑΞΟΝΑΣ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ/PRIORITY
-          translation: PRIORITY
-          type: "string"
-          missingValue:
-          description:
-
-        - name: TAMEIO/ FUND
-          translation: FUND
-          type: "string"
-          missingValue:
-          description:
-
-        - name: ΟΝΟΜΑΣΙΑ ΔΙΚΑΙΟΥΧΟΥ / BENEFICIARY NAME
-          translation: BENEFICIARY NAME
-          type: "string"
-          missingValue:
-          description:
-
-        - name: ΟΝΟΜΑΣΙΑ ΠΡΑΞΗΣ / OPERATION NAME
-          translation: OPERATION NAME
-          type: "string"
-          missingValue:
-          description:
-
-        - name: ΣΥΝΟΨΗ ΠΡΑΞΗΣ/ OPERATION SUMMARY
-          translation: OPERATION SUMMARY
-          type: "string"
-          missingValue:
-          description:
-
-        - name: ΗΜ/ΝΙΑ ΕΝΑΡΞΗΣ ΤΗΣ ΠΡΑΞΗΣ / OPERATION START DATE
-          translation: OPERATION START DATE
-          type: "date"
-          missingValue:
-          description:
-
-        - name: ΚΑΤΑΛΗΚΤΙΚΗ ΗΜΕΡΟΜΗΝΙΑ ΠΡΑΞΗΣ / OPERATION END DATE
-          translation: OPERATION END DATE
-          type: "date"
-          missingValue:
-          description:
-
-        - name: ΣΥΝΟΛΙΚΗ ΕΠΙΛΕΞΙΜΗ ΔΑΠΑΝΗ ΠΟΥ ΔΙΑΤΕΘΗΚΕ ΣΤΗΝ ΠΡΑΞΗ (ΠΡΟΫΠΟΛΟΓΙΣΜΟΣ)/ TOTAL ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION
-          translation: TOTAL ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION
-          type: "number"
-          missingValue: ""
-          description:
-
-        - name: ΠΟΣΟΣΤΟ ΣΥΓΧΡΗΜΑΤΟΔΟΤΗΣΗΣ ΤΗΣ ΕΝΩΣΗΣ ΑΝΑ ΑΞΟΝΑ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ/ UNION Co-FINANCING RATE AS PER PRIORITY AXIS
-          translation: UNION Co-FINANCING RATE  AS PER PRIORITY AXIS
-          type: "string"
-          missingValue:
-          description:
-
-        - name: ΤΑΧΥΔΡΟΜΙΚΟΣ ΚΩΔΙΚΑΣ ή ’ΛΛΗ ΚΑΤΑΛΛΗΛΗ ΕΝΔΕΙΞΗ ΤΟΠΟΘΕΣΙΑΣ/ POSTCODE OR OTHER APPROPRIATE LOCATION INDICATOR
-          translation: POSTCODE OR OTHER APPROPRIATE LOCATION INDICATOR
-          type: "string"
-          missingValue:
-          description:
-
-        - name: ΧΩΡΑ/ COUNTRY
-          translation: COUNTRY
-          type: "string"
-          missingValue:
-          description:
-
-        - name: ΟΝΟΜΑΣΙΑ ΚΑΤΗΓΟΡΙΑΣ ΠΑΡΕΜΒΑΣΗΣ ΤΗΣ ΠΡΑΞΗΣ/ NAME OF CATEGORY OF INTERVENTION FOR THE OPERATION
-          translation: NAME OF CATEGORY OF INTERVENTION FOR THE OPERATION
-          type: "string"
-          missingValue:
-          description:
-
-        - name: ΤΕΛΕΥΤΑΙΑ ΕΝΗΜΕΡΩΣΗ ΚΑΤΑΛΟΓΟΥ/ LAST UPDATE OF THE LIST
-          translation: LAST UPDATE OF THE LIST
-          type: "date"
-          missingValue:
-          description:
+  currency_code: EUR
+  parser_options:
+    delimiter: ;
+  path: ListOfOperations_20160513.csv
+  publication_date: null
+  schema:
+    fields:
+    - description: null
+      missingValue: null
+      name: ΕΠΙΧΕΙΡΗΣΙΑΚΟ ΠΡΟΓΡΑΜΜΑ/ OPERATIONAL PROGRAMME
+      translation: OPERATIONAL PROGRAMME
+      type: string
+    - description: null
+      missingValue: null
+      name: ΑΞΟΝΑΣ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ/PRIORITY
+      translation: PRIORITY
+      type: string
+    - description: null
+      missingValue: null
+      name: TAMEIO/ FUND
+      translation: FUND
+      type: string
+    - description: null
+      missingValue: null
+      name: ΟΝΟΜΑΣΙΑ ΔΙΚΑΙΟΥΧΟΥ / BENEFICIARY NAME
+      translation: BENEFICIARY NAME
+      type: string
+    - description: null
+      missingValue: null
+      name: ΟΝΟΜΑΣΙΑ ΠΡΑΞΗΣ / OPERATION NAME
+      translation: OPERATION NAME
+      type: string
+    - description: null
+      missingValue: null
+      name: ΣΥΝΟΨΗ ΠΡΑΞΗΣ/ OPERATION SUMMARY
+      translation: OPERATION SUMMARY
+      type: string
+    - description: null
+      missingValue: null
+      name: ΗΜ/ΝΙΑ ΕΝΑΡΞΗΣ ΤΗΣ ΠΡΑΞΗΣ / OPERATION START DATE
+      translation: OPERATION START DATE
+      type: date
+    - description: null
+      missingValue: null
+      name: ΚΑΤΑΛΗΚΤΙΚΗ ΗΜΕΡΟΜΗΝΙΑ ΠΡΑΞΗΣ / OPERATION END DATE
+      translation: OPERATION END DATE
+      type: date
+    - description: null
+      missingValue: ''
+      name: ΣΥΝΟΛΙΚΗ ΕΠΙΛΕΞΙΜΗ ΔΑΠΑΝΗ ΠΟΥ ΔΙΑΤΕΘΗΚΕ ΣΤΗΝ ΠΡΑΞΗ (ΠΡΟΫΠΟΛΟΓΙΣΜΟΣ)/ TOTAL
+        ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION
+      translation: TOTAL ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION
+      type: number
+    - description: null
+      missingValue: null
+      name: ΠΟΣΟΣΤΟ ΣΥΓΧΡΗΜΑΤΟΔΟΤΗΣΗΣ ΤΗΣ ΕΝΩΣΗΣ ΑΝΑ ΑΞΟΝΑ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ/ UNION Co-FINANCING
+        RATE AS PER PRIORITY AXIS
+      translation: UNION Co-FINANCING RATE  AS PER PRIORITY AXIS
+      type: string
+    - description: null
+      missingValue: null
+      name: ΤΑΧΥΔΡΟΜΙΚΟΣ ΚΩΔΙΚΑΣ ή ’ΛΛΗ ΚΑΤΑΛΛΗΛΗ ΕΝΔΕΙΞΗ ΤΟΠΟΘΕΣΙΑΣ/ POSTCODE OR
+        OTHER APPROPRIATE LOCATION INDICATOR
+      translation: POSTCODE OR OTHER APPROPRIATE LOCATION INDICATOR
+      type: string
+    - description: null
+      missingValue: null
+      name: ΧΩΡΑ/ COUNTRY
+      translation: COUNTRY
+      type: string
+    - description: null
+      missingValue: null
+      name: ΟΝΟΜΑΣΙΑ ΚΑΤΗΓΟΡΙΑΣ ΠΑΡΕΜΒΑΣΗΣ ΤΗΣ ΠΡΑΞΗΣ/ NAME OF CATEGORY OF INTERVENTION
+        FOR THE OPERATION
+      translation: NAME OF CATEGORY OF INTERVENTION FOR THE OPERATION
+      type: string
+    - description: null
+      missingValue: null
+      name: ΤΕΛΕΥΤΑΙΑ ΕΝΗΜΕΡΩΣΗ ΚΑΤΑΛΟΓΟΥ/ LAST UPDATE OF THE LIST
+      translation: LAST UPDATE OF THE LIST
+      type: date
+  title: The list of all projects for the period 2014-2020
+scraper_required: false
+sources:
+- name: ESIF data for Greece 2014-2020
+  web: https://www.espa.gr/en/pages/default.aspx
+title: European Structural and Investment Funds (ESIF) for the period 2014-2020 for
+  Greece

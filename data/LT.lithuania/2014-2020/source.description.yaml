@@ -1,71 +1,55 @@
-title: Lithuania's ESIF data 2014-2020
-
-description: For 2014-2020, there is a web-portal with the option to download a spreadsheet. The resulting file, however, contains less information than is available on the portal. Thus, scraping is necessary.
-language: LT
-
-sources:
-  - name: Lithuania landing page 2014-2020
-    web:  http://www.esinvesticijos.lt/en/
-
-  - name: Link to original Excel file
-    web: http://www.esinvesticijos.lt/lt/paraiskos_ir_projektai/xlsexport
-
-scraper_required: false
-
 contributors:
-  - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
-
+- Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
+description: For 2014-2020, there is a web-portal with the option to download a spreadsheet.
+  The resulting file, however, contains less information than is available on the
+  portal. Thus, scraping is necessary.
+language: LT
 resources:
-  - title: Web-portal with Lithuania's ESIF data 2014-2020 
-    path: Paraiškų informacija_20161030.csv
-    publication_date: 29-09-2016
-    
-
-    fund_acronym: 
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2014LT16MAOP001
+    fund_acronym: null
     funding_period: 2014-2020
-    cci_code: 2014LT16MAOP001
-    currency_code: EUR
-
-
-
-    schema:
-      fields:
-        - name: Projektas
-          translates_to: Project
-          maps_to: project_name
-
-        - name: Kodas
-          translates_to: Project code
-          maps_to: project_id
-
-        - name: Pareiškėjas/ Vykdytojas 
-          translates_to: Author / Artist
-          maps_to: beneficiary_name
-
-        - name: Paraiškos būsena
-          translates_to: Claim status
-          maps_to: # Loic: What is the status about? 
-
-        - name: Projekto vertė paraiškoje
-          translates_to: Value of the project application
-          maps_to: # Loic: this field is unclear
-
-        - name: Prašomas finansavimas
-          translates_to: requested funding
-          maps_to: total_amount_applied
-
-        - name: Projekto išlaidų suma
-          translates_to: The project cost
-          maps_to: total_amount
-
-        - name: Finansavimas
-          translates_to: Financing
-          maps_to: # Loic: what financing exactly?
-
-        - name: Išmokėta finansavimo suma
-          translates_to: Paid-financing
-          maps_to: # Loic: the field total_amount_paid_out will probably be introduced in the future
-
-        - name: Sutarties pasirašymo data
-          translates_to: Contract date
-          maps_to: # Loic: the field agreement_date should perhaps be introduced
+  currency_code: EUR
+  path: Paraiškų informacija_20161030.csv
+  publication_date: 29-09-2016
+  schema:
+    fields:
+    - maps_to: project_name
+      name: Projektas
+      translates_to: Project
+    - maps_to: project_id
+      name: Kodas
+      translates_to: Project code
+    - maps_to: beneficiary_name
+      name: Pareiškėjas/ Vykdytojas
+      translates_to: Author / Artist
+    - maps_to: null
+      name: Paraiškos būsena
+      translates_to: Claim status
+    - maps_to: null
+      name: Projekto vertė paraiškoje
+      translates_to: Value of the project application
+    - maps_to: total_amount_applied
+      name: Prašomas finansavimas
+      translates_to: requested funding
+    - maps_to: total_amount
+      name: Projekto išlaidų suma
+      translates_to: The project cost
+    - maps_to: null
+      name: Finansavimas
+      translates_to: Financing
+    - maps_to: null
+      name: Išmokėta finansavimo suma
+      translates_to: Paid-financing
+    - maps_to: null
+      name: Sutarties pasirašymo data
+      translates_to: Contract date
+  title: Web-portal with Lithuania's ESIF data 2014-2020
+scraper_required: false
+sources:
+- name: Lithuania landing page 2014-2020
+  web: http://www.esinvesticijos.lt/en/
+- name: Link to original Excel file
+  web: http://www.esinvesticijos.lt/lt/paraiskos_ir_projektai/xlsexport
+title: Lithuania's ESIF data 2014-2020

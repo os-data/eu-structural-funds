@@ -1,50 +1,36 @@
-title: ESF Data for Nordrhein-Westfalen
-
+contributors:
+- Bela Seeger (bela.seeger@okfn.de)
 description: The beneficiary list for the ESF (2007-2013) program for Nordrhein-Westfalen.
 language: de
-
-sources:
-  - name: ESF Nordrhein-Westfalen
-    web: https://www.mais.nrw/esf-2007-2013
-
-scraper_required: false
-
-contributors:
-  - Bela Seeger (bela.seeger@okfn.de)
-
 resources:
-
-  - title: ERDF Nordrhein-Westfalen
-
-    path: ESF-Data-NRW-2007-2013.csv
-    #url: http://www.arbeit.nrw.de/pdf/esf/operationelles_programm_beguenstigtenverzeichnis_barr.pdf
-
-    publication_date: "2015-12-31"
-
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007DE052PO008
     fund_acronym: ESF
     funding_period: 2007-2013
-    cci_code: 2007DE052PO008
-    currency_code: EUR
-
-    schema:
-      fields:
-
-        - name: Jahr der Bewilligung
-          translates_to: Year of Approval / year of completion
-          maps_to: approval_date
-
-        - name: Name des Begünstigten
-          translates_to: Beneficiary name
-          maps_to: beneficiary_name
-
-        - name: Sitz des Begünstigten
-          translates_to: Beneficiary adress
-          maps_to: beneficiary_address
-
-        - name: Bezeichnung des Vorhabens
-          translates_to: operation name
-          maps_to: project_name
-
-        - name: Zuwendungen des Landes NRW
-          translates_to: member state amount
-          maps_to: member_state_amount
+  currency_code: EUR
+  path: ESF-Data-NRW-2007-2013.csv
+  publication_date: '2015-12-31'
+  schema:
+    fields:
+    - maps_to: approval_date
+      name: Jahr der Bewilligung
+      translates_to: Year of Approval / year of completion
+    - maps_to: beneficiary_name
+      name: Name des Begünstigten
+      translates_to: Beneficiary name
+    - maps_to: beneficiary_address
+      name: Sitz des Begünstigten
+      translates_to: Beneficiary adress
+    - maps_to: project_name
+      name: Bezeichnung des Vorhabens
+      translates_to: operation name
+    - maps_to: member_state_amount
+      name: Zuwendungen des Landes NRW
+      translates_to: member state amount
+  title: ERDF Nordrhein-Westfalen
+scraper_required: false
+sources:
+- name: ESF Nordrhein-Westfalen
+  web: https://www.mais.nrw/esf-2007-2013
+title: ESF Data for Nordrhein-Westfalen

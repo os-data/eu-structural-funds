@@ -1,71 +1,56 @@
-title: ESF Data for Saarland (2014-2020)
-
+contributors:
+- Michael Peters (michael.peters@okfn.de)
 description: The beneficiary list of the ESF programme for Saarland.
 language: de
-
-sources:
-    - name: ESF Saarland 2014-2020
-      web: http://www.saarland.de/36004.htm
-
-    - name: Original link to Excel file
-      web: http://www.saarland.de/dokumente/thema_strukturfondsfoerderung/Vorhabenliste-25-05-2016.xlsx
-
-scraper_required: false
-
-
-contributors:
-  - Michael Peters (michael.peters@okfn.de)
-
 resources:
-  - title: ESF in Saarland 2014-2020
-    path: Vorhabenliste-25-05-2016_Saarland.json
-    publication_date: "2016-08-25"
-    parser_options:
-      headers: 11
-
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2014DE05SFOP011
     fund_acronym: ESF
     funding_period: 2014-2020
-    cci_code: 2014DE05SFOP011
-    currency_code: EUR
-
-    schema:
-      fields:
-        - name: Name des Begünstigten/ beneficiary name
-          translates_to: beneficiary name
-          maps_to:  beneficiary_name
-
-        - name: Bezeichnung/Zusammenf. d. Vorhabens/ operation name
-          translates_to: operation name
-          maps_to: project_name
-
-        - name: Projektbeginn/ operation start date
-          translates_to: starting date of the project
-          maps_to: starting_date
-
-        - name: Projektende/
-          translates_to: completion date of the project
-          maps_to: completion_date
-
-        - name: "Gesamtbetrag der förderfähigen Ausgaben/ "
-          translates_to: total eligible expenditure
-          maps_to: total_amount_eligible
-
-        - name: Kofinanzierungssatz Prio-Achse in %/
-          translates_to: EU co-financing rate in percent
-          maps_to: eu_cofinancing_amount
-
-        - name: Gemeindekennziffer (Vorhaben)/
-          translates_to: operations regional code
-          maps_to: beneficiary_nuts_region
-
-        - name: Land/
-          translates_to: name of country
-          maps_to: beneficiary_country
-
-        - name: Interventionsbereich
-          translates_to: EU intervention category (number) which declares under which category the company applied for funds
-          maps_to: theme_code
-
-        - name: Thematisches Ziel/
-          translates_to: thematic objective
-          maps_to: theme_name
+  currency_code: EUR
+  parser_options:
+    headers: 11
+  path: Vorhabenliste-25-05-2016_Saarland.json
+  publication_date: '2016-08-25'
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: Name des Begünstigten/ beneficiary name
+      translates_to: beneficiary name
+    - maps_to: project_name
+      name: Bezeichnung/Zusammenf. d. Vorhabens/ operation name
+      translates_to: operation name
+    - maps_to: starting_date
+      name: Projektbeginn/ operation start date
+      translates_to: starting date of the project
+    - maps_to: completion_date
+      name: Projektende/
+      translates_to: completion date of the project
+    - maps_to: total_amount_eligible
+      name: 'Gesamtbetrag der förderfähigen Ausgaben/ '
+      translates_to: total eligible expenditure
+    - maps_to: eu_cofinancing_amount
+      name: Kofinanzierungssatz Prio-Achse in %/
+      translates_to: EU co-financing rate in percent
+    - maps_to: beneficiary_nuts_region
+      name: Gemeindekennziffer (Vorhaben)/
+      translates_to: operations regional code
+    - maps_to: beneficiary_country
+      name: Land/
+      translates_to: name of country
+    - maps_to: theme_code
+      name: Interventionsbereich
+      translates_to: EU intervention category (number) which declares under which
+        category the company applied for funds
+    - maps_to: theme_name
+      name: Thematisches Ziel/
+      translates_to: thematic objective
+  title: ESF in Saarland 2014-2020
+scraper_required: false
+sources:
+- name: ESF Saarland 2014-2020
+  web: http://www.saarland.de/36004.htm
+- name: Original link to Excel file
+  web: http://www.saarland.de/dokumente/thema_strukturfondsfoerderung/Vorhabenliste-25-05-2016.xlsx
+title: ESF Data for Saarland (2014-2020)

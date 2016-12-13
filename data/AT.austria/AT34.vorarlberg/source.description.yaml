@@ -1,49 +1,34 @@
-title: ERDF Data for Vorarlberg
-
+contributors:
+- Michael Peters (michael.peters@okfn.de)
 description: The beneficiary list for the ERDF (2007-2013) program for Vorarlberg.
 language: de
-
-sources:
-  - name: ERDF Vorarlberg
-    web:  http://www.innovation-Vorarlberg.at/de/projekte/verzeichnis/projektliste.php
-
-scraper_required: false
-
-contributors:
-  - Michael Peters (michael.peters@okfn.de)
-
 resources:
-
-  - title: ERDF Vorarlberg 2007-2013
-  
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007AT162PO003
     fund_acronym: ERDF
     funding_period: 2007-2013
-    cci_code: 2007AT162PO003
-    currency_code: EUR
-
-
-    path: ERDF Vorarlberg 2007-2013.json
-    #url: http://www.innovation-Vorarlberg.at/de/projekte/verzeichnis/Beguenstigte_25.08.15_R57.pdf
-
-    publication_date: "2015-08-25"
-
-
-    schema:
-      fields:
-        - name: _source
-          translates_to: source
-
-        - name: beneficiary
-          translates_to: Beneficiary name
-          maps_to: beneficiary_name
-
-        - name: name_of_the_operation
-          translates_to: operation name
-          maps_to: project_description
-
-        - name: allocated_public_funding
-          translates_to: Public Contribution (EU and national)
-          maps_to: total_amount
-
-        - name: status
-          translates_to: Status of Project - G confirmed A paid
+  currency_code: EUR
+  path: ERDF Vorarlberg 2007-2013.json
+  publication_date: '2015-08-25'
+  schema:
+    fields:
+    - name: _source
+      translates_to: source
+    - maps_to: beneficiary_name
+      name: beneficiary
+      translates_to: Beneficiary name
+    - maps_to: project_description
+      name: name_of_the_operation
+      translates_to: operation name
+    - maps_to: total_amount
+      name: allocated_public_funding
+      translates_to: Public Contribution (EU and national)
+    - name: status
+      translates_to: Status of Project - G confirmed A paid
+  title: ERDF Vorarlberg 2007-2013
+scraper_required: false
+sources:
+- name: ERDF Vorarlberg
+  web: http://www.innovation-Vorarlberg.at/de/projekte/verzeichnis/projektliste.php
+title: ERDF Data for Vorarlberg

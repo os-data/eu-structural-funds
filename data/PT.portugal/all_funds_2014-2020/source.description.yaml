@@ -1,75 +1,53 @@
-
-title: ERDF and ESF data for Portugal 2014-2020
-
-description:
-language: PT
-
-sources:
-  - name: ERDF and ESF data for Portugal 2014-2020
-    web:  https://www.portugal2020.pt/Portal2020/OperacoesAprovadas
-
-scraper_required: false
-
 contributors:
-  - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
-
+- Michael Peters <michael.peters@okfn.de> (http://okfn.de)
+description: null
+language: PT
 resources:
-
-
-
-  - title: ERDF and ESF data for Portugal 2014-2020
-
-    path: Portugal_all_funds_2014-2020.json
-    #url: https://www.portugal2020.pt/Portal2020/Media/Default/Docs/Operacoes%20Aprovadas/Lista%20de%20opera%C3%A7%C3%B5es%2031.08.2016_NCD.xlsx
-    publication_date: "2016-08-31"
-    
+- add_categories:
     fund_acronym:
-      - FEDER: [ERDF]
-      - FSE: [ESF]
-      - CF: [CF]
-      
+      CF: CF
+      FEDER: ERDF
+      FSE: ESF
+  add_constants:
+    cci_program_code: null
     funding_period: 2014-2020
-    cci_code: 
-    currency_code: EUR  
-
-      # any other field from fiscal.fields.yaml that is constant
-
-    schema:
-      fields:
-        - name: Código da Operação | Operation Code
-          translates_to: operation code
-          maps_to: cci_program_code
-
-        - name: Programa Operacional | Operational Programme
-          translates_to: operational programme
-          maps_to: cci_program_title
-
-        - name: Eixo Prioritário do PO | OP Priority Axis
-          translates_to: OP Priority Axis (number and label)
-          maps_to: priority_label
-
-        - name: Nome do Beneficiário | Beneficiary Name
-          translates_to: beneficiary
-          maps_to: beneficiary_name
-
-        - name: Nome da Operação | Operation Name
-          translates_to: project title
-          maps_to: project_name
-
-        - name: Despesas Elegíveis Totais Atribuídas à Operação | Total Eligible Expenditure Allocated to the Operation
-          translates_to: Total Eligible Expenditure Allocated to the Operation
-          maps_to: total_amount_eligible
-
-        - name: FEEI | ESI Fund
-          translates_to: Fund (either ERDF or ESF)
-
-        - name: Fundo Total Aprovado | Total Aproved Fund
-          translates_to: total approved amount
-          maps_to: total_amount
-
-        - name: Objetivo Temático | Thematic Objective
-          translates_to: Thematic objective
-          maps_to: theme_name
-
-        - name: Prioridade de Investimento | Investment Priority
-          translates_to:  Investment Priority
+  currency_code: EUR
+  path: Portugal_all_funds_2014-2020.json
+  publication_date: '2016-08-31'
+  schema:
+    fields:
+    - maps_to: cci_program_code
+      name: Código da Operação | Operation Code
+      translates_to: operation code
+    - maps_to: cci_program_title
+      name: Programa Operacional | Operational Programme
+      translates_to: operational programme
+    - maps_to: priority_label
+      name: Eixo Prioritário do PO | OP Priority Axis
+      translates_to: OP Priority Axis (number and label)
+    - maps_to: beneficiary_name
+      name: Nome do Beneficiário | Beneficiary Name
+      translates_to: beneficiary
+    - maps_to: project_name
+      name: Nome da Operação | Operation Name
+      translates_to: project title
+    - maps_to: total_amount_eligible
+      name: Despesas Elegíveis Totais Atribuídas à Operação | Total Eligible Expenditure
+        Allocated to the Operation
+      translates_to: Total Eligible Expenditure Allocated to the Operation
+    - name: FEEI | ESI Fund
+      translates_to: Fund (either ERDF or ESF)
+    - maps_to: total_amount
+      name: Fundo Total Aprovado | Total Aproved Fund
+      translates_to: total approved amount
+    - maps_to: theme_name
+      name: Objetivo Temático | Thematic Objective
+      translates_to: Thematic objective
+    - name: Prioridade de Investimento | Investment Priority
+      translates_to: Investment Priority
+  title: ERDF and ESF data for Portugal 2014-2020
+scraper_required: false
+sources:
+- name: ERDF and ESF data for Portugal 2014-2020
+  web: https://www.portugal2020.pt/Portal2020/OperacoesAprovadas
+title: ERDF and ESF data for Portugal 2014-2020
