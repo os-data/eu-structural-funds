@@ -72,9 +72,11 @@ def map_fields(datapackage, resources, mapper='maps_to', ignore=None):
     info('Mapping tables: %s', mapping_tables)
     info('Updated datapackage: %s', updated_datapackage)
 
+    stats = {'mapping_tables': mapping_tables}
+
     return (updated_datapackage,
             new_resources,
-            mapping_tables)
+            stats)
 
 
 # Mapping tables
