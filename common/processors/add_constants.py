@@ -22,9 +22,12 @@ def inject_constants(row, **constants):
 
     """
 
+    stats = '_pass'
+
     for key, value in constants.items():
         row[key] = value
-    return row
+
+    return row, stats
 
 
 if __name__ == '__main__':
