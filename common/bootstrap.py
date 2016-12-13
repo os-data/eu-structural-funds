@@ -336,7 +336,15 @@ class Source(object):
 
     def save_pipeline_spec(self):
         with open(join(self.folder, PIPELINE_FILE), 'w+') as stream:
-            yaml.dump(self.pipeline_spec, stream)
+            yaml.dump(self.pipeline_spec, stream,
+                      default_flow_style=False,
+                      allow_unicode=True)
+
+    def save_description(self):
+        with open(join(self.folder, SOURCE_FILE), 'w+') as stream:
+            yaml.dump(self.description, stream,
+                      default_flow_style=False,
+                      allow_unicode=True)
 
     @property
     def processors(self):
@@ -424,6 +432,9 @@ class Source(object):
 
     def __str__(self):
         return self.id
+
+    def __repr__(self):
+        return '<Source: {}>'.format(self)
 
 
 @command('db')
