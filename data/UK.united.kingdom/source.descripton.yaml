@@ -1,7 +1,7 @@
 
 title: ESF and ERDF Data for the United Kingdom (2007-2013 )
 
-description: The beneficiary list of the ESF programme for Niedersachsen.
+description: The beneficiary list of the ESF and ERDF programme for the UK.
 language: de
 
 sources:
@@ -22,14 +22,17 @@ resources:
 
   - title: ESF and ERDF in the United Kingdom 2007-2013
 
-    url: ‪C:\Users\Michael\Documents\GitHub\eu-structural-funds\data\UK.united.kingdom\UK_subsidies_final_LAU1.csv
+    path: UK_subsidies_final_LAU1.csv
 
     publication_date: 2015-12-31
-
-    constant_fields:
-      fund_name: ESF and ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
+    
+    fund_acronym:
+      - ERDF: [ERDF]
+      - ESF: [ESF]
+      
+    funding_period: 2007-2013
+    cci_code: 
+    currency_code: EUR
 
       # any other field from fiscal.fields.yaml that is constant
 

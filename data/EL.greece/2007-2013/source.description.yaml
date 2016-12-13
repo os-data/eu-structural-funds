@@ -1,75 +1,56 @@
-title: European Regional Development Fund (ERDF), European Social Fund (ESF) and Cohesion Funds for Greece
-
-description: Information about the projects to which Greece has allocated the funds it has received from the EU during the period 2007-2013.
-language: GR
-
-sources:
-  - name: Anaptyxi
-    web:  http://anaptyxi.gov.gr/Default.aspx?tabid=251&language=en-US
-
-  #- name: National Strategicg Reference Framework (NSFR 2007-2013)
-    #web: https://2007-2013.espa.gr/en/Pages/Default.aspx
-
-scraper_required: false
-
 contributors:
-  - Olaya Argueso <arguesoperezolaya@gmail.com>
-
-
+- Olaya Argueso <arguesoperezolaya@gmail.com>
+description: Information about the projects to which Greece has allocated the funds
+  it has received from the EU during the period 2007-2013.
+language: GR
 resources:
-  - title: All Funds Data Greece
-    path: all_funds_Greece_2007-2013.json
-    #url: http://anaptyxi.gov.gr/GetData.ashx?queryType=projects
-
-    publication_date: "2016-06-30"
-
-
-    constants:
-      currency: EUR
-
-    schema:
-      fields:
-        - name: trexousaKatastash
-          translates_to: unclear some number
-          maps_to: priority_number
-
-        - name: title
-          translates_to: Title
-          maps_to: project_name
-
-        - name: body
-          translates_to: beneficiary
-          maps_to: beneficiary_name
-
-        - name: budget
-          translates_to: Budget
-          maps_to: total_amount_eligible
-
-        - name: contracts
-          translates_to: contracts number
-
-        - name: payments
-          translates_to: Payments
-          maps_to: total_amount
-
-        - name: perifereia
-          translates_to: unclear some number
-
-        - name: startDate
-          translates_to: Start Date
-          maps_to: starting_date
-
-        - name: endDate
-          translates_to: End Date
-          maps_to: completion_date
-
-        - name: countIpoergon
-          translates_to: unclear some number
-
-        - name: epKodikos
-          translates_to: EU code
-          maps_to: theme_code
-
-        - name: kodikos
-          translates_to: project id #this is an assumption
-          maps_to: project_id
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: null
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: all_funds_Greece_2007-2013.json
+  publication_date: '2016-06-30'
+  schema:
+    fields:
+    - maps_to: priority_number
+      name: trexousaKatastash
+      translates_to: unclear some number
+    - maps_to: project_name
+      name: title
+      translates_to: Title
+    - maps_to: beneficiary_name
+      name: body
+      translates_to: beneficiary
+    - maps_to: total_amount_eligible
+      name: budget
+      translates_to: Budget
+    - name: contracts
+      translates_to: contracts number
+    - maps_to: total_amount
+      name: payments
+      translates_to: Payments
+    - name: perifereia
+      translates_to: unclear some number
+    - maps_to: starting_date
+      name: startDate
+      translates_to: Start Date
+    - maps_to: completion_date
+      name: endDate
+      translates_to: End Date
+    - name: countIpoergon
+      translates_to: unclear some number
+    - maps_to: theme_code
+      name: epKodikos
+      translates_to: EU code
+    - maps_to: project_id
+      name: kodikos
+      translates_to: project id
+  title: All Funds Data Greece
+scraper_required: false
+sources:
+- name: Anaptyxi
+  web: http://anaptyxi.gov.gr/Default.aspx?tabid=251&language=en-US
+title: European Regional Development Fund (ERDF), European Social Fund (ESF) and Cohesion
+  Funds for Greece

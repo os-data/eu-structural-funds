@@ -1,33 +1,30 @@
-nl_the_netherlands:
+NL_the_netherlands:
   pipeline:
-  - {run: read_description}
-  - run: stream_from_path
-    parameters:
-      streamer: tabulator
-      encoding: ISO-8859-2
-      parser_options:
-        delimiter: ";"
-        quotechar: '"'
-
+  - run: read_description
+  - run: ingest_local_file
   - run: nop
     validate: true
-
-  - parameters: {out-file: source.datapackage.zip}
+  - parameters:
+      out-file: source.datapackage.zip
     run: dump
     validate: true
-
-  - {run: NL.parse_dates}
-  - {run: show_sample_in_console}
-
-  - {run: map_columns}
-  - {run: reshape_data}
-  - {run: cast_to_fiscal_schema}
-  - {run: load_fiscal_datapackage}
-  - parameters: {out-file: fiscal.datapackage.zip}
+  - run: NL.parse_dates
+  - run: show_sample_in_console
+  - run: map_fields
+  - run: concatenate_identical_resources
+  - run: sniff_and_cast
+  - run: reshape_data
+  - run: add_geocodes
+  - run: add_constants
+  - run: add_categories
+  - run: load_fiscal_datapackage
+  - parameters:
+      out-file: fiscal.datapackage.zip
     run: dump
     validate: true
-  - {run: show_sample_in_console}
-  - parameters: {in-file: fiscal.datapackage.zip}
+  - run: show_sample_in_console
+  - parameters:
+      in-file: fiscal.datapackage.zip
     run: fiscal.upload
   schedule:
     crontab: 0 0 1 1 *

@@ -1,64 +1,111 @@
-title: Poland's ESF & ERDF data 2007-today
-
+contributors:
+- Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
 description: Large csv file with all data from 2007-today
 language: PL
-
-sources:
-  - name: Portal Funduszy Europejskich
-    web:  http://www.funduszeeuropejskie.gov.pl/
-
-  - name: mapa dotacji UE
-    web: http://www.mapadotacji.gov.pl/projekty
-
-  - name: Link to orignal file
-    web: http://www.mapadotacji.gov.pl/export?sort=none
-
-scraper_required: false
-
-contributors:
-  - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
-
 resources:
-  - title: Poland's ESF & ERDF data 2007-today
-    path: lista_projektow.csv
-    publication_date: "2016-09-27"
-    encoding: windows-1250
-    parser_options:
-      delimiter: ';'
-
-    constant_fields:
-      fund_name: ERDF, ESF
-      offical_period: 2007-2013 & 2014-2020
-      currency_code: PLN
-
-      # any other field from fiscal.fields.yaml that is constant
-
-    schema:
-      fields:
-        - name: Tytuł projektu
-          translates_to: the title of the project
-          maps_to: project_name
-
-        - name: Nazwa beneficjenta
-          translates_to: the name of the beneficiary
-          maps_to: beneficiary_name
-
-        - name: Wartość projektu [zł]
-          translates_to: The value of the project [PLN]
-          maps_to: total_amount
-
-        - name: Dofinansowanie z EU [zł]
-          translates_to: Funding from the EU [PLN]
-          maps_to: eu_cofinancing_amount
-
-        - name: Multimedia
-          translates_to: Multimedia
-          maps_to: # Loic: no website for now, maybe in the future
-
-        - name: Dziedzina
-          translates_to: field
-          maps_to: # The priority axis is missing but should be added in the future
-
-        - name: Czy projekt jest realizowany na obszarze większym niż jedna jednostka administracyjna?
-          translates_to: Is the project being implemented on an area of more than one administrative unit?
-          maps_to: # Loic: this really looks like a corner case
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: PLN
+  encoding: windows-1250
+  parser_options:
+    delimiter: ;
+  path: Poland_ERDF_2007_2013.csv
+  publication_date: '2016-12-07'
+  schema:
+    fields:
+    - maps_to: project_name
+      name: Tytuł projektu
+      translates_to: the title of the project
+    - maps_to: beneficiary_name
+      name: Nazwa beneficjenta
+      translates_to: the name of the beneficiary
+    - maps_to: total_amount
+      name: Wartość projektu [zł]
+      translates_to: The value of the project [PLN]
+    - maps_to: eu_cofinancing_amount
+      name: Dofinansowanie z EU [zł]
+      translates_to: Funding from the EU [PLN]
+    - maps_to: null
+      name: Multimedia
+      translates_to: Multimedia
+    - maps_to: null
+      name: Dziedzina
+      translates_to: field
+    - maps_to: null
+      name: Czy projekt jest realizowany na obszarze większym niż jedna jednostka
+        administracyjna?
+      translates_to: Is the project being implemented on an area of more than one
+        administrative unit?
+  title: Poland ERDF data 2007-2013
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: PLN
+  encoding: windows-1250
+  parser_options:
+    delimiter: ;
+  path: Poland_ESF_2007_2013.csv
+  publication_date: '2016-12-07'
+  title: Poland ESF data 2007-2013
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: CF
+    funding_period: 2007-2013
+  currency_code: PLN
+  encoding: windows-1250
+  parser_options:
+    delimiter: ;
+  path: Poland_CF_2007_2013.csv
+  publication_date: '2016-12-07'
+  title: Poland CF data 2007-2013
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+  currency_code: PLN
+  encoding: windows-1250
+  parser_options:
+    delimiter: ;
+  path: Poland_ERDF_2014_2020.csv
+  publication_date: '2016-12-07'
+  title: Poland ERDF data 2014-2020
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ESF
+    funding_period: 2014-2020
+  currency_code: PLN
+  encoding: windows-1250
+  parser_options:
+    delimiter: ;
+  path: Poland_ESF_2014_2020.csv
+  publication_date: '2016-12-07'
+  title: Poland ESF data 2014-2020
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: CF
+    funding_period: 2014-2020
+  currency_code: PLN
+  encoding: windows-1250
+  parser_options:
+    delimiter: ;
+  path: Poland_CF_2014_2020.csv
+  publication_date: '2016-12-07'
+  title: Poland CF data 2014-2020
+scraper_required: false
+sources:
+- name: Portal Funduszy Europejskich
+  web: http://www.funduszeeuropejskie.gov.pl/
+- name: mapa dotacji UE
+  web: http://www.mapadotacji.gov.pl/projekty
+- name: Link to orignal file
+  web: http://www.mapadotacji.gov.pl/export?sort=none
+title: Poland's ESF & ERDF data 2007-today

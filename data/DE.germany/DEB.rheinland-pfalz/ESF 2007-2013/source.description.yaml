@@ -12,17 +12,19 @@ scraper_required: false
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
+    fund_acronym: ESF
+    funding_period: 2007-2013
+    cci_code: 2007DE052PO009
+    currency_code: EUR
+
+
+
 resources:
   - title: ESF in Rheinland-Pfalz 2008
 
     path: ESF_Rheinland_Pfalz_2008.json
     #url: http://esf.rlp.de/fileadmin/esf/Dokumente/VdB_2008.pdf
     publication_date: "2010-09-30"
-
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2007-2013
-      currency_code: EUR
 
     schema:
       fields:
@@ -56,10 +58,7 @@ resources:
     #url: http://esf.rlp.de/fileadmin/esf/Dokumente/VdB_2009.pdf
     publication_date: "2010-09-30"
 
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2007-2013
-      currency_code: EUR
+
 
     schema:
       fields:
@@ -93,10 +92,7 @@ resources:
     #url: http://esf.rlp.de/fileadmin/esf/Dokumente/VdB_2010_Stand_06.06.2011.pdf
     publication_date: "2011-06-06"
 
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2007-2013
-      currency_code: EUR
+
 
     schema:
       fields:
@@ -129,10 +125,6 @@ resources:
       #url: http://esf.rlp.de/fileadmin/esf/Dokumente/VdB_2011_Bewilligung_2011.pdf
     publication_date: "2012-06-13"
 
-    constant_fields:
-        fund_name: ESF
-        offical_period: 2007-2013
-        currency_code: EUR
 
     schema:
       fields:
@@ -166,10 +158,6 @@ resources:
       #url: http://esf.rlp.de/fileadmin/esf/Dokumente/VdB_2013.pdf
     publication_date: "2013-05-27"
 
-    constant_fields:
-        fund_name: ESF
-        offical_period: 2007-2013
-        currency_code: EUR
 
     schema:
       fields:
@@ -203,11 +191,7 @@ resources:
       #url: http://esf.rlp.de/fileadmin/esf/Dokumente/Verzeichnis_der_Beg%C3%BCnstigten/140630_Verzeichnis_der_Beg%C3%BCnstigten_2013.pdf
     publication_date: "2014-06-30"
 
-    constant_fields:
-        fund_name: ESF
-        offical_period: 2007-2013
-        currency_code: EUR
-        
+       
     schema:
       fields:
         - name: _source

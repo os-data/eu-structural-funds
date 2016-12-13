@@ -1,73 +1,55 @@
-
-title: ESF Data for Schleswig-Holstein (2014-2020)
-
+contributors:
+- Michael Peters (michael.peters@okfn.de)
 description: The beneficiary list of the ESF programme for Schleswig-Holstein.
 language: de
-
-sources:
-
-  - name: ESF Schleswig-Holstein (2014-2020)
-    web: http://www.ib-sh.de/die-ibsh/foerderprogramme-des-landes/landesprogramm-arbeit/
-
-  - name: Original Excel file link
-    web: http://www.ib-sh.de/fileadmin/user_upload/downloads/Arbeit_Bildung/LPNA/allgemein/ldv.xlsx
-
-scraper_required: false
-
-contributors:
-  - Michael Peters (michael.peters@okfn.de)
-
 resources:
-  - title: ESF in Schleswig-Holstein 2014-2020
-    path: ldv.json
-    publication_date: "2016-06-30"
-    parser_options:
-      headers: 7
-
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2014-2020
-      currency_code: EUR
-
-
-    schema:
-      fields:
-        - name: "Interventions-kategorie"
-          translates_to: name of category of intervention
-          maps_to: theme_name
-
-        - name: Prioritätsachse
-          translates_to: priority axis (name and number)
-          maps_to: priority_number
-
-        - name: "Zuwendungs-empfänger"
-          translates_to: Beneficiary name
-          maps_to: beneficiary_name
-
-        - name: Projekt
-          translates_to: operation name
-          maps_to: project_name
-
-        - name: "Projekt-beginn"
-          translates_to: starting date of the project
-          maps_to: starting_date
-
-        - name: "Projekt-ende"
-          translates_to: completion date of the project
-          maps_to: completion_date
-
-        - name: gesamte Fördersumme
-          translates_to: total eligible expenditure allocated to the operation in €
-          maps_to: total_amount_eligible
-
-        - name: EU-Betrag
-          translates_to: Union co-financing rate in percent
-          maps_to: eu_cofinancing_amount
-
-        - name: "Projekt-standort"
-          translates_to: postal code and city
-          maps_to: beneficiary_city
-
-        - name: Kurzbeschreibung
-          translates_to: project description
-          maps_to: project_description          
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2014DE05SFOP001
+    fund_acronym: ESF
+    funding_period: 2014-2020
+  currency_code: EUR
+  parser_options:
+    headers: 7
+  path: ldv.json
+  publication_date: '2016-06-30'
+  schema:
+    fields:
+    - maps_to: theme_name
+      name: Interventions-kategorie
+      translates_to: name of category of intervention
+    - maps_to: priority_number
+      name: Prioritätsachse
+      translates_to: priority axis (name and number)
+    - maps_to: beneficiary_name
+      name: Zuwendungs-empfänger
+      translates_to: Beneficiary name
+    - maps_to: project_name
+      name: Projekt
+      translates_to: operation name
+    - maps_to: starting_date
+      name: Projekt-beginn
+      translates_to: starting date of the project
+    - maps_to: completion_date
+      name: Projekt-ende
+      translates_to: completion date of the project
+    - maps_to: total_amount_eligible
+      name: gesamte Fördersumme
+      translates_to: total eligible expenditure allocated to the operation in €
+    - maps_to: eu_cofinancing_amount
+      name: EU-Betrag
+      translates_to: Union co-financing rate in percent
+    - maps_to: beneficiary_city
+      name: Projekt-standort
+      translates_to: postal code and city
+    - maps_to: project_description
+      name: Kurzbeschreibung
+      translates_to: project description
+  title: ESF in Schleswig-Holstein 2014-2020
+scraper_required: false
+sources:
+- name: ESF Schleswig-Holstein (2014-2020)
+  web: http://www.ib-sh.de/die-ibsh/foerderprogramme-des-landes/landesprogramm-arbeit/
+- name: Original Excel file link
+  web: http://www.ib-sh.de/fileadmin/user_upload/downloads/Arbeit_Bildung/LPNA/allgemein/ldv.xlsx
+title: ESF Data for Schleswig-Holstein (2014-2020)

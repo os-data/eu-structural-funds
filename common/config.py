@@ -41,5 +41,35 @@ DB_URI = 'sqlite:///{}/metrics.sqlite'
 DB_ENGINE = create_engine(DB_URI.format(ROOT_DIR))
 
 VERBOSE = True
-SAMPLE_SIZE = 15
+LOG_SAMPLE_SIZE = 15
 JSON_FORMAT = dict(indent=4, ensure_ascii=False, default=repr)
+SNIFFER_SAMPLE_SIZE = 100
+SNIFFER_MAX_FAILURE_RATIO = 0.05
+IGNORED_FIELD_TAG = '_ignored'
+UNKNOWN_FIELD_TAG = '_unknown'
+WARNING_CUTOFF = 10
+
+NUMBER_FORMATS = [
+    {'format': 'currency', 'decimalChar': '.', 'groupChar': ','},
+    {'format': 'currency', 'decimalChar': ',', 'groupChar': '.'},
+    {'format': 'currency', 'decimalChar': '.', 'groupChar': ' '},
+    {'format': 'currency', 'decimalChar': ',', 'groupChar': ' '},
+    {'format': 'currency', 'decimalChar': '.', 'groupChar': ''},
+    {'format': 'currency', 'decimalChar': '.', 'groupChar': '`'},
+    {'format': 'currency', 'decimalChar': ',', 'groupChar': '\''},
+    {'format': 'currency', 'decimalChar': ',', 'groupChar': ' '},
+]
+
+DATE_FORMATS = [
+    {'format': 'fmt:%y'},
+    {'format': 'fmt:%Y'},
+    {'format': 'fmt:%d/%m/%Y'},
+    {'format': 'fmt:%d-%b-%Y'},  # abbreviated month
+    {'format': 'fmt:%y-%m-%d'},
+    {'format': 'fmt:%Y-%m-%d'},
+    {'format': 'fmt:%y.%m.%d'},
+    {'format': 'fmt:%d.%m.%Y'},
+    {'format': 'fmt:%d.%m.%y'},
+    {'format': 'fmt:%Y-%m-%d 00:00:00'},
+    {'format': 'fmt:%Y-%m-%d 00:00:00.000'},
+]

@@ -1,113 +1,84 @@
-title: ERDF and ESF data for Sweden 2007-2013
-
-description: Swedish ESIF data is available via two web portals, one for ESF, and one for ERDF. There appears to be another fund with the name Integration fund. It may be necessary to investigate further whether the services provided via that fund are part of the ESF data provided. Moreover, data on ERDF is available from 2007-today, while ESF data is only available from 2007-2013, with a second portal in the works for 2014-today (thus far only a website is available that could be scraped).
-language: SE
-
-sources:
-  - name: Swedish ERDF and ESF 2007 - 2013
-    web: http://projektbank.tillvaxtverket.se/projektbanken#page=eruf
-
-scraper_required: false # this is not really a scraper rather a
-
 contributors:
-  - Michael Peters michael.peters
-
+- Michael Peters michael.peters
+description: Swedish ESIF data is available via two web portals, one for ESF, and
+  one for ERDF. There appears to be another fund with the name Integration fund. It
+  may be necessary to investigate further whether the services provided via that fund
+  are part of the ESF data provided. Moreover, data on ERDF is available from 2007-today,
+  while ESF data is only available from 2007-2013, with a second portal in the works
+  for 2014-today (thus far only a website is available that could be scraped).
+language: SE
 resources:
-  - title: Swedish ERDF data 2007-today
-
-    path: Sweden_all_funds_2007-2013.json
-    #url: http://projektbank.tillvaxtverket.se/projektbanken#page=eruf
-
-    publication_date: 27-09-2016
-
-    constant_fields:
-      fund_name: ERDF and ESF
-      offical_period: 2007-2013
-      currency_code: KR
-
-    schema:
-      fields:
-        - name: _source
-          translates_to: source
-
-        - name: ärende-id
-          translates_to: Issue ID
-          maps_to: project_id
-
-        - name: projektnamn_short
-          translates_to: Project name (short)
-
-        - name: stödmottagare_short
-          translates_to: project id
-
-        - name: projekt_starttid
-          translates_to: Project starting time
-          maps_to: starting_date
-
-        - name: projekt_sluttid
-          translates_to: project ending time
-          maps_to: completion_date
-
-        - name: beviljat_belopp_-_sek
-          translates_to: amount granted - sec
-          maps_to: total_amount # sometimes the funds are granted in SKE...
-
-        - name: beviljat_belopp_-_euro
-          translates_to: amount granted - Euro
-          maps_to: total_amount # ...and sometimes in EUR, never both
-
-        - name: projektnamn
-          translates_to: Project name
-          maps_to: project_name
-
-        - name: projektbeskrivning
-          translates_to: project description
-          maps_to: project_description
-
-        - name: pågår_slut
-          translates_to: project status
-
-        - name: stödmottagare
-          translates_to: project id
-          maps_to: project_id
-
-        - name: projektledare
-          translates_to: person responsible for project
-
-        - name: projektledare_telnr
-          translates_to: telephone number of person responsible #not valid field (information isnt different from "projektledare")
-
-        - name: projektledare_mail
-          translates_to: person responsible email #not valid field  (information isnt different from "projektledare")
-
-        - name: målprogram
-          translates_to: program title
-          maps_to: cci_program_title
-
-#        - name: Beslutande organisation
-#          translates_to: Deciding organization
-#          maps_to: beneficiary_name
-#          Loic: this field is not in the data
-
-        - name: område
-          translates_to: Region
-          maps_to: beneficiary_nuts_region
-
-        - name: insatsområde
-          translates_to: priority number and label
-          maps_to: priority_label
-
-        - name: offentlig_finansiär
-          translates_to: amount of public  financier #source of member state funding
-          maps_to: member_state_amount
-
-        - name: län_fördelning
-          translates_to: beneficiary county
-
-        - name: kommun_fördelning
-          translates_to: beneficiary city
-          maps_to: beneficiary_city
-
-        - name: laddningsdatum
-          translates_to: charging date # I think this is the final payment date
-          maps_to: final_payment_date
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: null
+    funding_period: 2007-2013
+  currency_code: SEK
+  path: Sweden_all_funds_2007-2013.json
+  publication_date: 27-09-2016
+  schema:
+    fields:
+    - name: _source
+      translates_to: source
+    - maps_to: project_id
+      name: ärende-id
+      translates_to: Issue ID
+    - name: projektnamn_short
+      translates_to: Project name (short)
+    - name: stödmottagare_short
+      translates_to: project id
+    - maps_to: starting_date
+      name: projekt_starttid
+      translates_to: Project starting time
+    - maps_to: completion_date
+      name: projekt_sluttid
+      translates_to: project ending time
+    - maps_to: total_amount
+      name: beviljat_belopp_-_sek
+      translates_to: amount granted - sec
+    - maps_to: total_amount
+      name: beviljat_belopp_-_euro
+      translates_to: amount granted - Euro
+    - maps_to: project_name
+      name: projektnamn
+      translates_to: Project name
+    - maps_to: project_description
+      name: projektbeskrivning
+      translates_to: project description
+    - name: pågår_slut
+      translates_to: project status
+    - maps_to: project_id
+      name: stödmottagare
+      translates_to: project id
+    - name: projektledare
+      translates_to: person responsible for project
+    - name: projektledare_telnr
+      translates_to: telephone number of person responsible
+    - name: projektledare_mail
+      translates_to: person responsible email
+    - maps_to: cci_program_title
+      name: målprogram
+      translates_to: program title
+    - maps_to: beneficiary_nuts_region
+      name: område
+      translates_to: Region
+    - maps_to: priority_label
+      name: insatsområde
+      translates_to: priority number and label
+    - maps_to: member_state_amount
+      name: offentlig_finansiär
+      translates_to: amount of public  financier
+    - name: län_fördelning
+      translates_to: beneficiary county
+    - maps_to: beneficiary_city
+      name: kommun_fördelning
+      translates_to: beneficiary city
+    - maps_to: final_payment_date
+      name: laddningsdatum
+      translates_to: charging date
+  title: Swedish ERDF data 2007-today
+scraper_required: false
+sources:
+- name: Swedish ERDF and ESF 2007 - 2013
+  web: http://projektbank.tillvaxtverket.se/projektbanken#page=eruf
+title: ERDF and ESF data for Sweden 2007-2013

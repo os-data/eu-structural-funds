@@ -1,49 +1,46 @@
-title: European Union Structural Assistance to Estonia
-
-description: >
-  In the period of 2007-2013 Estonia was allocated more than 3.40 billion euros
-  from the structural assistance, which will be channelled to the following
-  fields: energy economies, entrepreneurship, administrative capability,
-  education, information society, environment protection, regional and local
-  development, research and development activities, healthcare and welfare,
-  transportation and labour market.
-
-sources:
-  - name: List of beneficiaries
-    web: http://www.struktuurifondid.ee/list-of-beneficiaries/
-
-language: ee
-scraper_required: false
-
 contributors:
-  - Friedrich Lindenberg <pudo@occrp.org> (OCCRP)
-  - Loic Jounot (loic@cyberpunk.bike)
+- Friedrich Lindenberg <pudo@occrp.org> (OCCRP)
+- Loic Jounot (loic@cyberpunk.bike)
+description: 'In the period of 2007-2013 Estonia was allocated more than 3.40 billion
+  euros from the structural assistance, which will be channelled to the following
+  fields: energy economies, entrepreneurship, administrative capability, education,
+  information society, environment protection, regional and local development, research
+  and development activities, healthcare and welfare, transportation and labour market.
 
+  '
+language: ee
 resources:
-  - title: Beneficiary webpage
-    path: Estonia_scraper_dump.json
-    publication_date: 27-10-2014
-    publication_version: web database
-
-    periods:
-      2007-2013: true
-      2014-2020: false
-
-    extraction_mode:
-      user_interface: false
-      download_link: false
-      pdf_scraper: false
-      web_scraper: true
-
-    constants:
-      currency: EUR
-      certifying_authority:
-
-    schema:
-      fields:
-        - name: beneficiary
-        - name: name_of_project
-        - name: structural_assistance
-        - name: 2nd_level_intermediate_body
-        - name: period
-        - name: measure
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: null
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: Estonia_scraper_dump.json
+  publication_date: 27-10-2014
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: beneficiary
+      translation: beneficiary
+    - maps_to: project_name
+      name: name_of_project
+      translation: name
+    - maps_to: eu_cofinancing_amount
+      name: structural_assistance
+      translation: eu confinancing amount
+    - maps_to: management_authority
+      name: 2nd_level_intermediate_body
+      translation: 2nd level intermediate body
+    - maps_to: project_duration
+      name: period
+      translation: project duration
+    - maps_to: priority_label
+      name: measure
+      translation: measure
+  title: Beneficiary webpage
+scraper_required: false
+sources:
+- name: List of beneficiaries
+  web: http://www.struktuurifondid.ee/list-of-beneficiaries/
+title: European Union Structural Assistance to Estonia

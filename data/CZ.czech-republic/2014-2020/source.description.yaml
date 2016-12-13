@@ -1,63 +1,56 @@
-title: Czech ESF & ERDF data 2014-2020
-
-description: There are two datasets. One lists all beneficiaries from the funding periods 2007-2013, and the other lists operations for the second funding period 2014-2020.
-language: CZ
-
-sources:
-  - name: Dotaceez.cz
-    web:  http://www.dotaceeu.cz/cs/Informace-o-cerpani/Seznamy-prijemcu
-
-  - name: Link to original Excel file
-    web: http://www.dotaceeu.cz/getmedia/413c34d0-71c3-4c0a-b0f9-191c88994d1d/benefi8_22.xlsx?ext=.xlsx
-
-scraper_required: false
-
 contributors:
-  - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
-
+- Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
+description: There are two datasets. One lists all beneficiaries from the funding
+  periods 2007-2013, and the other lists operations for the second funding period
+  2014-2020.
+language: CZ
 resources:
-  - title: List of Czech ESIF operations 2014-2020
-    path: ERDF_Czech Republic_2014-2020.xlsx 
-    publication_date: "2016-08-01"
-    parser_options:
-      skip_rows: [1]
-
-    schema:
-      fields:
-        - name: Registrační číslo projektu
-          translates_to: Project registration number
-          maps_to: cci_program_code
-
-        - name: Název projektu CZ
-          translates_to: Project Title CZ
-          maps_to: project_name
-
-        - name: Žadatel
-          translates_to: Applicant
-          maps_to: beneficiary_name
-
-        - name: Kód stavu
-          translates_to: status code
-          maps_to: theme_code
-
-        - name: Název stavu
-          translates_to: status
-
-        - name: Číslo výzvy
-          translates_to: Call number
-
-        - name: Název výzvy
-          translates_to: Call title
-          maps_to: project_description
-
-        - name: Operační program
-          translates_to: Operational program
-          maps_to: cci_program_title
-
-        - name: CZV projektu
-          translates_to: Total amount
-          maps_to: total_amount_eligible
-
-        - name: Příspěvek EU
-          translates_to: EU amount
-          maps_to: eu_cofinancing_amount
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2014CZ05M2OP001
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+  currency_code: CZK
+  parser_options:
+    skip_rows:
+    - 1
+  path: ERDF_Czech Republic_2014-2020.xlsx
+  publication_date: '2016-08-01'
+  schema:
+    fields:
+    - maps_to: cci_program_code
+      name: Registrační číslo projektu
+      translates_to: Project registration number
+    - maps_to: project_name
+      name: Název projektu CZ
+      translates_to: Project Title CZ
+    - maps_to: beneficiary_name
+      name: Žadatel
+      translates_to: Applicant
+    - maps_to: theme_code
+      name: Kód stavu
+      translates_to: status code
+    - name: Název stavu
+      translates_to: status
+    - name: Číslo výzvy
+      translates_to: Call number
+    - maps_to: project_description
+      name: Název výzvy
+      translates_to: Call title
+    - maps_to: cci_program_title
+      name: Operační program
+      translates_to: Operational program
+    - maps_to: total_amount_eligible
+      name: CZV projektu
+      translates_to: Total amount
+    - maps_to: eu_cofinancing_amount
+      name: Příspěvek EU
+      translates_to: EU amount
+  title: List of Czech ERDF operations 2014-2020
+scraper_required: false
+sources:
+- name: Dotaceez.cz
+  web: http://www.dotaceeu.cz/cs/Informace-o-cerpani/Seznamy-prijemcu
+- name: Link to original Excel file
+  web: http://www.dotaceeu.cz/getmedia/413c34d0-71c3-4c0a-b0f9-191c88994d1d/benefi8_22.xlsx?ext=.xlsx
+title: Czech ERDF data 2014-2020

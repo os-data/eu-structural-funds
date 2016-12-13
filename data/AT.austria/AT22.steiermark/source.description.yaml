@@ -1,45 +1,32 @@
-title: ERDF Data for Steiermark
-
+contributors:
+- Michael Peters (michael.peters@okfn.de)
 description: The beneficiary list for the ERDF (2007-2013) program for Steiermark.
 language: de
-
-sources:
-  - name: ERDF Steiermark
-    web:  http://www.innovation-steiermark.at/de/projekte/verzeichnis/projektliste.php
-
-scraper_required: false
-
-contributors:
-  - Michael Peters (michael.peters@okfn.de)
-
 resources:
-
-  - title: ERDF Steiermark 2007-2013
-
-    path: Steiermark-ERDF-2007-2013.csv
-    #url: http://www.innovation-steiermark.at/de/projekte/verzeichnis/Beguenstigte_25.08.15_R57.pdf
-
-    publication_date: "2015-08-25"
-
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
-
-
-    schema:
-      fields:
-        - name: Begünstigte
-          translates_to: Beneficiary name
-          maps_to: beneficiary_name
-
-        - name: Bezeichnung des Vorhabens
-          translates_to: operation name
-          maps_to: project_description
-
-        - name: öffentliche Beteiligung(EU+nationale Kofinanzierung)
-          translates_to: Public Contribution (EU and national)
-          maps_to: total_amount
-
-        - name: Status - G genehmigt - A ausbezahlt
-          translates_to: Status of Project - G confirmed A paid
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007AT162PO007
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: Steiermark-ERDF-2007-2013.csv
+  publication_date: '2015-08-25'
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: Begünstigte
+      translates_to: Beneficiary name
+    - maps_to: project_description
+      name: Bezeichnung des Vorhabens
+      translates_to: operation name
+    - maps_to: total_amount
+      name: öffentliche Beteiligung(EU+nationale Kofinanzierung)
+      translates_to: Public Contribution (EU and national)
+    - name: Status - G genehmigt - A ausbezahlt
+      translates_to: Status of Project - G confirmed A paid
+  title: ERDF Steiermark 2007-2013
+scraper_required: false
+sources:
+- name: ERDF Steiermark
+  web: http://www.innovation-steiermark.at/de/projekte/verzeichnis/projektliste.php
+title: ERDF Data for Steiermark

@@ -4,6 +4,10 @@ fiscal.datapackage.zip
 source.datapackage.json
 metrics.sqlite
 
+# DPP
+/.dppdb
+
+
 # Extras
 .projectile
 datapackage-pipelines.iml

@@ -1,50 +1,38 @@
-title: ERDF data for Tirol (AT) 2007-2013
-
-description: Tirol is a region in Austria. From 2007-2013 it has received ESF funding through the national program and ERDF funding through a regional program. The regional program is called "Stärkung der Regionalen Wettbewerbsfähigkeit und Beschäftigung Tirol 2007-2013". The dataset at hand describes the funding distributed through said program.
-
-sources:
-  - name: https://www.Tirol.gv.at/
-    web:  https://www.Tirol.gv.at/
-
-scraper_required: false
-language: DE
-
 contributors:
-  - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
-
+- Michael Peters <michael.peters@okfn.de> (http://okfn.de)
+description: Tirol is a region in Austria. From 2007-2013 it has received ESF funding
+  through the national program and ERDF funding through a regional program. The regional
+  program is called "Stärkung der Regionalen Wettbewerbsfähigkeit und Beschäftigung
+  Tirol 2007-2013". The dataset at hand describes the funding distributed through
+  said program.
+language: DE
 resources:
-  - title: ERDF data Tirol (AT) (2007-2013)
-
-    path: ERDF_Tiro_2007-2013.json
-    #url: https://www.tirol.gv.at/fileadmin/themen/tirol-europa/eu-regionalfoerderung-fuer-tirol/downloads/Regionale_Wettbewerbsf_higkeit/2014/Liste_der_Beguenstigten_April_14.pdf
-
-
-    publication_date: "2014-04-14"
-
-
-    constant_fields:
-      fund_name: ERDF
-      offical_period: 2007-2013
-      currency_code: EUR
-
-
-    schema:
-      fields:
-
-        - name: _source
-          translates_to: source
-
-        - name: beneficiary
-          translation: Beneficiary
-          maps_to: beneficiary_name
-
-        - name: name_of_the_operation
-          translation: name of the operation
-          maps_to: project_name
-
-        - name: allocated_public_funding
-          translation: allocated pulic funding (EU+national cofinancing)
-          maps_to: total_amount
-
-        - name: status
-          translation: G = commited, A = paid out
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007AT162PO008
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: ERDF_Tiro_2007-2013.json
+  publication_date: '2014-04-14'
+  schema:
+    fields:
+    - name: _source
+      translates_to: source
+    - maps_to: beneficiary_name
+      name: beneficiary
+      translation: Beneficiary
+    - maps_to: project_name
+      name: name_of_the_operation
+      translation: name of the operation
+    - maps_to: total_amount
+      name: allocated_public_funding
+      translation: allocated pulic funding (EU+national cofinancing)
+    - name: status
+      translation: G = commited, A = paid out
+  title: ERDF data Tirol (AT) (2007-2013)
+scraper_required: false
+sources:
+- name: https://www.Tirol.gv.at/
+  web: https://www.Tirol.gv.at/
+title: ERDF data for Tirol (AT) 2007-2013

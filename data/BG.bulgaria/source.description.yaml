@@ -1,55 +1,42 @@
-title: Bulgaria's ESIF data 2007-2020
-
-description: One massive xls dataset containing all bulgarian ESIF data. Web interface contains even more data, so scraping may be advisable additionally. Can't be directly linked!
-language: BG
-
-sources:
-  - name: INFORMATION MANAGEMENT SYSTEM AND MONITORING OF STRUCTURAL INSTRUMENTS OF THE EU IN BULGARIA
-    web:  http://umispublic.government.bg/prProcedureProjectsInfo.aspx?op=-1&proc=-2&clear=1
-
-scraper_required: false
-
 contributors:
-  - Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
-
+- Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
+description: One massive xls dataset containing all bulgarian ESIF data. Web interface
+  contains even more data, so scraping may be advisable additionally. Can't be directly
+  linked!
+language: BG
 resources:
-  - title: ESIF data Bulgaria 2007-2020
-
-    path: ProjectsList.xls
-    #url: http://umispublic.government.bg/prProcedureProjectsInfo.aspx?op=-1&proc=-2&clear=1
-    publication_date: yyyy-mm-dd
-
-    schema:
-      fields:
-        - name: Бенефициент
-          translates_to: Beneficiary
-
-        - name: Седалище
-          translates_to: Municipality
-
-        - name: Място на изпълнение
-          translates_to: Region
-
-        - name: Наименование на договора
-          translates_to: Name of Contract
-
-        - name: Обща стойност
-          translates_to: Total value
-
-        - name: БФП
-          translates_to: CCD
-
-        - name: Финанс от бенефициент
-          translates_to: Finance by Beneficiary
-
-        - name: Реално изплатени суми
-          translates_to: Actually paid
-
-        - name: Продълж.(месеци)
-          translates_to: Duration (Months)
-
-        - name: Статус
-          translates_to: Status
-
-        - name: Бенефициент
-          translates_to: Artists
+- add_categories: {}
+  add_constants: {}
+  path: ProjectsList.xls
+  publication_date: yyyy-mm-dd
+  schema:
+    fields:
+    - name: Бенефициент
+      translates_to: Beneficiary
+    - name: Седалище
+      translates_to: Municipality
+    - name: Място на изпълнение
+      translates_to: Region
+    - name: Наименование на договора
+      translates_to: Name of Contract
+    - name: Обща стойност
+      translates_to: Total value
+    - name: БФП
+      translates_to: CCD
+    - name: Финанс от бенефициент
+      translates_to: Finance by Beneficiary
+    - name: Реално изплатени суми
+      translates_to: Actually paid
+    - name: Продълж.(месеци)
+      translates_to: Duration (Months)
+    - name: Статус
+      translates_to: Status
+    - name: Бенефициент
+      translates_to: Artists
+  title: ESIF data Bulgaria 2007-2020
+scraper_required: false
+sources:
+- name: INFORMATION MANAGEMENT SYSTEM AND MONITORING OF STRUCTURAL INSTRUMENTS OF
+    THE EU IN BULGARIA
+  web: http://umispublic.government.bg/prProcedureProjectsInfo.aspx?op=-1&proc=-2&clear=1
+title: Bulgaria's ESIF data 2007-2020

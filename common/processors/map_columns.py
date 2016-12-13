@@ -14,14 +14,14 @@ When building the lookup table, we check that:
 
 from logging import info
 from datapackage_pipelines.wrapper import ingest, spew
-from common.utilities import get_fiscal_fields, process
+from common.utilities import get_fiscal_field_names, process
 
 
 def build_lookup_table(datapackage_):
     """Return the mapping for the first resource."""
 
     fields = datapackage_['resources'][0]['schema']['fields']
-    fiscal_fields = get_fiscal_fields()
+    fiscal_fields = get_fiscal_field_names()
 
     for field in fields:
         checks = ('maps_to' in field,

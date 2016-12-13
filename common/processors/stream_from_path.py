@@ -8,7 +8,7 @@ from tabulator import Stream
 from logging import warning, info
 from datapackage_pipelines.wrapper import ingest, spew
 from petl import look, fromdicts
-from common.config import SAMPLE_SIZE
+from common.config import LOG_SAMPLE_SIZE
 from common.utilities import format_to_json, sanitize_field_names
 
 
@@ -124,7 +124,7 @@ def stream_local_file(datapackage, **parameters):
     """Read local files and return row iterators."""
 
     if not parameters.get('sample_size'):
-        parameters.update(sample_size=SAMPLE_SIZE)
+        parameters.update(sample_size=LOG_SAMPLE_SIZE)
 
     for resource in datapackage['resources']:
         path = resource['path']

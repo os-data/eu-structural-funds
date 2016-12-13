@@ -1,87 +1,66 @@
-title: ERDF and ESF and ESF Data for Luxembourg
-
+contributors:
+- Michael Peters (michael.peters@okfn.de)
 description: The beneficiary list for the ERDF and ESF (2007-2020) program for Luxembourg.
 language: de
-
-sources:
-  - name: ERDF and ESF Luxembourg
-    web:  http://www.fonds-europeens.public.lu/fr/projets-cofinances/index.php
-
-scraper_required: false
-
-contributors:
-  - Michael Peters (michael.peters@okfn.de)
-
 resources:
-
-  - title: ERDF and ESF Luxembourg 2007-2013
-
-    path: all_funds_data_luxembourg_2007-2020.json
-    #url:
-
-    publication_date: "2016-10-25"
-
-    constant_fields:
-      fund_name: ERDF and ESF
-      offical_period: 2007-2020
-      currency_code: EUR
-
-    aliases:
-      porteur_de_projet: porteur(s)_de_projet
-
-    schema:
-      fields:
-        - name: _source
-          translates_to: source
-
-        - name: title
-          translates_to: operation name
-          maps_to: project_description
-
-        - name: fonds
-          translates_to: name of fund
-          maps_to: fund_acronym
-
-        - name: objectifs_thématiques
-          translates_to: theme name
-          maps_to: theme_name
-
-        - name: programme
-          translates_to: programme
-          maps_to: cci_program_title
-
-        - name: porteur(s)_de_projet
-          translates_to: Beneficiary name
-          maps_to: beneficiary_name
-
-        - name: porteur_de_projet
-          translates_to: Beneficiary name
-          maps_to: beneficiary_name
-
-        - name: commune(s)
-          translates_to: city / county
-          maps_to: beneficiary_city
-
-        - name: coût_total
-          translates_to: total amount
-          maps_to: total_amount
-
-        - name: total
-          translates_to: total amount eligible
-          maps_to: total_amount_eligible
-
-        - name: feder
-          translates_to: eu cofinancing amount ERDF
-          maps_to:  eu_cofinancing_amount
-
-        - name: part_fse_(50%)
-          translates_to: eu cofinancing amount ESF
-          maps_to: eu_cofinancing_amount
-
-        - name: durée
-          translates_to: duration of project
-          maps_to: starting_date
-
-        - name: catégorie_d'intervention
-          translates_to:
-          maps_to:
+- add_categories:
+    fund_acronym:
+      FEDER: ERDF
+      FSE: ESF
+  add_constants:
+    cci_program_code: 2014LU05SFOP001
+    funding_period: 2007-2020
+  aliases:
+    porteur_de_projet: porteur(s)_de_projet
+  currency_code: EUR
+  path: all_funds_data_luxembourg_2007-2020.json
+  publication_date: '2016-10-25'
+  schema:
+    fields:
+    - name: _source
+      translates_to: source
+    - maps_to: project_description
+      name: title
+      translates_to: operation name
+    - maps_to: fund_acronym
+      name: fonds
+      translates_to: name of fund
+    - maps_to: theme_name
+      name: objectifs_thématiques
+      translates_to: theme name
+    - maps_to: cci_program_title
+      name: programme
+      translates_to: programme
+    - maps_to: beneficiary_name
+      name: porteur(s)_de_projet
+      translates_to: Beneficiary name
+    - maps_to: beneficiary_name
+      name: porteur_de_projet
+      translates_to: Beneficiary name
+    - maps_to: beneficiary_city
+      name: commune(s)
+      translates_to: city / county
+    - maps_to: total_amount
+      name: coût_total
+      translates_to: total amount
+    - maps_to: total_amount_eligible
+      name: total
+      translates_to: total amount eligible
+    - maps_to: eu_cofinancing_amount
+      name: feder
+      translates_to: eu cofinancing amount ERDF
+    - maps_to: eu_cofinancing_amount
+      name: part_fse_(50%)
+      translates_to: eu cofinancing amount ESF
+    - maps_to: starting_date
+      name: durée
+      translates_to: duration of project
+    - maps_to: null
+      name: catégorie_d'intervention
+      translates_to: null
+  title: ERDF and ESF Luxembourg 2007-2013
+scraper_required: false
+sources:
+- name: ERDF and ESF Luxembourg
+  web: http://www.fonds-europeens.public.lu/fr/projets-cofinances/index.php
+title: ERDF and ESF and ESF Data for Luxembourg

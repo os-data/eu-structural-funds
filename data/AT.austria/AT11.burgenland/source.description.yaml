@@ -1,51 +1,41 @@
-title: ERDF Data for Burgenland (2007-2013)
-
-description: The beneficiary list of the ERDF programme for Burgenland
-language: de
-
-sources:
-  - name: ERDF Burgenland (2007-2013)
-    web: http://www.phasing-out.at/
-
-scraper_required: false
-language: DE 
-
 contributors:
-  - Michael Peters (michael.peters@okfn.de)
-
+- Michael Peters (michael.peters@okfn.de)
+description: The beneficiary list of the ERDF programme for Burgenland
+language: DE
 resources:
-  - title: ERDF Burgenland 2007-2013
-
-    # url: http://www.phasing-out.at/media/file/822_Projektliste_EFRE_31.12.2012.pdf
-    path: tabula-913_Projektliste_EFRE_30.06.2016_burgenland_07_13.csv
-
-    publication_date: 28-07-2016
-
-    schema:
-      fields:
-        - name: Begünstigte/r beneficiary
-          translates_to: Name of the Beneficiary
-          maps_to: beneficiary_name
-
-        - name: Adresse Begünstigte
-          translates_to: adress of beneficiary
-          maps_to: beneficiary_address
-
-        - name: Projekttitel
-          translates_to: Name of the Project
-          maps_to: project_name
-
-        - name: Projektbeschreibung
-          translates_to: Project description
-          maps_to: project_description
-
-        - name: öffentliche Beteiligung
-          translates_to: total amount of public expenditure EU and local  #this is the EU amount and the public member state amount together
-          maps_to: total_amount
-          decimal:
-
-        - name: Status G = genehmigt A = ausbezahlt
-          translates_to: Status G = committed A = paid
-
-        - name: Förderstelle
-          translates_to: funding agency
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007AT161PO001
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: tabula-913_Projektliste_EFRE_30.06.2016_burgenland_07_13.csv
+  publication_date: 28-07-2016
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: Begünstigte/r beneficiary
+      translates_to: Name of the Beneficiary
+    - maps_to: beneficiary_address
+      name: Adresse Begünstigte
+      translates_to: adress of beneficiary
+    - maps_to: project_name
+      name: Projekttitel
+      translates_to: Name of the Project
+    - maps_to: project_description
+      name: Projektbeschreibung
+      translates_to: Project description
+    - decimal: null
+      maps_to: total_amount
+      name: öffentliche Beteiligung
+      translates_to: total amount of public expenditure EU and local
+    - name: Status G = genehmigt A = ausbezahlt
+      translates_to: Status G = committed A = paid
+    - name: Förderstelle
+      translates_to: funding agency
+  title: ERDF Burgenland 2007-2013
+scraper_required: false
+sources:
+- name: ERDF Burgenland (2007-2013)
+  web: http://www.phasing-out.at/
+title: ERDF Data for Burgenland (2007-2013)

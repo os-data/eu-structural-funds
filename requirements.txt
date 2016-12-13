@@ -5,7 +5,7 @@ datapackage-pipelines
 arrow
 xlrd
 python-slugify
-tabulator
+tabulator>=0.12.1
 requests
 datapackage
 lxml

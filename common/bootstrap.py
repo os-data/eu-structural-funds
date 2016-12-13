@@ -29,12 +29,11 @@ import os
 import yaml
 
 # noinspection PyPackageRequirements
+from click import BadParameter
 from pandas import DataFrame
 from collections import Counter
 from copy import deepcopy
 from shutil import copyfile
-from click import command, secho, echo, option, pass_context
-from click import group
 from jsonschema import FormatChecker
 from petl import fromdicts, look, sort, cut
 from slugify import slugify
@@ -44,9 +43,11 @@ from yaml.parser import ParserError
 from yaml.scanner import ScannerError
 from os.path import join, exists, splitext
 from datetime import datetime
+from click import (command, secho, echo, option,
+                   pass_context, group, Choice, argument)
 
 from common.metrics import Snapshot
-from common.utilities import get_fiscal_fields
+from common.utilities import get_fiscal_field_names, processor_names, GEOCODES
 from common.config import (
     PIPELINE_FILE,
     SOURCE_FILE,
@@ -79,14 +80,33 @@ class Source(object):
 
     db_keys = Snapshot.__table__.columns.keys()
 
-    def __init__(self, pipeline_id, timestamp=None, db_session=None):
+    def __init__(self,
+                 pipeline_id=None,
+                 folder=None,
+                 timestamp=None,
+                 db_session=None,
+                 data_dir=DATA_DIR):
+
+        message = 'Source takes either folder or pipeline_id argument'
+        assert bool(pipeline_id) != bool(folder), message
+
+        if pipeline_id:
+            self.id = pipeline_id
+            self.folder = join(data_dir, *pipeline_id.split(os.sep))
+
+        if folder:
+            self.folder = folder
+            self.id = os.sep.join(folder.split(os.sep)[1:])
+
         self.timestamp = timestamp
-        self.id = pipeline_id
         self.slug = slugify(self.id, separator='_')
-        self.folder = join(DATA_DIR, *pipeline_id.split(os.sep))
+        self.pipeline_spec_file = join(data_dir, PIPELINE_FILE)
+        self.description_file = join(data_dir, SOURCE_FILE)
 
         self.nuts_code = NUTS.findall(self.folder)[-1].split('.')[0]
         self.country_code = COUNTRY.search(self.folder).group(1)
+        self.country = self._lookup_geocode(self.country_code)
+        self.region = self._lookup_geocode(self.nuts_code)
 
         self.validation_status = 'broken'
         self.pipeline_status = 'down'
@@ -94,7 +114,7 @@ class Source(object):
         self.validation_errors = []
 
         self.description = self._read_description()
-        self.pipeline = self._read_pipeline()
+        self.pipeline_spec = self._read_pipeline_spec()
         self._validate()
 
         self.db_session = db_session
@@ -109,28 +129,28 @@ class Source(object):
         with open(DEFAULT_PIPELINE_FILE) as stream:
             default_pipeline = yaml.load(stream)
 
-        self.pipeline[self.slug] = default_pipeline.pop('pipeline-id')
+        self.pipeline_spec[self.slug] = default_pipeline.pop('pipeline-id')
         extractor = self._get_extractor()
 
         if extractor:
-            self.pipeline[self.slug]['pipeline'][1]['run'] = extractor
+            self._pipeline[1]['run'] = extractor
             if self.extension in ('.json', '.xls', '.xlsx'):
-                self.pipeline[self.slug]['pipeline'].insert(
+                self._pipeline.insert(
                     2, {'run': DATAPACKAGE_MUTATOR}
                 )
 
             if len(self.description['resources']) > 1:
                 for i, processor in enumerate(
-                        self.pipeline[self.slug]['pipeline']):
+                        self._pipeline):
                     print(processor)
                     if processor['run'] == 'reshape_data':
-                        self.pipeline[self.slug]['pipeline'].insert(
+                        self._pipeline.insert(
                             i + 1, {'run': 'concatenate_identical_resources'}
                         )
                         break
 
             with open(join(self.folder, PIPELINE_FILE), 'w') as stream:
-                yaml.dump(self.pipeline, stream)
+                yaml.dump(self.pipeline_spec, stream)
 
             message = '{}: added default {}'
             secho(message.format(self.id, PIPELINE_FILE), **SUCCESS)
@@ -143,7 +163,7 @@ class Source(object):
     def save_scraper(self):
         """Copy the scraper placeholder to where it belongs."""
 
-        if self.pipeline:
+        if self.pipeline_spec:
             scraper_folder = join(PROCESSORS_DIR, self.country_code)
             if not exists(scraper_folder):
                 os.mkdir(scraper_folder)
@@ -151,6 +171,10 @@ class Source(object):
 
             message = '{}: added default {}'
             secho(message.format(self.id, SCRAPER_FILE), **SUCCESS)
+
+    @property
+    def _pipeline(self):
+        return self.pipeline_spec[self.slug]['pipeline']
 
     @property
     def resource_type(self):
@@ -286,6 +310,59 @@ class Source(object):
                     mappings.append(mapping)
         return mappings
 
+    def remove_processor(self, name):
+        """Remove a processor by name."""
+        index = self._get_processor_index(name)
+        del self._pipeline[index]
+
+    def insert_processor(self, name,
+                         before=None, after=None, index=None,
+                         processor_parameters=None):
+        """Insert a processor in the pipeline."""
+
+        positions = list(map(bool, [before, after, index]))
+        assert positions.count(True) == 1
+
+        processor = {'run': name}
+        if processor_parameters:
+            processor.update(parameters=processor_parameters)
+
+        if before:
+            index = self._get_processor_index(before)
+        if after:
+            index = self._get_processor_index(after) + 1
+
+        self._pipeline.insert(index, processor)
+
+    def save_pipeline_spec(self):
+        with open(join(self.folder, PIPELINE_FILE), 'w+') as stream:
+            yaml.dump(self.pipeline_spec, stream,
+                      default_flow_style=False,
+                      allow_unicode=True)
+
+    def save_description(self):
+        with open(join(self.folder, SOURCE_FILE), 'w+') as stream:
+            yaml.dump(self.description, stream,
+                      default_flow_style=False,
+                      allow_unicode=True)
+
+    @property
+    def processors(self):
+        return [processor['run'] for processor in self._pipeline]
+
+    def _get_processor_index(self, name):
+        """Return the index of a pipeline"""
+
+        for i, processor in enumerate(self._pipeline):
+            if processor['run'] == name:
+                return i
+
+        raise ValueError('{} processor not in pipeline'.format(name))
+
+    @property
+    def _pipeline(self):
+        return self.pipeline_spec[self.slug]['pipeline']
+
     def _read_description(self):
         try:
             with open(join(self.folder, SOURCE_FILE)) as stream:
@@ -297,7 +374,7 @@ class Source(object):
             self.traceback = str(error)
             return {}
 
-    def _read_pipeline(self):
+    def _read_pipeline_spec(self):
         try:
             with open(join(self.folder, PIPELINE_FILE)) as stream:
                 pipeline = yaml.load(stream)
@@ -344,11 +421,20 @@ class Source(object):
         name = SCRAPER_FILE.replace('.py', '')
         return module.format(self.id, self.country_code, self.slug, name)
 
+    @staticmethod
+    def _lookup_geocode(nuts_code):
+        for info in GEOCODES:
+            if info['NUTS-Code'] == nuts_code:
+                return info['Description']
+
     def __lt__(self, other):
         return self.id < other.id
 
     def __str__(self):
         return self.id
+
+    def __repr__(self):
+        return '<Source: {}>'.format(self)
 
 
 @command('db')
@@ -451,7 +537,7 @@ def bootstrap_pipelines(ctx):
 
     for source in ctx.obj['sources']:
         if source.description:
-            if not source.pipeline:
+            if not source.pipeline_spec:
                 source.bootstrap()
                 if source.scraper_required:
                     if not source.has_scraper:
@@ -496,7 +582,7 @@ def validate_descriptions(ctx):
     """Validate source description files."""
 
     level = {'broken': ERROR, 'loaded': WARN, 'valid': SUCCESS}
-    valid_keys = str(get_fiscal_fields()).replace('[', '[None, ')
+    valid_keys = str(get_fiscal_field_names()).replace('[', '[None, ')
 
     for source in ctx.obj['sources']:
         color = level[source.validation_status]
@@ -515,6 +601,53 @@ def validate_descriptions(ctx):
 
         message = '{}'.format('\n'.join(messages))
         secho(message, **color)
+
+
+@command(name='pipeline')
+@argument('action', type=Choice(('insert', 'remove')), required=True)
+@argument('processor', type=Choice(processor_names), required=True)
+@option('--before', type=Choice(processor_names))
+@option('--after', type=Choice(processor_names))
+@option('--parameter', type=(str, str), nargs=2, multiple=True)
+@pass_context
+def modify_pipeline(ctx, action, processor, before, after, parameter):
+    """Insert or delete pipeline processors."""
+
+    for source in ctx.obj['sources']:
+        if not source.pipeline_spec:
+            message = '{}: no pipeline found, skipping'
+            secho(message.format(source.id), **ERROR)
+            continue
+
+        if action == 'remove':
+            if processor in source.processors:
+                source.remove_processor(processor)
+            else:
+                message = '{}: {} not in pipeline, skipping'
+                secho(message.format(source.id, processor, **WARN))
+
+        if action == 'insert':
+            if before and after:
+                raise BadParameter('Ambiguous position')
+
+            position = before or after
+
+            if position in source.processors:
+                if processor in source.processors:
+                    message = '{}: {} already exists'
+                    secho(message.format(source.id, processor, **WARN))
+
+                positions = dict(before=before, after=after)
+                positions.update(processor_parameters=dict(parameter))
+                source.insert_processor(processor, **positions)
+
+            else:
+                message = '{}: skipped because {} not in pipeline'
+                secho(message.format(source.id, position), **WARN)
+
+        source.save_pipeline_spec()
+        message = '{}: saved changes'
+        secho(message.format(source.id), **SUCCESS)
 
 
 def collect_sources(select=None, **kwargs):
@@ -567,6 +700,7 @@ main.add_command(compute_stats)
 main.add_command(print_table)
 main.add_command(copy_zip_files)
 main.add_command(dump_database)
+main.add_command(modify_pipeline)
 
 
 if __name__ == '__main__':

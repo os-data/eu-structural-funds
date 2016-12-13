@@ -7,6 +7,7 @@ import json
 from pytest import mark
 from requests import get
 
+from common.bootstrap import collect_sources
 from common.utilities import get_fiscal_datapackage
 from common.config import (
     FISCAL_SCHEMA_FILE,
@@ -14,6 +15,7 @@ from common.config import (
     FISCAL_MODEL_FILE,
     FISCAL_METADATA_FILE
 )
+
 
 # Constraints
 # -----------------------------------------------------------------------------
@@ -180,3 +182,11 @@ def test_model_parent_attributes_belong_to_primary_keys(dimension):
     for attribute in dimension['attributes']:
         if 'parent' in attribute:
             assert attribute['parent'] in dimension['primaryKey']
+
+
+# Validate all data source descriptions
+# -----------------------------------------------------------------------------
+
+@mark.parametrize('source', collect_sources())
+def test_source_description_files_are_valid(source):
+    assert not source.validation_errors

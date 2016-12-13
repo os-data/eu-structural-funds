@@ -1,53 +1,38 @@
-title: ESF Data for Schleswig Holstein
-
+contributors:
+- Michael Peters (michael.peters@okfn.de)
 description: The beneficiary list for the ESF (2007-2013) program for Schleswig Holstein.
 language: de
-
-sources:
-  - name: ESF Schleswig Holstein
-    web: http://www.ib-sh.de/die-ibsh/foerderprogramme-des-landes/landesprogramm-arbeit/
-
-scraper_required: false
-
-contributors:
-  - Michael Peters (michael.peters@okfn.de)
-
 resources:
-
-  - title: ESF Schleswig Holstein 2007-2013
-
-    path: ESF Data Schleswig Holstein 2007-2013.json
-    #url: http://www.ib-sh.de/fileadmin/user_upload/downloads/Arbeit_Bildung/ZP_Arbeit/allgemein/vdb
-
-    publication_date: "2016-01-08"
-
-    constant_fields:
-      fund_name: ESF
-      offical_period: 2007-2013
-      currency_code: EUR
-
-
-    schema:
-      fields:
-        - name: _source
-          translates_to: source
-
-        - name: beneficiary
-          translates_to: Beneficiary name
-          maps_to: beneficiary_name
-
-        - name: name_of_operation
-          translates_to: operation name
-          maps_to: project_name
-
-        - name: years
-          translates_to: Year of Approval / year of completion
-          maps_to: approval_date
-
-        - name: allocated_public_funding
-          translates_to: total eligible amount (EU and public funding)
-          maps_to: total_amount_eligible
-
-        - name: on_finish_total_value
-          translates_to: total amount
-          maps_to: total_amount
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007DE052PO011
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: ESF Data Schleswig Holstein 2007-2013.json
+  publication_date: '2016-01-08'
+  schema:
+    fields:
+    - name: _source
+      translates_to: source
+    - maps_to: beneficiary_name
+      name: beneficiary
+      translates_to: Beneficiary name
+    - maps_to: project_name
+      name: name_of_operation
+      translates_to: operation name
+    - maps_to: approval_date
+      name: years
+      translates_to: Year of Approval / year of completion
+    - maps_to: total_amount_eligible
+      name: allocated_public_funding
+      translates_to: total eligible amount (EU and public funding)
+    - maps_to: total_amount
+      name: on_finish_total_value
+      translates_to: total amount
+  title: ESF Schleswig Holstein 2007-2013
+scraper_required: false
+sources:
+- name: ESF Schleswig Holstein
+  web: http://www.ib-sh.de/die-ibsh/foerderprogramme-des-landes/landesprogramm-arbeit/
+title: ESF Data for Schleswig Holstein
