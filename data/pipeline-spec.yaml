@@ -82,5 +82,5 @@ concatenate_datasets:
       parameters:
         in-file: fiscal.datapackage.zip
 
-  schedule: {crontab: 0 0 1 1 *}
+  schedule: {crontab: 0 */4 * * *}
 
