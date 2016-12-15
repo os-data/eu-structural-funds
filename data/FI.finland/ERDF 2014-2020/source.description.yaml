@@ -30,6 +30,9 @@ resources:
       cci_code:
     currency_code: EUR
 
+    quotechar: '"'
+    quoting: 1
+
     schema:
       fields:
 
