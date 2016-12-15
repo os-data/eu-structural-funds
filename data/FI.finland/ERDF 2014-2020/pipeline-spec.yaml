@@ -1,7 +1,7 @@
 FI_finland_ERDF_2014_2020:
   pipeline:
   - run: read_description
-  - run: stream_from_path
+  - run: ingest_local_file
   - parameters:
       out-file: source.datapackage.zip
     run: dump
@@ -13,7 +13,6 @@ FI_finland_ERDF_2014_2020:
   - run: add_geocodes
   - run: add_constants
   - run: add_categories
-  - run: show_sample_in_console
   - run: load_fiscal_datapackage
   - parameters:
       out-file: fiscal.datapackage.zip

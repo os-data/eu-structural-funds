@@ -25,13 +25,16 @@ resources:
     path: UK_subsidies_final_LAU1.csv
 
     publication_date: 2015-12-31
-    
-    fund_acronym:
-      - ERDF: [ERDF]
-      - ESF: [ESF]
-      
-    funding_period: 2007-2013
-    cci_code: 
+
+    add_categories:
+      fund_acronym:
+        - ERDF: ERDF
+        - ESF: ESF
+
+    add_constants:
+      funding_period: 2007-2013
+      cci_code:
+
     currency_code: EUR
 
       # any other field from fiscal.fields.yaml that is constant

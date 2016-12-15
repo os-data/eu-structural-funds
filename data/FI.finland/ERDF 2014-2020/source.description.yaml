@@ -20,13 +20,18 @@ resources:
 
     publication_date: 2014-11-1
 
-     fund_acronym:
-      - EAKR: [ERDF]
-      - ESR: [ESF]
-      
-    funding_period: 2014-2020
-    cci_code: 
+    add_categories:
+      fund_acronym:
+        - EAKR: [ERDF]
+        - ESR: [ESF]
+
+    add_constants:
+      funding_period: 2014-2020
+      cci_code:
     currency_code: EUR
+
+    quotechar: '"'
+    quoting: 1
 
     schema:
       fields:
