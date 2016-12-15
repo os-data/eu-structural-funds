@@ -164,6 +164,10 @@ class CSVIngestor(BaseIngestor):
         options.update(encoding=self._encoding)
         if self.resource.get('delimiter'):
             options.update(delimiter=self.resource['delimiter'])
+        if self.resource.get('quotechar'):
+            options.update(quotechar=self.resource['quotechar'])
+        if self.resource.get('quoting'):
+            options.update(quoting=self.resource['quoting'])
         return options
 
     @property
