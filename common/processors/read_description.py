@@ -49,7 +49,7 @@ def fix_resource(first_resource, resource):
     """Use the first resource to fill in other resources.
     """
     for property_ in first_resource.keys():
-        if property_ not in resource:
+        if not resource.get(property_):
             resource[property_] = first_resource[property_]
     return resource
 
