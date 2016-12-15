@@ -41,4 +41,3 @@ There are many ways to contribute, depending on your skills. You can:
 - [Project wiki](https://github.com/os-data/eu-structural-funds/wiki/)
 - [Slack channels](https://followthesubsidies.slack.com)
 - [GitHub issues](https://github.com/os-data/eu-structural-funds/issues)
-- [Quality Assurance via Data Mining Tool] (http://rd.openspending.org/dashboard/esif-q-a#add_query_dialog) 
