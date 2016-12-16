@@ -21,7 +21,7 @@ resources:
 
     - name: základné_údaje-údaje_o_projekte-názov_projektu
       translates_to: project name
-    - maps_to: project_name 
+      maps_to: project_name
 
     - name: základné_údaje-údaje_o_projekte-výzva
       translates_to: theme
