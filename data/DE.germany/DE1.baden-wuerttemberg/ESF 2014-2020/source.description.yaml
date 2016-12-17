@@ -48,7 +48,6 @@ resources:
     - maps_to: beneficiary_url
       name: Internet-Adresse des Vorhabens/website of the operation
       translation: website of the operation
-    - null
   title: ESF in Baden-Württemberg 2014-2020
 scraper_required: false
 sources:
