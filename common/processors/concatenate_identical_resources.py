@@ -14,4 +14,5 @@ def concatenate(resources):
 if __name__ == '__main__':
     _, datapackage, resources_ = ingest()
     single_resource = concatenate(resources_)
+    datapackage['resources'] = [datapackage['resources'][0]]
     spew(datapackage, [single_resource])
