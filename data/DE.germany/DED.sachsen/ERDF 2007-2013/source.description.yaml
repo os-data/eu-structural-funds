@@ -10,6 +10,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: ERDF Sachsen 2007-2013.json
+  encoding: utf-8
   publication_date: '2014-12-31'
   schema:
     fields:
