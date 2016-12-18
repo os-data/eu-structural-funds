@@ -10,6 +10,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: AN4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema:
     fields:
@@ -38,6 +39,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: AR4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF in Aragon
@@ -48,6 +50,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: AS4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF in Asturias
@@ -58,6 +61,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: BB4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF in Islas Baleares
@@ -68,6 +72,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: CE4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF in Ceuta
@@ -78,6 +83,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: CL4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Castilla y Leon
@@ -88,6 +94,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: CM4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Castilla la Mancha
@@ -98,6 +105,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: CN4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Cantabria
@@ -108,6 +116,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: CT4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Catalunya
@@ -118,6 +127,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: CV4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Comunidad Valenciana
@@ -128,6 +138,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: EU4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Pais Vasco
@@ -138,6 +149,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: EX4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Extremadura
@@ -148,6 +160,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: GA4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Galicia
@@ -158,6 +171,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: IC4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Islas Canarias
@@ -168,6 +182,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: LR4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF La Rioja
@@ -178,6 +193,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: MD4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Madrid
@@ -188,6 +204,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: ME4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Melilla
@@ -198,6 +215,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: MU4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Murcia
@@ -208,6 +226,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: NA4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Navarra
@@ -218,6 +237,7 @@ resources:
     fund_name: ERDF
     offical_period: 2007-2013
   path: PO%20AT4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Spain
@@ -228,6 +248,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: PO%20EC4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Spain
@@ -238,6 +259,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: PO%20FCH4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Spain
@@ -248,6 +270,7 @@ resources:
     funding_period: 2007-2013
   currency_code: EUR
   path: PO%20FT4016.json
+  encoding: utf-8
   publication_date: '2016-10-24'
   schema: null
   title: ERDF Spain
