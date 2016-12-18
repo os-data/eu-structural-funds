@@ -224,6 +224,21 @@ class JSONIngestor(BaseIngestor):
     """An ingestor for json files."""
 
     @property
+    def _body_options(self):
+        options = super(JSONIngestor, self)._body_options
+        options.update(encoding=self._encoding)
+        return options
+
+    @cached_property
+    def _encoding(self):
+        """Select or detect the file encoding and set the resource utf-8."""
+
+        if self.resource.get('encoding'):
+            return self.resource['encoding']
+        else:
+            return 'utf-8'
+
+    @property
     def _pre_processors(self):
         return [self._fill_missing_fields]
 

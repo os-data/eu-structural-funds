@@ -25,8 +25,8 @@ resources:
       publication_date: # Loic: I can't find it
 
       fund_acronym:
-        - FEDER: [ERDF]
-        - FSE: [ESF]
+        FEDER: ERDF
+        FSE: ESF
       
       funding_period: 2007-2013
       cci_code:
