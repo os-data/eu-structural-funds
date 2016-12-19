@@ -22,7 +22,7 @@ resources:
     - maps_to: approval_date
       name: Jahr der Bewilligung
       translates_to: Year of Approval
-    - maps_to: final_payment_date
+    - maps_to: completion_date
       name: Jahr der abschließenden Restzahlung
       translates_to: Year of final payment
     - maps_to: total_amount_eligible
