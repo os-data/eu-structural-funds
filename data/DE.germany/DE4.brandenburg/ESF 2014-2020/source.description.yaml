@@ -34,6 +34,7 @@ resources:
       translation: total eligible expenditure allocated to the operation
     - name: Unions-Kofinanzierungssatz pro Prioritätsachse
       translation: Union co-financing rate, as per priority axis (in percent)
+      maps_to: eu_cofinancing_rate
     - maps_to: beneficiary_city
       name: Ort des Vorhabens Operation Location
       translation: location
@@ -43,6 +44,7 @@ resources:
     - name: Bezeichnung der Interventionskategorie für das Vorhaben/name of category
         of intervention for the operation
       translation: category of intervention
+      maps_to: priority_label
   title: ESF in  2014-2020
 scraper_required: false
 sources:
