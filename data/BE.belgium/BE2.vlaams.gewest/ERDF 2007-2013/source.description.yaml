@@ -82,4 +82,4 @@ scraper_required: false
 sources:
 - name: Belgium Region Vlaams ERDF data 2007-2013
   web: http://www.vlaio.be/artikel/overzicht-van-goedgekeurde-projecten
-title: Belgium Region Vlaams ERDF data 2007-2013
+title: BE2.Vlaams Gewest 2007-2013 ERDF
