@@ -31,31 +31,40 @@ resources:
     - maps_to: total_amount_eligible
       name: 6. Gesamtbetrag der förderfähigen Ausgaben des Vorhabens
       translates_to: total eligible expenditure allocated to the operation
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_rate
       name: 7. Unions-Kofinanzierungssatz pro Prioritätsachse
       translates_to: Union co-financing rate in percent
+      
     - maps_to: beneficiary_city
       name: 8. Durchführungsort des Vorhabens
       translates_to: Project location
     - name: 9. Landkreis/Kreisfreie Gemeinde/ Große Kreisstädte
       translates_to: administrative district (county)
+      maps_to: beneficiary_county
     - maps_to: beneficiary_country
       name: 10. Land
       translates_to: country
     - name: 11. Bezeichnung der Interventionskategorie für das Vorhaben
       translates_to: Name of category of intervention for the operation
+      maps_to: priority_label
     - name: 12. Förderrichtlinie
       translates_to: supported action
+      maps_to: null
     - name: 13. Richtliniennummer
       translates_to: directive code
+      maps_to: null
     - name: 14. Fördergegenstand
       translates_to: programme
+      maps_to: null
     - name: 15. Fördergegenstandsnummer
       translates_to: Conveyor item number
+      maps_to: null
     - name: 16. Vorhabensident
       translates_to: President of the company
+      maps_to: null
     - name: 17. Anzahl der FV
       translates_to: FV number
+      maps_to: null
   title: ERDF in Sachsen 2014-2020
 scraper_required: false
 sources:
