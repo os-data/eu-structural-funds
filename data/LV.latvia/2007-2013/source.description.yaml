@@ -16,7 +16,7 @@ resources:
   publication_date: 05-10-2016
   schema:
     fields:
-    - maps_to: project_id
+    - maps_to: priority_number
       name: Nr.
       translates_to: No.
     - maps_to: project_name
@@ -25,7 +25,7 @@ resources:
     - maps_to: null
       name: Ieviešanas kārtība
       translates_to: Implementation Procedures
-    - maps_to: null
+    - maps_to: management_authority
       name: Atbildīgā iestāde
       translates_to: responsible authority
     - maps_to: null
