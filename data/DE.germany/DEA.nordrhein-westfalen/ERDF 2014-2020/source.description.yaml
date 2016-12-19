@@ -33,14 +33,15 @@ resources:
       translates_to: total eligible expenditure
     - name: Gebietskennziffer
       translates_to: specific county number for county within Nordrhein-Westfalen
+      maps_to: null
     - maps_to: beneficiary_country
       name: Land
       translates_to: name of country
-    - maps_to: theme_code
+    - maps_to: priority_number
       name: EU-Interventions-kategorie
       translates_to: EU intervention category (number) which declares under which
         category the company applied for funds
-    - maps_to: theme_name
+    - maps_to: priority_label
       name: Bezeichnung der EU-Interventionskategorie
       translates_to: thematic objective (category that company applied for funds description)
   title: ERDF in Nordrhein-Westfalen 2014-2020

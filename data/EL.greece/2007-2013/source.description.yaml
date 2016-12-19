@@ -14,7 +14,7 @@ resources:
   publication_date: '2016-06-30'
   schema:
     fields:
-    - maps_to: priority_number
+    - maps_to: null
       name: trexousaKatastash
       translates_to: unclear some number
     - maps_to: project_name
@@ -28,11 +28,13 @@ resources:
       translates_to: Budget
     - name: contracts
       translates_to: contracts number
+      maps_to: null
     - maps_to: total_amount
       name: payments
       translates_to: Payments
     - name: perifereia
       translates_to: unclear some number
+      maps_to: null
     - maps_to: starting_date
       name: startDate
       translates_to: Start Date
@@ -41,6 +43,7 @@ resources:
       translates_to: End Date
     - name: countIpoergon
       translates_to: unclear some number
+      maps_to: null 
     - maps_to: theme_code
       name: epKodikos
       translates_to: EU code
@@ -52,5 +55,4 @@ scraper_required: false
 sources:
 - name: Anaptyxi
   web: http://anaptyxi.gov.gr/Default.aspx?tabid=251&language=en-US
-title: European Regional Development Fund (ERDF), European Social Fund (ESF) and Cohesion
-  Funds for Greece
+title: EL.Greece 2007-2013 ERDF ESF CF

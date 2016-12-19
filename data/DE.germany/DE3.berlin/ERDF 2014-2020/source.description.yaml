@@ -31,7 +31,7 @@ resources:
     - maps_to: total_amount_eligible
       name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens
       translates_to: total eligible expenditure allocated to the operation
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_rate
       name: Unions-Kofinanzierungs-satz pro Prioritätsachse
       translates_to: Union co-financing rate
     - maps_to: beneficiary_postal_code
@@ -40,7 +40,7 @@ resources:
     - maps_to: beneficiary_country
       name: Land
       translates_to: country
-    - maps_to: theme_code
+    - maps_to: priority_number
       name: Interventions-kategorie
       translates_to: Intervention field
   title: ERDF Berlin 2014-2020

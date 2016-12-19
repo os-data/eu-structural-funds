@@ -31,7 +31,7 @@ resources:
     - maps_to: total_amount_eligible
       name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens in €
       translates_to: total eligible expenditure allocated to the operation in €
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_rate
       name: Unions-Kofinan-zierungssatz
       translates_to: Union co-financing rate
     - maps_to: beneficiary_nuts_region
@@ -43,10 +43,10 @@ resources:
     - maps_to: beneficiary_country
       name: Land
       translates_to: country
-    - maps_to: beneficiary_country
+    - maps_to: beneficiary_county
       name: Landkreis
       translates_to: county
-    - maps_to: theme_code
+    - maps_to: priority_number
       name: Interven-tions-bereich
       translates_to: Intervention field
   title: ERDF in Niedersachsen 2014-2020

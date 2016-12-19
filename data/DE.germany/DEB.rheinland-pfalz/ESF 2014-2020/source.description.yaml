@@ -32,7 +32,7 @@ resources:
       name: 'Gesamtbetrag der förderfähigen Ausgaben des Vorhabens total eligible
         expenditure allocated to the operation '
       translates_to: total eligible expenditure allocated to the operation in €
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_rate
       name: Unions-Kofinan-zierungssatz Union co-financing rate
       translates_to: Union co-financing rate
     - maps_to: beneficiary_postal_code
@@ -41,7 +41,7 @@ resources:
     - maps_to: beneficiary_country
       name: Land country
       translates_to: country
-    - maps_to: theme_code
+    - maps_to: priority_label
       name: Interventions-bereich Intervention field
       translates_to: Intervention field
   title: ESF in Rheinland-Pfalz 2014-2020

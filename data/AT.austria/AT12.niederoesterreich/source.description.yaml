@@ -25,6 +25,8 @@ resources:
     - maps_to: null
       name: Status - G genehmigt - A ausbezahlt
       translates_to: G = commited, A = paid out
+      maps_to: project_status
+      
   title: ERDF Niederösterreich 2007-2013
 scraper_required: false
 sources:
@@ -32,4 +34,4 @@ sources:
   web: http://www.phasing-out.at/
 - name: Link to original PDF file
   web: http://www.raumordnung-noe.at/fileadmin/root_raumordnung/land/eu_regionalpolitik/RWB_Niederoesterreich.pdf
-title: ERDF Data for Niederösterreich 2007-2013
+title: AT12.niederoesterreich 2007-2013 ERDF

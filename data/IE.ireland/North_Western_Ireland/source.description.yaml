@@ -15,11 +15,14 @@ resources:
     fields:
     - name: _source
       translates_to: source
+      maps_to: source  
+      
     - maps_to: starting_date
       name: year
       translates_to: starting date
     - name: group
       translates_to: programme / county
+      maps_to: beneficiary_county
     - maps_to: beneficiary_name
       name: reference_of_beneficiary
       translates_to: Beneficiary name
@@ -34,4 +37,4 @@ scraper_required: false
 sources:
 - name: ERDF North West Ireland Ireland (2007-2013)
   web: http://nwra.ie/operational-programme-2007-2013-2/
-title: ERDF Data for North West Ireland Ireland (2007-2013)
+title: IE.Ireland North West 2007-2013 ERDF

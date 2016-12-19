@@ -34,11 +34,11 @@ resources:
         expenditure allocated to the operation in €, total des dépenses éligibles
         attribué à l'opération)
       translates_to: total eligible expenditure allocated to the operation in €
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_amount_eligible
       name: Unions-Kofinanzierungssatz (Union co-financing rate, taux de cofinancement
         par l'Union)
       translates_to: Union co-financing rate
-    - maps_to: beneficiary_nuts_region
+    - maps_to: null
       name: Kategorie der Region (category of region; catégorie de régions)
       translates_to: Category of region
     - maps_to: beneficiary_postal_code
@@ -49,13 +49,15 @@ resources:
       translates_to: country
     - name: Landkreis (county, arrondissement rural )
       translates_to: county
-    - maps_to: theme_name
+      maps_to: beneficiary_county
+    - maps_to: priority_label
       name: Bezeichnung der Interventionskategorie (name of category of intervention,
         dénomination de la catégorie d'intervention)
       translates_to: Intervention field
     - name: Datum der letzten Aktualisierung (date of last update, date de mise à
         jour)
       translates_to: Date of last updated
+      maps_to: null
   title: ERDF in Rheinland-Pfalz 2014-2020
 scraper_required: false
 sources:

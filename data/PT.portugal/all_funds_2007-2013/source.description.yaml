@@ -16,19 +16,20 @@ resources:
   publication_date: '2015-03-01'
   schema:
     fields:
-    - maps_to: cci_program_title
+    - maps_to: operational_programme
       name: Programa Operacional
       translates_to: operational programme
     - maps_to: fund_acronym
       name: Fundo
       translates_to: Fund (either ERDF or ESF)
-    - maps_to: cci_program_code
+    - maps_to: null
       name: Agenda
       translates_to: operational programme code
     - maps_to: theme_name
       name: Domínio de Intervenção
       translates_to: Intervention field / project objective
-    - name: Tipologia de Operação
+    - maps_to: priority_label
+      name: Tipologia de Operação
       translates_to: Operating Type
     - maps_to: beneficiary_name
       name: Beneficiário
@@ -42,7 +43,8 @@ resources:
     - maps_to: beneficiary_postal_code
       name: Código de Concelho
       translates_to: postal code
-    - name: Concelho
+    - maps_to: beneficiary_county
+      name: Concelho
       translates_to: County
     - maps_to: approval_date
       name: Data de Aprovação
@@ -58,4 +60,4 @@ scraper_required: false
 sources:
 - name: ERDF and ESF data for Portugal 2007-2013
   web: http://www.pofc.qren.pt/Projectos/Projectos-Aprovados-QREN?area=2&regiao=105&Search=y
-title: ERDF and ESF data for Portugal 2007-2013
+title: PT.Portugal 2007-2013 ERDF ESF

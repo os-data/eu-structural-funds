@@ -18,32 +18,43 @@ resources:
   publication_date: '2016-08-01'
   schema:
     fields:
-    - maps_to: cci_program_code
+    - maps_to: null
       name: Registrační číslo projektu
       translates_to: Project registration number
+      
     - maps_to: project_name
       name: Název projektu CZ
       translates_to: Project Title CZ
+      
     - maps_to: beneficiary_name
       name: Žadatel
       translates_to: Applicant
-    - maps_to: theme_code
+      
+    - maps_to: null
       name: Kód stavu
       translates_to: status code
-    - name: Název stavu
+      
+    - maps_to: project_status
+      name: Název stavu
       translates_to: status
+      
     - name: Číslo výzvy
       translates_to: Call number
+      maps_to: project_id
+      
     - maps_to: project_description
       name: Název výzvy
       translates_to: Call title
-    - maps_to: cci_program_title
+      
+    - maps_to: operational_programme
       name: Operační program
       translates_to: Operational program
+      
     - maps_to: total_amount_eligible
       name: CZV projektu
       translates_to: Total amount
-    - maps_to: eu_cofinancing_amount
+      
+    - maps_to: eu_cofinancing_amount_eligible
       name: Příspěvek EU
       translates_to: EU amount
   title: List of Czech ERDF operations 2014-2020

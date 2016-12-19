@@ -32,7 +32,7 @@ resources:
     - maps_to: management_authority
       name: 2nd_level_intermediate_body
       translation: 2nd level intermediate body
-    - maps_to: project_duration
+    - maps_to: starting_date
       name: period
       translation: project duration
     - maps_to: priority_label
@@ -43,4 +43,4 @@ scraper_required: false
 sources:
 - name: List of beneficiaries
   web: http://www.struktuurifondid.ee/list-of-beneficiaries/
-title: European Union Structural Assistance to Estonia
+title: EE.Estonia 2007-2013 ERDF ESF CF (?)

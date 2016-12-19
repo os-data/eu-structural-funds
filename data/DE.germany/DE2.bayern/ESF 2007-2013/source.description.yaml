@@ -19,7 +19,7 @@ resources:
     - maps_to: project_name
       name: Name des Vorhabens/ operation name
       translates_to: operation name
-    - maps_to: theme_code
+    - maps_to: priority_label
       name: Förderaktivität/ funding activity
       translates_to: programme code
     - maps_to: approval_date

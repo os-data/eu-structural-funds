@@ -33,76 +33,52 @@ resources:
   publication_date: null
   schema:
     fields:
-    - description: Project reference code
-      maps_to: project_id
+    - maps_to: project_id
       name: Code
       translates_to: Code
-    - description: Title of the project
-      maps_to: project_name
+    - maps_to: project_name
       name: Title
       translates_to: Title
-    - description: The cost of the project, in EUR
-      maps_to: total_amount
+    - maps_to: total_amount
       name: Project Cost
       translates_to: Project Cost
-    - description: The beneficiary of the project
-      maps_to: beneficiary_name
+    - maps_to: beneficiary_name
       name: Beneficiary
       translates_to: Beneficiary
-    - description: The sssociated Ministry, for example the Ministry for Education
-        and Employment
-      maps_to: null
+    - maps_to: management_authority
       name: Line Ministry
       translates_to: Line Ministry
-    - description: Only the year is provided
-      maps_to: starting_date
+    - maps_to: starting_date
       name: Start Date
       translates_to: Strat Date
-    - description: Only the  year is provided
-      maps_to: completion_date
+    - maps_to: completion_date
       name: End Date
       translates_to: End Date
-    - description: null
-      maps_to: project_description
+    - maps_to: project_description
       name: Non Technical Short Summary Of Project
       translates_to: Non Technical Short Summary Of Project
-    - description: Name of the operational programme
-      maps_to: cci_program_code
+    - maps_to: operational_programme
       name: Operational Programme
       translates_to: operational Programme
-    - description: Name of the fund
-      maps_to: fund_acronym
+    - maps_to: fund_acronym
       name: Fund
       translates_to: Fund
-    - description: null
-      maps_to: null
+    - maps_to: null
       name: Operational Objective
       translates_to: Operational Objective
-    - description: null
-      maps_to: priority_number
+    - maps_to: priority_label
       name: Priority Axis
       translates_to: Priority Axis
-    - description: 'e.g. OPIIPA2 Continuous training and education. This field looks
-        like a concatenation of Operational Programme II and Priority Axis 2. It''s
-        unclear what Operational Programme II refers to since there is only one Operational
-        Programme listed for Malta for the period 2007-2013. Also the description
-        after the code cannot be cross reference to any other description. So this
-        field is not mapped.
-
-        '
-      maps_to: null
+    - maps_to: theme_name
       name: Focus Area Of Intervention
       translates_to: Focus Area of Intervention
-    - description: null
-      maps_to: project_description
+    - maps_to: project_description
       name: Project Objectives
       translates_to: Project Objectives
-    - description: A medium length text describing the project results
-      maps_to: project_description
+    - maps_to: null
       name: Project Results
       translates_to: Project Results
-    - description: null
-      maps_to: project_description
+    - maps_to: null
       name: Project Purpose
       translates_to: Project Purpose
   title: A web page with list of all projects developed with the EU funds
@@ -110,5 +86,4 @@ scraper_required: false
 sources:
 - name: Investing in your future
   web: https://investinginyourfuture.gov.mt/projects
-title: The projects regarding the European Regional Development Fund, Cohesion Fund
-  and the European Social Fund in Malta (2007-2013)
+title: MT.Malta 2007-2013 ERDF ESF CF

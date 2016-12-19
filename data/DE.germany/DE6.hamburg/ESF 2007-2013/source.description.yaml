@@ -28,7 +28,7 @@ resources:
     - maps_to: total_amount_eligible
       name: bereitgestellte öffentliche Mittel
       translates_to: Approved Amount in Euro
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_amount_eligible
       name: davon bewilligter EU-Betrag
       translates_to: Amount of EU co-financing
     - maps_to: total_amount

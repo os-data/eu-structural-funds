@@ -54,4 +54,4 @@ scraper_required: false
 sources:
 - name: ERDF Southern and Eastern Ireland (2007-2013)
   web: http://www.southernassembly.ie/en/project/view_projects
-title: ERDF Data for Southern and Eastern Ireland (2007-2013)
+title: IE.Ireland 2007-2013 ERDF

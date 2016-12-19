@@ -15,7 +15,7 @@ resources:
   publication_date: 11/07/2016
   schema:
     fields:
-    - maps_to: cci_program_code
+    - maps_to: operational_programme
       name: Programme
       translates_to: program
     - maps_to: project_name
@@ -36,7 +36,7 @@ resources:
     - maps_to: total_amount_eligible
       name: Total dépenses éligibles
       translates_to: Amount eligible for
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_rate
       name: Montant UE programmé - Union co-financing rate
       translates_to: union co-financing rate
     - maps_to: beneficiary_country_code
@@ -45,7 +45,7 @@ resources:
     - maps_to: approval_date
       name: Date de programmation
       translates_to: this is ambiguous
-    - maps_to: theme_code
+    - maps_to: priority_label
       name: Catégorie d'intervention - category of intervention
       translates_to: category of intervention
     - maps_to: fund_acronym
@@ -60,4 +60,4 @@ sources:
   web: http://www.europe-en-france.gouv.fr/Rendez-vous-compte/Beneficiaires-des-fonds-2014-2020
 - name: Fonds européens 2014-2020 (funds page)
   web: http://www.europe-en-france.gouv.fr/L-Europe-s-engage/Fonds-europeens-2014-2020
-title: France 2014-2020, beneficiaries of european ERDS, YEI and FSE subsidies
+title: FR.France 2014-202 ERDF ESF YEI 

@@ -53,7 +53,7 @@ resources:
 
         Country'
       translates_to: country
-    - maps_to: theme_code
+    - maps_to: priority_number
       name: 'Bezeichnung der Interventionskategorie für das Vorhaben gemäß Artikel
         96 Absatz 2 Unterabsatz 1 Buchstabe b Ziffer vi
 

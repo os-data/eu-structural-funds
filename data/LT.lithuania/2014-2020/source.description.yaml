@@ -24,7 +24,7 @@ resources:
     - maps_to: beneficiary_name
       name: Pareiškėjas/ Vykdytojas
       translates_to: Author / Artist
-    - maps_to: null
+    - maps_to: project_status
       name: Paraiškos būsena
       translates_to: Claim status
     - maps_to: null
@@ -42,7 +42,7 @@ resources:
     - maps_to: null
       name: Išmokėta finansavimo suma
       translates_to: Paid-financing
-    - maps_to: null
+    - maps_to: approval_date
       name: Sutarties pasirašymo data
       translates_to: Contract date
   title: Web-portal with Lithuania's ESIF data 2014-2020
@@ -52,4 +52,4 @@ sources:
   web: http://www.esinvesticijos.lt/en/
 - name: Link to original Excel file
   web: http://www.esinvesticijos.lt/lt/paraiskos_ir_projektai/xlsexport
-title: Lithuania's ESIF data 2014-2020
+title: LT.Lithuania 2014-2020 ERDF ESF CF

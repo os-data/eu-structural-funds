@@ -19,6 +19,7 @@ resources:
     fields:
     - name: _source
       translates_to: source
+      maps_to: source
     - maps_to: beneficiary_name
       name: beneficiary
       translation: Beneficiary
@@ -29,10 +30,11 @@ resources:
       name: allocated_public_funding
       translation: allocated pulic funding (EU+national cofinancing)
     - name: status
-      translation: G = commited, A = paid out
+      translation: G = committed, A = paid out
+      maps_to: project_status
   title: ERDF data Tirol (AT) (2007-2013)
 scraper_required: false
 sources:
 - name: https://www.Tirol.gv.at/
   web: https://www.Tirol.gv.at/
-title: ERDF data for Tirol (AT) 2007-2013
+title: AT33.Tirol 2007-2013 ERDF

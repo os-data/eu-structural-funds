@@ -26,7 +26,7 @@ resources:
     - maps_to: project_description
       name: Zusammenfassung des Vorhabens
       translates_to: project description
-    - maps_to: starting_date
+    - maps_to: approval_date
       name: Bewilligungs-datum
       translates_to: grant date
     - maps_to: total_amount_eligible
@@ -37,14 +37,19 @@ resources:
       translates_to: project location
     - name: Interventions-bereich
       translates_to: Intervention field
+      maps_to: priority_label
     - name: Finanzierungs-form
       translates_to: form of financing (numerical)
+      maps_to: null
     - name: Art des Gebiets
-      translates_to: territory type
+      translates_to: territory type 
+      maps_to: null
     - name: Thematisches Ziel
       translates_to: thematic objective
+      maps_to: theme_code
     - name: Wirtschafts- zweig
       translates_to: economic activity
+      maps_to: null
   title: ERDF in Mecklenburg-Vorpommern 2014-2020
 scraper_required: false
 sources:

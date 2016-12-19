@@ -86,4 +86,4 @@ scraper_required: false
 sources:
 - name: ESIF Hungary
   web: http://eupalyazatiportal.hu/
-title: ESIF Data for Hungary 2007-2013
+title: HU.Hungary 2007-2013 ERDF ESF CF

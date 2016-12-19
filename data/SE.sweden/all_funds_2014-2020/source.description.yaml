@@ -18,9 +18,10 @@ resources:
   publication_date: 27-09-2016
   schema:
     fields:
-    - name: _source
+    - maps_to: source
+      name: _source
       translates_to: source
-    - maps_to: project_id
+    - maps_to: null
       name: ärende-id
       translates_to: Issue ID
     - maps_to: project_id
@@ -29,7 +30,7 @@ resources:
     - maps_to: total_amount
       name: beviljat_belopp_sek
       translates_to: amount granted - sec
-    - maps_to: total_amount
+    - maps_to: null
       name: beviljat_belopp_eur
       translates_to: amount granted - Euro
     - maps_to: project_name
@@ -44,18 +45,23 @@ resources:
     - maps_to: completion_date
       name: projekt_sluttid
       translates_to: project ending time
-    - name: projektledare
+    - maps_to: beneficiary_person
+      name: projektledare
       translates_to: person responsible for project
-    - name: telnr
+    - maps_to: null
+      name: telnr
       translates_to: telephone number of person responsible
-    - name: e-post
+    - maps_to: null
+      name: e-post
       translates_to: person responsible email
-    - name: län
+    - maps_to: beneficiary_county
+      name: län
       translates_to: beneficiary county
     - maps_to: beneficiary_city
       name: kommuner
       translates_to: beneficiary city
-    - name: uppdateringsdatum
+    - maps_to: date_updated
+      name: uppdateringsdatum
       translates_to: date last updated
     - maps_to: beneficiary_nuts_region
       name: område
@@ -63,7 +69,7 @@ resources:
     - maps_to: priority_label
       name: insatsområde
       translates_to: priority label
-    - maps_to: theme_code
+    - maps_to: theme_name
       name: tematiskt_mål
       translates_to: thematic goal
   title: Swedish ERDF data 2014-2020
@@ -71,4 +77,4 @@ scraper_required: false
 sources:
 - name: Swedish ERDF and ESF 2007 - 2013
   web: http://projektbank.tillvaxtverket.se/projektbanken2020#page=eruf
-title: ERDF and ESF data for Sweden 2014-2020
+title: SE.Sweden 2014-2020 ERDF ESF

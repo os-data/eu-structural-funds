@@ -37,6 +37,7 @@ resources:
       translates_to: total eligible expenditure allocated to the operation
     - name: Unions-Kofinanzierungssatz pro Prioritätsachse - Union co-financing rate
       translates_to: percent rate that EU will cover
+      maps_to: eu_cofinancing_rate
     - maps_to: beneficiary_postal_code
       name: Postleitzahl des Vorhabens - operation postcode
       translates_to: operation post

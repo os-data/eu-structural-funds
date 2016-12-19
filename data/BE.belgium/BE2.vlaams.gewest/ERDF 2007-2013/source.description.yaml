@@ -18,15 +18,17 @@ resources:
       translates_to: priority number
     - name: ODNUMMER
       translates_to: unclear
+      maps_to: null
     - name: PROJECTNUMMER
       translates_to: Project number
+      maps_to: null
     - maps_to: project_name
       name: PROJECTNAAM_manueel
       translates_to: project title
     - maps_to: beneficiary_name
       name: PROMOTOR_manueel
       translates_to: beneficiary
-    - maps_to: total_amount_eligible
+    - maps_to: total_amount
       name: SUBSIDIABELE_KOST
       translates_to: eligible cost
     - maps_to: eu_cofinancing_amount
@@ -34,21 +36,26 @@ resources:
       translates_to: EU cofinancing amount
     - name: PERCENTAGE
       translates_to: percentage of EU cofinancing
+      maps_to: eu_cofinancing_rate
     - maps_to: project_description
       name: PROJECTINHOUD_manueel
       translates_to: project description
     - maps_to: beneficiary_address
       name: STRAAT
       translates_to: Street
+      maps_to: null
     - name: HUISNUMMER
       translates_to: house number
+      maps_to: null
     - name: BUSNUMMER
       translates_to: bus number
+      maps_to: null
     - maps_to: beneficiary_postal_code
       name: POSTCODE
       translates_to: postal code
     - name: GEMEENTE
       translates_to: county
+      maps_to: beneficiary_county
     - maps_to: beneficiary_url
       name: PROJECTWEBSITE
       translates_to: projects website
@@ -63,13 +70,16 @@ resources:
       translates_to: completion date of project
     - name: PROJECTVERANTWOORDELIJKE
       translates_to: Person responsible for project (lastname)
+      maps_to: beneficiary_person
     - name: VOORNAAM
       translates_to: first name of person responsible
+      maps_to: null
     - name: EMAIL
       translates_to: email of person responsible for project
+      maps_to: null
   title: Belgium Region Vlaams ERDF data 2007-2013
 scraper_required: false
 sources:
 - name: Belgium Region Vlaams ERDF data 2007-2013
   web: http://www.vlaio.be/artikel/overzicht-van-goedgekeurde-projecten
-title: Belgium Region Vlaams ERDF data 2007-2013
+title: BE2.Vlaams Gewest 2007-2013 ERDF

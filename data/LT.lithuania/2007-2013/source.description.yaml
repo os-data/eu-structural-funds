@@ -24,20 +24,22 @@ resources:
     - maps_to: project_name
       name: Projekto pavadinimas
       translates_to: project title
-    - maps_to: total_amount_eligible
+    - maps_to: total_amount
       name: Bendra projekto vertė, Eur
       translates_to: The total value of the project
-    - maps_to: total_amount
+    - maps_to: null
       name: Projektui skirtas finansavimas, Eur
       translates_to: Project funding
     - name: Projektui skirto finansavimo ES dalis, Eur
       translates_to: EU cofinancing amount eligible
+      maps_to: eu_cofinancing_amount_eligible
     - name: Projektui išmokėta lėšų, Eur
       translates_to: Project funds disbursed
+      maps_to: null
     - maps_to: eu_cofinancing_amount
       name: Projektui išmokėta lėšų ES dalis, Eur
       translates_to: EU cofinancing amount
-    - maps_to: null
+    - maps_to: project_status
       name: Projekto būsena
       translates_to: Project Status
   title: Web-portal with Lithuania's ESIF data 2007-today
@@ -45,4 +47,4 @@ scraper_required: false
 sources:
 - name: Lithuania landing page 2007-2013
   web: http://www.esinvesticijos.lt/en/
-title: Lithuania's ESIF data 2007-2013
+title: LT.Lithuania 2007-2013 ERDF ESF CF

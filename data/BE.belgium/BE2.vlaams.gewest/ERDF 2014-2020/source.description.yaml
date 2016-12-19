@@ -19,7 +19,8 @@ resources:
     - maps_to: beneficiary_name
       name: Promotor
       translates_to: beneficiary
-    - name: Co-promotoren
+    - maps_to: null
+      name: Co-promotoren
       translates_to: co-beneficiaries
     - maps_to: project_name
       name: Project
@@ -33,9 +34,11 @@ resources:
     - maps_to: member_state_amount
       name: Vlaamse co-financiering
       translates_to: amount of national / regional funding
-    - name: Percent
+    - maps_to: eu_cofinancing_rate
+      name: Percent
       translates_to: percentage of EU cofinancing
-    - name: cofinanciering naam
+    - maps_to: null
+      name: cofinanciering naam
       translates_to: name of cofinancing programme
   title: Belgium Region Vlaams ERDF data 2014-2020
 scraper_required: false
@@ -44,4 +47,4 @@ sources:
   web: http://www.vlaio.be/artikel/overzicht-van-goedgekeurde-projecten
 - name: Original data file link
   web: http://www.vlaio.be/sites/default/files/documenten/ef_20120410_overzicht_projecten.xlsx
-title: Belgium Region Vlaams ERDF data 2014-2020
+title: BE2.vlaams.gewest 2014-2020 ERDF

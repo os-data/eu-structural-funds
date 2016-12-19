@@ -70,4 +70,4 @@ scraper_required: false
 sources:
 - name: ESIF Hungary
   web: http://eupalyazatiportal.hu/
-title: ESIF Data for Hungary 2000-2006
+title: HU.Hungary 2000-2006 ERDF

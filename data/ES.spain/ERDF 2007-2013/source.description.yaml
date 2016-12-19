@@ -16,6 +16,7 @@ resources:
     fields:
     - name: _source
       translates_to: source
+      maps_to: source
     - maps_to: beneficiary_name
       name: nombre_beneficiario
       translates_to: Beneficiary name
@@ -278,4 +279,4 @@ scraper_required: false
 sources:
 - name: ERDF Spain (2007-2013)
   web: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/en-GB/Paginas/inicio.aspx
-title: ERDF Data for Spain (2007-2013)
+title: ES.Spain 2007-2013 ERDF
