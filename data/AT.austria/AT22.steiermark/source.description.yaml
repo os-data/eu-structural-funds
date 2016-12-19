@@ -24,6 +24,7 @@ resources:
       translates_to: Public Contribution (EU and national)
     - name: Status - G genehmigt - A ausbezahlt
       translates_to: Status of Project - G confirmed A paid
+      maps_to: project_status
   title: ERDF Steiermark 2007-2013
 scraper_required: false
 sources:
