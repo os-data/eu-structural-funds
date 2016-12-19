@@ -16,7 +16,7 @@ resources:
   publication_date: 05-07-2016
   schema:
     fields:
-    - maps_to: null
+    - maps_to: project_id
       name: ID (ne spreminjaj)
       translates_to: ID (not change)
     - maps_to: project_description
@@ -40,7 +40,7 @@ resources:
     - maps_to: project_name
       name: NAZIV OPERACIJE
       translates_to: NAME OF OPERATIONS
-    - maps_to: cci_program_code
+    - maps_to: operational_programme
       name: NAZIV OPERATIVNEGA PROGRAMA
       translates_to: TITLE OF THE OPERATIONAL PROGRAMME
     - maps_to: fund_acronym
@@ -52,20 +52,20 @@ resources:
     - maps_to: beneficiary_city
       name: OBČINA
       translates_to: MUNICIPALITY
-    - maps_to: null
+    - maps_to: starting_date
       name: Leto dodelitve sredstev
       translates_to: Year allocation
-    - maps_to: null
+    - maps_to: management_authority
       name: NAČIN DODELITVE SREDSTEV
       translates_to: General allocation of funds (e.g. Call of Tender)
-    - maps_to: null
+    - maps_to: priority_label
       name: PODROČJE
       translates_to: FIELD (e.g. Competitiveness of enterprises and research excellence,
         Development of Regions, etc.)
-    - maps_to: null
+    - maps_to: source
       name: VIR
       translates_to: SOURCE
-    - maps_to: null
+    - maps_to: beneficiary_url
       name: Objava na spletni strani
       translates_to: Project Website
   title: Excel file for Slovenia's ERDF, ESF, and Cohesion fund 2007-2013
