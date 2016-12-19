@@ -62,4 +62,4 @@ scraper_required: false
 sources:
 - name: Finland ERDF data 2007-2013
   web: https://www.rakennerahastot.fi/rahoitetut-hankkeet#.V1A2dJN95E4
-title: Finland ESIF data 2007-2013
+title: Fi.Finland 2007-2013 ERDF ESF
