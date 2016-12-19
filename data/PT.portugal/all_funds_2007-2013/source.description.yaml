@@ -60,4 +60,4 @@ scraper_required: false
 sources:
 - name: ERDF and ESF data for Portugal 2007-2013
   web: http://www.pofc.qren.pt/Projectos/Projectos-Aprovados-QREN?area=2&regiao=105&Search=y
-title: ERDF and ESF data for Portugal 2007-2013
+title: PT.Portugal 2007-2013 ERDF ESF
