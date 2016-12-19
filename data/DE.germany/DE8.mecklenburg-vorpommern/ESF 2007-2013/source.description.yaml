@@ -14,7 +14,7 @@ resources:
   publication_date: '2014-12-31'
   schema:
     fields:
-    - maps_to: theme_code
+    - maps_to: priority_label
       name: Förderaktivität
       translates_to: programme code
     - maps_to: beneficiary_name
