@@ -31,9 +31,9 @@ resources:
     - maps_to: total_amount_eligible
       name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens in €
       translates_to: total eligible expenditure allocated to the operation in €
-    - maps_to: eu_cofinancing_amount
       name: Unions-Kofinan-zierungssatz
       translates_to: Union co-financing rate
+    - maps_to eu_cofinancing_rate
     - maps_to: beneficiary_nuts_region
       name: Kategorie der Region
       translates_to: Category of region
@@ -43,11 +43,12 @@ resources:
     - maps_to: beneficiary_country
       name: Land
       translates_to: country
-    - maps_to: beneficiary_nuts_code
-      name: Landkreis
+    - name: Landkreis
       translates_to: county
+      maps_to: beneficiary_county
     - name: Interven-tionsbe-reich
       translates_to: Intervention field
+      maps_to: priority_number
   title: ESF in Niedersachsen 2014-2020
 scraper_required: false
 sources:
