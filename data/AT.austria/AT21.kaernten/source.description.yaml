@@ -24,6 +24,7 @@ resources:
       translates_to: total cost of project (EU and public funding)
     - name: Status - G genehmigt - A ausbezahlt
       translates_to: Status - G committed - A paid
+      maps_to: project_status
   title: ERDF Kärnten 2007-2013
 scraper_required: false
 sources:
