@@ -19,7 +19,8 @@ resources:
     fields:
     - name: _source
       translates_to: source
-    - maps_to: project_description
+      maps_to: source
+    - maps_to: project_name
       name: title
       translates_to: operation name
     - maps_to: fund_acronym
@@ -28,7 +29,7 @@ resources:
     - maps_to: theme_name
       name: objectifs_thématiques
       translates_to: theme name
-    - maps_to: cci_program_title
+    - maps_to: operational_programme
       name: programme
       translates_to: programme
     - maps_to: beneficiary_name
@@ -37,7 +38,7 @@ resources:
     - maps_to: beneficiary_name
       name: porteur_de_projet
       translates_to: Beneficiary name
-    - maps_to: beneficiary_city
+    - maps_to: beneficiary_county
       name: commune(s)
       translates_to: city / county
     - maps_to: total_amount
@@ -55,7 +56,7 @@ resources:
     - maps_to: starting_date
       name: durée
       translates_to: duration of project
-    - maps_to: null
+    - maps_to: priority_label
       name: catégorie_d'intervention
       translates_to: null
   title: ERDF and ESF Luxembourg 2007-2013
