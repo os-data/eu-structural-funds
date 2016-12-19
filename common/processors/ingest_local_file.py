@@ -12,6 +12,8 @@ import json
 import cchardet
 
 from logging import warning, info
+
+import logging
 from datapackage_pipelines.wrapper import ingest
 from datapackage_pipelines.wrapper import spew
 from os.path import splitext
@@ -79,6 +81,16 @@ class BaseIngestor(object):
 
     def _check_headers(self):
         message = 'Fields and headers do no match'
+        extra_fields = set(self._fields) - set(self._headers)
+        extra_headers = set(self._headers) - set(self._fields)
+        if len(extra_headers) > 0:
+            logging.error('Headers in the source and not in the description file:')
+            for header in extra_headers:
+                logging.error('\t%s', header)
+        if len(extra_fields) > 0:
+            logging.error('Fields in the description file and not in the source:')
+            for field in extra_fields:
+                logging.error('\t%s', field)
         assert set(self._headers) == set(self._fields), message
 
     @property
