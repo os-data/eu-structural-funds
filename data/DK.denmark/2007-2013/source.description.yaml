@@ -40,7 +40,7 @@ resources:
     - maps_to: fund_acronym
       name: ordning
       translation: Fund
-    - maps_to: priority_label
+    - maps_to: theme_name
       name: Indsatsområde
       translates_to: Focus
     - maps_to: total_amount
@@ -72,6 +72,7 @@ resources:
       translation: City name
     - name: parter
       translation: Project partners
+      maps_to: null
   title: All funds data 2007-2013
 scraper_required: false
 sources:
