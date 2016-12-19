@@ -77,4 +77,4 @@ scraper_required: false
 sources:
 - name: Swedish ERDF and ESF 2007 - 2013
   web: http://projektbank.tillvaxtverket.se/projektbanken2020#page=eruf
-title: ERDF and ESF data for Sweden 2014-2020
+title: SE.Sweden 2014-2020 ERDF ESF
