@@ -33,4 +33,4 @@ scraper_required: false
 sources:
 - name: ERDF Vorarlberg
   web: http://www.innovation-Vorarlberg.at/de/projekte/verzeichnis/projektliste.php
-title: ERDF Data for Vorarlberg
+title: AT34.Vorarlberg 2007-2013 ERDF
