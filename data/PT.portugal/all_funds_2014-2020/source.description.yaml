@@ -16,10 +16,10 @@ resources:
   publication_date: '2016-08-31'
   schema:
     fields:
-    - maps_to: cci_program_code
+    - maps_to: project_id
       name: Código da Operação | Operation Code
       translates_to: operation code
-    - maps_to: cci_program_title
+    - maps_to: operational_programme
       name: Programa Operacional | Operational Programme
       translates_to: operational programme
     - maps_to: priority_label
@@ -35,15 +35,17 @@ resources:
       name: Despesas Elegíveis Totais Atribuídas à Operação | Total Eligible Expenditure
         Allocated to the Operation
       translates_to: Total Eligible Expenditure Allocated to the Operation
-    - name: FEEI | ESI Fund
+    - maps_to: fund_acronym
+      name: FEEI | ESI Fund
       translates_to: Fund (either ERDF or ESF)
-    - maps_to: total_amount
+    - maps_to: eu_cofinancing_amount_eligible
       name: Fundo Total Aprovado | Total Aproved Fund
       translates_to: total approved amount
     - maps_to: theme_name
       name: Objetivo Temático | Thematic Objective
       translates_to: Thematic objective
-    - name: Prioridade de Investimento | Investment Priority
+    - maps_to: null
+      name: Prioridade de Investimento | Investment Priority
       translates_to: Investment Priority
   title: ERDF and ESF data for Portugal 2014-2020
 scraper_required: false
