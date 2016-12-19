@@ -16,6 +16,7 @@ resources:
     fields:
     - name: _source
       translates_to: source
+      maps_to: source
     - maps_to: beneficiary_name
       name: col1
       translates_to: Beneficiary name
