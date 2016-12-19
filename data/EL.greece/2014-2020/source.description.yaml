@@ -70,5 +70,4 @@ scraper_required: false
 sources:
 - name: ESIF data for Greece 2014-2020
   web: https://www.espa.gr/en/pages/default.aspx
-title: European Structural and Investment Funds (ESIF) for the period 2014-2020 for
-  Greece
+title: EL.Greece 2014-2020 ERDF ESF CF
