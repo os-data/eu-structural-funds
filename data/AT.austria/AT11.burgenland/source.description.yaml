@@ -25,8 +25,7 @@ resources:
     - maps_to: project_description
       name: Projektbeschreibung
       translates_to: Project description
-    - decimal: null
-      maps_to: total_amount
+    - maps_to: total_amount
       name: öffentliche Beteiligung
       translates_to: total amount of public expenditure EU and local
     - name: Status G = genehmigt A = ausbezahlt
