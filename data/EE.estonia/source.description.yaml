@@ -43,4 +43,4 @@ scraper_required: false
 sources:
 - name: List of beneficiaries
   web: http://www.struktuurifondid.ee/list-of-beneficiaries/
-title: European Union Structural Assistance to Estonia
+title: EE.Estonia 2007-2013 ERDF ESF CF (?)
