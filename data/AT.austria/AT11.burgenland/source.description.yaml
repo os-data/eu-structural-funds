@@ -39,4 +39,4 @@ scraper_required: false
 sources:
 - name: ERDF Burgenland (2007-2013)
   web: http://www.phasing-out.at/
-title: ERDF Data for Burgenland (2007-2013)
+title: AT11.burgenland 2007-2013 ERDF
