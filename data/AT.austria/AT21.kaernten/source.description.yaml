@@ -30,4 +30,4 @@ scraper_required: false
 sources:
 - name: ERDF Kärnten
   web: http://kwf.at/?inhalt=Gefoerderte_Projekte_2007-2013&id=6-1-5-0
-title: AT21.kaernten ERDF 2007 - 2013
+title: AT21.kaernten 2007 - 2013 ERDF
