@@ -38,7 +38,7 @@ resources:
 
         - name: Koodi
           translates_to: Code
-          maps_to: cci_program_code
+          maps_to: project_id
 
         - name: Rahasto
           translates_to: Fund
@@ -50,13 +50,15 @@ resources:
 
         - name: Tl
           translates_to: some number defining the project either 1 or 2
-
+          maps_to: null
+         
         - name: Viranomainen
           translates_to: Authority / beneficiary
           maps_to: beneficiary_name
 
         - name: Tila
           translates_to: Status of project
+          maps_to: project_status
 
         - name: Aloituspvm
           translates_to: project's starting date
@@ -68,6 +70,7 @@ resources:
 
         - name: Toteuttajan nimi
           translates_to: names of the executor
+          maps_to: management_authority
 
         - name: Myönnetty EU- ja valtion rahoitus
           translates_to: Granted state funding in the EU
