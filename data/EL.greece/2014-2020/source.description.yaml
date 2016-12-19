@@ -19,80 +19,52 @@ resources:
   publication_date: null
   schema:
     fields:
-    - description: null
-      missingValue: null
+    - maps_to: operational_programme
       name: ΕΠΙΧΕΙΡΗΣΙΑΚΟ ΠΡΟΓΡΑΜΜΑ/ OPERATIONAL PROGRAMME
-      translation: OPERATIONAL PROGRAMME
-      type: string
-    - description: null
-      missingValue: null
-      name: ΑΞΟΝΑΣ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ/PRIORITY
-      translation: PRIORITY
-      type: string
-    - description: null
-      missingValue: null
-      name: TAMEIO/ FUND
-      translation: FUND
-      type: string
-    - description: null
-      missingValue: null
-      name: ΟΝΟΜΑΣΙΑ ΔΙΚΑΙΟΥΧΟΥ / BENEFICIARY NAME
-      translation: BENEFICIARY NAME
-      type: string
-    - description: null
-      missingValue: null
-      name: ΟΝΟΜΑΣΙΑ ΠΡΑΞΗΣ / OPERATION NAME
-      translation: OPERATION NAME
-      type: string
-    - description: null
-      missingValue: null
-      name: ΣΥΝΟΨΗ ΠΡΑΞΗΣ/ OPERATION SUMMARY
-      translation: OPERATION SUMMARY
-      type: string
-    - description: null
-      missingValue: null
-      name: ΗΜ/ΝΙΑ ΕΝΑΡΞΗΣ ΤΗΣ ΠΡΑΞΗΣ / OPERATION START DATE
-      translation: OPERATION START DATE
-      type: date
-    - description: null
-      missingValue: null
-      name: ΚΑΤΑΛΗΚΤΙΚΗ ΗΜΕΡΟΜΗΝΙΑ ΠΡΑΞΗΣ / OPERATION END DATE
-      translation: OPERATION END DATE
-      type: date
-    - description: null
-      missingValue: ''
-      name: ΣΥΝΟΛΙΚΗ ΕΠΙΛΕΞΙΜΗ ΔΑΠΑΝΗ ΠΟΥ ΔΙΑΤΕΘΗΚΕ ΣΤΗΝ ΠΡΑΞΗ (ΠΡΟΫΠΟΛΟΓΙΣΜΟΣ)/ TOTAL
+      translates_to: OPERATIONAL PROGRAMME
+    - name: ΑΞΟΝΑΣ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ/PRIORITY
+      translates_to: PRIORITY
+      maps_to: priority_label
+    - name: TAMEIO/ FUND
+      translates_to: FUND
+      maps_to: fund_acronym
+    - name: ΟΝΟΜΑΣΙΑ ΔΙΚΑΙΟΥΧΟΥ / BENEFICIARY NAME
+      translates_to: BENEFICIARY NAME
+      maps_to: beneficiary_name
+    - name: ΟΝΟΜΑΣΙΑ ΠΡΑΞΗΣ / OPERATION NAME
+      translates_to: OPERATION NAME
+      maps_to: project_name
+    - name: ΣΥΝΟΨΗ ΠΡΑΞΗΣ/ OPERATION SUMMARY
+      translates_to: OPERATION SUMMARY
+      maps_to: project_description
+    - name: ΗΜ/ΝΙΑ ΕΝΑΡΞΗΣ ΤΗΣ ΠΡΑΞΗΣ / OPERATION START DATE
+      translates_to: OPERATION START DATE
+      maps_to: starting_date
+    - name: ΚΑΤΑΛΗΚΤΙΚΗ ΗΜΕΡΟΜΗΝΙΑ ΠΡΑΞΗΣ / OPERATION END DATE
+      translates_to: OPERATION END DATE
+      maps_to: completion_date
+    - name: ΣΥΝΟΛΙΚΗ ΕΠΙΛΕΞΙΜΗ ΔΑΠΑΝΗ ΠΟΥ ΔΙΑΤΕΘΗΚΕ ΣΤΗΝ ΠΡΑΞΗ (ΠΡΟΫΠΟΛΟΓΙΣΜΟΣ)/ TOTAL
         ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION
-      translation: TOTAL ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION
-      type: number
-    - description: null
-      missingValue: null
-      name: ΠΟΣΟΣΤΟ ΣΥΓΧΡΗΜΑΤΟΔΟΤΗΣΗΣ ΤΗΣ ΕΝΩΣΗΣ ΑΝΑ ΑΞΟΝΑ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ/ UNION Co-FINANCING
+      translates_to: TOTAL ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION
+      maps_to: total_amount_eligible 
+    - name: ΠΟΣΟΣΤΟ ΣΥΓΧΡΗΜΑΤΟΔΟΤΗΣΗΣ ΤΗΣ ΕΝΩΣΗΣ ΑΝΑ ΑΞΟΝΑ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ/ UNION Co-FINANCING
         RATE AS PER PRIORITY AXIS
-      translation: UNION Co-FINANCING RATE  AS PER PRIORITY AXIS
-      type: string
-    - description: null
-      missingValue: null
-      name: ΤΑΧΥΔΡΟΜΙΚΟΣ ΚΩΔΙΚΑΣ ή ’ΛΛΗ ΚΑΤΑΛΛΗΛΗ ΕΝΔΕΙΞΗ ΤΟΠΟΘΕΣΙΑΣ/ POSTCODE OR
+      translates_to: UNION Co-FINANCING RATE  AS PER PRIORITY AXIS
+      maps_to: eu_cofinancing_rate
+    - name: ΤΑΧΥΔΡΟΜΙΚΟΣ ΚΩΔΙΚΑΣ ή ’ΛΛΗ ΚΑΤΑΛΛΗΛΗ ΕΝΔΕΙΞΗ ΤΟΠΟΘΕΣΙΑΣ/ POSTCODE OR
         OTHER APPROPRIATE LOCATION INDICATOR
-      translation: POSTCODE OR OTHER APPROPRIATE LOCATION INDICATOR
-      type: string
-    - description: null
-      missingValue: null
-      name: ΧΩΡΑ/ COUNTRY
-      translation: COUNTRY
-      type: string
-    - description: null
-      missingValue: null
-      name: ΟΝΟΜΑΣΙΑ ΚΑΤΗΓΟΡΙΑΣ ΠΑΡΕΜΒΑΣΗΣ ΤΗΣ ΠΡΑΞΗΣ/ NAME OF CATEGORY OF INTERVENTION
+      translates_to: POSTCODE OR OTHER APPROPRIATE LOCATION INDICATOR
+      maps_to: beneficiary_city
+    - name: ΧΩΡΑ/ COUNTRY
+      translates_to: COUNTRY
+      maps_to: beneficiary_country 
+    - name: ΟΝΟΜΑΣΙΑ ΚΑΤΗΓΟΡΙΑΣ ΠΑΡΕΜΒΑΣΗΣ ΤΗΣ ΠΡΑΞΗΣ/ NAME OF CATEGORY OF INTERVENTION
         FOR THE OPERATION
-      translation: NAME OF CATEGORY OF INTERVENTION FOR THE OPERATION
-      type: string
-    - description: null
-      missingValue: null
-      name: ΤΕΛΕΥΤΑΙΑ ΕΝΗΜΕΡΩΣΗ ΚΑΤΑΛΟΓΟΥ/ LAST UPDATE OF THE LIST
+      translates_to: NAME OF CATEGORY OF INTERVENTION FOR THE OPERATION
+      maps_to: theme_name
+    - name: ΤΕΛΕΥΤΑΙΑ ΕΝΗΜΕΡΩΣΗ ΚΑΤΑΛΟΓΟΥ/ LAST UPDATE OF THE LIST
       translation: LAST UPDATE OF THE LIST
-      type: date
+      maps_to: date_updated
   title: The list of all projects for the period 2014-2020
 scraper_required: false
 sources:
