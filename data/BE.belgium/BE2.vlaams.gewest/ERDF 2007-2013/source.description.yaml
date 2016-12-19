@@ -18,10 +18,10 @@ resources:
       translates_to: priority number
     - name: ODNUMMER
       translates_to: unclear
-      maps_to:
+      maps_to: null
     - name: PROJECTNUMMER
       translates_to: Project number
-      maps_to:
+      maps_to: null
     - maps_to: project_name
       name: PROJECTNAAM_manueel
       translates_to: project title
@@ -43,13 +43,13 @@ resources:
     - maps_to: beneficiary_address
       name: STRAAT
       translates_to: Street
-      maps_to:
+      maps_to: null
     - name: HUISNUMMER
       translates_to: house number
-      maps_to:
+      maps_to: null
     - name: BUSNUMMER
       translates_to: bus number
-      maps_to:
+      maps_to: null
     - maps_to: beneficiary_postal_code
       name: POSTCODE
       translates_to: postal code
@@ -73,10 +73,10 @@ resources:
       maps_to: beneficiary_person
     - name: VOORNAAM
       translates_to: first name of person responsible
-      maps_to: 
+      maps_to: null
     - name: EMAIL
       translates_to: email of person responsible for project
-      maps_to: 
+      maps_to: null
   title: Belgium Region Vlaams ERDF data 2007-2013
 scraper_required: false
 sources:
