@@ -13,7 +13,7 @@ resources:
   publication_date: '2016-11-01'
   schema:
     fields:
-    - maps_to: project_id
+    - maps_to: priority_number
       name: SAM / pasākuma nr.
       translates_to: SAM / event no.
     - maps_to: project_name
