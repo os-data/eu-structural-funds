@@ -22,7 +22,7 @@ resources:
     - maps_to: approval_date
       name: Jahr der Bewilligung
       translates_to: Year of Approval
-    - maps_to: final_payment_date
+    - maps_to: completion_date
       name: Jahr der abschließenden Restzahlung
       translates_to: Year of final payment
     - maps_to: total_amount_eligible
@@ -31,6 +31,7 @@ resources:
     - maps_to: total_amount
       name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge
       translates_to: Paid amount at the end of the project
+      
   title: ESF Niedersachsen 2007-2013 Konvergenz
 - add_categories: {}
   add_constants:
@@ -42,24 +43,7 @@ resources:
   publication_date: '2016-05-31'
   schema:
     fields:
-    - maps_to: beneficiary_name
-      name: NAME DES BEGÜNSTIGTEN
-      translates_to: Name of the Beneficiary
-    - maps_to: project_name
-      name: BEZEICHNUNG DES VORHABENS
-      translates_to: Name of the Project
-    - maps_to: approval_date
-      name: Jahr der Bewilligung
-      translates_to: Year of Approval
-    - maps_to: final_payment_date
-      name: Jahr der abschließenden Restzahlung
-      translates_to: Year of final payment
-    - maps_to: total_amount_eligible
-      name: Gewährte Beträge
-      translates_to: Amount eligible
-    - maps_to: total_amount
-      name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge
-      translates_to: Paid amount at the end of the project
+
   title: ESF Niedersachsen 2007-2013 RWB
 scraper_required: false
 sources:
