@@ -36,6 +36,7 @@ resources:
         fields:
           - name: _source
             translates_to: source
+            maps_to: source
 
           - name: annee
             translates_to: year
@@ -67,6 +68,7 @@ resources:
 
           - name: durée
             translates_to: duration
+            maps_to: starting_date
 
           - name: coût_total
             translates_to: total_amount
