@@ -35,7 +35,7 @@ resources:
 
         - name: N°
           translates_to: Number (id)
-          maps_to: 
+          maps_to: null
 
         - name: Bénéficiaire / Begunstigde
           translates_to: beneficiary
@@ -43,7 +43,7 @@ resources:
 
         - name: FEDER
           translates_to: EU cofinancing amount
-          maps_to: 
+          maps_to: null
 
         - name: Financement public sans FEDER
           translates_to: public financing without FEDER 
@@ -67,7 +67,7 @@ resources:
 
         - name: Financement public / Publieke financiering (€)
           translates_to: publicly financed amount 
-          maps_to: 
+          maps_to: null
 
         - name: Financement FEDER (UE) / EFRO-financiering (EU) (€)
           translates_to: EU cofinancing amount
