@@ -25,7 +25,7 @@ resources:
     - maps_to: project_description
       name: Opis operacije/Operation description
       translates_to: Operation description
-    - maps_to: null
+    - maps_to: priority_label
       name: Prednostna os
       translates_to: Priority Axis
     - maps_to: project_description
@@ -65,10 +65,12 @@ resources:
     - maps_to: beneficiary_country_code
       name: Država/Country
       translates_to: Country
-    - maps_to: null
+    - maps_to: date_updated
       name: Stanje na dan/Date of last update of the list of operations
       translates_to: Date of last update of the list of operations
-    - name: Statistična regija/Statistical region
+    - maps_to: null
+      name: Statistična regija/Statistical region
+      translates_to: Statistical region
   title: Excel file for Slovenia's ERDF, ESF, and Cohesion fund 2014-2020
 scraper_required: false
 sources:
