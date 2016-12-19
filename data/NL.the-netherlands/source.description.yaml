@@ -69,4 +69,4 @@ scraper_required: false
 sources:
 - name: ERDF and ESF The Netherlands (2007-2013)
   web: https://www.europaomdehoek.nl/
-title: ERDF and ESF Data for The Netherlands (2007-2013)
+title: NL.the-Netherlands 2007-2013 ERDF ESF
