@@ -15,9 +15,9 @@ resources:
   publication_date: '2016-07-08'
   schema:
     fields:
-    - maps_to: project_id
+    - maps_to: beneficiary_name
       name: 1. Name des Begünstigten
-      translates_to: project number
+      translates_to: benficiary
     - maps_to: project_name
       name: 2. Bezeichnung des Vorhabens
       translates_to: operation name
@@ -33,7 +33,7 @@ resources:
     - maps_to: total_amount_eligible
       name: 6. Gesamtbetrag der förderfähigen Ausgaben des Vorhabens
       translates_to: total eligible expenditure allocated to the operation
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_rate
       name: 7. Unions-Kofinanzierungssatz pro Prioritätsachse
       translates_to: Union co-financing rate in percent
     - maps_to: beneficiary_city
@@ -41,15 +41,19 @@ resources:
       translates_to: Project location
     - name: 9. Landkreis/Kreisfreie Gemeinde/ Große Kreisstädte
       translates_to: administrative district (county)
+      maps_to: beneficiary_county
     - maps_to: beneficiary_country
       name: 10. Land
       translates_to: country
     - name: 11. Bezeichnung der Interventionskategorie für das Vorhaben
       translates_to: Name of category of intervention for the operation
+      maps_to: priority_label
     - name: 12. Förderrichtlinie
       translates_to: supported action
+      maps_to: null
     - name: 13. Fördergegenstand
       translates_to: programme
+      maps_to: null
   title: ESF in Sachsen 2014-2020
 scraper_required: false
 sources:
