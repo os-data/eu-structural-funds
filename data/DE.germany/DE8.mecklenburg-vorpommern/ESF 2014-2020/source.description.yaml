@@ -29,6 +29,7 @@ resources:
       translates_to: project number
     - name: Interventionskategorie
       translates_to: Intervention field
+      maps_to: priority_label
     - maps_to: beneficiary_name
       name: Name des Begünstigten
       translates_to: Beneficiary name
