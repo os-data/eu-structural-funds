@@ -11,28 +11,38 @@ resources:
   schema:
     fields:
     - name: Naziv projekta
-      translation: Project Name
+      translates_to: Project Name
+      maps_to: project_name
     - name: Fond
-      translation: Fund
+      translates_to: Fund
+      maps_to: fund_acronym
     - name: Šifra operativnog programa
-      translation: Code OP
+      translates_to: Code OP
+      maps_to: operational_programme
     - name: NUTSII
-      translation: NUTSII
+      translates_to: NUTSII
+      maps_to: beneficiary_nuts_region
     - name: Županija
-      translation: District
+      translates_to: District
+      maps_to: beneficiary_county
     - name: Korisnik
-      translation: User
+      translates_to: User
+      maps_to: beneficiary_name
     - name: Opis projekta
-      translation: Project description
+      translates_to: Project description
+      maps_to: project_description
     - name: Datum ugovaranja
-      translation: Date of contract
+      translates_to: Date of contract
+      maps_to: approval_date
     - name: Zaključni datum provedbe aktivnosti
-      translation: closing date of implementation of activities
+      translates_to: closing date of implementation of activities
+      maps_to: completion_date
     - name: Bespovratna sredstva
-      translation: Grants
-      type: number
+      translates_to: Grants
+      maps_to: total_amount
     - name: Ukupno prihvatljivi troškovi
-      translation: Total eligible costs
+      translates_to: Total eligible costs
+      maps_to: total_amount_eligible
   title: Xls file containing all ESIF data for Croatia.
   url: http://www.strukturnifondovi.hr/UserDocsImages/Documents/KartaProjekataZaWeb%201.4.2016.xls
 scraper_required: false
