@@ -46,7 +46,7 @@ resources:
       maps_to: null
     - name: Thematisches Ziel
       translates_to: thematic objective
-      maps_to: null
+      maps_to: theme_code
     - name: Wirtschafts- zweig
       translates_to: economic activity
       maps_to: null
