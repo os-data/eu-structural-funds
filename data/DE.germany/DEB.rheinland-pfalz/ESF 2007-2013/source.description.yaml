@@ -30,6 +30,7 @@ resources:
       fields:
         - name: _source
           translates_to: source
+          maps_to: source
 
         - name: beneficiary
           translates_to: Beneficiary name
@@ -69,6 +70,7 @@ resources:
       fields:
         - name: _source
           translates_to: source
+          maps_to: source
 
         - name: beneficiary
           translates_to: Beneficiary name
@@ -108,6 +110,7 @@ resources:
       fields:
         - name: _source
           translates_to: source
+          maps_to: source
 
         - name: beneficiary
           translates_to: Beneficiary name
@@ -145,6 +148,7 @@ resources:
       fields:
         - name: _source
           translates_to: source
+          maps_to: source
 
         - name: beneficiary
           translates_to: Beneficiary name
@@ -184,6 +188,7 @@ resources:
       fields:
         - name: _source
           translates_to: source
+          maps_to: source
 
         - name: beneficiary
           translates_to: Beneficiary name
@@ -223,6 +228,7 @@ resources:
       fields:
         - name: _source
           translates_to: source
+          maps_to: source
 
         - name: beneficiary
           translates_to: Beneficiary name
