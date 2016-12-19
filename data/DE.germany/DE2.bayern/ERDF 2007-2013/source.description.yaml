@@ -22,10 +22,10 @@ resources:
     - maps_to: approval_date
       name: Jahr der Bewilligung
       translates_to: Year of Approval
-    - maps_to: total_amount_applied
+    - maps_to: total_amount_eligible
       name: Bewilligter Betrag in Euro
       translates_to: Approved Amount in Euro
-    - maps_to: total_amount_eligible
+    - maps_to: total_amount
       name: Ausbezahlter Betrag zum Projektende
       translates_to: Paid amount at the end of the project
   title: ERDF Bayern 2007-2013
