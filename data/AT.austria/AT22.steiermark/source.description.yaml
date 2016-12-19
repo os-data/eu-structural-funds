@@ -30,4 +30,4 @@ scraper_required: false
 sources:
 - name: ERDF Steiermark
   web: http://www.innovation-steiermark.at/de/projekte/verzeichnis/projektliste.php
-title: ERDF Data for Steiermark
+title: AT22.steiermark 2007-2013 ERDF 
