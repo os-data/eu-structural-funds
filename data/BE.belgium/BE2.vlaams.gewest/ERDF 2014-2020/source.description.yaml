@@ -19,7 +19,7 @@ resources:
     - maps_to: beneficiary_name
       name: Promotor
       translates_to: beneficiary
-    - maps_to: 
+    - maps_to: null
       name: Co-promotoren
       translates_to: co-beneficiaries
     - maps_to: project_name
@@ -37,7 +37,7 @@ resources:
     - maps_to: eu_cofinancing_rate
       name: Percent
       translates_to: percentage of EU cofinancing
-    - maps_to: 
+    - maps_to: null
       name: cofinanciering naam
       translates_to: name of cofinancing programme
   title: Belgium Region Vlaams ERDF data 2014-2020
