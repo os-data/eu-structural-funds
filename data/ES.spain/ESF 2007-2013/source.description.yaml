@@ -15,6 +15,7 @@ resources:
     fields:
     - name: _source
       translates_to: source
+      maps_to: source
     - maps_to: project_name
       name: proyecto
       translates_to: project name
@@ -30,7 +31,7 @@ resources:
     - maps_to: project_description
       name: grupos_destinatarios
       translates_to: project aimed at
-    - maps_to: priority_label
+    - maps_to: theme_name
       name: area_prioritaria_fse
       translates_to: priority field ESF
     - maps_to: beneficiary_name
