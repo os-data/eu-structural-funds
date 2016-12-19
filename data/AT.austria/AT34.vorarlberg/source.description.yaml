@@ -15,6 +15,7 @@ resources:
     fields:
     - name: _source
       translates_to: source
+      maps_to: source
     - maps_to: beneficiary_name
       name: beneficiary
       translates_to: Beneficiary name
@@ -26,6 +27,7 @@ resources:
       translates_to: Public Contribution (EU and national)
     - name: status
       translates_to: Status of Project - G confirmed A paid
+      maps_to: project_status
   title: ERDF Vorarlberg 2007-2013
 scraper_required: false
 sources:
