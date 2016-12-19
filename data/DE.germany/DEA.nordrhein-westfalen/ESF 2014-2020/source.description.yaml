@@ -33,7 +33,7 @@ resources:
     - maps_to: total_amount_eligible
       name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens
       translates_to: total eligible expenditure
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_rate
       name: Unions-Kofinanzierungssatz pro Prioritätsachse
       translates_to: EU co-financing rate in percent
     - maps_to: beneficiary_postal_code
@@ -45,7 +45,7 @@ resources:
     - maps_to: beneficiary_country
       name: Land
       translates_to: name of country
-    - maps_to: theme_code
+    - maps_to: priority_number
       name: Bezeichnung der Interventionskategorie für das Vorhaben gem. Art. 96 Abs.
         2 Unterabsatz 1 Buchstabe b Ziffer vi
       translates_to: EU intervention category (number) which declares under which
