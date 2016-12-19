@@ -29,7 +29,8 @@ resources:
       name: allocated_public_funding
       translation: allocated pulic funding (EU+national cofinancing)
     - name: status
-      translation: G = commited, A = paid out
+      translation: G = committed, A = paid out
+      maps_to: project_status
   title: ERDF data Tirol (AT) (2007-2013)
 scraper_required: false
 sources:
