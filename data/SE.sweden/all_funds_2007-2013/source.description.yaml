@@ -89,4 +89,4 @@ scraper_required: false
 sources:
 - name: Swedish ERDF and ESF 2007 - 2013
   web: http://projektbank.tillvaxtverket.se/projektbanken#page=eruf
-title: ERDF and ESF data for Sweden 2007-2013
+title: SE.Sweden 2007-2013 ERDF ESF
