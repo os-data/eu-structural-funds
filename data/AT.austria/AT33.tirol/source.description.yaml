@@ -37,4 +37,4 @@ scraper_required: false
 sources:
 - name: https://www.Tirol.gv.at/
   web: https://www.Tirol.gv.at/
-title: ERDF data for Tirol (AT) 2007-2013
+title: AT33.Tirol 2007-2013 ERDF
