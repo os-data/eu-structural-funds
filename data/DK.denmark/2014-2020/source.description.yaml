@@ -28,14 +28,15 @@ resources:
     - maps_to: priority_label
       name: Prioritetsakse / Priority axis
       translation: Priority label and number
-    - maps_to: total_amount
+    - maps_to: total_amount_eligible
       name: Budget / Budget
       translation: Budget
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_amount_eligible
       name: EU-medfinansiering / Union co-financing
       translation: Union co-financing
     - name: EU-medfinansieringssats / Union co-financing rate
       translation: Union co-financing rate
+      maps_to: eu_cofinancing_rate
     - maps_to: project_description
       name: Projektbeskrivelse
       translation: Project
@@ -62,12 +63,16 @@ resources:
       translation: City name
     - name: Koordinat east / Coordinates east
       translation: Coordinates east
+      maps_to: null
     - name: Koordinat north / Coordinates north
       translation: Coordinates north
+      maps_to: null
     - name: Kontaktperson / Contacts
       translation: Contacts
+      maps_to: beneficiary_person
     - name: Partere / Project partners
       translation: Project partners
+      maps_to: null
   title: All funds data 2014-2020
 scraper_required: false
 sources:
