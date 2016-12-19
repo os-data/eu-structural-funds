@@ -45,4 +45,4 @@ resources:
 
         - name: 'Status - G: genehmigt - A: ausbezahlt'
           translates_to: G = commited, A = paid out
-          maps_to: 
+          maps_to: project_status
