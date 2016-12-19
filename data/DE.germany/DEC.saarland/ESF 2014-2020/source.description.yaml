@@ -30,16 +30,16 @@ resources:
     - maps_to: total_amount_eligible
       name: 'Gesamtbetrag der förderfähigen Ausgaben/ '
       translates_to: total eligible expenditure
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_rate
       name: Kofinanzierungssatz Prio-Achse in %/
       translates_to: EU co-financing rate in percent
-    - maps_to: beneficiary_nuts_region
+    - maps_to: beneficiary_city
       name: Gemeindekennziffer (Vorhaben)/
       translates_to: operations regional code
     - maps_to: beneficiary_country
       name: Land/
       translates_to: name of country
-    - maps_to: theme_code
+    - maps_to: priority_label
       name: Interventionsbereich
       translates_to: EU intervention category (number) which declares under which
         category the company applied for funds
