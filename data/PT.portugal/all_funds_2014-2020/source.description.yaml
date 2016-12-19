@@ -52,4 +52,4 @@ scraper_required: false
 sources:
 - name: ERDF and ESF data for Portugal 2014-2020
   web: https://www.portugal2020.pt/Portal2020/OperacoesAprovadas
-title: ERDF and ESF data for Portugal 2014-2020
+title: PT.Portugal 2014-2020 ERDF ESF
