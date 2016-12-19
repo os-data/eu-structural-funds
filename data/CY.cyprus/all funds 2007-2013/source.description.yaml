@@ -21,6 +21,7 @@ resources:
       translates_to: name of beneficiary
     - name: Έτος Έγκρισης Δαπάνης / Έτος Τελικής Πληρωμής
       translates_to: Year Expenditure Approval / Year Final Payment (two dates)
+      maps_to: starting_date
     - maps_to: total_amount_eligible
       name: Επιλέξιμη Δημόσια Δαπάνη Ενταγμένων Έργων (€)
       translates_to: total eligible Expenditure
