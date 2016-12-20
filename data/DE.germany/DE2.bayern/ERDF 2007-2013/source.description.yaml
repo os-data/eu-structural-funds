@@ -33,4 +33,4 @@ scraper_required: false
 sources:
 - name: EFRE Bayern
   web: https://www.stmwi.bayern.de/EFRE/
-title: ERDF Data for Bayern (2007-2013)
+title: DE2.Bayern 2007-2013 ERDF
