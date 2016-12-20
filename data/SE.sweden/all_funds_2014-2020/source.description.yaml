@@ -60,7 +60,7 @@ resources:
     - maps_to: beneficiary_city
       name: kommuner
       translates_to: beneficiary city
-    - maps_to: date_updated
+    - maps_to: null
       name: uppdateringsdatum
       translates_to: date last updated
     - maps_to: beneficiary_nuts_region
