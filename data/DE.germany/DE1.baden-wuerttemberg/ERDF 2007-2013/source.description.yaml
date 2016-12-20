@@ -27,10 +27,9 @@ resources:
     - maps_to: total_amount
       name: Ausgezahlter Betrag bei Projekt- abschluss
       translates_to: Paid amount at the end of the project
-  title: Regionale Wettbewerbsfähigkeit und Beschäftigung (RWB) - Bereich EFRE in
-    Baden-Württemberg 2007-2013
+  title: DE1.Baden-Wuerttemberg 2007-2013 ERDF
 scraper_required: false
 sources:
 - name: EFRE in Baden-Württemberg 2007-2013
   web: http://www.rwb-efre.baden-wuerttemberg.de/
-title: Baden-Württemberg 2007-2013 ERDF
+title: DE1.Baden-Wuerttemberg 2007-2013 ERDF
