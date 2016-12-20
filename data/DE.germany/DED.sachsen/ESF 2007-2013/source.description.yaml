@@ -33,4 +33,4 @@ scraper_required: false
 sources:
 - name: ESF Sachsen
   web: http://www.strukturfonds.sachsen.de/
-title: ESF Data for Sachsen
+title: DED.Sachsen 2007-2013 ESF
