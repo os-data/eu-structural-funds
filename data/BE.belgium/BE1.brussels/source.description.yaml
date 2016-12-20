@@ -72,3 +72,9 @@ resources:
         - name: Financement FEDER (UE) / EFRO-financiering (EU) (€)
           translates_to: EU cofinancing amount
           maps_to: eu_cofinancing_amount
+
+        - name: Priority Label
+          translates_to: priority Label
+          maps_to: priority_label 
+
+
