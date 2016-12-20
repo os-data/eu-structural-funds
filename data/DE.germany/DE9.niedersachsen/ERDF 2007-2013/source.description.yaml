@@ -36,4 +36,4 @@ scraper_required: false
 sources:
 - name: ERDF Niedersachsen (2007-2013)
   web: http://www.stk.niedersachsen.de/startseite/themen/regionale_landesentwicklung_und_eufoerderung/eufoerderung/efre_esf/efre-und-esf-124140.html
-title: ERDF Data for Niedersachsen (2007-2013)
+title: DE9.Niedersachsen 2007-2013 ERDF
