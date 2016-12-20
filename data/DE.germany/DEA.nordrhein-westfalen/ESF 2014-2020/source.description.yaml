@@ -55,4 +55,4 @@ scraper_required: false
 sources:
 - name: ESF Nordrhein-Westfalen 2014-2020
   web: http://www.arbeit.nrw.de/esf/foerderphase_2014_bis_2020/oeffentlichkeitsarbeit/download/docs/liste_der_vorhaben.xlsx
-title: ESF Data for Nordrhein-Westfalen (2014-2020)
+title: DEA.Nordrhein-Westfalen 2014-2020 ESF
