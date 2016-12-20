@@ -51,6 +51,6 @@ resources:
   title: ESF in Baden-Württemberg 2014-2020
 scraper_required: false
 sources:
-- name: ESF in Baden-Württemberg 2014-2020
+- name: DE1.Baden-Wuerttemberg 2014-2020 ESF
   web: http://www.esf-bw.de/
 title: Baden-Württemberg 2014-2020 ESF
