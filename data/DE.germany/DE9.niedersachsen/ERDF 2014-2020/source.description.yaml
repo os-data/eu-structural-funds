@@ -54,4 +54,4 @@ scraper_required: false
 sources:
 - name: ERDF Niedersachsen (2014-2020)
   web: http://www.stk.niedersachsen.de/startseite/themen/regionale_landesentwicklung_und_eufoerderung/eufoerderung/efre_esf/efre-und-esf-124140.html
-title: ERDF Data for Niedersachsen (2014-2020)
+title: DE9.Niedersachsen 2014-2020 ERDF
