@@ -33,4 +33,4 @@ scraper_required: false
 sources:
 - name: ERDF Sachsen Anhalt
   web: http://www.europa.sachsen-anhalt.de/eu-fonds-in-sachsen-anhalt/die-europaeischen-struktur-und-investitionsfonds-esi-fonds/ERDF/
-title: ERDF Data for Sachsen Anhalt
+title: DEE.Sachsen-Anhalt 2007-2013 ERDF
