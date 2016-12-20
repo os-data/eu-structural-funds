@@ -33,4 +33,4 @@ scraper_required: false
 sources:
 - name: ERDF Saarland
   web: http://www.saarland.de/strukturfondsfoerderung.htm
-title: ERDF Data for Saarland
+title: DEC.Saarland ERDF 2007-2013
