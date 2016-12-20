@@ -49,4 +49,4 @@ scraper_required: false
 sources:
 - name: ERDF Nordrhein-Westfalen (2014-2020)
   web: https://www.efre.nrw.de/fileadmin/16-01-22_DN_Liste_der_Vorhaben_20151231.xlsx
-title: ERDF Data for Nordrhein-Westfalen (2014-2020)
+title: DEA.Nordrhein-Westfalen 2014-2020 ERDF
