@@ -65,7 +65,7 @@ resources:
     - maps_to: beneficiary_country_code
       name: Država/Country
       translates_to: Country
-    - maps_to: date_updated
+    - maps_to: null
       name: Stanje na dan/Date of last update of the list of operations
       translates_to: Date of last update of the list of operations
     - maps_to: null
