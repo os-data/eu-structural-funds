@@ -364,3 +364,12 @@ fields:
     type: string
     conceptType: unknown
     osType: unknown:string
+
+  - name: project_status
+    title: Project status
+    slug: project_status
+    description: Status of the project
+    format: default
+    type: string
+    conceptType: unknown
+    osType: unknown:string
