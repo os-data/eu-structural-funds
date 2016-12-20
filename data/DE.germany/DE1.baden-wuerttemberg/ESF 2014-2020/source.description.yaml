@@ -9,7 +9,7 @@ resources:
     fund_acronym: ERDF
     funding_period: 2014-2020
   currency_code: EUR
-  path: ESF_BaWü_2014-2020.xlsx
+  path: ESF_BaWü_2014-2020.csv
   publication_date: '2016-06-01'
   schema:
     fields:
