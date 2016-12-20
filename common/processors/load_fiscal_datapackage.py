@@ -8,6 +8,7 @@ from common.config import JSON_FORMAT
 from common.utilities import get_fiscal_datapackage
 
 
+
 if __name__ == '__main__':
     _, datapackage, resources = ingest()
     fiscal_datapackage = get_fiscal_datapackage(source=datapackage)

@@ -36,7 +36,7 @@ fields:
     description: CCI codes (e.g. 2014BG05M2OP001) identify operational programs (see codelist).
     format: default
     type: string
-    osType: activity:generic:project:code:full
+    osType: activity:generic:subprogram:code:full
     conceptType: activity
 
   - name: cci_program_title
@@ -46,16 +46,16 @@ fields:
     format: default
     type: string
     conceptType: activity
-    osType: activity:generic:project:label
+    osType: activity:generic:subprogram:label
 
   - name: project_id
     title: Project ID
     slug: project_id
-    description: Unique code of the project (generated if not
+    description: Unique code of the project (generated if not)
     format: default
     type: string
     conceptType: activity
-    osType: activity:generic:subproject:code:full
+    osType: activity:generic:project:code:full
 
   - name: project_name
     title: Project name
@@ -64,7 +64,16 @@ fields:
     format: default
     type: string
     conceptType: activity
-    osType: activity:generic:subproject:label
+    osType: activity:generic:project:label
+
+  - name: operational_programme
+    title: Operational Programme
+    slug: operational_programme
+    description: information on which operational programme the project is governed by
+    format: default
+    type: string
+    conceptType: activity
+    osType: activity:generic:subproject:code:full
 
   # Recipient
   # ---------------------------------------------------------------------------
@@ -154,6 +163,15 @@ fields:
     conceptType: administrative-classification
     osType: administrative-classification:generic:level2:label
 
+  - name: beneficiary_county
+    title: County
+    slug: beneficiary_county
+    description: The county of the beneficiary
+    format: default
+    type: string
+    conceptType: administrative-classification
+    osType: administrative-classification:generic:level3:code:full
+
   - name: beneficiary_city
     title: City
     slug: beneficiary_city
@@ -161,7 +179,8 @@ fields:
     format: default
     type: string
     conceptType: administrative-classification
-    osType: administrative-classification:generic:level3:code:full
+    osType: administrative-classification:generic:level4:code:full
+
 
   # Fiscal attribute
   # ---------------------------------------------------------------------------
@@ -334,6 +353,16 @@ fields:
     osType: value
     decimalChar: .
 
+  - name: eu_cofinancing_amount_eligible
+    title: eligible EU co-financing
+    slug: eu_cofinancing_amount_eligible
+    description: The amount of co-financing a project is eligible for
+    type: number
+    conceptType: value
+    format: default
+    osType: value
+    decimalChar: .
+
   - name: european_investment_bank_amount
     title: European Investment Bank financing
     slug: european_investment_bank_amount
@@ -369,6 +398,33 @@ fields:
     title: Project status
     slug: project_status
     description: Status of the project
+    format: default
+    type: string
+    conceptType: unknown
+    osType: unknown:string
+
+  - name: eu_cofinancing_rate
+    title: EU co-financing rate
+    slug: eu_cofinancing_rate
+    description: The rate (percent) of co-financing from the EU
+    type: string
+    conceptType: unknown
+    format: default
+    osType: unknown:string
+
+  - name: beneficiary_person
+    title: Beneficiary person
+    slug: beneficiary_person
+    description: name of person responsible
+    format: default
+    type: string
+    conceptType: unknown
+    osType: unknown:string
+
+  - name: management_authority
+    title: Management Authority
+    slug: management_authority
+    description: Management authority
     format: default
     type: string
     conceptType: unknown
