@@ -37,4 +37,4 @@ scraper_required: false
 sources:
 - name: ERDF Sachsen
   web: http://www.strukturfonds.sachsen.de/
-title: ERDF Data for Sachsen
+title: DED.Sachsen 2007-2013 ERDF
