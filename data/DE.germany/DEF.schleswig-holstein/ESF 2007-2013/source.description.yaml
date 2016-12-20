@@ -16,6 +16,7 @@ resources:
     fields:
     - name: _source
       translates_to: source
+      maps_to: source
     - maps_to: beneficiary_name
       name: beneficiary
       translates_to: Beneficiary name
@@ -31,9 +32,9 @@ resources:
     - maps_to: total_amount
       name: on_finish_total_value
       translates_to: total amount
-  title: ESF Schleswig Holstein 2007-2013
+  title: DEF.Schleswig-Holstein 2007-2013 ESF
 scraper_required: false
 sources:
 - name: ESF Schleswig Holstein
   web: http://www.ib-sh.de/die-ibsh/foerderprogramme-des-landes/landesprogramm-arbeit/
-title: ESF Data for Schleswig Holstein
+title: DEF.Schleswig-Holstein 2007-2013 ESF
