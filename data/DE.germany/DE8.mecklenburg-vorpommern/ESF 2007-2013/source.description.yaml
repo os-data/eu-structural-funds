@@ -1,6 +1,6 @@
 contributors:
 - Michael Peters (michael.peters@okfn.de)
-description: The beneficiary list for the ERDF (2007-2013) program for Mecklenburg
+description: The beneficiary list for the ESF (2007-2013) program for Mecklenburg
   Vorpommern.
 language: de
 resources:
@@ -32,9 +32,9 @@ resources:
     - maps_to: total_amount
       name: BEI ABSCHLUSS DES VORHABENS GEZAHLTE GESAMTBETRÄGE
       translates_to: total amount
-  title: ERDF Mecklenburg Vorpommern 2007-2013
+  title: ESF Mecklenburg Vorpommern 2007-2013
 scraper_required: false
 sources:
 - name: ERDF Mecklenburg Vorpommern
   web: http://www.europa-mv.de/cms2/Europamv_prod/Europamv/de/eufoerderinstrumente/Europaeische_Fonds_in_Mecklenburg-Vorpommern/EFRE/index.jsp
-title: ERDF Data for Mecklenburg Vorpommern
+title: DE8.Mecklenburg-Vorpommern 2007-2013 ESF
