@@ -64,7 +64,7 @@ resources:
       maps_to: theme_name
     - name: ΤΕΛΕΥΤΑΙΑ ΕΝΗΜΕΡΩΣΗ ΚΑΤΑΛΟΓΟΥ/ LAST UPDATE OF THE LIST
       translation: LAST UPDATE OF THE LIST
-      maps_to: date_updated
+      maps_to: null
   title: The list of all projects for the period 2014-2020
 scraper_required: false
 sources:
