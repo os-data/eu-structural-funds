@@ -9,7 +9,7 @@ resources:
     fund_acronym: ESF
     funding_period: 2007-2013
   currency_code: EUR
-  path: ESF-Daten_Bremen_07_13-csv.csv
+  path: ESF-Daten_Bremen_07_13_new.csv
   publication_date: '2013-06-13'
   schema:
     fields:
