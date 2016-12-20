@@ -33,4 +33,4 @@ scraper_required: false
 sources:
 - name: ESF Nordrhein-Westfalen
   web: https://www.mais.nrw/esf-2007-2013
-title: ESF Data for Nordrhein-Westfalen
+title: DEA.Nordrhein-Westfalen 2007-2013 ESF
