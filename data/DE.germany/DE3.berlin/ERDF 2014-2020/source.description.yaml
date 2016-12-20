@@ -48,4 +48,4 @@ scraper_required: false
 sources:
 - name: ERDF Berlin (2014-2020)
   web: https://www.berlin.de/sen/wirtschaft/gruenden-und-foerdern/europaeische-strukturfonds/esf/dokumente-a-z/
-title: ERDF Data for Berlin (2014-2020)
+title: DE.3 Berlin 2014-2020 ERDF
