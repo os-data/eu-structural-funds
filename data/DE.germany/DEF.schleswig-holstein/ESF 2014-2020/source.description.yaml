@@ -15,10 +15,10 @@ resources:
   publication_date: '2016-06-30'
   schema:
     fields:
-    - maps_to: theme_name
+    - maps_to: priority_number
       name: Interventions-kategorie
       translates_to: name of category of intervention
-    - maps_to: priority_number
+    - maps_to: priority_label
       name: Prioritätsachse
       translates_to: priority axis (name and number)
     - maps_to: beneficiary_name
@@ -36,7 +36,7 @@ resources:
     - maps_to: total_amount_eligible
       name: gesamte Fördersumme
       translates_to: total eligible expenditure allocated to the operation in €
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_rate
       name: EU-Betrag
       translates_to: Union co-financing rate in percent
     - maps_to: beneficiary_city
@@ -48,8 +48,8 @@ resources:
   title: ESF in Schleswig-Holstein 2014-2020
 scraper_required: false
 sources:
-- name: ESF Schleswig-Holstein (2014-2020)
+- name: DEF.Schleswig-Holstein 2014-2020 ESF
   web: http://www.ib-sh.de/die-ibsh/foerderprogramme-des-landes/landesprogramm-arbeit/
 - name: Original Excel file link
   web: http://www.ib-sh.de/fileadmin/user_upload/downloads/Arbeit_Bildung/LPNA/allgemein/ldv.xlsx
-title: ESF Data for Schleswig-Holstein (2014-2020)
+title: DEF.Schleswig-Holstein 2014-2020 ESF
