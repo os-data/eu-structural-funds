@@ -63,4 +63,4 @@ scraper_required: false
 sources:
 - name: ERDF Rheinland-Pfalz (2014-2020)
   web: http://www.efre.rlp.de/
-title: ERDF Data for Rheinland-Pfalz (2014-2020)
+title: DEB.Rheinland-Pfalz 2014-2020 ERDF

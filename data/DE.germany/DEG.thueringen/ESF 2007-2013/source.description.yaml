@@ -14,7 +14,7 @@ resources:
   publication_date: '2014-12-31'
   schema:
     fields:
-    - maps_to: null
+    - maps_to: source
       name: _source
       translates_to: source
     - maps_to: beneficiary_name
@@ -32,9 +32,9 @@ resources:
     - maps_to: total_amount
       name: on_finish_total_value
       translates_to: total amount
-  title: ESF Thüringen 2007-2013
+  title: DEG.Thueringen 2007-2013 ESF
 scraper_required: false
 sources:
 - name: ESF Thüringen
   web: http://www.esf-thueringen.de/esf_2014/
-title: ESF Data for Thüringen
+title: DEG.Thueringen 2007-2013 ESF

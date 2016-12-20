@@ -33,4 +33,4 @@ scraper_required: false
 sources:
 - name: ERDF Hamburg (2007-2013)
   web: https://www.hamburg.de/efre/
-title: ERDF Data for Hamburg (2007-2013)
+title: DE6.Hamburg 2007-2013 ERDF

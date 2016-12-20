@@ -34,7 +34,7 @@ resources:
       name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens - total eligible
         expenditure allocated to the operation
       translates_to: total eligible expenditure allocated to the operation in €
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_rate
       name: Unions-Kofinanz-ierungs-satz  pro Prioritätsachse - Union co-financing
         rate
       translates_to: Union co-financing rate in %
@@ -47,11 +47,12 @@ resources:
     - name: Bezeichnung der Interventionskategorie-  name of category of intervention
       translates_to: Intervention field and number (includes category number and description
         of field)
-  title: ERDF in Thüringen 2014-2020
+      maps_to: priority_label
+  title: DEG.Thueringen 2014-2020 ERDF
 scraper_required: false
 sources:
 - name: ERDF Thüringen (2014-2020)
   web: http://www.efre.rlp.de/
 - name: Link to the CSV file
   web: http://www.efre20-thueringen.de/mam/efre20/liste/160630_liste_der_vorhaben_efre_14_20_endg.csv
-title: ERDF Data for Thüringen (2014-2020)
+title: DEG.Thueringen 2014-2020 ERDF

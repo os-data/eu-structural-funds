@@ -33,4 +33,4 @@ scraper_required: false
 sources:
 - name: ERDF Rheinland-Pfalz
   web: http://www.europa-mv.de/cms2/Europamv_prod/Europamv/de/eufoerderinstrumente/Europaeische_Fonds_in_Mecklenburg-Vorpommern/EFRE/index.jsp
-title: ERDF Data for Rheinland-Pfalz
+title: DEB.Rheinland-Pfalz 2007-2013 ERDF

@@ -48,4 +48,4 @@ scraper_required: false
 sources:
 - name: Hamburg 2014-2020
   web: http://www.esf-hamburg.de/
-title: ESF Data for Hamburg (2014-2020)
+title: DE6.Hamburg 2014-2020 ESF

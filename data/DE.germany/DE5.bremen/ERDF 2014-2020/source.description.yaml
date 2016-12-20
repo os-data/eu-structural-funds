@@ -52,4 +52,4 @@ scraper_required: false
 sources:
 - name: ERDF Bremen
   web: http://www.efre-bremen.de/sixcms/detail.php?gsid=bremen59.c.15110.de
-title: ERDF Data for Bremen 2014-2020
+title: DE5.Bremen 2014-2020 ERDF 

@@ -28,11 +28,11 @@ resources:
     - maps_to: total_amount
       name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge
       translates_to: total amount
-  title: ERDF Thüringen 2007-2013
+  title: DEG.Thueringen 2007-2013 ERDF
 scraper_required: false
 sources:
 - name: ERDF Thüringen
   web: http://www.efre20-thueringen.de/efre_2014/
 - name: Link to the original PDF file
   web: http://www.efre-thueringen.de/mam/efre/beguenstigtenliste/beguenstigten_liste_2014.pdf
-title: ERDF Data for Thüringen
+title: DEG.Thueringen 2007-2013 ERDF

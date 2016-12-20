@@ -33,7 +33,7 @@ resources:
     - maps_to: total_amount_eligible
       name: Gesambetrag der förderfähigen Ausgaben des Vorhabens
       translates_to: total eligible expenditure allocated to the operation in €
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_rate
       name: Unions-Kofinan-zierungs-satz pro Prioritäts-achse
       translates_to: Union co-financing rate in %
     - maps_to: beneficiary_postal_code
@@ -42,11 +42,12 @@ resources:
     - name: Bezeichnung der Interventions-kategorie
       translates_to: Intervention field and number (includes category number and description
         of field)
-  title: ERDF in Schleswig-Holstein 2014-2020
+      maps_to: priority_label  
+  title: DEF.Schleswig-Holstein 2014-2020 ERDF
 scraper_required: false
 sources:
 - name: ERDF Schleswig-Holstein (2014-2020)
   web: http://www.ib-sh.de/die-ibsh/foerderprogramme-des-landes/landesprogramm-arbeit/
 - name: Original link to Excel file
   web: http://www.ib-sh.de/fileadmin/user_upload/downloads/Arbeit_Bildung/LPNA/allgemein/ldv.xlsx
-title: ERDF Data for Schleswig-Holstein (2014-2020)
+title: DEF.Schleswig-Holstein 2014-2020 ERDF

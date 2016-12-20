@@ -15,6 +15,7 @@ resources:
     fields:
     - name: _source
       translates_to: source
+      maps_to: source
     - maps_to: beneficiary_name
       name: beneficiary
       translates_to: Beneficiary name
@@ -35,4 +36,4 @@ scraper_required: false
 sources:
 - name: ERDF Schleswig Holstein
   web: https://www.schleswig-holstein.de/DE/Fachinhalte/F/foerderprogramme/MWAVT/efre_inSH_2014_2020.html
-title: ERDF Data for Schleswig Holstein
+title: DEF.Schleswig-Holstein 2007-2013 ERDF

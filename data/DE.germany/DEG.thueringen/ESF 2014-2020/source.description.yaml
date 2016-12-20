@@ -30,7 +30,7 @@ resources:
     - maps_to: total_amount_eligible
       name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens
       translates_to: total eligible expenditure allocated to the operation in €
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_rate
       name: Unions-Kofinan-zierungssatz pro Prioritäts-achse
       translates_to: Union co-financing rate in percent
     - maps_to: beneficiary_postal_code
@@ -39,13 +39,13 @@ resources:
     - maps_to: beneficiary_country
       name: Land
       translates_to: country
-    - maps_to: theme_name
+    - maps_to: priority_label
       name: Bezeichnung der Interventionskategorie
       translates_to: name of category of intervention
   title: ESF in Thüringen 2014-2020
   url: http://www.esf-thueringen.de/imperia/md/content/esf_2014/listedervorhaben/liste_der_vorhaben_stand_01.07.2016.xls
 scraper_required: false
 sources:
-- name: ESF Thüringen (2014-2020)
+- name: DEG.Thueringen 2014-2020 ESF
   web: http://www.esf-thueringen.de/esf_2014/
-title: ESF Data for Thüringen (2014-2020)
+title: DEG.Thueringen 2014-2020 ESF
