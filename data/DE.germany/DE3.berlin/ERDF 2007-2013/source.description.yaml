@@ -36,4 +36,4 @@ scraper_required: false
 sources:
 - name: ERDF Berlin (2007-2013)
   web: https://www.berlin.de/sen/wirtschaft/gruenden-und-foerdern/europaeische-strukturfonds/esf/dokumente-a-z/
-title: ERDF Data for Berlin (2007-2013)
+title: DE.3 Berlin 2007-2013 ERDF
