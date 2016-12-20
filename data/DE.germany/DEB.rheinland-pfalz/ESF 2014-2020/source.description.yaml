@@ -49,4 +49,4 @@ scraper_required: false
 sources:
 - name: ESF Rheinland-Pfalz (2014-2020)
   web: http://www.esf.rlp.de/
-title: ESF Data for Rheinland-Pfalz (2014-2020)
+title: DEB.Rheinland-Pfalz 2014-2020 ERDF
