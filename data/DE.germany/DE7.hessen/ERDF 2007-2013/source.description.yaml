@@ -33,4 +33,4 @@ scraper_required: false
 sources:
 - name: ERDF Hessen
   web: https://wirtschaft.hessen.de/landesentwicklung/efre/eu-regionalfoerderung-2014-bis-2020
-title: ERDF Data for Hessen
+title: DE7.Hessen 2007-2013 ERDF
