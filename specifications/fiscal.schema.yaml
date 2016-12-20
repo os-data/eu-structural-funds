@@ -429,3 +429,12 @@ fields:
     type: string
     conceptType: unknown
     osType: unknown:string
+
+  - name: source
+    title: Source URL
+    slug: source
+    description: A source URL
+    format: default
+    type: string
+    conceptType: unknown
+    osType: unknown:string
