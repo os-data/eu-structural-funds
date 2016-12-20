@@ -37,4 +37,4 @@ scraper_required: false
 sources:
 - name: ERDF Nordrhein Westfalen
   web: https://www.efre.nrw.de/
-title: ERDF Data for Nordrhein Westfalen
+title: DEA.Nordrhein-Westfalen 2007-2013 ERDF
