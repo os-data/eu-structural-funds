@@ -57,11 +57,11 @@ resources:
     - maps_to: eu_cofinancing_amount_eligible
       name: Příspěvek EU
       translates_to: EU amount
-  title: List of Czech ERDF operations 2014-2020
+  title: CZ.czech-republic 2014-2020 ERDF
 scraper_required: false
 sources:
 - name: Dotaceez.cz
   web: http://www.dotaceeu.cz/cs/Informace-o-cerpani/Seznamy-prijemcu
 - name: Link to original Excel file
   web: http://www.dotaceeu.cz/getmedia/413c34d0-71c3-4c0a-b0f9-191c88994d1d/benefi8_22.xlsx?ext=.xlsx
-title: Czech ERDF data 2014-2020
+title: CZ.czech-republic 2014-2020 ERDF
