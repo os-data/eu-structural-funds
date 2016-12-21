@@ -44,11 +44,14 @@ def cast_values(row):
     for key, value in row.items():
         if value:
             try:
-                row[key] = converter[key](value)
+                if value is None or (type(value) is str and len(value.strip())==0):
+                    row[key] = None
+                else:
+                    row[key] = converter[key](value)
             except (ValueError, arrow.parser.ParserError):
-                message = 'Could not cast %s = %s to %s, returning None'
-                logging.warning(message, key, row[key], converter[key])
-                row[key] = None
+                message = 'Could not cast %s = %s to %s, returning None' % (key, row[key], converter[key])
+                logging.warning(message)
+                assert False, message
 
     return row
 
