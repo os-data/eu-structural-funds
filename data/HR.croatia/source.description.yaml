@@ -7,7 +7,12 @@ language: HR
 resources:
 - add_categories: {}
   add_constants: {}
-  publication_date: null
+    cci_program_code: 
+    fund_acronym: 
+    funding_period: 2007-2020
+  currency_code: HRK
+  path: ESIF_Croatia_2007-2020.csv
+  publication_date: 2016-04-01
   schema:
     fields:
     - name: Naziv projekta
@@ -18,6 +23,9 @@ resources:
       maps_to: fund_acronym
     - name: Šifra operativnog programa
       translates_to: Code OP
+      maps_to: null 
+    - name: Operativ program
+      translates_to: operational programme 
       maps_to: operational_programme
     - name: NUTSII
       translates_to: NUTSII
@@ -43,10 +51,9 @@ resources:
     - name: Ukupno prihvatljivi troškovi
       translates_to: Total eligible costs
       maps_to: total_amount_eligible
-  title: Xls file containing all ESIF data for Croatia.
-  url: http://www.strukturnifondovi.hr/UserDocsImages/Documents/KartaProjekataZaWeb%201.4.2016.xls
+  title: All ESIF data for Croatia 2007-2020
 scraper_required: false
 sources:
 - name: Ministry of Regional Development and EU Funds
-  web: http://www.strukturnifondovi.hr/projekti
+  web: http://www.strukturnifondovi.hr/UserDocsImages/Documents/KartaProjekataZaWeb%201.4.2016.xls
 title: HR.Croatia 2007-2013 2014-2020 ERDF ESF CF
