@@ -1,7 +1,7 @@
 AT_austria_AT32_salzburg:
   pipeline:
   - run: read_description
-  - run: stream_from_path
+  - run: ingest_local_file
   - parameters:
       out-file: source.datapackage.zip
     run: dump

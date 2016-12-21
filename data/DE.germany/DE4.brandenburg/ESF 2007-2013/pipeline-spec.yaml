@@ -1,7 +1,7 @@
 DE_germany_DE4_brandenburg_ESF_2007_2013:
   pipeline:
   - run: read_description
-  - run: stream_from_path
+  - run: ingest_local_file
   - parameters:
       out-file: source.datapackage.zip
     run: dump

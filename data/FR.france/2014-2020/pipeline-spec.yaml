@@ -6,7 +6,7 @@ FR_france_2014_2020:
     validate: true
   - parameters:
       format: xls
-    run: stream_from_path
+    run: ingest_local_file
     validate: true
   - parameters:
       out-file: source.datapackage.zip

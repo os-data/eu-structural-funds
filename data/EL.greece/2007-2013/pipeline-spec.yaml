@@ -1,7 +1,7 @@
 EL_greece_2007_2013:
   pipeline:
   - run: read_description
-  - run: stream_from_path
+  - run: ingest_local_file
   - run: mutate_datapackage
   - parameters:
       out-file: source.datapackage.zip

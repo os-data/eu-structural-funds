@@ -1,7 +1,7 @@
 SE_sweden_all_funds_2014_2020:
   pipeline:
   - run: read_description
-  - run: stream_from_path
+  - run: ingest_local_file
   - run: mutate_datapackage
   - parameters:
       out-file: source.datapackage.zip
