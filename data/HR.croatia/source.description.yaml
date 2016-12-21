@@ -51,7 +51,7 @@ resources:
     - name: Ukupno prihvatljivi troškovi
       translates_to: Total eligible costs
       maps_to: total_amount_eligible
-  title: All ESIF data for Croatia 2007-2020
+  title: HR.Croatia 2007-2013 2014-2020 ERDF ESF CF
 scraper_required: false
 sources:
 - name: Ministry of Regional Development and EU Funds
