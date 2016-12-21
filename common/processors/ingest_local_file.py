@@ -217,10 +217,14 @@ class CSVIngestor(BaseIngestor):
         """Drop rows when they don't match headers (post-processor)."""
 
         for index, headers, row in rows:
+            while len(row) > len(headers) and len(row[-1].strip()) == 0:
+                row = row[:-1]
             if len(row) == len(headers):
                 yield index, headers, row
             else:
-                warning('Bad row %s = %s', index, format_to_json(row))
+                message = 'Bad row {}:\nheaders={}\nrow={}'\
+                    .format(index, format_to_json(headers), format_to_json(row))
+                assert False, message
 
     @staticmethod
     def _skip_header(rows):
