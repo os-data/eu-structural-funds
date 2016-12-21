@@ -1,7 +1,7 @@
 contributors:
 - Michael Peters (michael.peters@okfn.de)
 description: The beneficiary list for the ESIF (2000-2006) program for Hungary.
-language: de
+language: hu
 resources:
 - add_categories: {}
   add_constants:
@@ -65,7 +65,7 @@ resources:
   path: data-nft-ERFA.json
   publication_date: '2016-10-31'
   schema: null
-  title: ERDF in Hungary 2000-2006
+  title: HU.Hungary 2000-2006 ERDF
 scraper_required: false
 sources:
 - name: ESIF Hungary
