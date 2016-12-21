@@ -9,6 +9,7 @@ resources:
     fund_acronym: ESF
     funding_period: 2014-2020
   currency_code: EUR
+  path: ESF_Thueringen_2014_2020.csv 
   publication_date: 01-07-2016
   schema:
     fields:
@@ -43,7 +44,6 @@ resources:
       name: Bezeichnung der Interventionskategorie
       translates_to: name of category of intervention
   title: ESF in Thüringen 2014-2020
-  url: http://www.esf-thueringen.de/imperia/md/content/esf_2014/listedervorhaben/liste_der_vorhaben_stand_01.07.2016.xls
 scraper_required: false
 sources:
 - name: DEG.Thueringen 2014-2020 ESF
