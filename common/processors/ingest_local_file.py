@@ -11,7 +11,7 @@
 import json
 import cchardet
 
-from logging import warning, info
+from logging import warning, info, error
 
 import logging
 from datapackage_pipelines.wrapper import ingest
@@ -59,9 +59,12 @@ class BaseIngestor(object):
         self._log_parameters()
         self._check_headers()
 
+        info('Running preprocessors: %r', self._pre_processors)
+
         for pre_processor in self._pre_processors:
             pre_processor()
 
+        info('Opening resource: %s', self.resource['path'])
         with Stream(self.resource['path'], **self._body_options) as stream:
             info('First %s rows =\n%s', LOG_SAMPLE_SIZE, self._show(stream))
             for row in stream.iter(keyed=True):
@@ -219,6 +222,7 @@ class CSVIngestor(BaseIngestor):
         for index, headers, row in rows:
             while len(row) > len(headers) and len(row[-1].strip()) == 0:
                 row = row[:-1]
+                logging.error('XXX')
             if len(row) == len(headers):
                 yield index, headers, row
             else:
@@ -280,7 +284,7 @@ class JSONIngestor(BaseIngestor):
 
         return fill_missing_fields
 
-    @property
+    @cached_property
     def _raw_headers(self):
         """Return all field names encountered in the file."""
 
