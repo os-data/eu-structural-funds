@@ -115,6 +115,14 @@ class BaseIngestor(object):
                    else field for field in row]
             yield index, headers, row
 
+    @staticmethod
+    def force_strings(rows):
+        """A post-parser processor to force all fields to strings."""
+
+        for index, headers, values in rows:
+            values_as_strings = list(map(str, values))
+            yield index, headers, values_as_strings
+
     @property
     def _raw_headers(self):
         """Headers as found in the data file."""
@@ -264,7 +272,8 @@ class JSONIngestor(BaseIngestor):
 
     @property
     def _post_processors(self):
-        return [self._lowercase_empty_values]
+        return [self._lowercase_empty_values,
+                self.force_strings]
 
     @property
     def _fill_missing_fields(self):
@@ -300,14 +309,6 @@ class JSONIngestor(BaseIngestor):
 
 class XLSIngestor(BaseIngestor):
     """An ingestor for xls files."""
-
-    @staticmethod
-    def force_strings(rows):
-        """A post-parser processor to force all fields to strings."""
-
-        for index, headers, values in rows:
-            values_as_strings = list(map(str, values))
-            yield index, headers, values_as_strings
 
     @property
     def _post_processors(self):
