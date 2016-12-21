@@ -20,8 +20,11 @@ resources:
       name: NAME DES PROJEKTS
       translates_to: operation name
     - maps_to: approval_date
-      name: JAHR DER BEWILLIGUNG / JAHR DES ABSCHLUSSES
-      translates_to: Year of Approval / year of completion
+      name: JAHR DER BEWILLIGUNG 
+      translates_to: Year of Approval 
+    - maps_to: completion_date
+      name: JAHR DES ABSCHLUSSES
+      translates_to: year of completion  
     - maps_to: eu_cofinancing_amount_eligible
       name: VORGESEHENE ÖFFENTLICHE BETEILIGUNG
       translates_to: Granted Contribution in Euro
