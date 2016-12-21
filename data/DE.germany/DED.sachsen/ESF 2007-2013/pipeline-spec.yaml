@@ -2,10 +2,6 @@ DE_germany_DED_sachsen_ESF_2007_2013:
   pipeline:
   - run: read_description
   - run: ingest_local_file
-  - parameters:
-      out-file: source.datapackage.zip
-    run: dump
-    validate: true
   - run: map_fields
   - run: concatenate_identical_resources
   - run: sniff_and_cast

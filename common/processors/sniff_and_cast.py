@@ -248,6 +248,7 @@ def cast_values(row, casters, row_index=None):
                 except InvalidCastError:
                     message = 'Could not cast %s = %s'
                     warning(message, key, row[key])
+                    assert False, message
                     row[key] = None
 
         else:
