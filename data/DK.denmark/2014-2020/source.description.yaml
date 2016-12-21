@@ -73,7 +73,7 @@ resources:
     - name: Partere / Project partners
       translation: Project partners
       maps_to: null
-  title: All funds data 2014-2020
+  title: DK.Denmark 2014-2020 ERDF ESF
 scraper_required: false
 sources:
 - name: Regionalt Erhvervsstyrelsen
