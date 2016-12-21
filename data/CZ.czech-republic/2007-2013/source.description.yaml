@@ -129,7 +129,7 @@ resources:
     - name: Počet míst realizace
       translates_to: number of seats (execution)
       maps_to: null 
-  title: Czech ERDF beneficiaries 2007-2013
+  title: CZ.Czech 2007-2013 ERDF
 scraper_required: false
 sources:
 - name: Dotaceez.cz
