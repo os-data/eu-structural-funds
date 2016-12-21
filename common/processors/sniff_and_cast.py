@@ -242,14 +242,15 @@ def cast_values(row, casters, row_index=None):
 
     for key, value in row.items():
         if casters.get(key):
-            if value:
+            if value is not None and len(value.strip()) > 0:
                 try:
                     row[key] = casters[key].cast(value)
                 except InvalidCastError:
                     message = 'Could not cast %s = %s'
                     warning(message, key, row[key])
                     assert False, message
-                    row[key] = None
+            else:
+                row[key] = None
 
         else:
             if row_index == 0:

@@ -230,7 +230,6 @@ class CSVIngestor(BaseIngestor):
         for index, headers, row in rows:
             while len(row) > len(headers) and len(row[-1].strip()) == 0:
                 row = row[:-1]
-                logging.error('XXX')
             if len(row) == len(headers):
                 yield index, headers, row
             else:
