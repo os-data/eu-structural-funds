@@ -21,6 +21,7 @@ resources:
 
     publication_date: 2015-03-23
 
+    add_constants:
       fund_acronym: ERDF
       funding_period: 2007-2013
       cci_code: 2007DE161PO002
