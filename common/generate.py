@@ -1,5 +1,6 @@
 import os
 import sys
+import hashlib
 
 import json
 import yaml
@@ -23,6 +24,7 @@ if __name__ == "__main__":
 
     for dirpath, dirnames, filenames in os.walk(DATA_DIR):
         if SOURCE_FILE in filenames:
+            source_raw = open(os.path.join(dirpath, SOURCE_FILE)).read().encode('utf8')
             source = yaml.load(open(os.path.join(dirpath, SOURCE_FILE)))
             if update:
                 try:
@@ -41,7 +43,8 @@ if __name__ == "__main__":
                 mappings = {'mappings': []}
 
             pipeline = [
-                ('read_description', {'save_datapackage': False}),
+                ('read_description', {'save_datapackage': False,
+                                      '_cache_buster': hashlib.md5(source_raw).hexdigest()}),
                 ('ingest_local_file', {}),
                 ('map_values', mappings),
                 ('map_fields', {}),
