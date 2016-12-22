@@ -50,4 +50,5 @@ scraper_required: false
 sources:
 - name: List of Beneficiaries ERDF and ESF Slovakia 2007-2013
   web: http://www.nsrr.sk/cerpanie/
-title: ERDF and ESF Data for Slovakia (2007-2013)
+title: SK.Slovakia 2007-2013 ERDF ESF CF
+
