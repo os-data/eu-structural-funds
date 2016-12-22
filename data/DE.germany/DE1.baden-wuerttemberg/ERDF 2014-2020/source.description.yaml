@@ -13,27 +13,13 @@ resources:
     fund_name: ERDF
     offical_period: 2014-2020
   currency_code: EUR
-  parser_options:
-    headers: 10
-    skip_rows:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-    - 6
-    - 7
-    - 8
-    - 9
-    - 10
-    - 11
-  path: ERDF_BaWü_2014-2020.xlsx
+
+  path: ERDF_BaWü_2014-2020.csv 
   publication_date: '2016-05-27'
   schema:
     fields:
     - maps_to: beneficiary_name
-      name: Name des Begünstigten (Nennung ausschließlich von juristischen Personen
-        und nicht von natürlichen Personen)
+      name: Name des Begünstigten
       translates_to: beneficiary name (only of legal entities; no natural persons
         shall be named)
     - maps_to: project_name
@@ -46,8 +32,7 @@ resources:
       name: Datum des Beginns des Vorhabens
       translation: Operation start date
     - maps_to: completion_date
-      name: Datum des Endes des Vorhabens (voraussichtliches Datum des Abschlusses
-        der konkreten Arbeiten oder der vollständigen Durchführung des Vorhabens)
+      name: Datum des Endes des Vorhabens
       translation: operation end date (expected date for physical completion or full
         implementation of the operation)
     - maps_to: total_amount_eligible
@@ -63,8 +48,7 @@ resources:
       name: Land
       translation: country
     - maps_to: priority_label
-      name: Bezeichnung der Interventionskategorie für das Vorhaben gemäß Artikel
-        96 Absatz 2 Unterabsatz 1 Buchstabe b Ziffer vi;
+      name: Bezeichnung der Interventionskategorie
       translation: intervention category
   title: EFRE-Programm in Baden-Württemberg 2014-2020 - Innovation und Energiewende
 scraper_required: false
