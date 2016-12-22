@@ -13,6 +13,7 @@ resources:
   currency_code: LEV
   path: ESIF_Bulgaria.csv
   publication_date: 2016-06-15
+  title: BG Bulgaria 2007-2013 2014-2020 ERDF ESF CF
 
   schema:
     fields:
@@ -49,10 +50,9 @@ resources:
     - name: Изпълнители
       translates_to: Artists
       maps_to: beneficiary_person
-title: BG Bulgaria 2007-2013 2014-2020 ERDF ESF CF
 scraper_required: false
 sources:
 - name: INFORMATION MANAGEMENT SYSTEM AND MONITORING OF STRUCTURAL INSTRUMENTS OF
     THE EU IN BULGARIA
   web: http://umispublic.government.bg/prProcedureProjectsInfo.aspx?op=-1&proc=-2&clear=1
-  title: BG Bulgaria 2007-2013 2014-2020 ERDF ESF CF
+title: BG Bulgaria 2007-2013 2014-2020 ERDF ESF CF
