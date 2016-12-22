@@ -23,10 +23,10 @@ resources:
       name: Bezeichnung des Vorhabens
       translates_to: operation name
     - maps_to: approval_date
-      name: Jahr der Bewilligung
+      name: Beginn des Vorhabens
       translates_to: Year of Approval / year of completion
     - maps_to: completion_date
-      name: Bewilligungszeitraum
+      name: Ende des Vorhabens
       translates_to: Time of approval (start and end date)
     - maps_to: total_amount
       name: Gewährte öffentliche Beträge in EUR
