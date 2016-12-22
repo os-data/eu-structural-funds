@@ -16,42 +16,42 @@ resources:
   schema:
     fields:
     - maps_to: beneficiary_name
-      name: 1. Name des Begünstigten
+      name: Name des Begünstigten
       translates_to: benficiary
     - maps_to: project_name
-      name: 2. Bezeichnung des Vorhabens
+      name: Bezeichnung des Vorhabens
       translates_to: operation name
     - maps_to: project_description
-      name: 3. Zusammenfassung des Vorhabens
+      name: Zusammenfassung des Vorhabens
       translates_to: project description
     - maps_to: starting_date
-      name: 4. Datum des Beginns des Vorhabens
+      name: Datum des Beginns des Vorhabens
       translates_to: starting date of the project
     - maps_to: completion_date
-      name: 5. Datum des Endes des Vorhabens
+      name: Datum des Endes des Vorhabens
       translates_to: completion date of the project
     - maps_to: total_amount_eligible
-      name: 6. Gesamtbetrag der förderfähigen Ausgaben des Vorhabens
+      name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens
       translates_to: total eligible expenditure allocated to the operation
     - maps_to: eu_cofinancing_rate
-      name: 7. Unions-Kofinanzierungssatz pro Prioritätsachse
+      name: Unions-Kofinanzierungssatz pro Prioritätsachse
       translates_to: Union co-financing rate in percent
     - maps_to: beneficiary_city
-      name: 8. Durchführungsort des Vorhabens
+      name: Durchführungsort des Vorhabens
       translates_to: Project location
-    - name: 9. Landkreis/Kreisfreie Gemeinde/ Große Kreisstädte
+    - maps_to: beneficiary_county
+      name: Landkreis
       translates_to: administrative district (county)
-      maps_to: beneficiary_county
     - maps_to: beneficiary_country
-      name: 10. Land
+      name: Land
       translates_to: country
-    - name: 11. Bezeichnung der Interventionskategorie für das Vorhaben
+    - name: Bezeichnung der Interventionskategorie für das Vorhaben
       translates_to: Name of category of intervention for the operation
       maps_to: priority_label
-    - name: 12. Förderrichtlinie
+    - name: Förderrichtlinie
       translates_to: supported action
       maps_to: null
-    - name: 13. Fördergegenstand
+    - name: Fördergegenstand
       translates_to: programme
       maps_to: null
   title: ESF in Sachsen 2014-2020
