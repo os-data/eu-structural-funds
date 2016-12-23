@@ -190,11 +190,11 @@ class CSVIngestor(BaseIngestor):
         options = super(CSVIngestor, self)._body_options
         options.update(encoding=self._encoding)
         if self._parser_options.get('delimiter'):
-            options.update(delimiter=self.resource['delimiter'])
+            options.update(delimiter=self._parser_options['delimiter'])
         if self._parser_options.get('quotechar'):
-            options.update(quotechar=self.resource['quotechar'])
+            options.update(quotechar=self._parser_options['quotechar'])
         if self._parser_options.get('quoting'):
-            options.update(quoting=self.resource['quoting'])
+            options.update(quoting=self._parser_options['quoting'])
         return options
 
     @property
@@ -223,8 +223,8 @@ class CSVIngestor(BaseIngestor):
     @property
     def _header_options(self):
         options = dict(headers=1, encoding=self._encoding)
-        if self.resource.get('delimiter'):
-            options.update(delimiter=self.resource['delimiter'])
+        if self._parser_options.get('delimiter'):
+            options.update(delimiter=self._parser_options['delimiter'])
         return options
 
     @staticmethod
