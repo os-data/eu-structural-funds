@@ -8,22 +8,23 @@ resources:
     cci_program_code: null
     funding_period: 2007-2013
   currency_code: EUR
-  fields:
-  - maps_to: source
-    name: _source
-    translates_to: source
-  - maps_to: beneficiary_name
-    name: beneficiary
-    translates_to: Beneficiary name
-  - maps_to: project_name
-    name: name_of_operation
-    translates_to: operation name
-  - maps_to: total_amount
-    name: public_funding
-    translates_to: Public Contribution (EU and national)
-  - maps_to: total_amount
-    name: funding_total_cost
-    translates_to: total amount of project
+  schema:
+    fields:
+    - maps_to: source
+      name: _source
+      translates_to: source
+    - maps_to: beneficiary_name
+      name: beneficiary
+      translates_to: Beneficiary name
+    - maps_to: project_name
+      name: name_of_operation
+      translates_to: operation name
+    - maps_to: total_amount
+      name: public_funding
+      translates_to: Public Contribution (EU and national)
+    - maps_to: total_amount
+      name: funding_total_cost
+      translates_to: total amount of project
   fund_name: ERDF
   path: ESF_Austria_2007-2008.json
   publication_date: '2009-06-30'
