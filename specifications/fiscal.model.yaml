@@ -1,214 +1,223 @@
-measures:
-  total_amount:
-    currency: EUR
-    title: Total cost of the project
-    direction: expenditure
-    source: total_amount
-    phase: executed
-
-  total_amount_applied:
-    currency: EUR
-    title: Total amount the project applied for
-    direction: expenditure
-    source: total_amount_applied
-    phase: proposed
-
-  total_amount_eligible:
-    currency: EUR
-    title: Total eligible expenditure
-    direction: expenditure
-    source: total_amount_eligible
-    phase: approved
-
-  member_state_amount:
-    currency: EUR
-    title: Amount of national and regional funding
-    direction: expenditure
-    source: member_state_amount
-    phase: executed
-
-  third_party_amount:
-    currency: EUR
-    title: Third party funding
-    direction: expenditure
-    source: third_party_amount
-    phase: executed
-
-  eu_cofinancing_amount:
-    currency: EUR
-    title: EU co-financing
-    direction: expenditure
-    source: eu_cofinancing_amount
-    phase: executed
-  
-  european_investment_bank_amount:
-    currency: EUR
-    title: European Investment Bank financing
-    direction: expenditure
-    source: european_investment_bank_amount
-    phase: executed
-
-dimensions:
-  activity:
-    dimensionType: activity
-    primaryKey:
-      - funding_period_number
+model:
+  dimensions:
+   
+   budget-line-id:
+      dimensionType: fact
+      primaryKey:
+      - id
+      attributes:
+        id:
+          source: _id
+          title: _id
+   
+   fin-source:
+      dimensionType: other
+      primaryKey:
+      - fund_acronym
+      - funding_period
+      - management_authority
+      attributes:
+        funding_period:
+          source: funding_period
+          title: funding_period
+          parent: fund_acronym
+        fund_acronym:
+          source: fund_acronym
+          title: fund_acronym
+        management_authority:
+          source: management_authority
+          title: management_authority
+          parent: funding_period
+   
+   administrative-classification:
+      dimensionType: classification
+      primaryKey:
+      - theme_code
+      - priority_number
       - cci_program_code
-      - project_id
-
-    attributes:
-      funding_period_number:
-        source: funding_period_number
-        title: Funding period number
-
-      funding_period:
-        labelfor: funding_period_number
-        source: funding_period
-        title: Funding period
-
-      cci_program_code:
-        source: cci_program_code
-        title: CCI code
-        parent: funding_period_number
-
-      cci_program_title:
-        labelfor: cci_program_code
-        source: cci_program_title
-        title: Operational program
-
-      project_id:
-        source: project_id
-        title: Project ID
-        parent: cci_program_code
-
-      project_name:
-        source: project_name
-        title: Project name
-        labelfor: project_id
-
-  recipient:
-    dimensionType: entity
-    primaryKey:
+      attributes:
+        cci_program_code:
+          source: cci_program_code
+          title: cci_program_code
+          parent: priority_number
+        cci_program_title:
+          source: cci_program_title
+          title: cci_program_title
+        operational_programme:
+          source: operational_programme
+          title: operational_programme
+        beneficiary_name:
+          source: beneficiary_name
+          title: beneficiary_name
+        theme_code:
+          source: theme_code
+          title: theme_code
+        theme_name:
+          source: theme_name
+          title: theme_name
+        priority_number:
+          source: priority_number
+          title: priority_number
+          parent: theme_code
+        priority_label:
+          source: priority_label
+          title: priority_label
+      classificationType: administrative
+   
+   functional-classification:
+      dimensionType: classification
+      primaryKey:
       - beneficiary_id
-
-    attributes:
-      beneficiary_id:
-        title: Beneficiary ID
-        source: beneficiary_id
-
-      beneficiary_name:
-        labelfor: beneficiary_id
-        title: Beneficiary ID
-        source: beneficiary_name
-
-  fin-source:
-    dimensionType: other
-    primaryKey: [fund_acronym]
-
-    attributes:
-      fund_acronym:
-        title: Fund
-        source: fund_acronym
-
-      fund_name:
-        labelfor: fund_acronym
-        title: Fund name
-        source: fund_name
-
-  geo-source:
-    dimensionType: location
-    primaryKey:
-      - beneficiary_postal_code
-      - beneficiary_address
-
-    attributes:
-      beneficiary_postal_code:
-        title: Postal code
-        source: beneficiary_postal_code
-
-      beneficiary_address:
-        title: Address
-        source: beneficiary_address
-
-  administrative-classification:
-    classificationType: administrative
-    dimensionType: classification
-    primaryKey:
+      - project_id
+      attributes:
+        project_id:
+          source: project_id
+          title: project_id
+          parent: beneficiary_id
+        project_name:
+          source: project_name
+          title: project_name
+          labelfor: project_id
+        beneficiary_id:
+          source: beneficiary_id
+          title: beneficiary_id
+        beneficiary_url:
+          source: beneficiary_url
+          title: beneficiary_url
+        project_description:
+          source: project_description
+          title: project_description
+        project_status:
+          source: project_status
+          title: project_status
+        beneficiary_person:
+          source: beneficiary_person
+          title: beneficiary_person
+      classificationType: functional
+ 
+ geo-source:
+      dimensionType: location
+      primaryKey:
+      - beneficiary_county
       - beneficiary_country_code
       - beneficiary_nuts_code
+      - beneficiary_postal_code
       - beneficiary_city
-
-    attributes:
-      beneficiary_country_code:
-        title: Country code
-        source: beneficiary_country_code
-
-      beneficiary_country:
-        labelfor: beneficiary_country_code
-        title: Country
-        source: beneficiary_country
-
-      beneficiary_nuts_code:
-        title: NUTS code
-        source: beneficiary_nuts_code
-
-      beneficiary_nuts_region:
-        labelfor: beneficiary_nuts_code
-        title: NUTS region
-        source: beneficiary_nuts_region
-        parent: beneficiary_country_code
-
-      beneficiary_city:
-        title: City
-        source: beneficiary_city
-        parent: beneficiary_nuts_code
-
-  functional-classification:
-    classificationType: functional
-    dimensionType: classification
-    primaryKey:
-      - theme_code
-
-    attributes:
-      theme_code:
-        title: Thematic objective
-        source: theme_code
-
-      theme_name:
-        labelfor: theme_code
-        title: Thematic objective
-        source: theme_name
-
-  date:
-    dimensionType: datetime
-    primaryKey:
+      attributes:
+        beneficiary_postal_code:
+          source: beneficiary_postal_code
+          title: beneficiary_postal_code
+          parent: beneficiary_county
+        beneficiary_address:
+          source: beneficiary_address
+          title: beneficiary_address
+          labelfor: beneficiary_postal_code
+        beneficiary_country_code:
+          source: beneficiary_country_code
+          title: beneficiary_country_code
+        beneficiary_country:
+          source: beneficiary_country
+          title: beneficiary_country
+          labelfor: beneficiary_country_code
+        beneficiary_nuts_code:
+          source: beneficiary_nuts_code
+          title: beneficiary_nuts_code
+        beneficiary_nuts_region:
+          source: beneficiary_nuts_region
+          title: beneficiary_nuts_region
+          labelfor: beneficiary_country_code
+        beneficiary_county:
+          source: beneficiary_county
+          title: beneficiary_county
+        beneficiary_city:
+          source: beneficiary_city
+          title: beneficiary_city
+          parent: beneficiary_county
+ 
+ date:
+      dimensionType: datetime
+      primaryKey:
       - starting_date
       - completion_date
       - approval_date
       - first_payment_date
       - final_payment_date
+      attributes:
+        starting_date:
+          source: starting_date
+          title: starting_date
+        completion_date:
+          source: completion_date
+          title: completion_date
+        approval_date:
+          source: approval_date
+          title: approval_date
+        first_payment_date:
+          source: first_payment_date
+          title: first_payment_date
+        final_payment_date:
+          source: final_payment_date
+          title: final_payment_date
+  
+  unknown:
+      dimensionType: other
+      primaryKey:
+      - european_investment_bank
+      - eu_cofinancing_rate
+      - source
+      attributes:
+        european_investment_bank:
+          source: european_investment_bank
+          title: european_investment_bank
+        eu_cofinancing_rate:
+          source: eu_cofinancing_rate
+          title: eu_cofinancing_rate
+        source:
+          source: source
+          title: source
 
-    attributes:
-      starting_date:
-        title: Starting date of the project
-        source: starting_date
-
-      completion_date:
-        title: Completion date of the project
-        source: completion_date
-
-      approval_date:
-        title: Approval date of the project
-        source: approval_date
-
-      first_payment_date:
-        title: Date of the first payment
-        source: first_payment_date
-
-      final_payment_date:
-        title: Date of the final payment
-        source: final_payment_date
-
-
-
-
+measures:
+    total_amount:
+      source: total_amount
+      title: total_amount
+      currency: EUR
+      direction: expenditure
+    
+    total_amount_applied:
+      source: total_amount_applied
+      title: total_amount_applied
+      currency: EUR
+      direction: expenditure
+      phase: proposed
+    
+    total_amount_eligible:
+      source: total_amount_eligible
+      title: total_amount_eligible
+      currency: EUR
+      direction: expenditure
+      phase: approved
+    
+    member_state_amount:
+      source: member_state_amount
+      title: member_state_amount
+      currency: EUR
+      direction: expenditure
+    
+    third_party_amount:
+      source: third_party_amount
+      title: third_party_amount
+      currency: EUR
+      direction: expenditure
+    
+    eu_cofinancing_amount:
+      source: eu_cofinancing_amount
+      title: eu_cofinancing_amount
+      currency: EUR
+      direction: expenditure
+    
+    eu_cofinancing_amount_eligible:
+      source: eu_cofinancing_amount_eligible
+      title: eu_cofinancing_amount_eligible
+      currency: EUR
+      direction: expenditure
+      phase: approved
