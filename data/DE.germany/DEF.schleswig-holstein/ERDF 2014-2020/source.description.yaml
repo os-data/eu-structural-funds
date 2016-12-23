@@ -9,9 +9,7 @@ resources:
     fund_acronym: ERDF
     funding_period: 2014-2020
   currency_code: EUR
-  parser_options:
-    headerRow: 9
-  path: LPW-Liste_der_Vorhaben_Schleswig Holstein.xlsx
+  path: LPW-Liste_der_Vorhaben_Schleswig-Holstein.csv
   publication_date: '2016-07-21'
   schema:
     fields:
