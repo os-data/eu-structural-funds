@@ -99,5 +99,7 @@ def create_datapackage(save_datapackage=False):
 
 if __name__ == '__main__':
     parameters, _, _ = ingest()
+    if '_cache_buster' in parameters:
+        del parameters['_cache_buster']
     datapackage_ = create_datapackage(**parameters)
     spew(datapackage_, [[] for _ in datapackage_['resources']])
