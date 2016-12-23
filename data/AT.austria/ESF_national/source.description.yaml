@@ -27,7 +27,6 @@ resources:
   fund_name: ERDF
   path: ESF_Austria_2007-2008.json
   publication_date: '2009-06-30'
-  schema: null
   title: ESF Austria 2007-2008
 - add_categories: {}
   add_constants: {}

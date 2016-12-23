@@ -11,7 +11,7 @@ resources:
     cci_program_code: null
     funding_period: 2007-2013
   currency_code: EUR
-  path: projektilista-2007-2013.csv
+  path: projektilista-2007-2013_new.csv
   publication_date: '2015-12-31'
   schema:
     fields:
