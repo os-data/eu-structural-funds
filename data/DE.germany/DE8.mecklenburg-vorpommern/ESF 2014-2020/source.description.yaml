@@ -9,18 +9,7 @@ resources:
     fund_acronym: ESF
     funding_period: 2014-2020
   currency_code: EUR
-  parser_options:
-    headers: 6
-    skip_rows:
-    - 7
-    - 1453
-    - 1454
-    - 1455
-    - 1456
-    - 1457
-    - 1458
-    - 1459
-  path: Liste_der_Vorhaben_ESF_14_MV.xlsx
+  path: Liste_der_Vorhaben_ESF_14_MV.csv
   publication_date: '2016-03-31'
   schema:
     fields:
