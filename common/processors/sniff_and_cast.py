@@ -62,7 +62,7 @@ class CasterNotFound(Exception):
         return self.template.format(
             field=self.sniffer.field['name'],
             guesses=format_to_json(self.sniffer.format_guesses),
-            sample_rows=format_to_json(self.sniffer.sample_values),
+            sample_rows=format_to_json(self.sniffer.sample_values[:200]),
             nb_failures=self.sniffer.nb_failures,
             max_nb_failures=self.sniffer.max_nb_failures,
             sample_size=self.sniffer.sample_size,
