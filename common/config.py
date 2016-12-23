@@ -43,7 +43,7 @@ DB_ENGINE = create_engine(DB_URI.format(ROOT_DIR))
 VERBOSE = True
 LOG_SAMPLE_SIZE = 15
 JSON_FORMAT = dict(indent=4, ensure_ascii=False, default=repr)
-SNIFFER_SAMPLE_SIZE = 100
+SNIFFER_SAMPLE_SIZE = 5000
 SNIFFER_MAX_FAILURE_RATIO = 0.05
 IGNORED_FIELD_TAG = '_ignored'
 UNKNOWN_FIELD_TAG = '_unknown'

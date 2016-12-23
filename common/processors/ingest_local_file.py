@@ -80,7 +80,11 @@ class BaseIngestor(object):
 
     @property
     def _header_options(self):
-        return {'headers': 1}
+        return {'headers': int(self._parser_options.get('headerRow', 1))}
+
+    @property
+    def _parser_options(self):
+        return self.resource.get('parser_options', {})
 
     def _check_headers(self):
         message = 'Fields and headers do no match'
@@ -120,7 +124,7 @@ class BaseIngestor(object):
         """A post-parser processor to force all fields to strings."""
 
         for index, headers, values in rows:
-            values_as_strings = list(map(str, values))
+            values_as_strings = list(map(lambda x:str(x).strip(), values))
             yield index, headers, values_as_strings
 
     @property
@@ -185,18 +189,18 @@ class CSVIngestor(BaseIngestor):
     def _body_options(self):
         options = super(CSVIngestor, self)._body_options
         options.update(encoding=self._encoding)
-        if self.resource.get('delimiter'):
+        if self._parser_options.get('delimiter'):
             options.update(delimiter=self.resource['delimiter'])
-        if self.resource.get('quotechar'):
+        if self._parser_options.get('quotechar'):
             options.update(quotechar=self.resource['quotechar'])
-        if self.resource.get('quoting'):
+        if self._parser_options.get('quoting'):
             options.update(quoting=self.resource['quoting'])
         return options
 
     @property
     def _post_processors(self):
         return [self._lowercase_empty_values,
-                self._skip_header, self._drop_bad_rows]
+                self._skip_header, self._drop_bad_rows, self.force_strings]
 
     @cached_property
     def _encoding(self):

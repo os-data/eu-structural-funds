@@ -10,7 +10,7 @@ resources:
     funding_period: 2014-2020
   currency_code: EUR
   parser_options:
-    headers: 8
+    headerRow: 9
   path: LPW-Liste_der_Vorhaben_Schleswig Holstein.xlsx
   publication_date: '2016-07-21'
   schema:

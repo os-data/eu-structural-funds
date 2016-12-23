@@ -93,7 +93,6 @@ resources:
     year: 2014
   path: ESF_Austria_2014.json
   publication_date: '2015-06-30'
-  schema: null
   title: ESF in Austria 2014
 scraper_required: false
 sources:
