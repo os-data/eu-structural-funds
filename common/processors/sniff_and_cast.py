@@ -24,11 +24,9 @@ The processor toggles field types to match changes in the data.
 """
 
 # TODO: relax the single resource constraint in `sniff_and_cast` processor
-
 import petl
 
 from copy import deepcopy
-from math import ceil
 from logging import warning, info
 from datapackage_pipelines.wrapper import ingest, spew
 from jsontableschema.exceptions import InvalidCastError
@@ -49,7 +47,7 @@ class CasterNotFound(Exception):
     template = (
         'Could not find a parser for {field}\n'
         'Tried\n{guesses} on {sample_size} rows\n'
-        'Sample values =\n{sample_rows}\n'
+        'Failed values =\n{failed_rows}\n'
         'Failed {nb_failures} times (maximum allowed = {max_nb_failures})'
     )
 
@@ -62,7 +60,7 @@ class CasterNotFound(Exception):
         return self.template.format(
             field=self.sniffer.field['name'],
             guesses=format_to_json(self.sniffer.format_guesses),
-            sample_rows=format_to_json(self.sniffer.sample_values[:200]),
+            failed_rows=format_to_json(self.sniffer.failures[:10]),
             nb_failures=self.sniffer.nb_failures,
             max_nb_failures=self.sniffer.max_nb_failures,
             sample_size=self.sniffer.sample_size,
@@ -82,27 +80,67 @@ class BaseSniffer(object):
         self._nb_empty_sample_values = self.sample_values.count('')
         self.sample_size = len(
             self.sample_values) - self._nb_empty_sample_values
-        self.max_nb_failures = ceil(self.max_failure_rate * self.sample_size)
+        self.max_nb_failures = 0
 
         # The following get updated with each guess
         self.format = {key: field.get(key) for key in self.format_keys}
         self.field = deepcopy(field)
-        self.nb_failures = None
-        self._caster = None
+        self.nb_failures = 0
+        self.failures = []
+        self.casters = []
+        self.init_casters(field)
 
-    def get_caster(self):
-        """Get a ready made caster if possible, else guess from the data."""
-
+    def init_casters(self, field):
+        casters = []
         if all(self.format.values()):
-            self.field.update(self.format)
-            return self.jst_type_class(self.field)
-        else:
-            return self._guess_caster()
+            _field = deepcopy(field).update(self.format)
+            casters.append((self.jst_type_class(_field), 0, self.format))
 
-    def _pre_cast_checks_ok(self, value):
+        for fmt in self.format_guesses:
+            _field = deepcopy(field)
+            _field.update(fmt)
+            casters.append((self.jst_type_class(_field), 0, deepcopy(fmt)))
+
+        for raw_value in self.sample_values:
+            if raw_value:
+                casted_value = None
+                for idx in range(len(casters)):
+                    caster, successes, fmt = casters[idx]
+                    try:
+                        assert self._pre_cast_checks_ok(fmt, raw_value)
+                        casted_value = caster.cast(raw_value)
+                        assert self._post_cast_check_ok(fmt, casted_value)
+                        casters[idx] = (caster, successes+1, fmt)
+                        break
+                    except (AssertionError, InvalidCastError) as e:
+                        pass
+                if casted_value is None:
+                    self.nb_failures += 1
+                    self.failures.append(raw_value)
+
+        casters.sort(key=lambda x: x[1], reverse=True)
+        self.casters = casters
+
+        if self.nb_failures <= self.max_nb_failures:
+            self._log_success()
+            return
+
+        raise CasterNotFound(self)
+
+    def cast(self, raw_value):
+        exc = None
+        for caster, _, _ in self.casters:
+            try:
+                return caster.cast(raw_value)
+            except InvalidCastError as e:
+                exc = e
+        assert exc is not None
+        raise exc
+
+    def _pre_cast_checks_ok(self, fmt, value):
         return True
 
-    def _post_cast_check_ok(self, value):
+    def _post_cast_check_ok(self, fmt, value):
         return True
 
     @staticmethod
@@ -112,30 +150,6 @@ class BaseSniffer(object):
         sample_table = petl.fromdicts(resource_sample)
         sample_column = list(petl.values(sample_table, field['name']))
         return sample_column
-
-    def _guess_caster(self):
-        """Return the first caster that succeeds."""
-
-        for self.format in self.format_guesses:
-            self.nb_failures = 0
-            self.field.update(self.format)
-
-            caster = self.jst_type_class(self.field)
-
-            for i, raw_value in enumerate(self.sample_values):
-                if raw_value:
-                    try:
-                        assert self._pre_cast_checks_ok(raw_value)
-                        casted_value = caster.cast(raw_value)
-                        assert self._post_cast_check_ok(casted_value)
-                    except (AssertionError, InvalidCastError):
-                        self.nb_failures += 1
-
-            if self.nb_failures <= self.max_nb_failures:
-                self._log_success()
-                return caster
-
-        raise CasterNotFound(self)
 
     def _log_success(self):
         message = (
@@ -153,7 +167,7 @@ class BaseSniffer(object):
         info(message, *args)
 
     def __str__(self):
-        return '{} {}'.format(self.__class__.__name__, self.format)
+        return '{} {}'.format(self.__class__.__name__, [x[2] for x in self.casters[:3]])
 
     def __repr__(self):
         return '<{}>'.format(self)
@@ -170,21 +184,21 @@ class NumberSniffer(BaseSniffer):
     format_keys = ['decimalChar', 'groupChar']
     format_guesses = NUMBER_FORMATS
 
-    def _pre_cast_checks_ok(self, value):
+    def _pre_cast_checks_ok(self, fmt, value):
         if value is not None:
-            if value.count(self.format['decimalChar']) > 1:
+            if value.count(fmt['decimalChar']) > 1:
                 return False
 
-            if self.format['decimalChar'] in value:
-                decimal_index = value.find(self.format['decimalChar'])
-                group_index = value.find(self.format['groupChar'])
+            if fmt['decimalChar'] in value:
+                decimal_index = value.find(fmt['decimalChar'])
+                group_index = value.find(fmt['groupChar'])
                 if decimal_index < group_index:
                     return False
 
         return True
 
     # noinspection PyMethodMayBeStatic
-    def _post_cast_check_ok(self, value):
+    def _post_cast_check_ok(self, fmt, value):
         if value is not None:
             value_as_string = str(value)
             if '.' in value_as_string:
@@ -225,14 +239,13 @@ def get_casters(datapackage,
 
     for field in datapackage['resources'][0]['schema']['fields']:
         if field['type'] == 'string':
-            caster = None
+            sniffer = None
 
         else:
             sniffer_class = select_sniffer(field)
             sniffer = sniffer_class(field, resource_sample, max_failure_rate)
-            caster = sniffer.get_caster()
 
-        casters.update({field['name']: caster})
+        casters.update({field['name']: sniffer})
 
     return casters
 

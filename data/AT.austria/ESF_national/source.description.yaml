@@ -38,7 +38,6 @@ resources:
     year: 2009
   path: ESF_Austria_2009.json
   publication_date: '2010-06-30'
-  schema: null
   title: ESF in Austria 2009
 - add_categories: {}
   add_constants: {}
@@ -49,7 +48,6 @@ resources:
     year: 2010
   path: ESF_Austria_2010.json
   publication_date: '2011-06-30'
-  schema: null
   title: ESF in Austria 2010
 - add_categories: {}
   add_constants: {}
@@ -60,7 +58,6 @@ resources:
     year: 2011
   path: ESF_Austria_2011.json
   publication_date: '2012-06-30'
-  schema: null
   title: ESF in Austria 2011
 - add_categories: {}
   add_constants: {}
@@ -71,7 +68,6 @@ resources:
     year: 2012
   path: ESF_Austria_2012.json
   publication_date: '2013-06-30'
-  schema: null
   title: ESF in Austria 2012
 - add_categories: {}
   add_constants: {}
@@ -82,7 +78,6 @@ resources:
     year: 2012
   path: ESF_Austria_2013.json
   publication_date: '2014-06-30'
-  schema: null
   title: ESF in Austria 2013
 - add_categories: {}
   add_constants: {}
