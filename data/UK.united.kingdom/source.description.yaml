@@ -64,7 +64,7 @@ resources:
           translates_to: Amount contributed by public funding in the UK
           maps_to: member_state_amount
 
-        - name: total
+        - name: Total
           translates_to: total cost of project
           maps_to: total_amount
 

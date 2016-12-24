@@ -52,10 +52,10 @@ resources:
     - maps_to: approval_date
       name: Támogatási döntés dátuma
       translates_to: Date of funding decision
-    - maps_to: _ignore
+    - maps_to: null
       name: Támogatás pontszáma
       translates_to: support scores
-    - maps_to: _ignore
+    - maps_to: null
       name: Közvélemény-tájékoztató
       translates_to: Public Information
   fund_name: ESF
