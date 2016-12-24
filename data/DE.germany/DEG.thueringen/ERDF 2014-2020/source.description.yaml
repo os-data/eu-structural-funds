@@ -10,7 +10,7 @@ resources:
     funding_period: 2014-2020
   currency_code: EUR
   parser_options:
-    delimiter: ,
+    delimiter: ","
   path: 160630_liste_der_vorhaben_efre_14_20_endg.csv
   publication_date: 30-06-2016
   schema:
