@@ -120,6 +120,20 @@ def get_fiscal_field_names():
     return [field_['name'] for field_ in schema['fields']]
 
 
+FISCAL_KEYS = get_fiscal_field_names()
+
+
+def get_field(value, fields, key='name', index=False):
+    """Search a list of fields using any key."""
+
+    for i, field in enumerate(fields):
+        if field[key] == value:
+            if index:
+                return i
+            else:
+                return field
+
+
 def get_fiscal_fields(key):
     """Return a lookup table matching the field name to another property."""
 

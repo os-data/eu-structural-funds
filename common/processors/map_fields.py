@@ -1,101 +1,196 @@
-"""Rename fields according to 'maps_to` in the source description.
+"""A processor to drop, rename, split and merge fields."""
 
-Assumptions
------------
-
-The processor assumes that each `maps_to` property is:
-
-    1. a valid fiscal field name
-    2. tagged '_unknown'
-    3. tagged '_ignored'
-
-If it's empty, the processor toggles it to '_unknown' and a warning is issued.
-In any other case an `AssertionError` is raised. The convention is that fields
-tagged as '_ignored' have been deemed irrelevant and those tagged as '_unknown'
-require some more research.
-
-Processing
-----------
-
-If `maps_to` is a valid fiscal field name, the processor renames the keys in
-the data and updates the datapackage accordingly. If `maps_to` is '_unknown`
-or `_ignored`, the field is dropped altogether from the data and the
-datapackage.
-
-
-"""
+from copy import deepcopy
+from collections import Counter
+from logging import info
 
 from datapackage_pipelines.wrapper import ingest, spew
-from common.utilities import get_fiscal_field_names, process
+from jsontableschema import Schema
+
+from common.utilities import process
+
+UNSUPPORTED_JTS_TYPES = (
+    'object',
+    'array',
+    'geopoint',
+    'geojson',
+    'any'
+)
 
 
-def build_mapping_tables(datapackage):
-    """Return one mapping table per resource."""
+def map_fields(datapackage, resources, mapper='maps_to', ignore=None):
+    """Drop, rename, split and merge fields.
 
-    fiscal_field_names = get_fiscal_field_names()
+    The mapping is specified by the field's mapping property in the datapackage
+    schema. The processor works as follows:
 
-    mappings = []
+        * To drop field, omit, leave the mapping empty or use ignored values
+        * To rename a field, set the mapping to the new name
+        * To split a field, set the mapping to a list of names
+        * To merge fields, assign the same mapping to multiple fields
+
+    Fields resulting from a merge are stored as JSON Table Schema arrays.
+
+    :param datapackage: resources must have a JSON Table Schema
+    :param resources: there are no assumptions about the data
+
+    :param mapper: the field property holding the mapping target
+    :type mapper: str
+
+    :param ignore: if the mapping is in the list, the field will be dropped
+    :type ignore: list
+
+    :returns datapackage: with its schema updated
+    :returns resources: with its fields updated
+    :returns stats: the mapping mapping_tables used to process the data
+
+    :raises: AssertionError on bad arguments
+    :raises: ValueError if a mapping target is not valid
+    :raises: TypeError when trying to merge unsupported JSON Table Schema types
+
+    """
+
+    if ignore is None:
+        ignore = []
+
+    assert isinstance(mapper, str), 'mapper argument must be a str'
+    assert isinstance(ignore, list), 'ignore argument must be a list'
+
+    ignore.append(None)
+
+    mapping_tables = _build_mapping_tables(datapackage, mapper, ignore)
+    updated_datapackage = _update_datapackage(datapackage,
+                                              mapping_tables,
+                                              ignore)
+    row_context = {
+        'mappings': mapping_tables,
+        'ignore': ignore,
+        'pass_resource_index': True
+    }
+    new_resources = process(resources, _process_row, **row_context)
+
+    info('Mapping tables: %s', mapping_tables)
+    info('Updated datapackage: %s', updated_datapackage)
+
+    stats = {'mapping_tables': mapping_tables}
+
+    return (updated_datapackage,
+            new_resources,
+            stats)
+
+
+# Mapping tables
+# -----------------------------------------------------------------------------
+
+def _build_mapping_tables(datapackage, mapper, ignore):
+    """Return a flat mapping table for each resource."""
+
+    mapping_tables = []
 
     for resource in datapackage['resources']:
-        mapping = {}
+        counter = Counter()
+        mapping_table = []
 
-        for field in resource['schema']['fields']:
-            if not field.get('maps_to'):
-                field['maps_to'] = '_unknown'
+        for field in Schema(resource['schema']).fields:
+            for new_name in _get_mapping_targets(field, mapper, ignore):
+                mapping_table.append((field.name, new_name))
 
-            message = ('{} is neither a valid fiscal field, '
-                       '_unknown or _ignore')
+                counter.update([new_name])
+                if counter[new_name] > 0:
+                    if field.type in UNSUPPORTED_JTS_TYPES:
+                        message = '{} types cannot be merged'
+                        raise TypeError(message.format(field.type))
 
-            assert any([
-                field['maps_to'] == '_unknown',
-                field['maps_to'] == '_ignored',
-                field['maps_to'] in fiscal_field_names
-            ]), message.format(field['maps_to'])
+        mapping_tables.append(mapping_table)
 
-            mapping.update({field['name']: field['maps_to']})
-
-        mappings.append(mapping)
-
-    return mappings
+    return mapping_tables
 
 
-def update_datapackage(datapackage, mappings):
-    """Update the field names and delete the `maps_to` properties."""
+def _get_mapping_targets(field, mapper, ignore):
+    """Return a list of new names for a given field."""
 
-    for i, resource in enumerate(datapackage['resources']):
-        fields = []
+    mappings = field.descriptor.get(mapper)
 
-        for field in resource['schema']['fields']:
-            fiscal_key = mappings[i][field['name']]
+    if not isinstance(mappings, list):
+        mappings = [mappings]
 
-            if fiscal_key not in ('_unknown', '_ignored'):
-                field.update({'name': fiscal_key})
-                del field['maps_to']
-                fields.append(field)
+    for mapping in mappings:
+        if mapping in ignore:
+            yield
+        else:
+            if not isinstance(mapping, str):
+                message = 'mapping target for {} is not a str: {}'
+                raise ValueError(message.format(field.name, mapping))
 
-        resource['schema']['fields'] = fields
+            yield mapping
+
+
+# Datapackage update
+# -----------------------------------------------------------------------------
+
+def _update_datapackage(datapackage, mapping_tables, ignore):
+    """Update or delete fields."""
+
+    resources = datapackage['resources']
+
+    for resource, mapping_table in zip(resources, mapping_tables):
+        schema = Schema(resource['schema'])
+        new_fields = {}
+
+        for old_name, new_name in mapping_table:
+            if new_name not in ignore:
+
+                if new_name not in new_fields:
+                    old_field = schema.get_field(old_name)
+                    new_field = deepcopy(old_field.descriptor)
+                    new_field.update(name=new_name, mapped_from=[old_name])
+                    del new_field['maps_to']
+
+                    new_fields.update({new_name: new_field})
+
+                else:
+                    new_field = new_fields[new_name]
+                    new_field.update(type='array')
+                    new_field['mapped_from'].append(old_name)
+
+        resource['schema']['fields'] = list(new_fields.values())
 
     return datapackage
 
 
-def apply_mapping(row, mappings=None, resource_index=None):
-    """Rename data keys with a valid mapping and drop the rest."""
+# Data processing
+# -----------------------------------------------------------------------------
 
-    for raw_key, fiscal_key in mappings[resource_index].items():
-        if fiscal_key in ('_ignored', '_unknown'):
-            del row[raw_key]
-        else:
-            row[fiscal_key] = row.pop(raw_key)
+def _process_row(row, mappings, ignore, resource_index):
+    """Drop, rename, split and merge data fields based on the mapping table."""
 
-    return row
+    new_row = {}
+    counter = Counter()
+
+    for old_key, new_key in mappings[resource_index]:
+        if new_key not in ignore:
+            value = row[old_key]
+
+            if new_key not in new_row:
+                new_row[new_key] = value
+            else:
+                if counter[new_key] > 1:
+                    values = new_row[new_key]
+                else:
+                    values = [new_row[new_key]]
+
+                values.append(value)
+                new_row[new_key] = values
+
+            counter.update([new_key])
+
+    return new_row
 
 
 if __name__ == '__main__':
-    _, datapackage_, resources_ = ingest()
-    mappings_ = build_mapping_tables(datapackage_)
-    datapackage_ = update_datapackage(datapackage_, mappings_)
-    new_resources_ = process(resources_,
-                             apply_mapping,
-                             mappings=mappings_,
-                             pass_resource_index=True)
-    spew(datapackage_, new_resources_)
+    """Ingest, process data, update datapackage and spew out."""
+
+    parameters_, datapackage_, resources_ = ingest()
+    updated_datapackage_, new_resources_, stats_ = \
+        map_fields(datapackage_, resources_, **parameters_)
+    spew(updated_datapackage_, new_resources_, stats=stats_)
