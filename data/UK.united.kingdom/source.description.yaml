@@ -110,11 +110,3 @@ resources:
         - name: LAU1_NAME
           translates_to: Name of Nuts region
           maps_to: beneficiary_nuts_region
-
-
-
-
-
-
-
-        - # repeat for each column you find in the data
