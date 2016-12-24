@@ -89,8 +89,7 @@ resources:
     currency_code: HUF
     publication_date: "2016-10-31"
     schema:
-
-
+      fields:
           - name: _program
             translates_to: programme
             maps_to: operational_programme
@@ -162,8 +161,7 @@ resources:
         cci_program_acronym:
     currency_code: HUF
     schema:
-
-
+      fields:
           - name: _program
             translates_to: programme
             maps_to: operational_programme
