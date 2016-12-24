@@ -10,7 +10,7 @@ resources:
     funding_period: 2014-2020
   currency_code: EUR
   parser_options:
-    delimiter: ;
+    delimiter: ,
   path: 2016-06-30_Liste_der_Vorhaben_ESF_2014-2020.csv
   publication_date: '2016-07-08'
   schema:
