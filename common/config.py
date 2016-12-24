@@ -61,16 +61,17 @@ NUMBER_FORMATS = [
 ]
 
 DATE_FORMATS = [
-    {'format': 'fmt:%y'},
     {'format': 'fmt:%Y'},
     {'format': 'fmt:%d/%m/%Y'},
     {'format': 'fmt:%m/%d/%Y'},
     {'format': 'fmt:%d-%b-%Y'},  # abbreviated month
-    {'format': 'fmt:%y-%m-%d'},
+    {'format': 'fmt:%d-%m-%Y'},
     {'format': 'fmt:%Y-%m-%d'},
+    {'format': 'fmt:%y-%m-%d'},
     {'format': 'fmt:%y.%m.%d'},
     {'format': 'fmt:%d.%m.%Y'},
     {'format': 'fmt:%d.%m.%y'},
     {'format': 'fmt:%Y-%m-%d %H:%M:%S'},
     {'format': 'fmt:%Y-%m-%d %H:%M:%S.%f'},
+    {'format': 'fmt:%y'},
 ]
