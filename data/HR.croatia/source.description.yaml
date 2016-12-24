@@ -24,7 +24,7 @@ resources:
     - name: Šifra operativnog programa
       translates_to: Code OP
       maps_to: null 
-    - name: Operativ program
+    - name: Operativni program
       translates_to: operational programme 
       maps_to: operational_programme
     - name: NUTSII
