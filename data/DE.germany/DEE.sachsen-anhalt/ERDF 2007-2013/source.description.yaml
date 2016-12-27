@@ -26,10 +26,10 @@ resources:
       name: Jahr der Restzahlung
       translates_to: Year of completion 
     - maps_to: total_amount_eligible
-      name: Gewährte Beträge
+      name: Gewährte Beträge 1
       translates_to: total eligible expenditure of project (EU and public funding)
     - maps_to: total_amount
-      name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge
+      name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge 1
       translates_to: total amount paid
   title: ERDF Sachsen Anhalt 2007-2013
 scraper_required: false
