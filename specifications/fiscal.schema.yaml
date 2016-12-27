@@ -18,8 +18,8 @@ fields:
     description: First, second or third funding period. #use the actual periods in the description
     format: default
     type: string
-    osType: activity:generic:program:code
-    conceptType: activity
+    osType: fin-source:generic:level2:code:full
+    conceptType: fin-source
 
   - name: funding_period
     title: Funding period
@@ -27,8 +27,8 @@ fields:
     description: One of three official funding period e.g. 2007-2013 #again, what do you refer to? One of the three? We only have 2007-2013 and 2014-2020
     format: default
     type: string
-    conceptType: activity
-    osType: activity:generic:program:label
+    conceptType: fin-source:generic:level2:label
+    osType: fin-source
 
   - name: cci_program_code
     title: CCI code
@@ -36,8 +36,8 @@ fields:
     description: CCI codes (e.g. 2014BG05M2OP001) identify operational programs (see codelist).
     format: default
     type: string
-    osType: activity:generic:subprogram:code:full
-    conceptType: activity
+    osType: administrative-classification:generic:level3:code:full
+    conceptType: administrative-classification
 
   - name: cci_program_title
     title: Operational program
@@ -45,8 +45,8 @@ fields:
     description: The operational program matching the CCI code (see codelist)
     format: default
     type: string
-    conceptType: activity
-    osType: activity:generic:subprogram:label
+    osType: administrative-classification:generic:level3:description
+    conceptType: administrative-classification
 
   - name: project_id
     title: Project ID
@@ -54,8 +54,8 @@ fields:
     description: Unique code of the project (generated if not)
     format: default
     type: string
-    conceptType: activity
-    osType: activity:generic:project:code:full
+    osType: functional-classification:generic:level2:code:full
+    conceptType: functional-classification
 
   - name: project_name
     title: Project name
@@ -63,8 +63,8 @@ fields:
     description: Name or short description of the project
     format: default
     type: string
-    conceptType: activity
-    osType: activity:generic:project:label
+    osType: functional-classification:generic:level2:label
+    conceptType: functional-classification
 
   - name: operational_programme
     title: Operational Programme
@@ -72,8 +72,8 @@ fields:
     description: information on which operational programme the project is governed by
     format: default
     type: string
-    conceptType: activity
-    osType: activity:generic:subproject:code:full
+    osType: administrative-classification:generic:level4:description
+    conceptType: administrative-classification
 
   # Recipient
   # ---------------------------------------------------------------------------
@@ -84,8 +84,8 @@ fields:
     description: The unique ID of the beneficiary
     format: default
     type: string
-    conceptType: recipient
-    osType: recipient:generic:id
+    osType: functional-classification:generic:level1:code
+    conceptType: functional-classification
 
   - name: beneficiary_name
     title: Beneficiary name
@@ -93,8 +93,8 @@ fields:
     description: Name of the beneficiary (person, company, organisation)
     format: default
     type: string
-    conceptType: recipient
-    osType: recipient:generic:name
+    conceptType: osType: functional-classification:generic:level1:description
+    conceptType: functional-classification
 
   # Geo-source
   # ---------------------------------------------------------------------------
@@ -133,8 +133,8 @@ fields:
     description: Two digit ISO-3166 country code of the beneficiary
     format: default
     type: string
-    conceptType: administrative-classification
-    osType: administrative-classification:generic:level1:code
+    osType: geo-source:source:code
+    conceptType: geo-source
 
   - name: beneficiary_country
     title: Country
@@ -142,17 +142,17 @@ fields:
     description: The country of the beneficiary
     format: default
     type: string
-    conceptType: administrative-classification
-    osType: administrative-classification:generic:level1:label
-
+    osType: geo-source:source:title
+    conceptType: geo-source
+    
   - name: beneficiary_nuts_code
     title: NUTS code
     slug: beneficiary_nuts_code
     description: NUTS code of the beneficiary region
     format: default
     type: string
-    conceptType: administrative-classification
-    osType: administrative-classification:generic:level2:code:full
+    osType: geo-source:source:code
+    conceptType: geo-source
 
   - name: beneficiary_nuts_region
     title: NUTS region
@@ -160,8 +160,8 @@ fields:
     description: The region matching the NUTS code
     format: default
     type: string
-    conceptType: administrative-classification
-    osType: administrative-classification:generic:level2:label
+    osType: geo-source:source:title
+    conceptType: geo-source
 
   - name: beneficiary_county
     title: County
@@ -169,8 +169,8 @@ fields:
     description: The county of the beneficiary
     format: default
     type: string
-    conceptType: administrative-classification
-    osType: administrative-classification:generic:level3:code:full
+    osType: geo-source:target:level1:code
+    conceptType: geo-source
 
   - name: beneficiary_city
     title: City
@@ -178,8 +178,8 @@ fields:
     description: The city of the beneficiary
     format: default
     type: string
-    conceptType: administrative-classification
-    osType: administrative-classification:generic:level4:code:full
+    osType: geo-source:target:level2:code:full
+    conceptType: geo-source
 
 
   # Fiscal attribute
@@ -191,8 +191,8 @@ fields:
     description: Acronym of the fund (see codelist)
     format: default
     type: string
+    osType: fin-source:generic:level1:code
     conceptType: fin-source
-    osType: fin-source:generic:code
 
   - name: fund_name
     title: Fund name
@@ -200,9 +200,8 @@ fields:
     description: Full name of the fund (see codelist)
     format: default
     type: string
+    osType: fin-source:generic:level1:description
     conceptType: fin-source
-    osType: fin-source:generic:label
-
   # Functional classifications
   # ---------------------------------------------------------------------------
 
@@ -212,17 +211,17 @@ fields:
     description: Code of the thematic objective (see codelist)
     format: default
     type: string
-    conceptType: functional-classification
-    osType: functional-classification:generic:code
-
+    osType: administrative-classification:generic:level1:code
+    conceptType: administrative-classification
+    
   - name: theme_name
     title: Thematic objective
     slug: theme_name
     description: Display name of the thematic objective (see codelist)
     format: default
     type: string
-    conceptType: functional-classification
-    osType: functional-classification:generic:label
+    osType: administrative-classification:generic:level1:description
+    conceptType: administrative-classification
 
   - name: priority_number
     title: Priority number
@@ -230,8 +229,8 @@ fields:
     description: Priority number of the grant agreement (see codelist)
     format: default
     type: string
-    conceptType: functional-classification
-    osType: functional-classification:generic:code
+    osType: administrative-classification:generic:level2:code:full
+    conceptType: administrative-classification
 
   - name: priority_label
     title: Priority
@@ -239,8 +238,8 @@ fields:
     description: Description of the priority number of the grant agreement (see codelist) #is this the same as the project category?
     format: default
     type: string
-    conceptType: expenditure-type
-    osType: expenditure-type:code
+    osType: administrative-classification:generic:level2:description
+    conceptType: administrative-classification
 
   # Dates
   # ---------------------------------------------------------------------------
@@ -366,7 +365,7 @@ fields:
   - name: european_investment_bank_amount
     title: European Investment Bank financing
     slug: european_investment_bank_amount
-    description: The amount of co-financing received from the European Investment Bank (EIB)
+    description: #not in datasets
     type: number
     format: default
     conceptType: value
@@ -400,9 +399,9 @@ fields:
     description: Status of the project
     format: default
     type: string
-    conceptType: unknown
-    osType: unknown:string
-
+    osType: functional-classification:generic:level3:description
+    conceptType: functional-classification
+    
   - name: eu_cofinancing_rate
     title: EU co-financing rate
     slug: eu_cofinancing_rate
@@ -418,8 +417,8 @@ fields:
     description: name of person responsible
     format: default
     type: string
-    conceptType: unknown
-    osType: unknown:string
+    osType: functional-classification:generic:level3:description
+    conceptType: functional-classification
 
   - name: management_authority
     title: Management Authority
@@ -427,8 +426,8 @@ fields:
     description: Management authority
     format: default
     type: string
-    conceptType: unknown
-    osType: unknown:string
+    osType: fin-source:generic:level3:code:full
+    conceptType: fin-source
 
   - name: source
     title: Source URL
