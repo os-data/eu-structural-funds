@@ -9,17 +9,11 @@ resources:
     fund_acronym: ESF
     funding_period: 2007-2013
   currency_code: EUR
-  path: EERDF-Data-Schleswig-Holstein-2007-2013-json.csv
+  path: ESF-Data-Schleswig-Holstein-2007-2013.csv
   encoding: utf-8
   publication_date: '2016-01-08'
   schema:
     fields:
-    - name: Year 1
-      translates_to: year 1
-      maps_to: starting_date
-    - name: Year 2
-      translates_to: year 2
-      maps_to: completion_date
     - name: source
       translates_to: source
       maps_to: source
