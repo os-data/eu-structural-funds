@@ -9,11 +9,11 @@ resources:
     fund_acronym: ERDF
     funding_period: 2007-2013
   currency_code: EUR
-  path: ERDF Data Schleswig Holstein 2007-2013.json
+  path: ERDF Data Schleswig Holstein 2007-2013.csv
   publication_date: '2014-12-31'
   schema:
     fields:
-    - name: _source
+    - name: source
       translates_to: source
       maps_to: source
     - maps_to: beneficiary_name
@@ -22,9 +22,12 @@ resources:
     - maps_to: project_name
       name: name_of_operation
       translates_to: operation name
-    - maps_to: approval_date
-      name: years
-      translates_to: Year of Approval / year of completion
+    - maps_to: starting_date
+      name: Year 1
+      translates_to: year 1
+    - maps_to: completion_date
+      name: Year 2
+      translates_to: year 2
     - maps_to: total_amount_eligible
       name: allocated_public_funding
       translates_to: total eligible amount (EU and public funding)

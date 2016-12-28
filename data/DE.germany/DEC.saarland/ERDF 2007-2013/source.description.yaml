@@ -9,7 +9,7 @@ resources:
     fund_acronym: ERDF
     funding_period: 2007-2013
   currency_code: EUR
-  path: Saarland-ERDF-Data-2007-2013.csv
+  path: Saarland-ERDF-Data-2007-2013-1.csv
   publication_date: '2015-12-31'
   schema:
     fields:
@@ -22,9 +22,6 @@ resources:
     - maps_to: approval_date
       name: Jahr der Bewilligung
       translates_to: Year of Approval / year of completion
-    - maps_to: final_payment_date
-      name: Jahr der Restzahlung
-      translates_to: year of last payment
     - maps_to: total_amount_eligible
       name: Gewährte Beträge (insgesamt)
       translates_to: total eligible amount (EU and public funding)

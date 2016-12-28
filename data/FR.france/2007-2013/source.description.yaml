@@ -20,7 +20,7 @@ contributors:
 resources:
     - title: JSON file for France 2007-2013 FSE national programs
 
-      path: data.json
+      path: data.csv
       #url: http://cartobenef.asp-public.fr/cartobenef/carto.php
       publication_date: # Loic: I can't find it
 

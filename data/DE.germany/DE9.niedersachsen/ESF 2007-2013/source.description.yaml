@@ -9,7 +9,7 @@ resources:
     fund_acronym: ESF
     funding_period: 2007-2013
   currency_code: EUR
-  path: ERDF-Niedersachsen-2007-2013_Konvergenz.csv
+  path: ERDF-Niedersachsen-2007-2013_Konvergenz-1.csv
   publication_date: '2016-05-31'
   schema:
     fields:
