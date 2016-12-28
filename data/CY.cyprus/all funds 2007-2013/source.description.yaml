@@ -9,7 +9,7 @@ resources:
     fund_acronym: ERDF
     funding_period: 2007-2013
   currency_code: EUR
-  path: BeneficiariesLIST_FebERDF_CF_-1_cyprus.csv
+  path: BeneficiariesLIST_FebERDF_CF_-1_cyprus-clean.csv
   publication_date: '2016-06-15'
   schema:
     fields:
@@ -19,7 +19,7 @@ resources:
     - maps_to: beneficiary_name
       name: Δικαιούχος
       translates_to: name of beneficiary
-    - name: Έτος Έγκρισης Δαπάνης
+    - name: Έτος Έγκρισης Δαπάνης 1
       translates_to: year expenditure Approval
       maps_to: approval_date
     - name: Έτος Τελικής Πληρωμής
