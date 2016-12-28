@@ -9,7 +9,7 @@ resources:
     fund_acronym: ERDF
     funding_period: 2007-2013
   currency_code: EUR
-  path: ESF data Hamburg 2007-2013.csv
+  path: ESF data Hamburg 2007-2013-new.csv
   publication_date: 30-06-2013
   schema:
     fields:
