@@ -22,22 +22,22 @@ resources:
     fields:
     - maps_to: beneficiary_name
       name: beneficiary
-      translation: beneficiary
+      translates_to: beneficiary
     - maps_to: project_name
       name: name_of_project
-      translation: name
+      translates_to: name
     - maps_to: eu_cofinancing_amount
       name: structural_assistance
-      translation: eu confinancing amount
+      translates_to: eu confinancing amount
     - maps_to: management_authority
       name: 2nd_level_intermediate_body
-      translation: 2nd level intermediate body
+      translates_to: 2nd level intermediate body
     - maps_to: starting_date
       name: period
-      translation: project duration
+      translates_to: project duration
     - maps_to: priority_label
       name: measure
-      translation: measure
+      translates_to: measure
   title: Beneficiary webpage
 scraper_required: false
 sources:

@@ -21,29 +21,29 @@ resources:
       translates_to: Name of the Project
     - maps_to: project_description
       name: Zusammenfassung des Vorhabens operation summery
-      translation: Project Summary
+      translates_to: Project Summary
     - maps_to: starting_date
       name: Datum des Beginns des Vorhabens operation start date
-      translation: start date
+      translates_to: start date
     - maps_to: completion_date
       name: Datum des Endes des Vorhabens operation end date
-      translation: completion date
+      translates_to: completion date
     - maps_to: total_amount_eligible
       name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens total eligible expenditure
         allocated to the operation
-      translation: total eligible expenditure allocated to the operation
+      translates_to: total eligible expenditure allocated to the operation
     - name: Unions-Kofinanzierungssatz pro Prioritätsachse
-      translation: Union co-financing rate, as per priority axis (in percent)
+      translates_to: Union co-financing rate, as per priority axis (in percent)
       maps_to: eu_cofinancing_rate
     - maps_to: beneficiary_city
       name: Ort des Vorhabens Operation Location
-      translation: location
+      translates_to: location
     - maps_to: beneficiary_country
       name: Land/country
-      translation: country
+      translates_to: country
     - name: Bezeichnung der Interventionskategorie für das Vorhaben/name of category
         of intervention for the operation
-      translation: category of intervention
+      translates_to: category of intervention
       maps_to: priority_label
   title: ESF in  2014-2020
 scraper_required: false

@@ -21,33 +21,33 @@ resources:
       translates_to: Name of the Project
     - maps_to: project_description
       name: Zusammenfassung des Vorhabens/operation summary
-      translation: Project Summary
+      translates_to: Project Summary
     - maps_to: starting_date
       name: Datum des Beginns des Vorhabens/operation start date
-      translation: null
+      translates_to: null
     - maps_to: completion_date
       name: Datum des Endes des Vorhabens/operation end date
-      translation: Project Summary
+      translates_to: Project Summary
     - maps_to: total_amount_eligible
       name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens/total eligible expenditure
         allocated to the operation
-      translation: total eligible expenditure allocated to the operation
+      translates_to: total eligible expenditure allocated to the operation
     - maps_to: beneficiary_postal_code
       name: Postleitzahl des Vorhabens/operation postcode
-      translation: postcode
+      translates_to: postcode
     - maps_to: beneficiary_country
       name: Land/country
-      translation: country
+      translates_to: country
     - maps_to: theme_code
       name: Bezeichnung der Interventionskategorie für das Vorhaben/name of category
         of intervention for the operation
-      translation: Category of Intervention
+      translates_to: Category of Intervention
     - maps_to: cci_program_code
       name: Spezifisches Ziel/specific objective
-      translation: specific objective
+      translates_to: specific objective
     - maps_to: beneficiary_url
       name: Internet-Adresse des Vorhabens/website of the operation
-      translation: website of the operation
+      translates_to: website of the operation
   title: ESF in Baden-Württemberg 2014-2020
 scraper_required: false
 sources:

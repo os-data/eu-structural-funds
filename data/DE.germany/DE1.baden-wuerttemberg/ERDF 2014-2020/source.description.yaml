@@ -27,29 +27,29 @@ resources:
       translates_to: operation name
     - maps_to: project_description
       name: Zusammenfassung des Vorhabens
-      translation: Operation Summary
+      translates_to: Operation Summary
     - maps_to: starting_date
       name: Datum des Beginns des Vorhabens
-      translation: Operation start date
+      translates_to: Operation start date
     - maps_to: completion_date
       name: Datum des Endes des Vorhabens
-      translation: operation end date (expected date for physical completion or full
+      translates_to: operation end date (expected date for physical completion or full
         implementation of the operation)
     - maps_to: total_amount_eligible
       name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens
-      translation: Total eligible expenditure allocated to the operation
+      translates_to: Total eligible expenditure allocated to the operation
     - maps_to: eu_cofinancing_rate
       name: Unions-Kofinanzierungssatz pro Prioritätsachse
-      translation: Union co-financing rate, as per priority axis
+      translates_to: Union co-financing rate, as per priority axis
     - maps_to: beneficiary_city
       name: Postleitzahl des Vorhabens oder andere angemessene Standortindikatoren
-      translation: postcode
+      translates_to: postcode
     - maps_to: beneficiary_country
       name: Land
-      translation: country
+      translates_to: country
     - maps_to: priority_label
       name: Bezeichnung der Interventionskategorie
-      translation: intervention category
+      translates_to: intervention category
   title: EFRE-Programm in Baden-Württemberg 2014-2020 - Innovation und Energiewende
 scraper_required: false
 sources:

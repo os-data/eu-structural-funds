@@ -22,15 +22,15 @@ resources:
       maps_to: source
     - maps_to: beneficiary_name
       name: beneficiary
-      translation: Beneficiary
+      translates_to: Beneficiary
     - maps_to: project_name
       name: name_of_the_operation
-      translation: name of the operation
+      translates_to: name of the operation
     - maps_to: total_amount
       name: allocated_public_funding
-      translation: allocated pulic funding (EU+national cofinancing)
+      translates_to: allocated pulic funding (EU+national cofinancing)
     - name: status
-      translation: G = committed, A = paid out
+      translates_to: G = committed, A = paid out
       maps_to: project_status
   title: ERDF data Tirol (AT) (2007-2013)
 scraper_required: false

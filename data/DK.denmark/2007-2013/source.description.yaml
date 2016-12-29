@@ -30,48 +30,48 @@ resources:
     fields:
     - maps_to: project_name
       name: projekttitel
-      translation: Operation name
+      translates_to: Operation name
     - maps_to: starting_date
       name: start_dato
-      translation: Operation start date
+      translates_to: Operation start date
     - maps_to: completion_date
       name: slut_dato
-      translation: Operation end date
+      translates_to: Operation end date
     - maps_to: fund_acronym
       name: ordning
-      translation: Fund
+      translates_to: Fund
     - maps_to: theme_name
       name: Indsatsområde
       translates_to: Focus
     - maps_to: total_amount
       name: budget
-      translation: Budget
+      translates_to: Budget
     - maps_to: eu_cofinancing_amount
       name: eu
-      translation: Union co-financing
+      translates_to: Union co-financing
     - maps_to: project_description
       name: tas_projekt_besk
-      translation: Project
+      translates_to: Project
     - maps_to: beneficiary_nuts_region
       name: region
-      translation: Region
+      translates_to: Region
     - maps_to: project_id
       name: cvr
       translates_to: code
     - maps_to: beneficiary_name
       name: navn
-      translation: Beneficiary name
+      translates_to: Beneficiary name
     - maps_to: beneficiary_address
       name: vejnavn
-      translation: Street name
+      translates_to: Street name
     - maps_to: beneficiary_postal_code
       name: postnr
-      translation: Operation postcode
+      translates_to: Operation postcode
     - maps_to: beneficiary_city
       name: bynavn
-      translation: City name
+      translates_to: City name
     - name: parter
-      translation: Project partners
+      translates_to: Project partners
       maps_to: null
   title: DK.denmark 2007-2013 ERDF ESF
 scraper_required: false
