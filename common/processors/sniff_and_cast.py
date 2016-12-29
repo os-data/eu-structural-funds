@@ -32,13 +32,15 @@ from datapackage_pipelines.wrapper import ingest, spew
 from jsontableschema.exceptions import InvalidCastError
 from jsontableschema.types import DateType, NumberType
 
-from common.utilities import process, format_to_json, get_fiscal_fields
+from common.utilities import process, format_to_json
 from common.config import (
     SNIFFER_SAMPLE_SIZE,
     SNIFFER_MAX_FAILURE_RATIO,
     DATE_FORMATS,
     NUMBER_FORMATS
 )
+
+import logging
 
 
 class CasterNotFound(Exception):
@@ -208,19 +210,6 @@ class NumberSniffer(BaseSniffer):
         return True
 
 
-def update_field_types(datapackage):
-    """Update the field types by looking up the fiscal schema."""
-
-    fields = datapackage['resources'][0]['schema']['fields']
-    types_lookup = get_fiscal_fields('type')
-
-    for field in fields:
-        fiscal_type = types_lookup[field['name']]
-        field.update(type=fiscal_type)
-
-    return datapackage
-
-
 def select_sniffer(field):
     """Select the sniffer according to the fiscal field type."""
 
@@ -254,16 +243,15 @@ def cast_values(row, casters, row_index=None):
     """Convert values to JSONTableSchema types."""
 
     for key, value in row.items():
-        if casters.get(key):
-            if value is not None and len(value.strip()) > 0:
-                try:
-                    row[key] = casters[key].cast(value)
-                except InvalidCastError:
-                    message = 'Could not cast %s = %s'
-                    warning(message, key, row[key])
-                    assert False, message
-            else:
-                row[key] = None
+        if key in casters:
+            if casters[key] is not None:
+                if value is not None and len(value.strip()) > 0:
+                    try:
+                        row[key] = casters[key].cast(value)
+                    except InvalidCastError:
+                        message = 'Could not cast %s = %s'
+                        warning(message, key, row[key])
+                        assert False, message
 
         else:
             if row_index == 0:
@@ -291,19 +279,24 @@ def extract_data_sample(resource, sample_size=SNIFFER_SAMPLE_SIZE):
 def concatenate_data_sample(data_sample, resource):
     """Concatenate the sample rows back with the rest of the resource."""
 
+    i = 0
     for row in data_sample:
+        i+=1
         yield row
     for row in resource:
+        i+=1
         yield row
 
 
 if __name__ == '__main__':
     _, datapackage_, resources_ = ingest()
-    resource_ = next(resources_)
+    resources_ = list(resources_)
+    resource_ = resources_[0]
+    assert(len(resources_)==1)
     resource_sample_, resource_left_over_ = extract_data_sample(resource_)
-    datapackage_ = update_field_types(datapackage_)
     casters_ = get_casters(datapackage_, resource_sample_)
     resource_ = concatenate_data_sample(resource_sample_, resource_left_over_)
     kwargs = dict(casters=casters_, pass_row_index=True)
     new_resources_ = process([resource_], cast_values, **kwargs)
     spew(datapackage_, new_resources_)
+    import logging

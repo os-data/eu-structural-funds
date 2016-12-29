@@ -71,11 +71,10 @@ def fix_fields(fields):
     return fields
 
 
-def create_datapackage(save_datapackage=False):
+def create_datapackage(datapackage={}):
     """Convert a source description to a standard datapackage."""
 
-    description = load_description()
-    datapackage = drop_empty_properties(description)
+    datapackage = drop_empty_properties(datapackage)
     datapackage['name'] = convert_to_name(datapackage['title'])
     first_resource = datapackage['resources'][0]
 
@@ -88,9 +87,6 @@ def create_datapackage(save_datapackage=False):
             raw_date = resource['publication_date']
             resource['publication_date'] = fix_date(raw_date)
 
-    if save_datapackage:
-        save_to_file(datapackage)
-
     datapackage_dump = json.dumps(datapackage, **JSON_FORMAT)
     logging.debug('Datapackage: \n%s', datapackage_dump)
 
@@ -99,7 +95,5 @@ def create_datapackage(save_datapackage=False):
 
 if __name__ == '__main__':
     parameters, _, _ = ingest()
-    if '_cache_buster' in parameters:
-        del parameters['_cache_buster']
     datapackage_ = create_datapackage(**parameters)
     spew(datapackage_, [[] for _ in datapackage_['resources']])

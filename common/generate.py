@@ -6,7 +6,7 @@ import json
 import yaml
 import slugify
 
-from .config import SOURCE_FILE, PIPELINE_FILE, DATA_DIR
+from .config import SOURCE_FILE, PIPELINE_FILE, DATA_DIR, FISCAL_SCHEMA_FILE
 
 PREPROCESSING = {
     'parse_currency_fields',
@@ -17,6 +17,8 @@ PREPROCESSING = {
 
 if __name__ == "__main__":
 
+    fiscal_schema = yaml.load(open(FISCAL_SCHEMA_FILE))
+
     update = False
     if len(sys.argv) > 1:
         if sys.argv[1] == 'update':
@@ -24,7 +26,6 @@ if __name__ == "__main__":
 
     for dirpath, dirnames, filenames in os.walk(DATA_DIR):
         if SOURCE_FILE in filenames:
-            source_raw = open(os.path.join(dirpath, SOURCE_FILE)).read().encode('utf8')
             source = yaml.load(open(os.path.join(dirpath, SOURCE_FILE)))
             if update:
                 try:
@@ -42,21 +43,56 @@ if __name__ == "__main__":
             except:
                 mappings = {'mappings': []}
 
+            fiscal_model_parameters = {
+                'options': dict(
+                    (field['name'], {'currency': source['resources'][0].get('currency_code', 'EUR')})
+                    for field in fiscal_schema['fields']
+                    if field.get('osType') == 'value'
+                ),
+                'os-types': dict(
+                    (field['name'], field['osType'])
+                    for field in fiscal_schema['fields']
+                    if 'osType' in field
+                ),
+                'titles': dict(
+                    (field['name'], field['title'])
+                    for field in fiscal_schema['fields']
+                    if 'title' in field
+                )
+            }
+
+            concat_parameters = dict(
+                (field['name'], []) for field in fiscal_schema['fields']
+            )
+            for resource in source['resources']:
+                schema = resource.get('schema')
+                if schema is not None:
+                    for field in schema.get('fields',[]):
+                        maps_to = field.get('maps_to')
+                        if maps_to is not None and not maps_to.startswith('_'):
+                            aliases = concat_parameters[maps_to]
+                            if field['name'] not in aliases:
+                                aliases.append(field['name'])
+                            del field['maps_to']
+                            if 'translates_to' in field:
+                                del field['translates_to']
+            concat_parameters = {'column-aliases': concat_parameters}
+
             pipeline = [
-                ('read_description', {'save_datapackage': False,
-                                      '_cache_buster': hashlib.md5(source_raw).hexdigest()}),
+                ('read_description', {'datapackage': source}),
                 ('ingest_local_file', {}),
                 ('map_values', mappings),
-                ('map_fields', {}),
-                ('concatenate_identical_resources', {})
+                # ('map_fields', {}),
+                # ('concatenate_identical_resources', {})
+                ('concat', concat_parameters),
             ] + preprocessing + [
-                ('sniff_and_cast', {}),
                 ('reshape_data', {}),
+                ('show_sample_in_console', {'sample_size': 10}),
                 ('add_geocodes', {}),
                 ('add_constants', {}),
                 ('add_categories', {}),
-                ('show_sample_in_console', {'sample_size': 1000}),
-                ('load_fiscal_datapackage', {}),
+                ('fiscal.model', fiscal_model_parameters),
+                ('sniff_and_cast', {}),
                 ('dump', {'out-file': 'fiscal.datapackage.zip'}),
                 ('fiscal.upload', {'in-file': 'fiscal.datapackage.zip'}),
             ]

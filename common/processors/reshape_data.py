@@ -3,7 +3,7 @@
 from datapackage_pipelines.wrapper import ingest
 from datapackage_pipelines.wrapper import spew
 from common.utilities import get_fiscal_field_names
-
+import logging
 
 def process_row(row, fiscal_fields):
     """Add and remove appropriate columns.
@@ -31,6 +31,21 @@ def process_resources(resources, fiscal_fields):
 
 if __name__ == '__main__':
     parameters_, datapackage_, resources_ = ingest()
-    fiscal_fields_ = get_fiscal_field_names()
+    for resource in datapackage_['resources']:
+        fiscal_fields_ = set(get_fiscal_field_names())
+        fields = resource['schema']['fields']
+        new_fields = []
+        for field in fields:
+            if field['name'] in fiscal_fields_:
+                new_fields.append(field)
+                fiscal_fields_.remove(field['name'])
+        for f in fiscal_fields_:
+            new_fields.append({
+                'name': f,
+                'type': 'string'
+            })
+        resource['schema']['fields'] = new_fields
+
+    fiscal_fields_ = set(get_fiscal_field_names())
     new_resources_ = process_resources(resources_, fiscal_fields_)
     spew(datapackage_, new_resources_)

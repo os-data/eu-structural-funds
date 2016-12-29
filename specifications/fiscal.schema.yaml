@@ -14,108 +14,64 @@ fields:
 
   - name: funding_period_number
     title: Funding period number
-    slug: funding_period_number
     description: First, second or third funding period. #use the actual periods in the description
-    format: default
-    type: string
-    osType: activity:generic:program:code
-    conceptType: activity
+    osType: fin-source:generic:level1:code
 
   - name: funding_period
     title: Funding period
-    slug: funding_period
     description: One of three official funding period e.g. 2007-2013 #again, what do you refer to? One of the three? We only have 2007-2013 and 2014-2020
-    format: default
-    type: string
-    conceptType: activity
-    osType: activity:generic:program:label
+    osType: fin-source:generic:level1:label
 
   - name: cci_program_code
     title: CCI code
-    slug: cci_program_code
     description: CCI codes (e.g. 2014BG05M2OP001) identify operational programs (see codelist).
-    format: default
-    type: string
-    osType: activity:generic:subprogram:code:full
-    conceptType: activity
+    osType: administrative-classification:generic:level3:code:full
 
   - name: cci_program_title
     title: Operational program
-    slug: cci_program_title
     description: The operational program matching the CCI code (see codelist)
-    format: default
-    type: string
-    conceptType: activity
-    osType: activity:generic:subprogram:label
+    osType: administrative-classification:generic:level3:label
 
   - name: project_id
     title: Project ID
-    slug: project_id
     description: Unique code of the project (generated if not)
-    format: default
-    type: string
-    conceptType: activity
-    osType: activity:generic:project:code:full
+    osType: recipient:generic:legal-entity:receiving-project:code
 
   - name: project_name
     title: Project name
-    slug: project_name
     description: Name or short description of the project
-    format: default
-    type: string
-    conceptType: activity
-    osType: activity:generic:project:label
+    osType: recipient:generic:legal-entity:receiving-project:label
 
   - name: operational_programme
     title: Operational Programme
-    slug: operational_programme
     description: information on which operational programme the project is governed by
-    format: default
-    type: string
-    conceptType: activity
-    osType: activity:generic:subproject:code:full
+    osType: administrative-classification:generic:level4:code:full
 
   # Recipient
   # ---------------------------------------------------------------------------
 
   - name: beneficiary_id
     title: Beneficiary ID
-    slug: beneficiary_id
     description: The unique ID of the beneficiary
-    format: default
-    type: string
-    conceptType: recipient
-    osType: recipient:generic:id
+    osType: unknown:string
 
   - name: beneficiary_name
     title: Beneficiary name
-    slug: beneficiary_name
     description: Name of the beneficiary (person, company, organisation)
-    format: default
-    type: string
-    conceptType: recipient
-    osType: recipient:generic:name
+    osType: recipient:generic:id
 
   # Geo-source
   # ---------------------------------------------------------------------------
 
   - name: beneficiary_postal_code
     title: Postal code
-    slug: beneficiary_postal_code
     description: The postal code of the beneficiary
-    format: default
-    type: string
-    conceptType: geo-source
-    osType: geo-source:target:code
+    osType: geo-source:address:zip:code
 
   - name: beneficiary_address
     title: Address
-    slug: beneficiary_address
     description: Full address of the beneficiary to be geocoded
-    format: default
-    type: string
-    conceptType: geo-source
-    osType: geo-source:generic:title
+    osType: geo-source:address:street-address:description
 
   # Administrative classification
   # ---------------------------------------------------------------------------
@@ -129,57 +85,33 @@ fields:
 
   - name: beneficiary_country_code
     title: Country code
-    slug: beneficiary_country_code
     description: Two digit ISO-3166 country code of the beneficiary
-    format: default
-    type: string
-    conceptType: administrative-classification
-    osType: administrative-classification:generic:level1:code
+    osType: geo-source:address:country:code
 
   - name: beneficiary_country
     title: Country
-    slug: beneficiary_country
     description: The country of the beneficiary
-    format: default
-    type: string
-    conceptType: administrative-classification
-    osType: administrative-classification:generic:level1:label
+    osType: geo-source:address:country:label
 
   - name: beneficiary_nuts_code
     title: NUTS code
-    slug: beneficiary_nuts_code
     description: NUTS code of the beneficiary region
-    format: default
-    type: string
-    conceptType: administrative-classification
-    osType: administrative-classification:generic:level2:code:full
+    osType: geo-source:address:region:code
 
   - name: beneficiary_nuts_region
     title: NUTS region
-    slug: beneficiary_nuts_region
     description: The region matching the NUTS code
-    format: default
-    type: string
-    conceptType: administrative-classification
-    osType: administrative-classification:generic:level2:label
+    osType: geo-source:address:region:label
 
   - name: beneficiary_county
     title: County
-    slug: beneficiary_county
     description: The county of the beneficiary
-    format: default
-    type: string
-    conceptType: administrative-classification
-    osType: administrative-classification:generic:level3:code:full
+    osType: geo-source:address:county:code
 
   - name: beneficiary_city
     title: City
-    slug: beneficiary_city
     description: The city of the beneficiary
-    format: default
-    type: string
-    conceptType: administrative-classification
-    osType: administrative-classification:generic:level4:code:full
+    osType: geo-source:address:city:code
 
 
   # Fiscal attribute
@@ -187,254 +119,142 @@ fields:
 
   - name: fund_acronym
     title: Fund
-    slug: fund_acronym
     description: Acronym of the fund (see codelist)
-    format: default
-    type: string
-    conceptType: fin-source
-    osType: fin-source:generic:code
+    osType: fin-source:generic:level2:code:full
 
   - name: fund_name
     title: Fund name
-    slug: fund_name
     description: Full name of the fund (see codelist)
-    format: default
-    type: string
-    conceptType: fin-source
-    osType: fin-source:generic:label
+    osType: fin-source:generic:level2:label
 
   # Functional classifications
   # ---------------------------------------------------------------------------
 
   - name: theme_code
     title: Thematic objective code
-    slug: theme_code
     description: Code of the thematic objective (see codelist)
-    format: default
-    type: string
-    conceptType: functional-classification
-    osType: functional-classification:generic:code
+    osType: administrative-classification:generic:level1:code
 
   - name: theme_name
     title: Thematic objective
-    slug: theme_name
     description: Display name of the thematic objective (see codelist)
-    format: default
-    type: string
-    conceptType: functional-classification
-    osType: functional-classification:generic:label
+    osType: administrative-classification:generic:level1:label
 
   - name: priority_number
     title: Priority number
-    slug: priority_number
     description: Priority number of the grant agreement (see codelist)
-    format: default
-    type: string
-    conceptType: functional-classification
-    osType: functional-classification:generic:code
+    osType: administrative-classification:generic:level2:code:full
 
   - name: priority_label
     title: Priority
-    slug: priority_label
     description: Description of the priority number of the grant agreement (see codelist) #is this the same as the project category?
-    format: default
-    type: string
-    conceptType: expenditure-type
-    osType: expenditure-type:code
+    osType: administrative-classification:generic:level2:label
 
   # Dates
   # ---------------------------------------------------------------------------
 
   - name: starting_date
     title: Starting date of the project
-    slug: starting_date
     description: Starting date of the project
-    format: default
-    type: date
-    conceptType: date
-    osType: date:generic
+    osType: date:fiscal:activity-start
 
   - name: completion_date
     title: Completion date of the project
-    slug: completion_date
     description: Completion date of the project
-    format: default
-    type: date
-    conceptType: date
-    osType: date:generic
+    osType: date:fiscal:activity-end
 
   - name: approval_date
     title: Approval date of the project
-    slug: approval_date
     description: Date that the project is approved
-    format: default
-    type: date
-    conceptType: date
-    osType: date:generic
+    osType: date:fiscal:activity-approval
 
   - name: first_payment_date
     title: Date of the first payment
-    slug: first_payment_date
     description: The data at which the first payment was made (pre-financing)
-    format: default
-    type: date
-    conceptType: date
-    osType: date:generic
+    osType: date:fiscal:first-payment
 
   - name: final_payment_date
     title: Date of the final payment
-    slug: final_payment_date
     description: The date on which the final payment was made
-    format: default
-    type: date
-    conceptType: date
-    osType: date:generic
+    osType: date:fiscal:final-payment
 
   # Measures
   # ---------------------------------------------------------------------------
 
   - name: total_amount
     title: Total cost of the project
-    slug: total_amount
     description: Total cost of project
-    format: default
-    type: number
-    conceptType: value
     osType: value
-    decimalChar: .
 
   - name: total_amount_applied
     title: Total amount the project applied for
-    slug: total_amount_applied
     description: Total amount that project applied for
-    format: default
-    type: number
-    conceptType: value
     osType: value
-    decimalChar: .
 
   - name: total_amount_eligible
     title: Total eligible expenditure
-    slug: total_amount_eligible
     description: Total eligible expenditure
-    type: number
-    conceptType: value
-    format: default
     osType: value
-    decimalChar: .
 
   - name: member_state_amount
     title: Amount of national and regional funding
-    slug: member_state_amount
     description: Amount that is awarded from national funds
-    type: number
-    format: default
-    conceptType: value
     osType: value
-    decimalChar: .
 
   - name: third_party_amount
     title: Third party funding
-    slug: third_party_amount
     description: The total amount that is additional to the action over third party funding
-    type: number
-    format: default
-    conceptType: value
     osType: value
-    decimalChar: .
 
   - name: eu_cofinancing_amount
     title: EU co-financing
-    slug: eu_cofinancing_amount
     description: The amount of co-financing from the EU
-    type: number
-    conceptType: value
-    format: default
     osType: value
-    decimalChar: .
 
   - name: eu_cofinancing_amount_eligible
     title: eligible EU co-financing
-    slug: eu_cofinancing_amount_eligible
     description: The amount of co-financing a project is eligible for
-    type: number
-    conceptType: value
-    format: default
     osType: value
-    decimalChar: .
 
   - name: european_investment_bank_amount
     title: European Investment Bank financing
-    slug: european_investment_bank_amount
     description: The amount of co-financing received from the European Investment Bank (EIB)
-    type: number
-    format: default
-    conceptType: value
     osType: value
-    decimalChar: .
 
   # Additionnal details
   # ---------------------------------------------------------------------------
 
   - name: beneficiary_url
     title: Beneficiary website
-    slug: beneficiary_url
     description: URL of the beneficiary (or project)
-    format: default
-    type: string
-    conceptType: unknown
-    osType: unknown:string
+    osType: recipient:generic:url
 
   - name: project_description
     title: Project description
-    slug: project_description
     description: A paragraph description of the project
-    format: default
-    type: string
-    conceptType: unknown
-    osType: unknown:string
+    osType: recipient:generic:legal-entity:receiving-project:description
 
   - name: project_status
     title: Project status
-    slug: project_status
     description: Status of the project
-    format: default
-    type: string
-    conceptType: unknown
-    osType: unknown:string
+    osType: recipient:generic:legal-entity:receiving-project:status
 
   - name: eu_cofinancing_rate
     title: EU co-financing rate
-    slug: eu_cofinancing_rate
     description: The rate (percent) of co-financing from the EU
-    type: string
-    conceptType: unknown
-    format: default
     osType: unknown:string
 
   - name: beneficiary_person
     title: Beneficiary person
-    slug: beneficiary_person
     description: name of person responsible
-    format: default
-    type: string
-    conceptType: unknown
-    osType: unknown:string
+    osType: recipient:generic:legal-entity:point-of-contact:description
 
   - name: management_authority
     title: Management Authority
-    slug: management_authority
     description: Management authority
-    format: default
-    type: string
-    conceptType: unknown
-    osType: unknown:string
+    osType: fin-source:generic:level3:code:full
 
   - name: source
     title: Source URL
-    slug: source
     description: A source URL
-    format: default
-    type: string
-    conceptType: unknown
     osType: unknown:string

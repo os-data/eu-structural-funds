@@ -71,6 +71,8 @@ def update_datapackage(datapackage, mappings):
             if fiscal_key not in ('_unknown', '_ignored'):
                 field.update({'name': fiscal_key})
                 del field['maps_to']
+                if 'translates_to' in field:
+                    del field['translates_to']
                 fields.append(field)
 
         resource['schema']['fields'] = fields

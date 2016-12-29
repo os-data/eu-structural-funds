@@ -40,7 +40,7 @@ DATAPACKAGE_MUTATOR = 'mutate_datapackage'
 DB_URI = 'sqlite:///{}/metrics.sqlite'
 DB_ENGINE = create_engine(DB_URI.format(ROOT_DIR))
 
-VERBOSE = True
+VERBOSE = False
 LOG_SAMPLE_SIZE = 15
 JSON_FORMAT = dict(indent=4, ensure_ascii=False, default=repr)
 SNIFFER_SAMPLE_SIZE = 5000
@@ -63,6 +63,7 @@ NUMBER_FORMATS = [
 DATE_FORMATS = [
     {'format': 'fmt:%Y'},
     {'format': 'fmt:%d/%m/%Y'},
+    {'format': 'fmt:%d//%m/%Y'},
     {'format': 'fmt:%m/%d/%Y'},
     {'format': 'fmt:%d-%b-%Y'},  # abbreviated month
     {'format': 'fmt:%d-%m-%Y'},
