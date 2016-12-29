@@ -26,7 +26,7 @@ eu-esif-funds-minimal:
     - run: metadata
       parameters:
         metadata:
-          name: eu-esif-funds-beneficiaries-2000-2020-minimal
+          name: eu-esif-funds-beneficiaries-2000-2020
           title: European ESIF Funds Beneficiaries 2000-2020
           description: >
             Structural and Cohesion Funds are financial tools set up to
@@ -62,7 +62,7 @@ eu-esif-funds-minimal:
         os-types:
           beneficiary_name: recipient:generic:id
           funding_period_number: fin-source:generic:level1:code
-          cci_program_code: administrative-classification:generic:level3:code:full
+          cci_program_code: administrative-classification:generic:level1:code
           project_name: recipient:generic:legal-entity:receiving-project:label
           total_amount: value
           starting_date: date:fiscal:activity-start
@@ -71,7 +71,7 @@ eu-esif-funds-minimal:
           beneficiary_country: geo-source:address:country:label
           beneficiary_nuts_region: geo-source:address:region:label
           beneficiary_nuts_code: geo-source:address:region:code
-          fund_name: fin-source:generic:level2:label
+          fund_name: fin-source:generic:level2:code
         titles:
           beneficiary_name: Beneficiary name
           funding_period_number: Funding period number
@@ -156,7 +156,7 @@ eu-esif-funds-full:
     - run: metadata
       parameters:
         metadata:
-          name: eu-esif-funds-beneficiaries-2000-2020-minimal
+          name: eu-esif-funds-beneficiaries-2000-2020-full
           title: European ESIF Funds Beneficiaries 2000-2020
           description: >
             Structural and Cohesion Funds are financial tools set up to
