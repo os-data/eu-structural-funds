@@ -72,7 +72,9 @@ DATE_FORMATS = [
     {'format': 'fmt:%y.%m.%d'},
     {'format': 'fmt:%d.%m.%Y'},
     {'format': 'fmt:%d.%m.%y'},
+    {'format': 'fmt:%d.%m.%Y %H:%M'},
     {'format': 'fmt:%Y-%m-%d %H:%M:%S'},
     {'format': 'fmt:%Y-%m-%d %H:%M:%S.%f'},
+    {'format': 'fmt:%Y-%m-%dT%H:%M:%SZ'},
     {'format': 'fmt:%y'},
 ]

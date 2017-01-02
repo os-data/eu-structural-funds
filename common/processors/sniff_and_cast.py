@@ -245,7 +245,7 @@ def cast_values(row, casters, row_index=None):
     for key, value in row.items():
         if key in casters:
             if casters[key] is not None:
-                if value is not None and len(value.strip()) > 0:
+                if value is not None and type(value) is str:
                     try:
                         row[key] = casters[key].cast(value)
                     except InvalidCastError:
