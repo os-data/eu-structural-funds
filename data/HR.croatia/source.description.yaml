@@ -9,6 +9,10 @@ resources:
   add_constants: 
     cci_program_code: 
     fund_acronym: 
+      - Europski socijani fond: [ESF]
+      - Europski fond za regionalni razvoj [ERDF]
+      - Kohezijski fond [CF]
+
     funding_period: 2007-2020
   currency_code: HRK
   path: ESIF_Croatia_2007-2020.csv
