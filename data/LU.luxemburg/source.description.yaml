@@ -13,7 +13,7 @@ resources:
   aliases:
     porteur_de_projet: porteur(s)_de_projet
   currency_code: EUR
-  path: all_funds_data_luxembourg_2007-2020.json
+  path: all_funds_data_luxembourg_2007-2020.csv
   publication_date: '2016-10-25'
   schema:
     fields:
@@ -33,9 +33,6 @@ resources:
       name: programme
       translates_to: programme
     - maps_to: beneficiary_name
-      name: porteur(s)_de_projet
-      translates_to: Beneficiary name
-    - maps_to: beneficiary_name
       name: porteur_de_projet
       translates_to: Beneficiary name
     - maps_to: beneficiary_county
@@ -48,14 +45,17 @@ resources:
       name: total
       translates_to: total amount eligible
     - maps_to: eu_cofinancing_amount
-      name: feder
-      translates_to: eu cofinancing amount ERDF
-    - maps_to: eu_cofinancing_amount
-      name: part_fse_(50%)
-      translates_to: eu cofinancing amount ESF
+      name: eu_amount 
+      translates_to: eu cofinancing amount 
+    - maps_to: eu_cofinancing_rate
+      name: co_financing
+      translates_to: eu cofinancing rate in percent 
     - maps_to: starting_date
-      name: durée
-      translates_to: duration of project
+      name: start_date
+      translates_to: starting date 
+    - maps_to: completion_date
+      name: end_date
+      translates_to: completion date   
     - maps_to: priority_label
       name: catégorie_d'intervention
       translates_to: null
