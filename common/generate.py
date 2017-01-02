@@ -77,6 +77,9 @@ if __name__ == "__main__":
                             if 'translates_to' in field:
                                 del field['translates_to']
             concat_parameters = {'column-aliases': concat_parameters}
+            sniff_and_cast_parameters = {}
+            if source.get('currency_symbol') is not None:
+                sniff_and_cast_parameters['currency_symbol'] = source['currency_symbol']
 
             pipeline = [
                 ('read_description', {'datapackage': source}),
@@ -92,7 +95,7 @@ if __name__ == "__main__":
                 ('add_constants', {}),
                 ('add_categories', {}),
                 ('fiscal.model', fiscal_model_parameters),
-                ('sniff_and_cast', {}),
+                ('sniff_and_cast', sniff_and_cast_parameters),
                 ('dump', {'out-file': 'fiscal.datapackage.zip'}),
                 ('fiscal.upload', {'in-file': 'fiscal.datapackage.zip'}),
             ]

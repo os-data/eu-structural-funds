@@ -4,6 +4,7 @@ contributors:
 description: Dataset with usable amount of fields. Contains all ESIF data from 2008-
   March 2016
 language: HR
+currency_symbol: "kn"
 resources:
 - add_categories: {}
   add_constants: 

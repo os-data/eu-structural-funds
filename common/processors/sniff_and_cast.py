@@ -76,13 +76,14 @@ class BaseSniffer(object):
     format_keys = []
     format_guesses = []
 
-    def __init__(self, field, resource_sample, max_failure_rate):
+    def __init__(self, field, resource_sample, max_failure_rate, parameters):
         self.max_failure_rate = max_failure_rate
         self.sample_values = self._get_field_sample(resource_sample, field)
         self._nb_empty_sample_values = self.sample_values.count('')
         self.sample_size = len(
             self.sample_values) - self._nb_empty_sample_values
         self.max_nb_failures = 0
+        self.parameters = parameters
 
         # The following get updated with each guess
         self.format = {key: field.get(key) for key in self.format_keys}
@@ -105,18 +106,20 @@ class BaseSniffer(object):
 
         for raw_value in self.sample_values:
             if raw_value:
-                casted_value = None
+                success = False
                 for idx in range(len(casters)):
                     caster, successes, fmt = casters[idx]
                     try:
                         assert self._pre_cast_checks_ok(fmt, raw_value)
-                        casted_value = caster.cast(raw_value)
-                        assert self._post_cast_check_ok(fmt, casted_value)
+                        raw_value = self._prepare_value(fmt, raw_value)
+                        casted = caster.cast(raw_value)
+                        assert self._post_cast_check_ok(fmt, casted)
                         casters[idx] = (caster, successes+1, fmt)
+                        success = True
                         break
                     except (AssertionError, InvalidCastError) as e:
                         pass
-                if casted_value is None:
+                if not success:
                     self.nb_failures += 1
                     self.failures.append(raw_value)
 
@@ -131,13 +134,17 @@ class BaseSniffer(object):
 
     def cast(self, raw_value):
         exc = None
-        for caster, _, _ in self.casters:
+        for caster, _, fmt in self.casters:
             try:
+                raw_value = self._prepare_value(fmt, raw_value)
                 return caster.cast(raw_value)
             except InvalidCastError as e:
                 exc = e
         assert exc is not None
         raise exc
+
+    def _prepare_value(self, fmt, value):
+        return value
 
     def _pre_cast_checks_ok(self, fmt, value):
         return True
@@ -209,6 +216,14 @@ class NumberSniffer(BaseSniffer):
 
         return True
 
+    def _prepare_value(self, fmt, value):
+        if type(value) is not str:
+            return value
+        currency_symbol = self.parameters.get('currency_symbol')
+        if currency_symbol is not None:
+            value = value.replace(currency_symbol, '')
+        return value.strip()
+
 
 def select_sniffer(field):
     """Select the sniffer according to the fiscal field type."""
@@ -221,7 +236,8 @@ def select_sniffer(field):
 
 def get_casters(datapackage,
                 resource_sample,
-                max_failure_rate=SNIFFER_MAX_FAILURE_RATIO):
+                max_failure_rate=SNIFFER_MAX_FAILURE_RATIO,
+                parameters={}):
     """Return a caster for each fiscal field."""
 
     casters = {}
@@ -232,7 +248,7 @@ def get_casters(datapackage,
 
         else:
             sniffer_class = select_sniffer(field)
-            sniffer = sniffer_class(field, resource_sample, max_failure_rate)
+            sniffer = sniffer_class(field, resource_sample, max_failure_rate, parameters)
 
         casters.update({field['name']: sniffer})
 
@@ -289,14 +305,13 @@ def concatenate_data_sample(data_sample, resource):
 
 
 if __name__ == '__main__':
-    _, datapackage_, resources_ = ingest()
+    parameters_, datapackage_, resources_ = ingest()
     resources_ = list(resources_)
     resource_ = resources_[0]
-    assert(len(resources_)==1)
+    assert(len(resources_) == 1)
     resource_sample_, resource_left_over_ = extract_data_sample(resource_)
-    casters_ = get_casters(datapackage_, resource_sample_)
+    casters_ = get_casters(datapackage_, resource_sample_, parameters=parameters_)
     resource_ = concatenate_data_sample(resource_sample_, resource_left_over_)
     kwargs = dict(casters=casters_, pass_row_index=True)
     new_resources_ = process([resource_], cast_values, **kwargs)
     spew(datapackage_, new_resources_)
-    import logging
