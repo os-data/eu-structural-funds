@@ -80,6 +80,10 @@ resources:
             translates_to: Public Information
             maps_to: null
 
+          - name: Támogatás pontszáma  
+            translates_to: priority number
+            maps_to: priority_number
+
   - title: ERDF in Hungary 2014-2020
     path: data-uszt-ERFA.json
     add_constants:
@@ -150,6 +154,9 @@ resources:
             translates_to: Public Information
             maps_to: null
 
+          - name: Támogatás pontszáma  
+            translates_to: priority number
+            maps_to: priority_number
 
   - title: Cohesion Fund in Hungary 2014-2020
     path: data-uszt-KA.json
@@ -221,3 +228,7 @@ resources:
           - name: Közvélemény-tájékoztató
             translates_to: Public Information
             maps_to: null
+
+          - name: Támogatás pontszáma  
+            translates_to: priority number
+            maps_to: priority_number            
