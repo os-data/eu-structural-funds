@@ -40,25 +40,25 @@ resources:
           maps_to: project_name
 
         - name: Beginns des Vorhabens
-          translation: start date
+          translated_to: start date
           maps_to: starting_date
 
         - name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens  
-          translation: total eligible expenditure allocated to the operation
+          translated_to: total eligible expenditure allocated to the operation
           maps_to: total_amount_eligible
 
         - name: Unions-Kofinan-zierungssatz  pro Prioritäts-achse 
-          translation: Union co-financing rate, as per priority axis (in percent)
+          translated_to: Union co-financing rate, as per priority axis (in percent)
           maps_to: eu_cofinancing_rate 
 
         - name: Ort des Vorhabens
-          translation: location
+          translated_to: location
           maps_to: beneficiary_city #actual project place, so this is false, but the model is too imprecise
 
         - name: Land
-          translation: country
+          translated_to: country
           maps_to: beneficiary_country
 
         - name: Bezeichnung der Interventionskategorie
-          translation: category of intervention
+          translated_to: category of intervention
           maps_to: priority_label 
