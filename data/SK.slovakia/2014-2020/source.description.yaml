@@ -15,7 +15,7 @@ resources:
     fields:
     - name: _source
       translates_to: source
-    
+
     - name: základné_údaje-údaje_o_projekte-kód_projektu
       translates_to: some code
 
@@ -91,10 +91,13 @@ resources:
       translates_to: own funds provided
       maps_to: third_party_amount
 
+    - name: harmonogram_realizácie_projektu--celková_dĺžka_realizácie_aktivít_projektu_(v_mesiacoch,_vrátane_podporných_aktivít)
+      translates_to: unclear
+
     - name: harmonogram_realizácie_projektu--začiatok_realizácie_hlavných_aktivít_projektu
       translates_to: starting date
       maps_to: starting_date
-     
+
     - name: harmonogram_realizácie_projektu--ukončenie_realizácie_hlavných_aktivít_projektu
       translates_to: completion date
       maps_to: completion_date
