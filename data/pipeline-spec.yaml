@@ -71,7 +71,7 @@ eu-esif-funds-minimal:
           beneficiary_country: geo-source:address:country:label
           beneficiary_nuts_region: geo-source:address:region:label
           beneficiary_nuts_code: geo-source:address:region:code
-          fund_name: fin-source:generic:level2:code
+          fund_name: fin-source:generic:level2:code:full
         titles:
           beneficiary_name: Beneficiary name
           funding_period_number: Funding period number

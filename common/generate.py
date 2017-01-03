@@ -88,19 +88,19 @@ if __name__ == "__main__":
                 ('map_values', mappings),
                 # ('map_fields', {}),
                 # ('concatenate_identical_resources', {})
+                ('add_constants', {}),
                 ('concat', concat_parameters),
             ] + preprocessing + [
                 ('reshape_data', {}),
                 ('show_sample_in_console', {'sample_size': 10}),
                 ('add_geocodes', {}),
-                ('add_constants', {}),
                 ('add_categories', {}),
                 ('fiscal.model', fiscal_model_parameters),
                 ('sniff_and_cast', sniff_and_cast_parameters),
                 ('validate_values', {
                     'thresholds': {
                         'beneficiary_name': threshold,
-                        'funding_period_number': threshold,
+                        'funding_period': threshold,
                         # 'cci_program_code': threshold,
                         # 'project_name': threshold,
                         'total_amount': threshold,
@@ -110,7 +110,7 @@ if __name__ == "__main__":
                         # 'beneficiary_country': threshold,
                         # 'beneficiary_nuts_region': threshold,
                         'beneficiary_nuts_code': threshold,
-                        'fund_name': threshold
+                        'fund_acronym': threshold
                     }
                 }),
                 ('dump', {'out-file': 'fiscal.datapackage.zip'}),
