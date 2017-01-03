@@ -40,9 +40,13 @@ resources:
           translates_to: operation name
           maps_to: project_name
 
-        - name: years
+        - name: year
           translates_to: starting date
           maps_to: starting_date
+
+        - name: additional_year
+          translates_to: additional year in starting date field
+          maps_to: null
 
         - name: allocated_public_funding
           translates_to: total eligible expenditure
@@ -80,9 +84,13 @@ resources:
           translates_to: operation name
           maps_to: project_name
 
-        - name: years
+        - name: year
           translates_to: starting date
           maps_to: starting_date
+
+        - name: additional_year
+          translates_to: additional year in starting date field
+          maps_to: null
 
         - name: allocated_public_funding
           translates_to: total eligible expenditure
@@ -120,9 +128,13 @@ resources:
           translates_to: operation name
           maps_to: project_name
 
-        - name: years
+        - name: year
           translates_to: starting date
           maps_to: starting_date
+
+        - name: additional_year
+          translates_to: additional year in starting date field
+          maps_to: null
 
         - name: allocated_public_funding
           translates_to: total eligible expenditure
@@ -158,9 +170,13 @@ resources:
           translates_to: operation name
           maps_to: project_name
 
-        - name: years
+        - name: year
           translates_to: starting date
           maps_to: starting_date
+
+        - name: additional_year
+          translates_to: additional year in starting date field
+          maps_to: null
 
         - name: allocated_public_funding
           translates_to: total eligible expenditure
@@ -198,9 +214,13 @@ resources:
           translates_to: operation name
           maps_to: project_name
 
-        - name: years
+        - name: year
           translates_to: starting date
           maps_to: starting_date
+
+        - name: additional_year
+          translates_to: additional year in starting date field
+          maps_to: null
 
         - name: allocated_public_funding
           translates_to: total eligible expenditure
@@ -238,9 +258,13 @@ resources:
           translates_to: operation name
           maps_to: project_name
 
-        - name: years
+        - name: year
           translates_to: starting date
           maps_to: starting_date
+
+        - name: additional_year
+          translates_to: additional year in starting date field
+          maps_to: null
 
         - name: allocated_public_funding
           translates_to: total eligible expenditure
