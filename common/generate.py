@@ -80,6 +80,7 @@ if __name__ == "__main__":
             sniff_and_cast_parameters = {}
             if source.get('currency_symbol') is not None:
                 sniff_and_cast_parameters['currency_symbol'] = source['currency_symbol']
+            threshold = 50
 
             pipeline = [
                 ('read_description', {'datapackage': source}),
@@ -96,6 +97,22 @@ if __name__ == "__main__":
                 ('add_categories', {}),
                 ('fiscal.model', fiscal_model_parameters),
                 ('sniff_and_cast', sniff_and_cast_parameters),
+                ('validate_values', {
+                    'thresholds': {
+                        'beneficiary_name': threshold,
+                        'funding_period_number': threshold,
+                        # 'cci_program_code': threshold,
+                        # 'project_name': threshold,
+                        'total_amount': threshold,
+                        # 'starting_date': threshold,
+                        # 'approval_date': threshold,
+                        'beneficiary_country_code': threshold,
+                        # 'beneficiary_country': threshold,
+                        # 'beneficiary_nuts_region': threshold,
+                        'beneficiary_nuts_code': threshold,
+                        'fund_name': threshold
+                    }
+                }),
                 ('dump', {'out-file': 'fiscal.datapackage.zip'}),
                 ('fiscal.upload', {'in-file': 'fiscal.datapackage.zip'}),
             ]
