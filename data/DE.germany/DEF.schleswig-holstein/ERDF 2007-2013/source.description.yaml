@@ -9,7 +9,7 @@ resources:
     fund_acronym: ERDF
     funding_period: 2007-2013
   currency_code: EUR
-  path: ERDF Data Schleswig Holstein 2007-2013.csv
+  path: ERDF-Data-Schleswig-Holstein-2007-2013.csv
   publication_date: '2014-12-31'
   schema:
     fields:
