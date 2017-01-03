@@ -11,13 +11,6 @@ from datapackage_pipelines.wrapper import spew, ingest
 from common.config import SOURCE_FILE, SOURCE_DATAPACKAGE_FILE, JSON_FORMAT
 
 
-def load_description():
-    """Return the description file as dictionary.
-    """
-    with open(SOURCE_FILE) as stream:
-        return yaml.load(stream.read())
-
-
 def save_to_file(datapackage):
     """Save the datapackage dictionary to JSON.
     """

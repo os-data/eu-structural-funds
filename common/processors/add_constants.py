@@ -25,7 +25,8 @@ def inject_constants(row, **constants):
     stats = '_pass'
 
     for key, value in constants.items():
-        row[key] = value
+        if value is not None:
+            row[key] = value
 
     return row, stats
 
