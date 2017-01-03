@@ -33,8 +33,11 @@ resources:
       name: 2nd_level_intermediate_body
       translates_to: 2nd level intermediate body
     - maps_to: starting_date
-      name: period
-      translates_to: project duration
+      name: period_start
+      translates_to: project duration start
+    - maps_to: completion_date
+      name: period_end
+      translates_to: project duration end
     - maps_to: priority_label
       name: measure
       translates_to: measure
