@@ -19,7 +19,7 @@ resources:
     path: ESF_Austria_2007-2008.json
     publication_date: "2009-06-30"
 
-    constant_fields:
+    add_constants:
         fund_name: ESF
         offical_period: 2007-2013
         currency_code: EUR
@@ -27,7 +27,7 @@ resources:
 
     schema:
 
-    fields:
+      fields:
         - name: _source
           translates_to: source
           maps_to: source
@@ -50,14 +50,14 @@ resources:
     path: ESF_Austria_2009.json
     publication_date: "2010-06-30"
 
-    constant_fields:
+    add_constants:
         fund_name: ESF
         offical_period: 2007-2013
         currency_code: EUR
         year: 2009
 
     schema:
-    fields:
+      fields:
         - name: _source
           translates_to: source
           maps_to: source
@@ -80,14 +80,14 @@ resources:
     path: ESF_Austria_2010.json
     publication_date: "2011-06-30"
 
-    constant_fields:
+    add_constants:
         fund_name: ESF
         offical_period: 2007-2013
         currency_code: EUR
         year: 2010
 
     schema:
-    fields:
+      fields:
         - name: _source
           translates_to: source
           maps_to: source
@@ -109,14 +109,14 @@ resources:
     path: ESF_Austria_2011.json
     publication_date: "2012-06-30"
 
-    constant_fields:
+    add_constants:
         fund_name: ESF
         offical_period: 2007-2013
         currency_code: EUR
         year: 2011
 
     schema:
-    fields:
+      fields:
         - name: _source
           translates_to: source
           maps_to: source
@@ -139,14 +139,14 @@ resources:
     path: ESF_Austria_2012.json
     publication_date: "2013-06-30"
 
-    constant_fields:
+    add_constants:
         fund_name: ESF
         offical_period: 2007-2013
         currency_code: EUR
         year: 2012
 
     schema:
-    fields:
+      fields:
         - name: _source
           translates_to: source
           maps_to: source
@@ -168,14 +168,14 @@ resources:
     path: ESF_Austria_2013.json
     publication_date: "2014-06-30"
 
-    constant_fields:
+    add_constants:
         fund_name: ESF
         offical_period: 2007-2013
         currency_code: EUR
         year: 2012
 
     schema:
-    fields:
+      fields:
         - name: _source
           translates_to: source
           maps_to: source
@@ -198,14 +198,14 @@ resources:
     path: ESF_Austria_2014.json
     publication_date: "2015-06-30"
 
-    constant_fields:
+    add_constants:
         fund_name: ESF
         offical_period: 2007-2013
         currency_code: EUR
         year: 2014
 
     schema:
-    fields:
+      fields:
         - name: _source
           translates_to: source
           maps_to: source

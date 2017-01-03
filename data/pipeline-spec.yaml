@@ -63,7 +63,7 @@ eu-esif-funds-minimal:
           beneficiary_name: recipient:generic:id
           funding_period_number: fin-source:generic:level1:code
           cci_program_code: administrative-classification:generic:level1:code
-          project_name: recipient:generic:legal-entity:receiving-project:label
+          project_name: recipient:generic:legal-entity:receiving-project:code
           total_amount: value
           starting_date: date:fiscal:activity-start
           approval_date: date:fiscal:activity-approval

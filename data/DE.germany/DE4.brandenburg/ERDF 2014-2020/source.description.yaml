@@ -21,10 +21,10 @@ resources:
 
     publication_date: "2016-09-30"
 
-
-    fund_acronym: ERDF
-    funding_period: 2014-2020
-    cci_code: 2014DE16RFOP004
+    add_constants:
+      fund_acronym: ERDF
+      funding_period: 2014-2020
+      cci_code: 2014DE16RFOP004
     currency_code: EUR
 
 

@@ -28,8 +28,9 @@ resources:
         FEDER: ERDF
         FSE: ESF
       
-      funding_period: 2007-2013
-      cci_code:
+      add_constants:
+        funding_period: 2007-2013
+        cci_code:
       currency_code: EUR
 
       schema:
