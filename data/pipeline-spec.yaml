@@ -14,7 +14,8 @@ eu-esif-funds-minimal:
           funding_period_number: []
           cci_program_code: []
           project_name: []
-          total_amount: []
+          amount: []
+          amount_kind: []
           starting_date: []
           approval_date: []
           beneficiary_country_code: []
@@ -64,7 +65,8 @@ eu-esif-funds-minimal:
           funding_period_number: fin-source:generic:level1:code
           cci_program_code: administrative-classification:generic:level1:code
           project_name: recipient:generic:legal-entity:receiving-project:code
-          total_amount: value
+          amount: value
+          amount_kind: value-kind:code
           starting_date: date:fiscal:activity-start
           approval_date: date:fiscal:activity-approval
           beneficiary_country_code: geo-source:address:country:code
@@ -77,7 +79,8 @@ eu-esif-funds-minimal:
           funding_period_number: Funding period number
           cci_program_code: CCI code
           project_name: Project name
-          total_amount: Total cost of the project
+          amount: Total cost of the project
+          amount_kind: Kind of Amount
           starting_date: Starting date of the project
           approval_date: Approval date of the project
           beneficiary_country: Country
@@ -109,6 +112,8 @@ eu-esif-funds-full:
       parameters:
         resource-name: eu-esif-funds-beneficiaries-2007-2020
         column-aliases:
+          amount: []
+          amount_kind: []
           approval_date: []
           beneficiary_address: []
           beneficiary_city: []
@@ -204,6 +209,8 @@ eu-esif-funds-full:
           total_amount_eligible:
             currency: EUR
         os-types:
+          amount: value
+          amount_kind: value-kind:code
           approval_date: date:fiscal:activity-approval
           beneficiary_address: geo-source:address:street-address:description
           beneficiary_city: geo-source:address:city:code
@@ -248,6 +255,8 @@ eu-esif-funds-full:
           total_amount_applied: value
           total_amount_eligible: value
         titles:
+          amount: Cost of the project
+          amount_kind: Kind of Amount
           approval_date: Approval date of the project
           beneficiary_address: Address
           beneficiary_city: City

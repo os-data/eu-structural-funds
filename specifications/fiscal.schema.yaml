@@ -181,6 +181,16 @@ fields:
   # Measures
   # ---------------------------------------------------------------------------
 
+  - name: amount
+    title: Consolidated amount of the project
+    description: Consolidated amount of the project
+    osType: value
+
+  - name: amount_kind
+    title: Amount kind
+    description: Amount kind
+    osType: value-kind:code
+
   - name: total_amount
     title: Total cost of the project
     description: Total cost of project

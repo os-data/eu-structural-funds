@@ -81,7 +81,6 @@ if __name__ == "__main__":
             if source.get('currency_symbol') is not None:
                 sniff_and_cast_parameters['currency_symbol'] = source['currency_symbol']
             threshold = 50
-
             pipeline = [
                 ('read_description', {'datapackage': source}),
                 ('ingest_local_file', {}),
@@ -95,27 +94,39 @@ if __name__ == "__main__":
                 ('show_sample_in_console', {'sample_size': 10}),
                 ('add_geocodes', {}),
                 ('add_categories', {}),
+                ('handle_amounts', {
+                    'column-order': [
+                        'total_amount',
+                        'total_amount_eligible',
+                        'eu_amount',
+                        'eu_amount_eligible'
+                     ],
+                    'target-column': 'amount',
+                    'kind-column': 'amount_kind'
+                }),
                 ('fiscal.model', fiscal_model_parameters),
                 ('sniff_and_cast', sniff_and_cast_parameters),
                 ('validate_values', {
                     'thresholds': {
                         'beneficiary_name': threshold,
                         'funding_period': threshold,
-                        # 'cci_program_code': threshold,
-                        # 'project_name': threshold,
-                        'total_amount': threshold,
-                        # 'starting_date': threshold,
-                        # 'approval_date': threshold,
+                        'amount': threshold,
+                        'amount_kind': threshold,
                         'beneficiary_country_code': threshold,
-                        # 'beneficiary_country': threshold,
-                        # 'beneficiary_nuts_region': threshold,
                         'beneficiary_nuts_code': threshold,
                         'fund_acronym': threshold
+                        # 'cci_program_code': threshold,
+                        # 'project_name': threshold,
+                        # 'starting_date': threshold,
+                        # 'approval_date': threshold,
+                        # 'beneficiary_country': threshold,
+                        # 'beneficiary_nuts_region': threshold,
                     }
                 }),
                 ('dump', {'out-file': 'fiscal.datapackage.zip'}),
                 ('fiscal.upload', {'in-file': 'fiscal.datapackage.zip'}),
             ]
+
             orig_pipeline = pipeline[:]
 
             if update:
