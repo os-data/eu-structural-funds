@@ -35,7 +35,7 @@ resources:
       funding_period: 2007-2013
       cci_code:
 
-    currency_code: EUR
+    currency_code: GBP
 
       # any other field from fiscal.fields.yaml that is constant
 
