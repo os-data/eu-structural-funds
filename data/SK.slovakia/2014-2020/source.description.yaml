@@ -50,7 +50,10 @@ resources:
       name: poskytovateľ_pomoci-vyhlasovateľ-adresa
       translates_to: address
       maps_to: beneficiary_address
-  
+
+    - name: poskytovateľ_pomoci-vyhlasovateľ-ičo
+      translates_to: unclear
+
     - name: prijímateľ_a_partneri-prijímateľ-obchodné_meno_/_názov
       translates_to: project name
   
@@ -74,7 +77,7 @@ resources:
   
     - name: prijímateľ_a_partneri-prijímateľ-právna_forma
       translates_to: company form
-      
+
     - name: stručný_popis_projektu--popis_projektu
       translates_to: project description
       maps_to: project_description
