@@ -1,0 +1,88 @@
+title: DE2.Bayern 2014-2020 ESF
+
+description: The beneficiary list for the ESF (2014-2020) program for Bayern.
+language: de
+
+sources:
+  - name: ESF Bayern
+    web: http://www.esf.bayern.de
+
+scraper_required: false
+
+contributors:
+  - Bela Seeger (bela.seeger@okfn.de)
+
+resources:
+
+  - title: ESF Bayern 2014-2020
+
+    fund_acronym: ESF
+    funding_period: 2014-2020
+    cci_code: 2014DE05SFOP004
+    currency_code: EUR
+
+    path: ESF_Bayern_2014_2020.csv
+    publication_date: "2016-06-03"
+
+    schema:
+      fields:
+
+        - name: "Name des Begünstigten beneficiary name"
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: "Bezeichnung des Vorhabens operation name"
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: "Zusammenfassung des Vorhabens operation summary"
+          translates_to: summary of project 
+          maps_to: project_description
+
+        - name: "Datum des Beginns des Vorhabens operation start date"
+          translates_to: start date
+          maps_to: starting_date 
+
+        - name: "Datum des Endes des Vorhabens operation end date"
+          translates_to: end date
+          maps_to: completion_date
+
+        - name: "Gesamtbetrag der förderfähigen Aus-gaben des Vorhabens in € total eligible expenditure allocated to the operation in €"
+          translates_to: total eligible expenditure
+          maps_to: total_amount_eligible
+
+        - name: "Unions-Kofinanzie-rungssatz Union co-financing rate"
+          translates_to: cofinancing rate
+          maps_to: eu_cofinancing_rate           
+
+        - name: "Kofinanzie-rung aus anderen öffent-lichen Mitteln co-financing from other public funding"
+          translates_to: cofinancing rate from other public funds 
+          maps_to: null
+
+        - name: "PLZ operation postcode"
+          translates_to: postal code 
+          maps_to: beneficiary_postal_code                       
+
+        - name: "Land country"
+          translates_to: country
+          maps_to: beneficiary_country       
+
+        - name: "Interventions- bereich Intervention field"
+          translates_to: intervention category
+          maps_to: priority_number       
+
+        - name: "Finanzier- ungsform Form of finance"
+          translates_to: form of finance (number)
+          maps_to: null
+
+        - name: "Art des Gebietes Territory"
+          translates_to: territory (number)
+          maps_to: null
+
+        - name: "Territoriale Umsetzungs- mechanis- men Territorial delivery mechanisms"
+          translates_to: territory delivery mechanisms
+          maps_to: null   
+
+        - name: "sekundäres ESF-Thema ESF secondary theme"
+          translates_to: secondary ESF theme 
+          maps_to: null                                     

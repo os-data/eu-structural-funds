@@ -9,7 +9,7 @@ resources:
     fund_acronym: ESF
     funding_period: 2014-2020
   currency_code: EUR
-  path: ESF_Berlin_2014-2020.json
+  path: CSV_ESF-Berlin-2014-2020.csv
   publication_date: '2016-03-30'
   schema:
     fields:
