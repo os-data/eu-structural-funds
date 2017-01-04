@@ -95,7 +95,7 @@ eu-esif-funds-minimal:
       parameters:
         in-file: fiscal.datapackage.zip
 
-  schedule: {crontab: 0 */4 * * *}
+  schedule: {crontab: 0 3 * * *}
 
 eu-esif-funds-full:
 
@@ -301,4 +301,4 @@ eu-esif-funds-full:
       parameters:
         in-file: fiscal.datapackage.zip
 
-  schedule: {crontab: 0 */4 * * *}
+  schedule: {crontab: 0 0 * * *}
