@@ -27,22 +27,22 @@ import os
 from datapackage_pipelines.wrapper import ingest, spew
 
 from common.utilities import process
-from common.bootstrap import Source
 
 
-def add_geocodes(row, source):
+def add_geocodes(row, **kw):
     """Fill up the country and region fields."""
 
-    row['beneficiary_country_code'] = source.country_code
-    row['beneficiary_country'] = source.country
-    row['beneficiary_nuts_code'] = source.nuts_code
-    row['beneficiary_nuts_region'] = source.region
+    row['beneficiary_country_code'] = kw['country_code']
+    row['beneficiary_country'] = kw['country']
+    row['beneficiary_nuts_code'] = kw['nuts_code']
+    row['beneficiary_nuts_region'] = kw['region']
 
     return row
 
 
 if __name__ == '__main__':
-    _, datapackage, resources = ingest()
+    parameters_, datapackage, resources = ingest()
+
     new_resources = process(resources, add_geocodes,
-                            source=Source(folder=os.getcwd()))
+                            **parameters_)
     spew(datapackage, new_resources)

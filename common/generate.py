@@ -1,12 +1,12 @@
 import os
 import sys
-import hashlib
+import csv
 
 import json
 import yaml
 import slugify
 
-from .config import SOURCE_FILE, PIPELINE_FILE, DATA_DIR, FISCAL_SCHEMA_FILE
+from .config import SOURCE_FILE, PIPELINE_FILE, DATA_DIR, FISCAL_SCHEMA_FILE, GEOCODES_FILE
 
 PREPROCESSING = {
     'parse_currency_fields',
@@ -15,9 +15,16 @@ PREPROCESSING = {
     'NL.parse_dates'
 }
 
-if __name__ == "__main__":
+fiscal_schema = yaml.load(open(FISCAL_SCHEMA_FILE))
+GEOCODES = list(csv.DictReader(open(GEOCODES_FILE)))
 
-    fiscal_schema = yaml.load(open(FISCAL_SCHEMA_FILE))
+
+def _lookup_geocode(nuts_code):
+    for info in GEOCODES:
+        if info['NUTS-Code'] == nuts_code:
+            return info['Description']
+
+if __name__ == "__main__":
 
     update = False
     if len(sys.argv) > 1:
@@ -27,6 +34,20 @@ if __name__ == "__main__":
     for dirpath, dirnames, filenames in os.walk(DATA_DIR):
         if SOURCE_FILE in filenames:
             source = yaml.load(open(os.path.join(dirpath, SOURCE_FILE)))
+            relpath = dirpath.split('/data/')[1].split('/')
+            geo = {
+                'country_code': relpath[0].split('.')[0],
+            }
+            geo.update({
+                'nuts_code': \
+                    relpath[1].split('.')[0] \
+                    if len(relpath)>1 and '.' in relpath[1] \
+                    else geo['country_code']
+            })
+            geo.update({
+                'country': _lookup_geocode(geo['country_code']),
+                'region': _lookup_geocode(geo['nuts_code'])
+            })
             if update:
                 try:
                     current = yaml.load(open(os.path.join(dirpath, PIPELINE_FILE)))
@@ -92,7 +113,7 @@ if __name__ == "__main__":
             ] + preprocessing + [
                 ('reshape_data', {}),
                 ('show_sample_in_console', {'sample_size': 10}),
-                ('add_geocodes', {}),
+                ('add_geocodes', geo),
                 ('add_categories', {}),
                 ('handle_amounts', {
                     'column-order': [
