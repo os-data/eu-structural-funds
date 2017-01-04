@@ -41,6 +41,10 @@ resources:
           translates_to: Year of Approval / Year of Final Payment
           maps_to: approval_date
 
+        - name: Jahr der Restzahlung
+          translates_to: Year of Final Payment
+          maps_to: final_payment_date
+
         - name: Gewährte Beträge
           translates_to: Eligible Amount in Euro
           maps_to: total_amount_eligible
