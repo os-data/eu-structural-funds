@@ -92,7 +92,7 @@ if __name__ == "__main__":
                         maps_to = field.get('maps_to')
                         if maps_to is not None and not maps_to.startswith('_'):
                             aliases = concat_parameters[maps_to]
-                            if field['name'] not in aliases: and field['name'] != maps_to
+                            if field['name'] not in aliases and field['name'] != maps_to:
                                 aliases.append(field['name'])
                             del field['maps_to']
                             if 'translates_to' in field:
