@@ -13213,12 +13213,6 @@
 	},
 	{
 		"_source": "http://www.esf.at/esf/wp-content/uploads/2010-ESF_Verzeichnis_Beg%C3%BCnstigte_%C3%96sterreich.pdf",
-		"beneficiary": "Fossilienwelt GmbH",
-		"name_of_operation": "QfB - Qualifizierung für Beschäftigte",
-		"public_funding": "QfB - Qualifizierungsverbund"
-	},
-	{
-		"_source": "http://www.esf.at/esf/wp-content/uploads/2010-ESF_Verzeichnis_Beg%C3%BCnstigte_%C3%96sterreich.pdf",
 		"beneficiary": "Foto Lamprechter GmbH&Co.KG",
 		"name_of_operation": "QfB - Qualifizierung für Beschäftigte",
 		"public_funding": "1.133,33"
