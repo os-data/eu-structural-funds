@@ -19,7 +19,7 @@ resources:
     - maps_to: beneficiary_name
       name: Δικαιούχος
       translates_to: name of beneficiary
-    - name: Έτος Έγκρισης Δαπάνης 1
+    - name: Έτος Έγκρισης Δαπάνης
       translates_to: year expenditure Approval
       maps_to: approval_date
     - name: Έτος Τελικής Πληρωμής
@@ -31,6 +31,10 @@ resources:
     - maps_to: total_amount
       name: Συνολική Δαπάνη που Χορηγήθηκε με την Ολοκλήρωση του Έργου (€)
       translates_to: total expenditure awarded at completion
+    - maps_to: priority_label
+      name: Priority Axis  
+      translates_to: priority label 
+
   title: Cyprus ERDF and CF data 2007-2013
 scraper_required: false
 sources:
