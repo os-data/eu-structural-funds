@@ -287,7 +287,7 @@ class JSONIngestor(BaseIngestor):
                 rows = json.loads(stream.read())
 
             for row in rows:
-                for header in self._headers:
+                for header in self._raw_headers:
                     if header not in row:
                         row[header] = None
 
