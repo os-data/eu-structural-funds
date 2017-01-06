@@ -27,7 +27,7 @@ resources:
     schema:
       fields:
 
-        - name: Name des Begünstigten
+        - name: Name
           translates_to: Beneficiary name
           maps_to: beneficiary_name
 
