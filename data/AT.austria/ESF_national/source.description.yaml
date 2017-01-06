@@ -20,7 +20,7 @@ resources:
     publication_date: "2009-06-30"
 
     add_constants:
-        fund_name: ESF
+        fund_acronym: ESF
         offical_period: 2007-2013
         currency_code: EUR
         year: 2008
@@ -51,7 +51,7 @@ resources:
     publication_date: "2010-06-30"
 
     add_constants:
-        fund_name: ESF
+        fund_acronym: ESF
         offical_period: 2007-2013
         currency_code: EUR
         year: 2009
@@ -81,7 +81,7 @@ resources:
     publication_date: "2011-06-30"
 
     add_constants:
-        fund_name: ESF
+        fund_acronym: ESF
         offical_period: 2007-2013
         currency_code: EUR
         year: 2010
@@ -110,7 +110,7 @@ resources:
     publication_date: "2012-06-30"
 
     add_constants:
-        fund_name: ESF
+        fund_acronym: ESF
         offical_period: 2007-2013
         currency_code: EUR
         year: 2011
@@ -140,7 +140,7 @@ resources:
     publication_date: "2013-06-30"
 
     add_constants:
-        fund_name: ESF
+        fund_acronym: ESF
         offical_period: 2007-2013
         currency_code: EUR
         year: 2012
@@ -169,7 +169,7 @@ resources:
     publication_date: "2014-06-30"
 
     add_constants:
-        fund_name: ESF
+        fund_acronym: ESF
         offical_period: 2007-2013
         currency_code: EUR
         year: 2012
@@ -199,7 +199,7 @@ resources:
     publication_date: "2015-06-30"
 
     add_constants:
-        fund_name: ESF
+        fund_acronym: ESF
         offical_period: 2007-2013
         currency_code: EUR
         year: 2014
