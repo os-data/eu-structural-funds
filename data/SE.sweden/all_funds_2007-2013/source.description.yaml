@@ -11,7 +11,7 @@ resources:
 - add_categories: {}
   add_constants:
     cci_program_code: null
-    fund_acronym: null
+    fund_acronym: unknown
     funding_period: 2007-2013
   currency_code: SEK
   path: Sweden_all_funds_2007-2013.json
@@ -51,9 +51,9 @@ resources:
     - maps_to: project_status
       name: pågår_slut
       translates_to: project status
-    - maps_to: project_id
+    - maps_to: beneficiary_name
       name: stödmottagare
-      translates_to: project id
+      translates_to: beneficiary
     - maps_to: beneficiary_person
       name: projektledare
       translates_to: person responsible for project
