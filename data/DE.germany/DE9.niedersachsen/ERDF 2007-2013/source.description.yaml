@@ -26,10 +26,10 @@ resources:
       name: Jahr der abschließenden Restzahlung
       translates_to: Year of final payment
     - maps_to: total_amount_eligible
-      name: Gewährte Beträge in Euro 
+      name: Gewährte Beträge
       translates_to: Eligible amount in Euro
     - maps_to: total_amount
-      name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge in Euro 
+      name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge
       translates_to: Paid amount at the end of the project
 
 
