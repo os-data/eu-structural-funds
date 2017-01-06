@@ -51,7 +51,7 @@ resources:
           translates_to: operation name
           maps_to: project_name
 
-        - name: Operation postcode  
+        - name: Operation Postcode  
           translates_to: operation postcode
           maps_to: beneficiary_postal_code
 
