@@ -37,7 +37,7 @@ resources:
           translates_to: Name of the Project
           maps_to: project_name
 
-        - name: Jahr der Bewilligung / Jahr der Restzahlung
+        - name: Jahr der Bewilligung
           translates_to: Year of Approval / Year of Final Payment
           maps_to: approval_date
 
