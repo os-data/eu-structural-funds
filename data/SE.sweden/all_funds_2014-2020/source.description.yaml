@@ -24,7 +24,7 @@ resources:
     - maps_to: null
       name: ärende-id
       translates_to: Issue ID
-    - maps_to: project_id
+    - maps_to: beneficiary_name
       name: stödmottagare
       translates_to: project id
     - maps_to: total_amount

@@ -63,7 +63,7 @@ resources:
           translates_to: Subsidy amount
           maps_to: eu_cofinancing_amount_eligible
 
-        - name: Operation Postcode  
+        - name: Operation postcode  
           translates_to: operation postcode
           maps_to: beneficiary_postal_code
 
