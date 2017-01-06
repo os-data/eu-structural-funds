@@ -15,51 +15,31 @@ resources:
   schema:
     fields:
       - maps_to: beneficiary_name
-        name: 'Name des Begünstigten
-
-          Beneficiary name'
+        name: Name des Begünstigten
         translates_to: Beneficiary name
       - maps_to: project_name
-        name: 'Bezeichnung des Vorhabens
-
-          Operation name'
+        name: Bezeichnung des Vorhabens
         translates_to: operation name
       - maps_to: project_description
-        name: 'Zusammenfassung des Vorhabens
-
-          Operation summary'
+        name: Zusammenfassung des Vorhabens
         translates_to: project description
       - maps_to: starting_date
-        name: 'Datum des Beginns des Vorhabens
-
-          Operation start date'
+        name: Datum des Beginns des Vorhabens
         translates_to: starting date of the project
       - maps_to: completion_date
-        name: 'Datum des Endes des Vorhabens
-
-          Operation end date'
+        name: Datum des Endes des Vorhabens
         translates_to: completion date of the project
       - maps_to: total_amount_eligible
-        name: 'Gesamtbeitrag der förderfähigen Ausgaben des Vorhabens
-
-          Total eligible expenditure allocated to the operation'
+        name: Gesamtbeitrag der förderfähigen Ausgaben des Vorhabens
         translates_to: total eligible expenditure allocated to the operation
       - maps_to: beneficiary_postal_code
-        name: 'Postleitzahl des Vorhabens oder andere angemessene Standortindikatoren
-
-          Operation postcode; or other appropriate location indicator'
+        name: Postleitzahl des Vorhabens oder andere angemessene Standortindikatoren
         translates_to: postal code and city
       - maps_to: beneficiary_country
-        name: 'Land
-
-          Country'
+        name: Land
         translates_to: country
       - maps_to: priority_number
-        name: 'Bezeichnung der Interventionskategorie für das Vorhaben gemäß Artikel
-          96 Absatz 2 Unterabsatz 1 Buchstabe b Ziffer vi
-
-          Name of category of intervention for the operation in accordance with point
-          (b) (vi) of the first subparagraph of Article 96 (2)'
+        name: Bezeichnung der Interventionskategorie für das Vorhaben gemäß Artikel 96 Absatz 2 Unterabsatz 1 Buchstabe b Ziffer vi
         translates_to: Intervention field
 scraper_required: false
 sources:
