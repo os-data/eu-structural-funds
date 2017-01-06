@@ -27,62 +27,62 @@ resources:
     schema:
       fields:
 
-        - name: "Name des Begünstigten beneficiary name"
+        - name: Name des Begünstigten
           translates_to: Beneficiary name
           maps_to: beneficiary_name
 
-        - name: "Bezeichnung des Vorhabens operation name"
+        - name: Bezeichnung des Vorhabens
           translates_to: operation name
           maps_to: project_name
 
-        - name: "Zusammenfassung des Vorhabens operation summary"
+        - name: Zusammenfassung des Vorhabens
           translates_to: summary of project 
           maps_to: project_description
 
-        - name: "Datum des Beginns des Vorhabens operation start date"
+        - name: Datum des Beginns des Vorhabens
           translates_to: start date
           maps_to: starting_date 
 
-        - name: "Datum des Endes des Vorhabens operation end date"
+        - name: Datum des Endes des Vorhabens
           translates_to: end date
           maps_to: completion_date
 
-        - name: "Gesamtbetrag der förderfähigen Aus-gaben des Vorhabens in € total eligible expenditure allocated to the operation in €"
+        - name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens in €
           translates_to: total eligible expenditure
           maps_to: total_amount_eligible
 
-        - name: "Unions-Kofinanzie-rungssatz Union co-financing rate"
+        - name: Unions-Kofinanzierungssatz
           translates_to: cofinancing rate
           maps_to: eu_cofinancing_rate           
 
-        - name: "Kofinanzie-rung aus anderen öffent-lichen Mitteln co-financing from other public funding"
+        - name: Kofinanzierung aus anderen öffentlichen Mitteln
           translates_to: cofinancing rate from other public funds 
           maps_to: null
 
-        - name: "PLZ operation postcode"
+        - name: PLZ
           translates_to: postal code 
           maps_to: beneficiary_postal_code                       
 
-        - name: "Land country"
+        - name: Land
           translates_to: country
           maps_to: beneficiary_country       
 
-        - name: "Interventions- bereich Intervention field"
+        - name: Interventionsbereich
           translates_to: intervention category
           maps_to: priority_number       
 
-        - name: "Finanzier- ungsform Form of finance"
+        - name: Finanzierungsform
           translates_to: form of finance (number)
           maps_to: null
 
-        - name: "Art des Gebietes Territory"
+        - name: Art des Gebietes
           translates_to: territory (number)
           maps_to: null
 
-        - name: "Territoriale Umsetzungs- mechanis- men Territorial delivery mechanisms"
+        - name: Territoriale Umsetzungsmechanismen
           translates_to: territory delivery mechanisms
           maps_to: null   
 
-        - name: "sekundäres ESF-Thema ESF secondary theme"
+        - name: Sekundäres ESF-Thema
           translates_to: secondary ESF theme 
           maps_to: null                                     
