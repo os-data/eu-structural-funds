@@ -21,7 +21,7 @@ resources:
 
     add_constants:
         fund_acronym: ESF
-        offical_period: 2007-2013
+        funding_period: 2007-2013
         currency_code: EUR
         year: 2008
 
