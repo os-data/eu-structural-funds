@@ -16,9 +16,10 @@ resources:
 
   - title: ERDF Bayern 2014-2020
 
-    fund_acronym: ERDF
-    funding_period: 2014-2020
-    cci_code: 2014DE16RFOP002
+    add_constants:
+      fund_acronym: ERDF
+      funding_period: 2014-2020
+      cci_code: 2014DE16RFOP002
     currency_code: EUR
 
     path: ERDF_Bayern_2014_2020.csv

@@ -120,7 +120,9 @@ if __name__ == "__main__":
                         'total_amount',
                         'total_amount_eligible',
                         'eu_amount',
-                        'eu_amount_eligible'
+                        'eu_amount_eligible',
+                        'eu_cofinancing_amount',
+                        'eu_cofinancing_amount_eligible'
                      ],
                     'target-column': 'amount',
                     'kind-column': 'amount_kind'

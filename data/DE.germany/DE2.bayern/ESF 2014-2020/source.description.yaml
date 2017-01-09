@@ -16,9 +16,10 @@ resources:
 
   - title: ESF Bayern 2014-2020
 
-    fund_acronym: ESF
-    funding_period: 2014-2020
-    cci_code: 2014DE05SFOP004
+    add_constants:
+      fund_acronym: ESF
+      funding_period: 2014-2020
+      cci_code: 2014DE05SFOP004
     currency_code: EUR
 
     path: ESF_Bayern_2014_2020.csv
