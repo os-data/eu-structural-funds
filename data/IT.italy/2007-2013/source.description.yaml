@@ -19,12 +19,14 @@ resources:
     #url:
     publication_date: "2016-10-31"
 
-    fund_acronym:
-      - FESR: [ERDF]
-      - FSE: [ESF]
-      
-    funding_period: 2007-2013
-    cci_code: 
+    add_categories:
+      fund_acronym:
+        - FESR: [ERDF]
+        - FSE: [ESF]
+
+    add_constants:
+      funding_period: 2007-2013
+      cci_code: null
     currency_code: EUR
 
 
@@ -67,18 +69,20 @@ resources:
           maps_to: total_amount
 
 
- - title: ESF and ERDF in Italy Part 2
+  - title: ESF and ERDF in Italy Part 2
 
     path: italy_allfunds_2007_2013_part2.csv
     #url:
     publication_date: "2016-10-31"
 
-    fund_acronym:
-      - FESR: [ERDF]
-      - FSE: [ESF]
-      
-    funding_period: 2007-2013
-    cci_code: 
+    add_categories:
+      fund_acronym:
+        - FESR: [ERDF]
+        - FSE: [ESF]
+
+    add_constants:
+      funding_period: 2007-2013
+      cci_code:
     currency_code: EUR
 
 
@@ -86,26 +90,26 @@ resources:
       fields:
         - name: OC_TITOLO_PROGETTO
           translates_to: project name
-          maps_to: project_name 
+          maps_to: project_name
 
         - name: QSN_AREA_OBIETTIVO_UE
           translates_to: theme name eu
-          maps_to: theme_name 
+          maps_to: theme_name
 
         - name: QSN_FONDO_COMUNITARIO
           translates_to: fund acronym
-          maps_to: fund_acronym 
+          maps_to: fund_acronym
 
         - name: OC_CODICE_PROGRAMMA
-          translates_to: cci code 
-          maps_to: cci_program_code 
+          translates_to: cci code
+          maps_to: cci_program_code
 
         - name: FINANZ_UE
-          translates_to: EU amount eligible 
+          translates_to: EU amount eligible
           maps_to: project_description
 
         - name: FINANZ_TOTALE_PUBBLICO
-          translates_to: total public amount 
+          translates_to: total public amount
           maps_to: null
 
         - name: FINANZ_PRIVATO
@@ -113,8 +117,8 @@ resources:
           maps_to: third_party_amount
 
         - name: COSTO_RENDICONTABILE_UE
-          translates_to: eligible amount eu 
-          maps_to: total_amount_eligible 
+          translates_to: eligible amount eu
+          maps_to: total_amount_eligible
 
         - name: OC_TOT_PAGAMENTI_RENDICONTAB_UE
           translates_to: paid out amount eu
