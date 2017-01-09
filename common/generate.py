@@ -82,10 +82,13 @@ if __name__ == "__main__":
                 )
             }
 
-            for field in fiscal_schema['fields']:
-                tokens = field['name'].split()
-                clean_field = ' '.join(tokens)
-                field['name'] = clean_field
+            for resource in source['resources']:
+                schema = resource.get('schema', {})
+                if schema is not None:
+                    for field in schema.get('fields', []):
+                        tokens = field['name'].split()
+                        clean_field = ' '.join(tokens)
+                        field['name'] = clean_field
 
             concat_parameters = dict(
                 (field['name'], []) for field in fiscal_schema['fields']
