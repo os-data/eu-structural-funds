@@ -58,7 +58,7 @@ def fix_fields(fields):
     """
     for i, field in enumerate(fields):
         new_field = drop_empty_properties(field)
-        new_field['name'] = ' '.join(new_field['name'].split())
+        new_field['name'] = new_field['name'].strip()
         new_field['type'] = 'string'
         fields[i] = new_field
     return fields

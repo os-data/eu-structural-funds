@@ -142,8 +142,7 @@ class BaseIngestor(object):
 
         for raw_header in self._raw_headers:
             if raw_header:
-                tokens = raw_header.split()
-                clean_field = ' '.join(tokens)
+                clean_field = raw_header.strip()
                 clean_headers.append(clean_field)
 
         return clean_headers
