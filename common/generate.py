@@ -82,7 +82,12 @@ if __name__ == "__main__":
                 )
             }
 
-            concat_parameters = dict(
+            for field in fiscal_schema['fields']:
+                tokens = field['name'].split()
+                clean_field = ' '.join(tokens)
+                field['name'] = clean_field
+
+        concat_parameters = dict(
                 (field['name'], []) for field in fiscal_schema['fields']
             )
             for resource in source['resources']:
