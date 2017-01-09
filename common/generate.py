@@ -87,7 +87,7 @@ if __name__ == "__main__":
                 clean_field = ' '.join(tokens)
                 field['name'] = clean_field
 
-        concat_parameters = dict(
+            concat_parameters = dict(
                 (field['name'], []) for field in fiscal_schema['fields']
             )
             for resource in source['resources']:
