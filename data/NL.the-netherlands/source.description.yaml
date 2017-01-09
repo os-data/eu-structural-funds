@@ -11,8 +11,6 @@ resources:
     cci_program_code: null
     funding_period: 2007-2013
   currency_code: EUR
-  parser_options:
-    delimiter: ;
   encoding: ISO-8859-2
   path: StructuralFundsNL2007NOW.csv
   publication_date: '2015-03-31'
