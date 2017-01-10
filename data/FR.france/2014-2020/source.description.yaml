@@ -2,12 +2,12 @@ contributors:
 - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
 description: null
 language: FR
-resources:
-- add_categories:
-    fund_acronym:
+add_categories:
+  fund_acronym:
       ESF: ESF
       FEDER: ERDF
-  add_constants:
+resources:
+- add_constants:
     cci_program_code: null
     funding_period: 2014-2020
   currency_code: EUR

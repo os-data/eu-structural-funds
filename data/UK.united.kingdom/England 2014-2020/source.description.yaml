@@ -3,12 +3,8 @@ contributors:
 description: The beneficiary list of the ESIF funds for England  
 language: en 
 resources:
-- add_categories: {}
-  add_constants:
+- add_constants:
     cci_program_code: 
-    fund_acronym: 
-       - ESF: [ESF]
-       - ERDF: [ERDF] 
     funding_period: 2014-2020
   currency_code: GDP
   path: ESIF_2014-2020_List_of_beneficiaries_Oct_2016.csv

@@ -3,9 +3,8 @@ contributors:
 description: The files included here contain the information about the programmes
   to which Denmark has allocated the European Structural Funds in the period 2007-2013.
 language: DK
-resources:
-- add_categories:
-    fund_acronym:
+add_categories:
+  fund_acronym:
       ERDFB: ERDF
       ERDFD: ERDF
       ERDFH: ERDF
@@ -20,7 +19,8 @@ resources:
       ESFM: ESF
       ESFN: ESF
       ESFS: ESF
-  add_constants:
+resources:
+- add_constants:
     cci_program_code: null
     funding_period: 2014-2020
   currency_code: EUR

@@ -2,13 +2,13 @@ contributors:
 - Bela Seeger (bela.seeger@okfn.de)
 description: null
 language: sl
+add_categories:
+  fund_acronym:
+    ESRR: ERDF
+    ESS: ESF
+    KF: CF
 resources:
-- add_categories:
-    fund_acronym:
-      ESRR: ERDF
-      ESS: ESF
-      KF: CF
-  add_constants:
+- add_constants:
     cci_program_code: 2014SI16MAOP001
     funding_period: 2014-2020
   currency_code: EUR

@@ -1,4 +1,3 @@
-
 title: Finland ERDF data 2014-2020
 
 description:
@@ -13,17 +12,17 @@ scraper_required: false
 contributors:
   - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
 
+add_categories:
+  fund_acronym:
+    - EAKR: ERDF
+    - ESR: ESF
+
 resources:
   - title: FI.Finland 2014-2020 ERDF ESF
 
     path: projektilista-csv-final.csv
 
     publication_date: 2014-11-1
-
-    add_categories:
-      fund_acronym:
-        - EAKR: [ERDF]
-        - ESR: [ESF]
 
     add_constants:
       funding_period: 2014-2020

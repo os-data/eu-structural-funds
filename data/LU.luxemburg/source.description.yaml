@@ -2,12 +2,12 @@ contributors:
 - Michael Peters (michael.peters@okfn.de)
 description: The beneficiary list for the ERDF and ESF (2007-2020) program for Luxembourg.
 language: de
+add_categories:
+  fund_acronym:
+    FEDER: ERDF
+    FSE: ESF
 resources:
-- add_categories:
-    fund_acronym:
-      FEDER: ERDF
-      FSE: ESF
-  add_constants:
+- add_constants:
     cci_program_code: 2014LU05SFOP001
     funding_period: 2007-2020
   aliases:

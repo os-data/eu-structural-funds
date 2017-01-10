@@ -3,13 +3,13 @@ contributors:
 description: A list of all the public projects and state aids selected for co-funding
   under the Partnership Agreement 2014-2020 by Operational Programme and by Fund
 language: EL
-resources:
-- add_categories:
-    fund_acronym:
+add_categories:
+  fund_acronym:
       1-ΕΤΠΑ: ERDF
       2-ΕΚΤ: ESF
       6-ΤΣ: CF
-  add_constants:
+resources:
+- add_constants:
     cci_program_code: null
     funding_period: 2014-2020
   currency_code: EUR

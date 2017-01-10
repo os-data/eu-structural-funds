@@ -12,17 +12,17 @@ scraper_required: false
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
+add_categories:
+  fund_acronym:
+    - FESR: ERDF
+    - FSE: ESF
+
 resources:
   - title: ESF and ERDF in Italy Part 1
 
     path: italy_allfunds_2007_2013_part1.csv
     #url:
     publication_date: "2016-10-31"
-
-    add_categories:
-      fund_acronym:
-        - FESR: [ERDF]
-        - FSE: [ESF]
 
     add_constants:
       funding_period: 2007-2013
@@ -74,11 +74,6 @@ resources:
     path: italy_allfunds_2007_2013_part2.csv
     #url:
     publication_date: "2016-10-31"
-
-    add_categories:
-      fund_acronym:
-        - FESR: [ERDF]
-        - FSE: [ESF]
 
     add_constants:
       funding_period: 2007-2013

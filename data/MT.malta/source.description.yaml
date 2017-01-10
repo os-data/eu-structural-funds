@@ -19,13 +19,13 @@ description: 'Welcome to investinginyourfuture.gov.mt. This site gives users an 
 
   '
 language: EN
-resources:
-- add_categories:
-    fund_acronym:
+add_categories:
+  fund_acronym:
       Cohesion Fund: CF
       European Regional Development Fund: ERDF
       European Social Fund: ESF
-  add_constants:
+resources:
+- add_constants:
     cci_program_code: null
     funding_period: 2007-2013
   currency_code: EUR

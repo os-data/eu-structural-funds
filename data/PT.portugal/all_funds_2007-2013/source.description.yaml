@@ -2,13 +2,13 @@ contributors:
 - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
 description: null
 language: PT
+add_categories:
+  fund_acronym:
+    CF: CF
+    FEDER: ERDF
+    FSE: ESF
 resources:
-- add_categories:
-    fund_acronym:
-      CF: CF
-      FEDER: ERDF
-      FSE: ESF
-  add_constants:
+- add_constants:
     cci_program_code: null
     funding_period: 2007-2013
   currency_code: EUR
