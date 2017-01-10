@@ -1,5 +1,4 @@
 """A processor to inject categories values into the data."""
-
 from datapackage_pipelines.wrapper import ingest, spew
 from common.row_processor import process
 
@@ -33,17 +32,12 @@ def inject_categories(row, **category_tables):
     return row, report
 
 
-def process_stats(stats):
-    """Return a list of unmapped categories."""
-    return {'missing_categories_values': stats}
-
-
 if __name__ == '__main__':
     """Ingest, process and spew out."""
 
     parameters_, datapackage_, resources_ = ingest()
-    new_resources_, stats_ = process(resources_,
-                                     inject_categories,
-                                     datapackage=datapackage_,
-                                     parameters=parameters_)
-    spew(datapackage_, new_resources_, stats=process_stats(stats_))
+    new_resources_, _ = process(resources_,
+                                inject_categories,
+                                datapackage=datapackage_,
+                                parameters=parameters_)
+    spew(datapackage_, new_resources_)

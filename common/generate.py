@@ -152,6 +152,10 @@ if __name__ == "__main__":
                         # 'approval_date': threshold,
                         # 'beneficiary_country': threshold,
                         # 'beneficiary_nuts_region': threshold,
+                    },
+                    'allowed_values': {
+                        'fund_acronym': ['ERDF', 'ESF', 'CF'],
+                        'funding_period': ['2000-2006', '2007-2013', '2014-2020']
                     }
                 }),
                 ('dump', {'out-file': 'fiscal.datapackage.zip'}),

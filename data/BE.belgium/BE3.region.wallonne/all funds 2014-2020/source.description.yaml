@@ -3,12 +3,12 @@ contributors:
 description: The beneficiary list for the ERDF and ESF (2014-2020) program for Region
   Wallonne.
 language: de
+add_categories:
+  fund_acronym:
+    FSE: ESF
+    FEDER: ERDF
 resources:
-- add_categories:
-    fund_acronym:
-      ESF: ESF
-      FEDER: ERDF
-  add_constants:
+- add_constants:
     cci_program_code: null
     funding_period: 2014-2020
   currency_code: EUR

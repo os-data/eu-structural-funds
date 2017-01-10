@@ -5,7 +5,9 @@ from datapackage_pipelines.wrapper import ingest, spew
 parameters_, datapackage_, resources_ = ingest()
 
 thresholds = parameters_['thresholds']
-columns = thresholds.keys()
+allowed_values = parameters_['allowed_values']
+threshold_columns = thresholds.keys()
+allowed_value_columns = allowed_values.keys()
 
 
 def is_empty(value):
@@ -13,18 +15,25 @@ def is_empty(value):
     if type(value) is str and value.strip()=='': return True
     return False
 
+
 def process(resources):
     def process_single(resource):
         counter = 0
-        nones = dict((c,0) for c in columns)
+        nones = dict((c,0) for c in threshold_columns)
         for row in resource:
             counter += 1
-            for column in columns:
+            for column in threshold_columns:
                 value = row.get(column)
                 if is_empty(value):
                     nones[column] += 1
+            for column in allowed_value_columns:
+                value = row.get(column)
+                if not is_empty(value) and value != 'unknown':
+                    if value not in allowed_values[column]:
+                        raise ValueError('%s: Got %r whereas allowed values for this column are %r' %
+                                         (column, value, allowed_values[column]))
             yield row
-        for column in columns:
+        for column in threshold_columns:
             ratio_percent = 100 - (100*nones[column])//counter
             if ratio_percent < thresholds[column]:
                 raise ValueError('%s: Got %d empty values (out of %d), which is %d%% (below the threshold of %d%%)' %

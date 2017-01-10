@@ -50,7 +50,7 @@ resources:
           maps_to: total_amount  
 
         - name: DOTAZIONE UE PROGRAMMA 20141231
-          translates_to: EU amount  
+          translates_to: EU amount
           maps_to: eu_cofinancing_amount 
 
         - name: DOTAZIONE TOTALE PROGRAMMA 20150630 
