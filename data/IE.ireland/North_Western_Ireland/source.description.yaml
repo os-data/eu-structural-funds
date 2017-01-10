@@ -4,11 +4,10 @@ description: The beneficiary list of the ERDF programme for North West Ireland I
 language: de
 resources:
 - add_categories: {}
-  add_constants: {}
-  constant_fields:
-    currency_code: EUR
-    fund_name: ERDF
-    offical_period: 2007-2013
+  currency_code: EUR
+  add_constants:
+    fund_acronym: ERDF
+    funding_period: 2007-2013
   path: north_west_ireland_2007-2013.json
   publication_date: '2016-02-22'
   schema:

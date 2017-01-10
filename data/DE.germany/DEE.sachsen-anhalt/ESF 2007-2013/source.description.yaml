@@ -25,11 +25,12 @@ resources:
     - maps_to: final_payment_date
       name: Jahr der Restzahlung
       translates_to: year of final payment  
-    - decimalChar: ","
-      groupChar: "."
-      maps_to: total_amount_eligible
+    - maps_to: total_amount_eligible
       name: Gewährte Beträge
       translates_to: total eligible expenditure of project (EU and public funding)
+      options:
+        decimalChar: ","
+        groupChar: "."
     - maps_to: total_amount
       name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge
       translates_to: total amount paid

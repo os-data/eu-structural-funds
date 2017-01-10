@@ -67,6 +67,8 @@ DATE_FORMATS = [
     {'format': 'fmt:%m/%d/%Y'},
     {'format': 'fmt:%d-%b-%Y'},  # abbreviated month
     {'format': 'fmt:%d-%b-%y'},  # abbreviated month
+    {'format': 'fmt:%d. %b %y'},  # abbreviated month
+    {'format': 'fmt:%b %y'},  # abbreviated month
     {'format': 'fmt:%d-%m-%Y'},
     {'format': 'fmt:%Y-%m-%d'},
     {'format': 'fmt:%y-%m-%d'},

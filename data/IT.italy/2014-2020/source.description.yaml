@@ -65,7 +65,7 @@ resources:
           translates_to: total amount 
           maps_to: null
 
-        - name: DDOTAZIONE UE PROGRAMMA 20151231
+        - name: DOTAZIONE UE PROGRAMMA 20151231
           translates_to: eu amount 
           maps_to: null
 

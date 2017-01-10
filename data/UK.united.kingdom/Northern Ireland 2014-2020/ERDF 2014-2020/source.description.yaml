@@ -26,10 +26,8 @@ resources:
 
     publication_date: 2016-06-30
 
-    add_categories:
-      fund_acronym: ERDF 
-
     add_constants:
+      fund_acronym: ERDF
       funding_period: 2014-2020
       cci_code: 2014UK16RFOP003
 
