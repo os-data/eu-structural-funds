@@ -14,8 +14,8 @@ contributors:
 
 add_categories:
   fund_acronym:
-    - FESR: ERDF
-    - FSE: ESF
+    FESR: ERDF
+    FSE: ESF
 
 resources:
   - title: ESF and ERDF in Italy Part 1

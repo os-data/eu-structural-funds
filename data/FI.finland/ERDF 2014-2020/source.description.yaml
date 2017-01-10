@@ -14,8 +14,8 @@ contributors:
 
 add_categories:
   fund_acronym:
-    - EAKR: ERDF
-    - ESR: ESF
+    EAKR: ERDF
+    ESR: ESF
 
 resources:
   - title: FI.Finland 2014-2020 ERDF ESF
