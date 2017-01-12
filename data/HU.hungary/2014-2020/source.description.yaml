@@ -10,17 +10,18 @@ scraper_required: false
 contributors:
   - Michael Peters (michael.peters@okfn.de)
 
+add_categories:
+  fund_acronym:
+    - ERFA: ERDF
+    - ESZA: ESF
+    - KA: CF
+
 resources:
   - title: ESF Hungary 2014-2020
     path: data-uszt-ESZA.json
     publication_date: "2016-10-31"
     currency_code: HUF
     add_constants:
-      fund_acronym: 
-        - ERFA: [ERDF]
-        - ESZA: [ESF]
-        - KA: [CF]
-
       funding_period: 2014-2020
       cci_program_code: unknown
     schema:
@@ -92,10 +93,6 @@ resources:
   - title: ERDF in Hungary 2014-2020
     path: data-uszt-ERFA.json
     add_constants:
-      fund_acronym: 
-        - ERFA: [ERDF]
-        - ESZA: [ESF]
-        - KA: [CF]      
       funding_period: 2014-2020
       cci_program_code: unknown
     currency_code: HUF
@@ -169,14 +166,9 @@ resources:
   - title: Cohesion Fund in Hungary 2014-2020
     path: data-uszt-KA.json
     publication_date: "2016-10-31"
-    add_categories: {}
     add_constants:
-      fund_acronym: 
-        - ERFA: [ERDF]
-        - ESZA: [ESF]
-        - KA: [CF]
-        offical_period: 2014-2020
-        cci_program_code: unknown
+      funding_period: 2014-2020
+      cci_program_code: unknown
     currency_code: HUF
     schema:
       fields:

@@ -4,14 +4,14 @@ description: The beneficiary list for the ESIF (2007-2013) program for Hungary.
 language: hu
 currency_symbol: ".- HUF"
 resources:
-- add_categories: {}
-  add_constants:
+add_categories:
+    fund_acronym:
+      - ERFA: ERDF
+      - ESZA: ESF
+      - KA: CF
+- add_constants:
     cci_program_code: unknown
     funding_period: 2007-2013
-    fund_acronym: 
-      - ERFA: [ERDF]
-      - ESZA: [ESF]
-      - KA: [CF]
   currency_code: HUF
   schema:
     fields:
@@ -67,28 +67,10 @@ resources:
   path: data-umft-ESZA.json
   publication_date: '2016-10-31'
   title: ESF Hungary 2007-2013
-- add_categories: {}
-  add_constants:
-    cci_program_code: null
-    funding_period: 2007-2013
-    currency_code: HUF
-    fund_acronym: 
-      - ERFA: [ERDF]
-      - KA: [CF]
-      - ESZA: [ESF]
-  path: data-umft-ERFA.json
+- path: data-umft-ERFA.json
   publication_date: '2016-10-31'
   title: ERDF in Hungary 2007-2013
-- add_categories: {}
-  add_constants: {}
-  constant_fields:
-    currency_code: HUF
-    fund_acronym: 
-      - ERFA: [ERDF]
-      - ESZA: [ESF]
-      - KA: [CF] 
-    offical_period: 2007-2013
-  path: data-umft-KA.json
+- path: data-umft-KA.json
   publication_date: '2016-10-31'
   title: HU.Hungary 2007-2013 ERDF ESF CF
 scraper_required: false
