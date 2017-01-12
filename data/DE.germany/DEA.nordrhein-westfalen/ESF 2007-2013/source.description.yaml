@@ -25,7 +25,7 @@ resources:
     - maps_to: project_name
       name: Bezeichnung des Vorhabens
       translates_to: operation name
-    - maps_to: member_state_amount
+    - maps_to: eu_cofinancing_amount
       name: Zuwendungen des Landes NRW
       translates_to: member state amount
   title: ERDF Nordrhein-Westfalen
