@@ -8,6 +8,8 @@ add_categories:
       1-ΕΤΠΑ: ERDF
       2-ΕΚΤ: ESF
       6-ΤΣ: CF
+      7-ΠΑΝ: other 
+
 resources:
 - add_constants:
     cci_program_code: null
