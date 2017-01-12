@@ -6,8 +6,11 @@ currency_symbol: ".- HUF"
 resources:
 - add_categories: {}
   add_constants:
-    cci_program_code: null
+    cci_program_code: unknown 
     funding_period: 2000-2006
+    fund_acronym: 
+      - ERFA: [ERDF]
+      - ESZA: [ESF]
   currency_code: HUF
   schema:
     fields:
@@ -53,16 +56,19 @@ resources:
     - maps_to: approval_date
       name: Támogatási döntés dátuma
       translates_to: Date of funding decision
-  fund_name: ESF
+
   path: data-nft-ESZA.json
   publication_date: '2016-10-31'
   title: ESF Hungary 2000-2006
 - add_categories: {}
   add_constants:
-    cci_program_code: null
+    cci_program_code: unknown
     funding_period: 2000-2006
-  currency_code: HUF
-  fund_name: ERDF
+    currency_code: HUF
+      fund_acronym: 
+      - ERFA: [ERDF]
+      - ESZA: [ESF]
+
   path: data-nft-ERFA.json
   publication_date: '2016-10-31'
   title: HU.Hungary 2000-2006 ERDF
