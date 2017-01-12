@@ -208,6 +208,8 @@ eu-esif-funds-full:
             currency: EUR
           total_amount_eligible:
             currency: EUR
+          amount:
+            currency: EUR
         os-types:
           amount: value
           amount_kind: value-kind:code
