@@ -4,7 +4,7 @@ description: null
 language: FR
 add_categories:
   fund_acronym:
-      ESF: ESF
+      FSE: ESF
       FEDER: ERDF
       IEJ: other
       NR: other

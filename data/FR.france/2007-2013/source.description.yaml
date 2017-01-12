@@ -17,6 +17,12 @@ scraper_required: false
 contributors:
   - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
 
+add_categories:
+  fund_acronym:
+    FEDER: ERDF
+    FSE: ESF
+
+
 resources:
     - title: JSON file for France 2007-2013 FSE national programs
 
@@ -28,9 +34,6 @@ resources:
       add_constants:
         funding_period: 2007-2013
         cci_code:
-        fund_acronym:
-          FEDER: ERDF
-          FSE: ESF
 
       currency_code: EUR
 
