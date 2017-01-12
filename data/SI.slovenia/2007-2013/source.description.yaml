@@ -6,7 +6,7 @@ add_categories:
   fund_acronym:
       ESRR: ERDF
       ESS: ESF
-      KF: CF
+      KS: CF
 resources:
 - add_constants:
     cci_program_code: null
