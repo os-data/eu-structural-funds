@@ -68,7 +68,6 @@ def create_datapackage(datapackage={}):
     """Convert a source description to a standard datapackage."""
 
     datapackage = drop_empty_properties(datapackage)
-    datapackage['name'] = convert_to_name(datapackage['title'])
     first_resource = datapackage['resources'][0]
 
     for resource in datapackage['resources']:

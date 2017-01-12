@@ -34,6 +34,7 @@ if __name__ == "__main__":
     for dirpath, dirnames, filenames in os.walk(DATA_DIR):
         if SOURCE_FILE in filenames:
             source = yaml.load(open(os.path.join(dirpath, SOURCE_FILE)))
+            source['name'] = slugify.slugify(source['title'], separator='-').lower()
             relpath = dirpath.split('/data/')[1].split('/')
             geo = {
                 'country_code': relpath[0].split('.')[0],
@@ -145,16 +146,16 @@ if __name__ == "__main__":
                         'amount_kind': threshold,
                         'beneficiary_country_code': threshold,
                         'beneficiary_nuts_code': threshold,
-                        'fund_acronym': threshold
+                        'fund_acronym': threshold,
                         # 'cci_program_code': threshold,
                         # 'project_name': threshold,
                         # 'starting_date': threshold,
                         # 'approval_date': threshold,
-                        # 'beneficiary_country': threshold,
-                        # 'beneficiary_nuts_region': threshold,
+                        'beneficiary_country': threshold,
+                        'beneficiary_nuts_region': threshold,
                     },
                     'allowed_values': {
-                        'fund_acronym': ['ERDF', 'ESF', 'CF'],
+                        'fund_acronym': ['ERDF', 'ESF', 'CF', 'other'],
                         'funding_period': ['2000-2006', '2007-2013', '2014-2020']
                     }
                 }),
