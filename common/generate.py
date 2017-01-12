@@ -110,7 +110,7 @@ if __name__ == "__main__":
             sniff_and_cast_parameters = {}
             if source.get('currency_symbol') is not None:
                 sniff_and_cast_parameters['currency_symbol'] = source['currency_symbol']
-            threshold = 50
+            threshold = 80
             pipeline = [
                 ('read_description', {'datapackage': source}),
                 ('ingest_local_file', {}),
