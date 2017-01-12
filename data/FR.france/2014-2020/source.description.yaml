@@ -6,9 +6,11 @@ add_categories:
   fund_acronym:
       ESF: ESF
       FEDER: ERDF
+      IEJ: other
+      NR: other
 resources:
 - add_constants:
-    cci_program_code: null
+    cci_program_code: unknown
     funding_period: 2014-2020
   currency_code: EUR
   path: 20160711_listeoperations_FEDER_FSE_14-20.xls
