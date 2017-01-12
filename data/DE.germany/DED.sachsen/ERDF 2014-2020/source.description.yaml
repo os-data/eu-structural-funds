@@ -13,9 +13,9 @@ resources:
   publication_date: '2016-03-31'
   schema:
     fields:
-    - maps_to: project_id
+    - maps_to: beneficiary_name
       name: 1. Name des Begünstigten
-      translates_to: project number
+      translates_to: beneficiary_name
     - maps_to: project_name
       name: 2. Bezeichnung des Vorhabens
       translates_to: operation name
