@@ -6,7 +6,8 @@ add_categories:
   fund_acronym:
     ESRR: ERDF
     ESS: ESF
-    KF: CF
+    KS: CF
+    YEI: other
 resources:
 - add_constants:
     cci_program_code: 2014SI16MAOP001
