@@ -14,7 +14,7 @@ resources:
       - Europski fond za regionalni razvoj: [ERDF]
       - Kohezijski fond: [CF]
 
-    funding_period: 2007-2020
+    funding_period: unknown
   currency_code: HRK
   path: ESIF_Croatia_2007-2020.csv
   publication_date: 2016-04-01

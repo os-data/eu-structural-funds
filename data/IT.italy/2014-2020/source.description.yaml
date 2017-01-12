@@ -16,6 +16,7 @@ add_categories:
   fund_acronym:
       FESR: ERDF
       FSE: ESF
+      IOG: other
 
 
 resources:
