@@ -12,9 +12,9 @@ contributors:
 
 add_categories:
   fund_acronym:
-    - ERFA: ERDF
-    - ESZA: ESF
-    - KA: CF
+    ERFA: ERDF
+    ESZA: ESF
+    KA: CF
 
 resources:
   - title: ESF Hungary 2014-2020

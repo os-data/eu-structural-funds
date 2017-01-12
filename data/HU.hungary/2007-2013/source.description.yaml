@@ -5,9 +5,9 @@ language: hu
 currency_symbol: ".- HUF"
 add_categories:
     fund_acronym:
-      - ERFA: ERDF
-      - ESZA: ESF
-      - KA: CF
+      ERFA: ERDF
+      ESZA: ESF
+      KA: CF
 resources:
 - add_constants:
     cci_program_code: unknown

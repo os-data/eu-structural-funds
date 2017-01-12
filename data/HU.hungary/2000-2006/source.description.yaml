@@ -5,8 +5,8 @@ language: hu
 currency_symbol: ".- HUF"
 add_categories:
     fund_acronym:
-      - ERFA: ERDF
-      - ESZA: ESF
+      ERFA: ERDF
+      ESZA: ESF
 resources:
 - add_constants:
     cci_program_code: unknown 
@@ -64,7 +64,6 @@ resources:
     cci_program_code: unknown
     funding_period: 2000-2006
     currency_code: HUF
-
   path: data-nft-ERFA.json
   publication_date: '2016-10-31'
   title: HU.Hungary 2000-2006 ERDF
