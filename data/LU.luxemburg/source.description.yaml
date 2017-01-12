@@ -9,7 +9,7 @@ add_categories:
 resources:
 - add_constants:
     cci_program_code: 2014LU05SFOP001
-    funding_period: 2007-2020
+    funding_period: unknown
   aliases:
     porteur_de_projet: porteur(s)_de_projet
   currency_code: EUR
