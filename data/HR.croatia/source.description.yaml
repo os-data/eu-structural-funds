@@ -5,6 +5,7 @@ description: Dataset with usable amount of fields. Contains all ESIF data from 2
   March 2016
 language: HR
 currency_symbol: "kn"
+currency_code: HRK
 add_categories:
   fund_acronym:
     Europski socijani fond: ESF
@@ -13,10 +14,8 @@ add_categories:
 
 resources:
 - add_constants:
-    cci_program_code: 
-
+    cci_program_code:
     funding_period: unknown
-  currency_code: HRK
   path: ESIF_Croatia_2007-2020.csv
   publication_date: 2016-04-01
   schema:

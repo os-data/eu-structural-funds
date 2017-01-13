@@ -110,6 +110,21 @@ if __name__ == "__main__":
             sniff_and_cast_parameters = {}
             if source.get('currency_symbol') is not None:
                 sniff_and_cast_parameters['currency_symbol'] = source['currency_symbol']
+            currency_conversion = []
+            if source.get('currency_code', 'EUR') != 'EUR':
+                currency_conversion.append(
+                    ('currency_convert', {
+                        'column': 'amount',
+                        'currency': source.get('currency_code', 'EUR'),
+                        'date-columns': [
+                            'publication_date',
+                            'starting_date',
+                            'completion_date',
+                            'final_payment_date'
+                        ]
+                    })
+                )
+
             threshold = 80
             pipeline = [
                 ('read_description', {'datapackage': source}),
@@ -134,10 +149,11 @@ if __name__ == "__main__":
                         'eu_cofinancing_amount_eligible'
                      ],
                     'target-column': 'amount',
-                    'kind-column': 'amount_kind'
+                    'kind-column': 'amount_kind',
                 }),
                 ('fiscal.model', fiscal_model_parameters),
                 ('sniff_and_cast', sniff_and_cast_parameters),
+            ] + currency_conversion + [
                 ('validate_values', {
                     'thresholds': {
                         'beneficiary_name': threshold,

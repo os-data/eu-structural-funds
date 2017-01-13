@@ -2,6 +2,7 @@ contributors:
 - Michael Peters (michael.peters@okfn.de)
 description: The beneficiary list for the ESIF (2007-2013) program for Hungary.
 language: hu
+currency_code: HUF
 currency_symbol: ".- HUF"
 add_categories:
     fund_acronym:
@@ -12,7 +13,6 @@ resources:
 - add_constants:
     cci_program_code: unknown
     funding_period: 2007-2013
-  currency_code: HUF
   schema:
     fields:
     - maps_to: null

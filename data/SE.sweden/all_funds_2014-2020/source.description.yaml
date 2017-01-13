@@ -7,13 +7,13 @@ description: Swedish ESIF data is available via two web portals, one for ESF, an
   while ESF data is only available from 2014-2020, with a second portal in the works
   for 2014-today (thus far only a website is available that could be scraped).
 language: SE
+currency_code: SEK
 resources:
 - add_categories: {}
   add_constants:
     cci_program_code: unknown
     fund_acronym: unknown
     funding_period: 2014-2020
-  currency_code: SEK
   path: Sweden_all_funds_2014-2020.json
   publication_date: 27-09-2016
   schema:

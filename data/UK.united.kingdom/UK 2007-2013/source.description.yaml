@@ -2,7 +2,8 @@
 title: UK.United Kingdom 2007-2013 ERDF ESF
 
 description: The beneficiary list of the ESF and ERDF programme for the UK.
-language: de
+language: en
+currency_code: GBP
 
 sources:
 
@@ -26,16 +27,9 @@ resources:
 
     publication_date: 2015-12-31
 
-    add_categories:
-      fund_acronym:
-        - ERDF: ERDF
-        - ESF: ESF
-
     add_constants:
       funding_period: 2007-2013
       cci_code:
-
-    currency_code: GBP
 
       # any other field from fiscal.fields.yaml that is constant
 

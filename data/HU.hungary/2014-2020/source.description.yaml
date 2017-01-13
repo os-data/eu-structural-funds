@@ -9,7 +9,7 @@ sources:
 scraper_required: false
 contributors:
   - Michael Peters (michael.peters@okfn.de)
-
+currency_code: HUF
 add_categories:
   fund_acronym:
     ERFA: ERDF
@@ -20,7 +20,6 @@ resources:
   - title: ESF Hungary 2014-2020
     path: data-uszt-ESZA.json
     publication_date: "2016-10-31"
-    currency_code: HUF
     add_constants:
       funding_period: 2014-2020
       cci_program_code: unknown
@@ -95,7 +94,6 @@ resources:
     add_constants:
       funding_period: 2014-2020
       cci_program_code: unknown
-    currency_code: HUF
     publication_date: "2016-10-31"
     schema:
       fields:
@@ -169,7 +167,6 @@ resources:
     add_constants:
       funding_period: 2014-2020
       cci_program_code: unknown
-    currency_code: HUF
     schema:
       fields:
           - name: _program

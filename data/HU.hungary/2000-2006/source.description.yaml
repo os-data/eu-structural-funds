@@ -3,6 +3,7 @@ contributors:
 description: The beneficiary list for the ESIF (2000-2006) program for Hungary.
 language: hu
 currency_symbol: ".- HUF"
+currency_code: HUF
 add_categories:
     fund_acronym:
       ERFA: ERDF
@@ -11,7 +12,6 @@ resources:
 - add_constants:
     cci_program_code: unknown 
     funding_period: 2000-2006
-  currency_code: HUF
   schema:
     fields:
     - maps_to: null
