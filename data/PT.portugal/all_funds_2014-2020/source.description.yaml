@@ -4,7 +4,7 @@ description: null
 language: PT
 add_categories:
   fund_acronym:
-    CF: CF
+    FC: CF
     FEDER: ERDF
     FSE: ESF
     n.a.: unknown
