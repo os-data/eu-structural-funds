@@ -29,7 +29,7 @@ def process(resources):
                 if the_date is not None:
                     keys = ["%s-%s" % (currency, the_date.strftime('%Y-%m'))]
                 else:
-                    funding_period = map(int, row['funding_period'].split('-'))
+                    funding_period = list(map(int, row['funding_period'].split('-')))
                     keys = ['%s-%d-06' % (currency, year) for year in range(funding_period[0], funding_period[1])]
                 assert len(keys)>0
                 all_rates = [(key, currencies.get(key)) for key in keys]
