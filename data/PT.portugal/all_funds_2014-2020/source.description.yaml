@@ -7,6 +7,7 @@ add_categories:
     CF: CF
     FEDER: ERDF
     FSE: ESF
+    n.a.: unknown
 resources:
 - add_constants:
     cci_program_code: null

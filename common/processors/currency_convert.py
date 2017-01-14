@@ -10,8 +10,10 @@ column = parameters_['column']
 currency = parameters_['currency']
 date_columns = parameters_['date-columns']
 
-#w = open('/Users/adam/keys.txt', 'a')
+missing = open('missing-keys.txt', 'a')
+written = set()
 currencies = json.load(open(os.path.join(os.path.dirname(__file__), 'currencies.json')))
+
 
 def process(resources):
     def process_single(resource):
@@ -25,12 +27,24 @@ def process(resources):
                     if the_date is not None:
                         break
                 if the_date is not None:
-                    key = "%s-%s" % (currency, the_date.strftime('%Y-%m'))
-                    rate = currencies.get(key)
-                    if rate is not None:
-                        amount = ncv * Decimal(rate)
-                        row[column] = amount
-                    #w.write(key+'\n')
+                    keys = ["%s-%s" % (currency, the_date.strftime('%Y-%m'))]
+                else:
+                    funding_period = map(int, row['funding_period'].split('-'))
+                    keys = ['%s-%d-06' % (currency, year) for year in range(funding_period[0], funding_period[1])]
+                assert len(keys)>0
+                all_rates = [(key, currencies.get(key)) for key in keys]
+                none_keys = map((lambda x: x[0]),
+                                filter((lambda x: x[1] is None), all_rates))
+                rates = list(map((lambda x: x[1]),
+                                 filter((lambda x: x[1] is not None), all_rates)))
+                if len(rates) > 0:
+                    rate = sum(rates) / len(rates)
+                    amount = ncv * Decimal(rate)
+                    row[column] = amount
+                for key in none_keys:
+                    if key not in written:
+                        missing.write(key+'\n')
+                        written.add(key)
             yield row
 
     for resource_ in resources:
@@ -38,4 +52,4 @@ def process(resources):
 
 spew(datapackage_, process(resources_))
 
-# w.close()
+missing.close()
