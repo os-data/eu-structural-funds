@@ -4,7 +4,6 @@ import json
 import logging
 import arrow
 import yaml
-
 from parser import ParserError
 from slugify import slugify
 from datapackage_pipelines.wrapper import spew, ingest
