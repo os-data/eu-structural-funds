@@ -21,6 +21,8 @@ add_categories:
   fund_acronym:
     FEDER: ERDF
     FSE: ESF
+    FEADER: other
+    FEP: other
 
 
 resources:
