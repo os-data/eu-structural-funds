@@ -8,12 +8,12 @@ resources:
     cci_program_code: unknown
     funding_period: 2007-2013
     currency_code: EUR
-    fund_acronym: unknown
+    fund_acronym: ERDF
   path: http___www.southernassembly.ie_docs_LoB_July_2016_For_Website.json
   publication_date: '2016-02-22'
   schema:
     fields:
-    - maps_to: fund_acronym
+    - maps_to: theme_name
       name: Type of Grant
       translates_to: type of grant
     - maps_to: beneficiary_name
