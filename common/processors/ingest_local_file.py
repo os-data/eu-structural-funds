@@ -246,9 +246,9 @@ class CSVIngestor(BaseIngestor):
         """Skip the header (post-processor)."""
 
         # Headers are passed as an option and need to be explicitly ignored.
-        for index, headers, row in rows:
+        for index, headers, values in rows:
             if index != 1:
-                yield index, headers, row
+                yield index, headers, values
 
 
 class JSONIngestor(BaseIngestor):
@@ -316,16 +316,30 @@ class XLSIngestor(BaseIngestor):
     @property
     def _post_processors(self):
         return [self._lowercase_empty_values,
-                self._skip_header, self.force_strings]
+                self._skip_header,
+                self._fixed_points,
+                self.force_strings]
 
     @staticmethod
     def _skip_header(rows):
         """Skip the header (post-processor)."""
 
         # Headers are passed as an option and need to be explicitly ignored.
-        for index, headers, row in rows:
+        for index, headers, values in rows:
             if index != 1:
-                yield index, headers, row
+                yield index, headers, values
+
+    @staticmethod
+    def _fixed_points(rows):
+        """Convert floats to 2-digit fixed precision strings"""
+
+        for index, headers, values in rows:
+            values = [
+                '%.2f' % value if type(value) is float else value
+                for value in values
+            ]
+            yield index, headers, values
+
 
 
 XLSXIngestor = XLSIngestor
