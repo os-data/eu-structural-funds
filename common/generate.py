@@ -136,7 +136,7 @@ if __name__ == "__main__":
                 ('concat', concat_parameters),
             ] + preprocessing + [
                 ('reshape_data', {}),
-                ('show_sample_in_console', {'sample_size': 10}),
+                ('show_sample_in_console', {'sample_size': 20}),
                 ('add_geocodes', geo),
                 ('add_categories', {}),
                 ('handle_amounts', {
