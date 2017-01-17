@@ -34,7 +34,7 @@ resources:
       fields:
         - name: OC_TITOLO_PROGETTO
           translates_to: project name
-          maps_to: project_name 
+          maps_to: beneficiary_name 
 
         - name: QSN_AREA_OBIETTIVO_UE
           translates_to: theme name eu
