@@ -15,12 +15,12 @@ fields:
   - name: funding_period_number
     title: Funding period number
     description: First, second or third funding period. #use the actual periods in the description
-    osType: fin-source:generic:level1:code
+    osType: unknown:string
 
   - name: funding_period
     title: Funding period
     description: One of three official funding period e.g. 2007-2013 #again, what do you refer to? One of the three? We only have 2007-2013 and 2014-2020
-    osType: fin-source:generic:level1:label
+    osType: fin-source:generic:level1:code
 
   - name: cci_program_code
     title: CCI code

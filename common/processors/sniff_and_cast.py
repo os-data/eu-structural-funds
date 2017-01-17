@@ -29,7 +29,7 @@ import petl
 from copy import deepcopy
 from logging import warning, info
 from datapackage_pipelines.wrapper import ingest, spew
-from jsontableschema.exceptions import InvalidCastError
+from jsontableschema.exceptions import InvalidCastError, ConstraintError
 from jsontableschema.types import DateType, NumberType
 
 from common.utilities import process, format_to_json
@@ -95,9 +95,9 @@ class BaseSniffer(object):
 
     def init_casters(self, field):
         casters = []
-        if all(self.format.values()):
-            _field = deepcopy(field).update(self.format)
-            casters.append((self.jst_type_class(_field), 0, self.format))
+        # if all(self.format.values()):
+        #     _field = deepcopy(field).update(self.format)
+        #     casters.append((self.jst_type_class(_field), 0, self.format))
 
         for fmt in self.format_guesses:
             _field = deepcopy(field)
@@ -117,7 +117,7 @@ class BaseSniffer(object):
                         casters[idx] = (caster, successes+1, fmt)
                         success = True
                         break
-                    except (AssertionError, InvalidCastError) as e:
+                    except (AssertionError, InvalidCastError, ConstraintError) as e:
                         pass
                 if not success:
                     self.nb_failures += 1
@@ -138,7 +138,7 @@ class BaseSniffer(object):
             try:
                 raw_value = self._prepare_value(fmt, raw_value)
                 return caster.cast(raw_value)
-            except InvalidCastError as e:
+            except (InvalidCastError, ConstraintError) as e:
                 exc = e
         assert exc is not None
         raise exc
