@@ -51,11 +51,11 @@ resources:
 
         - name: DOTAZIONE TOTALE PROGRAMMA 20141231
           translates_to: total amount programme 
-          maps_to: total_amount  
+          maps_to: null  
 
         - name: DOTAZIONE UE PROGRAMMA 20141231
           translates_to: EU amount
-          maps_to: eu_cofinancing_amount 
+          maps_to: null 
 
         - name: DOTAZIONE TOTALE PROGRAMMA 20150630 
           translates_to: total amount 
@@ -67,11 +67,11 @@ resources:
 
         - name: DOTAZIONE TOTALE PROGRAMMA 20151231
           translates_to: total amount 
-          maps_to: null
+          maps_to: total_amount_eligible
 
         - name: DOTAZIONE UE PROGRAMMA 20151231
           translates_to: eu amount 
-          maps_to: null
+          maps_to: eu_cofinancing_amount_eligible
 
         - name: DOTAZIONE TOTALE PROGRAMMA 20160630
           translates_to: total amount 
