@@ -9,7 +9,7 @@ resources:
   add_constants: {}
   cci_program_code: 
   fund_acronym: unknown 
-  funding_period: 2007-2020
+  funding_period: unknown
   currency_code: LEV
   path: ESIF_Bulgaria.csv
   publication_date: 2016-06-15
