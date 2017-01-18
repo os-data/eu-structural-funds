@@ -134,13 +134,16 @@ class BaseSniffer(object):
 
     def cast(self, raw_value):
         exc = None
+        bad_value = None
         for caster, _, fmt in self.casters:
             try:
                 raw_value = self._prepare_value(fmt, raw_value)
                 return caster.cast(raw_value)
             except (InvalidCastError, ConstraintError) as e:
+                bad_value = raw_value
                 exc = e
         assert exc is not None
+        logging.error('Problematic value: %r', bad_value)
         raise exc
 
     def _prepare_value(self, fmt, value):
