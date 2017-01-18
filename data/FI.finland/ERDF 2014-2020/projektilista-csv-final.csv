@@ -3,7 +3,7 @@ A70301,EAKR,Reaktoritekniikkaan perustuvat uudet prosessit |prosessikemikaalit j
 A70302,EAKR,INKA-Uudet tekniikat sähköverkon vikatilanteiden ja hajautetun tuotannon hallinnassa,2,Innovaatiorahoituskeskus Tekes,Toiminnassa,1.3.2015,28.2.2017,Lappeenrannan teknillinen yliopisto,280000,57227,319258,59451
 A70303,EAKR,INKA - SmartResearch,2,Innovaatiorahoituskeskus Tekes,Toiminnassa,1.1.2015,31.12.2016,Oulun Yliopisto,81000,7155,85500,7950
 A70304,EAKR,Vapaamuotoinen optiikka prototyypeistä tuotantoon,2,Innovaatiorahoituskeskus Tekes,Toiminnassa,1.1.2015,31.12.2016,Itä-Suomen yliopisto,540000,56940,570000,54267
-A70305,EAKR,INKA EAKR Hardware Rooted Security - TUT,2,Innovaatiorahoituskeskus Tekes,Toiminnassa,1.1.2015,30.6.2016,157500,157500,35028,166500,38921
+A70305,EAKR,INKA EAKR Hardware Rooted Security - TUT,2,Innovaatiorahoituskeskus Tekes,Toiminnassa,1.1.2015,30.6.2016,,157500,35028,166500,38921
 A70306,EAKR,Tehtaan laajennus ja tuotanto- ja logistiikkatoimintojen kehittäminen,1,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,29.9.2014,31.12.2016,LAPWALL OY,390000,390000,390000,390000
 A70307,EAKR,Materiaalinkäsittelykoneen hankinta,1,Etelä-Savon elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,26.9.2014,31.12.2015,ROMUVÄLITYS TUOVINEN OY,73850,73500,73850,73500
 A70308,EAKR,Cenmia Lubrication Concept,1,Keski-Suomen elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,26.9.2014,31.12.2016,CENMIA OY,118630,69862,118630,69862
@@ -53,7 +53,7 @@ A70351,EAKR,Tuotannonohjauksen tehostaminen IT- ja prosessikehityksellä,1,Keski
 A70352,EAKR,Activity,1,Keski-Suomen elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,14.10.2014,31.12.2016,WELITECH OY,48610,0,48610,0
 A70353,EAKR,Kairaputkien käsittelyjärjestelmän kehittäminen maanalaiseen kairakoneeseen,2,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,27.1.2014,30.9.2015,ARCTIC DRILLING COMPANY LTD OY,174900,170169,174900,170169
 A70354,EAKR,Kuonan ja metallisten kuonien käsittelyn kehittäminen,1,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,1.7.2014,31.12.2015,PENTTI HÄMEENAHO OY,653250,653250,653250,653250
-A70355,EAKR,Laserleikkurin | mittauslaitteiston ja särmääjän teräsarjojen  teräsrakenteiden osavalmistuksen CE SFS-EN 1090-2 -merkinnän hankinta  sekä tuotantotilojen käyttöasteen parantaminen,1, Pohjois-Pohjanmaan elinkeino- liikenne- ja ympäristökeskus,Toiminnassa,31.12.2015,31.12.2015,AIMO KORTTEEN KONEPAJA OY,100000,, 100000,93277
+A70355,EAKR,Laserleikkurin | mittauslaitteiston ja särmääjän teräsarjojen  teräsrakenteiden osavalmistuksen CE SFS-EN 1090-2 -merkinnän hankinta  sekä tuotantotilojen käyttöasteen parantaminen,1, Pohjois-Pohjanmaan elinkeino- liikenne- ja ympäristökeskus,Toiminnassa,31.12.2015,31.12.2015,AIMO KORTTEEN KONEPAJA OY,100000,,100000,93277
 A70356,EAKR,Ikäihmisille suunnatun konsultoivan kotikäynti -palvelun sähköistäminen ja siihen liittyvän sähköisiin lomakkeisiin perustuvan testiympäristön rakentaminen,2,Etelä-Savon elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,4.9.2014,31.5.2015,"MIKKELIN KUNTOPALVELU, AVOIN YHTIÖ",15660,15660,15660,
 A70357,EAKR,Teräsprofiilisaha,2,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,17.6.2014,30.6.2015,OVIRA OY,15260,14651,15260,14651
 A70358,EAKR,Maestro Business Music 2.0,2,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,30.5.2014,27.5.2017,VIIHDEVÄYLÄ OY,36070,36070,36070,36070
@@ -64,7 +64,7 @@ A70362,EAKR,Toiminnankehittäminen,2,Pohjois-Pohjanmaan elinkeino-  liikenne- ja
 A70363,EAKR,Toiminnankehittäminen,1,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,20.8.2014,30.9.2015,SUMETEK OY,35800,30960,35800,30960
 A70364,EAKR,Parkour Akatemian kumppanuuskonseptin kehittäminen ja pilotointi,1,Keski-Suomen elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,19.6.2014,31.12.2015,PARKOUR AKATEMIA OY,21120,7560,21120,7560
 A70365,EAKR,TactoTek pilottituotannosta massatuotantoon,2,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,2.7.2014,31.12.2016,TACTOTEK OY,344020,0,344020,0
-A70366,EAKR,EnMonCon KONSEPTIN MARKKINATUTKIMUS JA LIIKETOIMINTASUUNNITELMA TURKIN | ARABIAN NIEMIMAAN  KANADAN  KAZAKSTANIN JA INTIAN TEOLLISUUS- JA JÄTEHUOLTOSEKTOREILLE,1, Pohjois-Pohjanmaan elinkeino- liikenne- ja ympäristökeskus,Toiminnassa,31.12.2016,31.12.2016,EHP-TEKNIIKKA OY,109150,17.10.2014, 109150,0
+A70366,EAKR,EnMonCon KONSEPTIN MARKKINATUTKIMUS JA LIIKETOIMINTASUUNNITELMA TURKIN | ARABIAN NIEMIMAAN  KANADAN  KAZAKSTANIN JA INTIAN TEOLLISUUS- JA JÄTEHUOLTOSEKTOREILLE,1, Pohjois-Pohjanmaan elinkeino- liikenne- ja ympäristökeskus,Toiminnassa,31.12.2016,31.12.2016,EHP-TEKNIIKKA OY,109150,0,109150,0
 A70367,EAKR,Linjahankinta,1,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,2.9.2014,30.5.2015,FEELIA OY,32960,26545,32960,26545
 A70368,EAKR,Koxmatic Oy:n ja sen tuotteiden kehitys sekä kaupallistaminen.,1,Keski-Suomen elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,6.6.2014,30.11.2016,KOXMATIC OY,45620,4580,45620,4580
 A70369,EAKR,Ruostumattoman kokonaisuuden tuotannollistaminen,2,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,17.10.2014,31.7.2016,PYHÄJOEN TERÄSPINTA OY,42700,0,42700,0
@@ -107,7 +107,7 @@ A70405,EAKR,Wirell Oy:n investointi ja kehittämishanke,1,Etelä-Savon elinkeino
 A70406,EAKR,Piippuelementti,1,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,5.11.2014,31.12.2016,SUOMEN SAVUPIIPPUTEOLLISUUS OY,111500,49372,111500,49372
 A70407,EAKR,Sisäisten palvelujen parantaminen,1,Keski-Suomen elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,6.11.2014,31.12.2015,PEPT AB OY,30000,0,30000,0
 A70408,EAKR,Viennin käynnistäminen pohjoismaihin | Norja ,1, Ruotsi Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,31.12.2015,,LAPIN LAUDE OY,8750,0,8750,0
-A70409,EAKR,"Solar 2016 uusien auringon- ja näkösuojatuotteiden kehitys ikkunoihin sekä oviin.",2,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,10.11.2014,31.12.2016,SOLAR KAIHDIN KY,83250,0,83250,0
+A70409,EAKR,Solar 2016 uusien auringon- ja näkösuojatuotteiden kehitys ikkunoihin sekä oviin.,2,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,10.11.2014,31.12.2016,SOLAR KAIHDIN KY,83250,0,83250,0
 A70410,EAKR,KATAMARAANITYYPPISTEN MOOTTORIVENEIDEN KEHITTÄMISHANKE,1,Etelä-Savon elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,2.7.2014,31.12.2016,SUOMI-VENEET OY,70480,15058,70480,15058
 A70411,EAKR,Geneesin terapia -ja tukipalveluiden intra- ja exranetjärjestelmä. Lyhennys on Geneesi Apuri.,1,Etelä-Savon elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,10.11.2014,31.12.2015,TUKI- JA TERAPIAPALVELU GENEESI,22500,21757,26500,21757
 A70412,EAKR,Medikro Oy:n kansainvälistymishanke 2014-2016,1,Etelä-Savon elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,2.7.2014,30.6.2017,MEDIKRO OY,201760,86535,201760,86535
@@ -197,8 +197,8 @@ A70495,EAKR,Ylivoimalan moottoriohjelmien kehittäminen,1,Pohjois-Pohjanmaan eli
 A70496,EAKR,Työstökeskuksen hankinta,1,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,2.2.2015,31.7.2016,PRO ESTORE OY,185000,185000,185000,185000
 A70497,EAKR,Investointi projekti,1,Etelä-Savon elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,3.2.2015,1.3.2016,DEEKAX AIR OY,81000,77620,81000,77620
 A70498,EAKR,(LOGIAL) Logistiikan valvontajärjestelmä,2,Pohjois-Pohjanmaan elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,1.7.2014,31.12.2015,LAMESA OY,21491,10121,21491,10121
-A70499,EAKR,Musculo -hieronta/lihashuoltoapuvälineen kehittäminen ja valmistus.,1,"Pohjois-Pohjanmaan elinkeino- liikenne- ja ympäristökeskus",Toiminnassa,2.2.2015,31.12.2016,STENBERG HELLSTEN OY,15500,12476,15500,12476
-A70500,EAKR,LashLovers Oy:n kansainvälistymishanke,1,"Etelä-Savon elinkeino- liikenne- ja ympäristökeskus",Toiminnassa,4.2.2015,31.12.2017,LASHLOVERS OY,71930,22830,71930,22830
+A70499,EAKR,Musculo -hieronta/lihashuoltoapuvälineen kehittäminen ja valmistus.,1,Pohjois-Pohjanmaan elinkeino- liikenne- ja ympäristökeskus,Toiminnassa,2.2.2015,31.12.2016,STENBERG HELLSTEN OY,15500,12476,15500,12476
+A70500,EAKR,LashLovers Oy:n kansainvälistymishanke,1,Etelä-Savon elinkeino- liikenne- ja ympäristökeskus,Toiminnassa,4.2.2015,31.12.2017,LASHLOVERS OY,71930,22830,71930,22830
 A70251,EAKR,INKA - Biomassa CHP teknologian kehitys globaaleille markkinoille,2,Innovaatiorahoituskeskus Tekes,Toiminnassa,1.1.2015,31.12.2016,Itä-Suomen yliopisto,135000,15065,142575,15911
 A70252,EAKR,Elintarviketalouden uudet prosessit ? arvopohjaisuuden liittäminen osaksi tuotantotaloudellisesti opti-moituja prosesseja ja palveluja,2,Innovaatiorahoituskeskus Tekes,Toiminnassa,1.1.2015,31.12.2016,Seinäjoen Ammattikorkeakoulu Oy,136000,18180,144400,19676
 A70253,EAKR,INKA EAKR Laiteläheinen tietoturvateknologia ja sovellutusmahdollisuudet LaiTSo,2,Innovaatiorahoituskeskus Tekes,Toiminnassa,1.1.2015,30.6.2016,Jyväskylän yliopisto,331650,30132,354500,33480
@@ -1064,7 +1064,7 @@ A71262,EAKR,myssyfarmin asusteiden kehitys ja kansainvälistäminen,1,Keski-Suom
 A71263,EAKR,kansainväinen kasvu sekä toiminnan kehittäminen,1,Etelä-Savon elinkeino-  liikenne- ja ympäristökeskus,Toiminnassa,17.8.2015,31.12.2017,DIMEX OY0477986-7,283300,138769,283300,138769
 A71264,EAKR,Utvecklande av Bema Vikdörr,1,Keski-Suomen elinkeino- liikenne- ja ympäristökeskus,Toiminnassa,22.10.2015,31.12.2018,OY BEMASYSTEM AB,64580,0,64580,0
 A71265,EAKR,Webink-palveluliiketoiminnan kansainvälisen myynnin ja markkinoinnin suunnittelu,1,Keski-Suomen elinkeino- liikenne- ja ympäristökeskus,Toiminnassa,25.11.2015,30.11.2017,ADE ANIMATIONS DESIGNS & EFFECTS OY,50000,0,50000,0
-A71266,EAKR,"utvecklande av produkter och produktgrupper samt tillverkningsprocesser för Varjopuoli",1,"Keski-Suomen elinkeino- liikenne- ja ympäristökeskus",Toiminnassa,12.10.2015,31.12.2017,"VIKSTRÖMS PLÅTSLAGERI AB OYVARJOPUOLI AB APUTOIMINIMI",61780,0,61780,0
+A71266,EAKR,utvecklande av produkter och produktgrupper samt tillverkningsprocesser för Varjopuoli,1,Keski-Suomen elinkeino- liikenne- ja ympäristökeskus,Toiminnassa,12.10.2015,31.12.2017,VIKSTRÖMS PLÅTSLAGERI AB OYVARJOPUOLI AB APUTOIMINIMI,61780,0,61780,0
 A71267,EAKR,Uudet geopolymeeripohjaiset vedenkäsittelymateriaalit (GeoSorbents),2,Innovaatiorahoituskeskus Tekes,Toiminnassa,1.1.2015,31.12.2016,Oulun Yliopisto,58529,3442,68529,1803
 A71268,EAKR,Ketterä ja kestävä liikkuminen Suomen kasvukäytävällä,2,Uudenmaan liitto,Toiminnassa,1.1.2016,31.12.2017,Hämeenlinnan kaupunki,30000,0,296000,0
 A71269,EAKR,Pirkanmaan liiton teknisen tuen hanke,6,Pirkanmaan liitto,Toiminnassa,1.1.2015,31.12.2017,Pirkanmaan Liitto,448500,97196.58,733500,97196.58
