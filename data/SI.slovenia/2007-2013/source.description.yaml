@@ -46,7 +46,7 @@ resources:
     - maps_to: fund_acronym
       name: SKLAD
       translates_to: FUND
-    - maps_to: beneficiary_nuts_code
+    - maps_to: beneficiary_nuts_region
       name: REGIJA
       translates_to: REGION
     - maps_to: beneficiary_city
