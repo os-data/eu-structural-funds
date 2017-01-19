@@ -6,10 +6,10 @@ description: One massive xls dataset containing all bulgarian ESIF data. Web int
 language: BG
 resources:
 - add_categories: {}
-  add_constants: {}
-  cci_program_code: 
-  fund_acronym: unknown 
-  funding_period: unknown
+  add_constants:
+    cci_program_code:
+    fund_acronym: unknown
+    funding_period: unknown
   currency_code: LEV
   path: ESIF_Bulgaria.csv
   publication_date: 2016-06-15
