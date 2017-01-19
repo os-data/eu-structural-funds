@@ -23,13 +23,16 @@ resources:
 
   - title: ESF and ERDF in the United Kingdom 2007-2013
 
-    path: UK_subsidies_final_LAU1.csv
+    path: UK_subsidies_final_LAU1_fixed_dates.csv
 
     publication_date: 2015-12-31
 
     add_constants:
       funding_period: 2007-2013
       cci_code:
+      fund_acronym: 
+        - ERDF: [ERDF]
+        - ESF: [ESF]
 
       # any other field from fiscal.fields.yaml that is constant
 
@@ -49,6 +52,7 @@ resources:
 
         - name: Type
           translates_to: Type of fund either ESF or ERDF
+          maps_to: fund_acronym
 
         - name: Subsidy
           translates_to: Subsidy amount

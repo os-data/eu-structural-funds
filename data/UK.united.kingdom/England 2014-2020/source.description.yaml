@@ -7,6 +7,11 @@ resources:
 - add_constants:
     cci_program_code: 
     funding_period: 2014-2020
+    fund_acronym: 
+      - ERDF: [ERDF]
+      - ESF: [ESF]
+      - ESF (inc YEI): [other] 
+    
   path: ESIF_2014-2020_List_of_beneficiaries_Oct_2016_newdates.csv
   publication_date: '2016-10-24'
   schema:
