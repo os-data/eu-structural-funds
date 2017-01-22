@@ -4,10 +4,8 @@ description: The beneficiary list of the ESIF funds for England
 language: en 
 currency_code: GBP
 add_categories:
-    fund_acronym: 
-      - ERDF: ERDF
-      - ESF: ESF
-      - ESF (inc YEI): other
+  fund_acronym: 
+    ESF (inc YEI): other
 resources:
 - add_constants:
     cci_program_code: 
