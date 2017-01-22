@@ -5,7 +5,8 @@ language: en
 currency_code: GBP
 add_categories:
   fund_acronym: 
-    ESF (inc YEI): other
+    "ESF (inc YEI)": other
+    "ESF [ inc YEI]": other
 resources:
 - add_constants:
     cci_program_code: 
