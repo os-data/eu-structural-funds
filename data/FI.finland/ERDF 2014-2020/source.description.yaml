@@ -1,4 +1,4 @@
-title: Finland ERDF data 2014-2020
+title: Finland ESIF data 2014-2020
 
 description:
 language: FI
@@ -77,7 +77,7 @@ resources:
 
         - name: Toteutunut EU- ja valtion rahoitus
           translates_to: Actual state funding in the EU
-          maps_to: eu_cofinancing_amount
+          maps_to: eu_cofinancing_amount_eligible
 
         - name: Suunniteltu julkinen rahoitus yhteensä
           translates_to: amount of public funding
