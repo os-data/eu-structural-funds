@@ -1,5 +1,5 @@
 
-title: UK.Northern Ireland 2007-2013 ESF 
+title: UK.Northern Ireland 2014-2020 ESF 
 
 description: The beneficiary list of the ESF programme for the Northern Ireland.
 language: EN 
@@ -7,7 +7,7 @@ currency_code: GBP
 
 sources:
 
-  - name: ESF Northern Ireland (2007-2013 )
+  - name: ESF Northern Ireland (2014-2020 )
     web: https://github.com/atlatszo/data/tree/master/Brexit
 
 scraper_required: false
@@ -21,7 +21,7 @@ contributors:
 resources:
 
 
-  - title: ESF in Northern Ireland 2007-2013
+  - title: ESF in Northern Ireland 2014-2020
 
     path: ESF_Northern_Ireland_2014-2020.csv
 
