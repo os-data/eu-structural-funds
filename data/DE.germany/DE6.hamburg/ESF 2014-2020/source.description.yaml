@@ -34,7 +34,7 @@ resources:
     - maps_to: total_amount_eligible
       name: gesamte Fördersumme / funding amount
       translates_to: Total cost of project
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_amount_eligible
       name: EU Betrag/ EU budget
       translates_to: Amount of EU co-financing
     - maps_to: beneficiary_city

@@ -30,10 +30,10 @@ resources:
     - maps_to: null
       name: Projekto vertė paraiškoje
       translates_to: Value of the project application
-    - maps_to: total_amount_eligible
+    - maps_to: null
       name: Prašomas finansavimas
       translates_to: requested funding
-    - maps_to: total_amount
+    - maps_to: total_amount_eligible
       name: Projekto išlaidų suma
       translates_to: The project cost
     - maps_to: null
