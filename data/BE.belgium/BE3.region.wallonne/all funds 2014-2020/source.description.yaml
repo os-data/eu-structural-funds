@@ -33,7 +33,7 @@ resources:
     - maps_to: beneficiary_name
       name: bénéficiaire
       translates_to: beneficiary
-    - maps_to: total_amount
+    - maps_to: total_amount_eligible
       name: montant_du_financement
       translates_to: total amount
     - maps_to: eu_cofinancing_amount

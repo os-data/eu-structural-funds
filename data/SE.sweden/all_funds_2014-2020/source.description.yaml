@@ -27,7 +27,7 @@ resources:
     - maps_to: beneficiary_name
       name: stödmottagare
       translates_to: project id
-    - maps_to: total_amount
+    - maps_to: total_amount_eligible
       name: beviljat_belopp_sek
       translates_to: amount granted - sec
     - maps_to: null

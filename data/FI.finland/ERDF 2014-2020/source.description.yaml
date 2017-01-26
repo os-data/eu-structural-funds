@@ -73,7 +73,7 @@ resources:
 
         - name: Myönnetty EU- ja valtion rahoitus
           translates_to: Granted state funding in the EU
-          maps_to: total_amount_eligible
+          maps_to: null 
 
         - name: Toteutunut EU- ja valtion rahoitus
           translates_to: Actual state funding in the EU
@@ -85,4 +85,4 @@ resources:
 
         - name: Toteutunut julkinen rahoitus yhteensä
           translates_to: total cost of project
-          maps_to: total_amount
+          maps_to: total_amount_eligible

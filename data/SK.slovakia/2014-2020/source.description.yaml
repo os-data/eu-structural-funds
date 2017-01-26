@@ -88,7 +88,7 @@ resources:
 
     - name: výška_finančných_prostiedkov_projektu-zazmluvnená_výška_nfp-zazmluvnená_suma_nfp
       translates_to: total amount
-      maps_to: total_amount
+      maps_to: null
 
     - name: výška_finančných_prostiedkov_projektu-zazmluvnená_výška_nfp-poskytnuté_finančné_prostriedky_prijímateľovi_(nfp)
       translates_to: own funds provided
