@@ -25,7 +25,7 @@ resources:
     - maps_to: total_amount
       name: Kopējais finansējums
       translates_to: Total funding
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_amount_eligible
       name: ES finansējums
       translates_to: EU funding
     - maps_to: null

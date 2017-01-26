@@ -45,7 +45,7 @@ resources:
       name: Skupni upravičeni izdatki/Total eligible expenditure allocated to the
         operation
       translates_to: Total eligible expenditure allocated to the operation
-    - maps_to: eu_cofinancing_amount
+    - maps_to: eu_cofinancing_amount_eligible
       name: Odstotek sofinanciranja/union co-financing rate, as per priority axis
       translates_to: union co-financing rate, as per priority axis
     - maps_to: beneficiary_address
