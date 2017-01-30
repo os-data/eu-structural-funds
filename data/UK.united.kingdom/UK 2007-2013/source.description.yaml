@@ -31,8 +31,8 @@ resources:
       funding_period: 2007-2013
       cci_code:
       fund_acronym: 
-        - ERDF: [ERDF]
-        - ESF: [ESF]
+        ERDF: ERDF
+        ESF: ESF
 
       # any other field from fiscal.fields.yaml that is constant
 
