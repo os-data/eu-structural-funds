@@ -138,7 +138,7 @@ resources:
       name: Wartość projektu [zł]
       translates_to: The value of the project [PLN]
     - maps_to: eu_cofinancing_amount_eligible
-      name: Dofinansowanie z EU [zł]
+      name: Dofinansowanie z EU
       translates_to: Funding from the EU [PLN]
     - maps_to: null
       name: Multimedia
@@ -174,7 +174,7 @@ resources:
       name: Wartość projektu [zł]
       translates_to: The value of the project [PLN]
     - maps_to: eu_cofinancing_amount_eligible
-      name: Dofinansowanie z EU [zł]
+      name: Dofinansowanie z EU
       translates_to: Funding from the EU [PLN]
     - maps_to: null
       name: Multimedia
@@ -211,7 +211,7 @@ resources:
       name: Wartość projektu [zł]
       translates_to: The value of the project [PLN]
     - maps_to: eu_cofinancing_amount_eligible
-      name: Dofinansowanie z EU [zł]
+      name: Dofinansowanie z EU
       translates_to: Funding from the EU [PLN]
     - maps_to: null
       name: Multimedia
