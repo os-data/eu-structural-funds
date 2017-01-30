@@ -8,7 +8,7 @@ currency_code: GBP
 sources:
 
   - name: Wales (2014-2020)
-    web: 
+    web: http://gov.wales/funding/eu-funds/2014-2020/approved-projects/?lang=en
 
 scraper_required: false
 
@@ -27,8 +27,8 @@ resources:
 
     add_constants:
       fund_acronym: 
-        - ESF: [ESF]
-        - ERDF: [ERDF] 
+          ESF: ESF
+          ERDF: ERDF 
       funding_period: 2014-2020
       cci_code: 
 
