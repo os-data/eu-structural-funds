@@ -8,7 +8,6 @@ currency_code: GBP
 sources:
 
   - name: Wales (2014-2020)
-    web: 
 
 scraper_required: false
 
