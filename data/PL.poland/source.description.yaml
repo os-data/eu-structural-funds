@@ -135,7 +135,7 @@ resources:
       name: Nazwa beneficjenta
       translates_to: the name of the beneficiary
     - maps_to: total_amount_eligible
-      name: Wartość projektu [zł]
+      name: Wartość projektu
       translates_to: The value of the project [PLN]
     - maps_to: eu_cofinancing_amount_eligible
       name: Dofinansowanie z EU
@@ -171,7 +171,7 @@ resources:
       name: Nazwa beneficjenta
       translates_to: the name of the beneficiary
     - maps_to: total_amount_eligible
-      name: Wartość projektu [zł]
+      name: Wartość projektu
       translates_to: The value of the project [PLN]
     - maps_to: eu_cofinancing_amount_eligible
       name: Dofinansowanie z EU
@@ -208,7 +208,7 @@ resources:
       name: Nazwa beneficjenta
       translates_to: the name of the beneficiary
     - maps_to: total_amount_eligible
-      name: Wartość projektu [zł]
+      name: Wartość projektu
       translates_to: The value of the project [PLN]
     - maps_to: eu_cofinancing_amount_eligible
       name: Dofinansowanie z EU
