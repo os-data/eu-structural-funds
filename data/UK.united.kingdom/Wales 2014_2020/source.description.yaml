@@ -59,4 +59,8 @@ resources:
           translates_to: Fund 
           maps_to: fund_acronym 
 
+        - name: Region
+          translates_to: Region
+          maps_to: beneficiary_nuts_region
+    
 
