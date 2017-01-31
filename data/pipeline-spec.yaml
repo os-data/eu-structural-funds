@@ -1,117 +1,16 @@
-#eu-esif-funds-minimal:
-#
-#  pipeline:
-#
-#    - run: collect_all_sources
-#
-#    - run: downloader
-#
-#    - run: concat
-#      parameters:
-#        resource-name: eu-esif-funds-beneficiaries-2007-2020
-#        column-aliases:
-#          beneficiary_name: []
-#          funding_period_number: []
-#          cci_program_code: []
-#          project_name: []
-#          amount: []
-#          amount_kind: []
-#          starting_date: []
-#          approval_date: []
-#          beneficiary_country_code: []
-#          beneficiary_country: []
-#          beneficiary_nuts_region: []
-#          beneficiary_nuts_code: []
-#          fund_name: []
-#
-#    - run: metadata
-#      parameters:
-#        metadata:
-#          name: eu-esif-funds-beneficiaries-2000-2020
-#          title: European ESIF Funds Beneficiaries 2000-2020
-#          description: >
-#            Structural and Cohesion Funds are financial tools set up to
-#            implement the regional policy of the European Union. They aim to reduce
-#            regional disparities in income wealth and opportunities. The overall budget
-#            for the 2007-2013 period was €347 billion according to Wikipedia. This
-#            repository is a data pipeline. It channels information about the beneficiaries
-#            of the funds into the Open-Spending datastore. The goal is to provide a
-#            unified dataset that is easy to visualize and query so that citizens and
-#            journalists can follow the money on a local and global scale. This project
-#            is a collaborative effort between Open-Knowledge Germany Open-Knowledge
-#            International and a number of journalists and developers.
-#          sources:
-#            - name: Inforegio EU Regional Policy Portal
-#              web: http://ec.europa.eu/regional_policy/en/
-#            - name: EU ESIF Portal
-#              web: https://www.fi-compass.eu/esif/european-structural-and-investment-funds-esif
-#          author: Adam Kariv <adam.kariv@okfn.org>
-#          contributors:
-#            - Loic Jounot <loic@cyberpunk.bike>
-#            - Bela Seeger <bela.seeger@okfn.de>
-#            - Anna Alberts <anna.alberts@okfn.de>
-#          regionCode: eu
-#          fiscalPeriod:
-#            start: '2000-01-01'
-#            stop: '2020-12-31'
-#
-#    - run: fiscal.model
-#      parameters:
-#        options:
-#          total_amount:
-#            currency: EUR
-#        os-types:
-#          beneficiary_name: recipient:generic:id
-#          funding_period_number: fin-source:generic:level1:code
-#          cci_program_code: administrative-classification:generic:level1:code
-#          project_name: recipient:generic:legal-entity:receiving-project:code
-#          amount: value
-#          amount_kind: value-kind:code
-#          starting_date: date:fiscal:activity-start
-#          approval_date: date:fiscal:activity-approval
-#          beneficiary_country_code: geo-source:address:country:code
-#          beneficiary_country: geo-source:address:country:label
-#          beneficiary_nuts_region: geo-source:address:region:label
-#          beneficiary_nuts_code: geo-source:address:region:code
-#          fund_name: fin-source:generic:level2:code:full
-#        titles:
-#          beneficiary_name: Beneficiary name
-#          funding_period_number: Funding period number
-#          cci_program_code: CCI code
-#          project_name: Project name
-#          amount: Total cost of the project
-#          amount_kind: Kind of Amount
-#          starting_date: Starting date of the project
-#          approval_date: Approval date of the project
-#          beneficiary_country: Country
-#          beneficiary_country_code: Country code
-#          beneficiary_nuts_code: NUTS code
-#          beneficiary_nuts_region: NUTS region
-#          fund_name: Fund name
-#
-#    - run: dump
-#      validate: true
-#      parameters:
-#        out-file: fiscal.datapackage.zip
-#
-#    - run: fiscal.upload
-#      parameters:
-#        in-file: fiscal.datapackage.zip
-#
-#  schedule: {crontab: 0 3 * * *}
-
 eu-esif-funds-full:
 
   pipeline:
 
     - run: collect_all_sources
 
-    - run: downloader
+    - run: stream_remote_resources
 
-    - run: concat
+    - run: concatenate
       parameters:
-        resource-name: eu-esif-funds-beneficiaries-2007-2020-full
-        column-aliases:
+        target:
+          name: eu-esif-funds-beneficiaries-2007-2020-full
+        fields:
           amount: []
           amount_kind: []
           approval_date: []
@@ -158,9 +57,8 @@ eu-esif-funds-full:
           total_amount_applied: []
           total_amount_eligible: []
 
-    - run: metadata
+    - run: add_metadata
       parameters:
-        metadata:
           name: eu-esif-funds-beneficiaries-2000-2020-full
           title: Complete European ESIF Funds Beneficiaries 2000-2020
           description: >
@@ -303,7 +201,7 @@ eu-esif-funds-full:
           total_amount_applied: Total amount the project applied for
           total_amount_eligible: Total eligible expenditure
 
-    - run: dump
+    - run: dump.to_zip
       validate: true
       parameters:
         out-file: fiscal.datapackage.zip

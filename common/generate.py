@@ -106,7 +106,7 @@ if __name__ == "__main__":
                             del field['maps_to']
                             if 'translates_to' in field:
                                 del field['translates_to']
-            concat_parameters = {'column-aliases': concat_parameters}
+            concat_parameters = {'fields': concat_parameters}
             sniff_and_cast_parameters = {}
             if source.get('currency_symbol') is not None:
                 sniff_and_cast_parameters['currency_symbol'] = source['currency_symbol']
@@ -133,7 +133,7 @@ if __name__ == "__main__":
                 # ('map_fields', {}),
                 # ('concatenate_identical_resources', {})
                 ('add_constants', {}),
-                ('concat', concat_parameters),
+                ('concatenate', concat_parameters),
             ] + preprocessing + [
                 ('reshape_data', {}),
                 ('show_sample_in_console', {'sample_size': 20}),
@@ -175,7 +175,7 @@ if __name__ == "__main__":
                         'funding_period': ['2000-2006', '2007-2013', '2014-2020']
                     }
                 }),
-                ('dump', {'out-file': 'fiscal.datapackage.zip'}),
+                ('dump.to_zip', {'out-file': 'fiscal.datapackage.zip'}),
                 ('fiscal.upload', {'in-file': 'fiscal.datapackage.zip'}),
             ]
 
