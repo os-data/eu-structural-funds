@@ -141,12 +141,10 @@ if __name__ == "__main__":
                 ('add_categories', {}),
                 ('handle_amounts', {
                     'column-order': [
+                        'eu_cofinancing_amount',
+                        'eu_cofinancing_amount_eligible',
                         'total_amount',
                         'total_amount_eligible',
-                        'eu_amount',
-                        'eu_amount_eligible',
-                        'eu_cofinancing_amount',
-                        'eu_cofinancing_amount_eligible'
                      ],
                     'target-column': 'amount',
                     'kind-column': 'amount_kind',
