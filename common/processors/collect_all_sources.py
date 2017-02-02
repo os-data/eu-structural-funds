@@ -16,6 +16,9 @@ datapackage = {
     'resources': resources
 }
 
+parameters, _, _ = ingest()
+country = parameters.get('country').lower()
+
 userid = gobble.user.User().id
 for dirpath, dirnames, filenames in os.walk('.'):
     if dirpath == '.':
@@ -27,6 +30,9 @@ for dirpath, dirnames, filenames in os.walk('.'):
         resp = requests.get(url_base+'/datapackage.json')
         if resp.status_code == 200:
             datapackage_json = resp.json()
+            if len(country) > 0:
+                if datapackage_json.get('geo', {}).get('country_code', 'xx').lower() != country:
+                    continue
             resource = datapackage_json['resources'][0]
             resource_url = '{}/{}'.format(url_base, resource['path'])
             resources.append({
@@ -36,5 +42,4 @@ for dirpath, dirnames, filenames in os.walk('.'):
             })
             logging.error(resource_url)
 
-parameters, _, _ = ingest()
 spew(datapackage, [])

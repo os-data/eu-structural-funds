@@ -15,6 +15,37 @@ PREPROCESSING = {
     'NL.parse_dates'
 }
 
+COUNTRY_CODES = [
+    "",
+    "IE",
+    "LT",
+    "ES",
+    "MT",
+    "BE",
+    "IT",
+    "AT",
+    "LU",
+    "SK",
+    "EL",
+    "PT",
+    "PL",
+    "FI",
+    "NL",
+    "EE",
+    "DE",
+    "CY",
+    "HU",
+    "SE",
+    "UK",
+    "DK",
+    "FR",
+    "SI",
+    "LV",
+    "BG",
+    "CZ",
+    "HR",
+]
+
 fiscal_schema = yaml.load(open(FISCAL_SCHEMA_FILE))
 GEOCODES = list(csv.DictReader(open(GEOCODES_FILE)))
 
@@ -49,6 +80,7 @@ if __name__ == "__main__":
                 'country': _lookup_geocode(geo['country_code']),
                 'region': _lookup_geocode(geo['nuts_code'])
             })
+            source['geo'] = geo
             if update:
                 try:
                     current = yaml.load(open(os.path.join(dirpath, PIPELINE_FILE)))
@@ -229,7 +261,6 @@ if __name__ == "__main__":
                         sys.exit(0)
 
             pipeline = {
-                'schedule': {'crontab': '0 0 1 1 *'},
                 'pipeline': [
                     {
                         'run': x[0],
@@ -241,3 +272,242 @@ if __name__ == "__main__":
             title = slugify.slugify(source['title'], separator='_')
             if not update:
                 yaml.dump({title: pipeline}, open(os.path.join(dirpath, PIPELINE_FILE), 'w'))
+
+    concats = {}
+    for country in COUNTRY_CODES:
+        pipeline_id = 'eu-esif-funds-full'
+        suffix = ''
+        prefix = ''
+        if len(country) > 0:
+            suffix = '-' + country.lower()
+            prefix = country.lower() + '-'
+        concats[pipeline_id + suffix] = {
+            'pipeline':
+                [
+                    {
+                        'run': 'collect_all_sources',
+                        'parameters': {
+                            'country': country
+                        }
+                    },
+                    {
+                        'run': 'stream_remote_resources'
+                    },
+                    {
+                        'run': 'concatenate',
+                        'parameters': {
+                            'target': {
+                                'name': prefix + 'eu-esif-funds-beneficiaries-2007-2020-full'
+                            },
+                            'fields': {
+                                "amount": [],
+                                "amount_kind": [],
+                                "approval_date": [],
+                                "beneficiary_address": [],
+                                "beneficiary_city": [],
+                                "beneficiary_country": [],
+                                "beneficiary_country_code": [],
+                                "beneficiary_county": [],
+                                "beneficiary_id": [],
+                                "beneficiary_name": [],
+                                "beneficiary_nuts_code": [],
+                                "beneficiary_nuts_region": [],
+                                "beneficiary_person": [],
+                                "beneficiary_postal_code": [],
+                                "beneficiary_url": [],
+                                "cci_program_code": [],
+                                "cci_program_title": [],
+                                "completion_date": [],
+                                "eu_cofinancing_amount": [],
+                                "eu_cofinancing_amount_eligible": [],
+                                "eu_cofinancing_rate": [],
+                                "european_investment_bank_amount": [],
+                                "final_payment_date": [],
+                                "first_payment_date": [],
+                                "fund_acronym": [],
+                                "fund_name": [],
+                                "funding_period": [],
+                                "funding_period_number": [],
+                                "management_authority": [],
+                                "member_state_amount": [],
+                                "operational_programme": [],
+                                "priority_label": [],
+                                "priority_number": [],
+                                "project_description": [],
+                                "project_id": [],
+                                "project_name": [],
+                                "project_status": [],
+                                "source": [],
+                                "starting_date": [],
+                                "theme_code": [],
+                                "theme_name": [],
+                                "third_party_amount": [],
+                                "total_amount": [],
+                                "total_amount_applied": [],
+                                "total_amount_eligible": [],
+                            }
+                        }
+                    },
+                    {
+                        'run': 'add_metadata',
+                        'parameters': {
+                            'name': prefix + 'eu-esif-funds-beneficiaries-2000-2020-full',
+                            'description': "Structural and Cohesion Funds are financial tools set up to implement the "
+                                           "regional policy of the European Union. They aim to reduce regional "
+                                           "disparities in income wealth and opportunities. The overall budget "
+                                           "for the 2007-2013 period was €347 billion according to Wikipedia. This "
+                                           "repository is a data pipeline. It channels information about the "
+                                           "beneficiaries of the funds into the Open-Spending datastore. The goal is to "
+                                           "provide a unified dataset that is easy to visualize and query so that "
+                                           "citizens and journalists can follow the money on a local and global scale. "
+                                           "This project is a collaborative effort between Open-Knowledge Germany "
+                                           "Open-Knowledge International and a number of journalists and developers.",
+                            'sources': [
+                                {
+                                    'name': 'EU ESIF Portal',
+                                    'web': 'https://www.fi-compass.eu/esif/european-structural-and-investment-funds-esif'
+                                },
+                                {
+                                    'name': 'Inforegio EU Regional Policy Portal',
+                                    'web': 'http://ec.europa.eu/regional_policy/en/'
+                                },
+                            ],
+                            'author': 'Adam Kariv <adam.kariv@okfn.org>',
+                            'contributors': [
+                                "Loic Jounot <loic@cyberpunk.bike>",
+                                "Bela Seeger <bela.seeger@okfn.de>",
+                                "Anna Alberts <anna.alberts@okfn.de>",
+                            ],
+                            'fiscalPeriod': {
+                                'start': '2000-01-01',
+                                'stop': '2020-12-31'
+                            },
+                            'regionCode': 'eu'
+                        }
+                    },
+                    {
+                        'run': 'fiscal.model',
+                        'parameters': {
+                            'options': {
+                                'eu_cofinancing_amount': {'currency': 'EUR'},
+                                'eu_cofinancing_amount_eligible': {'currency': 'EUR'},
+                                'european_investment_bank_amount': {'currency': 'EUR'},
+                                'member_state_amount': {'currency': 'EUR'},
+                                'third_party_amount': {'currency': 'EUR'},
+                                'total_amount': {'currency': 'EUR'},
+                                'total_amount_applied': {'currency': 'EUR'},
+                                'total_amount_eligible': {'currency': 'EUR'},
+                                'amount': {'currency': 'EUR'},
+                            },
+                            'os-types': {
+                                'amount': 'value',
+                                'amount_kind': 'value-kind:code',
+                                'approval_date': 'date:fiscal:activity-approval',
+                                'beneficiary_address': 'geo-source:address:street-address:description',
+                                'beneficiary_city': 'geo-source:address:city:code',
+                                'beneficiary_country': 'geo-source:address:country:label',
+                                'beneficiary_country_code': 'geo-source:address:country:code',
+                                'beneficiary_county': 'geo-source:address:county:code',
+                                'beneficiary_id': 'unknown:string',
+                                'beneficiary_name': 'recipient:generic:id',
+                                'beneficiary_nuts_code': 'geo-source:address:region:code',
+                                'beneficiary_nuts_region': 'geo-source:address:region:label',
+                                'beneficiary_person': 'recipient:generic:legal-entity:point-of-contact:description',
+                                'beneficiary_postal_code': 'geo-source:address:zip:code',
+                                'beneficiary_url': 'recipient:generic:url',
+                                'cci_program_code': 'administrative-classification:generic:level3:code:full',
+                                'cci_program_title': 'administrative-classification:generic:level3:label',
+                                'completion_date': 'date:fiscal:activity-end',
+                                'eu_cofinancing_amount': 'value',
+                                'eu_cofinancing_amount_eligible': 'value',
+                                'eu_cofinancing_rate': 'unknown:string',
+                                'european_investment_bank_amount': 'value',
+                                'final_payment_date': 'date:fiscal:final-payment',
+                                'first_payment_date': 'date:fiscal:first-payment',
+                                'fund_acronym': 'fin-source:generic:level2:code:full',
+                                'fund_name': 'fin-source:generic:level2:label',
+                                'funding_period': 'fin-source:generic:level1:label',
+                                'funding_period_number': 'fin-source:generic:level1:code',
+                                'management_authority': 'fin-source:generic:level3:code:full',
+                                'member_state_amount': 'value',
+                                'operational_programme': 'administrative-classification:generic:level4:code:full',
+                                'priority_label': 'administrative-classification:generic:level2:label',
+                                'priority_number': 'administrative-classification:generic:level2:code:full',
+                                'project_description': 'recipient:generic:legal-entity:receiving-project:description',
+                                'project_id': 'recipient:generic:legal-entity:receiving-project:code',
+                                'project_name': 'recipient:generic:legal-entity:receiving-project:label',
+                                'project_status': 'recipient:generic:legal-entity:receiving-project:status',
+                                'source': 'unknown:string',
+                                'starting_date': 'date:fiscal:activity-start',
+                                'theme_code': 'administrative-classification:generic:level1:code',
+                                'theme_name': 'administrative-classification:generic:level1:label',
+                                'third_party_amount': 'value',
+                                'total_amount': 'value',
+                                'total_amount_applied': 'value',
+                                'total_amount_eligible': 'value',
+                            },
+                            'titles': {
+                                'amount': 'Cost of the project',
+                                'amount_kind': 'Kind of Amount',
+                                'approval_date': 'Approval date of the project',
+                                'beneficiary_address': 'Address',
+                                'beneficiary_city': 'City',
+                                'beneficiary_country': 'Country',
+                                'beneficiary_country_code': 'Country code',
+                                'beneficiary_county': 'County',
+                                'beneficiary_id': 'Beneficiary ID',
+                                'beneficiary_name': 'Beneficiary name',
+                                'beneficiary_nuts_code': 'NUTS code',
+                                'beneficiary_nuts_region': 'NUTS region',
+                                'beneficiary_person': 'Beneficiary person',
+                                'beneficiary_postal_code': 'Postal code',
+                                'beneficiary_url': 'Beneficiary website',
+                                'cci_program_code': 'CCI code',
+                                'cci_program_title': 'Operational program',
+                                'completion_date': 'Completion date of the project',
+                                'eu_cofinancing_amount': 'EU co-financing',
+                                'eu_cofinancing_amount_eligible': 'eligible EU co-financing',
+                                'eu_cofinancing_rate': 'EU co-financing rate',
+                                'european_investment_bank_amount': 'European Investment Bank financing',
+                                'final_payment_date': 'Date of the final payment',
+                                'first_payment_date': 'Date of the first payment',
+                                'fund_acronym': 'Fund',
+                                'fund_name': 'Fund name',
+                                'funding_period': 'Funding period',
+                                'funding_period_number': 'Funding period number',
+                                'management_authority': 'Management Authority',
+                                'member_state_amount': 'Amount of national and regional funding',
+                                'operational_programme': 'Operational Programme',
+                                'priority_label': 'Priority',
+                                'priority_number': 'Priority number',
+                                'project_description': 'Project description',
+                                'project_id': 'Project ID',
+                                'project_name': 'Project name',
+                                'project_status': 'Project status',
+                                'source': 'Source URL',
+                                'starting_date': 'Starting date of the project',
+                                'theme_code': 'Thematic objective code',
+                                'theme_name': 'Thematic objective',
+                                'third_party_amount': 'Third party funding',
+                                'total_amount': 'Total cost of the project',
+                                'total_amount_applied': 'Total amount the project applied for',
+                                'total_amount_eligible': 'Total eligible expenditure'
+                            }
+                        }
+                    },
+                    {
+                        'run': 'dump.to_zip',
+                        'parameters': {
+                            'out-file': prefix+'fiscal.datapackage.zip'
+                        }
+                    },
+                    {
+                        'run': 'fiscal.upload',
+                        'parameters': {
+                            'in-file': prefix+'fiscal.datapackage.zip'
+                        }
+                    }
+                ]
+        }
+    yaml.dump(concats, open(os.path.join(DATA_DIR, 'pipeline-spec.yaml'), 'w'))
+
