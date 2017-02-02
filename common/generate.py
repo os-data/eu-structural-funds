@@ -278,8 +278,10 @@ if __name__ == "__main__":
         pipeline_id = 'eu-esif-funds-full'
         suffix = ''
         prefix = ''
+        title_suffix = ''
         if len(country) > 0:
             suffix = '-' + country.lower()
+            title_suffix = ' (Filtered by %s)' % country.upper()
             prefix = country.lower() + '-'
         concats[pipeline_id + suffix] = {
             'pipeline':
@@ -352,16 +354,18 @@ if __name__ == "__main__":
                         'run': 'add_metadata',
                         'parameters': {
                             'name': prefix + 'eu-esif-funds-beneficiaries-2000-2020-full',
+                            'title': 'Complete European ESIF Funds Beneficiaries 2000-2020' + title_suffix,
                             'description': "Structural and Cohesion Funds are financial tools set up to implement the "
                                            "regional policy of the European Union. They aim to reduce regional "
                                            "disparities in income wealth and opportunities. The overall budget "
                                            "for the 2007-2013 period was €347 billion according to Wikipedia. This "
                                            "repository is a data pipeline. It channels information about the "
-                                           "beneficiaries of the funds into the Open-Spending datastore. The goal is to "
-                                           "provide a unified dataset that is easy to visualize and query so that "
-                                           "citizens and journalists can follow the money on a local and global scale. "
-                                           "This project is a collaborative effort between Open-Knowledge Germany "
-                                           "Open-Knowledge International and a number of journalists and developers.",
+                                           "beneficiaries of the funds into the Open-Spending datastore. "
+                                           "The goal is to provide a unified dataset that is easy to visualize and "
+                                           "query so that citizens and journalists can follow the money on a local "
+                                           "and global scale. This project is a collaborative effort between "
+                                           "Open-Knowledge Germany, Open-Knowledge International and a number of "
+                                           "journalists and developers.",
                             'sources': [
                                 {
                                     'name': 'EU ESIF Portal',
