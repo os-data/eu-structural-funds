@@ -101,7 +101,7 @@ resources:
 
         - name: FINANZ_UE
           translates_to: EU amount eligible
-          maps_to: project_description
+          maps_to: eu_cofinancing_amount
 
         - name: FINANZ_TOTALE_PUBBLICO
           translates_to: total public amount
@@ -113,7 +113,7 @@ resources:
 
         - name: COSTO_RENDICONTABILE_UE
           translates_to: eligible amount eu
-          maps_to: eu_cofinancing_amount 
+          maps_to: total_amount_eligible
 
         - name: OC_TOT_PAGAMENTI_RENDICONTAB_UE
           translates_to: paid out amount eu
