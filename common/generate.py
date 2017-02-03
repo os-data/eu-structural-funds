@@ -360,7 +360,7 @@ if __name__ == "__main__":
                                            "disparities in income wealth and opportunities. The overall budget "
                                            "for the 2007-2013 period was €347 billion according to Wikipedia. This "
                                            "repository is a data pipeline. It channels information about the "
-                                           "beneficiaries of the funds into the Open-Spending datastore. "
+                                           "beneficiaries of the funds into the OpenSpending datastore. "
                                            "The goal is to provide a unified dataset that is easy to visualize and "
                                            "query so that citizens and journalists can follow the money on a local "
                                            "and global scale. This project is a collaborative effort between "
