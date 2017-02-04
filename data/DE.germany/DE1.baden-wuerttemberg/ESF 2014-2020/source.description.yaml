@@ -53,4 +53,4 @@ scraper_required: false
 sources:
 - name: DE1.Baden-Wuerttemberg 2014-2020 ESF
   web: http://www.esf-bw.de/
-title: Baden-Württemberg 2014-2020 ESF
+title: DE1.Baden-Württemberg 2014-2020 ESF
