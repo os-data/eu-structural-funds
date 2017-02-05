@@ -355,13 +355,13 @@ if __name__ == "__main__":
                         'parameters': {
                             'name': prefix + 'eu-esif-funds-beneficiaries-2000-2020-full',
                             'title': 'Complete European ESIF Funds Beneficiaries 2000-2020' + title_suffix,
-                            'description': "Structural and Cohesion Funds are financial tools set up to implement the "
-                                           "regional policy of the European Union. They aim to reduce regional "
+                            'description': "Structural and Cohesion Funds are financial tools set up to implement "
+                                           "the regional policy of the European Union. They aim to reduce regional "
                                            "disparities in income wealth and opportunities. The overall budget "
                                            "for the 2007-2013 period was €347 billion according to Wikipedia. This "
                                            "repository is a data pipeline. It channels information about the "
-                                           "beneficiaries of the funds into the OpenSpending datastore. "
-                                           "The goal is to provide a unified dataset that is easy to visualize and "
+                                           "beneficiaries of the funds into the OpenSpending data store. "
+                                           "The goal is to provide a unified data set that is easy to visualize and "
                                            "query so that citizens and journalists can follow the money on a local "
                                            "and global scale. This project is a collaborative effort between "
                                            "Open-Knowledge Germany, Open-Knowledge International and a number of "
@@ -369,7 +369,8 @@ if __name__ == "__main__":
                             'sources': [
                                 {
                                     'name': 'EU ESIF Portal',
-                                    'web': 'https://www.fi-compass.eu/esif/european-structural-and-investment-funds-esif'
+                                    'web':
+                                        'https://www.fi-compass.eu/esif/european-structural-and-investment-funds-esif'
                                 },
                                 {
                                     'name': 'Inforegio EU Regional Policy Portal',

@@ -50,7 +50,7 @@ resources:
 
         - name: FINANZ_UE
           translates_to: EU amount eligible 
-          maps_to: project_description
+          maps_to: eu_cofinancing_amount
 
         - name: FINANZ_TOTALE_PUBBLICO
           translates_to: total public amount 
