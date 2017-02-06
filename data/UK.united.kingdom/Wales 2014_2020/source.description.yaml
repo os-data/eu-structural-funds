@@ -26,9 +26,6 @@ resources:
     publication_date: 2016-12-08
 
     add_constants:
-      fund_acronym: 
-          ESF: ESF
-          ERDF: ERDF 
       funding_period: 2014-2020
       cci_code: 
 
