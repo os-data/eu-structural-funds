@@ -124,7 +124,16 @@ class BaseIngestor(object):
         """A post-parser processor to force all fields to strings."""
 
         for index, headers, values in rows:
-            values_as_strings = list(map(lambda x:str(x).strip() if x is not None else '', values))
+            values_as_strings = \
+                list(
+                    map(
+                        lambda x:
+                        str(x).strip().replace('\n', ' ')
+                        if x is not None
+                        else '',
+                        values
+                    )
+                )
             yield index, headers, values_as_strings
 
     @property
