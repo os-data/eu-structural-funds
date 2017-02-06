@@ -25,7 +25,6 @@ resources:
     - maps_to: null
       name: Status - G genehmigt - A ausbezahlt
       translates_to: G = commited, A = paid out
-      maps_to: project_status
       
   title: ERDF Niederösterreich 2007-2013
 scraper_required: false
