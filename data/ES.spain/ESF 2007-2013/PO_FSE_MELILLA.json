@@ -1,0 +1,362 @@
+[
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "AGORA SEGURIDAD, SL",
+		"operation": "Fomentar el apoyo al trabajo por cuenta propia y la creación de empresas",
+		"spending": "7.000,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "ALBORAN OCIO, S.L.",
+		"operation": "Fomentar el apoyo al trabajo por cuenta propia y la creación de empresas",
+		"spending": "6.000,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "ANATESSA, CB",
+		"operation": "Fomentar el apoyo al trabajo por cuenta propia y la creación de empresas",
+		"spending": "14.000,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "ASOCIACIÓN M.E.P.I.",
+		"operation": "Favorecer la conciliación entre la vida laboral y personal y Impulsar la igualdad de \noportunidades",
+		"spending": "61.000,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CEME-CEOE",
+		"operation": "Mejorar la empleabilidad de las personas desempleadas",
+		"spending": "9.767,07",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CEME-CEOE",
+		"operation": "Promoción del espíritu empresarial y de la adaptabilidad de las empresas y Refuerzo del nivel \nde competencia",
+		"spending": "8.934,54",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CENTRO DE FORMACIÓN M-3,S.L.",
+		"operation": "Mejorar la empleabilidad de las personas desempleadas",
+		"spending": "43.357,20",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CENTRO DE FORMACIÓN M-3,S.L.",
+		"operation": "Proponer oportunidades de integración social y laboral a las personas con discapacidad y en \nriesgo de exclusión",
+		"spending": "22.807,76",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CIUDAD AUTÓNOMA DE MELILLA",
+		"operation": "Apoyo a la gestión de los programas operativos",
+		"spending": "337.704,16",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CIUDAD AUTÓNOMA DE MELILLA",
+		"operation": "Desarrollar el potencial humano en el ámbito de la investigación y la innovación",
+		"spending": "389.760,96",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CIUDAD AUTÓNOMA DE MELILLA",
+		"operation": "Evaluación, estudios, información y comunicación",
+		"spending": "82.338,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CIUDAD AUTÓNOMA DE MELILLA",
+		"operation": "Favorecer la conciliación entre la vida laboral y personal y Impulsar la igualdad de \noportunidades",
+		"spending": "1.432.557,21",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CIUDAD AUTÓNOMA DE MELILLA",
+		"operation": "Favorecer la integración social y laboral de las personas inmigrantes",
+		"spending": "358.141,69",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CIUDAD AUTÓNOMA DE MELILLA",
+		"operation": "Fomentar el apoyo al trabajo por cuenta propia y la creación de empresas",
+		"spending": "196.000,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CIUDAD AUTÓNOMA DE MELILLA",
+		"operation": "Mejorar la adecuación de las organizaciones a las necesidades del mercado de trabajo",
+		"spending": "70.654,02",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CIUDAD AUTÓNOMA DE MELILLA",
+		"operation": "Mejorar la empleabilidad de las personas desempleadas",
+		"spending": "3.064.629,24",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CIUDAD AUTÓNOMA DE MELILLA",
+		"operation": "Promoción del empleo estable y de calidad y difusión de formas Innovadoras de organización \nlaboral",
+		"spending": "291.673,21",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CIUDAD AUTÓNOMA DE MELILLA",
+		"operation": "Promoción del espíritu empresarial y de la adaptabilidad de las empresas y Refuerzo del nivel \nde competencia",
+		"spending": "268.335,40",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CIUDAD AUTÓNOMA DE MELILLA",
+		"operation": "Proponer oportunidades de integración social y laboral a las personas con discapacidad y en \nriesgo de exclusión",
+		"spending": "394.010,27",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "CRUZ ROJA ESPAÑOLA EN MELILLA",
+		"operation": "Mejorar la empleabilidad de las personas desempleadas",
+		"spending": "10.029,57",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "DIGITAL MELILLA,S.L.",
+		"operation": "Fomentar el apoyo al trabajo por cuenta propia y la creación de empresas",
+		"spending": "9.600,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "EQUIPOS DE OFICINA DE MELILLA, SL",
+		"operation": "Fomentar el apoyo al trabajo por cuenta propia y la creación de empresas",
+		"spending": "3.134,48",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "FORNAMED, SL",
+		"operation": "Fomentar el apoyo al trabajo por cuenta propia y la creación de empresas",
+		"spending": "3.243,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "FUNDACIÓN EMPRESA UNIVERSIDAD DE",
+		"operation": "Mejorar la empleabilidad de las personas desempleadas",
+		"spending": "27.818,45",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "FUNDACIÓN ESCUELA HISPANO ARABE DIETA",
+		"operation": "Mejorar la empleabilidad de las personas desempleadas",
+		"spending": "333.905,43",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "FUNDACIÓN ESCUELA HISPANO ARABE",
+		"operation": "Mejorar la empleabilidad de las personas desempleadas",
+		"spending": "329.426,34",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "HIPERNET",
+		"operation": "Mejorar la adecuación de las organizaciones a las necesidades del mercado de trabajo",
+		"spending": "38.740,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "HOSSEINES H Y H, S.L.",
+		"operation": "Mejorar la empleabilidad de las personas desempleadas",
+		"spending": "50.246,96",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "HUMANIS SELECCIÓN Y DESARROLLO,S.A.",
+		"operation": "Fomentar el apoyo al trabajo por cuenta propia y la creación de empresas",
+		"spending": "18.000,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "LA JABONERIA CB",
+		"operation": "Fomentar el apoyo al trabajo por cuenta propia y la creación de empresas",
+		"spending": "7.000,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "LA JABONERÍA, C.B.",
+		"operation": "Fomentar el apoyo al trabajo por cuenta propia y la creación de empresas",
+		"spending": "7.000,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "LAVINIA TRAVEL, SL",
+		"operation": "Fomentar el apoyo al trabajo por cuenta propia y la creación de empresas",
+		"spending": "3.600,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "NOVATECH SISTEMAS DE INFORMACION, SL",
+		"operation": "Fomentar el apoyo al trabajo por cuenta propia y la creación de empresas",
+		"spending": "18.000,00",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "NOVATECH SISTEMAS DE INFORMACIÓN, SL",
+		"operation": "Mejorar la empleabilidad de las personas desempleadas",
+		"spending": "15.735,97",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "PROYECTO MELILLA S.A.",
+		"operation": "Favorecer la integración social y laboral de las personas inmigrantes",
+		"spending": "37.412,52",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "PROYECTO MELILLA S.A.",
+		"operation": "Fomentar el apoyo al trabajo por cuenta propia y la creación de empresas",
+		"spending": "544.245,96",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "PROYECTO MELILLA S.A.",
+		"operation": "Mejorar la adecuación de las organizaciones a las necesidades del mercado de trabajo",
+		"spending": "216.323,24",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "PROYECTO MELILLA S.A.",
+		"operation": "Mejorar la empleabilidad de las personas desempleadas",
+		"spending": "628.220,51",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "PROYECTO MELILLA S.A.",
+		"operation": "Promoción del empleo estable y de calidad y difusión de formas Innovadoras de organización \nlaboral",
+		"spending": "27.620,41",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	},
+	{
+		"_source": "http://www.empleo.gob.es/uafse/es/beneficiarios/2016-pdf/PO_FSE_MELILLA.pdf",
+		"_title": "MELILLA",
+		"beneficiary": "PROYECTO MELILLA S.A.",
+		"operation": "Promoción del espíritu empresarial y de la adaptabilidad de las empresas y Refuerzo del nivel \nde competencia",
+		"spending": "230.147,80",
+		"po_nr": "2007ES051PO008",
+		"po_str": "PO FSE MELILLA"
+	}
+]
