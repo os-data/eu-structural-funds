@@ -29,7 +29,7 @@ import petl
 from copy import deepcopy
 from logging import warning, info
 from datapackage_pipelines.wrapper import ingest, spew
-from jsontableschema.exceptions import InvalidCastError, ConstraintError
+from jsontableschema.exceptions import InvalidCastError, ConstraintError, InvalidDateType
 from jsontableschema.types import DateType, NumberType
 
 from common.utilities import process, format_to_json
@@ -139,7 +139,7 @@ class BaseSniffer(object):
             try:
                 raw_value = self._prepare_value(fmt, raw_value)
                 return caster.cast(raw_value)
-            except (InvalidCastError, ConstraintError) as e:
+            except (InvalidCastError, ConstraintError, InvalidDateType) as e:
                 bad_value = raw_value
                 exc = e
         assert exc is not None
@@ -270,7 +270,7 @@ def cast_values(row, casters, row_index=None):
                     except InvalidCastError:
                         message = 'Could not cast %s = %s'
                         warning(message, key, row[key])
-                        assert False, message
+                        assert False, message % (key, row[key])
 
         else:
             if row_index == 0:
