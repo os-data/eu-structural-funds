@@ -96,24 +96,24 @@ resources:
       
     - name: Rozhodnutí/Smlouva o poskytnutí dotace (EU zdroje)
       translates_to: amount of EU funding
-      maps_to: eu_cofinancing_amount_eligible
+      maps_to: null
       
-    - maps_to: member_state_amount
+    - maps_to: null
       name: Proplacené prostředky příjemcům - vyúčtované (veřejné prostředky celkem)
       translates_to: Funds reimbursed to beneficiaries - accounting (public funds
         total)
         
-    - maps_to: eu_cofinancing_amount
+    - maps_to: null
       name: Proplacené prostředky příjemcům - vyúčtované (EU zdroje)
       translates_to: Funds reimbursed to beneficiaries - billed (EU sources)
       
     - name: Certifikované prostředky (veřejné prostředky celkem)
       translates_to: Certified funds (public funds total)
-      maps_to: null
+      maps_to: member_state_amount
       
     - name: Certifikované prostředky (EU zdroje)
       translates_to: Certified funds (EU sources)
-      maps_to: null
+      maps_to: eu_cofinancing_amount
       
     - maps_to: beneficiary_nuts_code
       name: Kód NUTS
