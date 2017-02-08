@@ -41,7 +41,7 @@ for dirpath, dirnames, filenames in os.walk('.'):
                 'encoding': 'utf-8',
                 'delimiter': ',',
                 'doublequote': True,
-                'quoteChar': '"',
+                'quotechar': '"',
                 'skipinitialspace': False
             })
             logging.error(resource_url)
