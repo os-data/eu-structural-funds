@@ -38,7 +38,11 @@ for dirpath, dirnames, filenames in os.walk('.'):
             resources.append({
                 'url': resource_url,
                 'name': dataset_name,
-                'encoding': 'utf-8'
+                'encoding': 'utf-8',
+                'delimiter': ',',
+                'doublequote': True,
+                'quoteChar': '"',
+                'skipinitialspace': False
             })
             logging.error(resource_url)
 
