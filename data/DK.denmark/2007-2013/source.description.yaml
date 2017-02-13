@@ -23,7 +23,7 @@ add_categories:
 resources:
 - add_constants:
     cci_program_code: null
-    funding_period: 2014-2020
+    funding_period: 2007-2013
   path: ERDF_Denmark_2007-2013.csv
   publication_date: '2016-10-01'
   schema:
