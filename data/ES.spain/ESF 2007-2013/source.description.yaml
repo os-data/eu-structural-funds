@@ -120,7 +120,7 @@ resources:
     fund_acronym: ESF
     funding_period: 2007-2013
   currency_code: EUR
-  path: PO_FSE_COMMUNIDAD_VALENCIANA.json
+  path: PO_FSE_COMUNIDAD_VALENCIANA.json
   encoding: utf-8
   publication_date: '2016-10-13'
   schema: null
