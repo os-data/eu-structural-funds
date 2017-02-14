@@ -147,6 +147,7 @@ if __name__ == "__main__":
                 currency_conversion.append(
                     ('currency_convert', {
                         'column': 'amount',
+                        'currency-column': 'currency',
                         'currency': source.get('currency_code', 'EUR'),
                         'date-columns': [
                             'publication_date',
@@ -320,6 +321,7 @@ if __name__ == "__main__":
                                 "cci_program_code": [],
                                 "cci_program_title": [],
                                 "completion_date": [],
+                                "currency": [],
                                 "eu_cofinancing_amount": [],
                                 "eu_cofinancing_amount_eligible": [],
                                 "eu_cofinancing_rate": [],
@@ -423,6 +425,7 @@ if __name__ == "__main__":
                                 'cci_program_code': 'administrative-classification:generic:level3:code:full',
                                 'cci_program_title': 'administrative-classification:generic:level3:label',
                                 'completion_date': 'date:fiscal:activity-end',
+                                'currency': 'unknown:string',
                                 'eu_cofinancing_amount': 'value',
                                 'eu_cofinancing_amount_eligible': 'value',
                                 'eu_cofinancing_rate': 'unknown:string',
@@ -470,6 +473,7 @@ if __name__ == "__main__":
                                 'cci_program_code': 'CCI code',
                                 'cci_program_title': 'Operational program',
                                 'completion_date': 'Completion date of the project',
+                                'currency': 'Original currency code',
                                 'eu_cofinancing_amount': 'EU co-financing',
                                 'eu_cofinancing_amount_eligible': 'eligible EU co-financing',
                                 'eu_cofinancing_rate': 'EU co-financing rate',

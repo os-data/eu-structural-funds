@@ -3,13 +3,11 @@ contributors:
 - Fernando Blat <fernando@populate.tools> (https://populate.tools)
 description: 
 language: EN
-add_categories:
-  fund_acronym: ESF      
-      
 resources:
 - add_constants:
     cci_program_code: null
     funding_period: 2014-2020
+    fund_acronym: ESF
   currency_code: EUR
   path: Malta ESF 2014-2020.json
   publication_date: 2016-10-31

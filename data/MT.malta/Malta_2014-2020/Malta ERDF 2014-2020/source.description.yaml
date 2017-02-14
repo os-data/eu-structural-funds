@@ -3,11 +3,9 @@ contributors:
 - Fernando Blat <fernando@populate.tools> (https://populate.tools)
 description: 
 language: EN
-add_categories:
-  fund_acronym: ERDF      
-      
 resources:
 - add_constants:
+    fund_acronym: ERDF
     cci_program_code: null
     funding_period: 2014-2020
   currency_code: EUR

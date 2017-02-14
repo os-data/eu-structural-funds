@@ -268,3 +268,8 @@ fields:
     title: Source URL
     description: A source URL
     osType: unknown:string
+
+  - name: currency
+    title: Currency Code
+    description: Original currency code for amounts
+    osType: unknown:string

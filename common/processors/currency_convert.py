@@ -8,6 +8,7 @@ parameters_, datapackage_, resources_ = ingest()
 
 column = parameters_['column']
 currency = parameters_['currency']
+currency_column = parameters_['currency-column']
 date_columns = parameters_['date-columns']
 
 missing = open('missing-keys.txt', 'a')
@@ -18,6 +19,7 @@ currencies = json.load(open(os.path.join(os.path.dirname(__file__), 'currencies.
 def process(resources):
     def process_single(resource):
         for row in resource:
+            row[currency_column] = currency
             ncv = row[column]
             row[column] = None
             if ncv is not None:
@@ -49,6 +51,12 @@ def process(resources):
 
     for resource_ in resources:
         yield process_single(resource_)
+
+for resource in datapackage_['resources']:
+    resource['schema']['fields'].append({
+        'name': currency_column,
+        'type': 'string'
+    })
 
 spew(datapackage_, process(resources_))
 
