@@ -356,7 +356,7 @@ if __name__ == "__main__":
                         'run': 'add_metadata',
                         'parameters': {
                             'name': prefix + 'eu-esif-funds-beneficiaries-2000-2020-full',
-                            'title': 'Complete European ESIF Funds Beneficiaries 2000-2020' + title_suffix,
+                            'title': 'Complete European ESIF Funds Beneficiaries 2007-2020' + title_suffix,
                             'description': "Structural and Cohesion Funds are financial tools set up to implement "
                                            "the regional policy of the European Union. They aim to reduce regional "
                                            "disparities in income wealth and opportunities. The overall budget "

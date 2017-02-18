@@ -12,10 +12,10 @@ fields:
   #   2. Project (program)
   #   3. Sub-project (project)
 
-  - name: funding_period_number
-    title: Funding period number
-    description: First, second or third funding period. #use the actual periods in the description
-    osType: unknown:string
+#  - name: funding_period_number
+#    title: Funding period number
+#    description: First, second or third funding period. #use the actual periods in the description
+#    osType: unknown:string
 
   - name: funding_period
     title: Funding period
