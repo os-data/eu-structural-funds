@@ -331,7 +331,6 @@ if __name__ == "__main__":
                                 "fund_acronym": [],
                                 "fund_name": [],
                                 "funding_period": [],
-                                "funding_period_number": [],
                                 "management_authority": [],
                                 "member_state_amount": [],
                                 "operational_programme": [],
