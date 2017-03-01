@@ -1,8 +1,6 @@
-[![Build Status](https://travis-ci.org/os-data/eu-structural-funds.svg?branch=master)](https://travis-ci.org/os-data/eu-structural-funds)
-
-[![Stories in Ready](https://badge.waffle.io/os-data/eu-structural-funds.png?label=ready&title=Ready)](https://waffle.io/os-data/eu-structural-funds)
-
 # EU Subsidies Data
+
+Subsidystories.eu intends to increase transparency of EU-Funds by unravelling how the European Structural Investment Funds are spent. We collected and standardised all available beneficiary lists for the ERDF, ESF and CF for the 2007-2013 and 2014-2020 funding periods. These funds are partially funded by the EU and the Member States and allocated by regional authorities to local beneficiaries [policy]( . Find out who has received funding in your country.
 
 ## Project overview
 
