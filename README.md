@@ -23,12 +23,12 @@ The repository contains the following:
 - `common/`: python code, including reusable project-wide pipeline processors
 
 - `data/`: data sources broken down per country and region. 
-Find here all the raw data. 
+- Find here all the raw data. 
 
 - `geography/`: geographical data. 
 
 - `documentation/`: project documentation.
-Find here the Methodology, Data Description, Policy explainers, and an Open Spending Manual
+- Find here the Methodology, Data Description, Policy explainers, and an Open Spending Manual
 
 - `specifications/`: source description and Fiscal Data Package files
 
@@ -44,4 +44,4 @@ Find here the Methodology, Data Description, Policy explainers, and an Open Spen
 
 ## Project Partners
 
-This project is a collaborative effort between [Open-Knowledge Germany](https://www.okfn.de/en/), [Open-Knowledge International](http://okfn.org/) and volunteers: Luigi Reggi, Sem vd Brink, Rui Barros, Zoltan Sipos, Mathias Huter, Bertrand Delvaux, Maria Manolova, Olaya Argueso, Adrian Ortiz, Marta, Rey, Delphine Reuter, Fernando Blat, Friedrich Lindenberg, Benjamin Knoedler, Veronika Voelinger, Christian Joergensen, Monisha Martins, Eliseo Antonini, Xavier Seingard, Alain Jenotte.
+This project is a collaborative effort between [Open-Knowledge Germany](https://www.okfn.de/en/), [Open-Knowledge International](http://okfn.org/) and volunteers: Luigi Reggi, Sem vd Brink, Rui Barros, Zoltan Sipos, Mathias Huter, Bertrand Delvaux, Maria Manolova, Olaya Argueso, Adrian Ortiz, Marta, Rey, Delphine Reuter, Fernando Blat, Friedrich Lindenberg, Benjamin Knoedler, Veronika Voelinger, Christian Joergensen, Monisha Martins, Eliseo Antonini, Xavier Seingard, Alain Jenotte, Balazs Krich.
