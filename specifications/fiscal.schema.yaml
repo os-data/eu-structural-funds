@@ -53,12 +53,12 @@ fields:
   - name: beneficiary_id
     title: Beneficiary ID
     description: The unique ID of the beneficiary
-    osType: unknown:string
+    osType: recipient:generic:id
 
   - name: beneficiary_name
     title: Beneficiary name
     description: Name of the beneficiary (person, company, organisation)
-    osType: recipient:generic:id
+    osType: recipient:generic:name
 
   # Geo-source
   # ---------------------------------------------------------------------------

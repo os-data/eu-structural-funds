@@ -9,4 +9,4 @@ tabulator>=0.12.1
 requests
 datapackage
 lxml
-#pandas
+fingerprints
