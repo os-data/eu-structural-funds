@@ -34,6 +34,12 @@ Find here the Methodology, Data Description, Policy explainers, and an Open Spen
 
 ## Further information
 
+- [Official EU-site ESIF data explorer](https://cohesiondata.ec.europa.eu/)
+- [DG Regional Policy website](http://ec.europa.eu/regional_policy/en/)
+- [Programs](http://ec.europa.eu/regional_policy/en/atlas/programmes/)
+- [Management Authorities](http://ec.europa.eu/regional_policy/en/atlas/managing-authorities/)
+- [Local Websites with Beneficiary Lists](http://ec.europa.eu/regional_policy/en/atlas/beneficiaries/)
+- [Glossary](http://ec.europa.eu/regional_policy/en/policy/what/glossary/)
 
 
 ## Project Partners
