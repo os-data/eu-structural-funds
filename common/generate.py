@@ -204,7 +204,7 @@ if __name__ == "__main__":
                     }
                 }),
                 ('dump.to_zip', {'out-file': 'fiscal.datapackage.zip'}),
-                ('fiscal.upload', {'in-file': 'fiscal.datapackage.zip'}),
+                ('fiscal.upload', {'in-file': 'fiscal.datapackage.zip', 'publish': True}),
             ]
 
             orig_pipeline = pipeline[:]
@@ -494,7 +494,8 @@ if __name__ == "__main__":
                     {
                         'run': 'fiscal.upload',
                         'parameters': {
-                            'in-file': prefix+'fiscal.datapackage.zip'
+                            'in-file': prefix+'fiscal.datapackage.zip',
+                            'publish': True
                         }
                     }
                 ]
