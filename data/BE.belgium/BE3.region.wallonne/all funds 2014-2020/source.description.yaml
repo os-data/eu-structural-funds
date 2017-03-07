@@ -58,5 +58,5 @@ resources:
 scraper_required: false
 sources:
 - name: ERDF and ESF Region Wallonne
-  web: http://www.fonds-europeens.public.lu/fr/projets-cofinances/index.php
+  web: http://www.plushaut.be/projet/
 title: BE3.region.wallone 2007-2013 ERDF ESF
