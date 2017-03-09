@@ -10,7 +10,7 @@ For the funding period 2007 - 2013 the budget for the European Regional Developm
 
 The project started while working on eu subsidy data for OpenBudgets.eu. We officially kicked off with a Hackaton on the Transparency Hack/CSV conf Hackanton in Berlin in May 2016. On dataharvest we joined forces with the team of [Follow the Subsidies](http://followthesubsidies.eu/) . On Dataharvest we made the first overview of [all datasets and portals](https://docs.google.com/spreadsheets/d/1RkC_YuWWlhGxyDRc-bpD_zaWAXK78GpPr8nfPesQfSY/edit?pref=2&pli=1#gid=0)
 
-In Autumn of 2016 the data-wrangling work finally kicked off with a large group of volunteers. With funding from Addessium, the data-pipeline was built to ingest all datasets in [Open-Spending](http:next.openspending.org). The front-end was built on [Subsidy Stories](http://subsidystories.eu/) to visualise and explore the data. 
+In Autumn of 2016 the data-wrangling work finally kicked off with a large group of volunteers. With funding from Adessium, the data-pipeline was built to ingest all datasets in [Open-Spending](http:next.openspending.org). The front-end was built on [Subsidy Stories](http://subsidystories.eu/) to visualise and explore the data. 
 
 This repository is an intergral part of the project. It contains the documentation, the raw data, the code and additional information that has been gathered in the project. 
 
