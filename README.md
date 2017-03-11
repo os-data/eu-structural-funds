@@ -1,6 +1,6 @@
 # EU Subsidies Data
 
-Subsidystories.eu intends to increase transparency of EU-Funds by unravelling how the European Structural Investment Funds are spent. We collected and standardised all available beneficiary lists for the ERDF, ESF and CF for the 2007-2013 and 2014-2020 funding periods. These funds are partially funded by the EU and the Member States and allocated by regional authorities to local beneficiaries [policy](https://github.com/os-data/eu-structural-funds/blob/master/documentation/subsidyreport%20-%20policy%20and%20data.pdf) . Find out who has received funding in your country on [Subsidy Stories](http://subsidystories.eu/).
+Subsidystories.eu intends to increase transparency of EU-Funds by unravelling how the European Structural Investment Funds are spent. We collected and standardised all available beneficiary lists for the ERDF, ESF and CF for the 2007-2013 and 2014-2020 funding periods. These funds are partially funded by the EU and the Member States and allocated by regional authorities to local beneficiaries [policy](https://github.com/os-data/eu-structural-funds/blob/master/documentation/subsidyreport%20-%20policy%20and%20data.pdf). Find out who has received funding in your country on [Subsidy Stories](http://subsidystories.eu/).
 
 The European Structural and Cohesion Funds (ESIF) are the main financial instrumentfor the implementation of the EU's regional policy. They cover 44 % of the overall 1082 Billion 7-year EU budget. 
 
@@ -8,7 +8,7 @@ For the funding period 2007 - 2013 the budget for the European Regional Developm
 
 ## Project overview
 
-The project started while working on eu subsidy data for OpenBudgets.eu. We officially kicked off with a Hackaton on the Transparency Hack/CSV conf Hackanton in Berlin in May 2016. On dataharvest we joined forces with the team of [Follow the Subsidies](http://followthesubsidies.eu/) . On Dataharvest we made the first overview of [all datasets and portals](https://docs.google.com/spreadsheets/d/1RkC_YuWWlhGxyDRc-bpD_zaWAXK78GpPr8nfPesQfSY/edit?pref=2&pli=1#gid=0)
+The project started while working on eu subsidy data for OpenBudgets.eu. We officially kicked off with a Hackaton on the Transparency Hack/CSV conf Hackanton in Berlin in May 2016. On dataharvest we joined forces with the team of [Follow the Subsidies](http://followthesubsidies.eu/). On Dataharvest we made the first overview of [all datasets and portals](https://docs.google.com/spreadsheets/d/1RkC_YuWWlhGxyDRc-bpD_zaWAXK78GpPr8nfPesQfSY/edit?pref=2&pli=1#gid=0)
 
 In Autumn of 2016 the data-wrangling work finally kicked off with a large group of volunteers. With funding from Adessium, the data-pipeline was built to ingest all datasets in [Open-Spending](http:next.openspending.org). The front-end was built on [Subsidy Stories](http://subsidystories.eu/) to visualise and explore the data. 
 
