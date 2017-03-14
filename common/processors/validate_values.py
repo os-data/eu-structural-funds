@@ -36,8 +36,8 @@ def process(resources):
         for column in threshold_columns:
             ratio_percent = 100 - (100*nones[column])//counter
             if ratio_percent < thresholds[column]:
-                raise ValueError('%s: Got %d empty values (out of %d), which is %d%% (below the threshold of %d%%)' %
-                                 (column, nones[column], counter, ratio_percent, thresholds[column]) )
+                raise ValueError('%s: Got %d good values (out of %d), which is %d%% (below the threshold of %d%%)' %
+                                 (column, counter-nones[column], counter, ratio_percent, thresholds[column]) )
 
     for resource_ in resources:
         yield process_single(resource_)

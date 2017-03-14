@@ -1,4 +1,5 @@
 """Map the raw columns names to fiscal fields where indicated."""
+import re
 
 from datapackage_pipelines.wrapper import ingest, spew
 
@@ -8,10 +9,14 @@ column_order = parameters_['column-order']
 target_column = parameters_['target-column']
 kind_column = parameters_['kind-column']
 
+digits = re.compile('[1-9]+')
+
 
 def is_empty(value):
     if value is None: return True
-    if type(value) is str and value.strip()=='': return True
+    value = str(value).strip()
+    if value == '': return True
+    if len(digits.findall(value)) == 0: return True
     return False
 
 
