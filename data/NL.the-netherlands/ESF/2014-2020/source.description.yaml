@@ -31,8 +31,8 @@ resources:
     - maps_to: priority_label
       name: Inverventie- categorie  Name of category of intervention
       translates_to: Intervention Category      
-    - maps_to: Naam Aanvrager                                                  Beneficiary name
-      name: beneficiary
+    - maps_to: beneficiary_name
+      name: Naam Aanvrager                                                  Beneficiary name
       translates_to: Beneficiary name
     - maps_to: project_name
       name: Naam Project                                                           Project Name
