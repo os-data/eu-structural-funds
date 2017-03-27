@@ -1,26 +1,11 @@
 Data for Germany
 =========================
-**Landing page:** http://www.bmwi.de/DE/Themen/Europa/strukturfonds.html
+Structure Funds are collected per region: http://ec.europa.eu/regional_policy/en/atlas/germany
+The general landing page is here:http://www.bmwi.de/DE/Themen/Europa/strukturfonds.html
 
-**Landing Page 2:** 
+For the ESF, we found both national and regional data-files. After discussing whether to include the national files, we decided against it. We understood from our research that ESF funds were distributed on regional level, so that is why we let the regional ESF beneficiary lists take precedence over this national data file. 
 
-**Projects Page:** 
-
-**All Funds + All time:** 
-
-**Data type AF+AT:** 
-
-**All Funds Data 2014-2020:** 
-
-**Data Type AF14-20:**
-
-**All Funds Data 2007-2013:**
-
-**Data Type AF07-13:** 
-
-**ERDF 2007-2013:** 
-
-**Data Type ERDF 7-13:** 
+For your information these are the data-files found. 
 
 **ESF 2007-2013:** 
 
@@ -28,10 +13,5 @@ http://www.esf.de/portal/SharedDocs/PDFs/DE/Sonstiges/2015_07_13_ziel1.pdf?__blo
 
 http://www.esf.de/portal/SharedDocs/PDFs/DE/Sonstiges/2015_07_13_ziel2.pdf?__blob=publicationFile&v=10
 
-**Data Type ESF 07-13:** PDF
 
-**Notes:** Structure Funds are collected per region: http://ec.europa.eu/regional_policy/en/atlas/germany
-
-**Partnership Agreements:**
-
-**Needs scraping:** yes
+NB: if you have updated data or can show that they must be included, please let us know. 
