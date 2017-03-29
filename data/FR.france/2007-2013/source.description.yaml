@@ -6,9 +6,6 @@ sources:
   - name: Europe en France, le portail des Fonds européens (portal)
     web:  http://www.europe-en-france.gouv.fr/
 
-  - name: PROJETS EXEMPLAIRES (flagship projects)
-    web: http://www.europe-en-france.gouv.fr/Rendez-vous-compte/Projets-exemplaires?thematique=0&region=0&fonds=0&mot-cle=Mot%28s%29+cl%C3%A9%28s%29&annee=0&valider=Valider
-
   - name: Bénéficiaires de fonds européens (beneficiaries page)
     web: http://cartobenef.asp-public.fr/cartobenef/carto.php?lang=fr&nivgeos=reg&curCodeDomSB=DS&curCodeThemeSB=benef&typindSB=R&curCodeIndSB=nb_projet_total
 
