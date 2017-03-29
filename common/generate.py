@@ -158,7 +158,7 @@ if __name__ == "__main__":
                     })
                 )
 
-            threshold = 80
+            threshold = 40
             pipeline = [
                 ('read_description', {'datapackage': source}),
                 ('ingest_local_file', {}),
