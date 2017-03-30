@@ -76,7 +76,7 @@ resources:
   path: EUSF+14-20+Publicatielijst++01-12-16+Actie+GTI.csv
   encoding: utf-8
   publication_date: '2016-05-01'
-    schema:
+  schema:
     fields:
     - maps_to: null
       name: Project_Nummer     Project_Number
