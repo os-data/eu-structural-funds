@@ -7,8 +7,8 @@ import json
 import itertools
 import collections
 
-from datapackage_pipelines.wrapper.wrapper import processor
-
+def processor():
+    return "%-32s" % os.path.basename(sys.argv[0]).split('.')[0].title()
 
 def _override_parameters(pipeline_parameters,
                          datapackage, resource_index,
