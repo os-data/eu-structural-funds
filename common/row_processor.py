@@ -6,6 +6,8 @@ import petl
 import json
 import itertools
 import collections
+import os
+import sys
 
 def processor():
     return "%-32s" % os.path.basename(sys.argv[0]).split('.')[0].title()
