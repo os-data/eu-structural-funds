@@ -41,7 +41,7 @@ resources:
 
         - name: "Zusammenfassung des Vorhabens/ operation summary"
           translates_to: summary
-          maps_to: project_summary
+          maps_to: project_description
          
         - name: "Datum des Beginns des Vorhabens/ operation start date"
           translates_to: starting date
