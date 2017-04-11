@@ -53,7 +53,7 @@ resources:
          
         - name: Viranomainen
           translates_to: Authority / beneficiary
-          maps_to: beneficiary_name
+          maps_to: management_authority
 
         - name: Tila
           translates_to: Status of project
@@ -69,7 +69,7 @@ resources:
 
         - name: Toteuttajan nimi
           translates_to: names of the executor
-          maps_to: management_authority
+          maps_to: beneficiary_name 
 
         - name: Myönnetty EU- ja valtion rahoitus
           translates_to: Granted state funding in the EU

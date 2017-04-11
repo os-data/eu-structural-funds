@@ -24,13 +24,13 @@ resources:
     - maps_to: project_name
       name: Projektin nimi
       translates_to: project title
-    - maps_to: beneficiary_name
+    - maps_to: priority_label 
       name: Ohjelma / osio
       translates_to: Program title
     - maps_to: null
       name: Tl
       translates_to: some number defining the project either 1 or 2
-    - maps_to: beneficiary_name
+    - maps_to: management_authority
       name: Viranomainen
       translates_to: Authority / beneficiary
     - name: Toiminnan tila
@@ -44,7 +44,7 @@ resources:
       translates_to: project's completion date
     - name: Toteuttajan nimi
       translates_to: names of the executor
-      maps_to: management_authority
+      maps_to: beneficiary_name
     - maps_to: eu_cofinancing_amount_eligible
       name: Myönnetty EU- ja valtion rahoitus
       translates_to: Granted state funding in the EU
