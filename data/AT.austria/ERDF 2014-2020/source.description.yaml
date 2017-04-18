@@ -6,13 +6,13 @@ language: DE
 contributors:
   - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
 
+add_constants:
+  fund_acronym: ERDF
+  funding_period: 2014-2020
+  cci_program_code: null
+  currency_code: EUR
+
 resources:
-- add_categories: {}
-  add_constants:
-    fund_acronym: ERDF
-    funding_period: 2014-2020
-    cci_program_code: null
-    currency_code: EUR
 
   - title: AT.Austria 2014-2020 ERDF
 

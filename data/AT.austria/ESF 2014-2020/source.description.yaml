@@ -8,16 +8,17 @@ scraper_required: false
 
 
 resources:
-- add_categories: {}
-  add_constants:
+- add_constants:
     fund_acronym: ESF
-    path: Liste-der-Vorhaben_30.01.2017_ESF_Austria.csv
     publication_date: 2017-01-30
     funding_period: 2014-2020
     cci_program_code: null
-    currency_code: EUR
 
-    schema:
+  currency_code: EUR
+  path: Liste-der-Vorhaben_30.01.2017_ESF_Austria.csv
+
+
+  schema:
       fields:
 
         - name: "ProjektCode / code of operation"
