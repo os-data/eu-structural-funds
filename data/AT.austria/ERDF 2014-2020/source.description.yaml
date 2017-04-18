@@ -3,32 +3,22 @@ title: AT.Austria 2014-2020 ERDF
 description:
 language: DE
 
-sources:
-  - name: Austria ERDF data 2014-2020
-    web:  http://www.efre.gv.at/projekte/projektlandkarte/
-
-scraper_required: false
-
 contributors:
   - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
 
-add_categories:
-  fund_acronym: ERDF
- 
-
 resources:
+- add_categories: {}
+  add_constants:
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+    cci_program_code: null
+    currency_code: EUR
+
   - title: AT.Austria 2014-2020 ERDF
 
     path: Vorhabensliste_IWB_EFRE_AT2014-2020_Download.csv
 
     publication_date: 2017-04-10
-
-    add_constants:
-      funding_period: 2014-2020
-      cci_code:
-    currency_code: EUR
-
-
     schema:
       fields:
         - name: "Bezeichnung des Vorhabens/ operation name"
@@ -72,3 +62,8 @@ resources:
           maps_to: priority_label
 
 
+sources:
+  - name: Austria ERDF data 2014-2020
+    web:  http://www.efre.gv.at/projekte/projektlandkarte/
+
+scraper_required: false

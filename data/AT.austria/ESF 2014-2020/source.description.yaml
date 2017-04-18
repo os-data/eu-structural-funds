@@ -1,33 +1,21 @@
-title: AT.Austria 2014-2020 ESF
+contributors:
+  - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
 
 description:
 language: DE
 
-sources:
-  - name: Austria ERDF and ESF data 2014-2020
-    web:  https://www.rakennerahastot.fi/rahoitetut-hankkeet#.V1A2dJN95E4
-
 scraper_required: false
 
-contributors:
-  - Michael Peters <michael.peters@okfn.de> (http://okfn.de)
-
-add_categories:
-  fund_acronym: ESF
- 
 
 resources:
-  - title: AT.Austria 2014-2020 ESF
-
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
     path: Liste-der-Vorhaben_30.01.2017_ESF_Austria.csv
-
     publication_date: 2017-01-30
-
-    add_constants:
-      funding_period: 2014-2020
-      cci_code:
+    funding_period: 2014-2020
+    cci_program_code: null
     currency_code: EUR
-
 
     schema:
       fields:
@@ -76,4 +64,8 @@ resources:
           translates_to: intervention category 
           maps_to: priority_label
 
+sources:
+  - name: Austria ERDF and ESF data 2014-2020
+    web:  https://www.rakennerahastot.fi/rahoitetut-hankkeet#.V1A2dJN95E4
 
+title: AT.Austria 2014-2020 ESF
