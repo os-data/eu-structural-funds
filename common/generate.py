@@ -264,6 +264,7 @@ if __name__ == "__main__":
                             sys.exit(0)
 
                 pipeline = {
+                    'title': source['title'],
                     'pipeline': [
                         {
                             'run': x[0],
@@ -292,6 +293,7 @@ if __name__ == "__main__":
             title_suffix = ' (Filtered by %s)' % country.upper()
             prefix = country.lower() + '-'
         concats[pipeline_id + suffix] = {
+            'title': 'Complete European ESIF Funds Beneficiaries 2007-2020' + title_suffix,
             'dependencies': [
                 {'pipeline': x} for x in deps[country]
             ],
