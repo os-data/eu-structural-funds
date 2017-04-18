@@ -9,10 +9,11 @@ column_order = parameters_['column-order']
 target_column = parameters_['target-column']
 kind_column = parameters_['kind-column']
 
-digits = re.compile('[1-9]+')
+from_one = re.compile('[1-9]+')
+from_zero = re.compile('[0-9]+')
 
 
-def is_empty(value):
+def is_empty(value, digits):
     if value is None: return True
     value = str(value).strip()
     if value == '': return True
@@ -23,12 +24,16 @@ def is_empty(value):
 def process(resources):
     def process_single(resource):
         for row in resource:
-            for column in column_order:
-                if is_empty(row.get(column)):
-                    continue
-                row[target_column] = row[column]
-                row[kind_column] = column
-                break
+            for digits in [from_one, from_zero]:
+                done = False
+                for column in column_order:
+                    if is_empty(row.get(column), digits):
+                        continue
+                    row[target_column] = row[column]
+                    row[kind_column] = column
+                    done = True
+                    break
+                if done: break
             yield row
 
     for resource_ in resources:
