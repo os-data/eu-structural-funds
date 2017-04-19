@@ -8,7 +8,8 @@ scraper_required: false
 
 
 resources:
-- add_constants:
+- title: AT.Austria 2014-2020 ESF
+  add_constants:
     fund_acronym: ESF
     publication_date: 2017-01-30
     funding_period: 2014-2020
