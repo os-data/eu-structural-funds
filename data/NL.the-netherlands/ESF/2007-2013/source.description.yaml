@@ -47,16 +47,16 @@ resources:
       name: Einddatum project          Project end date
       translates_to: completion date 
     - maps_to: eu_cofinancing_amount_eligible
-      name: EUSF subsidie toegekend verlening   ESF approved on request Union cofinancing (max 50%)
+      name: ESF subsidie toegekend verlening   ESF approved on request Union cofinancing (max 50%)
       translates_to: eu cofinancing amount 
     - maps_to: total_amount_eligible
-      name: Totale subsidiabele kosten bij verlening            Total eligible expenditure on request 
+      name:  Totale subsidiabele kosten bij verlening            Total eligible expenditure on request  
       translates_to: eligible expenditure
     - maps_to: null 
-      name: ESF subsidie toegekend vaststelling   ESF approved on request Union cofinancing (max 50%) 
+      name:  ESF subsidie toegekend vaststelling   ESF approved on request Union cofinancing (max 50%) 
       translates_to: ESF approved on request Union cofinancing (max 50%)
     - maps_to: null
-      name: Totale subsidiabele kosten bij vaststelling               Total eligible expenditure on request 
+      name:  Totale subsidiabele kosten bij vaststelling               Total eligible expenditure on request 
       translates_to: total amount eligible 
     - maps_to: null
       name: Datum Intrekking
