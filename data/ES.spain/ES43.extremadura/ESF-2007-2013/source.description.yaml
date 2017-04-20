@@ -1,0 +1,63 @@
+title: European Social Fund (ESF) for region ES43.Extremadura, Spain
+
+description: Dataset with information of ESF beneficiaries. It contains data from period 2007-2013.
+
+sources:
+
+  - name: Unidad de Administración del Fondo Social Europeo / Administration Unit for European Social Funds
+    web: http://www.empleo.gob.es/uafse/es/beneficiarios/index.html
+
+image: 
+
+contributors:
+  - Marta Rey <martareyruiz@gmail.com>
+
+resources:
+
+ title: PDF file containing ESF beneficiaries data for ES43 from 2007 till 2013
+ url: http://www.empleo.gob.es/uafse/es/beneficiarios/2013_pdf/2007ES051PO003_PO_FSE_EXTREMADURA.pdf
+ path: 
+
+  publication_date: 20-05-2013
+  expiry_date: 
+  
+  update_interval: yearly
+
+  funds: ESF
+  years: 2007-2013
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+    rest_api: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Unidad Administradora del Fondo Social Europeo
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Beneficiario
+        translation: Beneficiary
+        type: string
+        missingValue:
+        description:
+
+      - name: Tipo de Operación
+        translation: Operation type
+        type: string
+        missingValue: 
+        description:
+        
+      - name: Gasto Público
+        translation: Public spending
+        type: number
+        missingValue: 
+        description:

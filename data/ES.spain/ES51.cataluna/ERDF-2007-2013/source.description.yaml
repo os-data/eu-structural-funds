@@ -1,0 +1,75 @@
+title: European Regional Development Fund (ERDF)for region ES51.Cataluna, Spain
+
+description: Dataset with the information of ERDF beneficiaries. It contains data from period 2007-2013.
+
+sources:
+  - name: Dirección General de Fondos Comunitarios / The Directorate General of Community Funds
+    web:  http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Paginas/BeneficiariosFederCohesion.aspx
+
+image: 
+
+contributors:
+  - Marta Rey <martareyruiz@gmail.com>
+
+resources:
+
+  title: PDF file containing ERDF beneficiaries data 2007-2013 for ES51.
+  url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/CT3516.pdf
+  path: 
+
+  publication_date: 19-09-2016
+  expiry_date: 2016
+  
+  update_interval: yearly
+
+  funds: ERDF
+  years: 2007-2013
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+    rest_api: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Dirección General de Fondos Comunitarios
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Nombre beneficiario
+        translation: Beneficiary name
+        type: string
+        missingValue:
+        description:
+
+      - name: Nombre operación
+        translation: Operation name
+        type: string
+        missingValue: 
+        description:
+        
+      - name: Montante concedido
+        translation: Granted amount
+        type: number
+        missingValue: 
+        description:
+        
+     - name: Montante pagado final operación
+        translation: Paid amount final operation
+        type: number
+        missingValue: 
+        description:
+        
+      - name: Año de la concesión / año del pago
+        translation: Year of concession / Payment year
+        type: date
+        missingValue: 
+        description:
+        

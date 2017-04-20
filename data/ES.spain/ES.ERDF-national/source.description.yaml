@@ -1,0 +1,255 @@
+title: Three Multiregional European Regional Development Fund Operational Programms which are applied on a national level and one dataset related to ERDF Structural Funds.
+
+description: 3 Multiregional ERDF Operational Programms which are aplied on a national level. It includes also one more PDF with a dataset from ERDF Structural Funds which are applied on a national level. It contains data from period 2007-2013. 
+
+sources:
+  - name: Dirección General de Fondos Comunitarios / The Directorate General of Community Funds
+    web:  http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Paginas/BeneficiariosFederCohesion.aspx
+
+image: 
+
+contributors:
+  - Marta Rey <martareyruiz@gmail.com>
+
+resources:
+
+  title: PDF file containing ERDF beneficiaries data for OP of Research, Development and Innovation by and for the Beneficit of Enterprises- Technological Fund. (Programa Operativo FEDER de Investigación, Desarrollo e innovación por y para el beneficio de las Empresas - Fondo Tecnológico).
+  url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/PO%20FT3516.pdf
+  path: 
+
+  publication_date: 19-09-2016
+  expiry_date: 2016
+  
+  update_interval: yearly
+
+  funds: ERDF
+  years: 2007-2013
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+    rest_api: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Dirección General de Fondos Comunitarios
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Nombre beneficiario
+        translation: Beneficiary name
+        type: string
+        missingValue:
+        description:
+
+      - name: Nombre operación
+        translation: Operation name
+        type: string
+        missingValue: 
+        description:
+        
+      - name: Montante concedido
+        translation: Granted amount
+        type: number
+        missingValue: 
+        description:
+        
+     - name: Montante pagado final operación
+        translation: Paid amount final operation
+        type: number
+        missingValue: 
+        description:
+        
+      - name: Año de la concesión / año del pago
+        translation: Year of concession / Payment year
+        type: date
+        missingValue: 
+        description:       
+
+  title: PDF file containing ERDF beneficiaries data for ERDF OP of Economics based on Knowledge. (Programa Operativo FEDER de Economía basada en el Conocimiento).
+  url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/PO%20EC3516.pdf
+  path: 
+
+  publication_date: 19-09-2016
+  expiry_date: 2016
+  
+  update_interval: yearly
+
+  funds: ERDF
+  years: 2007-2013
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+    rest_api: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Dirección General de Fondos Comunitarios
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Nombre beneficiario
+        translation: Beneficiary name
+        type: string
+        missingValue:
+        description:
+
+      - name: Nombre operación
+        translation: Operation name
+        type: string
+        missingValue: 
+        description:
+        
+      - name: Montante concedido
+        translation: Granted amount
+        type: number
+        missingValue: 
+        description:
+        
+     - name: Montante pagado final operación
+        translation: Paid amount final operation
+        type: number
+        missingValue: 
+        description:
+        
+      - name: Año de la concesión / año del pago
+        translation: Year of concession / Payment year
+        type: date
+        missingValue: 
+        description:
+    
+  title: PDF file containing ERDF beneficiaries data for ERDF OP of Technical Assistance and Governance (Programa Operativo FEDER de asistencia técnica y gobernanza).
+  url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/PO%20AT3516.pdf
+  path: 
+
+  publication_date: 19-09-2016
+  expiry_date: 2016
+  
+  update_interval: yearly
+
+  funds: ERDF
+  years: 2007-2013
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+    rest_api: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Dirección General de Fondos Comunitarios
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Nombre beneficiario
+        translation: Beneficiary name
+        type: string
+        missingValue:
+        description:
+
+      - name: Nombre operación
+        translation: Operation name
+        type: string
+        missingValue: 
+        description:
+        
+      - name: Montante concedido
+        translation: Granted amount
+        type: number
+        missingValue: 
+        description:
+        
+     - name: Montante pagado final operación
+        translation: Paid amount final operation
+        type: number
+        missingValue: 
+        description:
+        
+      - name: Año de la concesión / año del pago
+        translation: Year of concession / Payment year
+        type: date
+        missingValue: 
+        description:
+   
+  title: PDF file containing ERDF beneficiaries data for OP ERDF Structural Funds (Programa Operativo Fondo de Cohesion FEDER)
+  url: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/es-ES/Beneficiarios%20Fondos%20Feder%20y%20Fondos%20de%20Cohesin/PO%20FCH3516.pdf
+  path: 
+
+  publication_date: 19-09-2016
+  expiry_date: 2016
+  
+  update_interval: yearly
+
+  funds: ERDF
+  years: 2007-2013
+
+  periods:
+    2007-2013: true
+    2014-2020: false
+
+  extraction_mode:
+    user_interface: false
+    download_link: true
+    pdf_scraper: false
+    web_scraper: false
+    rest_api: false
+
+  constants:
+    currency: EUR
+    certifying_authority: Dirección General de Fondos Comunitarios
+    # We need a complete list of possible constants here
+
+  schema:
+    fields:
+      - name: Nombre beneficiario
+        translation: Beneficiary name
+        type: string
+        missingValue:
+        description:
+
+      - name: Nombre operación
+        translation: Operation name
+        type: string
+        missingValue: 
+        description:
+        
+      - name: Montante concedido
+        translation: Granted amount
+        type: number
+        missingValue: 
+        description:
+        
+     - name: Montante pagado final operación
+        translation: Paid amount final operation
+        type: number
+        missingValue: 
+        description:
+        
+      - name: Año de la concesión / año del pago
+        translation: Year of concession / Payment year
+        type: date
+        missingValue: 
+        description:
+      
