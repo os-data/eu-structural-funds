@@ -373,7 +373,7 @@ if __name__ == "__main__":
                                            "The goal is to provide a unified data-set that is easy to visualize and "
                                            "query so that citizens and journalists can follow the money on a local "
                                            "and global scale. This project is a collaborative effort between "
-                                           "Open-Knowledge Germany, Open-Knowledge International and a number of "
+                                           "Open-Knowledge Germany, Open Knowledge International and a number of "
                                            "journalists and developers.",
                             'sources': [
                                 {
