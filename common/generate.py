@@ -46,6 +46,7 @@ COUNTRY_CODES = [
     "BG",
     "CZ",
     "HR",
+    "RO"
 ]
 
 fiscal_schema = yaml.load(open(FISCAL_SCHEMA_FILE))
