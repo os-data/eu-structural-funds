@@ -8,7 +8,7 @@ resources:
     cci_program_code: null
     fund_acronym: null
     funding_period: 2007-2013
-  currency_code: Lei
+  currency_code: LEI
   path: cleaning_romania.csv
   publication_date: '2016-03-31'
   schema:
