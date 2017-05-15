@@ -6,7 +6,7 @@ resources:
 - add_categories: {}
   add_constants:
     cci_program_code: null
-    fund_acronym: null
+    fund_acronym: ERDF
     funding_period: 2007-2013
   currency_code: LEI
   path: cleaning_romania.csv
@@ -52,9 +52,9 @@ resources:
     - maps_to: priority_label
       name: Intervention Category
       translates_to: Intervention Category                       
-  title: ESF ERDF Romania 2007-2013
+  title: ERDF ESF Romania 2007-2013
 scraper_required: false
 sources: 
- - name: ESF Romania (2007-2013)
+ - name: ERDF ESF Romania (2007-2013)
    web: http://www.inforegio.ro/ro/implementare/proiecte-finantate.html
-title: RO.Romania 2007-2013 ESF
+title: RO.Romania 2007-2013 ERDF ESF
