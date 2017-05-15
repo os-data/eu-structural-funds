@@ -84,17 +84,17 @@ resources:
       translates_to: village applicants - name
       maps_to: null
       
-    - maps_to: total_amount_eligible
+    - maps_to: total_amount
       name: Rozhodnutí/Smlouva o poskytnutí dotace (celkové zdroje)
       translates_to: decision and grant agreements (total resources)
       
     - name: Rozhodnutí/Smlouva o poskytnutí dotace (veřejné prostředky celkem)
       translates_to: total public funds
-      maps_to: null
+      maps_to: member_state_amount
       
     - name: Rozhodnutí/Smlouva o poskytnutí dotace (EU zdroje)
       translates_to: amount of EU funding
-      maps_to: null
+      maps_to: eu_cofinancing_amount 
       
     - maps_to: null
       name: Proplacené prostředky příjemcům - vyúčtované (veřejné prostředky celkem)
@@ -107,11 +107,11 @@ resources:
       
     - name: Certifikované prostředky (veřejné prostředky celkem)
       translates_to: Certified funds (public funds total)
-      maps_to: member_state_amount
+      maps_to: null
       
     - name: Certifikované prostředky (EU zdroje)
       translates_to: Certified funds (EU sources)
-      maps_to: eu_cofinancing_amount
+      maps_to: eu_cofinancing_amount_eligible
       
     - maps_to: beneficiary_nuts_code
       name: Kód NUTS
@@ -207,17 +207,17 @@ resources:
       translates_to: village applicants - name
       maps_to: null
       
-    - maps_to: total_amount_eligible
+    - maps_to: total_amount
       name: Rozhodnutí/Smlouva o poskytnutí dotace (celkové zdroje)
       translates_to: decision and grant agreements (total resources)
       
     - name: Rozhodnutí/Smlouva o poskytnutí dotace (veřejné prostředky celkem)
       translates_to: total public funds
-      maps_to: null
+      maps_to: member_state_amount
       
     - name: Rozhodnutí/Smlouva o poskytnutí dotace (EU zdroje)
       translates_to: amount of EU funding
-      maps_to: null
+      maps_to: eu_cofinancing_amount 
       
     - maps_to: null
       name: Proplacené prostředky příjemcům - vyúčtované (veřejné prostředky celkem)
@@ -230,11 +230,11 @@ resources:
       
     - name: Certifikované prostředky (veřejné prostředky celkem)
       translates_to: Certified funds (public funds total)
-      maps_to: member_state_amount
+      maps_to: null
       
     - name: Certifikované prostředky (EU zdroje)
       translates_to: Certified funds (EU sources)
-      maps_to: eu_cofinancing_amount
+      maps_to: eu_cofinancing_amount_eligible
       
     - maps_to: beneficiary_nuts_code
       name: Kód NUTS
@@ -250,9 +250,8 @@ resources:
     - name: Počet míst realizace
       translates_to: number of seats (execution)
       maps_to: null 
+
   title: CZ.Czech II 2007-2013 ERDF
-
-
 
 
 scraper_required: false
