@@ -8,30 +8,26 @@ resources:
   add_constants:
     fund_acronym: ERDF
     funding_period: 2007-2013
-  path: north_west_ireland_2007-2013.json
+  path: ireland_raw_rescrape.csv
   publication_date: '2016-02-22'
   schema:
     fields:
-    - name: _source
-      translates_to: source
-      maps_to: source  
-      
     - maps_to: starting_date
-      name: year
-      translates_to: starting date
-    - name: group
-      translates_to: programme / county
-      maps_to: beneficiary_county
+      translates_to: starting date 
+      name: start_year
+    - maps_to: beneficiary_county
+      translates_to: county
+      name: county   
     - maps_to: beneficiary_name
-      name: reference_of_beneficiary
+      name: beneficiary_name
       translates_to: Beneficiary name
     - maps_to: project_name
       name: project_name
       translates_to: project name
     - maps_to: total_amount
-      name: amount_allocated
+      name: total_amount
       translates_to: total amount
-  title: ERDF in North West Ireland Ireland 2008
+  title: ERDF in North West Ireland Ireland 2007-2013
 scraper_required: false
 sources:
 - name: ERDF North West Ireland Ireland (2007-2013)
