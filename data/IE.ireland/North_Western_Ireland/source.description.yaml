@@ -12,6 +12,9 @@ resources:
   publication_date: '2016-02-22'
   schema:
     fields:
+    - maps_to: fund_acronym 
+      translates_to: fund_acronym
+      name: fund
     - maps_to: starting_date
       translates_to: starting date 
       name: start_year
