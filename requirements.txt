@@ -7,6 +7,6 @@ xlrd
 python-slugify
 tabulator>=0.12.1
 requests
-datapackage
+datapackage<1.0
 lxml
 fingerprints
