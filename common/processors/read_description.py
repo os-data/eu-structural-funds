@@ -8,6 +8,7 @@ from parser import ParserError
 from slugify import slugify
 from datapackage_pipelines.wrapper import spew, ingest
 from common.config import SOURCE_FILE, SOURCE_DATAPACKAGE_FILE, JSON_FORMAT
+from datapackage_pipelines.utilities.resources import PROP_STREAMING
 
 
 def save_to_file(datapackage):
@@ -73,6 +74,7 @@ def create_datapackage(datapackage={}):
         resource = fix_resource(first_resource, resource)
         resource['name'] = convert_to_name(resource['title'])
         resource['schema']['fields'] = fix_fields(resource['schema']['fields'])
+        resource[PROP_STREAMING] = True
 
         if 'publication_date' in resource:
             raw_date = resource['publication_date']
