@@ -96,12 +96,14 @@ if __name__ == "__main__":
 
                 sources = []
                 for datasrc in source.get('sources', []):
-                    sources.append({
-                        'title': datasrc['name'],
-                        'url': datasrc['web']
-                    })
+                    if 'name' in datasrc:
+                        sources.append({
+                            'title': datasrc['name'],
+                            'url': datasrc.get('web', '')
+                        })
                 if len(sources) > 0:
                     source['sources'] = sources
+
                 try:
                     preprocessing = yaml.load(open(os.path.join(dirpath, 'preprocessing.yaml')))
                 except:
