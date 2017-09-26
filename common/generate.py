@@ -94,6 +94,14 @@ if __name__ == "__main__":
                         continue
                     current = list(current.values())[0]['pipeline']
 
+                sources = []
+                for datasrc in source.get('sources', []):
+                    sources.append({
+                        'title': datasrc['name'],
+                        'url': datasrc['web']
+                    })
+                if len(sources) > 0:
+                    source['sources'] = sources
                 try:
                     preprocessing = yaml.load(open(os.path.join(dirpath, 'preprocessing.yaml')))
                 except:
@@ -378,13 +386,13 @@ if __name__ == "__main__":
                                            "journalists and developers.",
                             'sources': [
                                 {
-                                    'name': 'EU ESIF Portal',
-                                    'web':
+                                    'title': 'EU ESIF Portal',
+                                    'url':
                                         'https://www.fi-compass.eu/esif/european-structural-and-investment-funds-esif'
                                 },
                                 {
-                                    'name': 'Inforegio EU Regional Policy Portal',
-                                    'web': 'http://ec.europa.eu/regional_policy/en/'
+                                    'title': 'Inforegio EU Regional Policy Portal',
+                                    'url': 'http://ec.europa.eu/regional_policy/en/'
                                 },
                             ],
                             'author': 'Adam Kariv <adam.kariv@okfn.org>',
