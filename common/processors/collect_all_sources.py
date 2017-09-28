@@ -4,6 +4,7 @@ import gobble
 import requests
 
 import yaml
+from datapackage_pipelines.utilities.resources import PROP_STREAMED_FROM
 from slugify import slugify
 
 from datapackage_pipelines.wrapper import ingest, spew
@@ -36,7 +37,7 @@ for dirpath, dirnames, filenames in os.walk('.'):
             resource = datapackage_json['resources'][0]
             resource_url = '{}/{}'.format(url_base, resource['path'])
             resources.append({
-                'url': resource_url,
+                PROP_STREAMED_FROM: resource_url,
                 'name': dataset_name,
                 'encoding': 'utf-8',
                 'delimiter': ',',

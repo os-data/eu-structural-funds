@@ -73,6 +73,7 @@ if __name__ == "__main__":
                 source = yaml.load(open(os.path.join(dirpath, SOURCE_FILE)))
                 source['name'] = slugify.slugify(source['title'], separator='-').lower()
                 relpath = dirpath.split('/data/')[1].split('/')
+                prefix = '-'.join(x.lower() for x in relpath)
                 geo = {
                     'country_code': relpath[0].split('.')[0],
                 }
@@ -183,6 +184,7 @@ if __name__ == "__main__":
                     # ('concatenate_identical_resources', {})
                     ('add_constants', {}),
                     ('concatenate', concat_parameters),
+                    ('add_row_id', {'prefix': prefix}),
                 ] + preprocessing + [
                     ('reshape_data', {}),
                     ('show_sample_in_console', {'sample_size': 20}),
@@ -367,6 +369,7 @@ if __name__ == "__main__":
                                 "total_amount": [],
                                 "total_amount_applied": [],
                                 "total_amount_eligible": [],
+                                "internal_id": []
                             }
                         }
                     },
@@ -465,6 +468,7 @@ if __name__ == "__main__":
                                 'total_amount': 'value',
                                 'total_amount_applied': 'value',
                                 'total_amount_eligible': 'value',
+                                'internal_id': 'transaction-id:code'
                             },
                             'titles': {
                                 'amount': 'Cost of the project',
@@ -507,7 +511,8 @@ if __name__ == "__main__":
                                 'third_party_amount': 'Third party funding',
                                 'total_amount': 'Total cost of the project',
                                 'total_amount_applied': 'Total amount the project applied for',
-                                'total_amount_eligible': 'Total eligible expenditure'
+                                'total_amount_eligible': 'Total eligible expenditure',
+                                'internal_id': 'Automatically assigned row id'
                             }
                         }
                     },

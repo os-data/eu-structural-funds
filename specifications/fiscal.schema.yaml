@@ -273,3 +273,8 @@ fields:
     title: Currency Code
     description: Original currency code for amounts
     osType: unknown:string
+
+  - name: internal_id
+    title: Unique Row Id
+    description: An automatically assigned row id
+    osType: transaction-id:code
