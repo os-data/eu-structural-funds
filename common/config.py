@@ -65,26 +65,26 @@ for fmt in NUMBER_FORMATS:
     fmt['constraints'] = {'pattern': pattern}
 
 DATE_FORMATS = [
-    {'format': 'fmt:%Y'},
-    {'format': 'fmt:%d/%m/%Y'},
-    {'format': 'fmt:%d//%m/%Y'},
-    {'format': 'fmt:%d-%b-%Y'},  # abbreviated month
-    {'format': 'fmt:%d-%b-%y'},  # abbreviated month
-    {'format': 'fmt:%d. %b %y'},  # abbreviated month
-    {'format': 'fmt:%b %y'},  # abbreviated month
-    {'format': 'fmt:%d/%m/%y'},
-    {'format': 'fmt:%d-%m-%Y'},
-    {'format': 'fmt:%Y-%m-%d'},
-    {'format': 'fmt:%y-%m-%d'},
-    {'format': 'fmt:%y.%m.%d'},
-    {'format': 'fmt:%Y.%m.%d'},
-    {'format': 'fmt:%d.%m.%Y'},
-    {'format': 'fmt:%d.%m.%y'},
-    {'format': 'fmt:%d.%m.%Y %H:%M'},
-    {'format': 'fmt:%Y-%m-%d %H:%M:%S'},
-    {'format': 'fmt:%Y-%m-%d %H:%M:%S.%f'},
-    {'format': 'fmt:%Y-%m-%dT%H:%M:%SZ'},
-    {'format': 'fmt:%m/%d/%Y'},
-    {'format': 'fmt:%m/%Y'},
-    {'format': 'fmt:%y'},
+    {'format': '%Y'},
+    {'format': '%d/%m/%Y'},
+    {'format': '%d//%m/%Y'},
+    {'format': '%d-%b-%Y'},  # abbreviated month
+    {'format': '%d-%b-%y'},  # abbreviated month
+    {'format': '%d. %b %y'},  # abbreviated month
+    {'format': '%b %y'},  # abbreviated month
+    {'format': '%d/%m/%y'},
+    {'format': '%d-%m-%Y'},
+    {'format': '%Y-%m-%d'},
+    {'format': '%y-%m-%d'},
+    {'format': '%y.%m.%d'},
+    {'format': '%Y.%m.%d'},
+    {'format': '%d.%m.%Y'},
+    {'format': '%d.%m.%y'},
+    {'format': '%d.%m.%Y %H:%M'},
+    {'format': '%Y-%m-%d %H:%M:%S'},
+    {'format': '%Y-%m-%d %H:%M:%S.%f'},
+    {'format': '%Y-%m-%dT%H:%M:%SZ'},
+    {'format': '%m/%d/%Y'},
+    {'format': '%m/%Y'},
+    {'format': '%y'},
 ]
