@@ -29,8 +29,9 @@ import petl
 from copy import deepcopy
 from logging import warning, info
 from datapackage_pipelines.wrapper import ingest, spew
-from jsontableschema.exceptions import InvalidCastError, ConstraintError, InvalidDateType
-from jsontableschema.types import DateType, NumberType
+from tableschema.exceptions import CastError
+from tableschema.types import cast_date, cast_number
+from functools import partial
 
 from common.utilities import process, format_to_json
 from common.config import (
@@ -102,7 +103,9 @@ class BaseSniffer(object):
         for fmt in self.format_guesses:
             _field = deepcopy(field)
             _field.update(fmt)
-            casters.append((self.jst_type_class(_field), 0, deepcopy(fmt)))
+            _field.setdefault('format', 'default')
+            casters.append((partial(self.jst_type_class, **_field),
+                            0, deepcopy(fmt)))
 
         for raw_value in self.sample_values:
             if raw_value:
@@ -112,12 +115,12 @@ class BaseSniffer(object):
                     try:
                         assert self._pre_cast_checks_ok(fmt, raw_value)
                         raw_value = self._prepare_value(fmt, raw_value)
-                        casted = caster.cast(raw_value)
+                        casted = caster(raw_value)
                         assert self._post_cast_check_ok(fmt, casted)
                         casters[idx] = (caster, successes+1, fmt)
                         success = True
                         break
-                    except (AssertionError, InvalidCastError, ConstraintError) as e:
+                    except (AssertionError, CastError) as e:
                         pass
                 if not success:
                     self.nb_failures += 1
@@ -138,8 +141,8 @@ class BaseSniffer(object):
         for caster, _, fmt in self.casters:
             try:
                 raw_value = self._prepare_value(fmt, raw_value)
-                return caster.cast(raw_value)
-            except (InvalidCastError, ConstraintError, InvalidDateType) as e:
+                return caster(raw_value)
+            except (CastError) as e:
                 bad_value = raw_value
                 exc = e
         assert exc is not None
@@ -186,13 +189,13 @@ class BaseSniffer(object):
 
 
 class DateSniffer(BaseSniffer):
-    jst_type_class = DateType
+    jst_type_class = cast_date
     format_keys = ['format']
     format_guesses = DATE_FORMATS
 
 
 class NumberSniffer(BaseSniffer):
-    jst_type_class = NumberType
+    jst_type_class = cast_number
     format_keys = ['decimalChar', 'groupChar']
     format_guesses = NUMBER_FORMATS
 
@@ -266,8 +269,8 @@ def cast_values(row, casters, row_index=None):
             if casters[key] is not None:
                 if value is not None and type(value) is str:
                     try:
-                        row[key] = casters[key].cast(value)
-                    except InvalidCastError:
+                        row[key] = casters[key](value)
+                    except CastError:
                         message = 'Could not cast %s = %s'
                         warning(message, key, row[key])
                         assert False, message % (key, row[key])
