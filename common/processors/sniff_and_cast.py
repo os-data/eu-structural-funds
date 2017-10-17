@@ -189,13 +189,14 @@ class BaseSniffer(object):
 
 
 class DateSniffer(BaseSniffer):
-    jst_type_class = cast_date
     format_keys = ['format']
     format_guesses = DATE_FORMATS
 
+    def jst_type_class(self, *args, **options):
+        return cast_date(args, options)
+
 
 class NumberSniffer(BaseSniffer):
-    jst_type_class = cast_number
     format_keys = ['decimalChar', 'groupChar']
     format_guesses = NUMBER_FORMATS
 
@@ -211,6 +212,9 @@ class NumberSniffer(BaseSniffer):
                     return False
 
         return True
+
+    def jst_type_class(self, *args, **options):
+        return cast_number(args, options)
 
     # noinspection PyMethodMayBeStatic
     def _post_cast_check_ok(self, fmt, value):
