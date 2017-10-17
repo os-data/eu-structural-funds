@@ -103,7 +103,8 @@ class BaseSniffer(object):
             _field = deepcopy(field)
             _field.update(fmt)
             _field.setdefault('format', 'default')
-            caster = lambda v: self.jst_type_class(v, **_field)
+            format = _field.pop('format')
+            caster = lambda v: self.jst_type_class(format, v, **_field)
             casters.append((caster, 0, deepcopy(fmt)))
 
         for raw_value in self.sample_values:
