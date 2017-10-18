@@ -100,13 +100,21 @@ class BaseSniffer(object):
         #     _field = deepcopy(field).update(self.format)
         #     casters.append((self.jst_type_class(_field), 0, self.format))
 
+
         for fmt in self.format_guesses:
             _field = deepcopy(field)
             _field.update(fmt)
             _field.setdefault('format', 'default')
             format = _field.pop('format')
-            caster = lambda v: self.jst_type_class(format, v, **_field)
-            casters.append((caster, 0, deepcopy(fmt)))
+
+            def get_caster(format_, __field):
+                def caster(v):
+                    ret = self.jst_type_class(format_, v, **__field)
+                    if ret == CAST_ERROR:
+                        logging.warning('Cast error, args = %r', (format_, v, __field))
+                return caster
+
+            casters.append((get_caster(format, _field), 0, deepcopy(fmt)))
 
         for raw_value in self.sample_values:
             if raw_value:
@@ -121,7 +129,7 @@ class BaseSniffer(object):
                         casted = caster(raw_value)
                         assert casted != CAST_ERROR, "CastError for %r, %s" % (fmt, raw_value)
                         assert self._post_cast_check_ok(fmt, casted), \
-                            "Post cast check failed for %r, %s" % (fmt, casted)
+                            "Post cast check failed for %r, %s, %r" % (fmt, casted, raw_value)
                         casters[idx] = (caster, successes+1, fmt)
                         success = True
                         break
@@ -198,7 +206,7 @@ class DateSniffer(BaseSniffer):
     format_guesses = DATE_FORMATS
 
     def jst_type_class(self, *args, **options):
-        return cast_date(args, options)
+        return cast_date(*args, **options)
 
 
 class NumberSniffer(BaseSniffer):
@@ -219,7 +227,7 @@ class NumberSniffer(BaseSniffer):
         return True
 
     def jst_type_class(self, *args, **options):
-        return cast_number(args, options)
+        return cast_number(*args, **options)
 
     # noinspection PyMethodMayBeStatic
     def _post_cast_check_ok(self, fmt, value):
