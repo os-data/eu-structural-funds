@@ -114,16 +114,19 @@ class BaseSniffer(object):
                 for idx in range(len(casters)):
                     caster, successes, fmt = casters[idx]
                     try:
-                        assert self._pre_cast_checks_ok(fmt, raw_value)
+                        assert self._pre_cast_checks_ok(fmt, raw_value), \
+                            "Pre cast check failed for %r, %s" % (fmt, raw_value)
                         raw_value = self._prepare_value(fmt, raw_value)
                         casted = caster(raw_value)
-                        assert self._post_cast_check_ok(fmt, casted)
+                        assert self._post_cast_check_ok(fmt, casted), \
+                            "Post cast check failed for %r, %s" % (fmt, casted)
                         casters[idx] = (caster, successes+1, fmt)
                         success = True
                         break
-                    except AssertionError:
-                        pass
+                    except AssertionError as e:
+                        error_messages.add(str(e))
                     except CastError as e:
+                        error_messages.add(str(e))
                         for err in e.errors:
                             error_messages.add(str(err))
                 if not success:
