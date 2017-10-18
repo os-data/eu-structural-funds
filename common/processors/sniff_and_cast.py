@@ -31,6 +31,7 @@ from logging import warning, info
 from datapackage_pipelines.wrapper import ingest, spew
 from tableschema.exceptions import CastError
 from tableschema.types import cast_date, cast_number
+from tableschema.config import ERROR as CAST_ERROR
 
 from common.utilities import process, format_to_json
 from common.config import (
@@ -118,6 +119,7 @@ class BaseSniffer(object):
                             "Pre cast check failed for %r, %s" % (fmt, raw_value)
                         raw_value = self._prepare_value(fmt, raw_value)
                         casted = caster(raw_value)
+                        assert casted != CAST_ERROR, "CastError for %r, %s" % (fmt, raw_value)
                         assert self._post_cast_check_ok(fmt, casted), \
                             "Post cast check failed for %r, %s" % (fmt, casted)
                         casters[idx] = (caster, successes+1, fmt)
@@ -125,10 +127,6 @@ class BaseSniffer(object):
                         break
                     except AssertionError as e:
                         error_messages.add(str(e))
-                    except CastError as e:
-                        error_messages.add(str(e))
-                        for err in e.errors:
-                            error_messages.add(str(err))
                 if not success:
                     self.nb_failures += 1
                     self.failures.append([raw_value, list(error_messages)])
