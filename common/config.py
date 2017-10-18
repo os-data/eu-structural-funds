@@ -50,14 +50,14 @@ UNKNOWN_FIELD_TAG = '_unknown'
 WARNING_CUTOFF = 10
 
 NUMBER_FORMATS = [
-    {'format': 'currency', 'decimalChar': '.', 'groupChar': ','},
-    {'format': 'currency', 'decimalChar': ',', 'groupChar': '.'},
-    {'format': 'currency', 'decimalChar': '.', 'groupChar': ' '},
-    {'format': 'currency', 'decimalChar': ',', 'groupChar': ' '},
-    {'format': 'currency', 'decimalChar': '.', 'groupChar': ''},
-    {'format': 'currency', 'decimalChar': '.', 'groupChar': '`'},
-    {'format': 'currency', 'decimalChar': ',', 'groupChar': '\''},
-    {'format': 'currency', 'decimalChar': ',', 'groupChar': ' '},
+    {'format': 'default', 'bareNumber': False, 'decimalChar': '.', 'groupChar': ','},
+    {'format': 'default', 'bareNumber': False, 'decimalChar': ',', 'groupChar': '.'},
+    {'format': 'default', 'bareNumber': False, 'decimalChar': '.', 'groupChar': ' '},
+    {'format': 'default', 'bareNumber': False, 'decimalChar': ',', 'groupChar': ' '},
+    {'format': 'default', 'bareNumber': False, 'decimalChar': '.', 'groupChar': ''},
+    {'format': 'default', 'bareNumber': False, 'decimalChar': '.', 'groupChar': '`'},
+    {'format': 'default', 'bareNumber': False, 'decimalChar': ',', 'groupChar': '\''},
+    {'format': 'default', 'bareNumber': False, 'decimalChar': ',', 'groupChar': ' '},
 ]
 for fmt in NUMBER_FORMATS:
     pattern = ('[0-9]+' + '([{groupChar}][0-9]{{3}})*' + '([{decimalChar}][0-9]{{1,2}})?').format(**fmt)

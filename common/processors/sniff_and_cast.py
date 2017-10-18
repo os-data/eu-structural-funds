@@ -110,6 +110,7 @@ class BaseSniffer(object):
         for raw_value in self.sample_values:
             if raw_value:
                 success = False
+                error_messages = set()
                 for idx in range(len(casters)):
                     caster, successes, fmt = casters[idx]
                     try:
@@ -120,11 +121,14 @@ class BaseSniffer(object):
                         casters[idx] = (caster, successes+1, fmt)
                         success = True
                         break
-                    except (AssertionError, CastError) as e:
+                    except AssertionError:
                         pass
+                    except CastError as e:
+                        for err in e.errors:
+                            error_messages.add(str(err))
                 if not success:
                     self.nb_failures += 1
-                    self.failures.append(raw_value)
+                    self.failures.append([raw_value, list(error_messages)])
 
         casters.sort(key=lambda x: x[1], reverse=True)
         self.casters = casters
