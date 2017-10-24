@@ -59,10 +59,6 @@ NUMBER_FORMATS = [
     {'format': 'default', 'bareNumber': False, 'decimalChar': ',', 'groupChar': '\''},
     {'format': 'default', 'bareNumber': False, 'decimalChar': ',', 'groupChar': ' '},
 ]
-for fmt in NUMBER_FORMATS:
-    pattern = ('[0-9]+' + '([{groupChar}][0-9]{{3}})*' + '([{decimalChar}][0-9]{{1,2}})?').format(**fmt)
-    pattern = '[^0-9]*' + pattern + '[^0-9]*'
-    fmt['constraints'] = {'pattern': pattern}
 
 DATE_FORMATS = [
     {'format': '%Y'},

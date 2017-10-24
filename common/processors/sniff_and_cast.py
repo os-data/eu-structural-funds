@@ -24,14 +24,15 @@ The processor toggles field types to match changes in the data.
 """
 
 # TODO: relax the single resource constraint in `sniff_and_cast` processor
+import re
+
 import petl
 
 from copy import deepcopy
 from logging import warning, info
 from datapackage_pipelines.wrapper import ingest, spew
 from tableschema.exceptions import CastError
-from tableschema.types import cast_date, cast_number
-from tableschema.config import ERROR as CAST_ERROR
+from tableschema import Field
 
 from common.utilities import process, format_to_json
 from common.config import (
@@ -105,13 +106,13 @@ class BaseSniffer(object):
             _field = deepcopy(field)
             _field.update(fmt)
             _field.setdefault('format', 'default')
-            format = _field.pop('format')
+            _field['tyoe'] = self.jst_type_class
 
             def get_caster(format_, __field):
                 def caster(v):
-                    ret = self.jst_type_class(format_, v, **__field)
-                    if ret == CAST_ERROR:
-                        logging.warning('Cast error, args = %r', (format_, v, __field))
+                    f = Field(__field)
+                    logging.error('LLL %r', v)
+                    return f.cast_value(v)
                 return caster
 
             casters.append((get_caster(format, _field), 0, deepcopy(fmt)))
@@ -125,14 +126,19 @@ class BaseSniffer(object):
                     try:
                         assert self._pre_cast_checks_ok(fmt, raw_value), \
                             "Pre cast check failed for %r, %s" % (fmt, raw_value)
-                        raw_value = self._prepare_value(fmt, raw_value)
-                        casted = caster(raw_value)
-                        assert casted != CAST_ERROR, "CastError for %r, %s" % (fmt, raw_value)
+                        casted = self._prepare_value(fmt, raw_value)
+                        casted = caster(casted)
                         assert self._post_cast_check_ok(fmt, casted), \
                             "Post cast check failed for %r, %s, %r" % (fmt, casted, raw_value)
                         casters[idx] = (caster, successes+1, fmt)
                         success = True
                         break
+                    except CastError as e:
+                        for err in e.errors:
+                            error_messages.add("CastError %s for %r, %s" % (err, fmt, raw_value))
+                    except TypeError as e:
+                        error_messages.add("TypeError %s for %r, %s" % (e, fmt, raw_value))
+                        raise
                     except AssertionError as e:
                         error_messages.add(str(e))
                 if not success:
@@ -204,14 +210,13 @@ class BaseSniffer(object):
 class DateSniffer(BaseSniffer):
     format_keys = ['format']
     format_guesses = DATE_FORMATS
-
-    def jst_type_class(self, *args, **options):
-        return cast_date(*args, **options)
+    jst_type_class = 'date'
 
 
 class NumberSniffer(BaseSniffer):
     format_keys = ['decimalChar', 'groupChar']
     format_guesses = NUMBER_FORMATS
+    jst_type_class = 'number'
 
     def _pre_cast_checks_ok(self, fmt, value):
         if value is not None:
@@ -224,10 +229,14 @@ class NumberSniffer(BaseSniffer):
                 if decimal_index < group_index:
                     return False
 
-        return True
+            pattern = ('[0-9]+' + '([{groupChar}][0-9]{{3}})*' + '([{decimalChar}][0-9]{{1,2}})?').format(**fmt)
+            pattern = '^[^0-9]*' + pattern + '[^0-9]*$'
+            regex = re.compile(pattern)
+            match = regex.match(value)
+            if not match:
+                return False
 
-    def jst_type_class(self, *args, **options):
-        return cast_number(*args, **options)
+        return True
 
     # noinspection PyMethodMayBeStatic
     def _post_cast_check_ok(self, fmt, value):
@@ -286,7 +295,7 @@ def cast_values(row, casters, row_index=None):
             if casters[key] is not None:
                 if value is not None and type(value) is str:
                     try:
-                        row[key] = casters[key](value)
+                        row[key] = casters[key].cast(value)
                     except CastError:
                         message = 'Could not cast %s = %s'
                         warning(message, key, row[key])
