@@ -111,7 +111,6 @@ class BaseSniffer(object):
             def get_caster(format_, __field):
                 def caster(v):
                     f = Field(__field)
-                    logging.error('LLL %r', v)
                     return f.cast_value(v)
                 return caster
 
