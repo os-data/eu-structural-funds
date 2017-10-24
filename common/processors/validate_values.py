@@ -11,15 +11,17 @@ allowed_value_columns = allowed_values.keys()
 
 
 def is_empty(value):
-    if value is None: return True
-    if type(value) is str and value.strip()=='': return True
+    if value is None:
+        return True
+    if type(value) is str and value.strip() == '':
+        return True
     return False
 
 
 def process(resources):
     def process_single(resource):
         counter = 0
-        nones = dict((c,0) for c in threshold_columns)
+        nones = dict((c, 0) for c in threshold_columns)
         for row in resource:
             counter += 1
             for column in threshold_columns:
@@ -37,10 +39,10 @@ def process(resources):
             ratio_percent = 100 - (100*nones[column])//counter
             if ratio_percent < thresholds[column]:
                 raise ValueError('%s: Got %d good values (out of %d), which is %d%% (below the threshold of %d%%)' %
-                                 (column, counter-nones[column], counter, ratio_percent, thresholds[column]) )
+                                 (column, counter-nones[column], counter, ratio_percent, thresholds[column]))
 
     for resource_ in resources:
         yield process_single(resource_)
 
-spew(datapackage_, process(resources_))
 
+spew(datapackage_, process(resources_))

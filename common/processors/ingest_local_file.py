@@ -11,8 +11,6 @@
 import json
 import cchardet
 
-from logging import warning, info, error
-
 import logging
 from datapackage_pipelines.wrapper import ingest
 from datapackage_pipelines.wrapper import spew
@@ -59,14 +57,14 @@ class BaseIngestor(object):
         self._log_parameters()
         self._check_headers()
 
-        info('Running preprocessors: %r', self._pre_processors)
+        logging.info('Running preprocessors: %r', self._pre_processors)
 
         for pre_processor in self._pre_processors:
             pre_processor()
 
-        info('Opening resource: %s', self.resource['path'])
+        logging.info('Opening resource: %s', self.resource['path'])
         with Stream(self.resource['path'], **self._body_options) as stream:
-            info('First %s rows =\n%s', LOG_SAMPLE_SIZE, self._show(stream))
+            logging.info('First %s rows =\n%s', LOG_SAMPLE_SIZE, self._show(stream))
             for row in stream.iter(keyed=True):
                 yield row
 
@@ -170,10 +168,10 @@ class BaseIngestor(object):
         options_as_json = format_to_json(self._body_options)
         nb_empty_headers = len(self._fields) - len(self._headers)
 
-        info('Ignoring %s empty header fields', nb_empty_headers)
-        info('%s sourced fields = %s', len(self._fields), fields_as_json)
-        info('%s data fields = %s', len(self._headers), headers_as_json)
-        info('Ingestor options = %s', options_as_json)
+        logging.info('Ignoring %s empty header fields', nb_empty_headers)
+        logging.info('%s sourced fields = %s', len(self._fields), fields_as_json)
+        logging.info('%s data fields = %s', len(self._headers), headers_as_json)
+        logging.info('Ingestor options = %s', options_as_json)
 
     @staticmethod
     def _show(stream):
@@ -226,7 +224,7 @@ class CSVIngestor(BaseIngestor):
         with open(self.resource['path'], 'rb') as stream:
             text = stream.read()
             encoding = cchardet.detect(text)['encoding']
-            info('Detected %s encoding with cchardet', encoding)
+            logging.info('Detected %s encoding with cchardet', encoding)
             return encoding
 
     @property
@@ -348,7 +346,6 @@ class XLSIngestor(BaseIngestor):
                 for value in values
             ]
             yield index, headers, values
-
 
 
 XLSXIngestor = XLSIngestor

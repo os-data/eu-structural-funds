@@ -78,13 +78,15 @@ class BaseSniffer(object):
     format_keys = []
     format_guesses = []
 
-    def __init__(self, field, resource_sample, max_failure_rate, parameters):
+    def __init__(self, field, resource_sample, max_failure_rate, parameters=None):
         self.max_failure_rate = max_failure_rate
         self.sample_values = self._get_field_sample(resource_sample, field)
         self._nb_empty_sample_values = self.sample_values.count('')
         self.sample_size = len(
             self.sample_values) - self._nb_empty_sample_values
         self.max_nb_failures = 0
+        if parameters is None:
+            parameters = {}
         self.parameters = parameters
 
         # The following get updated with each guess
@@ -101,12 +103,11 @@ class BaseSniffer(object):
         #     _field = deepcopy(field).update(self.format)
         #     casters.append((self.jst_type_class(_field), 0, self.format))
 
-
         for fmt in self.format_guesses:
             _field = deepcopy(field)
             _field.update(fmt)
             _field.setdefault('format', 'default')
-            _field['tyoe'] = self.jst_type_class
+            _field['type'] = self.jst_type_class
 
             def get_caster(format_, __field):
                 def caster(v):
@@ -328,10 +329,10 @@ def concatenate_data_sample(data_sample, resource):
 
     i = 0
     for row in data_sample:
-        i+=1
+        i += 1
         yield row
     for row in resource:
-        i+=1
+        i += 1
         yield row
 
 

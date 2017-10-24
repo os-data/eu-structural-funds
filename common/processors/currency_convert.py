@@ -33,7 +33,7 @@ def process(resources):
                 else:
                     funding_period = list(map(int, row['funding_period'].split('-')))
                     keys = ['%s-%d-06' % (currency, year) for year in range(funding_period[0], funding_period[1])]
-                assert len(keys)>0
+                assert len(keys) > 0
                 all_rates = [(key, currencies.get(key)) for key in keys]
                 none_keys = map((lambda x: x[0]),
                                 filter((lambda x: x[1] is None), all_rates))
@@ -52,6 +52,7 @@ def process(resources):
     for resource_ in resources:
         yield process_single(resource_)
 
+
 for resource in datapackage_['resources']:
     resource['schema']['fields'].append({
         'name': currency_column,
@@ -59,5 +60,4 @@ for resource in datapackage_['resources']:
     })
 
 spew(datapackage_, process(resources_))
-
 missing.close()

@@ -44,7 +44,7 @@ def cast_values(row):
     for key, value in row.items():
         if value:
             try:
-                if value is None or (type(value) is str and len(value.strip())==0):
+                if value is None or (type(value) is str and len(value.strip()) == 0):
                     row[key] = None
                 else:
                     row[key] = converter[key](value)

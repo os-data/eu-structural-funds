@@ -10,3 +10,5 @@ requests
 datapackage
 lxml
 fingerprints
+pandas
+jsontableschema

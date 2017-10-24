@@ -22,8 +22,6 @@ None.
 
 """
 
-import os
-
 from datapackage_pipelines.wrapper import ingest, spew
 
 from common.utilities import process

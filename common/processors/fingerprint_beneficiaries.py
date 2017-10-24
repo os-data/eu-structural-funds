@@ -21,4 +21,3 @@ def process(resources):
 
 
 spew(datapackage_, process(resources_))
-

@@ -3,11 +3,10 @@
 import json
 import logging
 import arrow
-import yaml
 from parser import ParserError
 from slugify import slugify
 from datapackage_pipelines.wrapper import spew, ingest
-from common.config import SOURCE_FILE, SOURCE_DATAPACKAGE_FILE, JSON_FORMAT
+from common.config import SOURCE_DATAPACKAGE_FILE, JSON_FORMAT
 from datapackage_pipelines.utilities.resources import PROP_STREAMING
 
 
