@@ -58,6 +58,7 @@ def _lookup_geocode(nuts_code):
         if info['NUTS-Code'] == nuts_code:
             return info['Description']
 
+
 if __name__ == "__main__":
 
     update = False
@@ -74,24 +75,22 @@ if __name__ == "__main__":
                 source['name'] = slugify.slugify(source['title'], separator='-').lower()
                 relpath = dirpath.split('/data/')[1].split('/')
                 prefix = '-'.join(x.lower() for x in relpath)
+                country_code = relpath[0].split('.')[0]
+                if len(relpath) > 1 and '.' in relpath[1]:
+                    nuts_code = relpath[1].split('.')[0]
+                else:
+                    nuts_code = country_code
                 geo = {
-                    'country_code': relpath[0].split('.')[0],
+                    'country_code': country_code,
+                    'nuts_code': nuts_code,
+                    'country': _lookup_geocode(country_code),
+                    'region': _lookup_geocode(nuts_code)
                 }
-                geo.update({
-                    'nuts_code': \
-                        relpath[1].split('.')[0] \
-                        if len(relpath)>1 and '.' in relpath[1] \
-                        else geo['country_code']
-                })
-                geo.update({
-                    'country': _lookup_geocode(geo['country_code']),
-                    'region': _lookup_geocode(geo['nuts_code'])
-                })
                 source['geo'] = geo
                 if update:
                     try:
                         current = yaml.load(open(os.path.join(dirpath, PIPELINE_FILE)))
-                    except:
+                    except Exception:
                         continue
                     current = list(current.values())[0]['pipeline']
 
@@ -107,11 +106,11 @@ if __name__ == "__main__":
 
                 try:
                     preprocessing = yaml.load(open(os.path.join(dirpath, 'preprocessing.yaml')))
-                except:
+                except Exception:
                     preprocessing = []
                 try:
                     mappings = yaml.load(open(os.path.join(dirpath, 'mappings.yaml')))
-                except:
+                except Exception:
                     mappings = {'mappings': []}
 
                 fiscal_model_parameters = {
@@ -146,7 +145,7 @@ if __name__ == "__main__":
                 for resource in source['resources']:
                     schema = resource.get('schema')
                     if schema is not None:
-                        for field in schema.get('fields',[]):
+                        for field in schema.get('fields', []):
                             maps_to = field.get('maps_to')
                             if maps_to is not None and not maps_to.startswith('_'):
                                 aliases = concat_parameters[maps_to]
@@ -261,8 +260,8 @@ if __name__ == "__main__":
                                                          'add_constants',
                                                          'add_categories',
                                                          }:
-                                        pipeline_item = list(filter(lambda x:x[0] == item['run'], orig_pipeline))[0]
-                                        assert(len(item.get('parameters', {}))==0)
+                                        pipeline_item = list(filter(lambda x: x[0] == item['run'], orig_pipeline))[0]
+                                        assert(len(item.get('parameters', {})) == 0)
                                         break
                                     elif item['run'] in PREPROCESSING:
                                         if item['run'] not in set(x[0] for x in preprocessing):
@@ -291,7 +290,7 @@ if __name__ == "__main__":
                     yaml.dump({title: pipeline}, open(os.path.join(dirpath, PIPELINE_FILE), 'w'))
                 deps.setdefault(geo['country_code'], []).append(os.path.join('./eu-structural-funds/data', *relpath, title))
                 deps.setdefault('', []).append(os.path.join('./eu-structural-funds/data', *relpath, title))
-            except:
+            except Exception:
                 logging.exception('Problem in %s', dirpath)
                 raise
 
@@ -532,4 +531,3 @@ if __name__ == "__main__":
                 ]
         }
     yaml.dump(concats, open(os.path.join(DATA_DIR, 'pipeline-spec.yaml'), 'w'))
-

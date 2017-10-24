@@ -359,10 +359,6 @@ class Source(object):
 
         raise ValueError('{} processor not in pipeline'.format(name))
 
-    @property
-    def _pipeline(self):
-        return self.pipeline_spec[self.slug]['pipeline']
-
     def _read_description(self):
         try:
             with open(join(self.folder, SOURCE_FILE)) as stream:

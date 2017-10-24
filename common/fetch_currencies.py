@@ -19,8 +19,7 @@ for k in missing_keys:
     try:
         print("fetching %r" % (tp,))
         currencies[k] = requests.get(CURRENCY_API.format(*tp)).json()
-    except:
+    except Exception:
         print("Couldn't fetch %r" % (tp,))
 
 json.dump(currencies, open(CURRENCIES_FILE, 'w'))
-

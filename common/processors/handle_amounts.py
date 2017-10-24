@@ -14,10 +14,13 @@ from_zero = re.compile('[0-9]+')
 
 
 def is_empty(value, digits):
-    if value is None: return True
+    if value is None:
+        return True
     value = str(value).strip()
-    if value == '': return True
-    if len(digits.findall(value)) == 0: return True
+    if value == '':
+        return True
+    if len(digits.findall(value)) == 0:
+        return True
     return False
 
 
@@ -33,7 +36,8 @@ def process(resources):
                     row[kind_column] = column
                     done = True
                     break
-                if done: break
+                if done:
+                    break
             yield row
 
     for resource_ in resources:
@@ -53,4 +57,3 @@ def process(resources):
 #     })
 
 spew(datapackage_, process(resources_))
-

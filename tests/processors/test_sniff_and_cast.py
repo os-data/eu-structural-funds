@@ -17,7 +17,6 @@ from common.processors.sniff_and_cast import (
     extract_data_sample,
     concatenate_data_sample,
     cast_values,
-    update_field_types,
     DateSniffer,
     select_sniffer,
     NumberSniffer,
@@ -82,40 +81,6 @@ def test_cast_values_that_are_already_casted_returns_identical_row():
     casted_values_out = {'date': date(1999, 1, 1), 'number': Decimal(1.2)}
     assert cast_values(casted_values_in, _CASTERS,
                        row_index=0) == casted_values_out
-
-
-# Datapackage mutation
-# -----------------------------------------------------------------------------
-
-_ORIGINAL_DATAPACKAGE = {
-    'resources': [
-        {
-            'schema': {
-                'fields': [
-                    {'name': 'total_amount', 'type': 'type'},
-                    {'name': 'starting_date', 'type': 'string'}
-                ]
-            }
-        }
-    ]
-}
-
-_MUTATED_DATAPACKAGE = {
-    'resources': [
-        {
-            'schema': {
-                'fields': [
-                    {'name': 'total_amount', 'type': 'number'},
-                    {'name': 'starting_date', 'type': 'date'}
-                ]
-            }
-        }
-    ]
-}
-
-
-def test_update_field_types_toggles_datapackage_field_types_correctly():
-    assert update_field_types(_ORIGINAL_DATAPACKAGE) == _MUTATED_DATAPACKAGE
 
 
 # Sample generators
@@ -249,8 +214,8 @@ number_field = {
     'groupChar': ','
 }
 sample_resources = [
-    {'foo': 'bar'},
-    {'foo': 'baz'}
+    {'foo': '3.2'},
+    {'foo': '1,234.56'}
 ]
 
 number_sniffer = NumberSniffer(number_field, sample_resources, 0)
@@ -303,9 +268,8 @@ currency_field = {
 }
 
 currency_sniffer = NumberSniffer(currency_field, sample_resources, 0)
-currency_caster = currency_sniffer.get_caster()
 
 
 @mark.parametrize('value', _VALID_RAW_CURRENCIES)
 def test_number_sniffer_on_values_with_currency_units(value):
-    assert currency_caster.cast(value)
+    assert currency_sniffer.cast(value)

@@ -3,7 +3,7 @@
 from datapackage_pipelines.wrapper import ingest
 from datapackage_pipelines.wrapper import spew
 from common.utilities import get_fiscal_field_names
-import logging
+
 
 def process_row(row, fiscal_fields):
     """Add and remove appropriate columns.

@@ -5,7 +5,6 @@ import requests
 
 import yaml
 from datapackage_pipelines.utilities.resources import PROP_STREAMED_FROM, PATH_PLACEHOLDER
-from slugify import slugify
 
 from datapackage_pipelines.wrapper import ingest, spew
 
