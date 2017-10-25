@@ -4,7 +4,7 @@ import gobble
 import requests
 
 import yaml
-from datapackage_pipelines.utilities.resources import PROP_STREAMED_FROM
+from datapackage_pipelines.utilities.resources import PROP_STREAMED_FROM, PATH_PLACEHOLDER
 from slugify import slugify
 
 from datapackage_pipelines.wrapper import ingest, spew
@@ -14,7 +14,8 @@ FILENAME = 'pipeline-spec.yaml'
 resources = []
 datapackage = {
     'name': 'placeholder',
-    'resources': resources
+    'resources': resources,
+    'profile': 'data-package',
 }
 
 parameters, _, _ = ingest()
@@ -38,6 +39,7 @@ for dirpath, dirnames, filenames in os.walk('.'):
             resource_url = '{}/{}'.format(url_base, resource['path'])
             resources.append({
                 PROP_STREAMED_FROM: resource_url,
+                'path': PATH_PLACEHOLDER,
                 'name': dataset_name,
                 'encoding': 'utf-8',
                 'delimiter': ',',
