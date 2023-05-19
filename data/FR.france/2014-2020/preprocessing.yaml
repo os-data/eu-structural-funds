@@ -1,4 +1,0 @@
-- !!python/tuple
-  - convert_excel_dates
-  - date-fields: [starting_date, completion_date, approval_date]
-    date-mode: 0
