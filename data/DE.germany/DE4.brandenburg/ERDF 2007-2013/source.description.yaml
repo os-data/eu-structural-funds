@@ -1,0 +1,54 @@
+title: DE4.Brandenburg 2007-2013 ERDF
+
+description: The beneficiary list of the ERDF programme for Brandenburg
+language: de
+
+sources:
+  - name: ERDF Brandenburg
+    web:   http://www.efre.brandenburg.de/cms/detail.php/bb1.c.152414.de
+
+scraper_required: false
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+  - title: ERDF Data Brandenburg 2007-2013
+
+    path: Brandenburg-ERDF-2007-2013.csv
+    #url: http://www.efre.brandenburg.de/media_fast/4055/Verzeichnis%202014.pdfhttp://www.stmwi.bayern.de/EFRE/_Downloads/Wettbewerbsfaehigkeit_Beschaeftigung/Transparenzliste-31.12.2015.pdf
+
+    publication_date: 2015-03-23
+
+    add_constants:
+      fund_acronym: ERDF
+      funding_period: 2007-2013
+      cci_code: 2007DE161PO002
+      currency_code: EUR
+      
+    schema:
+      fields:
+        - name: Name des Begünstigten
+          translates_to: Name of the Beneficiary
+          maps_to: beneficiary_name
+
+        - name: Bezeichnung des Vorhabens
+          translates_to: Name of the Project
+          maps_to: project_name
+
+        - name: Jahr der Bewilligung
+          translates_to: Year of Approval / Year of Final Payment
+          maps_to: approval_date
+
+        - name: Jahr der Restzahlung
+          translates_to: Year of Final Payment
+          maps_to: final_payment_date
+
+        - name: Gewährte Beträge
+          translates_to: Eligible Amount in Euro
+          maps_to: total_amount_eligible
+
+        - name: Bei Abschluss des Vorhabens gezahlte Gesamtbeträge
+          translates_to: Paid amount at the end of the project
+          maps_to: total_amount

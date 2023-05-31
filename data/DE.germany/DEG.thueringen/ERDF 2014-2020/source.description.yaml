@@ -1,0 +1,55 @@
+contributors:
+- Michael Peters (michael.peters@okfn.de)
+description: The beneficiary list of the ERDF programme for Thüringen.
+language: de
+resources:
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2014DE16RFOP015
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+  currency_code: EUR
+  parser_options:
+    delimiter: ","
+  path: 160630_liste_der_vorhaben_efre_14_20_endg.csv
+  publication_date: 30-06-2016
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: Name des Beguenstigten
+      translates_to: Beneficiary name
+    - maps_to: project_name
+      name: Bezeichnung des Vorhabens
+      translates_to: operation name
+    - maps_to: project_description
+      name: Zusammenfassung des Vorhabens
+      translates_to: project description
+    - maps_to: starting_date
+      name: Beginns des Vorhabens
+      translates_to: starting date of the project
+    - maps_to: completion_date
+      name: Ende des Vorhabens
+      translates_to: completion date of the project
+    - maps_to: total_amount_eligible
+      name: Gesamtbetrag der foerderfaehigen Ausgaben des Vorhabens
+      translates_to: total eligible expenditure allocated to the operation in €
+    - maps_to: eu_cofinancing_rate
+      name: Unions-Kofinanzierungssatz pro Prioritätsachse
+      translates_to: Union co-financing rate in %
+    - maps_to: beneficiary_postal_code
+      name: Postleitzahl des Vorhabens
+      translates_to: operation postcode
+    - maps_to: beneficiary_country
+      name: Land
+      translates_to: country
+    - name: Bezeichnung der Interventionskategorie
+      translates_to: Intervention field and number (includes category number and descriptionof field)
+      maps_to: priority_label
+  title: DEG.Thueringen 2014-2020 ERDF
+scraper_required: false
+sources:
+- name: ERDF Thüringen (2014-2020)
+  web: http://www.efre.rlp.de/
+- name: Link to the CSV file
+  web: http://www.efre20-thueringen.de/mam/efre20/liste/160630_liste_der_vorhaben_efre_14_20_endg.csv
+title: DEG.Thueringen 2014-2020 ERDF

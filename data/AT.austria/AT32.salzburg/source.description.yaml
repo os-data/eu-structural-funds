@@ -1,0 +1,35 @@
+contributors:
+- Michael Peters (michael.peters@okfn.de)
+description: The beneficiary list for the ERDF (2007-2013) program for Salzburg.
+language: de
+resources:
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007AT162PO006
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: ERDF-Salzburg-2007-2013.csv
+  publication_date: '2016-07-07'
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: Begünstigte/r beneficiary
+      translates_to: Beneficiary name
+    - maps_to: project_description
+      name: Bezeichnung des Vorhabens name of the operation
+      translates_to: operation name
+    - maps_to: total_amount
+      name: öffentliche Beteiligung(EU+nationale Kofinanzierung)
+      translates_to: Public Contribution (EU and national)
+    - name: Status - G genehmigt - A ausbezahlt
+      translates_to: Status of Project - G confirmed A paid
+      maps_to: project_status
+  title: ERDF Salzburg 2007-2013
+scraper_required: false
+sources:
+- name: ERDF Salzburg
+  web: https://www.salzburg.gv.at/wirtschaft_/Seiten/efre-foerderung.aspx
+- name: Link to the original PDF file
+  web: https://www.salzburg.gv.at/wirtschaft_/Documents/rwf-beguenstigte.pdf
+title: AT32.Salzburg 2007-2013 ERDF

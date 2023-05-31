@@ -1,0 +1,58 @@
+contributors:
+- Michael Peters (michael.peters@okfn.de)
+description: The beneficiary list of the ESF programme for Nordrhein-Westfalen.
+language: de
+resources:
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2014DE05SFOP010
+    fund_acronym: ESF
+    funding_period: 2014-2020
+  currency_code: EUR
+  path: ESF_NRW_2014-2020.json
+  publication_date: '2016-08-25'
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: Name des Begünstigten (Nennung ausschließlich von juristischen, nicht
+        von natürlichen Personen)
+      translates_to: Beneficiary name
+    - maps_to: project_name
+      name: Bezeichnung des Vorhabens
+      translates_to: operation name
+    - maps_to: project_description
+      name: Zusammenfassung des Vorhabens
+      translates_to: project description
+    - maps_to: starting_date
+      name: Datum des Beginns des Vorhabens
+      translates_to: starting date of the project
+    - maps_to: completion_date
+      name: Datum des Endes des Vorhabens (voraussichtliches Datum des Abschlusses
+        der konkreten Arbeiten oder der vollständigen Durchführung des Vorhabens)
+      translates_to: completion date of the project
+    - maps_to: total_amount_eligible
+      name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens
+      translates_to: total eligible expenditure
+    - maps_to: eu_cofinancing_rate
+      name: Unions-Kofinanzierungssatz pro Prioritätsachse
+      translates_to: EU co-financing rate in percent
+    - maps_to: beneficiary_postal_code
+      name: Postleitzahl des Vorhabens oder andere angemessene Standortindikatoren
+      translates_to: postal code
+    - maps_to: beneficiary_city
+      name: Ort des Vorhabens
+      translates_to: beneficiary city
+    - maps_to: beneficiary_country
+      name: Land
+      translates_to: name of country
+    - maps_to: priority_number
+      name: Bezeichnung der Interventionskategorie für das Vorhaben gem. Art. 96 Abs.
+        2 Unterabsatz 1 Buchstabe b Ziffer vi
+      translates_to: EU intervention category (number) which declares under which
+        category the company applied for funds
+  title: ESF in Nordrhein-Westfalen 2014-2020
+scraper_required: false
+sources:
+- name: ESF Nordrhein-Westfalen 2014-2020
+  web: http://www.arbeit.nrw.de/esf/foerderphase_2014_bis_2020/oeffentlichkeitsarbeit/download/docs/liste_der_vorhaben.xlsx
+title: DEA.Nordrhein-Westfalen 2014-2020 ESF

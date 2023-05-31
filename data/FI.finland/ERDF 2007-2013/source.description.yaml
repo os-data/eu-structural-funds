@@ -1,0 +1,65 @@
+contributors:
+- Michael Peters <michael.peters@okfn.de> (http://okfn.de)
+description: null
+language: FI
+add_categories:
+  fund_acronym:
+      EAKR: ERDF
+      ESR: ESF
+resources:
+- add_constants:
+    cci_program_code: null
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: projektilista-2007-2013_new.csv
+  publication_date: '2015-12-31'
+  schema:
+    fields:
+    - maps_to: project_id
+      name: Koodi
+      translates_to: Code
+    - maps_to: fund_acronym
+      name: Rahasto
+      translates_to: Fund
+    - maps_to: project_name
+      name: Projektin nimi
+      translates_to: project title
+    - maps_to: priority_label 
+      name: Ohjelma / osio
+      translates_to: Program title
+    - maps_to: null
+      name: Tl
+      translates_to: some number defining the project either 1 or 2
+    - maps_to: management_authority
+      name: Viranomainen
+      translates_to: Authority / beneficiary
+    - name: Toiminnan tila
+      translates_to: Status of project
+      maps_to: project_status
+    - maps_to: starting_date
+      name: Aloituspvm
+      translates_to: project's starting date
+    - maps_to: completion_date
+      name: Päättymispvm
+      translates_to: project's completion date
+    - name: Toteuttajan nimi
+      translates_to: names of the executor
+      maps_to: beneficiary_name
+    - maps_to: eu_cofinancing_amount_eligible
+      name: Myönnetty EU- ja valtion rahoitus
+      translates_to: Granted state funding in the EU
+    - maps_to: eu_cofinancing_amount
+      name: Toteutunut EU- ja valtion rahoitus
+      translates_to: Actual state funding in the EU
+    - maps_to: member_state_amount
+      name: Suunniteltu julkinen rahoitus yhteensä
+      translates_to: amount of public funding
+    - maps_to: total_amount
+      name: Toteutunut julkinen rahoitus yhteensä
+      translates_to: total cost of project
+  title: Finland ERDF and ESF data 2007-2013
+scraper_required: false
+sources:
+- name: Finland ERDF data 2007-2013
+  web: https://www.rakennerahastot.fi/rahoitetut-hankkeet#.V1A2dJN95E4
+title: Fi.Finland 2007-2013 ERDF ESF

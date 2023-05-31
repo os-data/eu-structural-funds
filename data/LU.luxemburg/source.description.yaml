@@ -1,0 +1,67 @@
+contributors:
+- Michael Peters (michael.peters@okfn.de)
+description: The beneficiary list for the ERDF and ESF (2007-2020) program for Luxembourg.
+language: de
+add_categories:
+  fund_acronym:
+    FEDER: ERDF
+    FSE: ESF
+resources:
+- add_constants:
+    cci_program_code: 2014LU05SFOP001
+    funding_period: unknown
+  aliases:
+    porteur_de_projet: porteur(s)_de_projet
+  currency_code: EUR
+  path: all_funds_data_luxembourg_2007-2020.csv
+  publication_date: '2016-10-25'
+  schema:
+    fields:
+    - name: _source
+      translates_to: source
+      maps_to: source
+    - maps_to: project_name
+      name: title
+      translates_to: operation name
+    - maps_to: fund_acronym
+      name: fonds
+      translates_to: name of fund
+    - maps_to: theme_name
+      name: objectifs_thématiques
+      translates_to: theme name
+    - maps_to: operational_programme
+      name: programme
+      translates_to: programme
+    - maps_to: beneficiary_name
+      name: porteur_de_projet
+      translates_to: Beneficiary name
+    - maps_to: beneficiary_county
+      name: commune(s)
+      translates_to: city / county
+    - maps_to: total_amount
+      name: coût_total
+      translates_to: total amount
+    - maps_to: total_amount_eligible
+      name: total
+      translates_to: total amount eligible
+    - maps_to: eu_cofinancing_amount
+      name: eu_amount 
+      translates_to: eu cofinancing amount 
+    - maps_to: eu_cofinancing_rate
+      name: co_financing
+      translates_to: eu cofinancing rate in percent 
+    - maps_to: starting_date
+      name: start_date
+      translates_to: starting date 
+    - maps_to: completion_date
+      name: end_date
+      translates_to: completion date   
+    - maps_to: priority_label
+      name: catégorie_d'intervention
+      translates_to: null
+  title: ERDF and ESF Luxembourg 2007-2013
+scraper_required: false
+sources:
+- name: ERDF and ESF Luxembourg
+  web: http://www.fonds-europeens.public.lu/fr/projets-cofinances/index.php
+title: LU.Luxembourg 2007-2013 2014-2020 ERDF ESF

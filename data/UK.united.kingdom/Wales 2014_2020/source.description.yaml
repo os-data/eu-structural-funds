@@ -1,0 +1,63 @@
+
+title: UK.Wales 2014-2020 ERDF ESF
+
+description: The beneficiary list of the ERDF programme for the Wales.
+language: EN 
+currency_code: GBP
+
+sources:
+
+  - name: Wales (2014-2020)
+    web: http://gov.wales/funding/eu-funds/2014-2020/approved-projects/?lang=en
+
+scraper_required: false
+
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+
+  - title: ESIF in Wales 2014-2020
+
+    path: Wales_2014_2020.csv
+
+    publication_date: 2016-12-08
+
+    add_constants:
+      funding_period: 2014-2020
+      cci_code: 
+
+
+    schema:
+      fields:
+        - name: Lead Beneficiary
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: Operation Title  
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: approval date 
+          translates_to: aproval date of the project
+          maps_to: approval_date
+
+        - name: Total Project Cost
+          translates_to: total amount eligible 
+          maps_to: total_amount_eligible
+
+        - name: EU Funds Awarded                  
+          translates_to: Subsidy amount
+          maps_to: eu_cofinancing_amount_eligible
+
+        - name: Fund
+          translates_to: Fund 
+          maps_to: fund_acronym 
+
+        - name: Region
+          translates_to: Region
+          maps_to: beneficiary_nuts_region
+    
+

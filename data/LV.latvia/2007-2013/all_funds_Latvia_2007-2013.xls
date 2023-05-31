@@ -1,0 +1,1785 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  
+  <title></title>
+  </head>
+  <body>
+    <table id="strfondi-tabula">
+    <thead>
+  		<tr>
+  			<th>Nr.</th>
+  			<th style="text-align: left;">Pasākuma,&nbsp;aktivitātes,&nbsp;<br/>apakšaktivitātes nosaukums</th>
+  			<th>Ieviešanas kārtība</th>
+  			<th>Atbildīgā iestāde</th>
+  			<th>Sadarbības iestāde</th>
+  			<th>Fonds</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+			<tr>
+					<th colspan="6">Cilvēkresursi un nodarbinātība</th>
+				</tr>
+			<tr>
+					<td>1.1.</td>
+			<td colspan="4">Augstākā izglītība un zinātne</td>
+				</tr>
+			<tr>
+					<td>1.1.1.</td>
+			<td colspan="4">Zinātnes un pētniecības potenciāla attīstība</td>
+				</tr>
+			<tr>
+					<td>1.1.1.1.</td>
+			<td>Zinātnes un inovāciju politikas veidošanas un administratīvās kapacitātes stiprināšana</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.1.1.2.</td>
+			<td>Cilvēkresursu piesaiste zinātnei</td>
+			<td>APIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.1.1.3.</td>
+			<td>Motivācijas veicināšana zinātniskajai darbībai</td>
+			<td>APIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.1.2.</td>
+			<td colspan="4">Augstākās izglītības attīstība</td>
+				</tr>
+			<tr>
+					<td>1.1.2.1.</td>
+			<td>Atbalsts doktora un maģistra studiju programmu īstenošanai</td>
+			<td>APIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.1.2.1.1.</td>
+			<td>Atbalsts maģistra studiju programmu īstenošanai</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.1.2.1.2.</td>
+			<td>Atbalsts doktora studiju programmu īstenošanai</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.1.2.2.</td>
+			<td>Atbalsts augstākās izglītības studiju uzlabošanai</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.1.2.2.1.</td>
+			<td>Studiju programmu satura un īstenošanas uzlabošana un akadēmiskā personāla kompetences pilnveidošana</td>
+			<td>APIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.1.2.2.2.</td>
+			<td>Boloņas procesa principu ieviešana augstākajā izglītībā</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.</td>
+			<td colspan="4">Izglītība un prasmes</td>
+				</tr>
+			<tr>
+					<td>1.2.1.</td>
+			<td colspan="4">Profesionālās izglītības un vispārējo prasmju attīstība</td>
+				</tr>
+			<tr>
+					<td>1.2.1.1.</td>
+			<td>Profesionālās izglītības sistēmas attīstība, kvalitātes, atbilstības un pievilcības uzlabošana</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.1.1.1.</td>
+			<td>Nozaru kvalifikāciju sistēmas izveide un profesionālās izglītības pārstrukturizācija</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.1.1.2.</td>
+			<td>Profesionālajā izglītībā iesaistīto pedagogu kompetences paaugstināšana</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.1.1.3.</td>
+			<td>Atbalsts sākotnējās profesionālās izglītības programmu īstenošanas kvalitātes uzlabošanai un īstenošanai</td>
+			<td>APIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.1.1.4.</td>
+			<td>Sākotnējās profesionālās izglītības pievilcības veicināšana</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.1.2.</td>
+			<td>Vispārējo zināšanu un prasmju uzlabošana</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.1.2.1.</td>
+			<td>Vispārējās vidējās izglītības satura reforma, mācību priekšmetu, metodikas un mācību sasniegumu vērtēšanas sistēmas uzlabošana</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.1.2.2.</td>
+			<td>Atbalsts vispārējās izglītības pedagogu nodrošināšanai prioritārajos mācību priekšmetos</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.1.2.3.</td>
+			<td>Vispārējās izglītības pedagogu kompetences paaugstināšana un prasmju atjaunošana</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.</td>
+			<td colspan="4">Mūžizglītības attīstība un izglītībā un mūžizglītībā iesaistīto institūciju rīcībspējas un sadarbības uzlabošana </td>
+				</tr>
+			<tr>
+					<td>1.2.2.1.</td>
+			<td>Mūžizglītības attīstība</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.1.1.</td>
+			<td>Mūžizglītības pārvaldes struktūras izveide nacionālā līmenī un inovatīvu mūžizglītības politikas instrumentu izstrāde</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.1.2. </td>
+			<td>Atbalsts Mūžizglītības politikas pamatnostādņu īstenošanai</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.1.3.</td>
+			<td>Īpašu mūžizglītības politikas jomu atbalsts</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.1.5.</td>
+			<td>Pedagogu konkurētspējas veicināšana izglītības sistēmas optimizācijas apstākļos</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.2.</td>
+			<td>Profesionālās orientācijas un karjeras izglītības attīstība, profesionāli orientētās izglītības attīstība </td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.2.1.</td>
+			<td>Profesionālās orientācijas un karjeras izglītības attīstība izglītības sistēmā </td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.2.2. </td>
+			<td>Profesionālās orientācijas un karjeras izglītības pieejamības palielināšana jauniešiem, profesionāli orientētās izglītības attīstība </td>
+			<td>APIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.3.</td>
+			<td>Par izglītības un mūžizglītības politiku atbildīgo institūciju rīcībspējas un sadarbības stiprināšana </td>
+			<td>APIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.3.1.</td>
+			<td>Par izglītības un mūžizglītības politiku atbildīgo institūciju rīcībspējas un sadarbības stiprināšana</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.3.2.</td>
+			<td>Atbalsts izglītības pētījumiem</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.4. </td>
+			<td>Izglītības pieejamības nodrošināšana sociālās atstumtības riskam pakļautajiem jauniešiem un iekļaujošas izglītības attīstība </td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.4.1. </td>
+			<td>Iekļaujošas izglītības un sociālās atstumtības riskam pakļauto jauniešu atbalsta sistēmas izveide, nepieciešamā personāla sagatavošana, nodrošināšana un kompetences paaugstināšana</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.2.2.4.2. </td>
+			<td>Atbalsta pasākumu īstenošana jauniešu sociālās atstumtības riska mazināšanai un jauniešu ar funkcionālajiem traucējumiem integrācijai izglītībā </td>
+			<td>APIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.</td>
+			<td colspan="4">Nodarbinātības veicināšana un veselība darbā</td>
+				</tr>
+			<tr>
+					<td>1.3.1.</td>
+			<td colspan="4">Nodarbinātība</td>
+				</tr>
+			<tr>
+					<td>1.3.1.1.</td>
+			<td>Darbaspējas vecuma iedzīvotāju konkurētspējas paaugstināšana darba tirgū, t.sk., nodarbināto pārkvalifikācija un aktīvie nodarbinātības pasākumi</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.1.1.</td>
+			<td>Atbalsts nodarbināto apmācībām komersantu konkurētspējas veicināšanai - atbalsts partnerībās organizētām apmācībām</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.1.3. </td>
+			<td>Bezdarbnieku un darba meklētāju apmācība </td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.1.4. </td>
+			<td>Atbalsts nodarbināto apmācībām komersantu konkurētspējas veicināšanai - atbalsts komersantu individuāli organizētām apmācībām </td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.1.5.</td>
+			<td>Atbalsts bezdarba riskam pakļauto personu apmācībai</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.1.6.</td>
+			<td>Atbalsts darba vietu radīšanai</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.2.</td>
+			<td>Atbalsts pašnodarbinātības un uzņēmējdarbības uzsākšanai</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.3.</td>
+			<td>Darba attiecību un darba drošības normatīvo aktu praktiska piemērošana un uzraudzības pilnveidošana</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.3.1.</td>
+			<td>Darba attiecību un darba drošības normatīvo aktu uzraudzības pilnveidošana</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.3.2.</td>
+			<td>Darba attiecību un darba drošības normatīvo aktu praktiska piemērošana nozarēs un uzņēmumos</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.4.</td>
+			<td>Kapacitātes stiprināšana darba tirgus institūcijām</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.5.</td>
+			<td>Vietējo nodarbinātības veicināšanas pasākumu plānu ieviešanas atbalsts</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.6.</td>
+			<td>Atbalsts dzimumu līdztiesības veicināšanai darba tirgū</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.7.</td>
+			<td>Darba tirgus pieprasījuma īstermiņa un ilgtermiņa prognozēšanas un uzraudzības sistēmas attīstība</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.8.</td>
+			<td>Atbalsts labāko inovatīvo risinājumu meklējumiem un labas prakses piemēru integrēšanai darba tirgus politikās un ieviešanas instrumentārijos</td>
+			<td>APIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.1.9.</td>
+			<td>Augstas kvalifikācijas darbinieku piesaiste</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.2.</td>
+			<td colspan="4">Veselība darbā</td>
+				</tr>
+			<tr>
+					<td>1.3.2.1.</td>
+			<td>Veselības uzlabošana darbavietā, veicinot ilgtspējīgu nodarbinātību</td>
+			<td>IPIA</td>
+			<td>VM</td>
+			<td>VEC</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.2.2.</td>
+			<td>Pētījumi un aptaujas par veselību darbā</td>
+			<td>IPIA</td>
+			<td>VM</td>
+			<td>VEC</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.3.2.3.</td>
+			<td>Veselības aprūpes un veicināšanas procesā iesaistīto institūciju personāla kompetences, prasmju un iemaņu līmeņa paaugstināšana</td>
+			<td>IPIA</td>
+			<td>VM</td>
+			<td>CFLA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.4.</td>
+			<td colspan="4">Sociālās iekļaušanas veicināšana</td>
+				</tr>
+			<tr>
+					<td>1.4.1.</td>
+			<td colspan="4">Sociālā iekļaušana</td>
+				</tr>
+			<tr>
+					<td>1.4.1.1.</td>
+			<td>Iedzīvotāju ekonomiskās aktivitātes stimulēšana</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.4.1.1.1.</td>
+			<td>Kompleksi atbalsta pasākumi iedzīvotāju integrēšanai darba tirgū</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.4.1.1.2.</td>
+			<td>Atbalstītās nodarbinātības pasākumi mērķgrupu bezdarbniekiem</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.4.1.2.</td>
+			<td>Darbspēju vērtēšanas sistēmas un sociālo pakalpojumu ieviešanas sistēmas pilnveidošana</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.4.1.2.1.</td>
+			<td>Darbspēju vērtēšanas sistēmas pilnveidošana</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.4.1.2.2.</td>
+			<td>Sociālās rehabilitācijas pakalpojumu attīstība personām ar redzes un dzirdes traucējumiem</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.4.1.2.4.</td>
+			<td>Sociālās rehabilitācijas un institūcijām alternatīvu sociālās aprūpes pakalpojumu attīstība reģionos</td>
+			<td>APIA</td>
+			<td>LM</td>
+			<td>NVA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.</td>
+			<td colspan="4">Administratīvās kapacitātes stiprināšana</td>
+				</tr>
+			<tr>
+					<td>1.5.1.</td>
+			<td colspan="4">Labāka regulējuma politika</td>
+				</tr>
+			<tr>
+					<td>1.5.1.1.</td>
+			<td>Politikas ietekmes novērtēšana un politikas pētījumu veikšana</td>
+			<td>APIA</td>
+			<td>Vkanc</td>
+			<td>SIF</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.1.1.1.</td>
+			<td>Atbalsts strukturālo reformu īstenošanai un analītisko spēju stiprināšanai valsts pārvaldē</td>
+			<td>IPIA</td>
+			<td>FM</td>
+			<td>CFLA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.1.1.2.</td>
+			<td>Politikas pētījumu veikšana</td>
+			<td>APIA</td>
+			<td>Vkanc</td>
+			<td>SIF</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.1.2.</td>
+			<td>Administratīvo šķēršļu samazināšana un publisko pakalpojumu kvalitātes uzlabošana</td>
+			<td>IPIA</td>
+			<td>Vkanc</td>
+			<td>SIF</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.1.3.</td>
+			<td>Publisko varu realizējošo institūciju darbības kvalitātes un efektivitātes paaugstināšana</td>
+			<td>IPIA</td>
+			<td>Vkanc</td>
+			<td>SIF</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.1.3.1.</td>
+			<td>Kvalitātes vadības sistēmas izveide un ieviešana</td>
+			<td>APIA</td>
+			<td>Vkanc</td>
+			<td>SIF</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.1.3.2.</td>
+			<td>Publisko pakalpojumu kvalitātes paaugstināšana valsts, reģionālā un vietējā līmenī</td>
+			<td>APIA</td>
+			<td>Vkanc</td>
+			<td>SIF</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.2.</td>
+			<td colspan="4">Cilvēkresursu kapacitātes stiprināšana </td>
+				</tr>
+			<tr>
+					<td>1.5.2.1.</td>
+			<td>Publiskās pārvaldes cilvēkresursu plānošanas un vadības IT sistēmas izstrāde un ieviešana</td>
+			<td>IPIA</td>
+			<td>Vkanc</td>
+			<td>SIF</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.2.2.</td>
+			<td>Sociālo partneru, nevalstisko organizāciju un pašvaldību kapacitātes stiprināšana</td>
+			<td>APIA</td>
+			<td>Vkanc</td>
+			<td>SIF</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.2.2.1.</td>
+			<td>Sociālo partneru administratīvās kapacitātes stiprināšana</td>
+			<td>IPIA</td>
+			<td>Vkanc</td>
+			<td>SIF</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.2.2.2.</td>
+			<td>NVO administratīvās kapacitātes stiprināšana</td>
+			<td>APIA</td>
+			<td>Vkanc</td>
+			<td>SIF</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.2.2.3.</td>
+			<td>Atbalsts pašvaldībām kapacitātes stiprināšanā  Eiropas Savienības politiku instrumentu un pārējās ārvalstu finanšu palīdzības līdzfinansēto projektu un pasākumu īstenošanai</td>
+			<td>APIA</td>
+			<td>Vkanc</td>
+			<td>SIF</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.3.</td>
+			<td colspan="4">Plānošanas reģionu un vietējo pašvaldību administratīvās un attīstības plānošanas kapacitātes stiprināšana</td>
+				</tr>
+			<tr>
+					<td>1.5.3.1.</td>
+			<td>Speciālistu piesaiste plānošanas reģioniem, pilsētām un novadiem</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td>VRAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.5.3.2.</td>
+			<td>Plānošanas reģionu un vietējo pašvaldību attīstības plānošanas kapacitātes paaugstināšana</td>
+			<td>APIA</td>
+			<td>VARAM</td>
+			<td>VRAA</td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<td>1.6.</td>
+			<td colspan="4">Tehniskā palīdzība</td>
+				</tr>
+			<tr>
+					<td>1.6.1.</td>
+			<td colspan="4">Atbalsts darbības programmas „Cilvēkresursi un nodarbinātība” vadībai</td>
+				</tr>
+			<tr>
+					<td>1.6.1.1. </td>
+			<td>Programmas vadības un atbalsta funkciju nodrošināšana </td>
+			<td>IPIA</td>
+			<td></td>
+			<td></td>
+			<td>ESF</td>
+				</tr>
+			<tr>
+					<th colspan="6">Uzņēmējdarbība un inovācijas</th>
+				</tr>
+			<tr>
+					<td>2.1.</td>
+			<td colspan="4">Zinātne un inovācijas</td>
+				</tr>
+			<tr>
+					<td>2.1.1.</td>
+			<td colspan="4">Zinātne, pētniecība un attīstība</td>
+				</tr>
+			<tr>
+					<td>2.1.1.1.</td>
+			<td>Atbalsts zinātnei un pētniecībai</td>
+			<td>APIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.1.2.</td>
+			<td>Atbalsts starptautiskās sadarbības projektiem zinātnē un tehnoloģijās</td>
+			<td>APIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.1.3.</td>
+			<td>Zinātnes un pētniecības infrastruktūras attīstība</td>
+			<td>APIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.1.3.1.</td>
+			<td>Zinātnes infrastruktūras attīstība</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.1.3.2.</td>
+			<td>Informācijas tehnoloģiju infrastruktūras un informācijas sistēmu uzlabošana zinātniskajai darbībai</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.1.3.3.</td>
+			<td>Zinātnisko institūciju institucionālās kapacitātes attīstība</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td></td>
+				</tr>
+			<tr>
+					<td>2.1.2.</td>
+			<td colspan="4">Inovācijas </td>
+				</tr>
+			<tr>
+					<td>2.1.2.1.</td>
+			<td>Zinātnes komercializācija un tehnoloģiju pārnese</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.2.1.1.</td>
+			<td>Kompetences centri</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.2.1.2.</td>
+			<td>Tehnoloģiju pārneses kontaktpunkti</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.2.1.3.</td>
+			<td>Tehnoloģiju pārneses centri</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.2.2.</td>
+			<td>Jaunu produktu un tehnoloģiju izstrāde</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.2.2.1.</td>
+			<td>Jaunu produktu un tehnoloģiju izstrāde</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.2.2.2.</td>
+			<td>Jaunu produktu un tehnoloģiju izstrāde – atbalsts jaunu produktu un tehnoloģiju ieviešanai ražošanā </td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.2.2.3.</td>
+			<td>Jaunu produktu un tehnoloģiju izstrāde - atbalsts rūpnieciskā īpašuma tiesību nostiprināšanai</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.2.2.4.</td>
+			<td>MVK jaunu produktu un tehnoloģiju attīstības programma</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.2.3.</td>
+			<td>Zinātnes un tehnoloģiju parks</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.2.3.1.</td>
+			<td>Rīgas zinātnes un tehnoloģiju parka (ZTP) attīstība</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.1.2.4.</td>
+			<td>Augstas pievienotās vērtības investīcijas</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.2.</td>
+			<td colspan="4">Finanšu pieejamība</td>
+				</tr>
+			<tr>
+					<td>2.2.1.</td>
+			<td colspan="4">Finanšu resursu pieejamība</td>
+				</tr>
+			<tr>
+					<td>2.2.1.1.</td>
+			<td>Ieguldījumu fonds investīcijām garantijās, paaugstināta riska aizdevumos, riska kapitāla fondos un cita veida finanšu instrumentos</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.2.1.2.</td>
+			<td>Stratēģisko investoru piesaiste</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.2.1.2.1.</td>
+			<td>Biznesa eņģeļu tīkls</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.2.1.2.2.</td>
+			<td>Vērtspapīru birža MVK</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.2.1.3.</td>
+			<td>Garantijas komersantu konkurētspējas uzlabošanai</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.2.1.4.</td>
+			<td>Aizdevumi komersantu konkurētspējas uzlabošanai</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.2.1.4.1.</td>
+			<td>Atbalsts aizdevumu veidā komersantu konkurētspējas uzlabošanai</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.2.1.4.2.</td>
+			<td>Mezanīna aizdevumi un nodrošinājuma garantijas saimnieciskās darbības veicēju konkurētspējas uzlabošanai</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.3.</td>
+			<td colspan="4">Uzņēmējdarbības veicināšana</td>
+				</tr>
+			<tr>
+					<td>2.3.1.</td>
+			<td colspan="4">Uzņēmējdarbības atbalsta aktivitātes</td>
+				</tr>
+			<tr>
+					<td>2.3.1.1.</td>
+			<td>Ārējo tirgu apgūšana</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.3.1.1.1.</td>
+			<td>Ārējo tirgu apgūšana – ārējais mārketings</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.3.1.1.2.</td>
+			<td>Ārējo tirgu apgūšana – nozaru starptautiskās konkurētspējas stiprināšana</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.3.1.2. </td>
+			<td>Pasākumi motivācijas celšanai inovācijām un uzņēmējdarbības uzsākšanai</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.3.2.</td>
+			<td colspan="4">Uzņēmējdarbības infrastruktūras un aprīkojuma uzlabojumi</td>
+				</tr>
+			<tr>
+					<td>2.3.2.1.</td>
+			<td>Biznesa inkubatori</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.3.2.2.</td>
+			<td>Atbalsts ieguldījumiem mikro, maziem un vidējiem komersantiem īpaši atbalstāmajās teritorijās (ĪĀT)</td>
+			<td>APIA</td>
+			<td></td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.3.2.2.1.</td>
+			<td>Atbalsts ieguldījumiem mikro, maziem un vidējiem komersantiem  īpaši atbalstāmajās teritorijās (ĪĀT)</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.3.2.2.2.</td>
+			<td>Atbalsts ieguldījumiem ražošanas telpu izveidei vai rekonstrukcijai</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.3.2.2.3.</td>
+			<td>Atbalsts ieguldījumiem infrastruktūrā uzņēmējdarbības attīstībai</td>
+			<td>APIA</td>
+			<td>VARAM</td>
+			<td>VRAA</td>
+			<td></td>
+				</tr>
+			<tr>
+					<td>2.3.2.3.</td>
+			<td>Klasteru programma</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>2.4.</td>
+			<td colspan="4">Tehniskā palīdzība</td>
+				</tr>
+			<tr>
+					<td>2.4.1.</td>
+			<td colspan="4">Atbalsts darbības programmas „Uzņēmējdarbība un inovācijas” vadībai”</td>
+				</tr>
+			<tr>
+					<td>2.4.1.1.</td>
+			<td>Programmas vadības un atbalsta funkciju nodrošināšana </td>
+			<td>IPIA</td>
+			<td></td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<th colspan="6">Infrastruktūra un pakalpojumi</th>
+				</tr>
+			<tr>
+					<td>3.1.</td>
+			<td colspan="4">Infrastruktūra cilvēku kapitāla nostiprināšanai</td>
+				</tr>
+			<tr>
+					<td>3.1.1.</td>
+			<td colspan="4">Profesionālās izglītības infrastruktūra</td>
+				</tr>
+			<tr>
+					<td>3.1.1.1.</td>
+			<td>Mācību aprīkojuma modernizācija un infrastruktūras uzlabošana profesionālās izglītības programmu īstenošanai</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.1.2.</td>
+			<td>Profesionālās izglītības infrastruktūras attīstība un mācību aprīkojuma modernizācija ieslodzījuma vietās</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.2.</td>
+			<td colspan="4">Augstākās izglītības infrastruktūra</td>
+				</tr>
+			<tr>
+					<td>3.1.2.1.</td>
+			<td>Augstākās izglītības iestāžu telpu un iekārtu modernizēšana, tajā skaitā, nodrošinot izglītības programmu apgūšanas iespējas arī personām ar funkcionāliem traucējumiem</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.2.1.1.</td>
+			<td>Augstākās izglītības iestāžu telpu un iekārtu modernizēšana studiju programmu kvalitātes uzlabošanai, tajā skaitā, nodrošinot izglītības programmu apgūšanas iespējas arī personām ar funkcionāliem traucējumiem</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.2.1.2.</td>
+			<td>Jaunu koledžas studiju programmu attīstība aviācijas nozarē</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.3.</td>
+			<td colspan="4">Izglītības infrastruktūra vispārējo prasmju nodrošināšanai</td>
+				</tr>
+			<tr>
+					<td>3.1.3.1.</td>
+			<td>Kvalitatīvai dabaszinātņu apguvei atbilstošas materiālās bāzes nodrošināšana</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.3.2.</td>
+			<td>Atbalsts vispārējās izglītības iestāžu tīkla optimizācijai</td>
+			<td>APIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.3.3.</td>
+			<td>Speciālās izglītības iestāžu un vispārējās izglītības iestāžu infrastruktūras uzlabošana izglītojamajiem ar speciālām vajadzībām</td>
+			<td>APIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.3.3.1.</td>
+			<td>Speciālās izglītības iestāžu infrastruktūras un aprīkojuma uzlabošana</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.3.3.2.</td>
+			<td>Vispārējās izglītības iestāžu infrastruktūras uzlabošana izglītojamajiem ar funkcionāliem traucējumiem</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.4.</td>
+			<td colspan="4">Nodarbinātības un sociālo pakalpojumu infrastruktūra</td>
+				</tr>
+			<tr>
+					<td>3.1.4.1.</td>
+			<td>Darbspēju vērtēšanas un sociālo pakalpojumu ieviešanas institūciju infrastruktūras pilnveidošana</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.4.1.1.</td>
+			<td>Infrastruktūras pilnveidošana un zinātniski tehniskās bāzes nodrošināšana darbspēju un funkcionālo traucējumu izvērtēšanai</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.4.1.2.</td>
+			<td>Infrastruktūras pilnveidošana profesionālās rehabilitācijas pakalpojumu sniegšanai</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.4.1.3.</td>
+			<td>Infrastruktūras pilnveidošana sociālās rehabilitācijas pakalpojumu sniegšanai personām ar redzes un dzirdes traucējumiem</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.4.1.4.</td>
+			<td>Jaunu filiāļu izveide tehnisko palīglīdzekļu nodrošināšanai</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.4.1.5.</td>
+			<td>Infrastruktūras pilnveidošana sociālās rehabilitācijas pakalpojumu sniegšanai personām ar garīga rakstura traucējumiem</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.4.2.</td>
+			<td>Darba tirgus institūciju infrastruktūras pilnveidošana</td>
+			<td>IPIA</td>
+			<td>LM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.4.3.</td>
+			<td>Pirmskolas izglītības iestāžu infrastruktūras attīstība nacionālās un reģionālās attīstības centros</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td>VRAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.4.4.</td>
+			<td>Atbalsts alternatīvās aprūpes pakalpojumu pieejamības attīstībai</td>
+			<td>APIA</td>
+			<td>VARAM</td>
+			<td>VRAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.5.</td>
+			<td colspan="4">Veselības aprūpes infrastruktūra</td>
+				</tr>
+			<tr>
+					<td>3.1.5.1.</td>
+			<td>Ambulatorās veselības aprūpes attīstība</td>
+			<td>APIA</td>
+			<td>VM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.5.1.1.</td>
+			<td>Ģimenes ārstu tīkla attīstība</td>
+			<td>APIA</td>
+			<td>VM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.5.1.2.</td>
+			<td>Veselības aprūpes centru attīstība</td>
+			<td>IPIA</td>
+			<td>VM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.5.2.</td>
+			<td>Neatliekamas medicīniskās palīdzības attīstība</td>
+			<td>IPIA</td>
+			<td>VM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.5.3.</td>
+			<td>Stacionārās veselības aprūpes pakalpojumu sniedzēju attīstība</td>
+			<td>IPIA</td>
+			<td>VM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.5.3.1.</td>
+			<td>Stacionārās veselības aprūpes attīstība</td>
+			<td>IPIA</td>
+			<td>VM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.1.5.3.2.</td>
+			<td>Onkoloģijas slimnieku radioterapijas ārstēšanas attīstība</td>
+			<td>IPIA</td>
+			<td>VM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.</td>
+			<td colspan="4">Teritoriju pieejamības un sasniedzamības veicināšana</td>
+				</tr>
+			<tr>
+					<td>3.2.1.</td>
+			<td colspan="4">Pieejamības un transporta sistēmas attīstība </td>
+				</tr>
+			<tr>
+					<td>3.2.1.1.</td>
+			<td>Valsts 1.šķiras autoceļu maršrutu sakārtošana</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.1.2.</td>
+			<td>Tranzītielu sakārtošana pilsētu teritorijās</td>
+			<td>APIA</td>
+			<td>SM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.1.3.</td>
+			<td>Satiksmes drošības uzlabojumi apdzīvotās vietās un Rīgā</td>
+			<td>APIA</td>
+			<td>SM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.1.3.1.</td>
+			<td>Satiksmes drošības uzlabojumi apdzīvotās vietās ārpus Rīgas</td>
+			<td>APIA</td>
+			<td>SM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.1.3.2.</td>
+			<td>Satiksmes drošības uzlabojumi Rīgā</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.1.4.</td>
+			<td>Mazo ostu infrastruktūras uzlabošana</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.1.5.</td>
+			<td>Publiskais transports ārpus Rīgas</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.2.</td>
+			<td colspan="4">IKT infrastruktūra un pakalpojumi </td>
+				</tr>
+			<tr>
+					<td>3.2.2.1.</td>
+			<td>Publiskās pārvaldes elektronisko pakalpojumu un informācijas sistēmu attīstība</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.2.1.1.</td>
+			<td>Informācijas sistēmu un elektronisko pakalpojumu attīstība</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.2.1.2.</td>
+			<td>Izglītības iestāžu informatizācija</td>
+			<td>IPIA</td>
+			<td>IZM</td>
+			<td>VIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.2.2.</td>
+			<td>Publisko interneta pieejas punktu attīstība</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td>VRAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.2.3.</td>
+			<td>Elektronisko sakaru pakalpojumu vienlīdzīgas pieejamības nodrošināšana visā valsts teritorijā (platjoslas tīkla attīstība)</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.2.4.</td>
+			<td>Valsts nozīmes elektronisko sakaru tīklu izveide, attīstība un pilnveidošana, informācijas datu pārraides drošības nodrošināšana</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.2.4.1.</td>
+			<td>Valsts nozīmes elektronisko sakaru tīklu izveide, attīstība un pilnveidošana</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.2.2.4.2.</td>
+			<td>Informācijas datu pārraides drošības nodrošināšana</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.3.</td>
+			<td colspan="4">Eiropas nozīmes transporta tīklu attīstība un ilgtspējīga transporta veicināšana </td>
+				</tr>
+			<tr>
+					<td>3.3.1.</td>
+			<td colspan="4">Liela mēroga transporta infrastruktūras uzlabojumi un attīstība</td>
+				</tr>
+			<tr>
+					<td>3.3.1.1.</td>
+			<td>TEN-T autoceļu tīkla uzlabojumi</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td></td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.3.1.2.</td>
+			<td>TEN-T dzelzceļa posmu rekonstrukcija un attīstība (Austrumu-Rietumu dzelzceļa koridora infrastruktūras attīstība un Rail Baltica)</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td></td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.3.1.3.</td>
+			<td>Lielo ostu infrastruktūras attīstība "Jūras maģistrāļu" ietvaros</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td></td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.3.1.4.</td>
+			<td>Lidostu infrastruktūras attīstība</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td></td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.3.1.5.</td>
+			<td>Pilsētu infrastruktūras uzlabojumi sasaistei ar TEN-T</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td></td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.3.1.6.</td>
+			<td>Liepājas Karostas ilgtspējīgas attīstības priekšnoteikumu nodrošināšana</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td></td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.3.2.</td>
+			<td colspan="4">Ilgtspējīgas transporta sistēmas attīstība</td>
+				</tr>
+			<tr>
+					<td>3.3.2.1.</td>
+			<td>Ilgtspējīga sabiedriskā transporta sistēmas attīstība</td>
+			<td>IPIA</td>
+			<td>SM</td>
+			<td></td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.4.</td>
+			<td colspan="4">Kvalitatīvas vides dzīvei un ekonomiskai aktivitātei nodrošināšana </td>
+				</tr>
+			<tr>
+					<td>3.4.1.</td>
+			<td colspan="4">Vide</td>
+				</tr>
+			<tr>
+					<td>3.4.1.1.</td>
+			<td>Ūdenssaimniecības infrastruktūras attīstība apdzīvotās vietās ar iedzīvotāju skaitu līdz 2000</td>
+			<td>APIA</td>
+			<td>VARAM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.1.3.</td>
+			<td>Bioloģiskās daudzveidības saglabāšanas ex situ infrastruktūras izveide</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.1.4.</td>
+			<td>Vēsturiski piesārņoto vietu sanācija</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.1.5.</td>
+			<td>Vides risku samazināšana</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.1.5.1.</td>
+			<td>Plūdu risku samazināšana grūti prognozējamu vižņu-ledus parādību gadījumos</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.1.5.2.</td>
+			<td>Hidrotehnisko būvju rekonstrukcija plūdu draudu risku novēršanai un samazināšanai</td>
+			<td>APIA</td>
+			<td>VARAM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.2.</td>
+			<td colspan="4">Tūrisms</td>
+				</tr>
+			<tr>
+					<td>3.4.2.1.</td>
+			<td>Nacionālās nozīmes tūrisma produkta attīstība</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.2.1.1.</td>
+			<td>Valsts nozīmes pilsētbūvniecības pieminekļu saglabāšana, atjaunošana un infrastruktūras pielāgošana tūrisma produkta attīstība</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.2.1.2.</td>
+			<td>Nacionālas nozīmes velotūrisma produktu attīstība</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.2.1.3.</td>
+			<td>Nacionālas nozīmes kultūras, aktīvā un rekreatīvā tūrisma produkta attīstība</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.2.2.</td>
+			<td>Tūrisma informācijas sistēmas attīstība</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.3.</td>
+			<td colspan="4">Kultūrvides sociālekonomiskā ietekme</td>
+				</tr>
+			<tr>
+					<td>3.4.3.1.</td>
+			<td>Nacionālas un reģionālas nozīmes daudzfunkcionālu centru izveide</td>
+			<td>IPIA</td>
+			<td>KM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.3.2.</td>
+			<td>Sociālekonomiski nozīmīgu kultūras mantojuma objektu atjaunošana</td>
+			<td>APIA</td>
+			<td>KM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.3.3.</td>
+			<td>Atbalsts kultūras pieminekļu privātīpašniekiem kultūras pieminekļu saglabāšanā un to sociālekonomiskā potenciāla efektīvā izmantošanā</td>
+			<td>APIA</td>
+			<td>KM</td>
+			<td>CFLA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.4.</td>
+			<td colspan="4">Mājokļu energoefektivitāte</td>
+				</tr>
+			<tr>
+					<td>3.4.4.1.</td>
+			<td>Daudzdzīvokļu māju siltumnoturības uzlabošanas pasākumi</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.4.4.2.</td>
+			<td>Sociālo dzīvojamo māju siltumnoturības uzlabošanas pasākumi</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.5.</td>
+			<td colspan="4">Vides infrastruktūras un videi draudzīgas enerģētikas veicināšana </td>
+				</tr>
+			<tr>
+					<td>3.5.1.</td>
+			<td colspan="4">Vides aizsardzības infrastruktūra</td>
+				</tr>
+			<tr>
+					<td>3.5.1.1.</td>
+			<td>Ūdenssaimniecības infrastruktūras attīstība aglomerācijās ar cilvēku ekvivalentu lielāku par 2000</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td></td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.5.1.2.</td>
+			<td>Reģionālu atkritumu apsaimniekošanas sistēmu attīstība</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td>CFLA</td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.5.1.2.1.</td>
+			<td>Normatīvo aktu prasībām neatbilstošo izgāztuvju rekultivācija</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td></td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.5.1.2.2.</td>
+			<td>Reģionālu atkritumu apsaimniekošanas sistēmu attīstība</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td></td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.5.1.2.3.</td>
+			<td>Dalītās atkritumu apsaimniekošanas sistēmas attīstība</td>
+			<td>APIA</td>
+			<td>VARAM</td>
+			<td>CFLA</td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.5.1.3.</td>
+			<td>Infrastruktūras izveide Natura 2000 teritorijās</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td></td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.5.1.4.</td>
+			<td>Vides monitoringa un kontroles sistēmas attīstība</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td></td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.5.2.</td>
+			<td colspan="4">Enerģētika</td>
+				</tr>
+			<tr>
+					<td>3.5.2.1.</td>
+			<td>Pasākumi siltumapgādes sistēmu efektivitātes paaugstināšanai</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.5.2.1.1.</td>
+			<td>Pasākumi centralizētās siltumapgādes sistēmu efektivitātes paaugstināšanai</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.5.2.1.2.</td>
+			<td>Pasākumi uzņēmumu siltumapgādes sistēmu efektivitātes paaugstināšanai</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.5.2.2.</td>
+			<td>Atjaunojamo energoresursu izmantojošu koģenerācijas elektrostaciju attīstība</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.5.2.3.</td>
+			<td>Vēja elektrostaciju attīstība</td>
+			<td>APIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.5.2.4.</td>
+			<td>Daugavas hidroelektrostaciju aizsprostu pārgāžņu rekonstrukcija</td>
+			<td>IPIA</td>
+			<td>EM</td>
+			<td>LIAA</td>
+			<td>KF</td>
+				</tr>
+			<tr>
+					<td>3.6.</td>
+			<td colspan="4">Policentriska attīstība</td>
+				</tr>
+			<tr>
+					<td>3.6.1.</td>
+			<td colspan="4">Atbalsts ilgtspējīgai pilsētvides un pilsētreģionu attīstībai </td>
+				</tr>
+			<tr>
+					<td>3.6.1.1.</td>
+			<td>Nacionālas un reģionālas nozīmes attīstības centru izaugsmes veicināšana līdzsvarotai valsts attīstībai </td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td>VRAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.6.1.2.</td>
+			<td>Rīgas pilsētas ilgtspējīga attīstība </td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td>VRAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.6.2.</td>
+			<td colspan="4">Komplekss atbalsts novadu pašvaldību izaugsmes sekmēšanai</td>
+				</tr>
+			<tr>
+					<td>3.6.2.1.</td>
+			<td>Atbalsts novadu pašvaldību kompleksai attīstībai</td>
+			<td>IPIA</td>
+			<td>VARAM</td>
+			<td>VRAA</td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.7.</td>
+			<td colspan="4">Tehniskā palīdzība ERAF ieviešanai </td>
+				</tr>
+			<tr>
+					<td>3.7.1.</td>
+			<td colspan="4">Atbalsts darbības programmas „Infrastruktūra un pakalpojumi” vadībai </td>
+				</tr>
+			<tr>
+					<td>3.7.1.1. </td>
+			<td>Programmas vadības un atbalsta funkciju nodrošināšana </td>
+			<td>IPIA</td>
+			<td></td>
+			<td></td>
+			<td>ERAF</td>
+				</tr>
+			<tr>
+					<td>3.8.</td>
+			<td colspan="4">Tehniskā palīdzība KF ieviešanai </td>
+				</tr>
+			<tr>
+					<td>3.8.1.</td>
+			<td colspan="4">Atbalsts Kohēzijas fonda vadībai</td>
+				</tr>
+			<tr>
+					<td>3.8.1.1.</td>
+			<td>Programmas vadības un atbalsta funkciju nodrošināšana</td>
+			<td>IPIA</td>
+			<td></td>
+			<td></td>
+			<td>KF</td>
+				</tr>
+	    </tbody>
+  </table>
+  </body>
+</html>

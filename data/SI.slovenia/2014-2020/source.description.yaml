@@ -1,0 +1,82 @@
+contributors:
+- Bela Seeger (bela.seeger@okfn.de)
+description: null
+language: sl
+add_categories:
+  fund_acronym:
+    ESRR: ERDF
+    ESS: ESF
+    KS: CF
+    YEI: other
+resources:
+- add_constants:
+    cci_program_code: 2014SI16MAOP001
+    funding_period: 2014-2020
+  currency_code: EUR
+  path: seznam-projektov-28-6-2016.xls
+  publication_date: 16-09-2016
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: Ime upravičenca/Beneficiary name
+      translates_to: Beneficiary name
+    - maps_to: project_name
+      name: Ime operacije/Operation name
+      translates_to: Operation name
+    - maps_to: project_description
+      name: Opis operacije/Operation description
+      translates_to: Operation description
+    - maps_to: priority_label
+      name: Prednostna os
+      translates_to: Priority Axis
+    - maps_to: project_description
+      name: Povzetek operacije/Operation summary
+      translates_to: Operation summary
+    - maps_to: null
+      name: Leto dodelitve sredstev/Year allocation
+      translates_to: Year allocation
+    - maps_to: starting_date
+      name: Datum začetka/Operation start year
+      translates_to: Operation start year
+    - maps_to: completion_date
+      name: Datum zaključka del/Operation end date
+      translates_to: Operation end date
+    - maps_to: total_amount_eligible
+      name: Skupni upravičeni izdatki/Total eligible expenditure allocated to the
+        operation
+      translates_to: Total eligible expenditure allocated to the operation
+    - maps_to: eu_cofinancing_rate
+      name: Odstotek sofinanciranja/union co-financing rate, as per priority axis
+      translates_to: union co-financing rate, as per priority axis
+    - maps_to: beneficiary_address
+      name: Naslov upravičenca/Beneficiary address
+      translates_to: Beneficiary address
+    - maps_to: beneficiary_city
+      name: Občina/Municipality
+      translates_to: Municipality
+    - maps_to: fund_acronym
+      name: Sklad/Fund
+      translates_to: Fund
+    - maps_to: beneficiary_nuts_code
+      name: Regija/Region
+      translates_to: Region
+    - maps_to: null
+      name: Instrument/Instrument
+      translates_to: Instrument
+    - maps_to: beneficiary_country_code
+      name: Država/Country
+      translates_to: Country
+    - maps_to: null
+      name: Stanje na dan/Date of last update of the list of operations
+      translates_to: Date of last update of the list of operations
+    - maps_to: null
+      name: Statistična regija/Statistical region
+      translates_to: Statistical region
+  title: Excel file for Slovenia's ERDF, ESF, and Cohesion fund 2014-2020
+scraper_required: false
+sources:
+- name: EU Skladi
+  web: http://www.eu-skladi.si/
+- name: Link to original Excel file
+  web: http://www.eu-skladi.si/sl/dokumenti/seznam-projektov/seznam-projektov-28-6-2016.xls
+title: SL.Slovenia 2014-2020 ERDF ESF CF

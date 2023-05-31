@@ -1,0 +1,82 @@
+title: Fr.France 2007-2013 ERDF and FSE
+description:
+language: FR
+
+sources:
+  - name: Europe en France, le portail des Fonds européens (portal)
+    web:  http://www.europe-en-france.gouv.fr/
+
+  - name: PROJETS EXEMPLAIRES (flagship projects)
+    web: http://www.europe-en-france.gouv.fr/Rendez-vous-compte/Projets-exemplaires?thematique=0&region=0&fonds=0&mot-cle=Mot%28s%29+cl%C3%A9%28s%29&annee=0&valider=Valider
+
+  - name: Bénéficiaires de fonds européens (beneficiaries page)
+    web: http://cartobenef.asp-public.fr/cartobenef/carto.php?lang=fr&nivgeos=reg&curCodeDomSB=DS&curCodeThemeSB=benef&typindSB=R&curCodeIndSB=nb_projet_total
+
+scraper_required: false
+
+contributors:
+  - Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
+
+add_categories:
+  fund_acronym:
+    FEDER: ERDF
+    FSE: ESF
+    FEADER: other
+    FEP: other
+
+
+resources:
+    - title: JSON file for France 2007-2013 FSE national programs
+
+      path: data.csv
+      #url: http://cartobenef.asp-public.fr/cartobenef/carto.php
+      publication_date: # Loic: I can't find it
+
+      
+      add_constants:
+        funding_period: 2007-2013
+        cci_code:
+
+      currency_code: EUR
+
+      schema:
+        fields:
+          - name: source
+            translates_to: source
+            maps_to: source
+
+          - name: annee
+            translates_to: year
+            maps_to: starting_date
+
+          - name: fond
+            translates_to: fund
+            maps_to: fund_acronym
+
+          - name: fond_coût
+            translates_to: Amount financed by the EU
+            maps_to: eu_cofinancing_amount
+
+          - name: région
+            translates_to: region
+            maps_to: beneficiary_nuts_region
+
+          - name: titre
+            translates_to: Project title
+            maps_to: project_name
+
+          - name: thématique(s)
+            translates_to: theme
+            maps_to: theme_name
+
+          - name: bénéficiaire
+            translates_to: Name of the beneficiary organisation
+            maps_to: beneficiary_name
+
+          - name: durée
+            translates_to: duration
+            maps_to: starting_date
+
+          - name: coût_total
+            translates_to: total_amount
+            maps_to: total_amount

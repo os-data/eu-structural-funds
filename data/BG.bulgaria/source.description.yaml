@@ -1,0 +1,58 @@
+contributors:
+- Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
+description: One massive xls dataset containing all bulgarian ESIF data. Web interface
+  contains even more data, so scraping may be advisable additionally. Can't be directly
+  linked!
+language: BG
+resources:
+- add_categories: {}
+  add_constants:
+    cci_program_code:
+    fund_acronym: unknown
+    funding_period: unknown
+  currency_code: LEV
+  path: ESIF_Bulgaria.csv
+  publication_date: 2016-06-15
+  title: BG Bulgaria 2007-2013 2014-2020 ERDF ESF CF
+
+  schema:
+    fields:
+    - name: ~ Бенефициент
+      translates_to: Beneficiary
+      maps_to: beneficiary_name
+    - name: Седалище
+      translates_to: Municipality and address
+      maps_to: beneficiary_address
+    - name: Място на изпълнение
+      translates_to: Region
+      maps_to: beneficiary_nuts_region
+    - name: Наименование на договора
+      translates_to: Name of Contract
+      maps_to: project_name 
+    - name: Обща стойност
+      translates_to: Total value
+      maps_to: total_amount
+    - name: БФП
+      translates_to: CCD
+      maps_to: null
+    - name: Финанс. от бенефициент
+      translates_to: Finance by Beneficiary
+      maps_to: third_party_amount
+    - name: Реално изплатени суми
+      translates_to: Actually paid
+      maps_to: total_amount 
+    - name: Продълж.(месеци)
+      translates_to: Duration (Months)
+      maps_to: null 
+    - name: Статус
+      translates_to: Status
+      maps_to: project_status
+    - name: Изпълнители
+      translates_to: Artists
+      maps_to: beneficiary_person
+scraper_required: false
+sources:
+- name: INFORMATION MANAGEMENT SYSTEM AND MONITORING OF STRUCTURAL INSTRUMENTS OF
+    THE EU IN BULGARIA
+  web: http://umispublic.government.bg/prProcedureProjectsInfo.aspx?op=-1&proc=-2&clear=1
+title: BG Bulgaria 2007-2013 2014-2020 ERDF ESF CF

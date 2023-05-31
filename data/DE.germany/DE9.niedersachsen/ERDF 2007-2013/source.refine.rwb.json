@@ -1,0 +1,1299 @@
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column2 to NAME DES BEGÜNSTIGTEN",
+    "oldColumnName": "Column2",
+    "newColumnName": "NAME DES BEGÜNSTIGTEN"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column3 to BEZEICHNUNG DES VORHABENS",
+    "oldColumnName": "Column3",
+    "newColumnName": "BEZEICHNUNG DES VORHABENS"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column4 to Jahr der Bewilligung",
+    "oldColumnName": "Column4",
+    "newColumnName": "Jahr der Bewilligung"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column5 to Jahr der abschließenden Restzahlung",
+    "oldColumnName": "Column5",
+    "newColumnName": "Jahr der abschließenden Restzahlung"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column6 to Gewährte Gesamtbeträge",
+    "oldColumnName": "Column6",
+    "newColumnName": "Gewährte Gesamtbeträge"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column7 to Bei Abschluss des Vorhabens gezahlte Gesamtbeträge",
+    "oldColumnName": "Column7",
+    "newColumnName": "Bei Abschluss des Vorhabens gezahlte Gesamtbeträge"
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "VERZEICHNIS DER BEGÜNSTIGTEN NIEDERSACHSEN/DEUTSCHLAND - Stand: 31.03.2015, Überarbeitung Juni 2015",
+                "l": "VERZEICHNIS DER BEGÜNSTIGTEN NIEDERSACHSEN/DEUTSCHLAND - Stand: 31.03.2015, Überarbeitung Juni 2015"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "NAME DES BEGÜNSTIGTEN",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "NAME DES BEGÜNSTIGTEN"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "NAME DES BEGÜNSTIGTEN",
+                "l": "NAME DES BEGÜNSTIGTEN"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "NAME DES BEGÜNSTIGTEN",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "NAME DES BEGÜNSTIGTEN"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Vorhaben",
+                "l": "Vorhaben"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "NAME DES BEGÜNSTIGTEN",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "NAME DES BEGÜNSTIGTEN"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": true,
+          "selection": [],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": true,
+          "selection": [],
+          "selectError": false,
+          "invert": false,
+          "name": "NAME DES BEGÜNSTIGTEN",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "NAME DES BEGÜNSTIGTEN"
+        },
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": true,
+          "selection": [],
+          "selectError": false,
+          "invert": false,
+          "name": "BEZEICHNUNG DES VORHABENS",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "BEZEICHNUNG DES VORHABENS"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/row-star",
+    "description": "Star rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg",
+                "l": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Stadt Uelzen",
+                "l": "Stadt Uelzen"
+              }
+            },
+            {
+              "v": {
+                "v": "Gemeinde Himmelpforten",
+                "l": "Gemeinde Himmelpforten"
+              }
+            },
+            {
+              "v": {
+                "v": "Buxtehuder Brauhaus",
+                "l": "Buxtehuder Brauhaus"
+              }
+            },
+            {
+              "v": {
+                "v": "Schulz AG",
+                "l": "Schulz AG"
+              }
+            },
+            {
+              "v": {
+                "v": "Richter GmbH Sanitär- und Heizungsbau",
+                "l": "Richter GmbH Sanitär- und Heizungsbau"
+              }
+            },
+            {
+              "v": {
+                "v": "Herbert Peper & Sohn GmbH",
+                "l": "Herbert Peper & Sohn GmbH"
+              }
+            },
+            {
+              "v": {
+                "v": "Landkreis Harburg",
+                "l": "Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Börde Lamstedt",
+                "l": "Börde Lamstedt"
+              }
+            },
+            {
+              "v": {
+                "v": "Bäckerei Behrens e.K.",
+                "l": "Bäckerei Behrens e.K."
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "starred": true
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Bei Abschluss des Vorhabens gezahlte Gesamtbeträge using expression grel:cells[\"Gewährte Gesamtbeträge\"].value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg",
+                "l": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Stadt Uelzen",
+                "l": "Stadt Uelzen"
+              }
+            },
+            {
+              "v": {
+                "v": "Gemeinde Himmelpforten",
+                "l": "Gemeinde Himmelpforten"
+              }
+            },
+            {
+              "v": {
+                "v": "Buxtehuder Brauhaus",
+                "l": "Buxtehuder Brauhaus"
+              }
+            },
+            {
+              "v": {
+                "v": "Schulz AG",
+                "l": "Schulz AG"
+              }
+            },
+            {
+              "v": {
+                "v": "Richter GmbH Sanitär- und Heizungsbau",
+                "l": "Richter GmbH Sanitär- und Heizungsbau"
+              }
+            },
+            {
+              "v": {
+                "v": "Herbert Peper & Sohn GmbH",
+                "l": "Herbert Peper & Sohn GmbH"
+              }
+            },
+            {
+              "v": {
+                "v": "Landkreis Harburg",
+                "l": "Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Börde Lamstedt",
+                "l": "Börde Lamstedt"
+              }
+            },
+            {
+              "v": {
+                "v": "Bäckerei Behrens e.K.",
+                "l": "Bäckerei Behrens e.K."
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Bei Abschluss des Vorhabens gezahlte Gesamtbeträge",
+    "expression": "grel:cells[\"Gewährte Gesamtbeträge\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Gewährte Gesamtbeträge using expression grel:\"\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg",
+                "l": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Stadt Uelzen",
+                "l": "Stadt Uelzen"
+              }
+            },
+            {
+              "v": {
+                "v": "Gemeinde Himmelpforten",
+                "l": "Gemeinde Himmelpforten"
+              }
+            },
+            {
+              "v": {
+                "v": "Buxtehuder Brauhaus",
+                "l": "Buxtehuder Brauhaus"
+              }
+            },
+            {
+              "v": {
+                "v": "Schulz AG",
+                "l": "Schulz AG"
+              }
+            },
+            {
+              "v": {
+                "v": "Richter GmbH Sanitär- und Heizungsbau",
+                "l": "Richter GmbH Sanitär- und Heizungsbau"
+              }
+            },
+            {
+              "v": {
+                "v": "Herbert Peper & Sohn GmbH",
+                "l": "Herbert Peper & Sohn GmbH"
+              }
+            },
+            {
+              "v": {
+                "v": "Landkreis Harburg",
+                "l": "Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Börde Lamstedt",
+                "l": "Börde Lamstedt"
+              }
+            },
+            {
+              "v": {
+                "v": "Bäckerei Behrens e.K.",
+                "l": "Bäckerei Behrens e.K."
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Gewährte Gesamtbeträge",
+    "expression": "grel:\"\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Gewährte Gesamtbeträge using expression grel:cells[\"Jahr der abschließenden Restzahlung\"].value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg",
+                "l": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Stadt Uelzen",
+                "l": "Stadt Uelzen"
+              }
+            },
+            {
+              "v": {
+                "v": "Gemeinde Himmelpforten",
+                "l": "Gemeinde Himmelpforten"
+              }
+            },
+            {
+              "v": {
+                "v": "Buxtehuder Brauhaus",
+                "l": "Buxtehuder Brauhaus"
+              }
+            },
+            {
+              "v": {
+                "v": "Schulz AG",
+                "l": "Schulz AG"
+              }
+            },
+            {
+              "v": {
+                "v": "Richter GmbH Sanitär- und Heizungsbau",
+                "l": "Richter GmbH Sanitär- und Heizungsbau"
+              }
+            },
+            {
+              "v": {
+                "v": "Herbert Peper & Sohn GmbH",
+                "l": "Herbert Peper & Sohn GmbH"
+              }
+            },
+            {
+              "v": {
+                "v": "Landkreis Harburg",
+                "l": "Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Börde Lamstedt",
+                "l": "Börde Lamstedt"
+              }
+            },
+            {
+              "v": {
+                "v": "Bäckerei Behrens e.K.",
+                "l": "Bäckerei Behrens e.K."
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Gewährte Gesamtbeträge",
+    "expression": "grel:cells[\"Jahr der abschließenden Restzahlung\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Jahr der abschließenden Restzahlung using expression grel:\" \"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg",
+                "l": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Stadt Uelzen",
+                "l": "Stadt Uelzen"
+              }
+            },
+            {
+              "v": {
+                "v": "Gemeinde Himmelpforten",
+                "l": "Gemeinde Himmelpforten"
+              }
+            },
+            {
+              "v": {
+                "v": "Buxtehuder Brauhaus",
+                "l": "Buxtehuder Brauhaus"
+              }
+            },
+            {
+              "v": {
+                "v": "Schulz AG",
+                "l": "Schulz AG"
+              }
+            },
+            {
+              "v": {
+                "v": "Richter GmbH Sanitär- und Heizungsbau",
+                "l": "Richter GmbH Sanitär- und Heizungsbau"
+              }
+            },
+            {
+              "v": {
+                "v": "Herbert Peper & Sohn GmbH",
+                "l": "Herbert Peper & Sohn GmbH"
+              }
+            },
+            {
+              "v": {
+                "v": "Landkreis Harburg",
+                "l": "Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Börde Lamstedt",
+                "l": "Börde Lamstedt"
+              }
+            },
+            {
+              "v": {
+                "v": "Bäckerei Behrens e.K.",
+                "l": "Bäckerei Behrens e.K."
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Jahr der abschließenden Restzahlung",
+    "expression": "grel:\" \"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Jahr der abschließenden Restzahlung using expression grel:cells[\"Jahr der Bewilligung\"].value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg",
+                "l": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Stadt Uelzen",
+                "l": "Stadt Uelzen"
+              }
+            },
+            {
+              "v": {
+                "v": "Gemeinde Himmelpforten",
+                "l": "Gemeinde Himmelpforten"
+              }
+            },
+            {
+              "v": {
+                "v": "Buxtehuder Brauhaus",
+                "l": "Buxtehuder Brauhaus"
+              }
+            },
+            {
+              "v": {
+                "v": "Schulz AG",
+                "l": "Schulz AG"
+              }
+            },
+            {
+              "v": {
+                "v": "Richter GmbH Sanitär- und Heizungsbau",
+                "l": "Richter GmbH Sanitär- und Heizungsbau"
+              }
+            },
+            {
+              "v": {
+                "v": "Herbert Peper & Sohn GmbH",
+                "l": "Herbert Peper & Sohn GmbH"
+              }
+            },
+            {
+              "v": {
+                "v": "Landkreis Harburg",
+                "l": "Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Börde Lamstedt",
+                "l": "Börde Lamstedt"
+              }
+            },
+            {
+              "v": {
+                "v": "Bäckerei Behrens e.K.",
+                "l": "Bäckerei Behrens e.K."
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Jahr der abschließenden Restzahlung",
+    "expression": "grel:cells[\"Jahr der Bewilligung\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Jahr der Bewilligung using expression grel:\" \"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg",
+                "l": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Stadt Uelzen",
+                "l": "Stadt Uelzen"
+              }
+            },
+            {
+              "v": {
+                "v": "Gemeinde Himmelpforten",
+                "l": "Gemeinde Himmelpforten"
+              }
+            },
+            {
+              "v": {
+                "v": "Buxtehuder Brauhaus",
+                "l": "Buxtehuder Brauhaus"
+              }
+            },
+            {
+              "v": {
+                "v": "Schulz AG",
+                "l": "Schulz AG"
+              }
+            },
+            {
+              "v": {
+                "v": "Richter GmbH Sanitär- und Heizungsbau",
+                "l": "Richter GmbH Sanitär- und Heizungsbau"
+              }
+            },
+            {
+              "v": {
+                "v": "Herbert Peper & Sohn GmbH",
+                "l": "Herbert Peper & Sohn GmbH"
+              }
+            },
+            {
+              "v": {
+                "v": "Landkreis Harburg",
+                "l": "Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Börde Lamstedt",
+                "l": "Börde Lamstedt"
+              }
+            },
+            {
+              "v": {
+                "v": "Bäckerei Behrens e.K.",
+                "l": "Bäckerei Behrens e.K."
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Jahr der Bewilligung",
+    "expression": "grel:\" \"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Jahr der Bewilligung using expression grel:cells[\"BEZEICHNUNG DES VORHABENS\"].value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg",
+                "l": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Stadt Uelzen",
+                "l": "Stadt Uelzen"
+              }
+            },
+            {
+              "v": {
+                "v": "Gemeinde Himmelpforten",
+                "l": "Gemeinde Himmelpforten"
+              }
+            },
+            {
+              "v": {
+                "v": "Buxtehuder Brauhaus",
+                "l": "Buxtehuder Brauhaus"
+              }
+            },
+            {
+              "v": {
+                "v": "Schulz AG",
+                "l": "Schulz AG"
+              }
+            },
+            {
+              "v": {
+                "v": "Richter GmbH Sanitär- und Heizungsbau",
+                "l": "Richter GmbH Sanitär- und Heizungsbau"
+              }
+            },
+            {
+              "v": {
+                "v": "Herbert Peper & Sohn GmbH",
+                "l": "Herbert Peper & Sohn GmbH"
+              }
+            },
+            {
+              "v": {
+                "v": "Landkreis Harburg",
+                "l": "Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Börde Lamstedt",
+                "l": "Börde Lamstedt"
+              }
+            },
+            {
+              "v": {
+                "v": "Bäckerei Behrens e.K.",
+                "l": "Bäckerei Behrens e.K."
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Jahr der Bewilligung",
+    "expression": "grel:cells[\"BEZEICHNUNG DES VORHABENS\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column BEZEICHNUNG DES VORHABENS using expression grel:\"\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg",
+                "l": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Stadt Uelzen",
+                "l": "Stadt Uelzen"
+              }
+            },
+            {
+              "v": {
+                "v": "Gemeinde Himmelpforten",
+                "l": "Gemeinde Himmelpforten"
+              }
+            },
+            {
+              "v": {
+                "v": "Buxtehuder Brauhaus",
+                "l": "Buxtehuder Brauhaus"
+              }
+            },
+            {
+              "v": {
+                "v": "Schulz AG",
+                "l": "Schulz AG"
+              }
+            },
+            {
+              "v": {
+                "v": "Richter GmbH Sanitär- und Heizungsbau",
+                "l": "Richter GmbH Sanitär- und Heizungsbau"
+              }
+            },
+            {
+              "v": {
+                "v": "Herbert Peper & Sohn GmbH",
+                "l": "Herbert Peper & Sohn GmbH"
+              }
+            },
+            {
+              "v": {
+                "v": "Landkreis Harburg",
+                "l": "Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Börde Lamstedt",
+                "l": "Börde Lamstedt"
+              }
+            },
+            {
+              "v": {
+                "v": "Bäckerei Behrens e.K.",
+                "l": "Bäckerei Behrens e.K."
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "BEZEICHNUNG DES VORHABENS",
+    "expression": "grel:\"\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column BEZEICHNUNG DES VORHABENS using expression grel:cells[\"NAME DES BEGÜNSTIGTEN\"].value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg",
+                "l": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Stadt Uelzen",
+                "l": "Stadt Uelzen"
+              }
+            },
+            {
+              "v": {
+                "v": "Gemeinde Himmelpforten",
+                "l": "Gemeinde Himmelpforten"
+              }
+            },
+            {
+              "v": {
+                "v": "Buxtehuder Brauhaus",
+                "l": "Buxtehuder Brauhaus"
+              }
+            },
+            {
+              "v": {
+                "v": "Schulz AG",
+                "l": "Schulz AG"
+              }
+            },
+            {
+              "v": {
+                "v": "Richter GmbH Sanitär- und Heizungsbau",
+                "l": "Richter GmbH Sanitär- und Heizungsbau"
+              }
+            },
+            {
+              "v": {
+                "v": "Herbert Peper & Sohn GmbH",
+                "l": "Herbert Peper & Sohn GmbH"
+              }
+            },
+            {
+              "v": {
+                "v": "Landkreis Harburg",
+                "l": "Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Börde Lamstedt",
+                "l": "Börde Lamstedt"
+              }
+            },
+            {
+              "v": {
+                "v": "Bäckerei Behrens e.K.",
+                "l": "Bäckerei Behrens e.K."
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "BEZEICHNUNG DES VORHABENS",
+    "expression": "grel:cells[\"NAME DES BEGÜNSTIGTEN\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column NAME DES BEGÜNSTIGTEN using expression grel:\"\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg",
+                "l": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Stadt Uelzen",
+                "l": "Stadt Uelzen"
+              }
+            },
+            {
+              "v": {
+                "v": "Gemeinde Himmelpforten",
+                "l": "Gemeinde Himmelpforten"
+              }
+            },
+            {
+              "v": {
+                "v": "Buxtehuder Brauhaus",
+                "l": "Buxtehuder Brauhaus"
+              }
+            },
+            {
+              "v": {
+                "v": "Schulz AG",
+                "l": "Schulz AG"
+              }
+            },
+            {
+              "v": {
+                "v": "Richter GmbH Sanitär- und Heizungsbau",
+                "l": "Richter GmbH Sanitär- und Heizungsbau"
+              }
+            },
+            {
+              "v": {
+                "v": "Herbert Peper & Sohn GmbH",
+                "l": "Herbert Peper & Sohn GmbH"
+              }
+            },
+            {
+              "v": {
+                "v": "Landkreis Harburg",
+                "l": "Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Börde Lamstedt",
+                "l": "Börde Lamstedt"
+              }
+            },
+            {
+              "v": {
+                "v": "Bäckerei Behrens e.K.",
+                "l": "Bäckerei Behrens e.K."
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "NAME DES BEGÜNSTIGTEN",
+    "expression": "grel:\"\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column NAME DES BEGÜNSTIGTEN using expression grel:cells[\"Column\"].value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg",
+                "l": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Stadt Uelzen",
+                "l": "Stadt Uelzen"
+              }
+            },
+            {
+              "v": {
+                "v": "Gemeinde Himmelpforten",
+                "l": "Gemeinde Himmelpforten"
+              }
+            },
+            {
+              "v": {
+                "v": "Buxtehuder Brauhaus",
+                "l": "Buxtehuder Brauhaus"
+              }
+            },
+            {
+              "v": {
+                "v": "Schulz AG",
+                "l": "Schulz AG"
+              }
+            },
+            {
+              "v": {
+                "v": "Richter GmbH Sanitär- und Heizungsbau",
+                "l": "Richter GmbH Sanitär- und Heizungsbau"
+              }
+            },
+            {
+              "v": {
+                "v": "Herbert Peper & Sohn GmbH",
+                "l": "Herbert Peper & Sohn GmbH"
+              }
+            },
+            {
+              "v": {
+                "v": "Landkreis Harburg",
+                "l": "Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Börde Lamstedt",
+                "l": "Börde Lamstedt"
+              }
+            },
+            {
+              "v": {
+                "v": "Bäckerei Behrens e.K.",
+                "l": "Bäckerei Behrens e.K."
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "NAME DES BEGÜNSTIGTEN",
+    "expression": "grel:cells[\"Column\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Column using expression grel:\"\"",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "value",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg",
+                "l": "Naturparkregion Lüneburger Heide e.V. c/o Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Stadt Uelzen",
+                "l": "Stadt Uelzen"
+              }
+            },
+            {
+              "v": {
+                "v": "Gemeinde Himmelpforten",
+                "l": "Gemeinde Himmelpforten"
+              }
+            },
+            {
+              "v": {
+                "v": "Buxtehuder Brauhaus",
+                "l": "Buxtehuder Brauhaus"
+              }
+            },
+            {
+              "v": {
+                "v": "Schulz AG",
+                "l": "Schulz AG"
+              }
+            },
+            {
+              "v": {
+                "v": "Richter GmbH Sanitär- und Heizungsbau",
+                "l": "Richter GmbH Sanitär- und Heizungsbau"
+              }
+            },
+            {
+              "v": {
+                "v": "Herbert Peper & Sohn GmbH",
+                "l": "Herbert Peper & Sohn GmbH"
+              }
+            },
+            {
+              "v": {
+                "v": "Landkreis Harburg",
+                "l": "Landkreis Harburg"
+              }
+            },
+            {
+              "v": {
+                "v": "Börde Lamstedt",
+                "l": "Börde Lamstedt"
+              }
+            },
+            {
+              "v": {
+                "v": "Bäckerei Behrens e.K.",
+                "l": "Bäckerei Behrens e.K."
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column"
+        }
+      ]
+    },
+    "columnName": "Column",
+    "expression": "grel:\"\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Column",
+    "columnName": "Column"
+  }
+]

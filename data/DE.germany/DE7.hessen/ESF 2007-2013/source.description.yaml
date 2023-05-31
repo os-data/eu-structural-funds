@@ -1,0 +1,39 @@
+contributors:
+- Michael Peters (michael.peters@okfn.de)
+description: The beneficiary list for the ESF (2007-2013) program for Hessen.
+language: de
+resources:
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007DE052PO006
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: Hessen-ESF-2007_2013.csv
+  publication_date: '2015-03-05'
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: Name des Begünstigten
+      translates_to: Beneficiary name
+    - maps_to: beneficiary_city
+      name: Ort
+      translates_to: project location
+    - maps_to: project_name
+      name: Bezeichnung des Vorhabens
+      translates_to: operation name
+    - maps_to: approval_date
+      name: Beginn des Vorhabens
+      translates_to: Year of Approval / year of completion
+    - maps_to: completion_date
+      name: Ende des Vorhabens
+      translates_to: Time of approval (start and end date)
+    - maps_to: total_amount
+      name: Gewährte öffentliche Beträge in EUR
+      translates_to: total cost of project (EU and public funding)
+  title: ESF Hessen 2007-2013
+scraper_required: false
+sources:
+- name: ESF Hessen
+  web: https://www.esf-hessen.de/Startseite.esf
+title: DE7.Hessen 2007-2013 ESF

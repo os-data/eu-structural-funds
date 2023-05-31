@@ -1,0 +1,90 @@
+
+title: UK.Scotland 2014-2020 ERDF ESF 
+
+description: The beneficiary list of the ESF and ERDF programme for the Scotland.
+language: EN 
+
+sources:
+
+  - name: ESF Scotland (2014-2020)
+    web: sent upon request
+
+scraper_required: false
+
+
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+
+  - title: ESF in Scotland 2014-2020
+
+    path: ESF-and-ERDF-Scotland-2014-2020.csv
+
+    publication_date: 2017-02-03
+
+    add_categories:
+      fund_acronym: 
+        ESF: ESF
+        ERDF: ERDF 
+
+    add_constants:
+      funding_period: 2014-2020
+      cci_code: 
+
+    currency_code: GBP
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: Operation Name
+          translates_to: project name 
+          maps_to: project_name
+
+        - name: Recipient organisation
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: ESF/ ERDF Grant requested
+          translates_to: EU cofinancing amount
+          maps_to: eu_cofinancing_amount_eligible
+
+        - name: Total eligible expenditure
+          translates_to: Total eligible expenditure
+          maps_to: total_amount_eligible
+
+        - name: Programme
+          translates_to: fund acronym
+          maps_to: fund_acronym  
+
+        - name: Description
+          translates_to: operation Summary
+          maps_to: project_description 
+
+        - name: Postcode
+          translates_to: Postcode
+          maps_to: beneficiary_postal_code
+
+        - name: Union co-financing rate
+          translates_to: Subsidy amount
+          maps_to: eu_cofinancing_rate
+
+        - name: Start date 
+          translates_to: starting date of the project
+          maps_to: starting_date
+
+        - name: End date 
+          translates_to: completion date of the project
+          maps_to: completion_date          
+
+        - name: Theme
+          translates_to: priority_label 
+          maps_to: priority_label
+
+        - name: Country              
+          translates_to: Country
+          maps_to: beneficiary_country 
+

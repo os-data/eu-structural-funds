@@ -1,0 +1,299 @@
+contributors:
+- Michael Peters (michael.peters@okfn.de)
+description: The beneficiary list of the ESF programme for Spain.
+language: es
+resources:
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_ANDALUCxA.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema:
+    fields:
+    - name: _source
+      translates_to: source
+      maps_to: source
+    - maps_to: beneficiary_name
+      name: beneficiary
+      translates_to: Beneficiary name
+    - maps_to: project_name
+      name: _title
+      translates_to: operation name
+    - maps_to: priority_label
+      name: operation
+      translates_to: amount granted
+    - maps_to: total_amount
+      name: spending
+      translates_to: total amount
+    - maps_to: cci_program_code
+      name: po_nr
+      translates_to: cci code 
+    - maps_to: priority_label
+      name: po_str
+      translates_to: priority_label  
+  title: ESF in Andalucia
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_ARAGxN.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF in Aragon
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_ASTURIAS.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF in Asturias
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_BALEARES.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF in Islas Baleares
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_CEUTA.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF in Ceuta
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_CASTILLA_Y_LExN.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Castilla y Leon
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_CASTILLA_LA_MANCHA.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Castilla la Mancha
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_CANTABRIA.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Cantabria
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_CATALUxA.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Catalunya
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_COMUNIDAD_VALENCIANA.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Comunidad Valenciana
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_PAIS_VASCO.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Pais Vasco
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_EXTREMADURA.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Extremadura
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_GALICIA.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Galicia
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_CANARIAS.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Islas Canarias
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_LA_RIOJA.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF La Rioja
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_MADRID.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Madrid
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_MELILLA.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Melilla
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_MURCIA.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Murcia
+- add_categories: {}
+  add_constants:
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_NAVARRA.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Navarra
+- add_categories: {}
+  add_constants: {}
+  constant_fields:
+    currency_code: EUR
+    fund_name: ESF
+    offical_period: 2007-2013
+  path: PO_FSE_ADAPTABILIDAD_Y_EMPLEO_5.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Spain Adaptabilidad y empleo 5
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_ADAPTABILIDAD_Y_EMPLEO_4.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Spain Adaptabilidad y empleo 4
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_ADAPTABILIDAD_Y_EMPLEO_3.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Spain Adaptabilidad y empleo 3
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_ADAPTABILIDAD_Y_EMPLEO_2.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Spain Adaptabilidad y empleo 2
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_ADAPTABILIDAD_Y_EMPLEO_1.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Spain Adaptabilidad y empleo 1
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_LUCHA_CONTRA_LA_DISCRIMINACIxN.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Spain Lucha contra la discriminacion 
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ESF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO_FSE_ASISTENCIA_TxCNICA.json
+  encoding: utf-8
+  publication_date: '2016-10-13'
+  schema: null
+  title: ESF Spain Asistencia Tecnica   
+scraper_required: false
+sources:
+- name: ESF Spain (2007-2013)
+  web: http://www.empleo.gob.es/uafse/es/beneficiarios/index.html
+title: ES.Spain 2007-2013 ESF

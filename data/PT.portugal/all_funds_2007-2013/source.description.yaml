@@ -1,0 +1,63 @@
+contributors:
+- Michael Peters <michael.peters@okfn.de> (http://okfn.de)
+description: null
+language: PT
+add_categories:
+  fund_acronym:
+    FC: CF
+    FEDER: ERDF
+    FSE: ESF
+resources:
+- add_constants:
+    cci_program_code: null
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: Portugal_all_funds_2007-2013.json
+  publication_date: '2015-03-01'
+  schema:
+    fields:
+    - maps_to: operational_programme
+      name: Programa Operacional
+      translates_to: operational programme
+    - maps_to: fund_acronym
+      name: Fundo
+      translates_to: Fund (either ERDF or ESF)
+    - maps_to: null
+      name: Agenda
+      translates_to: operational programme code
+    - maps_to: theme_name
+      name: Domínio de Intervenção
+      translates_to: Intervention field / project objective
+    - maps_to: priority_label
+      name: Tipologia de Operação
+      translates_to: Operating Type
+    - maps_to: beneficiary_name
+      name: Beneficiário
+      translates_to: beneficiary
+    - maps_to: project_name
+      name: Operações
+      translates_to: project title (includes project number)
+    - maps_to: beneficiary_nuts_region
+      name: Região NUT II
+      translates_to: region nuts code
+    - maps_to: beneficiary_postal_code
+      name: Código de Concelho
+      translates_to: postal code
+    - maps_to: beneficiary_county
+      name: Concelho
+      translates_to: County
+    - maps_to: approval_date
+      name: Data de Aprovação
+      translates_to: approval date
+    - maps_to: total_amount_eligible
+      name: Investimento Elegível Aprovado (€)
+      translates_to: eligible amount in Euro
+    - maps_to: eu_cofinancing_amount
+      name: Fundo Comunitário Aprovado (€)
+      translates_to: eu cofinancing amount
+  title: ERDF and ESF data for Portugal 2007-2013
+scraper_required: false
+sources:
+- name: ERDF and ESF data for Portugal 2007-2013
+  web: http://www.pofc.qren.pt/Projectos/Projectos-Aprovados-QREN?area=2&regiao=105&Search=y
+title: PT.Portugal 2007-2013 ERDF ESF

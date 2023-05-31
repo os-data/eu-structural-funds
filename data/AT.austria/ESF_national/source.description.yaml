@@ -1,0 +1,223 @@
+title: ESF Data for Austria 2007-2013
+
+description: The beneficiary list for the ESF (2007-2013) program for Austria.
+language: de
+
+sources:
+  - name: ESF Austria
+    web: http://www.esf.at/esf/service/dokumente-2007-2013/
+
+
+scraper_required: false
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+  - title: ESF Austria 2007-2008
+    path: ESF_Austria_2007-2008.json
+    publication_date: "2009-06-30"
+
+    add_constants:
+        fund_acronym: ESF
+        funding_period: 2007-2013
+        currency_code: EUR
+        year: 2008
+
+    schema:
+
+      fields:
+        - name: _source
+          translates_to: source
+          maps_to: source
+
+        - name: "beneficiary"
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: "name_of_operation"
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: public_funding
+          translates_to: Public Contribution (EU and national)
+          maps_to: total_amount
+
+
+  - title: ESF in Austria 2009
+
+    path: ESF_Austria_2009.json
+    publication_date: "2010-06-30"
+
+    add_constants:
+        fund_acronym: ESF
+        offical_period: 2007-2013
+        currency_code: EUR
+        year: 2009
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+          maps_to: source
+
+        - name: "beneficiary"
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: "name_of_operation"
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: public_funding
+          translates_to: Public Contribution (EU and national)
+          maps_to: total_amount
+
+
+  - title: ESF in Austria 2010
+
+    path: ESF_Austria_2010.json
+    publication_date: "2011-06-30"
+
+    add_constants:
+        fund_acronym: ESF
+        offical_period: 2007-2013
+        currency_code: EUR
+        year: 2010
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+          maps_to: source
+
+        - name: "beneficiary"
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: "name_of_operation"
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: public_funding
+          translates_to: Public Contribution (EU and national)
+          maps_to: total_amount      
+
+  - title: ESF in Austria 2011
+
+    path: ESF_Austria_2011.json
+    publication_date: "2012-06-30"
+
+    add_constants:
+        fund_acronym: ESF
+        offical_period: 2007-2013
+        currency_code: EUR
+        year: 2011
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+          maps_to: source
+
+        - name: "beneficiary"
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: "name_of_operation"
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: public_funding
+          translates_to: Public Contribution (EU and national)
+          maps_to: total_amount
+
+
+  - title: ESF in Austria 2012
+
+    path: ESF_Austria_2012.json
+    publication_date: "2013-06-30"
+
+    add_constants:
+        fund_acronym: ESF
+        offical_period: 2007-2013
+        currency_code: EUR
+        year: 2012
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+          maps_to: source
+
+        - name: "beneficiary"
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: "name_of_operation"
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: public_funding
+          translates_to: Public Contribution (EU and national)
+          maps_to: total_amount
+
+  - title: ESF in Austria 2013
+
+    path: ESF_Austria_2013.json
+    publication_date: "2014-06-30"
+
+    add_constants:
+        fund_acronym: ESF
+        offical_period: 2007-2013
+        currency_code: EUR
+        year: 2012
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+          maps_to: source
+
+        - name: "beneficiary"
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: "name_of_operation"
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: funding_total_cost
+          translates_to: total amount of project
+          maps_to: total_amount  
+
+
+  - title: ESF in Austria 2014
+
+    path: ESF_Austria_2014.json
+    publication_date: "2015-06-30"
+
+    add_constants:
+        fund_acronym: ESF
+        offical_period: 2007-2013
+        currency_code: EUR
+        year: 2014
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+          maps_to: source
+
+        - name: "beneficiary"
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: "name_of_operation"
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: public_funding
+          translates_to: Public Contribution (EU and national)
+          maps_to: total_amount

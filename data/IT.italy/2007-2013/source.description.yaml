@@ -1,0 +1,120 @@
+title: ESF and ERDF Data for Italy (2007-2013)
+
+description: The beneficiary list of the ESF programme for Italy.
+language: It
+
+sources:
+  - name: ESF and ERDF Italy (2007-2013)
+    web: http://www.opencoesione.gov.it/
+
+scraper_required: false
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+add_categories:
+  fund_acronym:
+    FESR: ERDF
+    FSE: ESF
+
+resources:
+  - title: ESF and ERDF in Italy Part 1
+
+    path: italy_allfunds_2007_2013_part1.csv
+    #url:
+    publication_date: "2016-10-31"
+
+    add_constants:
+      funding_period: 2007-2013
+      cci_code: null
+    currency_code: EUR
+
+
+    schema:
+      fields:
+        - name: OC_TITOLO_PROGETTO
+          translates_to: project name
+          maps_to: beneficiary_name 
+
+        - name: QSN_AREA_OBIETTIVO_UE
+          translates_to: theme name eu
+          maps_to: theme_name 
+
+        - name: QSN_FONDO_COMUNITARIO
+          translates_to: fund acronym
+          maps_to: fund_acronym 
+
+        - name: OC_CODICE_PROGRAMMA
+          translates_to: cci code 
+          maps_to: cci_program_code 
+
+        - name: FINANZ_UE
+          translates_to: EU amount eligible 
+          maps_to: eu_cofinancing_amount
+
+        - name: FINANZ_TOTALE_PUBBLICO
+          translates_to: total public amount 
+          maps_to: null
+
+        - name: FINANZ_PRIVATO
+          translates_to: private amount (third party)
+          maps_to: third_party_amount
+
+        - name: COSTO_RENDICONTABILE_UE
+          translates_to: eligible amount eu 
+          maps_to: total_amount_eligible 
+
+        - name: OC_TOT_PAGAMENTI_RENDICONTAB_UE
+          translates_to: paid out amount eu
+          maps_to: total_amount
+
+
+  - title: ESF and ERDF in Italy Part 2
+
+    path: italy_allfunds_2007_2013_part2.csv
+    #url:
+    publication_date: "2016-10-31"
+
+    add_constants:
+      funding_period: 2007-2013
+      cci_code:
+    currency_code: EUR
+
+
+    schema:
+      fields:
+        - name: OC_TITOLO_PROGETTO
+          translates_to: project name
+          maps_to: beneficiary_name
+
+        - name: QSN_AREA_OBIETTIVO_UE
+          translates_to: theme name eu
+          maps_to: theme_name
+
+        - name: QSN_FONDO_COMUNITARIO
+          translates_to: fund acronym
+          maps_to: fund_acronym
+
+        - name: OC_CODICE_PROGRAMMA
+          translates_to: cci code
+          maps_to: cci_program_code
+
+        - name: FINANZ_UE
+          translates_to: EU amount eligible
+          maps_to: eu_cofinancing_amount
+
+        - name: FINANZ_TOTALE_PUBBLICO
+          translates_to: total public amount
+          maps_to: null
+
+        - name: FINANZ_PRIVATO
+          translates_to: private amount (third party)
+          maps_to: third_party_amount
+
+        - name: COSTO_RENDICONTABILE_UE
+          translates_to: eligible amount eu
+          maps_to: total_amount_eligible
+
+        - name: OC_TOT_PAGAMENTI_RENDICONTAB_UE
+          translates_to: paid out amount eu
+          maps_to: total_amount

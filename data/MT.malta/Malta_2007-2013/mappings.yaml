@@ -1,0 +1,6 @@
+mappings:
+- field: Fund
+  mapping:
+    CF: [Cohesion Fund]
+    ERDF: [European Regional Development Fund]
+    ESF: [European Social Fund]

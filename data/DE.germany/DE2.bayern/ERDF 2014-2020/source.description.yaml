@@ -1,0 +1,84 @@
+title: DE2.Bayern 2014-2020 ERDF
+
+description: The beneficiary list for the ERDF (2014-2020) program for Bayern.
+language: de
+
+sources:
+  - name: ERDF Bayern
+    web: http://www.ERDF.bayern.de
+
+scraper_required: false
+
+contributors:
+  - Bela Seeger (bela.seeger@okfn.de)
+
+resources:
+
+  - title: ERDF Bayern 2014-2020
+
+    add_constants:
+      fund_acronym: ERDF
+      funding_period: 2014-2020
+      cci_code: 2014DE16RFOP002
+    currency_code: EUR
+
+    path: ERDF_Bayern_2014_2020.csv
+    publication_date: "2016-06-30"
+
+    schema:
+      fields:
+
+        - name: "Name des Begünstigten / beneficiary name"
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: "Bezeichnung des Vorhabens / operation name"
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: "Zusammenfassung des Vorhabens / operation summary"
+          translates_to: summary of project 
+          maps_to: project_description
+
+        - name: "Datum des Beginns des Vorhabens / operation start date"
+          translates_to: start date
+          maps_to: starting_date 
+
+        - name: "Datum des Endes des Vorhabens / operation end date"
+          translates_to: end date
+          maps_to: completion_date
+
+        - name: "Gesamtbetrag der förderfähigen Ausgaben des Vorhabens / total eligible expenditure allocated to the operation"
+          translates_to: total eligible expenditure
+          maps_to: total_amount_eligible
+
+        - name: "Unions-Kofinanzierungssatz pro Prioritätsachse / Union co-financing rate, as per priority axis"
+          translates_to: cofinancing rate
+          maps_to: eu_cofinancing_rate           
+
+        - name: "Postleitzahl des Vorhabens / operation postcode"
+          translates_to: postal code 
+          maps_to: beneficiary_postal_code                       
+
+        - name: "Land / country"
+          translates_to: country
+          maps_to: beneficiary_country       
+
+        - name: "Interventionsbereich / intervention field"
+          translates_to: intervention category
+          maps_to: priority_number       
+
+        - name: "Finanzierungsform / form of finance"
+          translates_to: form of finance (number)
+          maps_to: null      
+
+        - name: "Art des Gebiets / territorial dimension"
+          translates_to: territory (number)
+          maps_to: null 
+
+        - name: "Territoriale Umsetzungsmechanismen / territorial delivery mechanism"
+          maps_to: null   
+
+        - name: "Thematisches Ziel / thematic objective dimension"
+          translates_to: thematic objective 
+          maps_to: theme_code

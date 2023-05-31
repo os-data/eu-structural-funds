@@ -1,0 +1,57 @@
+contributors:
+- Michael Peters (michael.peters@okfn.de)
+description: The beneficiary list of the ERDF programme for Southern and Eastern Ireland.
+language: de
+resources:
+- add_categories: {}
+  add_constants:
+    cci_program_code: unknown
+    funding_period: 2007-2013
+    currency_code: EUR
+    fund_acronym: ERDF
+  path: http___www.southernassembly.ie_docs_LoB_July_2016_For_Website.json
+  publication_date: '2016-02-22'
+  schema:
+    fields:
+    - maps_to: theme_name
+      name: Type of Grant
+      translates_to: type of grant
+    - maps_to: beneficiary_name
+      name: Beneficiary
+      translates_to: Beneficiary name
+    - maps_to: project_description
+      name: Project Summary
+      translates_to: summary
+    - maps_to: beneficiary_nuts_code
+      name: Project Location
+      translates_to: location
+    - maps_to: null
+      name: Code of region or area where operation is located
+      translates_to: Code of region or area where operation is located
+    - maps_to: project_id
+      name: Unique code number of the operation
+      translates_to: Unique code number of the operation
+    - maps_to: starting_date
+      name: Project Start Date
+      translates_to: starting date
+    - maps_to: completion_date
+      name: Project End Date
+      translates_to: completion date
+    - maps_to: priority_label
+      name: Theme/subtheme
+      translates_to: project theme / subtheme
+    - maps_to: null
+      name: Total Eligible Expenditure
+      translates_to: total amount of project (incl. third party amount)
+    - maps_to: total_amount
+      name: Total Public Eligible Expenditure
+      translates_to: total amount (EU + national public)
+    - maps_to: eu_cofinancing_amount
+      name: ERDF (40% of Total Public Eligible Expenditure)
+      translates_to: ERDF Expenditure
+  title: ERDF in Southern and Eastern Ireland 2008
+scraper_required: false
+sources:
+- name: ERDF Southern and Eastern Ireland (2007-2013)
+  web: http://www.southernassembly.ie/en/project/view_projects
+title: IE.Ireland 2007-2013 ERDF

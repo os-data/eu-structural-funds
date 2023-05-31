@@ -1,0 +1,263 @@
+contributors:
+- Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
+description: There are two datasets. One lists all beneficiaries from the funding
+  periods 2007-2013, and the other lists operations for the second funding period
+  2014-2020.
+language: CZ
+currency_code: CZK
+resources:
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+
+  path: czech_part1.csv
+  publication_date: '2015-12-31'
+  schema:
+    fields:
+    - name: Číslo a název programu
+      translates_to: Number and title of the program
+      maps_to: operational_programme
+      
+    - maps_to: priority_number
+      name: Číslo prioritní osy
+      translates_to: priority number
+      
+    - name: Číslo oblasti podpory
+      translates_to: number support
+      maps_to: null
+      
+    - maps_to: null
+      name: Číslo projektu
+      translates_to: project title and number
+      
+    - maps_to: project_name
+      name: Název projektu
+      translates_to: name of project_name
+      
+    - name: Popis projektu
+      translates_to: list of project_name
+      maps_to: project_description
+      
+    - maps_to: beneficiary_name
+      name: Žadatel
+      translates_to: beneficiary
+      
+    - maps_to: null
+      name: IČ žadatele
+      translates_to: identification number for project
+      
+    - name: Hosp.právní forma
+      translates_to: legal form of applicant
+      maps_to: null
+      
+    - name: Hosp.právní forma - skupina
+      translates_to: legal form of group
+      maps_to: null
+      
+    - maps_to: theme_code
+      name: Stav projektu
+      translates_to: theme of project
+      
+    - maps_to: approval_date
+      name: Datum podpisu smlouvy/rozhodnutí
+      translates_to: Date of signing the contract
+      
+    - maps_to: beneficiary_address
+      name: Adresa žadatele
+      translates_to: beneficary address
+      
+    - name: Kraj žadatele - kód
+      translates_to: applicant code
+      maps_to: null
+      
+    - name: Kraj žadatele - název
+      translates_to: Region of the applicant - name
+      maps_to: beneficiary_county
+      
+    - name: Obec žadatele - kód
+      translates_to: village applicants - code
+      maps_to: null
+      
+    - name: Obec žadatele - název
+      translates_to: village applicants - name
+      maps_to: null
+      
+    - maps_to: total_amount
+      name: Rozhodnutí/Smlouva o poskytnutí dotace (celkové zdroje)
+      translates_to: decision and grant agreements (total resources)
+      
+    - name: Rozhodnutí/Smlouva o poskytnutí dotace (veřejné prostředky celkem)
+      translates_to: total public funds
+      maps_to: member_state_amount
+      
+    - name: Rozhodnutí/Smlouva o poskytnutí dotace (EU zdroje)
+      translates_to: amount of EU funding
+      maps_to: eu_cofinancing_amount 
+      
+    - maps_to: null
+      name: Proplacené prostředky příjemcům - vyúčtované (veřejné prostředky celkem)
+      translates_to: Funds reimbursed to beneficiaries - accounting (public funds
+        total)
+        
+    - maps_to: null
+      name: Proplacené prostředky příjemcům - vyúčtované (EU zdroje)
+      translates_to: Funds reimbursed to beneficiaries - billed (EU sources)
+      
+    - name: Certifikované prostředky (veřejné prostředky celkem)
+      translates_to: Certified funds (public funds total)
+      maps_to: null
+      
+    - name: Certifikované prostředky (EU zdroje)
+      translates_to: Certified funds (EU sources)
+      maps_to: eu_cofinancing_amount_eligible
+      
+    - maps_to: beneficiary_nuts_code
+      name: Kód NUTS
+      translates_to: nuts code
+      
+    - maps_to: beneficiary_nuts_region
+      name: Název NUTS
+      translates_to: Nuts region
+      
+    - name: Pořadí v rámci v projektu (filtr)
+      translates_to: Ranking in the framework of the project (filter)
+      maps_to: null 
+    - name: Počet míst realizace
+      translates_to: number of seats (execution)
+      maps_to: null 
+  title: CZ.Czech I 2007-2013 ERDF
+
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+
+  path: czech_part2.csv
+  publication_date: '2015-12-31'
+  schema:
+    fields:
+    - name: Číslo a název programu
+      translates_to: Number and title of the program
+      maps_to: operational_programme
+      
+    - maps_to: priority_number
+      name: Číslo prioritní osy
+      translates_to: priority number
+      
+    - name: Číslo oblasti podpory
+      translates_to: number support
+      maps_to: null
+      
+    - maps_to: null
+      name: Číslo projektu
+      translates_to: project title and number
+      
+    - maps_to: project_name
+      name: Název projektu
+      translates_to: name of project_name
+      
+    - name: Popis projektu
+      translates_to: list of project_name
+      maps_to: project_description
+      
+    - maps_to: beneficiary_name
+      name: Žadatel
+      translates_to: beneficiary
+      
+    - maps_to: null
+      name: IČ žadatele
+      translates_to: identification number for project
+      
+    - name: Hosp.právní forma
+      translates_to: legal form of applicant
+      maps_to: null
+      
+    - name: Hosp.právní forma - skupina
+      translates_to: legal form of group
+      maps_to: null
+      
+    - maps_to: theme_code
+      name: Stav projektu
+      translates_to: theme of project
+      
+    - maps_to: approval_date
+      name: Datum podpisu smlouvy/rozhodnutí
+      translates_to: Date of signing the contract
+      
+    - maps_to: beneficiary_address
+      name: Adresa žadatele
+      translates_to: beneficary address
+      
+    - name: Kraj žadatele - kód
+      translates_to: applicant code
+      maps_to: null
+      
+    - name: Kraj žadatele - název
+      translates_to: Region of the applicant - name
+      maps_to: beneficiary_county
+      
+    - name: Obec žadatele - kód
+      translates_to: village applicants - code
+      maps_to: null
+      
+    - name: Obec žadatele - název
+      translates_to: village applicants - name
+      maps_to: null
+      
+    - maps_to: total_amount
+      name: Rozhodnutí/Smlouva o poskytnutí dotace (celkové zdroje)
+      translates_to: decision and grant agreements (total resources)
+      
+    - name: Rozhodnutí/Smlouva o poskytnutí dotace (veřejné prostředky celkem)
+      translates_to: total public funds
+      maps_to: member_state_amount
+      
+    - name: Rozhodnutí/Smlouva o poskytnutí dotace (EU zdroje)
+      translates_to: amount of EU funding
+      maps_to: eu_cofinancing_amount 
+      
+    - maps_to: null
+      name: Proplacené prostředky příjemcům - vyúčtované (veřejné prostředky celkem)
+      translates_to: Funds reimbursed to beneficiaries - accounting (public funds
+        total)
+        
+    - maps_to: null
+      name: Proplacené prostředky příjemcům - vyúčtované (EU zdroje)
+      translates_to: Funds reimbursed to beneficiaries - billed (EU sources)
+      
+    - name: Certifikované prostředky (veřejné prostředky celkem)
+      translates_to: Certified funds (public funds total)
+      maps_to: null
+      
+    - name: Certifikované prostředky (EU zdroje)
+      translates_to: Certified funds (EU sources)
+      maps_to: eu_cofinancing_amount_eligible
+      
+    - maps_to: beneficiary_nuts_code
+      name: Kód NUTS
+      translates_to: nuts code
+      
+    - maps_to: beneficiary_nuts_region
+      name: Název NUTS
+      translates_to: Nuts region
+      
+    - name: Pořadí v rámci v projektu (filtr)
+      translates_to: Ranking in the framework of the project (filter)
+      maps_to: null 
+    - name: Počet míst realizace
+      translates_to: number of seats (execution)
+      maps_to: null 
+
+  title: CZ.Czech II 2007-2013 ERDF
+
+
+scraper_required: false
+sources:
+- name: Dotaceez.cz
+  web: http://www.dotaceeu.cz/cs/Informace-o-cerpani/Seznamy-prijemcu
+- name: link to original Excel file
+  web: http://www.dotaceeu.cz/getmedia/b4a6fd6f-44ce-4cef-ab9d-872279a16c9a/Seznam-prijemcu-(List-of-Beneficiaries)-09_2016.xlsx?ext=.xlsx
+title: CZ.Czech 2007-2013 ERDF

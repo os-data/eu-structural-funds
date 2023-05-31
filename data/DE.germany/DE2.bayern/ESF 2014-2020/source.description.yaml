@@ -1,0 +1,89 @@
+title: DE2.Bayern 2014-2020 ESF
+
+description: The beneficiary list for the ESF (2014-2020) program for Bayern.
+language: de
+
+sources:
+  - name: ESF Bayern
+    web: http://www.esf.bayern.de
+
+scraper_required: false
+
+contributors:
+  - Bela Seeger (bela.seeger@okfn.de)
+
+resources:
+
+  - title: ESF Bayern 2014-2020
+
+    add_constants:
+      fund_acronym: ESF
+      funding_period: 2014-2020
+      cci_code: 2014DE05SFOP004
+    currency_code: EUR
+
+    path: ESF_Bayern_2014_2020.csv
+    publication_date: "2016-06-03"
+
+    schema:
+      fields:
+
+        - name: Name
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: Bezeichnung des Vorhabens
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: Zusammenfassung des Vorhabens
+          translates_to: summary of project 
+          maps_to: project_description
+
+        - name: Datum des Beginns des Vorhabens
+          translates_to: start date
+          maps_to: starting_date 
+
+        - name: Datum des Endes des Vorhabens
+          translates_to: end date
+          maps_to: completion_date
+
+        - name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens in €
+          translates_to: total eligible expenditure
+          maps_to: total_amount_eligible
+
+        - name: Unions-Kofinanzierungssatz
+          translates_to: cofinancing rate
+          maps_to: eu_cofinancing_rate           
+
+        - name: Kofinanzierung aus anderen öffentlichen Mitteln
+          translates_to: cofinancing rate from other public funds 
+          maps_to: null
+
+        - name: PLZ
+          translates_to: postal code 
+          maps_to: beneficiary_postal_code                       
+
+        - name: Land
+          translates_to: country
+          maps_to: beneficiary_country       
+
+        - name: Interventionsbereich
+          translates_to: intervention category
+          maps_to: priority_number       
+
+        - name: Finanzierungsform
+          translates_to: form of finance (number)
+          maps_to: null
+
+        - name: Art des Gebietes
+          translates_to: territory (number)
+          maps_to: null
+
+        - name: Territoriale Umsetzungsmechanismen
+          translates_to: territory delivery mechanisms
+          maps_to: null   
+
+        - name: Sekundäres ESF-Thema
+          translates_to: secondary ESF theme 
+          maps_to: null                                     

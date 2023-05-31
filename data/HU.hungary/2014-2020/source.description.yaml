@@ -1,0 +1,234 @@
+title: HU.Hungary 2014-2020 ERDF ESF CF
+description: The beneficiary list for the ESIF (2014-2020) program for Hungary.
+language: hu
+currency_symbol: ".- HUF"
+
+sources:
+  - name: ESIF Hungary
+    web: http://eupalyazatiportal.hu/
+scraper_required: false
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+currency_code: HUF
+add_categories:
+  fund_acronym:
+    ERFA: ERDF
+    ESZA: ESF
+    KA: CF
+
+resources:
+  - title: ESF Hungary 2014-2020
+    path: data-uszt-ESZA.json
+    publication_date: "2016-10-31"
+    add_constants:
+      funding_period: 2014-2020
+      cci_program_code: unknown
+    schema:
+      fields:
+          - name: _program
+            translates_to: programme
+            maps_to: operational_programme
+
+          - name: _program_id
+            translates_to: programme id
+            maps_to: null
+
+          - name: _fund
+            translates_to: fund
+            maps_to: fund_acronym
+
+          - name: Pályázó neve
+            translates_to: name of applicant
+            maps_to: beneficiary_name
+
+          - name: Projekt megnevezése
+            translates_to: projekt name
+            maps_to: project_name
+
+          - name: Kitörési pont
+            translates_to: breaking point
+            maps_to: null
+
+          - name: Pályázati kiírás megnevezése
+            translates_to: Name of calls for applications
+            maps_to: priority_label
+
+          - name: Forrás megnevezése
+            translates_to: name source
+            maps_to: source
+
+          - name: Beruházás helye (régió)
+            translates_to: Investment Location (Region)
+            maps_to: beneficiary_nuts_region
+
+          - name: Beruházás helye (megye)
+            translates_to: Investment in local (county)
+            maps_to: beneficiary_city
+
+          - name: Beruházás helye (helység)
+            translates_to: Investment in place (town)
+            maps_to: beneficiary_city
+
+          - name: Megítélt összeg
+            translates_to: amount granted HUF
+            maps_to: total_amount_eligible
+
+          - name: Támogatás aránya
+            translates_to: support rate
+            maps_to: eu_cofinancing_rate
+
+          - name: Támogatási döntés dátuma
+            translates_to: Date of funding decision
+            maps_to: approval_date
+
+          - name: Közvélemény-tájékoztató
+            translates_to: Public Information
+            maps_to: null
+
+          - name: Támogatás pontszáma  
+            translates_to: priority number
+            maps_to: priority_number
+
+  - title: ERDF in Hungary 2014-2020
+    path: data-uszt-ERFA.json
+    add_constants:
+      funding_period: 2014-2020
+      cci_program_code: unknown
+    publication_date: "2016-10-31"
+    schema:
+      fields:
+          - name: _program
+            translates_to: programme
+            maps_to: operational_programme
+
+          - name: _program_id
+            translates_to: programme id
+            maps_to: null
+
+          - name: _fund
+            translates_to: fund
+            maps_to: fund_acronym
+
+          - name: Pályázó neve
+            translates_to: name of applicant
+            maps_to: beneficiary_name
+
+          - name: Projekt megnevezése
+            translates_to: projekt name
+            maps_to: project_name
+
+          - name: Kitörési pont
+            translates_to: breaking point
+            maps_to: null
+
+          - name: Pályázati kiírás megnevezése
+            translates_to: Name of calls for applications
+            maps_to: priority_label
+
+          - name: Forrás megnevezése
+            translates_to: name source
+            maps_to: source
+
+          - name: Beruházás helye (régió)
+            translates_to: Investment Location (Region)
+            maps_to: beneficiary_nuts_region
+
+          - name: Beruházás helye (megye)
+            translates_to: Investment in local (county)
+            maps_to: beneficiary_city
+
+          - name: Beruházás helye (helység)
+            translates_to: Investment in place (town)
+            maps_to: beneficiary_city
+
+          - name: Megítélt összeg
+            translates_to: amount granted HUF
+            maps_to: total_amount_eligible
+
+          - name: Támogatás aránya
+            translates_to: support rate
+            maps_to: eu_cofinancing_rate
+
+          - name: Támogatási döntés dátuma
+            translates_to: Date of funding decision
+            maps_to: approval_date
+
+          - name: Közvélemény-tájékoztató
+            translates_to: Public Information
+            maps_to: null
+
+          - name: Támogatás pontszáma  
+            translates_to: priority number
+            maps_to: priority_number
+
+  - title: Cohesion Fund in Hungary 2014-2020
+    path: data-uszt-KA.json
+    publication_date: "2016-10-31"
+    add_constants:
+      funding_period: 2014-2020
+      cci_program_code: unknown
+    schema:
+      fields:
+          - name: _program
+            translates_to: programme
+            maps_to: operational_programme
+
+          - name: _program_id
+            translates_to: programme id
+            maps_to: null
+
+          - name: _fund
+            translates_to: fund
+            maps_to: fund_acronym
+
+          - name: Pályázó neve
+            translates_to: name of applicant
+            maps_to: beneficiary_name
+
+          - name: Projekt megnevezése
+            translates_to: projekt name
+            maps_to: project_name
+
+          - name: Kitörési pont
+            translates_to: breaking point
+            maps_to: null
+
+          - name: Pályázati kiírás megnevezése
+            translates_to: Name of calls for applications
+            maps_to: priority_label
+
+          - name: Forrás megnevezése
+            translates_to: name source
+            maps_to: source
+
+          - name: Beruházás helye (régió)
+            translates_to: Investment Location (Region)
+            maps_to: beneficiary_nuts_region
+
+          - name: Beruházás helye (megye)
+            translates_to: Investment in local (county)
+            maps_to: beneficiary_city
+
+          - name: Beruházás helye (helység)
+            translates_to: Investment in place (town)
+            maps_to: beneficiary_city
+
+          - name: Megítélt összeg
+            translates_to: amount granted HUF
+            maps_to: total_amount_eligible
+
+          - name: Támogatás aránya
+            translates_to: support rate
+            maps_to: eu_cofinancing_rate
+
+          - name: Támogatási döntés dátuma
+            translates_to: Date of funding decision
+            maps_to: approval_date
+
+          - name: Közvélemény-tájékoztató
+            translates_to: Public Information
+            maps_to: null
+
+          - name: Támogatás pontszáma  
+            translates_to: priority number
+            maps_to: priority_number            

@@ -1,0 +1,84 @@
+
+title: UK.Northern Ireland 2014-2020 ESF 
+
+description: The beneficiary list of the ESF programme for the Northern Ireland.
+language: EN 
+currency_code: GBP
+
+sources:
+
+  - name: ESF Northern Ireland (2014-2020 )
+    web: https://github.com/atlatszo/data/tree/master/Brexit
+
+scraper_required: false
+
+
+
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+
+  - title: ESF in Northern Ireland 2014-2020
+
+    path: ESF_Northern_Ireland_2014-2020.csv
+
+    publication_date: 2016-06-30
+
+    add_constants:
+      fund_acronym: ESF
+      funding_period: 2014-2020
+      cci_code: 2014UK16RFOP003
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: Ref No
+          translates_to: ID 
+          maps_to: project_id
+
+        - name: Beneficiary Name
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: Operation Name
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: Operation Postcode  
+          translates_to: operation postcode
+          maps_to: beneficiary_postal_code
+
+        - name: Country              
+          translates_to: County
+          maps_to: beneficiary_country 
+
+        - name: Category of Intervention
+          translates_to: priority number
+          maps_to: theme_name  
+
+        - name: Operation Summary
+          translates_to: operation Summary
+          maps_to: project_description 
+
+        - name: Operation start date 
+          translates_to: starting date of the project
+          maps_to: starting_date
+
+        - name: Operation end date 
+          translates_to: completion date of the project
+          maps_to: completion_date          
+
+        - name: Total Eligible Expenditure Allocated to the Operation 
+          translates_to: total amount eligible 
+          maps_to: total_amount_eligible
+
+        - name: Union Co-financing rate
+          translates_to: Subsidy amount
+          maps_to: eu_cofinancing_rate
+
+
+

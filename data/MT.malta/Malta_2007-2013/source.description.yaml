@@ -1,0 +1,89 @@
+contributors:
+- Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
+- Fernando Blat <fernando@populate.tools> (https://populate.tools)
+description: 'Welcome to investinginyourfuture.gov.mt. This site gives users an interactive
+  way of learning more about projects being implemented under Cohesion Policy 2007-2013,
+  co-financed under the European Regional Development Fund (ERDF), Cohesion Fund and
+  the European Social Fund (ESF). This site groups projects under different themes
+  highlighting the government’s main priorities which are - Heritage and tourism;
+  Equal Opportunities; Health; Research, Science and Technology; Education; Life Long
+  Learning & Employment; Environment; Climate Change & Renewable Energy Sources; Waste
+  Management & Risk Prevention; Public Infrastructure; Public Administration; and
+  Private Sector. Through this website, users can acquire information on individual
+  projects and can also share information about projects on social media. This website
+  is ideal therefore for all those interested in EU Funded projects. Investinginyourfuture.gov.mt
+  website is managed by the Planning and Priorities Co-ordination Division (PPCD)
+  which is the Managing Authority for Cohesion Policy 2007-2013 and which falls under
+  the responsibilities of the Parliamentary Secretariat for EU Presidency 2017 and
+  EU Funds.
+
+  '
+language: EN
+add_categories:
+  fund_acronym:
+      Cohesion Fund: CF
+      European Regional Development Fund: ERDF
+      European Social Fund: ESF
+resources:
+- add_constants:
+    cci_program_code: null
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: data.csv
+  publication_date: null
+  schema:
+    fields:
+    - maps_to: project_id
+      name: Code
+      translates_to: Code
+    - maps_to: project_name
+      name: Title
+      translates_to: Title
+    - maps_to: total_amount
+      name: Project Cost
+      translates_to: Project Cost
+    - maps_to: beneficiary_name
+      name: Beneficiary
+      translates_to: Beneficiary
+    - maps_to: management_authority
+      name: Line Ministry
+      translates_to: Line Ministry
+    - maps_to: starting_date
+      name: Start Date
+      translates_to: Strat Date
+    - maps_to: completion_date
+      name: End Date
+      translates_to: End Date
+    - maps_to: project_description
+      name: Non Technical Short Summary Of Project
+      translates_to: Non Technical Short Summary Of Project
+    - maps_to: operational_programme
+      name: Operational Programme
+      translates_to: operational Programme
+    - maps_to: fund_acronym
+      name: Fund
+      translates_to: Fund
+    - maps_to: null
+      name: Operational Objective
+      translates_to: Operational Objective
+    - maps_to: priority_label
+      name: Priority Axis
+      translates_to: Priority Axis
+    - maps_to: theme_name
+      name: Focus Area Of Intervention
+      translates_to: Focus Area of Intervention
+    - maps_to: project_description
+      name: Project Objectives
+      translates_to: Project Objectives
+    - maps_to: null
+      name: Project Results
+      translates_to: Project Results
+    - maps_to: null
+      name: Project Purpose
+      translates_to: Project Purpose
+  title: A web page with list of all projects developed with the EU funds
+scraper_required: false
+sources:
+- name: Investing in your future
+  web: https://investinginyourfuture.gov.mt/projects
+title: MT.Malta 2007-2013 ERDF ESF CF

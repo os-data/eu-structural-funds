@@ -1,0 +1,107 @@
+
+title: UK.United Kingdom 2007-2013 ERDF ESF
+
+description: The beneficiary list of the ESF and ERDF programme for the UK.
+language: en
+currency_code: GBP
+
+sources:
+
+  - name: ESF and ERDF United Kingdom (2007-2013 )
+    web: https://github.com/atlatszo/data/tree/master/Brexit
+
+scraper_required: false
+
+
+
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+resources:
+
+
+  - title: ESF and ERDF in the United Kingdom 2007-2013
+
+    path: UK_subsidies_final_LAU1_fixed_dates.csv
+
+    publication_date: 2015-12-31
+
+    add_constants:
+      funding_period: 2007-2013
+      cci_code:
+
+      # any other field from fiscal.fields.yaml that is constant
+
+    schema:
+      fields:
+        - name: Priority
+          translates_to: Priority
+          maps_to: priority_number
+
+        - name: Organization
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: Project
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: Type
+          translates_to: Type of fund either ESF or ERDF
+          maps_to: fund_acronym
+
+        - name: Subsidy
+          translates_to: Subsidy amount
+          maps_to: eu_cofinancing_amount
+
+        - name: Matching
+          translates_to: Amount contributed by public funding in the UK
+          maps_to: member_state_amount
+
+        - name: Total
+          translates_to: total cost of project
+          maps_to: total_amount
+
+        - name: Start_date
+          translates_to: starting date of the project
+          maps_to: starting_date
+
+        - name: End_date
+          translates_to: completion date of the project
+          maps_to: completion_date
+
+        - name: State
+          translates_to: Country within the UK
+          maps_to: beneficiary_country
+
+        - name: Region
+          translates_to: Name of region in country (not a Nuts code)
+
+        - name: Geocoding_round
+          translates_to: Number of Geocoding Round
+
+        - name: County
+          translates_to: County
+
+        - name: City_name
+          translates_to: City
+          maps_to: beneficiary_city
+
+        - name: Postal_code
+          translates_to: operation postcode
+          maps_to: beneficiary_postal_code
+
+        - name: Lat_coords
+          translates_to: latitude coordinates
+
+        - name: Long_coords
+          translates_to: longitudinal coordinates
+
+        - name: LAU1_CODE
+          translates_to: Nuts code of beneficiary region
+          maps_to: beneficiary_nuts_code
+
+        - name: LAU1_NAME
+          translates_to: Name of Nuts region
+          maps_to: beneficiary_nuts_region

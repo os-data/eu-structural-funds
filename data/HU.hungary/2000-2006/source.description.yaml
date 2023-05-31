@@ -1,0 +1,74 @@
+contributors:
+- Michael Peters (michael.peters@okfn.de)
+description: The beneficiary list for the ESIF (2000-2006) program for Hungary.
+language: hu
+currency_symbol: ".- HUF"
+currency_code: HUF
+add_categories:
+    fund_acronym:
+      ERFA: ERDF
+      ESZA: ESF
+resources:
+- add_constants:
+    cci_program_code: unknown 
+    funding_period: 2000-2006
+  schema:
+    fields:
+    - maps_to: null
+      name: _program
+      translates_to: programme
+    - maps_to: null
+      name: _program_id
+      translates_to: programme id
+    - maps_to: fund_acronym
+      name: _fund
+      translates_to: fund
+    - maps_to: beneficiary_name
+      name: Pályázó neve
+      translates_to: name of applicant
+    - maps_to: project_name
+      name: Projekt megnevezése
+      translates_to: projekt name
+    - maps_to: operational_programme
+      name: OP név
+      translates_to: Name of Operational Programme
+    - maps_to: priority_label
+      name: Pályázati kiírás megnevezése
+      translates_to: Name of calls for applications
+    - maps_to: source
+      name: Forrás megnevezése
+      translates_to: name source
+    - maps_to: beneficiary_nuts_region
+      name: Beruházás helye (régió)
+      translates_to: Investment Location (Region)
+    - maps_to: beneficiary_city
+      name: Beruházás helye (megye)
+      translates_to: Investment in local (county)
+    - maps_to: beneficiary_city
+      name: Beruházás helye (helység)
+      translates_to: Investment in place (town)
+    - maps_to: total_amount
+      name: Megítélt összeg
+      translates_to: amount granted HUF
+    - maps_to: eu_cofinancing_rate
+      name: Támogatás aránya
+      translates_to: support rate
+    - maps_to: approval_date
+      name: Támogatási döntés dátuma
+      translates_to: Date of funding decision
+
+  path: data-nft-ESZA.json
+  publication_date: '2016-10-31'
+  title: ESF Hungary 2000-2006
+- add_constants:
+    cci_program_code: unknown
+    funding_period: 2000-2006
+    currency_code: HUF
+  path: data-nft-ERFA.json
+  publication_date: '2016-10-31'
+  title: HU.Hungary 2000-2006 ERDF
+scraper_required: false
+sources:
+- name: ESIF Hungary
+  web: http://eupalyazatiportal.hu/
+title: HU.Hungary 2000-2006 ERDF

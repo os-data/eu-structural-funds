@@ -1,0 +1,57 @@
+contributors:
+- Michael Peters (michael.peters@okfn.de)
+description: The beneficiary list of the ERDF programme for Niedersachsen.
+language: de
+resources:
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2014DE16M2OP001
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+  currency_code: EUR
+  path: ERDF_Niedersachsen_2014-2020.json
+  publication_date: '2016-03-31'
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: Name des Begünstigten
+      translates_to: Beneficiary name
+    - maps_to: project_name
+      name: Bezeichnung des Vorhabens
+      translates_to: operation name
+    - maps_to: project_description
+      name: Zusammenfassung des Vorhabens
+      translates_to: project description
+    - maps_to: starting_date
+      name: Datum des Beginns des Vorhabens
+      translates_to: starting date of the project
+    - maps_to: completion_date
+      name: Datum des Endes des Vorhabens
+      translates_to: completion date of the project
+    - maps_to: total_amount_eligible
+      name: Gesamtbetrag der förderfähigen Ausgaben des Vorhabens in €
+      translates_to: total eligible expenditure allocated to the operation in €
+    - maps_to: eu_cofinancing_rate
+      name: Unions-Kofinan-zierungssatz
+      translates_to: Union co-financing rate
+    - maps_to: beneficiary_nuts_region
+      name: Kategorie der Region
+      translates_to: Category of region
+    - maps_to: beneficiary_postal_code
+      name: PLZ
+      translates_to: operation postcode
+    - maps_to: beneficiary_country
+      name: Land
+      translates_to: country
+    - maps_to: beneficiary_county
+      name: Landkreis
+      translates_to: county
+    - maps_to: priority_number
+      name: Interven-tions-bereich
+      translates_to: Intervention field
+  title: ERDF in Niedersachsen 2014-2020
+scraper_required: false
+sources:
+- name: ERDF Niedersachsen (2014-2020)
+  web: http://www.stk.niedersachsen.de/startseite/themen/regionale_landesentwicklung_und_eufoerderung/eufoerderung/efre_esf/efre-und-esf-124140.html
+title: DE9.Niedersachsen 2014-2020 ERDF

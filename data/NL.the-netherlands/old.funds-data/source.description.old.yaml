@@ -1,0 +1,71 @@
+contributors:
+- Michael Peters (michael.peters@okfn.de)
+description: The beneficiary list of the ERDF and ESF programme for The Netherlands
+language: de
+add_categories:
+  fund_acronym:
+    EFRO: ERDF
+    ESF: ESF
+resources:
+- add_constants:
+    cci_program_code: null
+    funding_period: 2007-2013
+  currency_code: EUR
+  encoding: ISO-8859-2
+  path: StructuralFundsNL2007NOW.csv
+  publication_date: '2015-03-31'
+  schema:
+    fields:
+    - maps_to: beneficiary_name
+      name: Begunstigde
+      translates_to: Name of the Beneficiary
+    - maps_to: project_name
+      name: Titel van het project (naam van de concrete actie)
+      translates_to: Name of the Project
+    - maps_to: null
+      name: Titel van het project in het Engels
+      translates_to: Name of the Project in English
+    - maps_to: fund_acronym
+      name: Fonds
+      translates_to: Fund (ERDF, ESF...)
+    - maps_to: management_authority
+      name: Autoriteit
+      translates_to: Government body (authority)
+    - maps_to: project_description
+      name: Samenvatting
+      translates_to: Project description
+    - maps_to: beneficiary_url
+      name: Website project
+      translates_to: Projects Website
+    - maps_to: eu_cofinancing_amount
+      name: EU-subsidie in Euro's
+      translates_to: Amount of EU subsidy in Euro
+    - maps_to: member_state_amount
+      name: Overige publieke financiering
+      translates_to: Other public financing
+    - maps_to: third_party_amount
+      name: Overige private financiering
+      translates_to: Other privat financing
+    - maps_to: total_amount
+      name: Totale kosten in Euro's
+      translates_to: Total cost of project
+    - maps_to: eu_cofinancing_rate
+      name: Medefinancieringspercentage van de Unie (per prioritaire as)
+      translates_to: Unions co-financing rate in percent per priority
+    - name: Datum van laatste bijwerking
+      translates_to: Date of latest update
+    - maps_to: approval_date
+      name: Begindatum
+      translates_to: Date of Approval
+    - maps_to: final_payment_date
+      name: Einddatum
+      translates_to: Date of final payment
+    - maps_to: theme_name
+      name: Thematische doelstelling
+      translates_to: Theme of Project
+  title: ERDF and ESF data The Netherlands 2007-2013
+scraper_required: false
+sources:
+- name: ERDF and ESF The Netherlands (2007-2013)
+  web: https://www.europaomdehoek.nl/
+title: NL.the-Netherlands 2007-2013 ERDF ESF

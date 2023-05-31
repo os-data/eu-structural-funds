@@ -1,0 +1,50 @@
+contributors:
+- Michael Peters <michael.peters@okfn.de> (http://okfn.de)
+description: null
+language: NL
+resources:
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2014BE16RFOP002
+    fund_acronym: ERDF
+    funding_period: 2014-2020
+  currency_code: EUR
+  path: ERDF_Data_Flandern_2014-2020.xls
+  publication_date: '2015-06-01'
+  schema:
+    fields:
+    - maps_to: project_id
+      name: Nr
+      translates_to: project number
+    - maps_to: beneficiary_name
+      name: Promotor
+      translates_to: beneficiary
+    - maps_to: null
+      name: Co-promotoren
+      translates_to: co-beneficiaries
+    - maps_to: project_name
+      name: Project
+      translates_to: project title
+    - maps_to: total_amount_eligible
+      name: Totale projectkost
+      translates_to: total cost of project
+    - maps_to: eu_cofinancing_amount_eligible
+      name: efro
+      translates_to: EU cofinancing amount
+    - maps_to: member_state_amount
+      name: Vlaamse co-financiering
+      translates_to: amount of national / regional funding
+    - maps_to: eu_cofinancing_rate
+      name: Percent
+      translates_to: percentage of EU cofinancing
+    - maps_to: null
+      name: cofinanciering naam
+      translates_to: name of cofinancing programme
+  title: Belgium Region Vlaams ERDF data 2014-2020
+scraper_required: false
+sources:
+- name: Belgium Region Vlaams ERDF data 2014-2020
+  web: http://www.vlaio.be/artikel/overzicht-van-goedgekeurde-projecten
+- name: Original data file link
+  web: http://www.vlaio.be/sites/default/files/documenten/ef_20120410_overzicht_projecten.xlsx
+title: BE2.vlaams.gewest 2014-2020 ERDF

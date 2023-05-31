@@ -1,0 +1,277 @@
+title: DEB.Rheinland-Pfalz 2007-2013 ESF
+
+description: The beneficiary list of the ESF programme for Rheinland-Pfalz.
+language: de
+
+sources:
+  - name: ESF Rheinland-Pfalz (2007-2013)
+    web: http://www.efre.rlp.de/
+
+scraper_required: false
+
+contributors:
+  - Michael Peters (michael.peters@okfn.de)
+
+
+resources:
+  - title: ESF in Rheinland-Pfalz 2008
+
+    path: ESF_Rheinland_Pfalz_2008.json
+    #url: http://esf.rlp.de/fileadmin/esf/Dokumente/VdB_2008.pdf
+    publication_date: "2010-09-30"
+
+    add_constants:
+      fund_acronym: ESF
+      funding_period: 2007-2013
+      cci_code: 2007DE052PO009
+      currency_code: EUR
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+          maps_to: source
+
+        - name: beneficiary
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: name_of_operation
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: year
+          translates_to: starting date
+          maps_to: starting_date
+
+        - name: additional_year
+          translates_to: additional year in starting date field
+          maps_to: null
+
+        - name: allocated_public_funding
+          translates_to: total eligible expenditure
+          maps_to: total_amount_eligible
+
+        - name: on_finish_total_value
+          translates_to: total amount
+          maps_to: total_amount
+
+
+  - title: ESF in Rheinland-Pfalz 2009
+
+    path: ESF_Rheinland_Pfalz_2009.json
+    #url: http://esf.rlp.de/fileadmin/esf/Dokumente/VdB_2009.pdf
+    publication_date: "2010-09-30"
+
+    add_constants:
+      fund_acronym: ESF
+      funding_period: 2007-2013
+      cci_code: 2007DE052PO009
+      currency_code: EUR
+
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+          maps_to: source
+
+        - name: beneficiary
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: name_of_operation
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: year
+          translates_to: starting date
+          maps_to: starting_date
+
+        - name: additional_year
+          translates_to: additional year in starting date field
+          maps_to: null
+
+        - name: allocated_public_funding
+          translates_to: total eligible expenditure
+          maps_to: total_amount_eligible
+
+        - name: on_finish_total_value
+          translates_to: total amount
+          maps_to: total_amount
+
+
+  - title: ESF in Rheinland-Pfalz 2010
+
+    path: ESF_Rheinland_Pfalz_2010.json
+    #url: http://esf.rlp.de/fileadmin/esf/Dokumente/VdB_2010_Stand_06.06.2011.pdf
+    publication_date: "2011-06-06"
+
+    add_constants:
+      fund_acronym: ESF
+      funding_period: 2007-2013
+      cci_code: 2007DE052PO009
+      currency_code: EUR
+
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+          maps_to: source
+
+        - name: beneficiary
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: name_of_operation
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: year
+          translates_to: starting date
+          maps_to: starting_date
+
+        - name: additional_year
+          translates_to: additional year in starting date field
+          maps_to: null
+
+        - name: allocated_public_funding
+          translates_to: total eligible expenditure
+          maps_to: total_amount_eligible
+
+        - name: on_finish_total_value
+          translates_to: total amount
+          maps_to: total_amount
+
+  - title: ESF in Rheinland-Pfalz 2011
+
+    path: ESF_Rheinland_Pfalz_2011.json
+      #url: http://esf.rlp.de/fileadmin/esf/Dokumente/VdB_2011_Bewilligung_2011.pdf
+    publication_date: "2012-06-13"
+
+    add_constants:
+      fund_acronym: ESF
+      funding_period: 2007-2013
+      cci_code: 2007DE052PO009
+      currency_code: EUR
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+          maps_to: source
+
+        - name: beneficiary
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: name_of_operation
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: year
+          translates_to: starting date
+          maps_to: starting_date
+
+        - name: additional_year
+          translates_to: additional year in starting date field
+          maps_to: null
+
+        - name: allocated_public_funding
+          translates_to: total eligible expenditure
+          maps_to: total_amount_eligible
+
+        - name: on_finish_total_value
+          translates_to: total amount
+          maps_to: total_amount
+
+
+  - title: ESF in Rheinland-Pfalz 2012
+
+    path: ESF_Rheinland_Pfalz_2012.json
+      #url: http://esf.rlp.de/fileadmin/esf/Dokumente/VdB_2013.pdf
+    publication_date: "2013-05-27"
+
+
+    add_constants:
+      fund_acronym: ESF
+      funding_period: 2007-2013
+      cci_code: 2007DE052PO009
+      currency_code: EUR
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+          maps_to: source
+
+        - name: beneficiary
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: name_of_operation
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: year
+          translates_to: starting date
+          maps_to: starting_date
+
+        - name: additional_year
+          translates_to: additional year in starting date field
+          maps_to: null
+
+        - name: allocated_public_funding
+          translates_to: total eligible expenditure
+          maps_to: total_amount_eligible
+
+        - name: on_finish_total_value
+          translates_to: total amount
+          maps_to: total_amount
+
+
+  - title: ESF in Rheinland-Pfalz 2013
+
+    path: ESF_Rheinland_Pfalz_2013.json
+      #url: http://esf.rlp.de/fileadmin/esf/Dokumente/Verzeichnis_der_Beg%C3%BCnstigten/140630_Verzeichnis_der_Beg%C3%BCnstigten_2013.pdf
+    publication_date: "2014-06-30"
+
+    add_constants:
+      fund_acronym: ESF
+      funding_period: 2007-2013
+      cci_code: 2007DE052PO009
+      currency_code: EUR
+
+
+    schema:
+      fields:
+        - name: _source
+          translates_to: source
+          maps_to: source
+
+        - name: beneficiary
+          translates_to: Beneficiary name
+          maps_to: beneficiary_name
+
+        - name: name_of_operation
+          translates_to: operation name
+          maps_to: project_name
+
+        - name: year
+          translates_to: starting date
+          maps_to: starting_date
+
+        - name: additional_year
+          translates_to: additional year in starting date field
+          maps_to: null
+
+        - name: allocated_public_funding
+          translates_to: total eligible expenditure
+          maps_to: total_amount_eligible
+
+        - name: on_finish_total_value
+          translates_to: total amount
+          maps_to: total_amount
+      
+       

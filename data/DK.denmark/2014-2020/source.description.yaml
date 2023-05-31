@@ -1,0 +1,83 @@
+contributors:
+- Michael Peters <michael.peters@okfn.de>
+description: The files included here contain the information about the programmes
+  to which Denmark has allocated the European Structural Funds in the period 2014-2020.
+language: DK
+currency_code: DKK
+add_categories:
+  fund_acronym:
+      R: ERDF
+      S: ESF
+resources:
+- add_constants:
+    cci_program_code: null
+    funding_period: 2014-2020
+  path: ERDF_Denmark_2014-2020.csv
+  publication_date: '2016-10-24'
+  schema:
+    fields:
+    - maps_to: project_name
+      name: Projektitel / Operation name
+      translates_to: Operation name
+    - maps_to: starting_date
+      name: Startdato / Operation start date
+      translates_to: Operation start date
+    - maps_to: completion_date
+      name: Slutdato / Operation end date
+      translates_to: Operation end date
+    - maps_to: priority_label
+      name: Prioritetsakse / Priority axis
+      translates_to: Priority label and number
+    - maps_to: total_amount_eligible
+      name: Budget / Budget
+      translates_to: Budget
+    - maps_to: eu_cofinancing_amount_eligible
+      name: EU-medfinansiering / Union co-financing
+      translates_to: Union co-financing
+    - name: EU-medfinansieringssats / Union co-financing rate
+      translates_to: Union co-financing rate
+      maps_to: eu_cofinancing_rate
+    - maps_to: project_description
+      name: Projektbeskrivelse
+      translates_to: Project
+    - maps_to: fund_acronym
+      name: Fond / Fund
+      translates_to: Fund
+    - maps_to: beneficiary_nuts_region
+      name: Region / Region
+      translates_to: Region
+    - maps_to: beneficiary_country
+      name: Land / Country
+      translates_to: Country
+    - maps_to: beneficiary_name
+      name: Kontraktansvarlig partner / Beneficiary name
+      translates_to: Beneficiary name
+    - maps_to: beneficiary_address
+      name: Vejnavn / Street name
+      translates_to: Street name
+    - maps_to: beneficiary_postal_code
+      name: Postnr / Operation postcode
+      translates_to: Operation postcode
+    - maps_to: beneficiary_city
+      name: Bynavn / City name
+      translates_to: City name
+    - name: Koordinat east / Coordinates east
+      translates_to: Coordinates east
+      maps_to: null
+    - name: Koordinat north / Coordinates north
+      translates_to: Coordinates north
+      maps_to: null
+    - name: Kontaktperson / Contacts
+      translates_to: Contacts
+      maps_to: beneficiary_person
+    - name: Partere / Project partners
+      translates_to: Project partners
+      maps_to: null
+  title: DK.Denmark 2014-2020 ERDF ESF
+scraper_required: false
+sources:
+- name: Regionalt Erhvervsstyrelsen
+  web: https://regionalt.erhvervsstyrelsen.dk/
+- name: EU Struktur Fonde i Danmark
+  web: http://eustrukturfonde.dk/
+title: DK.Denmark 2014-2020 ERDF ESF

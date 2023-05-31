@@ -1,0 +1,38 @@
+contributors:
+- Michael Peters (michael.peters@okfn.de)
+description: The beneficiary list of the ERDF programme for North West Ireland Ireland.
+language: de
+resources:
+- add_categories: {}
+  currency_code: EUR
+  add_constants:
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  path: ireland_raw_rescrape.csv
+  publication_date: '2016-02-22'
+  schema:
+    fields:
+    - maps_to: fund_acronym 
+      translates_to: fund_acronym
+      name: fund
+    - maps_to: starting_date
+      translates_to: starting date 
+      name: start_year
+    - maps_to: beneficiary_county
+      translates_to: county
+      name: county   
+    - maps_to: beneficiary_name
+      name: beneficiary_name
+      translates_to: Beneficiary name
+    - maps_to: project_name
+      name: project_name
+      translates_to: project name
+    - maps_to: total_amount
+      name: total_amount
+      translates_to: total amount
+  title: ERDF in North West Ireland Ireland 2007-2013
+scraper_required: false
+sources:
+- name: ERDF North West Ireland Ireland (2007-2013)
+  web: http://nwra.ie/operational-programme-2007-2013-2/
+title: IE.Ireland North West 2007-2013 ERDF

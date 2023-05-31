@@ -1,0 +1,65 @@
+contributors:
+- Loic Jounot <loic@cyberpunk.bike> (http://cyberpunk.bike)
+description: null
+language: FR
+add_categories:
+  fund_acronym:
+      FSE: ESF
+      FEDER: ERDF
+      IEJ: other
+      NR: other
+resources:
+- add_constants:
+    cci_program_code: unknown
+    funding_period: 2014-2020
+  currency_code: EUR
+  path: 20160711_listeoperations_FEDER_FSE_14-20.xls
+  publication_date: 11/07/2016
+  schema:
+    fields:
+    - maps_to: operational_programme
+      name: Programme
+      translates_to: program
+    - maps_to: project_name
+      name: Intitulé du projet  - operation name
+      translates_to: operation name
+    - maps_to: beneficiary_name
+      name: Nom du bénéficiaire - beneficiary name
+      translates_to: beneficiary name
+    - maps_to: beneficiary_postal_code
+      name: Code postal du bénéficiaire
+      translates_to: postal code of the beneficiary
+    - maps_to: starting_date
+      name: Date de début de l'opération - operation start date
+      translates_to: operation start date
+    - maps_to: completion_date
+      name: Date de fin de l'opération - operation end date
+      translates_to: operation end date
+    - maps_to: total_amount_eligible
+      name: Total dépenses éligibles
+      translates_to: Amount eligible for
+    - maps_to: eu_cofinancing_rate
+      name: Montant UE programmé - Union co-financing rate
+      translates_to: union co-financing rate
+    - maps_to: beneficiary_country_code
+      name: Pays - Country
+      translates_to: Beneficiary country code
+    - maps_to: approval_date
+      name: Date de programmation
+      translates_to: this is ambiguous
+    - maps_to: priority_label
+      name: Catégorie d'intervention - category of intervention
+      translates_to: category of intervention
+    - maps_to: fund_acronym
+      name: Fonds
+      translates_to: fund
+  title: EXCEL file 2014-2020 for ERDS, YEI and FSE funds
+scraper_required: false
+sources:
+- name: Europe en France, le portail des Fonds européens (portal)
+  web: http://www.europe-en-france.gouv.fr/
+- name: Bénéficiaires des fonds 2014-2020 (beneficiaries page)
+  web: http://www.europe-en-france.gouv.fr/Rendez-vous-compte/Beneficiaires-des-fonds-2014-2020
+- name: Fonds européens 2014-2020 (funds page)
+  web: http://www.europe-en-france.gouv.fr/L-Europe-s-engage/Fonds-europeens-2014-2020
+title: FR.France 2014-202 ERDF ESF YEI 

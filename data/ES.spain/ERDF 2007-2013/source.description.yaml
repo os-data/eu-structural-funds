@@ -1,0 +1,282 @@
+contributors:
+- Michael Peters (michael.peters@okfn.de)
+description: The beneficiary list of the ERDF programme for Spain.
+language: de
+resources:
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES161PO008
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: AN4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema:
+    fields:
+    - name: _source
+      translates_to: source
+      maps_to: source
+    - maps_to: beneficiary_name
+      name: nombre_beneficiario
+      translates_to: Beneficiary name
+    - maps_to: project_name
+      name: nombre_operacion
+      translates_to: operation name
+    - maps_to: total_amount_eligible
+      name: montante_concedido
+      translates_to: amount granted
+    - maps_to: total_amount
+      name: montante_pagado_final_operacion
+      translates_to: total amount
+    - maps_to: approval_date
+      name: ano_de_la_concesion
+      translates_to: approval date
+  title: ERDF in Andalucia
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES162PO008
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: AR4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF in Aragon
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES161PO004
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: AS4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF in Asturias
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES162PO007
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: BB4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF in Islas Baleares
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES161PO003
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: CE4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF in Ceuta
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES162PO009
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: CL4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Castilla y Leon
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES161PO007
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: CM4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Castilla la Mancha
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES162PO001
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: CN4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Cantabria
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES162PO006
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: CT4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Catalunya
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES162PO010
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: CV4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Comunidad Valenciana
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES162PO002
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: EU4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Pais Vasco
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES161PO006
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: EX4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Extremadura
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES161PO005
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: GA4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Galicia
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES162PO011
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: IC4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Islas Canarias
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES162PO005
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: LR4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF La Rioja
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES162PO004
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: MD4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Madrid
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES161PO002
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: ME4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Melilla
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES161PO001
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: MU4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Murcia
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007ES162PO003
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: NA4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Navarra
+- add_categories: {}
+  add_constants: {}
+  constant_fields:
+    currency_code: EUR
+    fund_name: ERDF
+    offical_period: 2007-2013
+  path: PO%20AT4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Spain
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO%20EC4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Spain
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO%20FCH4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Spain
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: PO%20FT4016.json
+  encoding: utf-8
+  publication_date: '2016-10-24'
+  schema: null
+  title: ERDF Spain
+scraper_required: false
+sources:
+- name: ERDF Spain (2007-2013)
+  web: http://www.dgfc.sepg.minhap.gob.es/sitios/dgfc/en-GB/Paginas/inicio.aspx
+title: ES.Spain 2007-2013 ERDF

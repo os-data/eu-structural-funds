@@ -1,0 +1,40 @@
+contributors:
+- Michael Peters <michael.peters@okfn.de> (http://okfn.de)
+description: Tirol is a region in Austria. From 2007-2013 it has received ESF funding
+  through the national program and ERDF funding through a regional program. The regional
+  program is called "Stärkung der Regionalen Wettbewerbsfähigkeit und Beschäftigung
+  Tirol 2007-2013". The dataset at hand describes the funding distributed through
+  said program.
+language: DE
+resources:
+- add_categories: {}
+  add_constants:
+    cci_program_code: 2007AT162PO008
+    fund_acronym: ERDF
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: ERDF_Tiro_2007-2013.json
+  publication_date: '2014-04-14'
+  schema:
+    fields:
+    - name: _source
+      translates_to: source
+      maps_to: source
+    - maps_to: beneficiary_name
+      name: beneficiary
+      translates_to: Beneficiary
+    - maps_to: project_name
+      name: name_of_the_operation
+      translates_to: name of the operation
+    - maps_to: total_amount
+      name: allocated_public_funding
+      translates_to: allocated pulic funding (EU+national cofinancing)
+    - name: status
+      translates_to: G = committed, A = paid out
+      maps_to: project_status
+  title: ERDF data Tirol (AT) (2007-2013)
+scraper_required: false
+sources:
+- name: https://www.Tirol.gv.at/
+  web: https://www.Tirol.gv.at/
+title: AT33.Tirol 2007-2013 ERDF

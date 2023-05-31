@@ -1,0 +1,2 @@
+List-of-beneficiaries-for-HCIOP.pdf = ESF 2007-2013 (retrieved via http://www.esf.ie/en/ImageLibrary/Repository/Files/List-of-beneficiaries-for-HCIOP.pdf)
+List of Operations October 2016.xlsx = ESF 2014-2020 (received via email)

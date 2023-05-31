@@ -1,0 +1,75 @@
+contributors:
+- Olaya Argueso <arguesoperezolaya@gmail.com>
+description: A list of all the public projects and state aids selected for co-funding
+  under the Partnership Agreement 2014-2020 by Operational Programme and by Fund
+language: EL
+add_categories:
+  fund_acronym:
+      1-ΕΤΠΑ: ERDF
+      2-ΕΚΤ: ESF
+      6-ΤΣ: CF
+      7-ΠΑΝ: other 
+
+resources:
+- add_constants:
+    cci_program_code: null
+    funding_period: 2014-2020
+  currency_code: EUR
+  parser_options:
+    delimiter: ;
+  path: ListOfOperations_20160513.csv
+  publication_date: null
+  schema:
+    fields:
+    - maps_to: operational_programme
+      name: ΕΠΙΧΕΙΡΗΣΙΑΚΟ ΠΡΟΓΡΑΜΜΑ/ OPERATIONAL PROGRAMME
+      translates_to: OPERATIONAL PROGRAMME
+    - name: ΑΞΟΝΑΣ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ/PRIORITY
+      translates_to: PRIORITY
+      maps_to: priority_label
+    - name: TAMEIO/ FUND
+      translates_to: FUND
+      maps_to: fund_acronym
+    - name: ΟΝΟΜΑΣΙΑ ΔΙΚΑΙΟΥΧΟΥ / BENEFICIARY NAME
+      translates_to: BENEFICIARY NAME
+      maps_to: beneficiary_name
+    - name: ΟΝΟΜΑΣΙΑ ΠΡΑΞΗΣ / OPERATION NAME
+      translates_to: OPERATION NAME
+      maps_to: project_name
+    - name: ΣΥΝΟΨΗ ΠΡΑΞΗΣ/ OPERATION SUMMARY
+      translates_to: OPERATION SUMMARY
+      maps_to: project_description
+    - name: ΗΜ/ΝΙΑ ΕΝΑΡΞΗΣ ΤΗΣ ΠΡΑΞΗΣ / OPERATION START DATE
+      translates_to: OPERATION START DATE
+      maps_to: starting_date
+    - name: ΚΑΤΑΛΗΚΤΙΚΗ ΗΜΕΡΟΜΗΝΙΑ ΠΡΑΞΗΣ / OPERATION END DATE
+      translates_to: OPERATION END DATE
+      maps_to: completion_date
+    - name: ΣΥΝΟΛΙΚΗ ΕΠΙΛΕΞΙΜΗ ΔΑΠΑΝΗ ΠΟΥ ΔΙΑΤΕΘΗΚΕ ΣΤΗΝ ΠΡΑΞΗ (ΠΡΟΫΠΟΛΟΓΙΣΜΟΣ)/ TOTAL
+        ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION
+      translates_to: TOTAL ELIGIBLE EXPENDITURE ALLOCATED TO THE OPERATION
+      maps_to: total_amount_eligible 
+    - name: ΠΟΣΟΣΤΟ ΣΥΓΧΡΗΜΑΤΟΔΟΤΗΣΗΣ ΤΗΣ ΕΝΩΣΗΣ ΑΝΑ ΑΞΟΝΑ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ/ UNION Co-FINANCING
+        RATE AS PER PRIORITY AXIS
+      translates_to: UNION Co-FINANCING RATE  AS PER PRIORITY AXIS
+      maps_to: eu_cofinancing_rate
+    - name: ΤΑΧΥΔΡΟΜΙΚΟΣ ΚΩΔΙΚΑΣ ή ’ΛΛΗ ΚΑΤΑΛΛΗΛΗ ΕΝΔΕΙΞΗ ΤΟΠΟΘΕΣΙΑΣ/ POSTCODE OR
+        OTHER APPROPRIATE LOCATION INDICATOR
+      translates_to: POSTCODE OR OTHER APPROPRIATE LOCATION INDICATOR
+      maps_to: beneficiary_city
+    - name: ΧΩΡΑ/ COUNTRY
+      translates_to: COUNTRY
+      maps_to: beneficiary_country 
+    - name: ΟΝΟΜΑΣΙΑ ΚΑΤΗΓΟΡΙΑΣ ΠΑΡΕΜΒΑΣΗΣ ΤΗΣ ΠΡΑΞΗΣ/ NAME OF CATEGORY OF INTERVENTION
+        FOR THE OPERATION
+      translates_to: NAME OF CATEGORY OF INTERVENTION FOR THE OPERATION
+      maps_to: theme_name
+    - name: ΤΕΛΕΥΤΑΙΑ ΕΝΗΜΕΡΩΣΗ ΚΑΤΑΛΟΓΟΥ/ LAST UPDATE OF THE LIST
+      translates_to: LAST UPDATE OF THE LIST
+      maps_to: null
+  title: The list of all projects for the period 2014-2020
+scraper_required: false
+sources:
+- name: ESIF data for Greece 2014-2020
+  web: https://www.espa.gr/en/pages/default.aspx
+title: EL.Greece 2014-2020 ERDF ESF CF

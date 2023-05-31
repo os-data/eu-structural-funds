@@ -1,0 +1,41 @@
+contributors:
+- Bela Seeger <bela.seeger@okfn.de> (http://okfn.de)
+description: null
+language: LV
+resources:
+- add_categories: {}
+  add_constants:
+    cci_program_code: null
+    fund_acronym: unknown
+    funding_period: 2014-2020
+  currency_code: EUR
+  path: all_funds_Latvia_2014-2020.csv
+  publication_date: '2016-11-01'
+  schema:
+    fields:
+    - maps_to: priority_number
+      name: SAM / pasākuma nr.
+      translates_to: SAM / event no.
+    - maps_to: project_name
+      name: Projekta nosaukums
+      translates_to: Project name
+    - maps_to: beneficiary_name
+      name: Finansējuma saņēmējs
+      translates_to: Final beneficiary
+    - maps_to: total_amount_eligible
+      name: Kopējais finansējums
+      translates_to: Total funding
+    - maps_to: eu_cofinancing_amount_eligible
+      name: ES finansējums
+      translates_to: EU funding
+    - maps_to: null
+      name: Projekta īstenošanas vieta
+      translates_to: Project will be implemented
+  title: Latvia's ESIF data 2014-2020
+scraper_required: false
+sources:
+- name: Latvian Republic Ministry of Finance, data from 2014-2020
+  web: http://www.esfondi.lv/es-fondu-projektu-mekletajs
+- name: Link to the original Excel file
+  web: http://www.esfondi.lv/es-fondu-projektu-mekletajs
+title: LV.Latvia 2014-2020 ERDF ESF CF

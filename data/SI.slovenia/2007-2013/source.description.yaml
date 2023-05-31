@@ -1,0 +1,78 @@
+contributors:
+- Bela Seeger (bela.seeger@okfn.de)
+description: null
+language: sl
+add_categories:
+  fund_acronym:
+      ESRR: ERDF
+      ESS: ESF
+      KS: CF
+resources:
+- add_constants:
+    cci_program_code: null
+    funding_period: 2007-2013
+  currency_code: EUR
+  path: upravicenci-vsi-4-07-2016-uvoz.json
+  publication_date: 05-07-2016
+  schema:
+    fields:
+    - maps_to: project_id
+      name: ID (ne spreminjaj)
+      translates_to: ID (not change)
+    - maps_to: project_description
+      name: NAZIV JAVNEGA RAZPISA/NEPOSREDNE POTRDITVE
+      translates_to: NAME FOR COMPETITION / DIRECT CONFIRMATION
+    - maps_to: beneficiary_name
+      name: NAZIV UPRAVIČENCA
+      translates_to: name of the beneficiary
+    - maps_to: total_amount
+      name: Višina dodeljenih sredstev
+      translates_to: amount of funds allocated
+    - maps_to: eu_cofinancing_amount
+      name: Od tega sredstva EU
+      translates_to: Of these EU funds
+    - maps_to: member_state_amount
+      name: Od tega nacionalni viri
+      translates_to: From this national resource
+    - maps_to: null
+      name: Višina izplačanih EU sredstev
+      translates_to: the amount of EU funds disbursed
+    - maps_to: project_name
+      name: NAZIV OPERACIJE
+      translates_to: NAME OF OPERATIONS
+    - maps_to: operational_programme
+      name: NAZIV OPERATIVNEGA PROGRAMA
+      translates_to: TITLE OF THE OPERATIONAL PROGRAMME
+    - maps_to: fund_acronym
+      name: SKLAD
+      translates_to: FUND
+    - maps_to: beneficiary_nuts_region
+      name: REGIJA
+      translates_to: REGION
+    - maps_to: beneficiary_city
+      name: OBČINA
+      translates_to: MUNICIPALITY
+    - maps_to: starting_date
+      name: Leto dodelitve sredstev
+      translates_to: Year allocation
+    - maps_to: management_authority
+      name: NAČIN DODELITVE SREDSTEV
+      translates_to: General allocation of funds (e.g. Call of Tender)
+    - maps_to: priority_label
+      name: PODROČJE
+      translates_to: FIELD (e.g. Competitiveness of enterprises and research excellence,
+        Development of Regions, etc.)
+    - maps_to: source
+      name: VIR
+      translates_to: SOURCE
+    - maps_to: beneficiary_url
+      name: Objava na spletni strani
+      translates_to: Project Website
+  title: Excel file for Slovenia's ERDF, ESF, and Cohesion fund 2007-2013
+scraper_required: false
+sources:
+- name: EU Skladi
+  web: http://www.eu-skladi.si/
+- name: Original link to Excel file
+  web: http://www.eu-skladi.si/sl/dokumenti/seznam-upravicencev-2007-2013/upravicenci-vsi-4-07-2016-uvoz.xlsx
+title: SL.Slovenia 2007-2013 ERDF ESF CF
